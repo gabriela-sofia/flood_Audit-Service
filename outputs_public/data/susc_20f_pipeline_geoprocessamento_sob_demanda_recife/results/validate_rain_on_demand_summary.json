@@ -1,0 +1,13 @@
+{
+  "summary": {
+    "n_sampled": 30,
+    "n_ok": 30,
+    "n_fail_api": 0,
+    "n_mismatches_over_0.5": 0,
+    "rain_decay_index_api_chirps_max_abs_diff": 0.0,
+    "rain_decay_index_api_chirps_mean_abs_diff": 0.0,
+    "rain_peak_residual_orthogonalized_max_abs_diff": 0.002698,
+    "rain_peak_residual_orthogonalized_mean_abs_diff": 0.000676
+  },
+  "mismatches": []
+}

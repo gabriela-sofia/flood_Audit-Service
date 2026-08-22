@@ -1,0 +1,9 @@
+model,n_train,n_test,holdout_auc
+GBM_referencia_v20u,1179,279,0.5888
+AdaBoost_d1,1179,279,0.5771
+RandomForest_d3,1179,279,0.5611
+ExtraTrees_d3,1179,279,0.5468
+SVM_RBF_C1,1179,279,0.5386
+SVM_RBF_C10,1179,279,0.537
+MLP_16_8,1179,279,0.5318
+MLP_8,1179,279,0.5292

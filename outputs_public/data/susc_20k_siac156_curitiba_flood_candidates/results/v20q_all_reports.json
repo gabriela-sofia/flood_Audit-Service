@@ -1,0 +1,314 @@
+{
+  "1_bootstrap_ci": {
+    "n_test": 279,
+    "point_auc": 0.5246,
+    "n_boot_valid": 2000,
+    "ci_95_low": 0.4535,
+    "ci_95_high": 0.5959,
+    "ci_excludes_0_5_chance": false,
+    "ci_excludes_reference_shuffled_0_6459": true,
+    "reference_loo_auc_shuffled_v20n": 0.6459
+  },
+  "2_ablacao_terreno_vs_chuva": [
+    {
+      "n_train": 1179,
+      "n_test": 279,
+      "n_pos_test": 171,
+      "n_neg_test": 108,
+      "holdout_auc": 0.5213,
+      "grupo_features": "terreno_so",
+      "n_features": 3
+    },
+    {
+      "n_train": 1189,
+      "n_test": 282,
+      "n_pos_test": 174,
+      "n_neg_test": 108,
+      "holdout_auc": 0.4984,
+      "grupo_features": "chuva_so",
+      "n_features": 2
+    },
+    {
+      "n_train": 1179,
+      "n_test": 279,
+      "n_pos_test": 171,
+      "n_neg_test": 108,
+      "holdout_auc": 0.5246,
+      "grupo_features": "completo_5feat",
+      "n_features": 5
+    }
+  ],
+  "3_walk_forward": [
+    {
+      "train_years": "2023",
+      "test_year": 2024,
+      "epv_treino": 21.0,
+      "epv_passa": true,
+      "n_train": 260,
+      "n_test": 350,
+      "n_pos_test": 246,
+      "n_neg_test": 104,
+      "holdout_auc": 0.6282
+    },
+    {
+      "train_years": "2023,2024",
+      "test_year": 2025,
+      "epv_treino": 41.8,
+      "epv_passa": true,
+      "n_train": 610,
+      "n_test": 569,
+      "n_pos_test": 463,
+      "n_neg_test": 106,
+      "holdout_auc": 0.6652
+    },
+    {
+      "train_years": "2023,2024,2025",
+      "test_year": 2026,
+      "epv_treino": 63.0,
+      "epv_passa": true,
+      "n_train": 1179,
+      "n_test": 279,
+      "n_pos_test": 171,
+      "n_neg_test": 108,
+      "holdout_auc": 0.5246
+    }
+  ],
+  "4_seasonal_matched_holdout": {
+    "desenho": "treino jan-jul (2023, 2024, 2025), teste jan-jul 2026",
+    "epv_treino": 37.4,
+    "epv_passa": true,
+    "n_train": 747,
+    "n_test": 279,
+    "n_pos_test": 171,
+    "n_neg_test": 108,
+    "holdout_auc": 0.5219
+  },
+  "5_coef_stability_by_year": [
+    {
+      "year": 2023,
+      "feature": "slope_deg",
+      "epv": 21.0,
+      "epv_passa": true,
+      "coef_standardized": 0.2041,
+      "p_value": 0.2005,
+      "sign": "+"
+    },
+    {
+      "year": 2023,
+      "feature": "hand_m_dinf",
+      "epv": 21.0,
+      "epv_passa": true,
+      "coef_standardized": -0.3156,
+      "p_value": 0.0309,
+      "sign": "-"
+    },
+    {
+      "year": 2023,
+      "feature": "twi_dinf",
+      "epv": 21.0,
+      "epv_passa": true,
+      "coef_standardized": -0.0545,
+      "p_value": 0.7414,
+      "sign": "-"
+    },
+    {
+      "year": 2023,
+      "feature": "rain_peak_residual_orthogonalized",
+      "epv": 21.0,
+      "epv_passa": true,
+      "coef_standardized": -0.4121,
+      "p_value": 0.0033,
+      "sign": "-"
+    },
+    {
+      "year": 2023,
+      "feature": "rain_decay_index_api_chirps",
+      "epv": 21.0,
+      "epv_passa": true,
+      "coef_standardized": 0.5881,
+      "p_value": 0.0002,
+      "sign": "+"
+    },
+    {
+      "year": 2024,
+      "feature": "slope_deg",
+      "epv": 20.8,
+      "epv_passa": true,
+      "coef_standardized": -0.1428,
+      "p_value": 0.3197,
+      "sign": "-"
+    },
+    {
+      "year": 2024,
+      "feature": "hand_m_dinf",
+      "epv": 20.8,
+      "epv_passa": true,
+      "coef_standardized": 0.0143,
+      "p_value": 0.9006,
+      "sign": "+"
+    },
+    {
+      "year": 2024,
+      "feature": "twi_dinf",
+      "epv": 20.8,
+      "epv_passa": true,
+      "coef_standardized": 0.3629,
+      "p_value": 0.038,
+      "sign": "+"
+    },
+    {
+      "year": 2024,
+      "feature": "rain_peak_residual_orthogonalized",
+      "epv": 20.8,
+      "epv_passa": true,
+      "coef_standardized": -0.5112,
+      "p_value": 0.0,
+      "sign": "-"
+    },
+    {
+      "year": 2024,
+      "feature": "rain_decay_index_api_chirps",
+      "epv": 20.8,
+      "epv_passa": true,
+      "coef_standardized": 0.4349,
+      "p_value": 0.0022,
+      "sign": "+"
+    },
+    {
+      "year": 2025,
+      "feature": "slope_deg",
+      "epv": 21.2,
+      "epv_passa": true,
+      "coef_standardized": 0.0174,
+      "p_value": 0.8914,
+      "sign": "+"
+    },
+    {
+      "year": 2025,
+      "feature": "hand_m_dinf",
+      "epv": 21.2,
+      "epv_passa": true,
+      "coef_standardized": -0.0629,
+      "p_value": 0.6144,
+      "sign": "-"
+    },
+    {
+      "year": 2025,
+      "feature": "twi_dinf",
+      "epv": 21.2,
+      "epv_passa": true,
+      "coef_standardized": 0.0772,
+      "p_value": 0.5913,
+      "sign": "+"
+    },
+    {
+      "year": 2025,
+      "feature": "rain_peak_residual_orthogonalized",
+      "epv": 21.2,
+      "epv_passa": true,
+      "coef_standardized": -0.1415,
+      "p_value": 0.2169,
+      "sign": "-"
+    },
+    {
+      "year": 2025,
+      "feature": "rain_decay_index_api_chirps",
+      "epv": 21.2,
+      "epv_passa": true,
+      "coef_standardized": 0.6312,
+      "p_value": 0.0,
+      "sign": "+"
+    },
+    {
+      "year": 2026,
+      "feature": "slope_deg",
+      "epv": 21.6,
+      "epv_passa": true,
+      "coef_standardized": -0.0217,
+      "p_value": 0.8745,
+      "sign": "-"
+    },
+    {
+      "year": 2026,
+      "feature": "hand_m_dinf",
+      "epv": 21.6,
+      "epv_passa": true,
+      "coef_standardized": -0.1727,
+      "p_value": 0.1935,
+      "sign": "-"
+    },
+    {
+      "year": 2026,
+      "feature": "twi_dinf",
+      "epv": 21.6,
+      "epv_passa": true,
+      "coef_standardized": -0.0488,
+      "p_value": 0.731,
+      "sign": "-"
+    },
+    {
+      "year": 2026,
+      "feature": "rain_peak_residual_orthogonalized",
+      "epv": 21.6,
+      "epv_passa": true,
+      "coef_standardized": 0.0146,
+      "p_value": 0.9029,
+      "sign": "+"
+    },
+    {
+      "year": 2026,
+      "feature": "rain_decay_index_api_chirps",
+      "epv": 21.6,
+      "epv_passa": true,
+      "coef_standardized": 0.032,
+      "p_value": 0.7948,
+      "sign": "+"
+    }
+  ],
+  "6_metadata_composition_stability": [
+    {
+      "year": 2023,
+      "n_total": 266,
+      "frac_confidence_strong_pos": 0.95,
+      "frac_assunto_drenagem_pos": 0.975,
+      "n_source_registry_unique": 2,
+      "n_negative_source_type_unique": 1,
+      "duplicate_group_count_mean": 1.0625,
+      "rain_status_all_ok": true,
+      "rain_n_days_found_mean": 14.0
+    },
+    {
+      "year": 2024,
+      "n_total": 351,
+      "frac_confidence_strong_pos": 0.8988,
+      "frac_assunto_drenagem_pos": 0.8623,
+      "n_source_registry_unique": 2,
+      "n_negative_source_type_unique": 1,
+      "duplicate_group_count_mean": 1.0648,
+      "rain_status_all_ok": true,
+      "rain_n_days_found_mean": 14.0
+    },
+    {
+      "year": 2025,
+      "n_total": 572,
+      "frac_confidence_strong_pos": 0.9009,
+      "frac_assunto_drenagem_pos": 0.8211,
+      "n_source_registry_unique": 2,
+      "n_negative_source_type_unique": 1,
+      "duplicate_group_count_mean": 1.0862,
+      "rain_status_all_ok": true,
+      "rain_n_days_found_mean": 14.0
+    },
+    {
+      "year": 2026,
+      "n_total": 282,
+      "frac_confidence_strong_pos": 0.908,
+      "frac_assunto_drenagem_pos": 0.931,
+      "n_source_registry_unique": 2,
+      "n_negative_source_type_unique": 1,
+      "duplicate_group_count_mean": 1.046,
+      "rain_status_all_ok": true,
+      "rain_n_days_found_mean": 14.0
+    }
+  ]
+}

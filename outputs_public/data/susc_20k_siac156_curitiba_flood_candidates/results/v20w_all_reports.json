@@ -1,0 +1,120 @@
+{
+  "fold_results": [
+    {
+      "train_years": "2023",
+      "test_year": 2024,
+      "n_train": 260,
+      "n_test": 350,
+      "holdout_auc": 0.6282,
+      "model": "Linear_baseline"
+    },
+    {
+      "train_years": "2023,2024",
+      "test_year": 2025,
+      "n_train": 610,
+      "n_test": 569,
+      "holdout_auc": 0.6652,
+      "model": "Linear_baseline"
+    },
+    {
+      "train_years": "2023,2024,2025",
+      "test_year": 2026,
+      "n_train": 1179,
+      "n_test": 279,
+      "holdout_auc": 0.5246,
+      "model": "Linear_baseline"
+    },
+    {
+      "train_years": "2023",
+      "test_year": 2024,
+      "n_train": 260,
+      "n_test": 350,
+      "holdout_auc": 0.6776,
+      "model": "GBM"
+    },
+    {
+      "train_years": "2023,2024",
+      "test_year": 2025,
+      "n_train": 610,
+      "n_test": 569,
+      "holdout_auc": 0.6587,
+      "model": "GBM"
+    },
+    {
+      "train_years": "2023,2024,2025",
+      "test_year": 2026,
+      "n_train": 1179,
+      "n_test": 279,
+      "holdout_auc": 0.5888,
+      "model": "GBM"
+    },
+    {
+      "train_years": "2023",
+      "test_year": 2024,
+      "n_train": 260,
+      "n_test": 350,
+      "holdout_auc": 0.6481,
+      "model": "AdaBoost"
+    },
+    {
+      "train_years": "2023,2024",
+      "test_year": 2025,
+      "n_train": 610,
+      "n_test": 569,
+      "holdout_auc": 0.6799,
+      "model": "AdaBoost"
+    },
+    {
+      "train_years": "2023,2024,2025",
+      "test_year": 2026,
+      "n_train": 1179,
+      "n_test": 279,
+      "holdout_auc": 0.5771,
+      "model": "AdaBoost"
+    },
+    {
+      "train_years": "2023",
+      "test_year": 2024,
+      "n_train": 260,
+      "n_test": 350,
+      "holdout_auc": 0.6841,
+      "model": "RandomForest_d3"
+    },
+    {
+      "train_years": "2023,2024",
+      "test_year": 2025,
+      "n_train": 610,
+      "n_test": 569,
+      "holdout_auc": 0.6949,
+      "model": "RandomForest_d3"
+    },
+    {
+      "train_years": "2023,2024,2025",
+      "test_year": 2026,
+      "n_train": 1179,
+      "n_test": 279,
+      "holdout_auc": 0.5611,
+      "model": "RandomForest_d3"
+    }
+  ],
+  "resumo": {
+    "beats_linear_by_test_year": {
+      "2024": {
+        "linear_auc": 0.6282,
+        "n_modelos_nao_lineares_acima": 3,
+        "n_modelos_nao_lineares_total": 3
+      },
+      "2025": {
+        "linear_auc": 0.6652,
+        "n_modelos_nao_lineares_acima": 2,
+        "n_modelos_nao_lineares_total": 3
+      },
+      "2026": {
+        "linear_auc": 0.5246,
+        "n_modelos_nao_lineares_acima": 3,
+        "n_modelos_nao_lineares_total": 3
+      }
+    },
+    "leitura": "se n_modelos_nao_lineares_acima for alto (perto do total) em TODOS os 3 anos de teste, a vantagem nao-linear e generalizavel, nao um artefato especifico de 2026 -- fortalece o achado do SUSC-20U/20V. 2026 continua sendo o ano mais dificil de prever pra QUALQUER classe de modelo (AUC absoluto mais baixo em todas), consistente com a deriva ja diagnosticada (SUSC-20Q) nao ser resolvida, so parcialmente compensada, pela nao-linearidade."
+  }
+}

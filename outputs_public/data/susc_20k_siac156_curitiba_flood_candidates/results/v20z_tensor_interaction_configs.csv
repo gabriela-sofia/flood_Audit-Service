@@ -1,0 +1,6 @@
+config,n_train,n_test,n_interaction_pairs,n_features_total,tensor_n_knots,tensor_degree,holdout_auc_2026
+additive_only_no_tensor,1179,279,0,30,4,2,0.5445
++tensor_rain_decay_index_api_chirps_x_hand_m_dinf,1179,279,1,46,4,2,0.5504
++tensor_rain_peak_residual_orthogonalized_x_hand_m_dinf,1179,279,1,46,4,2,0.548
++tensor_rain_decay_index_api_chirps_x_rain_peak_residual_orthogonalized,1179,279,1,46,4,2,0.5474
++all_3_tensor_interactions,1179,279,3,78,4,2,0.5546

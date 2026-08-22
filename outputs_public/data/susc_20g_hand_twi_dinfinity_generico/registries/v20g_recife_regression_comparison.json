@@ -1,0 +1,62 @@
+{
+  "hand_dinf": {
+    "label": "hand_dinf",
+    "path_generated": "<REV-P>/local_runs/susc_20g_hand_twi_dinfinity_generico/recife_validation/hand_dinf.tif",
+    "path_reference": "<PROJETO>/local_runs/recife_modelo_v7_otimizado/scratch_dinf/hand_dinf.tif",
+    "shape_generated": [
+      2777,
+      2086
+    ],
+    "shape_reference": [
+      2777,
+      2086
+    ],
+    "crs_generated": "EPSG:31985",
+    "crs_reference": "EPSG:31985",
+    "grid_match": true,
+    "n_valid_generated": 3482047,
+    "n_valid_reference": 3482047,
+    "n_compared": 3482047,
+    "pearson_r": 1.0,
+    "mean_abs_diff": 0.0,
+    "max_abs_diff": 0.0,
+    "mean_signed_diff": 0.0,
+    "p95_abs_diff": 0.0,
+    "p99_abs_diff": 0.0,
+    "frac_abs_diff_lt_1e-3": 1.0,
+    "mean_generated": 13.606653890995274,
+    "mean_reference": 13.606653890995274,
+    "std_generated": 15.610021728376482,
+    "std_reference": 15.610021728376482
+  },
+  "twi_dinf": {
+    "label": "twi_dinf",
+    "path_generated": "<REV-P>/local_runs/susc_20g_hand_twi_dinfinity_generico/recife_validation/twi_dinf.tif",
+    "path_reference": "<PROJETO>/local_runs/recife_modelo_v7_otimizado/scratch_dinf/twi_dinf.tif",
+    "shape_generated": [
+      2777,
+      2086
+    ],
+    "shape_reference": [
+      2777,
+      2086
+    ],
+    "crs_generated": "EPSG:31985",
+    "crs_reference": "EPSG:31985",
+    "grid_match": true,
+    "n_valid_generated": 3579890,
+    "n_valid_reference": 3579890,
+    "n_compared": 3579890,
+    "pearson_r": 0.9999999999999998,
+    "mean_abs_diff": 0.0,
+    "max_abs_diff": 0.0,
+    "mean_signed_diff": 0.0,
+    "p95_abs_diff": 0.0,
+    "p99_abs_diff": 0.0,
+    "frac_abs_diff_lt_1e-3": 1.0,
+    "mean_generated": 5.84042520875169,
+    "mean_reference": 5.84042520875169,
+    "std_generated": 4.033065595297899,
+    "std_reference": 4.033065595297899
+  }
+}

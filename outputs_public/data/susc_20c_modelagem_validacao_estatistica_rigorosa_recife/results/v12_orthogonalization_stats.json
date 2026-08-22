@@ -1,0 +1,18 @@
+{
+  "per_source_deconfounded": {
+    "chirps_v2.0_gauge_satellite_blend": {
+      "n_used": 172,
+      "beta": 0.8809,
+      "intercept": 18.3448,
+      "pearson_r_before_orthogonalization": 0.7218,
+      "pearson_r_after_orthogonalization": 0.0
+    },
+    "open_meteo_era5_land_archive_api": {
+      "n_used": 97,
+      "beta": 0.392,
+      "intercept": 2.3942,
+      "pearson_r_before_orthogonalization": 0.7925,
+      "pearson_r_after_orthogonalization": -0.0
+    }
+  }
+}

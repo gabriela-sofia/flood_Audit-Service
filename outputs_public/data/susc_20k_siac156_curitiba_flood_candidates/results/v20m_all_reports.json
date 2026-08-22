@@ -1,0 +1,134 @@
+{
+  "qa_reproducao_recife_v12": {
+    "status": "REPRODUZIDO",
+    "n_features": 6,
+    "max_abs_diff": {
+      "coef_standardized": 0.0,
+      "p_value": 0.0,
+      "ci_low_95": 0.0,
+      "ci_high_95": 0.0
+    }
+  },
+  "unidade_de_analise": "(lat, lon, event_date) -- linhas pseudo-replicadas excluidas",
+  "n_linhas_registry": 1357,
+  "n_unidades": 1148,
+  "seed": 20260731,
+  "primario_5_features": {
+    "features": [
+      "slope_deg",
+      "hand_m_dinf",
+      "twi_dinf",
+      "rain_peak_residual_orthogonalized",
+      "rain_decay_index_api_chirps"
+    ],
+    "gate_epv": {
+      "classe_minoritaria": "negativo",
+      "n_minoritaria_apos_listwise": 103,
+      "n_features": 5,
+      "epv": 20.6,
+      "piso": 20.0,
+      "passa": true
+    },
+    "firth_report": {
+      "n_used": 1138,
+      "n_pos": 1035,
+      "n_neg": 103,
+      "events_per_predictor_minority_class": 20.6,
+      "loglik": -321.717005278901
+    },
+    "boot_report": {
+      "n_boot_requested": 1000,
+      "n_boot_failed": 0,
+      "seed": 20260731
+    },
+    "auc_report": {
+      "n_used": 1138,
+      "loo_auc": 0.6048,
+      "skf_k": 5,
+      "skf_n_repeats": 50,
+      "skf_auc_mean": 0.6007,
+      "skf_auc_std": 0.01,
+      "skf_auc_min": 0.5759,
+      "skf_auc_max": 0.6193
+    }
+  },
+  "sensibilidade_s1_6_features": {
+    "features": [
+      "elevation_m",
+      "slope_deg",
+      "hand_m_dinf",
+      "twi_dinf",
+      "rain_peak_residual_orthogonalized",
+      "rain_decay_index_api_chirps"
+    ],
+    "gate_epv": {
+      "classe_minoritaria": "negativo",
+      "n_minoritaria_apos_listwise": 103,
+      "n_features": 6,
+      "epv": 17.17,
+      "piso": 20.0,
+      "passa": false
+    },
+    "firth_report": {
+      "n_used": 1138,
+      "n_pos": 1035,
+      "n_neg": 103,
+      "events_per_predictor_minority_class": 17.17,
+      "loglik": -315.90335381999125
+    },
+    "boot_report": {
+      "n_boot_requested": 1000,
+      "n_boot_failed": 0,
+      "seed": 20260731
+    },
+    "auc_report": {
+      "n_used": 1138,
+      "loo_auc": 0.6249,
+      "skf_k": 5,
+      "skf_n_repeats": 50,
+      "skf_auc_mean": 0.622,
+      "skf_auc_std": 0.0093,
+      "skf_auc_min": 0.5943,
+      "skf_auc_max": 0.6387
+    }
+  },
+  "sensibilidade_s2_linhas_com_pseudo_replicacao": {
+    "features": [
+      "slope_deg",
+      "hand_m_dinf",
+      "twi_dinf",
+      "rain_peak_residual_orthogonalized",
+      "rain_decay_index_api_chirps"
+    ],
+    "gate_epv": {
+      "classe_minoritaria": "negativo",
+      "n_minoritaria_apos_listwise": 119,
+      "n_features": 5,
+      "epv": 23.8,
+      "piso": 20.0,
+      "passa": true
+    },
+    "firth_report": {
+      "n_used": 1343,
+      "n_pos": 1224,
+      "n_neg": 119,
+      "events_per_predictor_minority_class": 23.8,
+      "loglik": -375.1272602408144
+    },
+    "boot_report": {
+      "n_boot_requested": 1000,
+      "n_boot_failed": 0,
+      "seed": 20260731
+    },
+    "auc_report": {
+      "n_used": 1343,
+      "loo_auc": 0.6154,
+      "skf_k": 5,
+      "skf_n_repeats": 50,
+      "skf_auc_mean": 0.6136,
+      "skf_auc_std": 0.0071,
+      "skf_auc_min": 0.5957,
+      "skf_auc_max": 0.627
+    }
+  }
+}

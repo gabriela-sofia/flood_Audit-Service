@@ -1,0 +1,10 @@
+{
+  "n_used": 269,
+  "loo_auc": 0.6781,
+  "skf_k": 5,
+  "skf_n_repeats": 50,
+  "skf_auc_mean": 0.6747,
+  "skf_auc_std": 0.0115,
+  "skf_auc_min": 0.6496,
+  "skf_auc_max": 0.6934
+}

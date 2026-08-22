@@ -1,0 +1,131 @@
+# Ambiente conda dedicado a linha causal SUSC (Firth penalizado + candidatos
+# interpretaveis como EBM/ExplainableBoostingClassifier). NAO usar o ambiente
+# (base) do conda pra isso -- mantenha isolado.
+#
+# Python 3.10 aqui e um requisito real, verificado, nao uma preferencia de estilo:
+# em 05/08/2026, confirmou-se que nem `firthlogist` nem `interpret` publicam
+# wheel/sdist compativel com Python >=3.11 no PyPI (o pip recusa a instalacao com
+# "Requires-Python <3.11" em todas as versoes disponiveis). Reproduzido de forma
+# independente em dois ambientes: um sandbox Linux (Python 3.10.12) onde instalou
+# sem problema, e o ambiente (base) real da autora (Python 3.13.13, conda), onde
+# falhou exatamente como descrito acima. Ver docs/ambiente_treino_susc.md pro
+# relato completo.
+#
+# Esta linha (causal/SUSC) e separada da linha DINOv2/embeddings, historica e
+# encerrada como candidata a feature (ver PLANO_ACAO_produto_v1.md, decisao
+# 2026-08-01/02). requirements.txt na raiz do repo continua servindo a linha DINO;
+# nao misture as duas instalacoes.
+#
+# -------------------------------------------------------------------------
+# COMO INSTALAR (06/08/2026) -- ler antes de recriar o ambiente.
+#
+# Use micromamba, nao `conda env create`. Motivo medido, nao preferencia:
+# duas tentativas de `conda install` SOBRE o ambiente ja existente ficaram
+# presas em "Solving environment" por 7,5h e 9,7h, sem escrever um byte.
+# O diagnostico em scripts/ambiente/diag_conda_win.py isolou a causa por
+# eliminacao, usando prefixos novos e vazios como controle:
+#   - solve trivial (python=3.10) em prefixo NOVO ....... 12s   OK
+#   - solve geoespacial completo em prefixo NOVO ........ 47s   OK
+#   - mesmo solve sobre o revp-susc EXISTENTE ........... >600s TRAVA
+# Ou seja: solver, rede, canais e antivirus estavam sadios. O que travava era
+# o ESTADO do ambiente antigo, que acumulou pacotes instalados por conda e por
+# pip sobre os mesmos nomes -- o solver nao reconcilia as duas procedencias.
+# Recriar do zero resolve; instalar por cima nao resolve.
+#
+#   micromamba create -p <miniconda3>/envs/revp-susc -f environment.yml -y
+#
+# Regra pratica que decorre disso, e que evita o problema voltar:
+#   o que esta na lista `dependencies` entra por conda/micromamba;
+#   o que esta na secao `pip` entra por pip;
+#   NUNCA instalar por pip um pacote que ja esta na lista conda.
+#
+# `defaults` foi removido dos canais de proposito: conda-forge sozinho, com
+# channel_priority strict, e o que mantem o solve rapido e deterministico.
+# -------------------------------------------------------------------------
+
+name: revp-susc
+channels:
+  - conda-forge
+dependencies:
+  - python=3.10
+  - pip
+
+  # --- Nucleo numerico e modelagem (linha SUSC original) ---
+  - numpy
+  - pandas
+  - scipy
+  - scikit-learn
+  - statsmodels        # diagnostico do modelo: GLM de referencia, VIF, testes
+  - matplotlib
+  - seaborn            # figuras do artigo/poster
+  - pytest
+  - pyyaml
+  - tqdm
+
+  # --- I/O de dados tabulares ---
+  - pyarrow            # parquet para tabelas de feature (mais rapido que csv)
+  - openpyxl           # tabelas do TCC em xlsx
+  - requests           # aquisicao via HTTP (OGC API da Environment Agency)
+
+  # --- Bloco geoespacial vetorial (frente EXT-UK-01/02) ---
+  # A aquisicao de rotulo externo (Recorded Flood Outlines, Environment Agency,
+  # 31.672 poligonos datados com flag de mecanismo) exige leitura vetorial,
+  # reprojecao para EPSG:27700 e join espacial.
+  - geopandas
+  - pyogrio            # engine de I/O vetorial usada pelo geopandas
+  - shapely
+  - pyproj             # EPSG:27700 <-> 4326 <-> UTM
+  - rtree              # indice espacial para sjoin em volume
+
+  # --- Bloco raster (extracao das 6 features fisicas do v12) ---
+  # elevation, slope, HAND, TWI a partir de DEM global; chuva a partir de
+  # produto gridado. Amostragem pontual e recorte por AOI.
+  - rasterio
+  - rioxarray
+  - xarray
+  - netcdf4
+  - h5py               # IMERG e distribuido em HDF5
+
+  # --- Aquisicao de dados globais ---
+  # Nota cientifica (06/08/2026): a feature `rain_max_24h_chirps` do v12 usa
+  # CHIRPS v2.0, que cobre apenas 50S-50N. A Inglaterra fica entre 50 e 56N,
+  # portanto FORA. Sera preciso escolher entre CHIRPS v3 (60S-60N, jun/2025),
+  # IMERG ou ERA5 -- decisao pendente. As tres vias estao cobertas abaixo para
+  # que a escolha nao dependa de reinstalar ambiente.
+  - cdsapi            # ERA5 / ERA5-Land via Copernicus Climate Data Store
+  - pystac-client     # catalogos STAC (Copernicus DEM, Sentinel)
+  - planetary-computer  # assinatura de assets STAC do MS Planetary Computer
+  - boto3             # buckets publicos AWS (Global 30m HAND, Copernicus DEM)
+
+  # --- Exploracao interativa ---
+  - ipykernel          # permite abrir este ambiente em notebook sem reinstalar
+
+  - pip:
+      - firthlogist    # regressao logistica de Firth (rota primaria da SUSC)
+      - interpret      # EBM/ExplainableBoostingClassifier (candidato interpretavel)
+      # whitebox (WhiteboxTools): as features `hand_m_dinf` e `twi_dinf` do v12
+      # sao D-infinity. Para replicar o MESMO calculo numa regiao externa e
+      # preciso o mesmo tipo de algoritmo de fluxo -- sem isso, a feature da
+      # regiao externa nao seria comparavel com a do dataset brasileiro.
+      #
+      # NAO confundir com o plugin "Whitebox Workflows for QGIS": aquele
+      # empacota `whitebox_workflows` (WbW), biblioteca DIFERENTE, com outra
+      # API. O que a cadeia auditada usou -- e o que o `ter01` exige -- e o
+      # WhiteboxTools classico, que vem com ESTE pacote. O binario e baixado
+      # pelo proprio pacote no primeiro uso; nao deve ser versionado no repo
+      # (regra fixa do projeto: nenhum artefato pesado em git).
+      #
+      # Versao verificada em 12/08/2026, identica a da auditoria do Recife:
+      #     WhiteboxTools v2.4.0 (c) Dr. John Lindsay 2017-2023
+      - whitebox
+      # pysheds -- adicionado em 09/08/2026 depois de um erro caro. O TWI
+      # D-infinity e calculado com ele, mas ele nunca tinha entrado aqui: foi
+      # instalado a mao no ambiente de analise e esquecido no ambiente do
+      # projeto. Resultado: as seis ativacoes CEMS processaram com
+      # `twi_dinf` inteiramente NaN, porque o `cems02` capturava a excecao e
+      # seguia. Uma das quatro features saiu vazia sem que nada avisasse.
+      - pysheds
+      # Candidatos NAO instalados de proposito (regra: uma tarefa por vez).
+      # `shap` pode aparecer sozinho na lista de pacotes: e dependencia
+      # transitiva do `interpret`, e isso e esperado.
+      # - xgboost

@@ -1,0 +1,60 @@
+{
+  "1_gbm_temporal_holdout_ci": {
+    "n_train": 1179,
+    "n_test": 279,
+    "point_auc": 0.5888,
+    "ci_95_low": 0.5188,
+    "ci_95_high": 0.6589,
+    "ci_excludes_0_5_chance": true,
+    "feature_importances": {
+      "slope_deg": 0.0962,
+      "hand_m_dinf": 0.1887,
+      "twi_dinf": 0.0448,
+      "rain_peak_residual_orthogonalized": 0.2392,
+      "rain_decay_index_api_chirps": 0.4311
+    },
+    "reference_baseline_linear_temporal_holdout_auc_v20o": 0.5246
+  },
+  "2_gbm_spatial_block_cv": {
+    "fold_results": [
+      {
+        "fold": 0,
+        "n_train": 1166,
+        "n_test": 292,
+        "holdout_auc_gbm": 0.6099
+      },
+      {
+        "fold": 1,
+        "n_train": 1166,
+        "n_test": 292,
+        "holdout_auc_gbm": 0.6642
+      },
+      {
+        "fold": 2,
+        "n_train": 1166,
+        "n_test": 292,
+        "holdout_auc_gbm": 0.7222
+      },
+      {
+        "fold": 3,
+        "n_train": 1167,
+        "n_test": 291,
+        "holdout_auc_gbm": 0.6384
+      },
+      {
+        "fold": 4,
+        "n_train": 1167,
+        "n_test": 291,
+        "holdout_auc_gbm": 0.6974
+      }
+    ],
+    "auc_mean": 0.6664,
+    "reference_baseline_linear_spatial_block_cv_v20p": 0.6442
+  },
+  "3_hyperparam_sensitivity": {
+    "auc_min": 0.5467,
+    "auc_max": 0.6287,
+    "auc_median": 0.5859,
+    "frac_configs_above_0_55": 0.9259
+  }
+}

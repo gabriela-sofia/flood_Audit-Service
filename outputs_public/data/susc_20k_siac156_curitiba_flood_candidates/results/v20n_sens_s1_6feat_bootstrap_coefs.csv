@@ -1,0 +1,7 @@
+feature,n_boot_success,boot_mean_coef,boot_ci_low_2.5pct,boot_ci_high_97.5pct,ci_crosses_zero,pct_sign_flips
+elevation_m,1000,-0.1701,-0.3287,-0.0118,False,2.1
+slope_deg,1000,0.0294,-0.1157,0.1866,True,36.7
+hand_m_dinf,1000,-0.0449,-0.1975,0.1108,True,27.6
+twi_dinf,1000,0.0689,-0.0782,0.224,True,17.6
+rain_peak_residual_orthogonalized,1000,-0.3258,-0.4419,-0.2192,False,0.0
+rain_decay_index_api_chirps,1000,0.426,0.2762,0.5992,False,0.0

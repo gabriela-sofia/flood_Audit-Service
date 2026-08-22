@@ -1,0 +1,6 @@
+feature,grid_min,grid_max,effect_at_min,effect_at_max,effect_range,monotonic,n_sign_changes_in_slope,direction,expected_sign,direction_matches_expected
+slope_deg,0.0,23.2152,0.3381,0.0189,0.5166,False,3,decrescente,-1,True
+hand_m_dinf,0.0,51.8466,0.7719,-0.5889,1.3609,False,2,decrescente,-1,True
+twi_dinf,3.8944,36.8008,0.1603,-0.0855,0.3135,False,2,decrescente,1,False
+rain_peak_residual_orthogonalized,-14.9778,55.2532,0.5545,-0.7948,1.5383,False,2,decrescente,1,False
+rain_decay_index_api_chirps,0.061,161.582,-0.9783,0.5544,1.6306,False,3,crescente,1,True

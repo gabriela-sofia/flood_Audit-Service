@@ -1,0 +1,56 @@
+{
+  "configs": [
+    {
+      "config": "base_5feat_linear",
+      "n_features": 5,
+      "holdout_auc_2026": 0.5246
+    },
+    {
+      "config": "+rain_decay_x_hand",
+      "n_features": 6,
+      "holdout_auc_2026": 0.5246
+    },
+    {
+      "config": "+rain_peak_x_hand",
+      "n_features": 6,
+      "holdout_auc_2026": 0.52
+    },
+    {
+      "config": "+rain_decay_x_rain_peak",
+      "n_features": 6,
+      "holdout_auc_2026": 0.5295
+    },
+    {
+      "config": "+all_3_interactions",
+      "n_features": 8,
+      "holdout_auc_2026": 0.5252
+    },
+    {
+      "config": "+hand_threshold",
+      "n_features": 6,
+      "holdout_auc_2026": 0.5262
+    },
+    {
+      "config": "+rain_decay_threshold",
+      "n_features": 6,
+      "holdout_auc_2026": 0.5279
+    },
+    {
+      "config": "+rain_peak_threshold",
+      "n_features": 6,
+      "holdout_auc_2026": 0.5184
+    },
+    {
+      "config": "+all_3_thresholds",
+      "n_features": 8,
+      "holdout_auc_2026": 0.5224
+    }
+  ],
+  "resumo": {
+    "reference_baseline_linear_5feat": 0.5246,
+    "reference_gbm_v20u": 0.5888,
+    "melhor_config_interpretavel": "+rain_decay_x_rain_peak",
+    "melhor_auc_interpretavel": 0.5295,
+    "recuperou_o_sinal_do_gbm": false
+  }
+}

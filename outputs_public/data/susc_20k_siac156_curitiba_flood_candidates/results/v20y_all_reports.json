@@ -1,0 +1,104 @@
+{
+  "holdout_default": {
+    "n_train": 1179,
+    "n_test": 279,
+    "n_knots": 5,
+    "degree": 3,
+    "C": 1.0,
+    "holdout_auc_2026": 0.5445
+  },
+  "spatial_block_cv_default": {
+    "n_splits": 5,
+    "auc_mean": 0.6509,
+    "auc_std": 0.0456,
+    "auc_min": 0.5905,
+    "auc_max": 0.695
+  },
+  "hyperparam_grid_summary": {
+    "n_combos": 30,
+    "auc_min": 0.5212,
+    "auc_median": 0.5484,
+    "auc_max": 0.575,
+    "pct_above_gbm": 0.0,
+    "pct_above_linear_baseline": 96.7
+  },
+  "additive_effects": [
+    {
+      "feature": "slope_deg",
+      "grid_min": 0.0,
+      "grid_max": 23.2152,
+      "effect_at_min": 0.3381,
+      "effect_at_max": 0.0189,
+      "effect_range": 0.5166,
+      "monotonic": false,
+      "n_sign_changes_in_slope": 3,
+      "direction": "decrescente",
+      "expected_sign": -1,
+      "direction_matches_expected": true
+    },
+    {
+      "feature": "hand_m_dinf",
+      "grid_min": 0.0,
+      "grid_max": 51.8466,
+      "effect_at_min": 0.7719,
+      "effect_at_max": -0.5889,
+      "effect_range": 1.3609,
+      "monotonic": false,
+      "n_sign_changes_in_slope": 2,
+      "direction": "decrescente",
+      "expected_sign": -1,
+      "direction_matches_expected": true
+    },
+    {
+      "feature": "twi_dinf",
+      "grid_min": 3.8944,
+      "grid_max": 36.8008,
+      "effect_at_min": 0.1603,
+      "effect_at_max": -0.0855,
+      "effect_range": 0.3135,
+      "monotonic": false,
+      "n_sign_changes_in_slope": 2,
+      "direction": "decrescente",
+      "expected_sign": 1,
+      "direction_matches_expected": false
+    },
+    {
+      "feature": "rain_peak_residual_orthogonalized",
+      "grid_min": -14.9778,
+      "grid_max": 55.2532,
+      "effect_at_min": 0.5545,
+      "effect_at_max": -0.7948,
+      "effect_range": 1.5383,
+      "monotonic": false,
+      "n_sign_changes_in_slope": 2,
+      "direction": "decrescente",
+      "expected_sign": 1,
+      "direction_matches_expected": false
+    },
+    {
+      "feature": "rain_decay_index_api_chirps",
+      "grid_min": 0.061,
+      "grid_max": 161.582,
+      "effect_at_min": -0.9783,
+      "effect_at_max": 0.5544,
+      "effect_range": 1.6306,
+      "monotonic": false,
+      "n_sign_changes_in_slope": 3,
+      "direction": "crescente",
+      "expected_sign": 1,
+      "direction_matches_expected": true
+    }
+  ],
+  "resumo": {
+    "reference_linear_baseline": 0.5246,
+    "reference_gbm_v20u": 0.5888,
+    "gam_holdout_auc_2026_default_config": 0.5445,
+    "gam_spatial_block_cv_auc_mean": 0.6509,
+    "gam_best_holdout_auc_grid": 0.575,
+    "recuperou_o_sinal_do_gbm": false,
+    "melhora_parcial_sobre_linear": true,
+    "gap_para_gbm": 0.0138,
+    "n_features_direction_matches_expected": 3,
+    "n_features_monotonic": 0
+  }
+}

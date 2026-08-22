@@ -1,0 +1,24 @@
+{
+  "firth_report": {
+    "n_used": 269,
+    "n_pos": 145,
+    "n_neg": 124,
+    "events_per_predictor_minority_class": 20.67,
+    "loglik": -150.59347173766062
+  },
+  "boot_report": {
+    "n_boot_requested": 1000,
+    "n_boot_failed": 0,
+    "seed": 20260723
+  },
+  "auc_report": {
+    "n_used": 269,
+    "loo_auc": 0.6781,
+    "skf_k": 5,
+    "skf_n_repeats": 50,
+    "skf_auc_mean": 0.6747,
+    "skf_auc_std": 0.0115,
+    "skf_auc_min": 0.6496,
+    "skf_auc_max": 0.6934
+  }
+}

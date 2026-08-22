@@ -1,0 +1,78 @@
+{
+  "1_app_launch_split": {
+    "app_launch_date": "2026-03-25",
+    "pre_app": {
+      "n_train": 1179,
+      "n_test": 158,
+      "n_pos_test": 110,
+      "n_neg_test": 48,
+      "holdout_auc": 0.4341
+    },
+    "post_app": {
+      "n_train": 1179,
+      "n_test": 121,
+      "n_pos_test": 61,
+      "n_neg_test": 60,
+      "holdout_auc": 0.4656
+    },
+    "frac_positivo_pre_app": 0.6962,
+    "frac_positivo_post_app": 0.5161,
+    "colapso_concentrado_pos_app": false
+  },
+  "2a_rain_max_24h_corr_by_year": [
+    {
+      "year": 2023,
+      "n": 266,
+      "corr_rain_max_24h_vs_label": 0.0153
+    },
+    {
+      "year": 2024,
+      "n": 351,
+      "corr_rain_max_24h_vs_label": -0.0801
+    },
+    {
+      "year": 2025,
+      "n": 572,
+      "corr_rain_max_24h_vs_label": 0.1037
+    },
+    {
+      "year": 2026,
+      "n": 282,
+      "corr_rain_max_24h_vs_label": 0.016
+    }
+  ],
+  "2b_rain_max_24h_temporal_holdout": {
+    "feature_cols": [
+      "slope_deg",
+      "hand_m_dinf",
+      "twi_dinf",
+      "rain_max_24h_chirps"
+    ],
+    "n_train": 1179,
+    "n_test": 279,
+    "n_pos_test": 171,
+    "n_neg_test": 108,
+    "holdout_auc": 0.523
+  },
+  "3_recency_weighted_temporal_holdout": [
+    {
+      "half_life_years": 1.0,
+      "n_train": 1179,
+      "n_test": 279,
+      "weight_2023": 0.25,
+      "weight_2024": 0.5,
+      "weight_2025": 1.0,
+      "holdout_auc_recency_weighted": 0.5241
+    },
+    {
+      "half_life_years": 2.0,
+      "n_train": 1179,
+      "n_test": 279,
+      "weight_2023": 0.5,
+      "weight_2024": 0.7071,
+      "weight_2025": 1.0,
+      "holdout_auc_recency_weighted": 0.5223
+    }
+  ],
+  "reference_baseline_temporal_holdout_auc_v20o": 0.5246
+}

@@ -1,0 +1,6 @@
+feature,n_pos,n_neg,p_value,significant_p05
+slope_deg,871,318,0.0678,False
+hand_m_dinf,864,315,0.0002,True
+twi_dinf,871,318,0.1255,False
+rain_peak_residual_orthogonalized,871,318,0.0,True
+rain_decay_index_api_chirps,871,318,0.0,True
