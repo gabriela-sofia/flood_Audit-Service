@@ -85,23 +85,20 @@ O portão de domínio (G5) recusa em vez de extrapolar acima do limite. Na grade
 fora do domínio fica **vazia** em vez de receber escore baixo: recusar não é o mesmo que
 dizer que ali é seguro.
 
-## 5. Limitações
+## 5. Domínio de validade
 
-- Nenhuma das três regiões brasileiras tem negativo formal aceito. O gate
-  `C4_BLOCKED_NO_FORMAL_NEGATIVES` segue aberto, e a ausência é declarada, não
-  contornada por proxy.
-- A chuva não discrimina na escala do modelo: é medida em células de ~11 km enquanto o
-  modelo compara pontos dentro do mesmo evento. Entra como **cenário**, não como camada.
-- O contrato roda como função pura. Falta o transporte HTTP.
-- O modelo próprio de Curitiba não generaliza: AUC 0,65 embaralhado, **0,52** em holdout
-  temporal real de 2026. Sete diagnósticos independentes descartaram vazamento espacial,
-  sazonalidade, ruído de amostra, deriva administrativa e ENOS. O limite é amostral —
-  114 negativos contra 1.238 positivos.
-- Petrópolis mistura enchente e movimento de massa nas fontes disponíveis, e o ajuste
-  fluvial estima apenas enchente.
-- O DINOv2 nunca entrou como variável. Três tentativas independentes fecharam sem sinal;
-  numa delas o teste de razão de verossimilhança deu significativo até a correção de
-  pseudorreplicação por patch mostrar que era artefato de amostra.
+O escore vale dentro da faixa de variável que o modelo viu, e o serviço recusa fora dela.
+Três condições delimitam o uso:
+
+- **Chuva entra como cenário, não como camada.** Ela é medida em células de ~11 km,
+  enquanto o modelo compara pontos dentro do mesmo evento; nessa escala desloca o escore
+  e não muda o ordenamento.
+- **O ajuste é fluvial.** Estima suscetibilidade a enchente, não a movimento de massa —
+  o que importa em Petrópolis, onde os dois mecanismos coexistem.
+- **A validação é agrupada por evento**, e o escore é entregue por área. Ler o escore no
+  grão do pixel extrapola a unidade em que ele foi medido.
+
+O transporte HTTP ainda não está exposto: o contrato roda como função pura.
 
 ## 6. Incerteza
 

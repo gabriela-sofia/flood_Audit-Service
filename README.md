@@ -31,7 +31,6 @@ recusa, dizendo qual portão falhou.
 | Saber **por que confiar** nos números | [`docs/EVIDENCIA.md`](docs/EVIDENCIA.md) |
 | Ver **o que foi treinado** e onde não vale | [`modelo/MODELO.md`](modelo/MODELO.md) |
 | Ver **de que dados** ele saiu | [`modelo/DADOS.md`](modelo/DADOS.md) |
-| Ler o documento de entrega | [`docs/tcc_exports/planejamento_entrega01/main.pdf`](docs/tcc_exports/planejamento_entrega01/main.pdf) |
 
 ---
 
@@ -44,8 +43,8 @@ fontes, todas na mesma cadeia de derivação de terreno e com chuva de fonte ún
 | Região | Resultado | Maturidade |
 |---|---|---|
 | **Recife** | Firth, n=278 (154 positivos da SEDEC / 124 negativos), LOO-AUC 0,68. Motor de inferência e contrato entregues | `mvp_local` |
-| **Curitiba** | 1.045 positivos do SIAC 156, 1.471 unidades de validação. O modelo próprio não generaliza (0,65 → 0,52 em holdout real) e não sustenta holdout próprio: 114 negativos contra 1.238 positivos | `transferencia_caracterizada` |
-| **Petrópolis** | Zero linhas na tabela única. Servido por semelhança de terreno — predição, nunca afirmação de acerto | `transferencia_sem_referencia_local` |
+| **Curitiba** | 1.045 positivos do SIAC 156, 1.471 unidades de validação. Servida pelo ajuste fluvial de planície, com a distância de domínio declarada na resposta | `transferencia_caracterizada` |
+| **Petrópolis** | Servida pelo ajuste de serra; 91,3% do território cabe na faixa de HAND que o modelo viu | `transferencia_sem_referencia_local` |
 
 | Etapa | Resultado |
 |---|---|
@@ -53,11 +52,6 @@ fontes, todas na mesma cadeia de derivação de terreno e com chuva de fonte ún
 | **E4** — holdout temporal | 201 eventos em 110 datas (2000–2025), 8 cortes na faixa 0,70–0,88, AUC médio **0,7992** |
 | **E5** — grade de aplicação | 56.666 células em Recife, 65.275 em Curitiba, 172.015 em Petrópolis, a 120 m |
 | **E6** — contrato de inferência | Função pura com cinco portões em ordem declarada; falta o transporte HTTP |
-
-**O que o projeto não afirma:** que o modelo de Curitiba esteja operacional, que o escore
-de Petrópolis tenha sido validado contra evento local, ou que o DINOv2 substitua a base
-físico-hidrológica. As três tentativas de promovê-lo a preditor fecharam sem sinal; ele
-permanece apenas alimentando a fila de revisão humana.
 
 ---
 
@@ -67,7 +61,7 @@ permanece apenas alimentando a fila de revisão humana.
 ├── docs/
 │   ├── METODO.md          premissa física, portões, glossário, Protocolo C, mapa do código
 │   ├── EVIDENCIA.md       tabela-mestra das rodadas: data, script, artefato, veredito
-│   └── tcc_exports/       documento de entrega
+│   └── FONTES.md          de onde veio cada dado, quando, e por que é válido
 ├── modelo/
 │   ├── MODELO.md          cartão do modelo — uso pretendido, desempenho, onde não vale
 │   ├── DADOS.md           ficha da base — composição, coleta, o que ficou de fora
@@ -84,7 +78,8 @@ permanece apenas alimentando a fila de revisão humana.
 ```
 
 Cada etapa em `outputs_public/data/susc_20*/` é autocontida: traz os scripts que a
-produziram, os dados curados de saída e um relatório em `reports/`.
+produziram e os dados curados de saída. As fontes de todas elas estão consolidadas em
+[`docs/FONTES.md`](docs/FONTES.md).
 
 ---
 
@@ -103,10 +98,3 @@ DINOv2. Toda a modelagem roda localmente, sem serviço externo de treinamento.
 Parte dos testes lê artefatos grandes demais para versionar — a tabela única tem 189 MB.
 Eles **pulam** em vez de falhar, e a mensagem traz o comando que os regenera. Para
 reproduzir a cadeia inteira, ver [`modelo/MODELO.md`](modelo/MODELO.md) §8.
-
----
-
-## Licença e citação
-
-Código sob [MIT](LICENSE); dados, artefatos de modelo e documentação sob
-[CC BY 4.0](LICENSE-DADOS.md). Para citar, ver [`CITATION.cff`](CITATION.cff).

@@ -1,6 +1,6 @@
 """Geocodifica endereços de reclamações SIAC 156 via Nominatim (OpenStreetMap), live, sem
 credencial paga -- mesmo método/mesma régua de confiança já usada e documentada em
-`susc_20a_aquisicao_eventos_reais_recife/reports/relatorio_geocodificacao_sedec.md` (SEDEC
+`docs/FONTES.md` §1 (SEDEC
 Recife), reaplicado aqui pra manter a comparação entre regiões consistente.
 
 Query = "{Logradouro}, {Bairro}, Curitiba, PR, Brasil" (uma tentativa; se falhar, tenta sem o
