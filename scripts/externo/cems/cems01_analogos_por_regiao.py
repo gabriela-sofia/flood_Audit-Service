@@ -132,7 +132,7 @@ def main() -> int:
     print("===CEMS01_ANALOGOS===")
 
     if not INV.exists():
-        print(f"ABORTADO: rode n1c_cems_activations.py antes ({INV} ausente)")
+        print(f"ABORTADO: rode n1c_cems_ativacoes.py antes ({INV} ausente)")
         return 1
     fl = json.loads(INV.read_text(encoding="utf-8"))
     print(f"ATIVACOES_INUNDACAO={len(fl)}")
@@ -192,9 +192,9 @@ def main() -> int:
         import numpy as np
         d["s_aoi"] = np.log1p(d["n_aois"]) / np.log1p(max(d["n_aois"].max(), 1))
 
-        d["score"] = (0.30 * d["s_clima"] + 0.20 * d["s_elev"] + 0.20 * d["s_slope"]
+        d["escore"] = (0.30 * d["s_clima"] + 0.20 * d["s_elev"] + 0.20 * d["s_slope"]
                       + 0.20 * d["s_mec"] + 0.10 * d["s_aoi"])
-        d = d.sort_values("score", ascending=False)
+        d = d.sort_values("escore", ascending=False)
         d["url"] = "https://rapidmapping.emergency.copernicus.eu/" + d["code"].astype(str)
         d.to_csv(OUT / f"analogos_{regiao.lower()}.csv", index=False)
 
@@ -204,10 +204,10 @@ def main() -> int:
             if pd.notna(r["elev_med"]):
                 rel = f" elev={r['elev_med']:.0f}m decl={r['slope_med']:.1f}deg"
             massa = " [indicio de massa]" if r["indicio_massa"] else ""
-            print(f"  {r.score:.3f} {r['code']} {str(r['name'])[:48]:48s} "
+            print(f"  {r.escore:.3f} {r['code']} {str(r['name'])[:48]:48s} "
                   f"lat={r['lat']:+.1f} aois={r['n_aois']}{rel}{massa}")
         resumo[regiao] = d.head(6)[
-            ["code", "name", "lat", "lon", "data", "n_aois", "score", "url"]
+            ["code", "name", "lat", "lon", "data", "n_aois", "escore", "url"]
         ].to_dict("records")
 
     (OUT / "fila_de_verificacao.json").write_text(

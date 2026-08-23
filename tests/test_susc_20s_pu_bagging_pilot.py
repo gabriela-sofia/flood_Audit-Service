@@ -18,7 +18,7 @@ import pytest
 ROOT = Path(__file__).resolve().parents[1]
 PKG = ROOT / "outputs_public/data/susc_20k_siac156_curitiba_flood_candidates"
 sys.path.insert(0, str(PKG / "scripts"))
-import pipeline_v20s_pu_bagging_pilot_curitiba as p20s  # noqa: E402
+import pipeline_v20s_piloto_pu_bagging_curitiba as p20s  # noqa: E402
 
 FEATS = ["slope_deg", "hand_m_dinf", "twi_dinf",
           "rain_peak_residual_orthogonalized", "rain_decay_index_api_chirps"]
@@ -35,7 +35,7 @@ def test_pu_bagging_fit_predict_returns_one_score_per_test_row():
 
 
 def test_pu_bagging_separable_signal_scores_high_auc():
-    """Sinal linearmente separavel numa feature -- PU bagging tem que aprender isso, mesmo
+    """Sinal linearmente separavel numa variavel -- PU bagging tem que aprender isso, mesmo
     tratando o rotulo negativo como 'nao-confiavel' (aqui nao ha ruido de rotulo, entao o
     resultado deve ficar proximo do supervisionado normal)."""
     from sklearn.metrics import roc_auc_score
@@ -52,13 +52,13 @@ def test_pu_bagging_separable_signal_scores_high_auc():
 
 def test_temporal_holdout_reports_reference_baseline_for_comparison():
     d = pd.DataFrame({f: np.random.default_rng(0).normal(size=200) for f in FEATS})
-    d["label"] = ([1] * 120 + [0] * 80)
+    d["rotulo"] = ([1] * 120 + [0] * 80)
     d2 = pd.DataFrame({f: np.random.default_rng(1).normal(size=60) for f in FEATS})
-    d2["label"] = ([1] * 36 + [0] * 24)
+    d2["rotulo"] = ([1] * 36 + [0] * 24)
     result = p20s.pu_bagging_temporal_holdout(d, d2, FEATS, n_bags=20)
-    assert result["n_train"] == 200
-    assert result["n_test"] == 60
-    assert 0.0 <= result["holdout_auc_pu_bagging"] <= 1.0
+    assert result["n_treino"] == 200
+    assert result["n_teste"] == 60
+    assert 0.0 <= result["auc_holdout_pu_bagging"] <= 1.0
 
 
 def test_spatial_block_cv_never_leaks_bairro_between_train_and_test():
@@ -68,12 +68,12 @@ def test_spatial_block_cv_never_leaks_bairro_between_train_and_test():
         for _ in range(30):
             row = {f: rng.normal() for f in FEATS}
             row["bairro"] = f"B{b}"
-            row["label"] = int(rng.random() < 0.4)
+            row["rotulo"] = int(rng.random() < 0.4)
             rows.append(row)
     d = pd.DataFrame(rows)
     out = p20s.pu_bagging_spatial_block_cv(d, FEATS, n_splits=5, n_bags=15)
     assert len(out) == 5
-    assert set(["fold", "holdout_auc_pu_bagging", "n_test"]).issubset(out.columns)
+    assert set(["fold", "auc_holdout_pu_bagging", "n_teste"]).issubset(out.columns)
 
 
 def test_pu_bagging_positives_never_resampled_only_unlabeled_pool_is():

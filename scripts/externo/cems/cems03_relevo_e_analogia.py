@@ -149,7 +149,7 @@ def screen() -> int:
     import pandas as pd
 
     if not INV.exists():
-        print(f"ABORTADO: {INV} ausente. Rode n1c_cems_activations.py antes.")
+        print(f"ABORTADO: {INV} ausente. Rode n1c_cems_ativacoes.py antes.")
         return 1
     raw = json.loads(INV.read_text(encoding="utf-8"))
     alvos = [r for r in raw

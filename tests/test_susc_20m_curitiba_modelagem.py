@@ -17,7 +17,7 @@ import pytest
 ROOT = Path(__file__).resolve().parents[1]
 PKG = ROOT / "outputs_public/data/susc_20k_siac156_curitiba_flood_candidates"
 sys.path.insert(0, str(PKG / "scripts"))
-import pipeline_v20m_curitiba_primary as p20m  # noqa: E402
+import pipeline_v20m_curitiba_primario as p20m  # noqa: E402
 
 firthlogist = pytest.importorskip("firthlogist", reason="firthlogist não instalado")
 
@@ -42,7 +42,7 @@ def test_expected_signs_match_recife_pipeline():
 
 
 def test_no_feature_is_derived_from_label_or_score():
-    proibidos = ("label", "score", "threshold", "susceptib", "prob_")
+    proibidos = ("rotulo", "escore", "threshold", "susceptib", "prob_")
     for feat in p20m.FEATURE_COLS_RECIFE_6:
         assert not any(p in feat.lower() for p in proibidos)
 
@@ -53,7 +53,7 @@ def _fake(n_pos: int, n_neg: int, feats: list[str]) -> pd.DataFrame:
     rng = np.random.default_rng(3)
     n = n_pos + n_neg
     d = pd.DataFrame({f: rng.normal(size=n) for f in feats})
-    d["label"] = [1] * n_pos + [0] * n_neg
+    d["rotulo"] = [1] * n_pos + [0] * n_neg
     return d
 
 
@@ -87,23 +87,23 @@ def test_primary_block_refuses_to_run_below_epv_floor(tmp_path):
 # --- screening univariado -------------------------------------------------------------------
 
 def test_univariate_reports_observed_direction_faithfully():
-    d = pd.DataFrame({"twi_dinf": [1.0] * 30 + [9.0] * 30, "label": [0] * 30 + [1] * 30})
+    d = pd.DataFrame({"twi_dinf": [1.0] * 30 + [9.0] * 30, "rotulo": [0] * 30 + [1] * 30})
     r = p20m.univariate_screen(d, ["twi_dinf"]).iloc[0]
-    assert r["direction_observed"] == "pos>neg"
-    assert r["expected_sign"] == 1
-    assert bool(r["significant_p05"]) is True
+    assert r["direcao_observada"] == "pos>neg"
+    assert r["sinal_esperado"] == 1
+    assert bool(r["significante_p05"]) is True
 
 
 def test_univariate_flags_direction_against_expectation():
     """Sinal contrário ao esperado tem que aparecer como tal, não ser silenciado."""
-    d = pd.DataFrame({"twi_dinf": [9.0] * 30 + [1.0] * 30, "label": [0] * 30 + [1] * 30})
+    d = pd.DataFrame({"twi_dinf": [9.0] * 30 + [1.0] * 30, "rotulo": [0] * 30 + [1] * 30})
     r = p20m.univariate_screen(d, ["twi_dinf"]).iloc[0]
-    assert r["direction_observed"] == "pos<neg"
-    assert r["expected_sign"] == 1
+    assert r["direcao_observada"] == "pos<neg"
+    assert r["sinal_esperado"] == 1
 
 
 def test_univariate_skips_feature_without_both_classes():
-    d = pd.DataFrame({"twi_dinf": [1.0, 2.0, 3.0], "label": [1, 1, 1]})
+    d = pd.DataFrame({"twi_dinf": [1.0, 2.0, 3.0], "rotulo": [1, 1, 1]})
     assert len(p20m.univariate_screen(d, ["twi_dinf"])) == 0
 
 
@@ -119,15 +119,15 @@ def test_environment_reproduces_recife_v12():
 
 def test_firth_indexes_features_not_intercept():
     """firthlogist devolve pvals_/ci_ com o intercepto NO FIM -- indexar por posição de
-    feature (como o pipeline de Recife faz) tem que continuar correto."""
+    variavel (como o pipeline de Recife faz) tem que continuar correto."""
     rng = np.random.default_rng(5)
     n = 300
     X = rng.normal(size=(n, 2))
     d = pd.DataFrame({"a": X[:, 0], "b": X[:, 1]})
-    d["label"] = (3.0 * X[:, 0] + rng.normal(0, 0.5, n) > 0).astype(int)
+    d["rotulo"] = (3.0 * X[:, 0] + rng.normal(0, 0.5, n) > 0).astype(int)
     coefs, rep = p20m.firth_multivariate(d, ["a", "b"])
     assert len(coefs) == 2
-    linha_a = coefs[coefs.feature == "a"].iloc[0]
-    assert linha_a["p_value"] < 0.01                                   # 'a' domina
-    assert linha_a["ci_low_95"] <= linha_a["coef_standardized"] <= linha_a["ci_high_95"]
+    linha_a = coefs[coefs.variavel == "a"].iloc[0]
+    assert linha_a["p_valor"] < 0.01                                   # 'a' domina
+    assert linha_a["ic95_lo"] <= linha_a["coef_padronizado"] <= linha_a["ic95_hi"]
     assert rep["n_used"] == n

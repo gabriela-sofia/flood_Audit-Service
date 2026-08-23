@@ -86,7 +86,7 @@ MOD-PROSP-01. Na variante `heranca` a unidade e o grupo (401 -> 40); na
 `bloco` e o evento positivo (201 -> 20).
 
 TRAVA DE EPV: um fold so e avaliado se o treino tiver, EM CADA CLASSE, pelo
-menos `10 x n_features` grupos. O MOD-PROSP-01 contava so o total de grupos;
+menos `10 x n_variaveis` grupos. O MOD-PROSP-01 contava so o total de grupos;
 contar assim deixa passar treino de 40 eventos contra 2 negativos, que
 produz numero sem significar nada. EPV sempre quis dizer "eventos da classe
 rara por variavel" -- aqui a regra e aplicada as duas classes, que e o que
@@ -125,7 +125,7 @@ import numpy as np
 import pandas as pd
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-import susc_firth_shim  # noqa: F401,E402
+import susc_firth_adaptador  # noqa: F401,E402
 from ds03_esquema_alvo import VERSAO  # noqa: E402
 
 REPO = Path(__file__).resolve().parents[2]
@@ -218,7 +218,7 @@ def avaliar_fold(tr: pd.DataFrame, te: pd.DataFrame, features: list[str],
             tr.loc[tr.classe == 1, "grupo_cv"].nunique() / len(features), 1),
         "auc_prospectivo": r["auc"], "ic95": r["ic95"],
         "boot_validos": r["boot_validos"],
-        "auc_treino": round(auc_tr, 4), "gap": round(auc_tr - r["auc"], 4),
+        "auc_treino": round(auc_tr, 4), "lacuna": round(auc_tr - r["auc"], 4),
         "coef": {f: round(float(c), 4)
                  for f, c in zip(features, m.coef_.ravel()[:len(features)])},
     }
@@ -330,14 +330,14 @@ def folds_bloco(u: pd.DataFrame, features: list[str],
 
 # ------------------------------------------------------------- diagnostico
 
-def viabilidade_por_fonte(pool: pd.DataFrame, n_features: int) -> pd.DataFrame:
+def viabilidade_por_fonte(pool: pd.DataFrame, n_variaveis: int) -> pd.DataFrame:
     """Quantas fontes do pool sustentam janela expansiva? Medido, nao afirmado."""
     linhas = []
     for fonte, sub in pool.groupby("fonte"):
         datas = datas_por_grupo(sub)
         ordem = datas.index.tolist()
         janela = max(MIN_GRUPOS_TESTE, len(ordem) // 10)
-        min_treino = EPV_MINIMO * n_features
+        min_treino = EPV_MINIMO * n_variaveis
         folds, i = 0, min_treino
         while i + MIN_GRUPOS_TESTE <= len(ordem):
             te = sub[sub.grupo_cv.isin(ordem[i:i + janela])]
@@ -419,7 +419,7 @@ def rodar_estrato(u: pd.DataFrame, variantes: tuple[str, ...],
     construtores = {"heranca": folds_heranca, "bloco": folds_bloco}
     resultados, todas = {}, []
     for nome_conj, features in CONJUNTOS.items():
-        resultados[nome_conj] = {"features": features, "n_features": len(features)}
+        resultados[nome_conj] = {"features": features, "n_variaveis": len(features)}
         for nome_var in variantes:
             rng = np.random.default_rng(SEMENTE)
             linhas = construtores[nome_var](u, features, rng)

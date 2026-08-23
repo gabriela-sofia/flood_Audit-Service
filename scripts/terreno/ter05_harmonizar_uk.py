@@ -55,7 +55,7 @@ def amostrar(raster: Path, lons, lats) -> np.ndarray:
     """Mesma funcao de amostragem do ter02, com o mesmo tratamento de nodata.
 
     -9999 (cadeia antiga) e -32768 (WhiteboxTools) sao finitos e passariam
-    direto para a coluna de feature se so se filtrasse valor nao finito.
+    direto para a coluna de variavel se so se filtrasse valor nao finito.
     """
     import rasterio
     from rasterio.warp import transform as wtr
@@ -112,7 +112,7 @@ def main() -> int:
         ma, mn = float(np.median(a[ok])), float(np.median(novo[ok]))
         ca = float(np.median(a[kn]) - np.median(a[kp])) if kp.any() and kn.any() else None
         cn = float(np.median(novo[kn]) - np.median(novo[kp])) if kp.any() and kn.any() else None
-        linhas.append({"regiao": REGIAO, "feature": col, "n": int(ok.sum()),
+        linhas.append({"regiao": REGIAO, "variavel": col, "n": int(ok.sum()),
                        "pearson": round(pear, 4),
                        "mediana_global": round(ma, 3), "mediana_wbt": round(mn, 3),
                        "razao": round(ma / mn, 3) if mn else None,
@@ -139,7 +139,7 @@ def main() -> int:
         "eventos": int(d.grupo_cv.nunique()),
         "manifesto": {k: man[k] for k in
                       ("crs", "pixel_size", "stream_area_km2",
-                       "stream_threshold_cells", "stream_percentile_equivalente")},
+                       "drenagem_limiar_celulas", "stream_percentile_equivalente")},
         "por_feature": linhas,
         "nota": ("o piloto ingles e uma AOI unica de ~100x50 km com 401 eventos "
                  "dentro; o grupo de validacao continua sendo o evento, nao a AOI"),

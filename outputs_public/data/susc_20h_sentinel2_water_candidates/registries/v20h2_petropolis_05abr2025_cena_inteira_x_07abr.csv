@@ -1,4 +1,4 @@
-cluster_id,n_pixels,row_centroid,col_centroid,consensus_basis,index_votes_mean,b08_after_mean,b11_after_mean,b08_before_mean,b11_before_mean,adjudicated,easting,northing,lon,lat
+cluster_id,n_pixels,centroide_linha,centroide_coluna,base_consenso,votos_indice_media,b08_depois_media,b11_depois_media,b08_antes_media,b11_antes_media,adjudicado,easting,northing,lon,lat
 S2WC_06066,3704,2431.2,1018.64,NDWI_MNDWI_AWEI,2.755,0.1019,0.0625,0.3313,0.1614,false,-43.14,-22.54,-43.139703,-22.54317
 S2WC_05015,3483,2206.8,1345.19,NDWI_MNDWI_AWEI,2.789,0.0927,0.0498,0.3117,0.141,false,-43.1,-22.52,-43.104363,-22.52073
 S2WC_06280,2490,2439.42,717.44,NDWI_MNDWI_AWEI,2.827,0.0966,0.0657,0.3251,0.1714,false,-43.17,-22.54,-43.172301,-22.543992

@@ -1,0 +1,6 @@
+variavel,sinal_esperado,pd_grade_min,pd_grade_max,monotonic,n_trocas_sinal_inclinacao,direcao,direcao_bate_esperada
+slope_deg,-1,0.4287,-0.0054,True,3,decrescente,True
+hand_m_dinf,-1,1.19,-0.0986,True,3,decrescente,True
+twi_dinf,1,0.1348,0.3041,True,4,crescente,True
+rain_peak_residual_orthogonalized,1,-0.0027,0.1692,True,1,crescente,True
+rain_decay_index_api_chirps,1,-0.898,0.9235,True,10,crescente,True

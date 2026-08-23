@@ -1,4 +1,4 @@
-estrato,conjunto,n,grupos,grupos_positivos,feature,coef,ic95_lo,ic95_hi,auc_cv,veredito,cabe_leitura_estrita
+estrato,conjunto,n,grupos,grupos_positivos,variavel,coef,ic95_lo,ic95_hi,auc_cv,veredito,cabe_leitura_estrita
 INGREME,CAUSAL_1,5162,24,19,hand_m,-1.4423,-3.1126,-0.8283,0.7916,COERENTE_COM_CRITERIOS,True
 INGREME,CAUSAL_2,5162,24,19,hand_m,-0.8221,-2.183,-0.3593,0.7847,COERENTE_COM_CRITERIOS,False
 INGREME,CAUSAL_2,5162,24,19,twi_dinf,0.7226,0.4643,0.9028,0.7847,COERENTE_COM_CRITERIOS,False

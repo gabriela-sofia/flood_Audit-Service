@@ -1,0 +1,6 @@
+variavel,n_pos,n_neg,media_pos,media_neg,mannwhitney_U,p_valor,rank_biserial_r,sinal_esperado,direcao_observada,significante_p05
+slope_deg,1238,442,3.4178,3.6835,256181.5,0.0467,0.0637,-1,pos<neg,True
+hand_m_dinf,1224,439,8.2237,10.0588,226852.5,0.0,0.1556,-1,pos<neg,True
+twi_dinf,1238,442,8.2876,7.7671,284351.0,0.2194,-0.0393,1,pos>neg,False
+rain_peak_residual_orthogonalized,1238,442,-0.7422,2.0788,225987.0,0.0,0.174,1,pos<neg,True
+rain_decay_index_api_chirps,1238,442,33.6068,26.6199,338988.5,0.0,-0.239,1,pos>neg,True

@@ -7,11 +7,11 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "outputs_public/data/susc_20k_siac156_curitiba_flood_candidates/scripts"))
-import negative_categories_curitiba as cat_mod  # noqa: E402
-import mine_negative_candidates_siac156 as mine_mod  # noqa: E402
+import categorias_negativas_curitiba as cat_mod  # noqa: E402
+import minerar_candidatos_negativos_siac156 as mine_mod  # noqa: E402
 
 
-# --- negative_categories_curitiba -----------------------------------------------------------
+# --- categorias_negativas_curitiba -----------------------------------------------------------
 
 def test_known_negative_category_recognized():
     assert cat_mod.is_curitiba_negative_category("Iluminação Pública", "Manutenção de Luminárias") is True
@@ -39,7 +39,7 @@ def test_every_category_has_real_justification_text():
         assert len(justificativa) > 20  # nao pode ser vazio/generico demais
 
 
-# --- mine_negative_candidates_siac156 --------------------------------------------------------
+# --- minerar_candidatos_negativos_siac156 --------------------------------------------------------
 
 def test_stable_rank_is_deterministic():
     r1 = mine_mod.stable_rank("a", "b", "c")
@@ -95,7 +95,7 @@ def test_mine_year_file_respects_max_por_ano(tmp_path):
 def test_rank_key_is_independent_of_csv_path(tmp_path):
     # Regressao SUSC-20N: rank_key usava str(csv_path) no hash, entao o mesmo conteudo em
     # diretorios diferentes produzia amostragem --max-por-ano diferente. rank_key tem que
-    # depender so do conteudo do registro (source_year, logradouro, bairro, data_criacao).
+    # depender so do conteudo do registro (ano_fonte, logradouro, bairro, data_criacao).
     fieldnames = ["Tipo", "Orgao", "DataCriacao", "Assunto", "Subdivisao", "Situacao", "Logradouro", "Bairro", "Regional", "DataResposta", "Origem"]
     import csv as csv_mod
 

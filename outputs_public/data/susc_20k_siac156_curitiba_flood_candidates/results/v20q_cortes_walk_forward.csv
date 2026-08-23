@@ -1,0 +1,4 @@
+anos_treino,ano_teste,epv_treino,epv_passa,n_treino,n_teste,n_pos_teste,n_neg_teste,auc_holdout
+2023,2024,21.0,True,260,350,246,104,0.6282
+"2023,2024",2025,41.8,True,610,569,463,106,0.6652
+"2023,2024,2025",2026,63.0,True,1179,279,171,108,0.5246

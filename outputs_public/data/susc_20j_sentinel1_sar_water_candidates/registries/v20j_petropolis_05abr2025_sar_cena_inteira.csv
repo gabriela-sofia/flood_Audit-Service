@@ -1,4 +1,4 @@
-cluster_id,n_pixels,row_centroid,col_centroid,vv_after_db_mean,vv_before_db_mean,drop_db_mean,vh_available,adjudicated,easting,northing,lon,lat
+cluster_id,n_pixels,centroide_linha,centroide_coluna,vv_depois_db_media,vv_antes_db_media,queda_db_media,vh_disponivel,adjudicado,easting,northing,lon,lat
 S1WC_01233,11,1743.91,954.64,-18.93,-14.39,4.53,True,false,-43.15,-22.47,-43.14663,-22.474441
 S1WC_01346,11,1914.73,1678.64,-18.91,-14.25,4.65,True,false,-43.07,-22.49,-43.068275,-22.491523
 S1WC_00182,10,317.2,1577.3,-20.57,-15.95,4.62,True,false,-43.08,-22.33,-43.079242,-22.33177

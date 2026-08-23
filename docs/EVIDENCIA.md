@@ -54,6 +54,10 @@ Ordem cronológica. "Veredito" é o que a rodada decidiu, não o que se esperava
 | 20/08 | **E6 — Contrato de inferência** | `servico/svc01_construir_modelos_servidos.py`, `svc02_contrato_inferencia.py` | `modelo/execucoes/svc-01-modelos/`, `svc-02-contrato/` | Três modelos servidos, cinco portões, IC por bootstrap de grupos | Contrato executável; falta transporte HTTP |
 | 20/08 | **Estado da chuva no projeto** | `treino/aud_chuva02_escala_do_contraste.py` | `modelo/execucoes/aud-chuva-02/` | Cobertura de 14% para 99,99%, produto único | A chuva **não discrimina** na escala do modelo (~11 km) |
 
+Alguns scripts citados na coluna "Script" são de rodadas anteriores à consolidação e não
+estão versionados neste repositório — a tabela os nomeia porque é o registro do que rodou,
+não do que ficou.
+
 ---
 
 ## 3. Os achados que mudaram o rumo

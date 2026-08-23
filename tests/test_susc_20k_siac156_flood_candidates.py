@@ -17,12 +17,12 @@ from rasterio.transform import from_origin
 
 SCRIPTS_DIR = Path(__file__).resolve().parents[1] / "outputs_public/data/susc_20k_siac156_curitiba_flood_candidates/scripts"
 sys.path.insert(0, str(SCRIPTS_DIR))
-import extract_flood_complaints_siac156 as extract_mod  # noqa: E402
-import geocode_nominatim as geocode_mod  # noqa: E402
-import adjudicate_hand_twi_candidates as adjudicate_mod  # noqa: E402
+import extrair_reclamacoes_enchente_siac156 as extract_mod  # noqa: E402
+import geocodificar_nominatim as geocode_mod  # noqa: E402
+import adjudicar_candidatos_hand_twi as adjudicate_mod  # noqa: E402
 
 
-# --- extract_flood_complaints_siac156 -----------------------------------------------------
+# --- extrair_reclamacoes_enchente_siac156 -----------------------------------------------------
 
 def test_normalize_strips_accents_and_case():
     assert extract_mod.normalize("Cajuru") == "CAJURU"
@@ -64,10 +64,10 @@ def test_extract_candidates_filters_by_date_and_keyword_and_dedupes(tmp_path):
             {"Tipo": "Solicitação", "Orgao": "X", "DataCriacao": "10/02/2025", "Assunto": "Drenagem", "Subdivisao": "Alagamentos", "Situacao": "Aberto", "Logradouro": "Rua C", "Bairro": "XAXIM", "Regional": "", "DataResposta": "", "Origem": "Mobile"},  # fora da janela
         ],
     )
-    events = [extract_mod.EventWindow(window_id="EV1", event_date_ddmmyyyy="03/02/2025", expected_bairros={"XAXIM"})]
+    events = [extract_mod.EventWindow(janela_id="EV1", data_evento_ddmmaaaa="03/02/2025", expected_bairros={"XAXIM"})]
     rows = extract_mod.extract_candidates([csv_path], events)
     assert len(rows) == 1  # so a linha flood-related, dentro da data, deduplicada
-    assert rows[0]["window_id"] == "EV1"
+    assert rows[0]["janela_id"] == "EV1"
     assert rows[0]["bairro_esperado"] is True
 
 
@@ -77,7 +77,7 @@ def test_extract_candidates_marks_bairro_esperado_false_when_not_in_list(tmp_pat
         csv_path,
         [{"Tipo": "Solicitação", "Orgao": "X", "DataCriacao": "03/02/2025", "Assunto": "Drenagem", "Subdivisao": "Alagamentos", "Situacao": "Aberto", "Logradouro": "Rua Z", "Bairro": "CENTRO", "Regional": "", "DataResposta": "", "Origem": "Mobile"}],
     )
-    events = [extract_mod.EventWindow(window_id="EV1", event_date_ddmmyyyy="03/02/2025", expected_bairros={"XAXIM"})]
+    events = [extract_mod.EventWindow(janela_id="EV1", data_evento_ddmmaaaa="03/02/2025", expected_bairros={"XAXIM"})]
     rows = extract_mod.extract_candidates([csv_path], events)
     assert len(rows) == 1
     assert rows[0]["bairro_esperado"] is False
@@ -85,13 +85,13 @@ def test_extract_candidates_marks_bairro_esperado_false_when_not_in_list(tmp_pat
 
 def test_load_events_parses_bairro_list(tmp_path):
     events_path = tmp_path / "eventos.csv"
-    events_path.write_text("window_id,event_date_ddmmyyyy,bairros\nEV1,03/02/2025,Xaxim;Portao\n", encoding="utf-8")
+    events_path.write_text("janela_id,data_evento_ddmmaaaa,bairros\nEV1,03/02/2025,Xaxim;Portao\n", encoding="utf-8")
     events = extract_mod.load_events(events_path)
     assert len(events) == 1
     assert events[0].expected_bairros == {"XAXIM", "PORTAO"}
 
 
-# --- geocode_nominatim (só a lógica pura, sem chamada de rede) -----------------------------
+# --- geocodificar_nominatim (só a lógica pura, sem chamada de rede) -----------------------------
 
 def test_classify_result_prefers_street_level_over_place_level():
     bbox = (-49.45, -25.65, -49.10, -25.30)
@@ -101,7 +101,7 @@ def test_classify_result_prefers_street_level_over_place_level():
     ]
     res = geocode_mod.classify_result(results, bbox)
     assert res is not None
-    assert res.confidence_tier == "strong"
+    assert res.nivel_confianca == "strong"
     assert res.osm_id == "2"
 
 
@@ -109,7 +109,7 @@ def test_classify_result_falls_back_to_medium_without_street_level():
     bbox = (-49.45, -25.65, -49.10, -25.30)
     results = [{"lat": "-25.40", "lon": "-49.25", "class": "place", "type": "suburb", "display_name": "Bairro X", "osm_id": 1}]
     res = geocode_mod.classify_result(results, bbox)
-    assert res.confidence_tier == "medium"
+    assert res.nivel_confianca == "medium"
 
 
 def test_classify_result_returns_none_when_outside_bbox():
@@ -123,8 +123,8 @@ def test_geocode_uses_cache_without_network_call(monkeypatch):
     bbox = (-49.45, -25.65, -49.10, -25.30)
     cache = {
         "Rua A, XAXIM, Curitiba, PR, Brasil": {
-            "confidence_tier": "strong", "lat": -25.5, "lon": -49.26,
-            "nominatim_display_name": "Rua A", "osm_class": "highway", "osm_type": "residential",
+            "nivel_confianca": "strong", "lat": -25.5, "lon": -49.26,
+            "nominatim_nome_exibicao": "Rua A", "osm_class": "highway", "osm_type": "residential",
             "osm_id": "123", "reason": None,
         }
     }
@@ -134,11 +134,11 @@ def test_geocode_uses_cache_without_network_call(monkeypatch):
 
     monkeypatch.setattr(geocode_mod, "_call_nominatim", _boom)
     res = geocode_mod.geocode_one("Rua A", "XAXIM", "Curitiba, PR, Brasil", bbox, opener=None, cache=cache)
-    assert res.confidence_tier == "strong"
+    assert res.nivel_confianca == "strong"
     assert res.lat == -25.5
 
 
-# --- adjudicate_hand_twi_candidates (rasters sintéticos pequenos) --------------------------
+# --- adjudicar_candidatos_hand_twi (rasters sintéticos pequenos) --------------------------
 
 def _write_synthetic_raster(path: Path, data: np.ndarray, crs="EPSG:31982", origin=(680000.0, 7178000.0), pixel=10.0, nodata=-9999.0):
     transform = from_origin(origin[0], origin[1], pixel, pixel)
@@ -178,7 +178,7 @@ def test_adjudicate_point_flags_plausible_flood_signature(tmp_path):
     assert out["hand_m"] == pytest.approx(1.0, abs=0.01)
     assert out["twi"] == pytest.approx(12.0, abs=0.01)
     assert out["slope_deg"] == pytest.approx(1.0, abs=0.01)
-    assert out["dist_to_extracted_stream_m"] == pytest.approx(20.0, abs=0.5)
+    assert out["dist_drenagem_m"] == pytest.approx(20.0, abs=0.5)
     assert out["assinatura_enchente_plausivel"] is True
 
 

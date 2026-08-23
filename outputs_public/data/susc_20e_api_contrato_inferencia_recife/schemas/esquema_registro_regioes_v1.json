@@ -1,0 +1,62 @@
+{
+  "schema_version": "registro_regioes.v1",
+  "properties": {
+    "name": {
+      "title": "Name",
+      "type": "string"
+    },
+    "bbox_wgs84": {
+      "maxItems": 4,
+      "minItems": 4,
+      "prefixItems": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "number"
+        },
+        {
+          "type": "number"
+        },
+        {
+          "type": "number"
+        }
+      ],
+      "title": "Bbox Wgs84",
+      "type": "array"
+    },
+    "versao_modelo": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Versao Modelo"
+    },
+    "region_maturity": {
+      "enum": [
+        "available",
+        "limited_evidence",
+        "insufficient"
+      ],
+      "title": "Region Maturity",
+      "type": "string"
+    },
+    "status_note": {
+      "title": "Status Note",
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "bbox_wgs84",
+    "versao_modelo",
+    "region_maturity",
+    "status_note"
+  ],
+  "title": "RegionInfo",
+  "type": "object"
+}

@@ -1,0 +1,6 @@
+variavel,coef_padronizado,ic95_lo,ic95_hi,p_valor,sinal_esperado,sinal_bate_esperado,ic95_cruza_zero
+slope_deg,0.0236,-0.1362,0.1893,0.7734,-1,False,True
+hand_m_dinf,-0.1428,-0.2896,0.005,0.0582,-1,True,True
+twi_dinf,0.1462,-0.0405,0.352,0.1296,1,True,True
+rain_peak_residual_orthogonalized,-0.3898,-0.5252,-0.2573,0.0,1,False,False
+rain_decay_index_api_chirps,0.5356,0.3738,0.7056,0.0,1,True,False

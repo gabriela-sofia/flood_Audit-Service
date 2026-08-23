@@ -386,19 +386,19 @@ def _reduzir_brasil(nome: str, cfg: dict, sufixo_terreno: str,
     b = pd.read_csv(p, low_memory=False)
 
     d = pd.DataFrame(index=b.index)
-    # O identificador da fonte NAO e unico em Curitiba: 150 `point_id` aparecem
+    # O identificador da fonte NAO e unico em Curitiba: 150 `ponto_id` aparecem
     # duas vezes, mesma coordenada, mesma unidade de observacao, mesmo rotulo --
     # a pseudo-replicacao ja conhecida do SIAC 156. O contrato exige ponto_id
     # unico, entao a repeticao ganha ordinal em vez de ser deduplicada aqui:
     # descartar linha e decisao de admissao, e admissao e do ds05.
-    bruto = b["point_id"].astype(str)
+    bruto = b["ponto_id"].astype(str)
     n_repetidos = int(bruto.duplicated().sum())
     ordinal = bruto.groupby(bruto).cumcount()
     d["ponto_id"] = (f"{nome}__" + bruto
                      + np.where(ordinal > 0, "#" + ordinal.astype(str), ""))
     d["fonte"] = nome
     d["aoi"] = cfg["aoi"]
-    d["classe"] = pd.to_numeric(b["label"], errors="coerce").astype("Int64")
+    d["classe"] = pd.to_numeric(b["rotulo"], errors="coerce").astype("Int64")
     d["grupo_cv"] = b[cfg["grupo"]].astype(str)
     d["unidade_agrupamento"] = cfg["unidade"]
     d["resolucao_nativa_m"] = cfg["resolucao_nativa_m"]
@@ -408,12 +408,12 @@ def _reduzir_brasil(nome: str, cfg: dict, sufixo_terreno: str,
     d["classe_relevo_base"] = "declarada"
     d["lat"] = b["lat"]
     d["lon"] = b["lon"]
-    d["data_evento"] = b.get("event_date")
+    d["data_evento"] = b.get("data_evento")
 
     # procedencia carrega o rotulo de origem EXATO, para nada se perder na
     # traducao: e por ele que se reencontra a linha no pipeline da fonte.
-    origem = b.get("negative_source_type")
-    papel = b.get("dataset_role_source")
+    origem = b.get("tipo_fonte_negativo")
+    papel = b.get("papel_fonte_dataset")
     d["procedencia"] = np.where(
         d["classe"] == 0,
         origem.fillna("negativo_sem_tipo_declarado") if origem is not None
@@ -469,7 +469,7 @@ def _reduzir_brasil(nome: str, cfg: dict, sufixo_terreno: str,
 # harmonizacao custou. O que muda e qual das duas e a canonica.
 CFG_RECIFE = {
     "aoi": "recife_rmr",
-    "grupo": "point_id",
+    "grupo": "ponto_id",
     "unidade": "ponto",
     # a observacao continua sendo de 10 m; o que passa a 30 m e a DERIVACAO de
     # terreno. Sao coisas diferentes e a coluna registra a primeira.
@@ -495,7 +495,7 @@ CFG_RECIFE_NATIVA_10M = {
 
 CFG_CURITIBA = {
     "aoi": "curitiba_amc",
-    "grupo": "observation_unit_key",
+    "grupo": "chave_unidade_observacao",
     "unidade": "unidade_observacao",
     "resolucao_nativa_m": 10.0,
     "mecanismo": FLUVIAL,

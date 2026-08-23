@@ -1,10 +1,10 @@
 """SUSC-20E -- API local do contrato de inferência (Fase 5 do
 PLANO_ACAO_produto_v1.md), só depois de 1-3 terem números reais (já têm).
 
-Implementa o rascunho v0 do contrato (`txtpragab.docx` / `contract_schema.py`)
+Implementa o rascunho v0 do contrato (`txtpragab.docx` / `esquema_contrato.py`)
 com as duas decisões já tomadas na Fase 2
 (`revp_fase2_decisoes_design_contrato.md`): CI = bootstrap preditivo (motor
-SUSC-20D, já validado); DINO nunca soma ao score, só aparece em
+SUSC-20D, já validado); DINO nunca soma ao escore, só aparece em
 `evidence.dino_*` quando o índice de patches estiver configurado.
 
 Roda só localmente (uvicorn). Não é deploy, não é infraestrutura
@@ -25,11 +25,11 @@ from shapely.geometry import shape
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "susc_20d_motor_inferencia_local_mvp_recife" / "scripts"))
 
-from contract_schema import Evidence, FeatureUsed, ScoreBlock, ScoreRequest, ScoreResponse  # noqa: E402
-from engine_bridge import RecifeEngine  # noqa: E402
-from gates import evaluate_gates  # noqa: E402
-from region_registry import REGIONS  # noqa: E402
-from susc_20d_score_engine import find_dino_evidence, load_dino_evidence_index  # noqa: E402
+from esquema_contrato import Evidence, FeatureUsed, ScoreBlock, ScoreRequest, ScoreResponse  # noqa: E402
+from ponte_motor import RecifeEngine  # noqa: E402
+from portoes import evaluate_gates  # noqa: E402
+from registro_regioes import REGIONS  # noqa: E402
+from susc_20d_motor_escore import find_dino_evidence, load_dino_evidence_index  # noqa: E402
 
 DATA_VERSION = "SUSC-20D/v12 (n=269) + Curitiba Leads A/B/C (parcial) -- 2026-07-24"
 
@@ -71,55 +71,55 @@ def _parse_period_end(req: ScoreRequest) -> date | None:
         return None
 
 
-@app.post("/score", response_model=ScoreResponse)
-def score(req: ScoreRequest) -> ScoreResponse:
+@app.post("/escore", response_model=ScoreResponse)
+def escore(req: ScoreRequest) -> ScoreResponse:
     assert _engine is not None, "engine não inicializado (startup não rodou)"
 
     end_date = _parse_period_end(req)
-    gate_result = evaluate_gates(req.region.geometry, req.region.crs, _engine.known_points, end_date)
+    gate_result = evaluate_gates(req.regiao.geometry, req.regiao.crs, _engine.known_points, end_date)
     status = gate_result["status"]
     region_maturity = gate_result["region_maturity"]
-    region = gate_result["region"]
+    regiao = gate_result["regiao"]
     matched_points = gate_result["matched_points"]
     computed = gate_result["computed_features"]
     blockers = gate_result["blockers"]
 
-    base_limitations = list(_engine.limitations()) if region == "recife" else []
-    if region is not None and REGIONS[region].status_note:
-        base_limitations = [REGIONS[region].status_note] + base_limitations
+    base_limitations = list(_engine.limitations()) if regiao == "recife" else []
+    if regiao is not None and REGIONS[regiao].status_note:
+        base_limitations = [REGIONS[regiao].status_note] + base_limitations
     if blockers:
         base_limitations = [f"gate_bloqueado: {b}" for b in blockers] + base_limitations
 
     if status != "ok":
         return ScoreResponse(
             request_id=req.request_id, status=status, region_maturity=region_maturity,
-            score=ScoreBlock(value=None, confidence_interval=None,
-                              model_version=(REGIONS[region].model_version if region else None)),
+            escore=ScoreBlock(value=None, confidence_interval=None,
+                              versao_modelo=(REGIONS[regiao].versao_modelo if regiao else None)),
             features_used=[], evidence=Evidence(observational_points_used=0, sources=[]),
             limitations=base_limitations, data_version=DATA_VERSION, generated_at=_now_iso(),
         )
 
-    # region == "recife" garantido pelo gate_model_valid_for_region (só Recife tem modelo).
+    # regiao == "recife" garantido pelo gate_model_valid_for_region (só Recife tem modelo).
     on_demand = computed is not None and not matched_points
     if matched_points:
-        # Multiplos pontos conhecidos na geometria: usa o de label mais
-        # incerto (score mais proximo de 0.5 no ponto) seria arbitrario;
+        # Multiplos pontos conhecidos na geometria: usa o de rotulo mais
+        # incerto (escore mais proximo de 0.5 no ponto) seria arbitrario;
         # reporta o primeiro e deixa explicito quantos existem via evidence.
         target = matched_points[0]
         out = _engine.score_known_point(target)
         target_lat, target_lon = float(target["lat"]), float(target["lon"])
     else:
         # SUSC-20F: geometria sem ponto conhecido, mas dentro da cobertura
-        # real do DTM -- score calculado sob demanda (terreno + chuva ao vivo).
+        # real do DTM -- escore calculado sob demanda (terreno + chuva ao vivo).
         assert computed is not None
         out = _engine.score_known_point(computed["features"])
-        centroid = shape(req.region.geometry).centroid
+        centroid = shape(req.regiao.geometry).centroid
         target_lon, target_lat = centroid.x, centroid.y
 
     features_used = [
-        FeatureUsed(name=c["feature"],
+        FeatureUsed(name=c["variavel"],
                     contribution=_weight_tier_to_contract(c),
-                    stability=_stability_for_feature(c["feature"]))
+                    stability=_stability_for_feature(c["variavel"]))
         for c in out["features_used"]
     ]
 
@@ -137,7 +137,7 @@ def score(req: ScoreRequest) -> ScoreResponse:
     if on_demand:
         sources = ["DTM PE3D merged (D-infinity, SUSC-20B)", "Open-Meteo ERA5-Land archive (ao vivo)"]
         base_limitations = [
-            f"score calculado sob demanda (SUSC-20F), nao a partir de um ponto historico conhecido: {computed['provenance']['elevation_slope_caveat']}",
+            f"escore calculado sob demanda (SUSC-20F), nao a partir de um ponto historico conhecido: {computed['provenance']['elevation_slope_caveat']}",
         ] + base_limitations
     else:
         sources = ["SEDEC", "Diário Oficial Recife", "ANA", "Global Flood Database"]
@@ -151,8 +151,8 @@ def score(req: ScoreRequest) -> ScoreResponse:
 
     return ScoreResponse(
         request_id=req.request_id, status="ok", region_maturity=region_maturity,
-        score=ScoreBlock(value=out["score"], confidence_interval=out["confidence_interval"],
-                          model_version=REGIONS["recife"].model_version),
+        escore=ScoreBlock(value=out["escore"], confidence_interval=out["confidence_interval"],
+                          versao_modelo=REGIONS["recife"].versao_modelo),
         features_used=features_used, evidence=evidence,
         limitations=base_limitations, data_version=DATA_VERSION, generated_at=_now_iso(),
     )
@@ -160,5 +160,5 @@ def score(req: ScoreRequest) -> ScoreResponse:
 
 @app.get("/regions")
 def regions() -> dict:
-    return {name: {"region_maturity": info.region_maturity, "model_version": info.model_version,
+    return {name: {"region_maturity": info.region_maturity, "versao_modelo": info.versao_modelo,
                     "status_note": info.status_note} for name, info in REGIONS.items()}

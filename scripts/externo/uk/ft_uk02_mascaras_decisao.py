@@ -25,7 +25,7 @@ SAIDAS (todas na grade 3333x1666, EPSG:27700, 30 m):
   agua_permanente.tif     1 = ocorrencia de agua JRC > 50%
   classe_adjudicacao.tif  0=indefinido 1=POS_CAND 2=EXCLUIDO 3=NEG_CAND
 
-NAO faz: nao amostra ponto, nao promove rotulo, nao extrai feature de modelo.
+NAO faz: nao amostra ponto, nao promove rotulo, nao extrai variavel de modelo.
 Produz as mascaras que tornam a amostragem auditavel.
 
 Uso:
@@ -46,7 +46,7 @@ from rasterio.features import rasterize
 from rasterio.warp import reproject
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from geo_store import ler_bbox  # noqa: E402
+from armazenamento_geo import ler_bbox  # noqa: E402
 
 REPO = Path(__file__).resolve().parents[2]
 RUNS = REPO / "local_runs"

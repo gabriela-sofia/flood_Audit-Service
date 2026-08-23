@@ -21,7 +21,7 @@ e monta um registro so, com as grandezas que decidem comparabilidade:
 POR QUE O LIMIAR EM AREA E A COLUNA QUE IMPORTA:
 
 os manifestos antigos das tres regioes brasileiras registravam todos
-"stream_percentile = 98,0". Convertido para area contribuinte, o criterio era
+"drenagem_percentil = 98,0". Convertido para area contribuinte, o criterio era
 outro em cada uma -- 0,1123 km2 em Recife, 0,0847 em Curitiba e 0,7507 em
 Petropolis, 6,7 vezes mais esparso. Como HAND e a altura acima do canal mais
 proximo, tres limiares sao tres definicoes de canal, logo tres variaveis
@@ -75,12 +75,12 @@ def linha(nome: str, man: dict) -> dict:
         "pixel_m": px[0],
         "shape": "x".join(str(v) for v in (man.get("shape") or [])),
         "area_canal_km2": man.get("stream_area_km2"),
-        "canal_celulas": (round(man["stream_threshold_cells"], 1)
-                          if man.get("stream_threshold_cells") is not None else None),
+        "canal_celulas": (round(man["drenagem_limiar_celulas"], 1)
+                          if man.get("drenagem_limiar_celulas") is not None else None),
         "percentil_equivalente": (round(man["stream_percentile_equivalente"], 1)
                                   if man.get("stream_percentile_equivalente") is not None
                                   else None),
-        "wbt": man.get("wbt_version") or man.get("whitebox_version"),
+        "wbt": man.get("versao_wbt") or man.get("whitebox_version"),
         "segundos": man.get("elapsed_s"),
         "n_saidas_com_hash": len(saidas) if isinstance(saidas, dict) else None,
     }
@@ -170,7 +170,7 @@ def main() -> int:
         print("\n--- BRASIL: cadeia antiga contra harmonizada (ter03) ---")
         for reg, v in comparacoes["brasil_ter03"].items():
             for f in v.get("features", []):
-                print(f"   {reg:10s} {f['feature']:16s} pearson={f['pearson']:6.3f} "
+                print(f"   {reg:10s} {f['variavel']:16s} pearson={f['pearson']:6.3f} "
                       f"razao={f['razao']}  nodata={f['perdidos_nodata']}")
     else:
         print(f"\nAVISO: {CMP_BR} ausente -- Brasil sem comparacao registrada")

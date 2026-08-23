@@ -63,15 +63,15 @@ FONTES = {
     "recife": {
         "tabela": PROJETO / "local_runs" / "recife_modelo_v12_extracao_final" / "dataset_v12_final.csv",
         "deriv": DERIV / "recife_harmonizado",
-        "grupo": "point_id",
+        "grupo": "ponto_id",
         "esperado": 278,
     },
     "curitiba": {
         "tabela": (REPO / "outputs_public" / "data"
                    / "susc_20k_siac156_curitiba_flood_candidates" / "registries"
-                   / "v20n_dataset_curitiba_features_v2.csv"),
+                   / "v20n_dataset_curitiba_variaveis_v2.csv"),
         "deriv": DERIV / "curitiba_harmonizado",
-        "grupo": "observation_unit_key",
+        "grupo": "chave_unidade_observacao",
         "esperado": 1680,
     },
 }
@@ -114,11 +114,11 @@ def main() -> int:
                   f"Prossigo, mas confira a fonte.")
         grupos = d[cfg["grupo"]].nunique()
         print(f"\n[{nome}] linhas={len(d):,} grupos({cfg['grupo']})={grupos:,} "
-              f"pos={int((d.label == 1).sum()):,} neg={int((d.label == 0).sum()):,}")
+              f"pos={int((d.rotulo == 1).sum()):,} neg={int((d.rotulo == 0).sum()):,}")
 
         man = json.loads((deriv / "run_manifest.json").read_text(encoding="utf-8"))
         print(f"   derivacao: {man['crs']} px={man['pixel_size'][0]}m "
-              f"canal={man['stream_threshold_cells']:.1f} cel "
+              f"canal={man['drenagem_limiar_celulas']:.1f} cel "
               f"({man['stream_area_km2']} km2, p{man['stream_percentile_equivalente']:.1f})")
 
         linhas = []
@@ -137,11 +137,11 @@ def main() -> int:
                 continue
             pear = float(np.corrcoef(a[ok], novo[ok])[0, 1])
             ma, mn = float(np.median(a[ok])), float(np.median(novo[ok]))
-            lab = d.label.to_numpy()
+            lab = d.rotulo.to_numpy()
             kp, kn = (lab == 1) & ok, (lab == 0) & ok
             ca = float(np.median(a[kn]) - np.median(a[kp])) if kp.any() and kn.any() else None
             cn = float(np.median(novo[kn]) - np.median(novo[kp])) if kp.any() and kn.any() else None
-            linhas.append({"regiao": nome, "feature": col, "n": int(ok.sum()),
+            linhas.append({"regiao": nome, "variavel": col, "n": int(ok.sum()),
                            "pearson": round(pear, 4),
                            "mediana_original": round(ma, 3), "mediana_wbt30": round(mn, 3),
                            "razao": round(ma / mn, 3) if mn else None,
@@ -157,7 +157,7 @@ def main() -> int:
                            "grupo_col": cfg["grupo"],
                            "manifesto": {k: man[k] for k in
                                          ("crs", "pixel_size", "stream_area_km2",
-                                          "stream_threshold_cells",
+                                          "drenagem_limiar_celulas",
                                           "stream_percentile_equivalente")},
                            "features": linhas}
 

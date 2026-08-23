@@ -1,0 +1,104 @@
+{
+  "holdout_default": {
+    "n_treino": 1179,
+    "n_teste": 279,
+    "n_knots": 5,
+    "degree": 3,
+    "C": 1.0,
+    "auc_holdout_2026": 0.5445
+  },
+  "spatial_block_cv_default": {
+    "n_splits": 5,
+    "auc_mean": 0.6509,
+    "auc_std": 0.0456,
+    "auc_min": 0.5905,
+    "auc_max": 0.695
+  },
+  "hyperparam_grid_summary": {
+    "n_combos": 30,
+    "auc_min": 0.5212,
+    "auc_median": 0.5484,
+    "auc_max": 0.575,
+    "pct_above_gbm": 0.0,
+    "pct_above_linear_baseline": 96.7
+  },
+  "additive_effects": [
+    {
+      "variavel": "slope_deg",
+      "grade_min": 0.0,
+      "grade_max": 23.2152,
+      "efeito_no_min": 0.3381,
+      "efeito_no_max": 0.0189,
+      "efeito_amplitude": 0.5166,
+      "monotonic": false,
+      "n_trocas_sinal_inclinacao": 3,
+      "direcao": "decrescente",
+      "sinal_esperado": -1,
+      "direcao_bate_esperada": true
+    },
+    {
+      "variavel": "hand_m_dinf",
+      "grade_min": 0.0,
+      "grade_max": 51.8466,
+      "efeito_no_min": 0.7719,
+      "efeito_no_max": -0.5889,
+      "efeito_amplitude": 1.3609,
+      "monotonic": false,
+      "n_trocas_sinal_inclinacao": 2,
+      "direcao": "decrescente",
+      "sinal_esperado": -1,
+      "direcao_bate_esperada": true
+    },
+    {
+      "variavel": "twi_dinf",
+      "grade_min": 3.8944,
+      "grade_max": 36.8008,
+      "efeito_no_min": 0.1603,
+      "efeito_no_max": -0.0855,
+      "efeito_amplitude": 0.3135,
+      "monotonic": false,
+      "n_trocas_sinal_inclinacao": 2,
+      "direcao": "decrescente",
+      "sinal_esperado": 1,
+      "direcao_bate_esperada": false
+    },
+    {
+      "variavel": "rain_peak_residual_orthogonalized",
+      "grade_min": -14.9778,
+      "grade_max": 55.2532,
+      "efeito_no_min": 0.5545,
+      "efeito_no_max": -0.7948,
+      "efeito_amplitude": 1.5383,
+      "monotonic": false,
+      "n_trocas_sinal_inclinacao": 2,
+      "direcao": "decrescente",
+      "sinal_esperado": 1,
+      "direcao_bate_esperada": false
+    },
+    {
+      "variavel": "rain_decay_index_api_chirps",
+      "grade_min": 0.061,
+      "grade_max": 161.582,
+      "efeito_no_min": -0.9783,
+      "efeito_no_max": 0.5544,
+      "efeito_amplitude": 1.6306,
+      "monotonic": false,
+      "n_trocas_sinal_inclinacao": 3,
+      "direcao": "crescente",
+      "sinal_esperado": 1,
+      "direcao_bate_esperada": true
+    }
+  ],
+  "resumo": {
+    "reference_linear_baseline": 0.5246,
+    "reference_gbm_v20u": 0.5888,
+    "gam_holdout_auc_2026_default_config": 0.5445,
+    "gam_spatial_block_cv_auc_mean": 0.6509,
+    "gam_best_holdout_auc_grid": 0.575,
+    "recuperou_o_sinal_do_gbm": false,
+    "melhora_parcial_sobre_linear": true,
+    "gap_para_gbm": 0.0138,
+    "n_features_direction_matches_expected": 3,
+    "n_features_monotonic": 0
+  }
+}

@@ -1,7 +1,7 @@
 """
 EXT-UK-07 -- Converte as aquisicoes externas para GeoParquet com poda por bbox.
 
-Ver `geo_store.py` para o motivo tecnico. Em resumo: as paginas GeoJSON
+Ver `armazenamento_geo.py` para o motivo tecnico. Em resumo: as paginas GeoJSON
 somam mais de 1 GB e obrigam a carregar a Inglaterra inteira para olhar uma
 AOI de 5.000 km2; isso ja estourou a memoria de um ambiente de 3,9 GB durante
 o EXT-UK-05.
@@ -26,7 +26,7 @@ from pathlib import Path
 
 import geopandas as gpd
 
-from geo_store import (
+from armazenamento_geo import (
     converter_arquivo, converter_paginas, converter_paginas_particionado, ler_bbox,
 )
 
@@ -118,7 +118,7 @@ def main() -> int:
         "celula de 10 km, o que permite poda de grupos de linhas na leitura.\n\n"
         "Consultar por AOI:\n\n"
         "```python\n"
-        "from geo_store import ler_bbox\n"
+        "from armazenamento_geo import ler_bbox\n"
         "gdf = ler_bbox('local_runs/geostore/recorded_flood_outlines.parquet',\n"
         "               (350000, 350000, 400000, 450000))\n"
         "```\n\n"

@@ -1,6 +1,0 @@
-feature,coef_standardized,ci_low_95,ci_high_95,p_value,expected_sign,sign_matches_expected,ci_crosses_zero
-slope_deg,-0.0026,-0.1387,0.1372,0.9639,-1,True,True
-hand_m_dinf,-0.1401,-0.2672,-0.0123,0.0317,-1,True,False
-twi_dinf,0.0761,-0.0729,0.2387,0.3267,1,True,True
-rain_peak_residual_orthogonalized,-0.3276,-0.444,-0.2128,0.0,1,False,False
-rain_decay_index_api_chirps,0.4278,0.2937,0.5672,0.0,1,True,False

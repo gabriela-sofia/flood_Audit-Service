@@ -1,4 +1,4 @@
-contexto,etapa,especificacao,feature,coef_padronizado,p_value,sinal_esperado_bate,ic95_cruza_zero
+contexto,etapa,especificacao,variavel,coef_padronizado,p_valor,sinal_esperado_bate,ic95_cruza_zero
 AUC embaralhado (in-sample),v20m,primario_5feat,slope_deg,-0.1239,0.2904,True,True
 AUC embaralhado (in-sample),v20m,primario_5feat,hand_m_dinf,-0.0422,0.7037,True,True
 AUC embaralhado (in-sample),v20m,primario_5feat,twi_dinf,0.0424,0.7671,True,True

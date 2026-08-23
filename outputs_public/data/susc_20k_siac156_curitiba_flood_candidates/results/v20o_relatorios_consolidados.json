@@ -1,0 +1,32 @@
+{
+  "split": {
+    "treino_anos": [
+      2023,
+      2024,
+      2025
+    ],
+    "teste_anos": [
+      2026
+    ]
+  },
+  "gate_epv_treino": {
+    "classe_minoritaria": "negativo",
+    "n_minoritaria_apos_listwise": 315,
+    "n_variaveis": 5,
+    "epv": 63.0,
+    "piso": 20.0,
+    "passa": true
+  },
+  "firth_report_treino": {
+    "n_treino": 1179,
+    "n_pos_train": 864,
+    "n_neg_train": 315
+  },
+  "auc_holdout": {
+    "n_treino": 1179,
+    "n_teste": 279,
+    "n_pos_teste": 171,
+    "n_neg_teste": 108,
+    "auc_holdout": 0.5246
+  }
+}

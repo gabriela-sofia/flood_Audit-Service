@@ -1,7 +1,7 @@
 """Testes reais (sintéticos, sem rede) pra engenharia de features de Curitiba -- susc_20l.
 
 Cobre o que dá pra verificar offline: a fórmula de chuva tem que ser literalmente a mesma
-de `fetch_rain_leadA_positives.py` (SUSC-20B), a ortogonalização tem que produzir resíduo
+de `baixar_chuva_positivos_lead_a.py` (SUSC-20B), a ortogonalização tem que produzir resíduo
 de fato ortogonal, e o dataset publicado tem que ser consistente com os registries de
 entrada (nada inventado, nada perdido).
 """
@@ -19,15 +19,15 @@ ROOT = Path(__file__).resolve().parents[1]
 SCRIPTS = ROOT / "outputs_public/data/susc_20k_siac156_curitiba_flood_candidates/scripts"
 REGISTRIES = ROOT / "outputs_public/data/susc_20k_siac156_curitiba_flood_candidates/registries"
 sys.path.insert(0, str(SCRIPTS))
-import build_v20l_curitiba_features as b20l  # noqa: E402
+import montar_variaveis_curitiba_v20l as b20l  # noqa: E402
 
-DATASET = REGISTRIES / "v20l_dataset_curitiba_features_v1.csv"
+DATASET = REGISTRIES / "v20l_dataset_curitiba_variaveis_v1.csv"
 
 
 # --- fórmula de chuva: equivalência literal ao script de Recife -----------------------------
 
 def _recife_reference_formula(daily_values: list[float]) -> tuple[float, float]:
-    """Cópia literal do trecho de cálculo de fetch_rain_leadA_positives.py (SUSC-20B),
+    """Cópia literal do trecho de cálculo de baixar_chuva_positivos_lead_a.py (SUSC-20B),
     para servir de oráculo independente."""
     arr = np.array(daily_values, dtype=float)
     rain_max = float(np.nanmax(arr))
@@ -142,8 +142,8 @@ def test_dataset_preserves_every_input_row(dataset):
     pos = pd.read_csv(REGISTRIES / "v20k2_dataset_positivos_curitiba_siac156_v1.csv")
     neg = pd.read_csv(REGISTRIES / "v20k3_dataset_negativos_curitiba_siac156_v1.csv")
     assert len(dataset) == len(pos) + len(neg)
-    assert int((dataset.label == 1).sum()) == len(pos)
-    assert int((dataset.label == 0).sum()) == len(neg)
+    assert int((dataset.rotulo == 1).sum()) == len(pos)
+    assert int((dataset.rotulo == 0).sum()) == len(neg)
 
 
 def test_dataset_preserves_provenance_columns(dataset):
@@ -161,8 +161,8 @@ def test_dataset_has_target_schema(dataset):
 
 
 def test_no_feature_derived_from_label(dataset):
-    """Nenhuma feature pode ser função do label, de score ou de threshold."""
-    proibidos = ("score", "threshold", "susceptib", "risk_index", "prob_")
+    """Nenhuma variavel pode ser função do rotulo, de escore ou de threshold."""
+    proibidos = ("escore", "threshold", "susceptib", "risk_index", "prob_")
     for col in dataset.columns:
         assert not any(p in col.lower() for p in proibidos), col
 
@@ -182,11 +182,11 @@ def test_terrain_values_are_physically_plausible_for_curitiba(dataset):
 
 
 def test_duplicate_observation_units_share_identical_features(dataset):
-    """Linhas que são a mesma ocorrência (mesmo lat/lon/data) têm que ter feature idêntica --
+    """Linhas que são a mesma ocorrência (mesmo lat/lon/data) têm que ter variavel idêntica --
     se divergirem, a extração não é determinística."""
     feats = ["elevation_m", "slope_deg", "twi_dinf", "rain_max_24h_chirps",
              "rain_decay_index_api_chirps", "mapbiomas_class_2023"]
-    n_distintos = dataset.groupby("observation_unit_key")[feats].nunique().max()
+    n_distintos = dataset.groupby("chave_unidade_observacao")[feats].nunique().max()
     assert (n_distintos <= 1).all()
 
 

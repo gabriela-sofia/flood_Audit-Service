@@ -1,4 +1,4 @@
-source_year,data_criacao,assunto,subdivisao,situacao,logradouro,bairro,regional,origem,rank_key
+ano_fonte,data_criacao,assunto,subdivisao,situacao,logradouro,bairro,regional,origem,rank_key
 2023,18/06/2023,Coleta,Resíduos vegetais de jardim,Concluído,AVENIDA DA INTEGRAÇÃO,BAIRRO ALTO,Unidade Regional Boa Vista,Telefone,20743
 2023,18/06/2023,Coleta,Caliças até 5 carrinhos de mão,Concluído,AVENIDA DA INTEGRAÇÃO,BAIRRO ALTO,Unidade Regional Boa Vista,Telefone,20743
 2023,30/03/2023,Coleta,Resíduos vegetais de jardim,Concluído,RUA PRESIDENTE RODRIGO OTÁVIO,ALTO DA RUA XV,Unidade Regional Matriz,Telefone,24912

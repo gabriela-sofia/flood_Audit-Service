@@ -1,7 +1,7 @@
 """
 FT-UK-01 -- Prepara a grade metrica da AOI e deriva declividade e TWI.
 
-ENTRADAS (ja no disco, adquiridas por aq_master.py):
+ENTRADAS (ja no disco, adquiridas por aq_mestre.py):
   aq-features/dem_glo30/   9 tiles Copernicus GLO-30, EPSG:4326
   aq-features/hand_glo30/  9 tiles Global 30m HAND, EPSG:4326
 

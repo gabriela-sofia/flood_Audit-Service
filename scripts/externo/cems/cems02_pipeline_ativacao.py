@@ -282,7 +282,7 @@ def preparar_rasters(bbox_ll, crs_metrico: int, bounds_m, outdir: Path) -> dict:
         except Exception as exc:  # noqa: BLE001
             # NAO engolir: em 09/08/2026 este except transformou a ausencia do
             # `pysheds` em `twi_dinf` NaN nas SEIS ativacoes processadas, sem
-            # nenhum aviso visivel. Falha silenciosa em feature e pior que
+            # nenhum aviso visivel. Falha silenciosa em variavel e pior que
             # parada: produz dataset com forma correta e conteudo faltando.
             raise RuntimeError(
                 f"TWI nao pode ser calculado ({type(exc).__name__}: {exc}). "
@@ -472,7 +472,7 @@ def main() -> int:
     df["licenca"] = "Copernicus - uso livre com atribuicao"
     df["ponto_id"] = [f"{codigo}_{i:06d}" for i in range(len(df))]
 
-    # --- verificacao antes de gravar: feature vazia e erro, nao aviso ---
+    # --- verificacao antes de gravar: variavel vazia e erro, nao aviso ---
     problemas = []
     for f in ("elevation_m", "slope_deg", "hand_m", "twi_dinf"):
         n_ok = int(df[f].notna().sum())

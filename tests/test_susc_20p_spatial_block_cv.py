@@ -18,7 +18,7 @@ import pytest
 ROOT = Path(__file__).resolve().parents[1]
 PKG = ROOT / "outputs_public/data/susc_20k_siac156_curitiba_flood_candidates"
 sys.path.insert(0, str(PKG / "scripts"))
-import pipeline_v20p_spatial_block_cv_curitiba as p20p  # noqa: E402
+import pipeline_v20p_cv_blocos_espaciais_curitiba as p20p  # noqa: E402
 
 firthlogist = pytest.importorskip("firthlogist", reason="firthlogist não instalado")
 
@@ -30,7 +30,7 @@ def _fake_bairros(feats: list[str], n_bairros: int, per_bairro: int, seed: int) 
         for _ in range(per_bairro):
             row = {f: rng.normal() for f in feats}
             row["bairro"] = f"BAIRRO_{b}"
-            row["label"] = int(rng.random() < 0.5)
+            row["rotulo"] = int(rng.random() < 0.5)
             rows.append(row)
     return pd.DataFrame(rows)
 
@@ -69,7 +69,7 @@ def test_run_spatial_block_cv_reports_per_fold_epv_and_auc():
     df_folds = out["fold_results"]
     summary = out["summary"]
     assert len(df_folds) == 5
-    assert set(["epv_treino", "epv_passa", "holdout_auc", "n_test"]).issubset(df_folds.columns)
+    assert set(["epv_treino", "epv_passa", "auc_holdout", "n_teste"]).issubset(df_folds.columns)
     assert summary["n_splits"] == 5
     assert 0.0 <= summary["auc_mean"] <= 1.0
     assert summary["auc_min"] <= summary["auc_mean"] <= summary["auc_max"]

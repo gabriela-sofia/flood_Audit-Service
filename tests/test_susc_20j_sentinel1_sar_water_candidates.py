@@ -9,7 +9,7 @@ import pytest
 
 SCRIPT_DIR = Path(__file__).resolve().parents[1] / "outputs_public/data/susc_20j_sentinel1_sar_water_candidates/scripts"
 sys.path.insert(0, str(SCRIPT_DIR))
-import detect_water_candidates_sar as m  # noqa: E402
+import detectar_candidatos_agua_sar as m  # noqa: E402
 
 
 def test_to_db_converts_linear_power():
@@ -44,7 +44,7 @@ def test_detect_finds_cluster_with_real_drop_and_rejects_small_drop():
 
     before = {"VV": vv_before}
     after = {"VV": vv_after}
-    res = m.detect_water_candidates_sar(before, after, m.SarDetectionConfig(min_cluster_px=5))
+    res = m.detectar_candidatos_agua_sar(before, after, m.SarDetectionConfig(min_cluster_px=5))
     assert len(res.clusters) == 1
     assert res.clusters[0]["n_pixels"] == 25
 
@@ -62,11 +62,11 @@ def test_vh_agreement_required_rejects_vv_only_signal():
     after = {"VV": vv_after, "VH": vh_after}
 
     cfg_loose = m.SarDetectionConfig(min_cluster_px=5, require_vh_agreement=False)
-    res_loose = m.detect_water_candidates_sar(before, after, cfg_loose)
+    res_loose = m.detectar_candidatos_agua_sar(before, after, cfg_loose)
     assert len(res_loose.clusters) == 1  # sem exigir VH, aceita
 
     cfg_strict = m.SarDetectionConfig(min_cluster_px=5, require_vh_agreement=True)
-    res_strict = m.detect_water_candidates_sar(before, after, cfg_strict)
+    res_strict = m.detectar_candidatos_agua_sar(before, after, cfg_strict)
     assert len(res_strict.clusters) == 0  # exigindo VH, rejeita (VH nao corroborou)
 
 
@@ -82,14 +82,14 @@ def test_extra_mask_restricts_to_corridor():
 
     before = {"VV": vv_before}
     after = {"VV": vv_after}
-    res = m.detect_water_candidates_sar(before, after, m.SarDetectionConfig(min_cluster_px=5), extra_mask=mask)
+    res = m.detectar_candidatos_agua_sar(before, after, m.SarDetectionConfig(min_cluster_px=5), extra_mask=mask)
     assert len(res.clusters) == 1
-    assert 5 <= res.clusters[0]["row_centroid"] <= 9
+    assert 5 <= res.clusters[0]["centroide_linha"] <= 9
 
 
 def test_missing_vv_raises():
     with pytest.raises(ValueError, match="VV ausente"):
-        m.detect_water_candidates_sar({"VH": np.zeros((3, 3))}, {"VV": np.zeros((3, 3)), "VH": np.zeros((3, 3))})
+        m.detectar_candidatos_agua_sar({"VH": np.zeros((3, 3))}, {"VV": np.zeros((3, 3)), "VH": np.zeros((3, 3))})
 
 
 def test_large_real_scale_performance_no_hang():
@@ -106,6 +106,6 @@ def test_large_real_scale_performance_no_hang():
     before = {"VV": vv_before}
     after = {"VV": vv_after}
     t0 = time.time()
-    res = m.detect_water_candidates_sar(before, after, m.SarDetectionConfig(min_cluster_px=3))
+    res = m.detectar_candidatos_agua_sar(before, after, m.SarDetectionConfig(min_cluster_px=3))
     elapsed = time.time() - t0
     assert elapsed < 15.0, f"deteccao demorou {elapsed:.1f}s — regressao de performance"

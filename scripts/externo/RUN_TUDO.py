@@ -9,8 +9,8 @@ horas neste projeto.
 
 CADEIA:
   aquisicao      ext_uk01 (outlines) -> ext_uk04 (flood zones)
-                 aq_master (DEM/HAND/WorldCover/GSW)
-                 n1_run_all (Nivel 1) -> aq_rs01 (features do RS)
+                 aq_mestre (DEM/HAND/WorldCover/GSW)
+                 n1_rodar_tudo (Nivel 1) -> aq_rs01 (features do RS)
   organizacao    ext_uk07 (GeoParquet)
   analise        ext_uk02/03 (AOI) -> ext_uk05 (contabilidade)
                  ft_uk01 (rasters) -> ft_uk02 (mascaras) -> ft_uk03 (amostra)
@@ -41,15 +41,15 @@ CEMS = AQUI / "cems"
 
 # (grupo, script, args, artefato que comprova conclusao, precisa_de_rede)
 CADEIA = [
-    ("aquisicao", UK / "ext_uk01_download_recorded_flood_outlines.py", [],
+    ("aquisicao", UK / "ext_uk01_baixar_recorded_flood_outlines.py", [],
      RUNS / "ext-uk-01-aquisicao" / "inventario.json", True),
-    ("aquisicao", UK / "ext_uk04_flood_zones_aoi.py", [],
+    ("aquisicao", UK / "ext_uk04_zonas_inundacao_aoi.py", [],
      RUNS / "ext-uk-04-flood-zones" / "resumo.json", True),
-    ("aquisicao", AQ / "aq_master.py", ["--baixar"],
+    ("aquisicao", AQ / "aq_mestre.py", ["--baixar"],
      RUNS / "aq-features" / "download.json", True),
-    ("aquisicao", AQ / "n1_run_all.py", [],
+    ("aquisicao", AQ / "n1_rodar_tudo.py", [],
      RUNS / "n1-relatorio-consolidado.md", True),
-    ("aquisicao", PT / "aq_rs01_features.py", ["--baixar"],
+    ("aquisicao", PT / "aq_rs01_variaveis.py", ["--baixar"],
      RUNS / "aq-rs-features" / "PROVENIENCIA.md", True),
 
     ("organizacao", UK / "ext_uk07_converter_geoparquet.py", [],
@@ -67,11 +67,11 @@ CADEIA = [
      RUNS / "ft-uk-02-mascaras" / "resumo.json", False),
     ("analise", UK / "ft_uk03_amostrar_e_extrair.py", [],
      RUNS / "ft-uk-03-amostra" / "resumo.json", False),
-    ("analise", UK / "ft_uk04_features_chuva.py", [],
+    ("analise", UK / "ft_uk04_variaveis_chuva.py", [],
      RUNS / "ft-uk-04-chuva" / "resumo.json", False),
     ("analise", PT / "n1f_reduzir_a_pontos.py", [],
      RUNS / "n1f-pontos" / "resumo.json", False),
-    ("analise", PT / "n1g_features_nos_pontos.py", [],
+    ("analise", PT / "n1g_variaveis_nos_pontos.py", [],
      RUNS / "n1g-features" / "resumo.json", False),
 ]
 

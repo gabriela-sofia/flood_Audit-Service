@@ -1,6 +1,0 @@
-fold,n_bairros_test,epv_treino,epv_passa,n_train,n_test,n_pos_test,n_neg_test,holdout_auc
-0,15,69.2,True,1165,293,216,77,0.623
-1,14,67.0,True,1164,294,206,88,0.6999
-2,14,65.2,True,1168,290,193,97,0.6371
-3,15,69.0,True,1171,287,209,78,0.6283
-4,15,68.0,True,1164,294,211,83,0.6329

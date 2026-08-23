@@ -151,21 +151,21 @@ def test_ajuste_de_uma_variavel_cabe_nas_duas_leituras_nos_dois_estratos(resulta
 
 def test_os_sinais_fisicos_estao_corretos_em_todo_ajuste_rodado(coeficientes):
     for _, r in coeficientes.iterrows():
-        if r.feature not in SINAL_EXIGIDO:
+        if r.variavel not in SINAL_EXIGIDO:
             continue
-        esperado = SINAL_EXIGIDO[r.feature]
+        esperado = SINAL_EXIGIDO[r.variavel]
         assert (r.coef < 0) == (esperado < 0), (
-            f"{r.estrato}/{r.conjunto}/{r.feature} com sinal {r.coef}")
+            f"{r.estrato}/{r.conjunto}/{r.variavel} com sinal {r.coef}")
 
 
 def test_nenhum_ic_das_causais_cruza_zero(coeficientes):
     for _, r in coeficientes.iterrows():
-        if r.feature not in SINAL_EXIGIDO:
+        if r.variavel not in SINAL_EXIGIDO:
             continue
         if pd.isna(r.ic95_lo) or pd.isna(r.ic95_hi):
             continue
         assert not (r.ic95_lo <= 0 <= r.ic95_hi), (
-            f"{r.estrato}/{r.conjunto}/{r.feature}: IC [{r.ic95_lo}; {r.ic95_hi}]")
+            f"{r.estrato}/{r.conjunto}/{r.variavel}: IC [{r.ic95_lo}; {r.ic95_hi}]")
 
 
 def test_toda_auc_gravada_esta_na_faixa_declarada(coeficientes):

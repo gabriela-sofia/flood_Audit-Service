@@ -3,7 +3,7 @@
 O que importa travar: o CI bootstrap reamostra so o teste (mesmo contrato do susc_20q); o
 spatial block CV nunca vaza bairro (mesmo contrato do susc_20p/20s); a sensibilidade de
 hiperparametro cobre uma grade real (3x3x3=27), nao um unico ponto escolhido a dedo; as
-importancias de feature somam ~1 e nao incluem elevation_m.
+importancias de variavel somam ~1 e nao incluem elevation_m.
 """
 from __future__ import annotations
 
@@ -17,7 +17,7 @@ import pytest
 ROOT = Path(__file__).resolve().parents[1]
 PKG = ROOT / "outputs_public/data/susc_20k_siac156_curitiba_flood_candidates"
 sys.path.insert(0, str(PKG / "scripts"))
-import pipeline_v20u_nonlinear_diagnostic_curitiba as p20u  # noqa: E402
+import pipeline_v20u_diagnostico_nao_linear_curitiba as p20u  # noqa: E402
 
 FEATS = ["slope_deg", "hand_m_dinf", "twi_dinf",
           "rain_peak_residual_orthogonalized", "rain_decay_index_api_chirps"]
@@ -26,7 +26,7 @@ FEATS = ["slope_deg", "hand_m_dinf", "twi_dinf",
 def _fake(n, seed, bairro_n=10):
     rng = np.random.default_rng(seed)
     d = pd.DataFrame({f: rng.normal(size=n) for f in FEATS})
-    d["label"] = (rng.random(n) < 0.4).astype(int)
+    d["rotulo"] = (rng.random(n) < 0.4).astype(int)
     d["bairro"] = rng.integers(0, bairro_n, size=n).astype(str)
     return d
 
@@ -54,7 +54,7 @@ def test_spatial_block_cv_never_leaks_bairro():
     d = _fake(1000, seed=5, bairro_n=15)
     out = p20u.gbm_spatial_block_cv(d, FEATS, n_splits=5)
     assert len(out) == 5
-    assert set(["fold", "holdout_auc_gbm"]).issubset(out.columns)
+    assert set(["fold", "auc_holdout_gbm"]).issubset(out.columns)
 
 
 def test_hyperparam_sensitivity_covers_full_grid_27_combinations():
@@ -65,4 +65,4 @@ def test_hyperparam_sensitivity_covers_full_grid_27_combinations():
     assert set(out["max_depth"].unique()) == {1, 2, 3}
     assert set(out["n_estimators"].unique()) == {50, 100, 200}
     assert set(out["learning_rate"].unique()) == {0.02, 0.05, 0.1}
-    assert out["holdout_auc"].between(0, 1).all()
+    assert out["auc_holdout"].between(0, 1).all()

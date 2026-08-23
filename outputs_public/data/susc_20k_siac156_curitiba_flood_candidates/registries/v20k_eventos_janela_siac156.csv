@@ -1,4 +1,4 @@
-window_id,event_date_ddmmyyyy,bairros
+janela_id,data_evento_ddmmaaaa,bairros
 CUR_2025_02_03,03/02/2025,Boqueirao;Xaxim;Pinheirinho;Parolin;Portao;Vila Izabel;Seminario
 CUR_2025_01_28,28/01/2025,Centro Civico;Bairro Alto;Merces;Centro
 CUR_2025_02_18,18/02/2025,Centro

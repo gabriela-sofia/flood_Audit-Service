@@ -15,141 +15,141 @@
   },
   "mismatches_sample": [
     {
-      "point_id": "recife_pos_0001_9a396f3546d1ac60",
-      "feature": "elevation_m",
+      "ponto_id": "recife_pos_0001_9a396f3546d1ac60",
+      "variavel": "elevation_m",
       "stored": 56.72999954223633,
       "sampled": 51.98723220825195,
       "diff": 4.742767333984375
     },
     {
-      "point_id": "recife_pos_0001_9a396f3546d1ac60",
-      "feature": "slope_deg",
+      "ponto_id": "recife_pos_0001_9a396f3546d1ac60",
+      "variavel": "slope_deg",
       "stored": 7.183388233184815,
       "sampled": 9.77169418334961,
       "diff": 2.588305950164794
     },
     {
-      "point_id": "recife_pos_0002_7f6c3f73c2811fe4",
-      "feature": "elevation_m",
+      "ponto_id": "recife_pos_0002_7f6c3f73c2811fe4",
+      "variavel": "elevation_m",
       "stored": 45.37018966674805,
       "sampled": 47.82023239135742,
       "diff": 2.450042724609375
     },
     {
-      "point_id": "recife_pos_0002_7f6c3f73c2811fe4",
-      "feature": "slope_deg",
+      "ponto_id": "recife_pos_0002_7f6c3f73c2811fe4",
+      "variavel": "slope_deg",
       "stored": 19.965030670166016,
       "sampled": 25.14244842529297,
       "diff": 5.177417755126953
     },
     {
-      "point_id": "recife_pos_0006_3d2490466fc995f4",
-      "feature": "elevation_m",
+      "ponto_id": "recife_pos_0006_3d2490466fc995f4",
+      "variavel": "elevation_m",
       "stored": 5.446042537689209,
       "sampled": 8.26273727425992,
       "diff": 2.8166947365707102
     },
     {
-      "point_id": "recife_pos_0006_3d2490466fc995f4",
-      "feature": "slope_deg",
+      "ponto_id": "recife_pos_0006_3d2490466fc995f4",
+      "variavel": "slope_deg",
       "stored": 0.443842351436615,
       "sampled": 10.47476577758789,
       "diff": 10.030923426151276
     },
     {
-      "point_id": "recife_pos_0008_1a802ef47537a049",
-      "feature": "elevation_m",
+      "ponto_id": "recife_pos_0008_1a802ef47537a049",
+      "variavel": "elevation_m",
       "stored": 22.338001251220703,
       "sampled": 26.73000144958496,
       "diff": 4.392000198364258
     },
     {
-      "point_id": "recife_pos_0008_1a802ef47537a049",
-      "feature": "slope_deg",
+      "ponto_id": "recife_pos_0008_1a802ef47537a049",
+      "variavel": "slope_deg",
       "stored": 17.57997703552246,
       "sampled": 19.52272605895996,
       "diff": 1.9427490234375
     },
     {
-      "point_id": "recife_pos_0009_e9c909e584fa17e3",
-      "feature": "elevation_m",
+      "ponto_id": "recife_pos_0009_e9c909e584fa17e3",
+      "variavel": "elevation_m",
       "stored": 40.40740966796875,
       "sampled": 42.78828048706055,
       "diff": 2.380870819091797
     },
     {
-      "point_id": "recife_pos_0009_e9c909e584fa17e3",
-      "feature": "slope_deg",
+      "ponto_id": "recife_pos_0009_e9c909e584fa17e3",
+      "variavel": "slope_deg",
       "stored": 6.622044563293457,
       "sampled": 2.130862236022949,
       "diff": 4.491182327270508
     },
     {
-      "point_id": "recife_pos_0010_f9d5cbc9fb0bcef1",
-      "feature": "elevation_m",
+      "ponto_id": "recife_pos_0010_f9d5cbc9fb0bcef1",
+      "variavel": "elevation_m",
       "stored": 52.26018905639648,
       "sampled": 55.205047607421875,
       "diff": 2.9448585510253977
     },
     {
-      "point_id": "recife_pos_0010_f9d5cbc9fb0bcef1",
-      "feature": "slope_deg",
+      "ponto_id": "recife_pos_0010_f9d5cbc9fb0bcef1",
+      "variavel": "slope_deg",
       "stored": 15.660914421081545,
       "sampled": 25.007680892944336,
       "diff": 9.346766471862791
     },
     {
-      "point_id": "recife_pos_0011_1c228d6375cb94c1",
-      "feature": "elevation_m",
+      "ponto_id": "recife_pos_0011_1c228d6375cb94c1",
+      "variavel": "elevation_m",
       "stored": 4.026588439941406,
       "sampled": 10.130066871643066,
       "diff": 6.10347843170166
     },
     {
-      "point_id": "recife_pos_0011_1c228d6375cb94c1",
-      "feature": "slope_deg",
+      "ponto_id": "recife_pos_0011_1c228d6375cb94c1",
+      "variavel": "slope_deg",
       "stored": 2.6550254821777344,
       "sampled": 11.883136749267578,
       "diff": 9.228111267089844
     },
     {
-      "point_id": "recife_pos_0012_5edfe04e06bfabb2",
-      "feature": "elevation_m",
+      "ponto_id": "recife_pos_0012_5edfe04e06bfabb2",
+      "variavel": "elevation_m",
       "stored": 82.68400573730469,
       "sampled": 80.71807861328125,
       "diff": 1.9659271240234375
     },
     {
-      "point_id": "recife_pos_0012_5edfe04e06bfabb2",
-      "feature": "slope_deg",
+      "ponto_id": "recife_pos_0012_5edfe04e06bfabb2",
+      "variavel": "slope_deg",
       "stored": 10.404899597167969,
       "sampled": 16.98076629638672,
       "diff": 6.57586669921875
     },
     {
-      "point_id": "recife_pos_0013_febbd6dcacd4ad78",
-      "feature": "elevation_m",
+      "ponto_id": "recife_pos_0013_febbd6dcacd4ad78",
+      "variavel": "elevation_m",
       "stored": 82.68400573730469,
       "sampled": 80.71807861328125,
       "diff": 1.9659271240234375
     },
     {
-      "point_id": "recife_pos_0013_febbd6dcacd4ad78",
-      "feature": "slope_deg",
+      "ponto_id": "recife_pos_0013_febbd6dcacd4ad78",
+      "variavel": "slope_deg",
       "stored": 10.404899597167969,
       "sampled": 16.98076629638672,
       "diff": 6.57586669921875
     },
     {
-      "point_id": "recife_pos_0015_6f6ebfc739c9bbe2",
-      "feature": "elevation_m",
+      "ponto_id": "recife_pos_0015_6f6ebfc739c9bbe2",
+      "variavel": "elevation_m",
       "stored": 7.869999885559082,
       "sampled": 9.659101486206055,
       "diff": 1.7891016006469727
     },
     {
-      "point_id": "recife_pos_0015_6f6ebfc739c9bbe2",
-      "feature": "slope_deg",
+      "ponto_id": "recife_pos_0015_6f6ebfc739c9bbe2",
+      "variavel": "slope_deg",
       "stored": 7.757662773132324,
       "sampled": 10.184560775756836,
       "diff": 2.4268980026245117

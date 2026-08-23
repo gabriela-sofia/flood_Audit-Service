@@ -13,7 +13,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 PKG = ROOT / "outputs_public/data/susc_20k_siac156_curitiba_flood_candidates"
 sys.path.insert(0, str(PKG / "scripts"))
-import pipeline_v20r_oni_enso_correlation_curitiba as p20r  # noqa: E402
+import pipeline_v20r_correlacao_oni_enso_curitiba as p20r  # noqa: E402
 
 
 def test_2026_has_no_fabricated_oni_value():
@@ -35,8 +35,8 @@ def test_mean_oni_jan_jul_matches_manual_average():
 
 def test_comparison_table_has_one_row_per_year_2023_to_2026():
     rows = p20r.build_comparison_table()
-    assert [r["year"] for r in rows] == [2023, 2024, 2025, 2026]
-    row_2026 = next(r for r in rows if r["year"] == 2026)
+    assert [r["ano"] for r in rows] == [2023, 2024, 2025, 2026]
+    row_2026 = next(r for r in rows if r["ano"] == 2026)
     assert row_2026["oni_publicado"] is False
     assert row_2026["oni_jan_jul_mean"] is None
 

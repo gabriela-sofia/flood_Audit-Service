@@ -41,7 +41,7 @@ from __future__ import annotations
 import sys
 from collections import Counter
 
-from n1_common import (
+from n1_comum import (
     BASE_OUT, baixar, escrever_proveniencia, gb, listar_bucket, salvar_json,
 )
 

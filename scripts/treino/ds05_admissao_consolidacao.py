@@ -22,7 +22,7 @@ POR QUE A ADMISSAO NAO E UM BOOLEANO SO:
 um unico `admitido` obrigaria a escolher entre duas coisas incompativeis:
 ou o criterio de cadeia derruba Recife (que e pluvial e entra a 10 m por
 decisao declarada), ou ele deixa passar o CEMS em cadeia global, que e outro
-instrumento. Por isso sao dois gates, com nomes diferentes e motivos proprios:
+instrumento. Por isso sao dois portoes, com nomes diferentes e motivos proprios:
 
     admitido               a linha e utilizavel: tem AOI, tem grupo, tem
                            cadeia de terreno declarada e nao-global, e tem

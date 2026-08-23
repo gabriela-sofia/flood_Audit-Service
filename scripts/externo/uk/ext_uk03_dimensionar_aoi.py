@@ -19,7 +19,7 @@ O que faz:
   3. Separa por tema (fluvial / pluvial), porque a pergunta cientifica difere:
      pluvial e o analogo de Recife; fluvial e o analogo de Petropolis/Curitiba.
 
-NAO faz: nenhuma extracao de feature, nenhum treino, nenhuma criacao de
+NAO faz: nenhuma extracao de variavel, nenhum treino, nenhuma criacao de
 negativo. So descreve o dado ja adquirido.
 
 Uso:
@@ -44,7 +44,7 @@ ESCALAS = [10_000, 25_000, 50_000]
 TOP = 8
 
 RUIDO = {
-    "aerial", "photography", "photo", "survey", "surveyed", "model", "modelled",
+    "aerial", "photography", "photo", "survey", "surveyed", "modelo", "modelled",
     "outline", "flood", "flooding", "event", "the", "of", "and", "at", "from",
     "unknown", "data", "record", "recorded", "extent", "map", "mapping", "na",
 }

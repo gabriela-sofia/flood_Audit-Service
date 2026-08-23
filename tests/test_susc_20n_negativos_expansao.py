@@ -1,7 +1,7 @@
 """Testes reais (sintéticos, sem rede) pro builder de dataset negativo -- susc_20n.
 
 Trava as 3 regras que decidem quem entra: aceite strong/medium (nunca `failed`), remoção por
-colisão <30 m com positivo, e união com a geração anterior preservando `point_id` verbatim.
+colisão <30 m com positivo, e união com a geração anterior preservando `ponto_id` verbatim.
 """
 from __future__ import annotations
 
@@ -13,17 +13,17 @@ import pytest
 ROOT = Path(__file__).resolve().parents[1]
 PKG = ROOT / "outputs_public/data/susc_20k_siac156_curitiba_flood_candidates"
 sys.path.insert(0, str(PKG / "scripts"))
-import build_final_negative_dataset as neg  # noqa: E402
+import montar_dataset_negativos_final as neg  # noqa: E402
 
 
 def _cand(logradouro="RUA X", bairro="CENTRO", data="01/03/2024", tier="strong",
           lat=-25.43, lon=-49.27, assunto="Coleta", subdivisao="Entulhos") -> dict:
-    return {"source_year": data[-4:], "data_criacao": data, "assunto": assunto,
+    return {"ano_fonte": data[-4:], "data_criacao": data, "assunto": assunto,
             "subdivisao": subdivisao, "situacao": "Concluído", "logradouro": logradouro,
             "bairro": bairro, "regional": "R", "origem": "Telefone", "rank_key": "1",
-            "geocode_query": "q", "confidence_tier": tier, "lat": lat, "lon": lon,
-            "nominatim_display_name": "d", "osm_class": "", "osm_type": "secondary",
-            "osm_id": "1", "geocode_reason": ""}
+            "consulta_geocodificacao": "q", "nivel_confianca": tier, "lat": lat, "lon": lon,
+            "nominatim_nome_exibicao": "d", "osm_class": "", "osm_type": "secondary",
+            "osm_id": "1", "motivo_geocodificacao": ""}
 
 
 # --- haversine -------------------------------------------------------------------------------
@@ -83,15 +83,15 @@ def test_strong_and_medium_both_accepted():
 
 # --- união com geração anterior ---------------------------------------------------------------
 
-def _existente(point_id="CUR_SIAC156_NEG_antigo1", logradouro="RUA X", bairro="CENTRO",
+def _existente(ponto_id="CUR_SIAC156_NEG_antigo1", logradouro="RUA X", bairro="CENTRO",
                data="01/03/2024") -> dict:
-    return {"region": "Curitiba", "label": "0", "point_id": point_id, "lat": "-25.43",
-            "lon": "-49.27", "event_date": data, "source_year": data[-4:], "assunto": "Coleta",
+    return {"regiao": "Curitiba", "rotulo": "0", "ponto_id": ponto_id, "lat": "-25.43",
+            "lon": "-49.27", "data_evento": data, "ano_fonte": data[-4:], "assunto": "Coleta",
             "subdivisao": "Entulhos", "logradouro": logradouro, "bairro": bairro,
-            "confidence_tier": "strong", "nominatim_display_name": "d", "nominatim_osm_id": "1",
-            "negative_source_type": neg.NEGATIVE_SOURCE_TYPE, "occurrence_phenomenon": "x",
-            "dataset_role_source": "siac156_curitiba_negative_v1", "allowed_use": "a",
-            "prohibited_use": "p"}
+            "nivel_confianca": "strong", "nominatim_nome_exibicao": "d", "nominatim_osm_id": "1",
+            "tipo_fonte_negativo": neg.NEGATIVE_SOURCE_TYPE, "fenomeno_ocorrencia": "x",
+            "papel_fonte_dataset": "siac156_curitiba_negative_v1", "uso_permitido": "a",
+            "uso_proibido": "p"}
 
 
 def test_existing_rows_are_carried_verbatim():
@@ -105,7 +105,7 @@ def test_candidate_duplicating_an_existing_record_is_not_readded():
     e = _existente(logradouro="RUA X", bairro="CENTRO", data="01/03/2024")
     rows, resumo = neg.build([_cand(logradouro="RUA X", bairro="CENTRO", data="01/03/2024")], [], [e])
     assert len(rows) == 1
-    assert rows[0]["point_id"] == "CUR_SIAC156_NEG_antigo1"   # id antigo preservado
+    assert rows[0]["ponto_id"] == "CUR_SIAC156_NEG_antigo1"   # id antigo preservado
     assert resumo["n_descartados_duplicata_de_existente"] == 1
 
 
@@ -125,14 +125,14 @@ def test_duplicate_candidates_within_same_batch_collapse():
 
 def test_new_rows_carry_label_zero_and_source_type():
     rows, _ = neg.build([_cand()], [], None)
-    assert rows[0]["label"] == 0
-    assert rows[0]["negative_source_type"] == neg.NEGATIVE_SOURCE_TYPE
-    assert rows[0]["prohibited_use"] == neg.PROHIBITED_USE
+    assert rows[0]["rotulo"] == 0
+    assert rows[0]["tipo_fonte_negativo"] == neg.NEGATIVE_SOURCE_TYPE
+    assert rows[0]["uso_proibido"] == neg.PROHIBITED_USE
 
 
 def test_event_date_is_the_records_own_date_never_synthetic():
     rows, _ = neg.build([_cand(data="17/09/2025")], [], None)
-    assert rows[0]["event_date"] == "17/09/2025"
+    assert rows[0]["data_evento"] == "17/09/2025"
 
 
 def test_point_id_is_deterministic_and_namespaced():
@@ -147,8 +147,8 @@ def test_point_id_is_deterministic_and_namespaced():
 
 REG = PKG / "registries"
 NEG_V2 = REG / "v20n_dataset_negativos_curitiba_siac156_v2.csv"
-FEAT_V2 = REG / "v20n_dataset_curitiba_features_v2.csv"
-FEAT_V1 = REG / "v20l_dataset_curitiba_features_v1.csv"
+FEAT_V2 = REG / "v20n_dataset_curitiba_variaveis_v2.csv"
+FEAT_V1 = REG / "v20l_dataset_curitiba_variaveis_v1.csv"
 
 pd = pytest.importorskip("pandas")
 
@@ -163,13 +163,13 @@ def negativos_v2():
 @pytest.fixture(scope="module")
 def features_v2():
     if not FEAT_V2.exists():
-        pytest.skip("v20n_dataset_curitiba_features_v2 ainda nao gerado")
+        pytest.skip("v20n_dataset_curitiba_variaveis_v2 ainda nao gerado")
     return pd.read_csv(FEAT_V2)
 
 
 def test_v2_is_superset_of_v1_negatives(negativos_v2):
     v1 = pd.read_csv(REG / "v20k3_dataset_negativos_curitiba_siac156_v1.csv")
-    assert set(v1.point_id) <= set(negativos_v2.point_id)
+    assert set(v1.ponto_id) <= set(negativos_v2.ponto_id)
     assert len(negativos_v2) > len(v1)
 
 
@@ -177,22 +177,22 @@ def test_v2_introduces_no_new_duplicate_record_key(negativos_v2):
     """As linhas do v1 entram verbatim, inclusive as 16 chaves ja repetidas la. Esta rodada
     nao pode ACRESCENTAR repeticao -- os pontos novos tem que ser todos de chave inedita."""
     v1 = pd.read_csv(REG / "v20k3_dataset_negativos_curitiba_siac156_v1.csv")
-    novos = negativos_v2[~negativos_v2.point_id.isin(v1.point_id)]
-    K = ["logradouro", "bairro", "event_date"]
+    novos = negativos_v2[~negativos_v2.ponto_id.isin(v1.ponto_id)]
+    K = ["logradouro", "bairro", "data_evento"]
     assert not novos.duplicated(K).any()
     chaves_v1 = set(map(tuple, v1[K].astype(str).values))
     assert not set(map(tuple, novos[K].astype(str).values)) & chaves_v1
 
 
 def test_v2_negatives_are_all_label_zero(negativos_v2):
-    assert set(negativos_v2.label.unique()) == {0}
+    assert set(negativos_v2.rotulo.unique()) == {0}
 
 
 def test_no_negative_collides_with_a_positive(negativos_v2):
     pos = pd.read_csv(REG / "v20k2_dataset_positivos_curitiba_siac156_v1.csv")
     p = list(zip(pos.lat.values, pos.lon.values))
     for r in negativos_v2.itertuples():
-        assert not neg.collides_with_positive(r.lat, r.lon, p), r.point_id
+        assert not neg.collides_with_positive(r.lat, r.lon, p), r.ponto_id
 
 
 def test_expanded_features_preserve_original_rows_bit_for_bit(features_v2):
@@ -200,7 +200,7 @@ def test_expanded_features_preserve_original_rows_bit_for_bit(features_v2):
     if not FEAT_V1.exists():
         pytest.skip("v20l ausente")
     v1 = pd.read_csv(FEAT_V1)
-    key = ["point_id", "event_date", "assunto", "subdivisao"]
+    key = ["ponto_id", "data_evento", "assunto", "subdivisao"]
     brutas = ["elevation_m", "slope_deg", "hand_m_dinf", "twi_dinf",
               "rain_max_24h_chirps", "rain_decay_index_api_chirps", "mapbiomas_class_2023"]
     m = v1[key + brutas].merge(features_v2[key + brutas], on=key, suffixes=("_v1", "_v2"))
@@ -219,5 +219,5 @@ def test_expanded_rain_windows_are_complete(features_v2):
 def test_expanded_dataset_passes_epv_floor_with_six_features(features_v2):
     seis = ["elevation_m", "slope_deg", "hand_m_dinf", "twi_dinf",
             "rain_peak_residual_orthogonalized", "rain_decay_index_api_chirps"]
-    u = features_v2[~features_v2.is_duplicate_observation_unit].dropna(subset=seis)
-    assert int((u.label == 0).sum()) / 6 >= 20.0
+    u = features_v2[~features_v2.e_unidade_duplicada].dropna(subset=seis)
+    assert int((u.rotulo == 0).sum()) / 6 >= 20.0

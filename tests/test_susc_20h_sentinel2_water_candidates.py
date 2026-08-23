@@ -18,14 +18,14 @@ import pytest
 ROOT = Path(__file__).resolve().parents[1]
 SCRIPT = (
     ROOT / "outputs_public" / "data" / "susc_20h_sentinel2_water_candidates"
-    / "scripts" / "detect_water_candidates.py"
+    / "scripts" / "detectar_candidatos_agua.py"
 )
 
 
 def _load():
-    spec = importlib.util.spec_from_file_location("detect_water_candidates", SCRIPT)
+    spec = importlib.util.spec_from_file_location("detectar_candidatos_agua", SCRIPT)
     module = importlib.util.module_from_spec(spec)
-    sys.modules["detect_water_candidates"] = module
+    sys.modules["detectar_candidatos_agua"] = module
     spec.loader.exec_module(module)
     return module
 
@@ -129,18 +129,18 @@ def test_agua_plausivel_vira_candidato(det, base_scenes):
     before, after = base_scenes
     bloco = (slice(5, 15), slice(5, 15))
     _paint(after, bloco, B03=0.10, B08=0.04, B11=0.03, B12=0.02)
-    res = det.detect_water_candidates(before, after, det.DetectionConfig(min_cluster_px=20))
+    res = det.detectar_candidatos_agua(before, after, det.DetectionConfig(min_cluster_px=20))
     assert len(res.clusters) == 1
     assert res.clusters[0]["n_pixels"] == 100
-    assert res.clusters[0]["consensus_basis"] == "NDWI_MNDWI_AWEI"
-    assert res.clusters[0]["adjudicated"] == "false"
+    assert res.clusters[0]["base_consenso"] == "NDWI_MNDWI_AWEI"
+    assert res.clusters[0]["adjudicado"] == "false"
 
 
 def test_nuvem_brilhante_nao_vira_candidato(det, base_scenes):
     """Nuvem sobe nas três bandas — reprovada pelo filtro físico."""
     before, after = base_scenes
     _paint(after, (slice(5, 15), slice(5, 15)), B03=0.60, B08=0.55, B11=0.50, B12=0.45)
-    res = det.detect_water_candidates(before, after, det.DetectionConfig(min_cluster_px=20))
+    res = det.detectar_candidatos_agua(before, after, det.DetectionConfig(min_cluster_px=20))
     assert res.clusters == []
     assert res.n_pixels_physical_gate == 0
 
@@ -151,7 +151,7 @@ def test_escuro_com_um_indice_so_nao_passa_no_consenso(det, base_scenes):
     bloco = (slice(5, 15), slice(5, 15))
     _paint(after, bloco, B03=0.10, B08=0.05, B11=0.14, B12=0.20)
     cfg = det.DetectionConfig(min_cluster_px=20, mndwi_delta=0.5, awei_delta=5.0)
-    res = det.detect_water_candidates(before, after, cfg)
+    res = det.detectar_candidatos_agua(before, after, cfg)
     assert res.n_pixels_physical_gate == 100
     assert res.n_pixels_consensus == 0
     assert res.clusters == []
@@ -160,7 +160,7 @@ def test_escuro_com_um_indice_so_nao_passa_no_consenso(det, base_scenes):
 def test_cluster_menor_que_o_minimo_e_descartado(det, base_scenes):
     before, after = base_scenes
     _paint(after, (slice(5, 8), slice(5, 8)), B03=0.10, B08=0.04, B11=0.03, B12=0.02)
-    res = det.detect_water_candidates(before, after, det.DetectionConfig(min_cluster_px=20))
+    res = det.detectar_candidatos_agua(before, after, det.DetectionConfig(min_cluster_px=20))
     assert res.n_clusters_before_size_filter == 1
     assert res.clusters == []
 
@@ -169,7 +169,7 @@ def test_dois_blocos_separados_viram_dois_clusters_ordenados(det, base_scenes):
     before, after = base_scenes
     _paint(after, (slice(2, 12), slice(2, 12)), B03=0.10, B08=0.04, B11=0.03, B12=0.02)
     _paint(after, (slice(20, 25), slice(20, 25)), B03=0.10, B08=0.04, B11=0.03, B12=0.02)
-    res = det.detect_water_candidates(before, after, det.DetectionConfig(min_cluster_px=20))
+    res = det.detectar_candidatos_agua(before, after, det.DetectionConfig(min_cluster_px=20))
     assert [c["n_pixels"] for c in res.clusters] == [100, 25]
 
 
@@ -183,7 +183,7 @@ def test_sem_b12_falha_fechado(det, base_scenes):
         cena.pop("B12")
     _paint(after, (slice(5, 15), slice(5, 15)), B03=0.10, B08=0.04, B11=0.03)
     with pytest.raises(ValueError, match="B12"):
-        det.detect_water_candidates(before, after, det.DetectionConfig(min_cluster_px=20))
+        det.detectar_candidatos_agua(before, after, det.DetectionConfig(min_cluster_px=20))
 
 
 def test_fallback_sem_b12_marca_o_cluster_como_mais_fraco(det, base_scenes):
@@ -192,9 +192,9 @@ def test_fallback_sem_b12_marca_o_cluster_como_mais_fraco(det, base_scenes):
         cena.pop("B12")
     _paint(after, (slice(5, 15), slice(5, 15)), B03=0.10, B08=0.04, B11=0.03)
     cfg = det.DetectionConfig(min_cluster_px=20, allow_two_index_fallback=True)
-    res = det.detect_water_candidates(before, after, cfg)
+    res = det.detectar_candidatos_agua(before, after, cfg)
     assert len(res.clusters) == 1
-    assert res.clusters[0]["consensus_basis"] == "NDWI_MNDWI_ONLY_WEAKER"
+    assert res.clusters[0]["base_consenso"] == "NDWI_MNDWI_ONLY_WEAKER"
     assert res.indices_available == ["ndwi", "mndwi"]
 
 
@@ -202,7 +202,7 @@ def test_banda_obrigatoria_ausente_falha_alto(det, base_scenes):
     before, after = base_scenes
     after.pop("B11")
     with pytest.raises(ValueError, match="B11"):
-        det.detect_water_candidates(before, after, det.DetectionConfig())
+        det.detectar_candidatos_agua(before, after, det.DetectionConfig())
 
 
 # --------------------------------------------------------------------------- #

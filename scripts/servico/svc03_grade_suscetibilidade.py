@@ -245,7 +245,7 @@ def gravar_figura(caminho: Path, valores: np.ndarray, forma, titulo: str,
     ax.set_title(titulo, fontsize=10)
     ax.set_xticks([])
     ax.set_yticks([])
-    fig.colorbar(im, ax=ax, shrink=0.75, label="escore de suscetibilidade")
+    fig.colorbar(im, ax=ax, shrink=0.75, rotulo="escore de suscetibilidade")
     fig.text(0.5, 0.02, rodape, ha="center", fontsize=7, wrap=True)
     fig.tight_layout(rect=(0, 0.06, 1, 1))
     fig.savefig(caminho, dpi=130)

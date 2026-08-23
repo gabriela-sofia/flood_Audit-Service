@@ -47,17 +47,17 @@ def _load(name: str):
 
 @pytest.fixture(scope="module")
 def dinf():
-    return _load("compute_hand_twi_dinfinity")
+    return _load("calcular_hand_twi_dinfinity")
 
 
 @pytest.fixture(scope="module")
 def cmp_mod():
-    return _load("compare_rasters")
+    return _load("comparar_rasters")
 
 
 @pytest.fixture(scope="module")
 def prep():
-    return _load("prepare_region_dtm")
+    return _load("preparar_mdt_regiao")
 
 
 pytest.importorskip("whitebox", reason="WhiteboxTools (pacote python `whitebox`) não instalado")
@@ -112,8 +112,8 @@ def test_limiar_de_drenagem_e_o_percentil_pedido(synthetic_run):
         valid = src.read(1) > result.valid_min
     with rasterio.open(result.outputs["accum_cells"]) as src:
         accum = src.read(1)
-    esperado = float(np.percentile(accum[valid], result.stream_percentile))
-    assert result.stream_threshold_cells == pytest.approx(esperado, rel=1e-12)
+    esperado = float(np.percentile(accum[valid], result.drenagem_percentil))
+    assert result.drenagem_limiar_celulas == pytest.approx(esperado, rel=1e-12)
 
 
 def test_hand_e_nao_negativo_e_zera_na_drenagem(synthetic_run):
@@ -135,9 +135,9 @@ def test_hand_e_nao_negativo_e_zera_na_drenagem(synthetic_run):
 def test_percentil_maior_produz_drenagem_menor(dinf, tmp_path):
     dem = tmp_path / "dem.tif"
     _write_dem(dem, _synthetic_valley())
-    baixo = dinf.compute_hand_twi_dinf(dem, tmp_path / "p90", stream_percentile=90.0)
-    alto = dinf.compute_hand_twi_dinf(dem, tmp_path / "p99", stream_percentile=99.0)
-    assert alto.stream_threshold_cells > baixo.stream_threshold_cells
+    baixo = dinf.compute_hand_twi_dinf(dem, tmp_path / "p90", drenagem_percentil=90.0)
+    alto = dinf.compute_hand_twi_dinf(dem, tmp_path / "p99", drenagem_percentil=99.0)
+    assert alto.drenagem_limiar_celulas > baixo.drenagem_limiar_celulas
 
     def n_streams(res):
         with rasterio.open(res.outputs["streams"]) as src:
@@ -155,7 +155,7 @@ def test_comparador_detecta_grade_diferente(cmp_mod, tmp_path):
     a, b = tmp_path / "a.tif", tmp_path / "b.tif"
     _write_dem(a, np.ones((10, 10)))
     _write_dem(b, np.ones((12, 12)))
-    res = cmp_mod.compare_rasters(a, b, "grade_diferente")
+    res = cmp_mod.comparar_rasters(a, b, "grade_diferente")
     assert res["grid_match"] is False
     assert "error" in res
 
@@ -165,7 +165,7 @@ def test_comparador_reconhece_raster_identico(cmp_mod, tmp_path):
     arr = _synthetic_valley(40, 40)
     _write_dem(a, arr)
     _write_dem(b, arr)
-    res = cmp_mod.compare_rasters(a, b, "identico")
+    res = cmp_mod.comparar_rasters(a, b, "identico")
     assert res["grid_match"] is True
     assert res["max_abs_diff"] == 0.0
     assert res["pearson_r"] == pytest.approx(1.0, abs=1e-12)
@@ -206,15 +206,15 @@ def recife_result(dinf, tmp_path_factory):
 
 def test_regressao_recife_reproduz_parametros_do_v12(recife_result):
     # o limiar de drenagem documentado no relatório do v12 é 1122.74 células (percentil 98)
-    assert recife_result.stream_threshold_cells == pytest.approx(1122.74, abs=0.01)
-    assert recife_result.n_valid_cells == 3579890
+    assert recife_result.drenagem_limiar_celulas == pytest.approx(1122.74, abs=0.01)
+    assert recife_result.n_celulas_validas == 3579890
 
 
 @pytest.mark.parametrize("raster", ["hand_dinf", "twi_dinf"])
 def test_regressao_recife_v12(cmp_mod, recife_result, raster):
     result = recife_result
     key = "hand" if raster == "hand_dinf" else "twi"
-    stats = cmp_mod.compare_rasters(
+    stats = cmp_mod.comparar_rasters(
         result.outputs[key], RECIFE_V12_DINF_DIR / f"{raster}.tif", raster
     )
     assert stats["grid_match"] is True

@@ -4,7 +4,7 @@ TER-06 -- Traz o Sen1Floods11 e o UFO para a cadeia unica de 30 m.
 POR QUE ESTAS DUAS FONTES FICARAM DE FORA ATE AGORA:
 
 o `ds01` declarou, e a declaracao continua correta para a epoca: elas entravam
-com as colunas de feature vazias de proposito, porque preencher exigiria
+com as colunas de variavel vazias de proposito, porque preencher exigiria
 adquirir raster para 661 locais espalhados em seis continentes -- "custo alto
 para um uso que ainda nao foi decidido".
 
@@ -253,7 +253,7 @@ def main() -> int:
         ok = np.isfinite(a) & np.isfinite(b)
         if ok.sum() < 5:
             continue
-        linhas.append({"feature": col, "n": int(ok.sum()),
+        linhas.append({"variavel": col, "n": int(ok.sum()),
                        "pearson": round(float(np.corrcoef(a[ok], b[ok])[0, 1]), 4),
                        "mediana_global": round(float(np.median(a[ok])), 3),
                        "mediana_wbt": round(float(np.median(b[ok])), 3)})

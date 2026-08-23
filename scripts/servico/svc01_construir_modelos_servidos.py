@@ -12,7 +12,7 @@ com duas pendencias declaradas como bloqueadoras de qualquer codigo de API:
   (b) o orcamento de EPV do teste A/B com DINO.
 
 A (b) ja esta resolvida por decisao anterior do projeto: o DINO foi descartado
-como feature na Fase 1 e vive so como evidencia visual, entao o teste A/B nao e
+como variavel na Fase 1 e vive so como evidencia visual, entao o teste A/B nao e
 pre-requisito de nada aqui.
 
 A (a) e resolvida NESTE arquivo, e a decisao esta escrita abaixo para nao virar
@@ -98,7 +98,7 @@ import pandas as pd
 
 REPO = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(REPO / "scripts" / "suscetibilidade"))
-import susc_firth_shim  # noqa: F401,E402
+import susc_firth_adaptador  # noqa: F401,E402
 from ds03_esquema_alvo import VERSAO  # noqa: E402
 
 RUNS = REPO / "local_runs"

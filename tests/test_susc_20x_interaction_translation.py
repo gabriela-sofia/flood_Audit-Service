@@ -17,7 +17,7 @@ import pytest
 ROOT = Path(__file__).resolve().parents[1]
 PKG = ROOT / "outputs_public/data/susc_20k_siac156_curitiba_flood_candidates"
 sys.path.insert(0, str(PKG / "scripts"))
-import pipeline_v20x_interaction_translation_attempt_curitiba as p20x  # noqa: E402
+import pipeline_v20x_traducao_interacao_curitiba as p20x  # noqa: E402
 
 FEATS = ["slope_deg", "hand_m_dinf", "twi_dinf",
           "rain_peak_residual_orthogonalized", "rain_decay_index_api_chirps"]
@@ -26,7 +26,7 @@ FEATS = ["slope_deg", "hand_m_dinf", "twi_dinf",
 def _fake(n, seed):
     rng = np.random.default_rng(seed)
     d = pd.DataFrame({f: rng.normal(size=n) for f in FEATS})
-    d["label"] = (rng.random(n) < 0.4).astype(int)
+    d["rotulo"] = (rng.random(n) < 0.4).astype(int)
     return d
 
 
@@ -58,4 +58,4 @@ def test_run_all_configs_covers_all_9_configs_and_never_beats_baseline_wildly():
     out = p20x.run_all_configs(train, test)
     assert len(out) == 9
     assert "base_5feat_linear" in out["config"].values
-    assert out["holdout_auc_2026"].between(0, 1).all()
+    assert out["auc_holdout_2026"].between(0, 1).all()

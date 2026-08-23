@@ -1,3 +1,3 @@
-region,locality,lat,lon,event_date,source_sensor,dem_type,pixel_size_m,crs,hand_m,twi,slope_deg,hand_regional_percentile,twi_regional_percentile,dist_to_extracted_stream_m,reading_type,is_model_feature,is_label
+regiao,localidade,lat,lon,data_evento,sensor_fonte,tipo_mde,tamanho_pixel_m,crs,hand_m,twi,slope_deg,hand_regional_percentile,twi_regional_percentile,dist_drenagem_m,tipo_leitura,e_variavel_do_modelo,e_rotulo
 Curitiba,Juveve,-25.4177,-49.2557,2022-01-17,MODIS MCDWD_L3,"MDT SGB/CPRM 2,5m->10m",10.0,EPSG:31982,2.517,7.1809,1.9843,24.3,63.1,135,observational_coherence_check,false,false
 Petropolis,Valparaiso,-22.51625,-43.18828,2022-03-24,Sentinel-2 B03/B08/B11,MDT FABDEM V1-2,30.0,EPSG:31983,50.8778,5.1108,23.3445,27.8,31.9,255,observational_coherence_check,false,false

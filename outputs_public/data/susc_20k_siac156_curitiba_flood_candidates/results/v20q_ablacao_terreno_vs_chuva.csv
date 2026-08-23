@@ -1,4 +1,4 @@
-n_train,n_test,n_pos_test,n_neg_test,holdout_auc,grupo_features,n_features
+n_treino,n_teste,n_pos_teste,n_neg_teste,auc_holdout,grupo_variaveis,n_variaveis
 1179,279,171,108,0.5213,terreno_so,3
 1189,282,174,108,0.4984,chuva_so,2
 1179,279,171,108,0.5246,completo_5feat,5

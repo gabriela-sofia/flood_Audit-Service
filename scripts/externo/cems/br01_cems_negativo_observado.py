@@ -32,7 +32,7 @@ ENTRADA: EMSR720_products.zip (15 pacotes unicos, 5 AOIs, produtos DEL/GRA).
 Baixado manualmente do portal em 2026-08-07 -- a API publica do CEMS nao expoe
 link direto para os pacotes vetoriais, apenas metadados de ativacao.
 
-NAO faz: nao amostra ponto, nao extrai feature, nao promove negativo ao
+NAO faz: nao amostra ponto, nao extrai variavel, nao promove negativo ao
 dataset SUSC, nao treina. Reduz o produto a geometrias de decisao e mede.
 
 Uso:

@@ -9,7 +9,7 @@ O QUE ESTE SCRIPT PRODUZ, e por que nesta ordem:
   2. comparacao  por AOI e no agregado: pearson, mediana, contraste
                  negativo-positivo, nos dois instrumentos. E o equivalente,
                  no nivel do ponto, do compare_*.json do recife_validation.
-  3. dataset     `dataset_serra_harmonizado.csv`, com as colunas de feature
+  3. dataset     `dataset_serra_harmonizado.csv`, com as colunas de variavel
                  substituidas pelas harmonizadas e as antigas preservadas com
                  sufixo `_global`. Nada e sobrescrito no dataset original.
 
@@ -91,7 +91,7 @@ def amostrar(raster: Path, lons, lats):
     Bug corrigido em 12/08/2026: a primeira versao so filtrava valores nao
     finitos. O WhiteboxTools grava nodata como -32768 e a cadeia antiga usa
     -9999 -- ambos sao numeros finitos e passariam direto para a coluna de
-    feature. Um ponto que caisse fora do dominio viraria um HAND de -32768,
+    variavel. Um ponto que caisse fora do dominio viraria um HAND de -32768,
     que nao e detectavel por inspecao de media e destruiria o ajuste.
 
     No dataset atual a contaminacao foi ZERO (todos os pontos caem dentro da
@@ -175,7 +175,7 @@ def main() -> int:
             cl = base.loc[m, "classe"].to_numpy()
             kp, kn = (cl == 1) & ok, (cl == 0) & ok
             linhas_cmp.append({
-                "aoi": aoi, "feature": col, "n": int(ok.sum()),
+                "aoi": aoi, "variavel": col, "n": int(ok.sum()),
                 "pearson": round(float(np.corrcoef(a[ok], b[ok])[0, 1]), 4),
                 "mediana_global": round(float(np.median(a[ok])), 3),
                 "mediana_wbt": round(float(np.median(b[ok])), 3),
@@ -191,11 +191,11 @@ def main() -> int:
     cmp.to_csv(OUT / f"comparacao_por_aoi{sufixo}.csv", index=False)
 
     print("\n--- AGREGADO POR FEATURE (mediana das AOIs) ---")
-    print(f"{'feature':12s} {'pearson':>8s} {'med_global':>11s} {'med_wbt':>9s} "
+    print(f"{'variavel':12s} {'pearson':>8s} {'med_global':>11s} {'med_wbt':>9s} "
           f"{'contr_global':>13s} {'contr_wbt':>10s}")
     resumo = {}
     for col in MAPA:
-        c = cmp[cmp.feature == col]
+        c = cmp[cmp.variavel == col]
         if c.empty:
             continue
         r = {"pearson_mediano": float(c.pearson.median()),
@@ -209,7 +209,7 @@ def main() -> int:
               f"{r['mediana_wbt']:9.2f} {r['contraste_global']:13.2f} "
               f"{r['contraste_wbt']:10.2f}")
 
-    # dataset harmonizado: feature = WBT, global preservado ao lado
+    # dataset harmonizado: variavel = WBT, global preservado ao lado
     harm = base.copy()
     for col in MAPA:
         harm[col] = harm[f"{col}_wbt"]

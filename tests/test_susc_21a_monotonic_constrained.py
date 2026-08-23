@@ -1,7 +1,7 @@
 """Testes reais pro GBM com restricao monotonica causal -- susc_21a.
 
 O que importa travar: MONOTONIC_CST usa exatamente EXPECTED_SIGN (nao inventa direcao nova);
-o modelo monotonico NUNCA produz decision_function decrescente numa feature marcada +1 (ou
+o modelo monotonico NUNCA produz decision_function decrescente numa variavel marcada +1 (ou
 crescente numa marcada -1), testado com decisao bruta (nao so a media agregada, que poderia
 mascarar violacao pontual); o check de monotonicidade da PD nao confunde plato (diff=0) com
 troca de sinal.
@@ -18,15 +18,15 @@ import pytest
 ROOT = Path(__file__).resolve().parents[1]
 PKG = ROOT / "outputs_public/data/susc_20k_siac156_curitiba_flood_candidates"
 sys.path.insert(0, str(PKG / "scripts"))
-import pipeline_v21a_monotonic_constrained_curitiba as p21a  # noqa: E402
-from pipeline_v20o_temporal_holdout_curitiba import EXPECTED_SIGN, FEATURE_COLS_PRIMARY  # noqa: E402
+import pipeline_v21a_gbm_monotonico_curitiba as p21a  # noqa: E402
+from pipeline_v20o_holdout_temporal_curitiba import EXPECTED_SIGN, FEATURE_COLS_PRIMARY  # noqa: E402
 
 
 def _fake(n, seed, with_bairro=False):
     rng = np.random.default_rng(seed)
     d = pd.DataFrame({f: rng.normal(size=n) if f != "hand_m_dinf" else rng.uniform(0, 20, size=n)
                        for f in FEATURE_COLS_PRIMARY})
-    d["label"] = (rng.random(n) < 0.4).astype(int)
+    d["rotulo"] = (rng.random(n) < 0.4).astype(int)
     if with_bairro:
         d["bairro"] = rng.choice([f"bairro_{i}" for i in range(8)], size=n)
     return d
@@ -61,8 +61,8 @@ def test_hgb_temporal_holdout_returns_auc_in_valid_range_monotonic_and_unrestric
     d_test = _fake(80, seed=3)
     r_mono = p21a.hgb_temporal_holdout(d_train, d_test, FEATURE_COLS_PRIMARY, monotonic=True)
     r_free = p21a.hgb_temporal_holdout(d_train, d_test, FEATURE_COLS_PRIMARY, monotonic=False)
-    assert 0.0 <= r_mono["holdout_auc_2026"] <= 1.0
-    assert 0.0 <= r_free["holdout_auc_2026"] <= 1.0
+    assert 0.0 <= r_mono["auc_holdout_2026"] <= 1.0
+    assert 0.0 <= r_free["auc_holdout_2026"] <= 1.0
     assert r_mono["monotonic"] is True
     assert r_free["monotonic"] is False
 

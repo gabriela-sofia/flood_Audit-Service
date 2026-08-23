@@ -32,7 +32,7 @@ milhoes de linhas para representar 11 eventos -- pseudorreplicacao em estado
 puro. Amostra-se um teto por chip, estratificado por classe, e o `evento_id`
 acompanha cada linha para que a agregacao por evento continue possivel.
 
-NAO faz: nao promove negativo, nao extrai feature, nao treina.
+NAO faz: nao promove negativo, nao extrai variavel, nao treina.
 
 Uso:
     python scripts/externo/n1f_reduzir_a_pontos.py
@@ -144,7 +144,7 @@ def reduzir_ufo(rng) -> pd.DataFrame:
     nomes = z.namelist()
     rotulos = [n for n in nomes
                if n.lower().endswith((".tif", ".tiff"))
-               and any(k in n.lower() for k in ("label", "mask", "annot"))]
+               and any(k in n.lower() for k in ("rotulo", "mask", "annot"))]
     print(f"[ufo] arquivos={len(nomes)} candidatos_a_rotulo={len(rotulos)}")
     if not rotulos:
         amostra = [n for n in nomes if n.lower().endswith((".tif", ".tiff"))][:5]

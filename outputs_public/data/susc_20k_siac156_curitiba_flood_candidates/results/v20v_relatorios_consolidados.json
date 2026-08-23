@@ -1,0 +1,107 @@
+{
+  "1_gbm_partial_dependence": {
+    "slope_deg": {
+      "grade_min": 0.2231,
+      "grade_max": 9.3258,
+      "pd_grade_min": 0.069,
+      "pd_grade_max": -0.0277,
+      "pd_range": 0.1549,
+      "monotonic": false,
+      "direcao": "decrescente",
+      "n_trocas_sinal_inclinacao": 9
+    },
+    "hand_m_dinf": {
+      "grade_min": 0.0,
+      "grade_max": 27.6642,
+      "pd_grade_min": 0.8426,
+      "pd_grade_max": -0.0612,
+      "pd_range": 0.9039,
+      "monotonic": false,
+      "direcao": "decrescente",
+      "n_trocas_sinal_inclinacao": 5
+    },
+    "twi_dinf": {
+      "grade_min": 5.0495,
+      "grade_max": 14.1764,
+      "pd_grade_min": 0.2234,
+      "pd_grade_max": -0.3701,
+      "pd_range": 0.5935,
+      "monotonic": false,
+      "direcao": "decrescente",
+      "n_trocas_sinal_inclinacao": 5
+    },
+    "rain_peak_residual_orthogonalized": {
+      "grade_min": -9.7288,
+      "grade_max": 12.7959,
+      "pd_grade_min": 0.5449,
+      "pd_grade_max": -0.54,
+      "pd_range": 1.0849,
+      "monotonic": false,
+      "direcao": "decrescente",
+      "n_trocas_sinal_inclinacao": 7
+    },
+    "rain_decay_index_api_chirps": {
+      "grade_min": 3.9801,
+      "grade_max": 67.219,
+      "pd_grade_min": -0.7363,
+      "pd_grade_max": 0.4736,
+      "pd_range": 1.2686,
+      "monotonic": false,
+      "direcao": "crescente",
+      "n_trocas_sinal_inclinacao": 7
+    }
+  },
+  "2_model_sweep": [
+    {
+      "modelo": "GBM_referencia_v20u",
+      "n_treino": 1179,
+      "n_teste": 279,
+      "auc_holdout": 0.5888
+    },
+    {
+      "modelo": "AdaBoost_d1",
+      "n_treino": 1179,
+      "n_teste": 279,
+      "auc_holdout": 0.5771
+    },
+    {
+      "modelo": "RandomForest_d3",
+      "n_treino": 1179,
+      "n_teste": 279,
+      "auc_holdout": 0.5611
+    },
+    {
+      "modelo": "ExtraTrees_d3",
+      "n_treino": 1179,
+      "n_teste": 279,
+      "auc_holdout": 0.5468
+    },
+    {
+      "modelo": "SVM_RBF_C1",
+      "n_treino": 1179,
+      "n_teste": 279,
+      "auc_holdout": 0.5386
+    },
+    {
+      "modelo": "SVM_RBF_C10",
+      "n_treino": 1179,
+      "n_teste": 279,
+      "auc_holdout": 0.537
+    },
+    {
+      "modelo": "MLP_16_8",
+      "n_treino": 1179,
+      "n_teste": 279,
+      "auc_holdout": 0.5318
+    },
+    {
+      "modelo": "MLP_8",
+      "n_treino": 1179,
+      "n_teste": 279,
+      "auc_holdout": 0.5292
+    }
+  ],
+  "reference_baseline_linear_v20o": 0.5246,
+  "reference_gbm_v20u": 0.5888,
+  "nota_dependencias_nao_instaladas": "shap e xgboost nao instalaram no sandbox (timeout de rede em pip install) -- decomposicao feita via sklearn.inspection.partial_dependence (ja disponivel), sem workaround de rede arriscado."
+}

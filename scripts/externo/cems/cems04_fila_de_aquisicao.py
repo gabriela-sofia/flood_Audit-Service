@@ -36,7 +36,7 @@ CRITERIO DE ACEITACAO -- declarado antes da leitura, nao ajustavel por resultado
 Petropolis: 1.152 m / 81%. Curitiba, com a MESMA elevacao, da 100 m / 3% --
 por isso o criterio e sobre amplitude altimetrica e nao sobre elevacao.
 
-NAO faz: nao baixa raster de evento, nao extrai feature, nao promove rotulo,
+NAO faz: nao baixa raster de evento, nao extrai variavel, nao promove rotulo,
 nao treina, nao afrouxa o criterio para caber mais AOI.
 
 Uso:
@@ -167,7 +167,7 @@ def baixar_aois() -> int:
     print(f"AOIS_TOTAIS={len(todas)}")
 
     if not INV.exists():
-        print(f"ABORTADO: {INV} ausente. Rode n1c_cems_activations.py antes.")
+        print(f"ABORTADO: {INV} ausente. Rode n1c_cems_ativacoes.py antes.")
         return 1
     raw = json.loads(INV.read_text(encoding="utf-8"))
     meta = {r["code"]: r for r in raw if str(r.get("category")) in CATEGORIAS}

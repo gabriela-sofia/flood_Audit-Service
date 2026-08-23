@@ -23,7 +23,7 @@ Fonte  : Zenodo, DOI 10.5281/zenodo.15238469
 Codigo : https://github.com/Tellman-lab/urbanFloodObservations
 Licenca: CC BY 4.0
 
-NAO faz: nenhuma promocao a negativo, nenhuma extracao de feature, nenhum
+NAO faz: nenhuma promocao a negativo, nenhuma extracao de variavel, nenhum
 treino.
 
 Uso:
@@ -32,7 +32,7 @@ Uso:
 
 from __future__ import annotations
 
-from n1_common import (
+from n1_comum import (
     BASE_OUT, baixar, escrever_proveniencia, gb, get_json, salvar_json,
 )
 
@@ -106,7 +106,7 @@ def main() -> int:
                        "URBANO (analogo mais proximo de Recife); referencia "
                        "para avaliar se produto global de agua e suficiente.",
         uso_proibido="Promover a negativo do dataset SUSC sem adjudicacao "
-                     "propria; usar como feature; extrapolar rotulo de 3 m "
+                     "propria; usar como variavel; extrapolar rotulo de 3 m "
                      "para outra resolucao sem documentar a reamostragem.",
         extra="- Codigo de referencia: https://github.com/Tellman-lab/urbanFloodObservations\n"
               "- Alerta metodologico registrado: produtos globais de agua "

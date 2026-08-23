@@ -1,12 +1,12 @@
 """
-SVC-02 -- O contrato de inferencia: portoes, escore com IC, model card, explicacao.
+SVC-02 -- O contrato de inferencia: portoes, escore com IC, modelo card, explicacao.
 
 O QUE ESTE ARQUIVO E, e o que ele nao e:
 
 e a implementacao, dentro do REV-P, do contrato que a Secao II do plano
 descreve -- "a requisicao declara geometria, CRS, periodo e camadas; a resposta
 devolve status, maturidade da regiao, escore com intervalo, variaveis usadas e
-limitacoes, sempre junto de um model card". Ate agora esse contrato existia como
+limitacoes, sempre junto de um modelo card". Ate agora esse contrato existia como
 texto e como MVP no repositorio privado; aqui ele vira funcao pura, auditavel e
 testavel, sem rede e sem servidor.
 

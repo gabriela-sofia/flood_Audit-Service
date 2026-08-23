@@ -48,7 +48,7 @@ O QUE E AUDITADO EM CADA RODADA (mesmo padrao do recife_validation):
 
 O LIMIAR DE CANAL E EM AREA, NAO EM PERCENTIL -- correcao de 12/08/2026:
 
-a primeira versao deste script herdou o `stream_percentile = 98,0` do
+a primeira versao deste script herdou o `drenagem_percentil = 98,0` do
 recife_validation. Testada na EMSR789_AOI06, produziu HAND com mediana de
 70,7 m contra 36,4 m do produto global (r=0,815). A causa nao e resolucao: e
 que **o percentil e relativo as celulas da janela**.
@@ -177,7 +177,7 @@ def checar_ambiente() -> int:
 
 # ------------------------------------------------------------------ DEM
 
-def preparar_dem(bbox_ll, label: str, destino: Path) -> dict:
+def preparar_dem(bbox_ll, rotulo: str, destino: Path) -> dict:
     """Baixa tiles GLO-30, mosaica e reprojeta ao UTM local a 30 m."""
     import numpy as np
     import rasterio
@@ -224,7 +224,7 @@ def preparar_dem(bbox_ll, label: str, destino: Path) -> dict:
         except Exception:  # noqa: BLE001
             continue          # tile de oceano nao existe; ausencia e esperada
     if not abertos:
-        raise RuntimeError(f"{label}: nenhum tile DEM disponivel para {bbox_ll}")
+        raise RuntimeError(f"{rotulo}: nenhum tile DEM disponivel para {bbox_ll}")
 
     arr, tr = merge(abertos, bounds=(minx, miny, maxx, maxy))
     perfil = abertos[0].profile
@@ -257,12 +257,12 @@ def preparar_dem(bbox_ll, label: str, destino: Path) -> dict:
     frac_mar = float(mar.mean())
     saida[mar] = np.nan
     if frac_mar > 0.5:
-        print(f"    [{label}] {frac_mar*100:.0f}% do recorte e mar/nivel zero -- mascarado")
+        print(f"    [{rotulo}] {frac_mar*100:.0f}% do recorte e mar/nivel zero -- mascarado")
 
     valido = np.isfinite(saida)
     if valido.sum() < 500:
         raise RuntimeError(
-            f"{label}: so {int(valido.sum())} celulas de terra apos mascarar o mar. "
+            f"{rotulo}: so {int(valido.sum())} celulas de terra apos mascarar o mar. "
             f"Recorte pequeno demais para derivar drenagem com limiar de "
             f"{AREA_CANAL_KM2} km2 (exige {AREA_CANAL_KM2/((RESOLUCAO_M**2)/1e6):.0f} celulas).")
 
@@ -280,7 +280,7 @@ def preparar_dem(bbox_ll, label: str, destino: Path) -> dict:
 
 # ------------------------------------------------------------------ cadeia
 
-def derivar(dem: Path, outdir: Path, label: str, meta_dem: dict) -> dict:
+def derivar(dem: Path, outdir: Path, rotulo: str, meta_dem: dict) -> dict:
     """fill -> D-inf -> SCA -> slope -> canais(p98) -> HAND -> TWI."""
     import numpy as np
     import rasterio
@@ -309,7 +309,7 @@ def derivar(dem: Path, outdir: Path, label: str, meta_dem: dict) -> dict:
         perfil = s.profile
     valido = np.isfinite(acc)
     if not valido.any():
-        raise RuntimeError(f"{label}: acumulacao D-inf vazia -- cadeia quebrada")
+        raise RuntimeError(f"{rotulo}: acumulacao D-inf vazia -- cadeia quebrada")
     # Limiar em area contribuinte -> celulas, usando o pixel REAL deste raster.
     area_px_km2 = (RESOLUCAO_M * RESOLUCAO_M) / 1e6
     limiar = AREA_CANAL_KM2 / area_px_km2
@@ -344,7 +344,7 @@ def derivar(dem: Path, outdir: Path, label: str, meta_dem: dict) -> dict:
         st[np.isclose(st, nd_st)] = np.nan
     n_canal = int(np.nansum(st > 0))
     if n_canal < 50:
-        print(f"    [{label}] REDE DEGENERADA: {n_canal} celulas de canal. "
+        print(f"    [{rotulo}] REDE DEGENERADA: {n_canal} celulas de canal. "
               f"HAND definido em pouca area; pontos fora viram nodata.")
 
     # verificacao antes de declarar sucesso: camada vazia e erro, nao aviso
@@ -355,19 +355,19 @@ def derivar(dem: Path, outdir: Path, label: str, meta_dem: dict) -> dict:
             if not np.isfinite(a).any() or float(np.nanstd(a)) == 0.0:
                 vazias.append(k)
     if vazias:
-        raise RuntimeError(f"{label}: camadas vazias ou constantes: {vazias}")
+        raise RuntimeError(f"{rotulo}: camadas vazias ou constantes: {vazias}")
 
     manifesto = {
-        "region_label": label, "dtm_input": str(dem),
+        "region_label": rotulo, "mdt_entrada": str(dem),
         "outdir": str(outdir), **meta_dem,
         "stream_area_km2": AREA_CANAL_KM2,
-        "stream_threshold_cells": limiar,
+        "drenagem_limiar_celulas": limiar,
         "stream_percentile_equivalente": round(percentil_equiv, 3),
         "n_celulas_canal": n_canal,
         "piso_slope_graus": PISO_SLOPE_GRAUS,
         "twi_formula": "ln(SCA / tan(slope))",
         "resampling_dem": "bilinear",
-        "wbt_version": wbt.version().splitlines()[0] if hasattr(wbt, "version") else "?",
+        "versao_wbt": wbt.version().splitlines()[0] if hasattr(wbt, "version") else "?",
         "elapsed_s": round(time.time() - t0, 1),
         "python": sys.version.split()[0], "platform": sys.platform,
         "outputs": p,
@@ -391,7 +391,7 @@ def comparar(gerado: Path, referencia: Path, rotulo: str, outdir: Path) -> dict:
                  and a.transform.almost_equals(b.transform, precision=1e-6))
         crs_a, crs_b, sh_a, sh_b = str(a.crs), str(b.crs), list(a.shape), list(b.shape)
 
-    r = {"label": rotulo, "path_generated": str(gerado),
+    r = {"rotulo": rotulo, "path_generated": str(gerado),
          "path_reference": str(referencia),
          "shape_generated": sh_a, "shape_reference": sh_b,
          "crs_generated": crs_a, "crs_reference": crs_b, "grid_match": bool(grade),
@@ -443,22 +443,22 @@ def aois_ingremes() -> list[str]:
     return sorted(d.loc[d.analogo_de_petropolis, "aoi"].astype(str).tolist())
 
 
-def rodar_um(label: str, bbox) -> bool:
-    outdir = OUT / label
+def rodar_um(rotulo: str, bbox) -> bool:
+    outdir = OUT / rotulo
     if (outdir / "run_manifest.json").exists():
-        print(f"[{label}] JA_DERIVADO")
+        print(f"[{rotulo}] JA_DERIVADO")
         return True
     try:
-        dem = outdir / f"{label}_dem_30m.tif"
-        meta = preparar_dem(bbox, label, dem)
-        m = derivar(dem, outdir, label, meta)
-        print(f"[{label}] OK shape={m['shape']} {m['crs']} "
-              f"canal={m['stream_threshold_cells']:.1f} cells "
+        dem = outdir / f"{rotulo}_dem_30m.tif"
+        meta = preparar_dem(bbox, rotulo, dem)
+        m = derivar(dem, outdir, rotulo, meta)
+        print(f"[{rotulo}] OK shape={m['shape']} {m['crs']} "
+              f"canal={m['drenagem_limiar_celulas']:.1f} cells "
               f"(p{m['stream_percentile_equivalente']:.1f}) "
               f"({m['elapsed_s']}s)")
         return True
     except Exception as exc:  # noqa: BLE001
-        print(f"[{label}] FALHA {type(exc).__name__}: {exc}")
+        print(f"[{rotulo}] FALHA {type(exc).__name__}: {exc}")
         return False
 
 

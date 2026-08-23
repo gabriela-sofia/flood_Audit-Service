@@ -323,7 +323,7 @@ com ele, é consequência de uma auditoria que falhou de forma documentada.
 
 O Protocolo C também fixou os guardrails que o código ainda carrega: nenhum artefato
 pode marcar `ground_truth=true`, `can_train_model=true` ou
-`can_create_operational_label=true`. O script `scripts/dino/revp_v1px_dino_queue_leakage_audit.py`
+`can_create_operational_label=true`. O script `scripts/dino/revp_v1px_auditoria_vazamento_fila.py`
 existe só para conferir isso a cada execução.
 
 ---
@@ -348,6 +348,21 @@ O projeto tem vocabulário próprio, e ele aparece dentro do código, não só n
 | **Review-only** | Artefato que serve à revisão humana e nunca alimenta treino nem vira rótulo. É o estatuto do DINOv2 no projeto |
 | **Nível C1–C4** | A escala do Protocolo C — ver §5 |
 
+### Convenção de nomenclatura
+
+O projeto é escrito em português: nomes de coluna, de arquivo, de script, valores de
+categoria e documentação. Três famílias permanecem em inglês, por motivo declarado:
+
+| Fica em inglês | Por quê |
+|---|---|
+| `hand_m`, `twi_dinf`, `slope_deg`, `elevation_m`, `rain_*` | São os nomes das variáveis físicas impressos no artigo e usados como chave dentro dos modelos servidos. Renomear desincronizaria o repositório do texto publicado |
+| `max_depth`, `n_estimators`, `learning_rate`, `n_knots`, `monotonic` e afins | São parâmetros de *scikit-learn* e *pyGAM*, não escolhas do projeto |
+| `lat`, `lon`, `crs`, `auc`, `epv`, `osm_*`, `s2id_*`, `b08`, `vv`, `vh` | Abreviações universais, campos de API externa ou nomes de banda orbital |
+
+Palavras-chave da linguagem e identificadores internos de função seguem a convenção do
+Python. O que é conteúdo do projeto — o que se mede, como se chama e o que se conclui —
+está em português.
+
 ---
 
 ## 7. Mapa do código
@@ -369,10 +384,10 @@ A frente externa está organizada por estágio:
 | `externo/comum/` | Armazenamento GeoParquet com poda por bbox e utilitários de aquisição |
 | `externo/aquisicao/` | Sen1Floods11, UFO, Copernicus EMS e Global Flood Database — as quatro fontes do Nível 1 |
 | `externo/cems/` | Seleção de ativações por analogia de relevo, fila de aquisição, download dos pacotes e o negativo observado do EMSR720 |
-| `externo/uk/` | Piloto inglês: Recorded Flood Outlines, AOI, flood zones, contabilidade do negativo, WorldCover e as quatro etapas de feature |
+| `externo/uk/` | Piloto inglês: Recorded Flood Outlines, AOI, flood zones, contabilidade do negativo, WorldCover e as quatro etapas de variavel |
 | `externo/pontos/` | Redução de polígono a ponto e extração de features topográficas |
 
-**Uma diferença que vale saber.** O `gates.py` de `susc_20e` é a versão anterior do
+**Uma diferença que vale saber.** O `portoes.py` de `susc_20e` é a versão anterior do
 contrato: ele avalia geometria, CRS, região, modelo e variáveis — **sem o portão de
 domínio**. O contrato atual, com os cinco portões da §3.1, está em
 `scripts/servico/svc02_contrato_inferencia.py`. O `20e` fica como registro da etapa em
@@ -407,7 +422,7 @@ versionados em `modelo/execucoes/`, e os testes os encontram automaticamente qua
 
 1. Tellman, B. *et al.* Satellite imaging reveals increased proportion of population exposed to floods. *Nature*, 2021.
 2. Nobre, A. D. *et al.* HAND, a new terrain descriptor using SRTM-DEM. *Journal of Hydrology*, 2011.
-3. Beven, K. J.; Kirkby, M. J. A physically based, variable contributing area model of basin hydrology. *Hydrological Sciences Bulletin*, 1979.
+3. Beven, K. J.; Kirkby, M. J. A physically based, variable contributing area modelo of basin hydrology. *Hydrological Sciences Bulletin*, 1979.
 4. Tarboton, D. G. A new method for the determination of flow directions and upslope areas in grid digital elevation models. *Water Resources Research*, 1997.
 5. Firth, D. Bias reduction of maximum likelihood estimates. *Biometrika*, 1993.
 6. Peduzzi, P. *et al.* A simulation study of the number of events per variable in logistic regression analysis. *Journal of Clinical Epidemiology*, 1996.

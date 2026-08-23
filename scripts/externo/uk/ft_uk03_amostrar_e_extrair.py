@@ -29,7 +29,7 @@ DECISOES DE AMOSTRAGEM, e o porque de cada uma:
    junto na saida.
 
 O QUE ESTE SCRIPT NAO FAZ: nao treina, nao calcula metrica de desempenho, nao
-promove nada a rotulo definitivo. A coluna `label` aqui e candidata, e o
+promove nada a rotulo definitivo. A coluna `rotulo` aqui e candidata, e o
 arquivo de saida diz isso no nome e no cabecalho.
 
 Uso:
@@ -49,7 +49,7 @@ import rasterio
 from rasterio.features import rasterize
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from geo_store import ler_bbox  # noqa: E402
+from armazenamento_geo import ler_bbox  # noqa: E402
 
 REPO = Path(__file__).resolve().parents[2]
 RUNS = REPO / "local_runs"
@@ -110,7 +110,7 @@ def main() -> int:
     pos = (pos.groupby("rec_grp_id", group_keys=False)
               .apply(lambda g: g.sample(min(len(g), MAX_POR_EVENTO), random_state=SEMENTE)))
     pos = pos.reset_index(drop=True)
-    pos["label"] = 1
+    pos["rotulo"] = 1
     pos["grupo_cv"] = "EV_" + pos["rec_grp_id"].astype(str)
     print(f"POSITIVOS_APOS_TETO={len(pos):,} (teto={MAX_POR_EVENTO}/evento) "
           f"eventos={pos.rec_grp_id.nunique()}")
@@ -138,7 +138,7 @@ def main() -> int:
     ln = np.concatenate(escolhidos_l)
     cn = np.concatenate(escolhidos_c)
     neg = pd.DataFrame({"row": ln, "col": cn})
-    neg["label"] = 0
+    neg["rotulo"] = 0
     neg["rec_out_id"] = pd.NA
     neg["rec_grp_id"] = pd.NA
     neg["start_date"] = pd.NaT
@@ -174,10 +174,10 @@ def main() -> int:
     df["lon"], df["lat"] = tr.transform(df["x_bng"].values, df["y_bng"].values)
 
     df["ponto_id"] = [f"UK_{i:06d}" for i in range(len(df))]
-    df["fonte_label"] = np.where(df["label"] == 1,
+    df["fonte_label"] = np.where(df["rotulo"] == 1,
                                  "EA_recorded_flood_outlines", "adjudicacao_N1_N4")
 
-    colunas = ["ponto_id", "label", "tema", "grupo_cv", "rec_grp_id", "rec_out_id",
+    colunas = ["ponto_id", "rotulo", "tema", "grupo_cv", "rec_grp_id", "rec_out_id",
                "start_date", "flood_src", "flood_caus", "x_bng", "y_bng", "lon", "lat",
                "elevation_m", "slope_deg", "twi_dinf", "hand_m", "worldcover",
                "dist_inundavel_m", "fonte_label", "row", "col"]
@@ -187,24 +187,24 @@ def main() -> int:
 
     # ---------------- verificacao ----------------
     print("---VERIFICACAO---")
-    print(f"N_TOTAL={len(df):,} pos={int((df.label==1).sum()):,} neg={int((df.label==0).sum()):,}")
-    print(f"N_EVENTOS_INDEPENDENTES={df.loc[df.label==1,'rec_grp_id'].nunique()}")
+    print(f"N_TOTAL={len(df):,} pos={int((df.rotulo==1).sum()):,} neg={int((df.rotulo==0).sum()):,}")
+    print(f"N_EVENTOS_INDEPENDENTES={df.loc[df.rotulo==1,'rec_grp_id'].nunique()}")
     print(f"N_GRUPOS_CV={df.grupo_cv.nunique()}")
-    comp_pos = df[df.label == 1].worldcover.value_counts(normalize=True).mul(100).round(1)
-    comp_neg = df[df.label == 0].worldcover.value_counts(normalize=True).mul(100).round(1)
+    comp_pos = df[df.rotulo == 1].worldcover.value_counts(normalize=True).mul(100).round(1)
+    comp_neg = df[df.rotulo == 0].worldcover.value_counts(normalize=True).mul(100).round(1)
     print("WC_POS=" + "; ".join(f"{int(k)}:{v}%" for k, v in comp_pos.items()))
     print("WC_NEG=" + "; ".join(f"{int(k)}:{v}%" for k, v in comp_neg.items()))
     print("---SEPARACAO_UNIVARIADA (mediana pos vs neg)---")
     for f in ("elevation_m", "slope_deg", "twi_dinf", "hand_m"):
-        mp = df.loc[df.label == 1, f].median()
-        mn = df.loc[df.label == 0, f].median()
+        mp = df.loc[df.rotulo == 1, f].median()
+        mn = df.loc[df.rotulo == 0, f].median()
         print(f"  {f}: pos={mp:.2f} neg={mn:.2f}")
 
     (OUT / "resumo.json").write_text(json.dumps({
         "n_total": int(len(df)),
-        "n_positivos": int((df.label == 1).sum()),
-        "n_negativos": int((df.label == 0).sum()),
-        "n_eventos_independentes": int(df.loc[df.label == 1, "rec_grp_id"].nunique()),
+        "n_positivos": int((df.rotulo == 1).sum()),
+        "n_negativos": int((df.rotulo == 0).sum()),
+        "n_eventos_independentes": int(df.loc[df.rotulo == 1, "rec_grp_id"].nunique()),
         "n_grupos_cv": int(df.grupo_cv.nunique()),
         "max_por_evento": MAX_POR_EVENTO,
         "bloco_neg_m": BLOCO_NEG_M,
@@ -212,7 +212,7 @@ def main() -> int:
         "semente": SEMENTE,
         "worldcover_pos_pct": {int(k): float(v) for k, v in comp_pos.items()},
         "worldcover_neg_pct": {int(k): float(v) for k, v in comp_neg.items()},
-        "aviso": ("Amostra CANDIDATA. `label` nao e rotulo promovido. Faltam as "
+        "aviso": ("Amostra CANDIDATA. `rotulo` nao e rotulo promovido. Faltam as "
                   "duas features de chuva (FT-UK-04). Nenhum modelo treinado."),
         "segundos": round(time.time() - t0, 1),
     }, indent=2, ensure_ascii=False), encoding="utf-8")

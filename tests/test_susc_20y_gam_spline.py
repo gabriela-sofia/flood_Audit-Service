@@ -1,8 +1,8 @@
 """Testes reais pro GAM aditivo com splines -- susc_20y.
 
 O que importa travar: o modelo e ADITIVO por construcao (sem termo cruzado entre features);
-cada feature aparece com seu proprio bloco de spline independente; a curva de efeito aditivo
-por feature bate com a soma spline(x) . coef daquela feature (nao precisa de outras features
+cada variavel aparece com seu proprio bloco de spline independente; a curva de efeito aditivo
+por variavel bate com a soma spline(x) . coef daquela variavel (nao precisa de outras features
 pra calcular); o resumo compara corretamente contra o benchmark real do GBM (0,5888), sem usar
 um limiar arbitrario que inflaria a leitura.
 """
@@ -18,7 +18,7 @@ import pytest
 ROOT = Path(__file__).resolve().parents[1]
 PKG = ROOT / "outputs_public/data/susc_20k_siac156_curitiba_flood_candidates"
 sys.path.insert(0, str(PKG / "scripts"))
-import pipeline_v20y_gam_spline_curitiba as p20y  # noqa: E402
+import pipeline_v20y_gam_splines_curitiba as p20y  # noqa: E402
 
 FEATS = ["slope_deg", "hand_m_dinf", "twi_dinf",
           "rain_peak_residual_orthogonalized", "rain_decay_index_api_chirps"]
@@ -28,7 +28,7 @@ def _fake(n, seed, with_bairro=False):
     rng = np.random.default_rng(seed)
     d = pd.DataFrame({f: rng.normal(size=n) if f != "hand_m_dinf" else rng.uniform(0, 20, size=n)
                        for f in FEATS})
-    d["label"] = (rng.random(n) < 0.4).astype(int)
+    d["rotulo"] = (rng.random(n) < 0.4).astype(int)
     if with_bairro:
         d["bairro"] = rng.choice([f"bairro_{i}" for i in range(8)], size=n)
     return d
@@ -55,8 +55,8 @@ def test_gam_temporal_holdout_returns_auc_in_valid_range():
     d_train = _fake(300, seed=4)
     d_test = _fake(80, seed=5)
     r = p20y.gam_temporal_holdout(d_train, d_test, FEATS, n_knots=4, degree=3, C=1.0)
-    assert 0.0 <= r["holdout_auc_2026"] <= 1.0
-    assert r["n_train"] == 300 and r["n_test"] == 80
+    assert 0.0 <= r["auc_holdout_2026"] <= 1.0
+    assert r["n_treino"] == 300 and r["n_teste"] == 80
 
 
 def test_gam_spatial_block_cv_runs_without_bairro_overlap_and_returns_summary():
@@ -71,8 +71,8 @@ def test_additive_effect_curves_are_isolated_per_feature_no_cross_terms():
     splines, clf = p20y.fit_gam(d, FEATS, n_knots=4, degree=3)
     effects = p20y.additive_effect_curves(splines, clf, FEATS, d, grid_resolution=10)
     assert len(effects) == len(FEATS)
-    assert set(effects["feature"]) == set(FEATS)
-    # cada efeito depende so da propria feature: recalcular manualmente pra 1 feature e comparar
+    assert set(effects["variavel"]) == set(FEATS)
+    # cada efeito depende so da propria variavel: recalcular manualmente pra 1 variavel e comparar
     feat = "hand_m_dinf"
     offsets, pos = {}, 0
     for f in FEATS:
@@ -83,10 +83,10 @@ def test_additive_effect_curves_are_isolated_per_feature_no_cross_terms():
     coef_feat = clf.coef_[0][lo:hi]
     grid = np.linspace(d[feat].min(), d[feat].max(), 10)
     manual_effect = splines[feat].transform(grid.reshape(-1, 1)) @ coef_feat
-    row = effects.loc[effects["feature"] == feat].iloc[0]
+    row = effects.loc[effects["variavel"] == feat].iloc[0]
     # a funcao arredonda pra 4 casas antes de guardar no dataframe
-    np.testing.assert_allclose(row["effect_at_min"], manual_effect[0], atol=1e-4)
-    np.testing.assert_allclose(row["effect_at_max"], manual_effect[-1], atol=1e-4)
+    np.testing.assert_allclose(row["efeito_no_min"], manual_effect[0], atol=1e-4)
+    np.testing.assert_allclose(row["efeito_no_max"], manual_effect[-1], atol=1e-4)
 
 
 def test_resumo_uses_real_gbm_benchmark_not_arbitrary_threshold():

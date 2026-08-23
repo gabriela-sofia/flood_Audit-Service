@@ -27,7 +27,7 @@ Entradas:
   local_runs/ext-uk-02-area-piloto/elegiveis.gpkg           (16.667 outlines)
   local_runs/ext-uk-04-flood-zones/Flood_Zones_.../page_*   (17.199 poligonos)
 
-NAO faz: nao promove nada a rotulo, nao extrai feature, nao treina. So conta.
+NAO faz: nao promove nada a rotulo, nao extrai variavel, nao treina. So conta.
 
 Uso:
     python scripts/externo/ext_uk05_contabilidade_negativo.py

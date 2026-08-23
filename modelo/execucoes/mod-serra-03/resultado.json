@@ -45,7 +45,7 @@
           "auc_cv": 0.7916,
           "folds": 5,
           "auc_treino_medio": 0.7957,
-          "gap": 0.0041,
+          "lacuna": 0.0041,
           "cobertura": 1.0,
           "coef": {
             "hand_m": -1.4423
@@ -73,7 +73,7 @@
           "auc_cv": 0.7847,
           "folds": 5,
           "auc_treino_medio": 0.7889,
-          "gap": 0.0043,
+          "lacuna": 0.0043,
           "cobertura": 1.0,
           "coef": {
             "hand_m": -0.8221,
@@ -168,7 +168,7 @@
           "auc_cv": 0.7121,
           "folds": 5,
           "auc_treino_medio": 0.7323,
-          "gap": 0.0202,
+          "lacuna": 0.0202,
           "cobertura": 1.0,
           "coef": {
             "hand_m": -2.2536
@@ -196,7 +196,7 @@
           "auc_cv": 0.7131,
           "folds": 5,
           "auc_treino_medio": 0.7162,
-          "gap": 0.0031,
+          "lacuna": 0.0031,
           "cobertura": 1.0,
           "coef": {
             "hand_m": -1.6325,
@@ -231,7 +231,7 @@
           "auc_cv": 0.7245,
           "folds": 5,
           "auc_treino_medio": 0.7273,
-          "gap": 0.0028,
+          "lacuna": 0.0028,
           "cobertura": 1.0,
           "coef": {
             "elevation_m": 0.295,
@@ -278,7 +278,7 @@
           "auc_cv": 0.7234,
           "folds": 5,
           "auc_treino_medio": 0.7288,
-          "gap": 0.0053,
+          "lacuna": 0.0053,
           "cobertura": 1.0,
           "coef": {
             "elevation_m": 0.2976,

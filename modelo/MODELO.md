@@ -1,6 +1,6 @@
 # Modelo
 
-Cartão do modelo, no formato de *model card* (Mitchell et al., 2019). Descreve o que foi
+Cartão do modelo, no formato de *modelo card* (Mitchell et al., 2019). Descreve o que foi
 treinado, para que serve, onde funciona e — principalmente — **onde não vale**.
 
 O método está em [`../docs/METODO.md`](../docs/METODO.md); a procedência de cada número,

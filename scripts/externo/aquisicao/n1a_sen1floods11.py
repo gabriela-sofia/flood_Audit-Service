@@ -26,7 +26,7 @@ Fonte  : Cloud to Street (bucket publico gs://sen1floods11)
 Licenca: CC BY 4.0
 Ref    : Bonafilia et al., CVPRW 2020
 
-NAO faz: nenhuma promocao a negativo, nenhuma extracao de feature, nenhum
+NAO faz: nenhuma promocao a negativo, nenhuma extracao de variavel, nenhum
 treino. So adquire e inventaria.
 
 Uso:
@@ -39,7 +39,7 @@ from __future__ import annotations
 import sys
 from collections import Counter, defaultdict
 
-from n1_common import (
+from n1_comum import (
     BASE_OUT, baixar, escrever_proveniencia, gb, listar_bucket, salvar_json,
 )
 
@@ -120,7 +120,7 @@ def main() -> int:
         uso_pretendido="Fonte candidata de NEGATIVO POR OBSERVACAO para a "
                        "lacuna L1; referencia de validacao de deteccao.",
         uso_proibido="Promover a negativo do dataset SUSC sem tarefa propria "
-                     "de adjudicacao; usar como feature; misturar chips de "
+                     "de adjudicacao; usar como variavel; misturar chips de "
                      "rotulo fraco com rotulo manual sem marcar a procedencia.",
         extra=f"- Chips com rotulo manual baixados: {len(labelhand)}\n"
               f"- Rotulo fraco incluido: {tudo}\n",

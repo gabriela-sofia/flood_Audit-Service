@@ -6,7 +6,7 @@ Entrada : local_runs/ext-uk-01-aquisicao/recorded_flood_outlines.gpkg
 
 Objetivo: decidir QUAL recorte espacial da Inglaterra vira o piloto da linha
 causal SUSC, usando contagem real de registros elegiveis por celula, e nao
-escolha arbitraria de cidade. Nenhuma feature e extraida aqui; nenhum modelo
+escolha arbitraria de cidade. Nenhuma variavel e extraida aqui; nenhum modelo
 e treinado; nenhum negativo e criado.
 
 Criterio de elegibilidade (definido ANTES de olhar o resultado):

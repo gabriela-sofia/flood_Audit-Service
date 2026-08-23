@@ -251,7 +251,7 @@ def test_explicacao_e_gerada_por_regras_e_nao_por_texto_livre(modelos, caixas):
     assert r["explicacao"]["gerador"] == "regras_sobre_o_payload"
 
 
-# ------------------------------------------------------------- model card
+# ------------------------------------------------------------- modelo card
 
 def test_model_card_acompanha_toda_resposta_ok(modelos, caixas):
     r = inferir(_req([_ponto()], regiao="curitiba"), modelos, caixas)

@@ -1,6 +1,6 @@
 {
   "hand_dinf": {
-    "label": "hand_dinf",
+    "rotulo": "hand_dinf",
     "path_generated": "<REV-P>/local_runs/susc_20g_hand_twi_dinfinity_generico/recife_validation/hand_dinf.tif",
     "path_reference": "<PROJETO>/local_runs/recife_modelo_v7_otimizado/scratch_dinf/hand_dinf.tif",
     "shape_generated": [
@@ -30,7 +30,7 @@
     "std_reference": 15.610021728376482
   },
   "twi_dinf": {
-    "label": "twi_dinf",
+    "rotulo": "twi_dinf",
     "path_generated": "<REV-P>/local_runs/susc_20g_hand_twi_dinfinity_generico/recife_validation/twi_dinf.tif",
     "path_reference": "<PROJETO>/local_runs/recife_modelo_v7_otimizado/scratch_dinf/twi_dinf.tif",
     "shape_generated": [

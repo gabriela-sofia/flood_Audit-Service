@@ -1,0 +1,28 @@
+{
+  "n_audited": 269,
+  "n_pos": 145,
+  "n_neg": 124,
+  "firth_point_estimate_max_abs_diff_vs_published_susc20c": 4.6e-05,
+  "bootstrap_max_abs_diff_vs_published_susc20c_percentiles": 0.0,
+  "in_sample_auc_this_engine": 0.7107,
+  "documented_loo_auc_susc20c_for_reference": 0.6781,
+  "in_sample_vs_loo_note": "in-sample AUC e otimista por construcao (mesmo dado usado pra treinar e avaliar); nao substitui o LOO-AUC ja documentado, serve so pra auditar coerencia do motor",
+  "mean_ci_width": 0.2389,
+  "median_ci_width": 0.207,
+  "dino_evidence_index_available": true,
+  "n_points_with_dino_evidence_attached": 109,
+  "labels_created": 0,
+  "used_as_training_feature_dino": false,
+  "versao_modelo": "SUSC-20 v12 (Firth, n=269, LOO-AUC=0.6781 documentado em SUSC-20C)",
+  "region_supported": [
+    "recife"
+  ],
+  "limitations": [
+    "n=269 pontos completos (de 278 no v12), regiao=Recife apenas -- nao generaliza para outras cidades sem modelo proprio.",
+    "LOO-AUC=0.6781 documentado (SUSC-20C): discriminacao modesta, nao e um detector de enchentes.",
+    "DINO nao entra no escore (Fase 1: ganho nao sobreviveu ao controle cluster-robusto por patch, ver revp_fase1_conclusao_dino_ab_test.md); aparece so como evidencia visual auxiliar quando disponivel.",
+    "hand_m_dinf sem sinal robusto no bootstrap (48.7% de flips de sinal, ja documentado em SUSC-20C) -- tratar sua contribuicao individual com cautela.",
+    "Este escore nunca deve ser exibido como 'enchente detectada/confirmada' -- e uma suscetibilidade candidata com incerteza explicita."
+  ],
+  "status": "SUSC_20D_MVP_AUDIT_READY_REVIEW_ONLY"
+}

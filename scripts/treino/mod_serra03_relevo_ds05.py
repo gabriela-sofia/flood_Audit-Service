@@ -89,7 +89,7 @@ import numpy as np
 import pandas as pd
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-import susc_firth_shim  # noqa: F401,E402
+import susc_firth_adaptador  # noqa: F401,E402
 from ds03_esquema_alvo import VERSAO  # noqa: E402
 
 REPO = Path(__file__).resolve().parents[2]
@@ -164,7 +164,7 @@ def cv_agrupada(s: pd.DataFrame, feats: list[str]) -> dict:
     auc = float(roc_auc_score(y[ok], p[ok]))
     return {"auc_cv": round(auc, 4), "folds": n_folds,
             "auc_treino_medio": round(float(np.mean(p_tr)), 4) if p_tr else None,
-            "gap": (round(float(np.mean(p_tr)) - auc, 4) if p_tr else None),
+            "lacuna": (round(float(np.mean(p_tr)) - auc, 4) if p_tr else None),
             "cobertura": round(float(ok.mean()), 3)}
 
 
@@ -356,7 +356,7 @@ def main() -> int:
                 linhas.append({
                     "estrato": nome, "conjunto": conj, "n": e["n"],
                     "grupos": e["grupos"], "grupos_positivos": e["grupos_positivos"],
-                    "feature": f, "coef": c["coef"][f],
+                    "variavel": f, "coef": c["coef"][f],
                     "ic95_lo": (c["ic95"][f] or [None, None])[0],
                     "ic95_hi": (c["ic95"][f] or [None, None])[1],
                     "auc_cv": c.get("auc_cv"), "veredito": c["veredito"],

@@ -1,4 +1,4 @@
-window_id,data_criacao,tipo,orgao,assunto,subdivisao,situacao,logradouro,bairro,regional,origem,bairro_esperado,source_file
+janela_id,data_criacao,tipo,orgao,assunto,subdivisao,situacao,logradouro,bairro,regional,origem,bairro_esperado,arquivo_fonte
 CUR_2025_02_03,03/02/2025,Solicitação,SECRETARIA MUNICIPAL DA DEFESA SOCIAL E TRÂNSITO,Proteção ao cidadão - GM,"Enchentes, inundações ou alagamentos",Respondido,RUA ABRÃO WINTER,XAXIM,Unidade Regional Boqueirao,Telefone,True,/tmp/curitiba_run/siac156_2025-02-03.csv
 CUR_2025_02_03,03/02/2025,Solicitação,SECRETARIA DO GOVERNO MUNICIPAL,Drenagem,Alagamentos,Respondido,Doutor Libânio Estanislau Cardoso,CIDADE INDUSTRIAL,Unidade Regional CIC,Portal,False,/tmp/curitiba_run/siac156_2025-02-03.csv
 CUR_2025_01_28,28/01/2025,Solicitação,SECRETARIA DO GOVERNO MUNICIPAL,Drenagem,Alagamentos,Respondido,Rua Professora Leoni Idazima Fila do Nascimento,CAJURU,Unidade Regional Cajuru,Telefone,False,/tmp/curitiba_run/siac156_2025-02-03.csv

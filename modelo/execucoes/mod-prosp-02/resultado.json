@@ -32,7 +32,7 @@
         "hand_m",
         "twi_dinf"
       ],
-      "n_features": 4,
+      "n_variaveis": 4,
       "heranca": {
         "folds": 2,
         "auc_medio": 0.7974,
@@ -72,7 +72,7 @@
             ],
             "boot_validos": 996,
             "auc_treino": 0.7983,
-            "gap": 0.024,
+            "lacuna": 0.024,
             "coef": {
               "elevation_m": -0.5459,
               "slope_deg": 0.6455,
@@ -105,7 +105,7 @@
             ],
             "boot_validos": 985,
             "auc_treino": 0.8004,
-            "gap": -0.0202,
+            "lacuna": -0.0202,
             "coef": {
               "elevation_m": -0.4572,
               "slope_deg": 0.5773,
@@ -155,7 +155,7 @@
             ],
             "boot_validos": 1000,
             "auc_treino": 0.7913,
-            "gap": -0.049,
+            "lacuna": -0.049,
             "coef": {
               "elevation_m": -0.6538,
               "slope_deg": 0.629,
@@ -189,7 +189,7 @@
             ],
             "boot_validos": 1000,
             "auc_treino": 0.794,
-            "gap": 0.0012,
+            "lacuna": 0.0012,
             "coef": {
               "elevation_m": -0.519,
               "slope_deg": 0.6125,
@@ -223,7 +223,7 @@
             ],
             "boot_validos": 1000,
             "auc_treino": 0.7956,
-            "gap": -0.0036,
+            "lacuna": -0.0036,
             "coef": {
               "elevation_m": -0.3647,
               "slope_deg": 0.547,
@@ -257,7 +257,7 @@
             ],
             "boot_validos": 1000,
             "auc_treino": 0.7904,
-            "gap": 0.0194,
+            "lacuna": 0.0194,
             "coef": {
               "elevation_m": -0.467,
               "slope_deg": 0.741,
@@ -291,7 +291,7 @@
             ],
             "boot_validos": 1000,
             "auc_treino": 0.7946,
-            "gap": 0.0637,
+            "lacuna": 0.0637,
             "coef": {
               "elevation_m": -0.3838,
               "slope_deg": 0.7834,
@@ -325,7 +325,7 @@
             ],
             "boot_validos": 1000,
             "auc_treino": 0.7867,
-            "gap": 0.0088,
+            "lacuna": 0.0088,
             "coef": {
               "elevation_m": -0.3874,
               "slope_deg": 0.7784,
@@ -359,7 +359,7 @@
             ],
             "boot_validos": 1000,
             "auc_treino": 0.7915,
-            "gap": -0.0338,
+            "lacuna": -0.0338,
             "coef": {
               "elevation_m": -0.3751,
               "slope_deg": 0.7508,
@@ -393,7 +393,7 @@
             ],
             "boot_validos": 1000,
             "auc_treino": 0.7906,
-            "gap": -0.0653,
+            "lacuna": -0.0653,
             "coef": {
               "elevation_m": -0.3825,
               "slope_deg": 0.7585,
@@ -413,7 +413,7 @@
         "rain_max_24h",
         "rain_decay_index"
       ],
-      "n_features": 6,
+      "n_variaveis": 6,
       "heranca": {
         "folds": 1,
         "auc_medio": 0.8058,
@@ -453,7 +453,7 @@
             ],
             "boot_validos": 1000,
             "auc_treino": 0.8178,
-            "gap": 0.012,
+            "lacuna": 0.012,
             "coef": {
               "elevation_m": -0.5533,
               "slope_deg": 0.5989,
@@ -505,7 +505,7 @@
             ],
             "boot_validos": 1000,
             "auc_treino": 0.8082,
-            "gap": -0.1066,
+            "lacuna": -0.1066,
             "coef": {
               "elevation_m": -0.5229,
               "slope_deg": 0.6176,
@@ -541,7 +541,7 @@
             ],
             "boot_validos": 1000,
             "auc_treino": 0.8223,
-            "gap": -0.0001,
+            "lacuna": -0.0001,
             "coef": {
               "elevation_m": -0.5381,
               "slope_deg": 0.6217,
@@ -577,7 +577,7 @@
             ],
             "boot_validos": 1000,
             "auc_treino": 0.8121,
-            "gap": 0.0489,
+            "lacuna": 0.0489,
             "coef": {
               "elevation_m": -0.5229,
               "slope_deg": 0.7943,
@@ -613,7 +613,7 @@
             ],
             "boot_validos": 1000,
             "auc_treino": 0.8112,
-            "gap": 0.066,
+            "lacuna": 0.066,
             "coef": {
               "elevation_m": -0.4599,
               "slope_deg": 0.7886,
@@ -649,7 +649,7 @@
             ],
             "boot_validos": 1000,
             "auc_treino": 0.8053,
-            "gap": 0.0977,
+            "lacuna": 0.0977,
             "coef": {
               "elevation_m": -0.4494,
               "slope_deg": 0.7859,
@@ -685,7 +685,7 @@
             ],
             "boot_validos": 1000,
             "auc_treino": 0.8042,
-            "gap": 0.0309,
+            "lacuna": 0.0309,
             "coef": {
               "elevation_m": -0.427,
               "slope_deg": 0.8125,
@@ -721,7 +721,7 @@
             ],
             "boot_validos": 1000,
             "auc_treino": 0.8058,
-            "gap": 0.0205,
+            "lacuna": 0.0205,
             "coef": {
               "elevation_m": -0.505,
               "slope_deg": 0.7692,
@@ -751,7 +751,7 @@
             "hand_m",
             "twi_dinf"
           ],
-          "n_features": 4,
+          "n_variaveis": 4,
           "heranca": {
             "folds": 6,
             "auc_medio": 0.7229,
@@ -791,7 +791,7 @@
                 ],
                 "boot_validos": 994,
                 "auc_treino": 0.7259,
-                "gap": -0.0794,
+                "lacuna": -0.0794,
                 "coef": {
                   "elevation_m": 0.4735,
                   "slope_deg": -0.636,
@@ -824,7 +824,7 @@
                 ],
                 "boot_validos": 1000,
                 "auc_treino": 0.736,
-                "gap": -0.0288,
+                "lacuna": -0.0288,
                 "coef": {
                   "elevation_m": 0.5062,
                   "slope_deg": -0.679,
@@ -857,7 +857,7 @@
                 ],
                 "boot_validos": 1000,
                 "auc_treino": 0.7404,
-                "gap": 0.077,
+                "lacuna": 0.077,
                 "coef": {
                   "elevation_m": 0.4903,
                   "slope_deg": -0.712,
@@ -890,7 +890,7 @@
                 ],
                 "boot_validos": 1000,
                 "auc_treino": 0.7326,
-                "gap": -0.0279,
+                "lacuna": -0.0279,
                 "coef": {
                   "elevation_m": 0.4823,
                   "slope_deg": -0.7029,
@@ -923,7 +923,7 @@
                 ],
                 "boot_validos": 1000,
                 "auc_treino": 0.74,
-                "gap": 0.0942,
+                "lacuna": 0.0942,
                 "coef": {
                   "elevation_m": 0.527,
                   "slope_deg": -0.5908,
@@ -956,7 +956,7 @@
                 ],
                 "boot_validos": 1000,
                 "auc_treino": 0.7307,
-                "gap": 0.0329,
+                "lacuna": 0.0329,
                 "coef": {
                   "elevation_m": 0.4698,
                   "slope_deg": -0.4943,
@@ -976,7 +976,7 @@
             "rain_max_24h",
             "rain_decay_index"
           ],
-          "n_features": 6,
+          "n_variaveis": 6,
           "heranca": {
             "folds": 2,
             "auc_medio": 0.6865,
@@ -1016,7 +1016,7 @@
                 ],
                 "boot_validos": 1000,
                 "auc_treino": 0.7349,
-                "gap": 0.054,
+                "lacuna": 0.054,
                 "coef": {
                   "elevation_m": 0.456,
                   "slope_deg": -0.5862,
@@ -1051,7 +1051,7 @@
                 ],
                 "boot_validos": 1000,
                 "auc_treino": 0.7318,
-                "gap": 0.0398,
+                "lacuna": 0.0398,
                 "coef": {
                   "elevation_m": 0.455,
                   "slope_deg": -0.5137,
@@ -1081,7 +1081,7 @@
             "hand_m",
             "twi_dinf"
           ],
-          "n_features": 4,
+          "n_variaveis": 4,
           "bloco": {
             "folds": 0,
             "veredito": "SEM_FOLD_COM_EPV_SUFICIENTE"
@@ -1096,7 +1096,7 @@
             "rain_max_24h",
             "rain_decay_index"
           ],
-          "n_features": 6,
+          "n_variaveis": 6,
           "bloco": {
             "folds": 0,
             "veredito": "SEM_FOLD_COM_EPV_SUFICIENTE"
@@ -1119,7 +1119,7 @@
             "hand_m",
             "twi_dinf"
           ],
-          "n_features": 4,
+          "n_variaveis": 4,
           "heranca": {
             "folds": 0,
             "veredito": "SEM_FOLD_COM_EPV_SUFICIENTE"
@@ -1134,7 +1134,7 @@
             "rain_max_24h",
             "rain_decay_index"
           ],
-          "n_features": 6,
+          "n_variaveis": 6,
           "heranca": {
             "folds": 0,
             "veredito": "SEM_FOLD_COM_EPV_SUFICIENTE"

@@ -11,7 +11,7 @@ Este arquivo existe porque, em 04-05/08/2026, foi confirmado que:
 2. `firthlogist` depende de uma API privada do scikit-learn
    (`_validate_data`) removida na versao 1.6 -- reproduzido em Python
    3.10.12 com scikit-learn 1.7.2; corrigido com o shim de
-   `susc_ambiente_compat_common.aplicar_shim_firthlogist_sklearn()`.
+   `susc_ambiente_compat_comum.aplicar_shim_firthlogist_sklearn()`.
 
 Se este arquivo for coletado num ambiente sem as duas libs instaladas (por
 exemplo, o ambiente legado da linha DINO, que usa `requirements.txt` na raiz
@@ -36,24 +36,24 @@ interpret = pytest.importorskip(
 )
 
 ROOT = Path(__file__).resolve().parents[1]
-COMPAT_PATH = ROOT / "scripts" / "treino" / "susc_ambiente_compat_common.py"
+COMPAT_PATH = ROOT / "scripts" / "treino" / "susc_ambiente_compat_comum.py"
 
 SEED = 20260805  # data em que o ambiente foi verificado pela primeira vez
 
 
 def _load_compat_module():
-    spec = importlib.util.spec_from_file_location("susc_ambiente_compat_common", COMPAT_PATH)
+    spec = importlib.util.spec_from_file_location("susc_ambiente_compat_comum", COMPAT_PATH)
     module = importlib.util.module_from_spec(spec)
     assert spec.loader is not None
     spec.loader.exec_module(module)
     return module
 
 
-def _dados_sinteticos(n: int, n_features: int = 5):
+def _dados_sinteticos(n: int, n_variaveis: int = 5):
     """Dado 100% sintetico, sem nenhum dado real do projeto -- so pra testar
     se o motor de treino roda, nao pra medir desempenho de modelo nenhum."""
     rng = np.random.default_rng(SEED)
-    X = rng.normal(size=(n, n_features))
+    X = rng.normal(size=(n, n_variaveis))
     y = (X[:, 0] * 0.4 - X[:, 1] * 0.14 + rng.normal(size=n) * 1.5 > 0).astype(int)
     return X, y
 

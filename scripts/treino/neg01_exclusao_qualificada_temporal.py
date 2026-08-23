@@ -310,10 +310,10 @@ def avaliar_regiao(regiao: str, cfg: dict) -> dict | None:
         # real esta no `dataset_role_source` do arquivo harmonizado
         papeis = set(cfg.get("n3_role_sources") or ())
         h = pd.read_csv(cfg["harmonizado"], low_memory=False)
-        mapa = dict(zip((f"{regiao}__" + h["point_id"].astype(str)),
-                        h["dataset_role_source"].astype(str)))
+        mapa = dict(zip((f"{regiao}__" + h["ponto_id"].astype(str)),
+                        h["papel_fonte_dataset"].astype(str)))
         origem = cand["ponto_id"].astype(str).map(mapa)
-        cand["dataset_role_source"] = origem
+        cand["papel_fonte_dataset"] = origem
         cand["n3_ponto_reporta"] = origem.isin(papeis) & cand["data"].notna()
 
     dist = []
