@@ -1,0 +1,1189 @@
+{
+  "entrada": "local_runs/ds-05-tabela-unica/tabela_unica_pool_fluvial_v2.csv",
+  "estrato": "uk",
+  "base_do_estrato": {
+    "pontos": 7476,
+    "grupos": 401,
+    "eventos_positivos": 201,
+    "blocos_negativos": 200,
+    "datas_distintas": 110,
+    "periodo": [
+      "2000-06-01",
+      "2025-01-01"
+    ],
+    "datas_por_bloco_negativo_mediana": 11.5,
+    "datas_por_bloco_negativo_max": 35
+  },
+  "epv_minimo": 10,
+  "n_boot": 1000,
+  "semente": 20260820,
+  "criterios": {
+    "faixa": [
+      0.7,
+      0.88
+    ],
+    "degradacao": 0.6
+  },
+  "conjuntos": {
+    "TERRENO": {
+      "features": [
+        "elevation_m",
+        "slope_deg",
+        "hand_m",
+        "twi_dinf"
+      ],
+      "n_features": 4,
+      "heranca": {
+        "folds": 2,
+        "auc_medio": 0.7974,
+        "auc_mediana": 0.7974,
+        "auc_min": 0.7743,
+        "auc_max": 0.8206,
+        "desvio": 0.0232,
+        "tendencia": null,
+        "folds_na_faixa": 2,
+        "folds_degradados": 0,
+        "prevalencia_teste_min": 0.904,
+        "prevalencia_teste_max": 0.985,
+        "veredito": "PROSPECTIVAMENTE_ESTAVEL",
+        "detalhe": [
+          {
+            "variante": "heranca",
+            "corte": "2002-11-08",
+            "janela_grupos": 40,
+            "n_treino": 4647,
+            "n_teste": 500,
+            "grupos_treino": 240,
+            "grupos_teste": 40,
+            "eventos_treino": 49,
+            "eventos_teste": 35,
+            "pos_treino": 971,
+            "neg_treino": 3676,
+            "pos_teste": 452,
+            "neg_teste": 48,
+            "prevalencia_treino": 0.209,
+            "prevalencia_teste": 0.904,
+            "epv_treino": 60.0,
+            "epv_eventos_treino": 12.2,
+            "auc_prospectivo": 0.7743,
+            "ic95": [
+              0.5861,
+              0.8996
+            ],
+            "boot_validos": 996,
+            "auc_treino": 0.7983,
+            "gap": 0.024,
+            "coef": {
+              "elevation_m": -0.5459,
+              "slope_deg": 0.6455,
+              "hand_m": -3.0876,
+              "twi_dinf": 0.3734
+            }
+          },
+          {
+            "variante": "heranca",
+            "corte": "2011-06-15",
+            "janela_grupos": 40,
+            "n_treino": 5147,
+            "n_teste": 922,
+            "grupos_treino": 280,
+            "grupos_teste": 40,
+            "eventos_treino": 84,
+            "eventos_teste": 36,
+            "pos_treino": 1423,
+            "neg_treino": 3724,
+            "pos_teste": 908,
+            "neg_teste": 14,
+            "prevalencia_treino": 0.276,
+            "prevalencia_teste": 0.985,
+            "epv_treino": 70.0,
+            "epv_eventos_treino": 21.0,
+            "auc_prospectivo": 0.8206,
+            "ic95": [
+              0.528,
+              0.9835
+            ],
+            "boot_validos": 985,
+            "auc_treino": 0.8004,
+            "gap": -0.0202,
+            "coef": {
+              "elevation_m": -0.4572,
+              "slope_deg": 0.5773,
+              "hand_m": -3.3626,
+              "twi_dinf": 0.3629
+            }
+          }
+        ]
+      },
+      "bloco": {
+        "folds": 8,
+        "auc_medio": 0.7992,
+        "auc_mediana": 0.796,
+        "auc_min": 0.7309,
+        "auc_max": 0.8559,
+        "desvio": 0.038,
+        "tendencia": 0.12,
+        "folds_na_faixa": 8,
+        "folds_degradados": 0,
+        "prevalencia_teste_min": 0.462,
+        "prevalencia_teste_max": 0.499,
+        "veredito": "PROSPECTIVAMENTE_ESTAVEL",
+        "detalhe": [
+          {
+            "variante": "bloco",
+            "corte": "2002-06-13",
+            "janela_grupos": 20,
+            "blocos_negativos_teste": 16,
+            "n_treino": 4269,
+            "n_teste": 585,
+            "grupos_treino": 224,
+            "grupos_teste": 36,
+            "eventos_treino": 40,
+            "eventos_teste": 20,
+            "pos_treino": 832,
+            "neg_treino": 3437,
+            "pos_teste": 284,
+            "neg_teste": 301,
+            "prevalencia_treino": 0.195,
+            "prevalencia_teste": 0.485,
+            "epv_treino": 56.0,
+            "epv_eventos_treino": 10.0,
+            "auc_prospectivo": 0.8403,
+            "ic95": [
+              0.7616,
+              0.9096
+            ],
+            "boot_validos": 1000,
+            "auc_treino": 0.7913,
+            "gap": -0.049,
+            "coef": {
+              "elevation_m": -0.6538,
+              "slope_deg": 0.629,
+              "hand_m": -2.8003,
+              "twi_dinf": 0.3545
+            }
+          },
+          {
+            "variante": "bloco",
+            "corte": "2004-08-20",
+            "janela_grupos": 20,
+            "blocos_negativos_teste": 13,
+            "n_treino": 4582,
+            "n_teste": 506,
+            "grupos_treino": 247,
+            "grupos_teste": 33,
+            "eventos_treino": 60,
+            "eventos_teste": 20,
+            "pos_treino": 1116,
+            "neg_treino": 3466,
+            "pos_teste": 234,
+            "neg_teste": 272,
+            "prevalencia_treino": 0.244,
+            "prevalencia_teste": 0.462,
+            "epv_treino": 61.8,
+            "epv_eventos_treino": 15.0,
+            "auc_prospectivo": 0.7928,
+            "ic95": [
+              0.6616,
+              0.8853
+            ],
+            "boot_validos": 1000,
+            "auc_treino": 0.794,
+            "gap": 0.0012,
+            "coef": {
+              "elevation_m": -0.519,
+              "slope_deg": 0.6125,
+              "hand_m": -3.2619,
+              "twi_dinf": 0.334
+            }
+          },
+          {
+            "variante": "bloco",
+            "corte": "2010-07-14",
+            "janela_grupos": 20,
+            "blocos_negativos_teste": 19,
+            "n_treino": 4714,
+            "n_teste": 742,
+            "grupos_treino": 261,
+            "grupos_teste": 39,
+            "eventos_treino": 80,
+            "eventos_teste": 20,
+            "pos_treino": 1350,
+            "neg_treino": 3364,
+            "pos_teste": 368,
+            "neg_teste": 374,
+            "prevalencia_treino": 0.286,
+            "prevalencia_teste": 0.496,
+            "epv_treino": 65.2,
+            "epv_eventos_treino": 20.0,
+            "auc_prospectivo": 0.7992,
+            "ic95": [
+              0.6821,
+              0.8966
+            ],
+            "boot_validos": 1000,
+            "auc_treino": 0.7956,
+            "gap": -0.0036,
+            "coef": {
+              "elevation_m": -0.3647,
+              "slope_deg": 0.547,
+              "hand_m": -3.3552,
+              "twi_dinf": 0.3493
+            }
+          },
+          {
+            "variante": "bloco",
+            "corte": "2016-06-11",
+            "janela_grupos": 20,
+            "blocos_negativos_teste": 32,
+            "n_treino": 4838,
+            "n_teste": 1231,
+            "grupos_treino": 268,
+            "grupos_teste": 52,
+            "eventos_treino": 100,
+            "eventos_teste": 20,
+            "pos_treino": 1718,
+            "neg_treino": 3120,
+            "pos_teste": 613,
+            "neg_teste": 618,
+            "prevalencia_treino": 0.355,
+            "prevalencia_teste": 0.498,
+            "epv_treino": 67.0,
+            "epv_eventos_treino": 25.0,
+            "auc_prospectivo": 0.771,
+            "ic95": [
+              0.7121,
+              0.8234
+            ],
+            "boot_validos": 1000,
+            "auc_treino": 0.7904,
+            "gap": 0.0194,
+            "coef": {
+              "elevation_m": -0.467,
+              "slope_deg": 0.741,
+              "hand_m": -2.1967,
+              "twi_dinf": 0.5486
+            }
+          },
+          {
+            "variante": "bloco",
+            "corte": "2020-02-09",
+            "janela_grupos": 20,
+            "blocos_negativos_teste": 23,
+            "n_treino": 5625,
+            "n_teste": 869,
+            "grupos_treino": 297,
+            "grupos_teste": 43,
+            "eventos_treino": 120,
+            "eventos_teste": 20,
+            "pos_treino": 2331,
+            "neg_treino": 3294,
+            "pos_teste": 425,
+            "neg_teste": 444,
+            "prevalencia_treino": 0.414,
+            "prevalencia_teste": 0.489,
+            "epv_treino": 74.2,
+            "epv_eventos_treino": 30.0,
+            "auc_prospectivo": 0.7309,
+            "ic95": [
+              0.632,
+              0.8258
+            ],
+            "boot_validos": 1000,
+            "auc_treino": 0.7946,
+            "gap": 0.0637,
+            "coef": {
+              "elevation_m": -0.3838,
+              "slope_deg": 0.7834,
+              "hand_m": -2.2679,
+              "twi_dinf": 0.6057
+            }
+          },
+          {
+            "variante": "bloco",
+            "corte": "2023-10-20",
+            "janela_grupos": 20,
+            "blocos_negativos_teste": 12,
+            "n_treino": 6235,
+            "n_teste": 515,
+            "grupos_treino": 328,
+            "grupos_teste": 32,
+            "eventos_treino": 140,
+            "eventos_teste": 20,
+            "pos_treino": 2756,
+            "neg_treino": 3479,
+            "pos_teste": 256,
+            "neg_teste": 259,
+            "prevalencia_treino": 0.442,
+            "prevalencia_teste": 0.497,
+            "epv_treino": 82.0,
+            "epv_eventos_treino": 35.0,
+            "auc_prospectivo": 0.7779,
+            "ic95": [
+              0.6646,
+              0.8786
+            ],
+            "boot_validos": 1000,
+            "auc_treino": 0.7867,
+            "gap": 0.0088,
+            "coef": {
+              "elevation_m": -0.3874,
+              "slope_deg": 0.7784,
+              "hand_m": -2.0337,
+              "twi_dinf": 0.6258
+            }
+          },
+          {
+            "variante": "bloco",
+            "corte": "2025-01-01",
+            "janela_grupos": 20,
+            "blocos_negativos_teste": 20,
+            "n_treino": 6426,
+            "n_teste": 645,
+            "grupos_treino": 340,
+            "grupos_teste": 40,
+            "eventos_treino": 160,
+            "eventos_teste": 20,
+            "pos_treino": 3012,
+            "neg_treino": 3414,
+            "pos_teste": 321,
+            "neg_teste": 324,
+            "prevalencia_treino": 0.469,
+            "prevalencia_teste": 0.498,
+            "epv_treino": 85.0,
+            "epv_eventos_treino": 40.0,
+            "auc_prospectivo": 0.8253,
+            "ic95": [
+              0.7762,
+              0.8788
+            ],
+            "boot_validos": 1000,
+            "auc_treino": 0.7915,
+            "gap": -0.0338,
+            "coef": {
+              "elevation_m": -0.3751,
+              "slope_deg": 0.7508,
+              "hand_m": -2.0923,
+              "twi_dinf": 0.6314
+            }
+          },
+          {
+            "variante": "bloco",
+            "corte": "2025-01-01",
+            "janela_grupos": 20,
+            "blocos_negativos_teste": 22,
+            "n_treino": 6671,
+            "n_teste": 799,
+            "grupos_treino": 358,
+            "grupos_teste": 42,
+            "eventos_treino": 180,
+            "eventos_teste": 20,
+            "pos_treino": 3333,
+            "neg_treino": 3338,
+            "pos_teste": 399,
+            "neg_teste": 400,
+            "prevalencia_treino": 0.5,
+            "prevalencia_teste": 0.499,
+            "epv_treino": 89.5,
+            "epv_eventos_treino": 45.0,
+            "auc_prospectivo": 0.8559,
+            "ic95": [
+              0.8104,
+              0.8992
+            ],
+            "boot_validos": 1000,
+            "auc_treino": 0.7906,
+            "gap": -0.0653,
+            "coef": {
+              "elevation_m": -0.3825,
+              "slope_deg": 0.7585,
+              "hand_m": -2.0326,
+              "twi_dinf": 0.648
+            }
+          }
+        ]
+      }
+    },
+    "COMPLETO": {
+      "features": [
+        "elevation_m",
+        "slope_deg",
+        "hand_m",
+        "twi_dinf",
+        "rain_max_24h",
+        "rain_decay_index"
+      ],
+      "n_features": 6,
+      "heranca": {
+        "folds": 1,
+        "auc_medio": 0.8058,
+        "auc_mediana": 0.8058,
+        "auc_min": 0.8058,
+        "auc_max": 0.8058,
+        "desvio": 0.0,
+        "tendencia": null,
+        "folds_na_faixa": 1,
+        "folds_degradados": 0,
+        "prevalencia_teste_min": 0.924,
+        "prevalencia_teste_max": 0.924,
+        "veredito": "PROSPECTIVAMENTE_ESTAVEL",
+        "detalhe": [
+          {
+            "variante": "heranca",
+            "corte": "2007-12-06",
+            "janela_grupos": 40,
+            "n_treino": 4927,
+            "n_teste": 529,
+            "grupos_treino": 260,
+            "grupos_teste": 40,
+            "eventos_treino": 67,
+            "eventos_teste": 33,
+            "pos_treino": 1229,
+            "neg_treino": 3698,
+            "pos_teste": 489,
+            "neg_teste": 40,
+            "prevalencia_treino": 0.249,
+            "prevalencia_teste": 0.924,
+            "epv_treino": 43.3,
+            "epv_eventos_treino": 11.2,
+            "auc_prospectivo": 0.8058,
+            "ic95": [
+              0.6733,
+              0.915
+            ],
+            "boot_validos": 1000,
+            "auc_treino": 0.8178,
+            "gap": 0.012,
+            "coef": {
+              "elevation_m": -0.5533,
+              "slope_deg": 0.5989,
+              "hand_m": -3.3033,
+              "twi_dinf": 0.3629,
+              "rain_max_24h": -0.0871,
+              "rain_decay_index": 0.4959
+            }
+          }
+        ]
+      },
+      "bloco": {
+        "folds": 7,
+        "auc_medio": 0.7874,
+        "auc_mediana": 0.7733,
+        "auc_min": 0.7076,
+        "auc_max": 0.9148,
+        "desvio": 0.0614,
+        "tendencia": -0.631,
+        "folds_na_faixa": 6,
+        "folds_degradados": 0,
+        "prevalencia_teste_min": 0.471,
+        "prevalencia_teste_max": 0.5,
+        "veredito": "PROSPECTIVAMENTE_ESTAVEL",
+        "detalhe": [
+          {
+            "variante": "bloco",
+            "corte": "2004-08-20",
+            "janela_grupos": 20,
+            "blocos_negativos_teste": 13,
+            "n_treino": 4618,
+            "n_teste": 470,
+            "grupos_treino": 247,
+            "grupos_teste": 33,
+            "eventos_treino": 60,
+            "eventos_teste": 20,
+            "pos_treino": 1116,
+            "neg_treino": 3502,
+            "pos_teste": 234,
+            "neg_teste": 236,
+            "prevalencia_treino": 0.242,
+            "prevalencia_teste": 0.498,
+            "epv_treino": 41.2,
+            "epv_eventos_treino": 10.0,
+            "auc_prospectivo": 0.9148,
+            "ic95": [
+              0.8642,
+              0.9523
+            ],
+            "boot_validos": 1000,
+            "auc_treino": 0.8082,
+            "gap": -0.1066,
+            "coef": {
+              "elevation_m": -0.5229,
+              "slope_deg": 0.6176,
+              "hand_m": -3.1921,
+              "twi_dinf": 0.3443,
+              "rain_max_24h": -0.0356,
+              "rain_decay_index": 0.3729
+            }
+          },
+          {
+            "variante": "bloco",
+            "corte": "2010-07-14",
+            "janela_grupos": 20,
+            "blocos_negativos_teste": 19,
+            "n_treino": 4719,
+            "n_teste": 737,
+            "grupos_treino": 261,
+            "grupos_teste": 39,
+            "eventos_treino": 80,
+            "eventos_teste": 20,
+            "pos_treino": 1350,
+            "neg_treino": 3369,
+            "pos_teste": 368,
+            "neg_teste": 369,
+            "prevalencia_treino": 0.286,
+            "prevalencia_teste": 0.499,
+            "epv_treino": 43.5,
+            "epv_eventos_treino": 13.3,
+            "auc_prospectivo": 0.8224,
+            "ic95": [
+              0.7062,
+              0.9062
+            ],
+            "boot_validos": 1000,
+            "auc_treino": 0.8223,
+            "gap": -0.0001,
+            "coef": {
+              "elevation_m": -0.5381,
+              "slope_deg": 0.6217,
+              "hand_m": -3.2383,
+              "twi_dinf": 0.3865,
+              "rain_max_24h": -0.1427,
+              "rain_decay_index": 0.6151
+            }
+          },
+          {
+            "variante": "bloco",
+            "corte": "2016-06-11",
+            "janela_grupos": 20,
+            "blocos_negativos_teste": 33,
+            "n_treino": 4834,
+            "n_teste": 1235,
+            "grupos_treino": 267,
+            "grupos_teste": 53,
+            "eventos_treino": 100,
+            "eventos_teste": 20,
+            "pos_treino": 1718,
+            "neg_treino": 3116,
+            "pos_teste": 613,
+            "neg_teste": 622,
+            "prevalencia_treino": 0.355,
+            "prevalencia_teste": 0.496,
+            "epv_treino": 44.5,
+            "epv_eventos_treino": 16.7,
+            "auc_prospectivo": 0.7632,
+            "ic95": [
+              0.6876,
+              0.8423
+            ],
+            "boot_validos": 1000,
+            "auc_treino": 0.8121,
+            "gap": 0.0489,
+            "coef": {
+              "elevation_m": -0.5229,
+              "slope_deg": 0.7943,
+              "hand_m": -2.1092,
+              "twi_dinf": 0.5834,
+              "rain_max_24h": -0.0632,
+              "rain_decay_index": 0.601
+            }
+          },
+          {
+            "variante": "bloco",
+            "corte": "2020-02-09",
+            "janela_grupos": 20,
+            "blocos_negativos_teste": 22,
+            "n_treino": 5644,
+            "n_teste": 850,
+            "grupos_treino": 298,
+            "grupos_teste": 42,
+            "eventos_treino": 120,
+            "eventos_teste": 20,
+            "pos_treino": 2331,
+            "neg_treino": 3313,
+            "pos_teste": 425,
+            "neg_teste": 425,
+            "prevalencia_treino": 0.413,
+            "prevalencia_teste": 0.5,
+            "epv_treino": 49.7,
+            "epv_eventos_treino": 20.0,
+            "auc_prospectivo": 0.7452,
+            "ic95": [
+              0.6309,
+              0.8532
+            ],
+            "boot_validos": 1000,
+            "auc_treino": 0.8112,
+            "gap": 0.066,
+            "coef": {
+              "elevation_m": -0.4599,
+              "slope_deg": 0.7886,
+              "hand_m": -2.3218,
+              "twi_dinf": 0.6137,
+              "rain_max_24h": -0.0255,
+              "rain_decay_index": 0.3959
+            }
+          },
+          {
+            "variante": "bloco",
+            "corte": "2023-10-20",
+            "janela_grupos": 20,
+            "blocos_negativos_teste": 11,
+            "n_treino": 6238,
+            "n_teste": 512,
+            "grupos_treino": 329,
+            "grupos_teste": 31,
+            "eventos_treino": 140,
+            "eventos_teste": 20,
+            "pos_treino": 2756,
+            "neg_treino": 3482,
+            "pos_teste": 256,
+            "neg_teste": 256,
+            "prevalencia_treino": 0.442,
+            "prevalencia_teste": 0.5,
+            "epv_treino": 54.8,
+            "epv_eventos_treino": 23.3,
+            "auc_prospectivo": 0.7076,
+            "ic95": [
+              0.5908,
+              0.8036
+            ],
+            "boot_validos": 1000,
+            "auc_treino": 0.8053,
+            "gap": 0.0977,
+            "coef": {
+              "elevation_m": -0.4494,
+              "slope_deg": 0.7859,
+              "hand_m": -2.0336,
+              "twi_dinf": 0.6508,
+              "rain_max_24h": 0.0156,
+              "rain_decay_index": 0.4163
+            }
+          },
+          {
+            "variante": "bloco",
+            "corte": "2025-01-01",
+            "janela_grupos": 20,
+            "blocos_negativos_teste": 17,
+            "n_treino": 6390,
+            "n_teste": 681,
+            "grupos_treino": 343,
+            "grupos_teste": 37,
+            "eventos_treino": 160,
+            "eventos_teste": 20,
+            "pos_treino": 3012,
+            "neg_treino": 3378,
+            "pos_teste": 321,
+            "neg_teste": 360,
+            "prevalencia_treino": 0.471,
+            "prevalencia_teste": 0.471,
+            "epv_treino": 57.2,
+            "epv_eventos_treino": 26.7,
+            "auc_prospectivo": 0.7733,
+            "ic95": [
+              0.6957,
+              0.8493
+            ],
+            "boot_validos": 1000,
+            "auc_treino": 0.8042,
+            "gap": 0.0309,
+            "coef": {
+              "elevation_m": -0.427,
+              "slope_deg": 0.8125,
+              "hand_m": -2.1072,
+              "twi_dinf": 0.6633,
+              "rain_max_24h": 0.039,
+              "rain_decay_index": 0.3476
+            }
+          },
+          {
+            "variante": "bloco",
+            "corte": "2025-01-01",
+            "janela_grupos": 20,
+            "blocos_negativos_teste": 23,
+            "n_treino": 6665,
+            "n_teste": 805,
+            "grupos_treino": 357,
+            "grupos_teste": 43,
+            "eventos_treino": 180,
+            "eventos_teste": 20,
+            "pos_treino": 3333,
+            "neg_treino": 3332,
+            "pos_teste": 399,
+            "neg_teste": 406,
+            "prevalencia_treino": 0.5,
+            "prevalencia_teste": 0.496,
+            "epv_treino": 59.5,
+            "epv_eventos_treino": 30.0,
+            "auc_prospectivo": 0.7853,
+            "ic95": [
+              0.7115,
+              0.8466
+            ],
+            "boot_validos": 1000,
+            "auc_treino": 0.8058,
+            "gap": 0.0205,
+            "coef": {
+              "elevation_m": -0.505,
+              "slope_deg": 0.7692,
+              "hand_m": -2.1033,
+              "twi_dinf": 0.6679,
+              "rain_max_24h": 0.0941,
+              "rain_decay_index": 0.2401
+            }
+          }
+        ]
+      }
+    }
+  },
+  "estratos_secundarios": {
+    "cems": {
+      "variante_aplicavel": "heranca",
+      "grupos_puros": false,
+      "anos_cobertos": 3,
+      "positivos": 10523,
+      "negativos": 13392,
+      "pontos_por_grupo": 201.0,
+      "conjuntos": {
+        "TERRENO": {
+          "features": [
+            "elevation_m",
+            "slope_deg",
+            "hand_m",
+            "twi_dinf"
+          ],
+          "n_features": 4,
+          "heranca": {
+            "folds": 6,
+            "auc_medio": 0.7229,
+            "auc_mediana": 0.7291,
+            "auc_min": 0.6458,
+            "auc_max": 0.8053,
+            "desvio": 0.0578,
+            "tendencia": -0.673,
+            "folds_na_faixa": 3,
+            "folds_degradados": 0,
+            "prevalencia_teste_min": 0.266,
+            "prevalencia_teste_max": 0.498,
+            "veredito": "PROSPECTIVAMENTE_ESTAVEL",
+            "detalhe": [
+              {
+                "variante": "heranca",
+                "corte": "2025-10-26",
+                "janela_grupos": 11,
+                "n_treino": 9912,
+                "n_teste": 1737,
+                "grupos_treino": 51,
+                "grupos_teste": 11,
+                "eventos_treino": 40,
+                "eventos_teste": 4,
+                "pos_treino": 4271,
+                "neg_treino": 5641,
+                "pos_teste": 462,
+                "neg_teste": 1275,
+                "prevalencia_treino": 0.431,
+                "prevalencia_teste": 0.266,
+                "epv_treino": 12.8,
+                "epv_eventos_treino": 10.0,
+                "auc_prospectivo": 0.8053,
+                "ic95": [
+                  0.6959,
+                  0.9058
+                ],
+                "boot_validos": 994,
+                "auc_treino": 0.7259,
+                "gap": -0.0794,
+                "coef": {
+                  "elevation_m": 0.4735,
+                  "slope_deg": -0.636,
+                  "hand_m": -0.5749,
+                  "twi_dinf": 0.342
+                }
+              },
+              {
+                "variante": "heranca",
+                "corte": "2025-10-26",
+                "janela_grupos": 11,
+                "n_treino": 11649,
+                "n_teste": 2275,
+                "grupos_treino": 62,
+                "grupos_teste": 11,
+                "eventos_treino": 44,
+                "eventos_teste": 9,
+                "pos_treino": 4733,
+                "neg_treino": 6916,
+                "pos_teste": 1014,
+                "neg_teste": 1261,
+                "prevalencia_treino": 0.406,
+                "prevalencia_teste": 0.446,
+                "epv_treino": 15.5,
+                "epv_eventos_treino": 11.0,
+                "auc_prospectivo": 0.7648,
+                "ic95": [
+                  0.7117,
+                  0.8233
+                ],
+                "boot_validos": 1000,
+                "auc_treino": 0.736,
+                "gap": -0.0288,
+                "coef": {
+                  "elevation_m": 0.5062,
+                  "slope_deg": -0.679,
+                  "hand_m": -0.5701,
+                  "twi_dinf": 0.3719
+                }
+              },
+              {
+                "variante": "heranca",
+                "corte": "2025-10-26",
+                "janela_grupos": 11,
+                "n_treino": 13924,
+                "n_teste": 2077,
+                "grupos_treino": 73,
+                "grupos_teste": 11,
+                "eventos_treino": 53,
+                "eventos_teste": 8,
+                "pos_treino": 5747,
+                "neg_treino": 8177,
+                "pos_teste": 914,
+                "neg_teste": 1163,
+                "prevalencia_treino": 0.413,
+                "prevalencia_teste": 0.44,
+                "epv_treino": 18.2,
+                "epv_eventos_treino": 13.2,
+                "auc_prospectivo": 0.6634,
+                "ic95": [
+                  0.5835,
+                  0.7465
+                ],
+                "boot_validos": 1000,
+                "auc_treino": 0.7404,
+                "gap": 0.077,
+                "coef": {
+                  "elevation_m": 0.4903,
+                  "slope_deg": -0.712,
+                  "hand_m": -0.5522,
+                  "twi_dinf": 0.3842
+                }
+              },
+              {
+                "variante": "heranca",
+                "corte": "2025-11-30",
+                "janela_grupos": 11,
+                "n_treino": 16001,
+                "n_teste": 2341,
+                "grupos_treino": 84,
+                "grupos_teste": 11,
+                "eventos_treino": 61,
+                "eventos_teste": 10,
+                "pos_treino": 6661,
+                "neg_treino": 9340,
+                "pos_teste": 1138,
+                "neg_teste": 1203,
+                "prevalencia_treino": 0.416,
+                "prevalencia_teste": 0.486,
+                "epv_treino": 21.0,
+                "epv_eventos_treino": 15.2,
+                "auc_prospectivo": 0.7605,
+                "ic95": [
+                  0.7098,
+                  0.8143
+                ],
+                "boot_validos": 1000,
+                "auc_treino": 0.7326,
+                "gap": -0.0279,
+                "coef": {
+                  "elevation_m": 0.4823,
+                  "slope_deg": -0.7029,
+                  "hand_m": -0.5688,
+                  "twi_dinf": 0.3653
+                }
+              },
+              {
+                "variante": "heranca",
+                "corte": "2026-01-10",
+                "janela_grupos": 11,
+                "n_treino": 18342,
+                "n_teste": 2620,
+                "grupos_treino": 95,
+                "grupos_teste": 11,
+                "eventos_treino": 71,
+                "eventos_teste": 11,
+                "pos_treino": 7799,
+                "neg_treino": 10543,
+                "pos_teste": 1306,
+                "neg_teste": 1314,
+                "prevalencia_treino": 0.425,
+                "prevalencia_teste": 0.498,
+                "epv_treino": 23.8,
+                "epv_eventos_treino": 17.8,
+                "auc_prospectivo": 0.6458,
+                "ic95": [
+                  0.5964,
+                  0.6941
+                ],
+                "boot_validos": 1000,
+                "auc_treino": 0.74,
+                "gap": 0.0942,
+                "coef": {
+                  "elevation_m": 0.527,
+                  "slope_deg": -0.5908,
+                  "hand_m": -0.7369,
+                  "twi_dinf": 0.3917
+                }
+              },
+              {
+                "variante": "heranca",
+                "corte": "2026-01-10",
+                "janela_grupos": 11,
+                "n_treino": 20962,
+                "n_teste": 2473,
+                "grupos_treino": 106,
+                "grupos_teste": 11,
+                "eventos_treino": 82,
+                "eventos_teste": 10,
+                "pos_treino": 9105,
+                "neg_treino": 11857,
+                "pos_teste": 1178,
+                "neg_teste": 1295,
+                "prevalencia_treino": 0.434,
+                "prevalencia_teste": 0.476,
+                "epv_treino": 26.5,
+                "epv_eventos_treino": 20.5,
+                "auc_prospectivo": 0.6978,
+                "ic95": [
+                  0.6686,
+                  0.7387
+                ],
+                "boot_validos": 1000,
+                "auc_treino": 0.7307,
+                "gap": 0.0329,
+                "coef": {
+                  "elevation_m": 0.4698,
+                  "slope_deg": -0.4943,
+                  "hand_m": -0.7669,
+                  "twi_dinf": 0.3949
+                }
+              }
+            ]
+          }
+        },
+        "COMPLETO": {
+          "features": [
+            "elevation_m",
+            "slope_deg",
+            "hand_m",
+            "twi_dinf",
+            "rain_max_24h",
+            "rain_decay_index"
+          ],
+          "n_features": 6,
+          "heranca": {
+            "folds": 2,
+            "auc_medio": 0.6865,
+            "auc_mediana": 0.6865,
+            "auc_min": 0.6809,
+            "auc_max": 0.692,
+            "desvio": 0.0055,
+            "tendencia": null,
+            "folds_na_faixa": 0,
+            "folds_degradados": 0,
+            "prevalencia_teste_min": 0.475,
+            "prevalencia_teste_max": 0.516,
+            "veredito": "INCONCLUSIVO_VARIANCIA_ALTA",
+            "detalhe": [
+              {
+                "variante": "heranca",
+                "corte": "2025-11-30",
+                "janela_grupos": 11,
+                "n_treino": 17943,
+                "n_teste": 2555,
+                "grupos_treino": 93,
+                "grupos_teste": 11,
+                "eventos_treino": 69,
+                "eventos_teste": 11,
+                "pos_treino": 7559,
+                "neg_treino": 10384,
+                "pos_teste": 1318,
+                "neg_teste": 1237,
+                "prevalencia_treino": 0.421,
+                "prevalencia_teste": 0.516,
+                "epv_treino": 15.5,
+                "epv_eventos_treino": 11.5,
+                "auc_prospectivo": 0.6809,
+                "ic95": [
+                  0.6036,
+                  0.7533
+                ],
+                "boot_validos": 1000,
+                "auc_treino": 0.7349,
+                "gap": 0.054,
+                "coef": {
+                  "elevation_m": 0.456,
+                  "slope_deg": -0.5862,
+                  "hand_m": -0.6723,
+                  "twi_dinf": 0.3969,
+                  "rain_max_24h": -0.2111,
+                  "rain_decay_index": 0.2766
+                }
+              },
+              {
+                "variante": "heranca",
+                "corte": "2026-01-10",
+                "janela_grupos": 11,
+                "n_treino": 20498,
+                "n_teste": 2457,
+                "grupos_treino": 104,
+                "grupos_teste": 11,
+                "eventos_treino": 80,
+                "eventos_teste": 10,
+                "pos_treino": 8877,
+                "neg_treino": 11621,
+                "pos_teste": 1166,
+                "neg_teste": 1291,
+                "prevalencia_treino": 0.433,
+                "prevalencia_teste": 0.475,
+                "epv_treino": 17.3,
+                "epv_eventos_treino": 13.3,
+                "auc_prospectivo": 0.692,
+                "ic95": [
+                  0.6675,
+                  0.728
+                ],
+                "boot_validos": 1000,
+                "auc_treino": 0.7318,
+                "gap": 0.0398,
+                "coef": {
+                  "elevation_m": 0.455,
+                  "slope_deg": -0.5137,
+                  "hand_m": -0.7557,
+                  "twi_dinf": 0.3921,
+                  "rain_max_24h": -0.1725,
+                  "rain_decay_index": 0.2143
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    "curitiba": {
+      "variante_aplicavel": "bloco",
+      "grupos_puros": true,
+      "anos_cobertos": 4,
+      "positivos": 1238,
+      "negativos": 114,
+      "pontos_por_grupo": 1.2,
+      "conjuntos": {
+        "TERRENO": {
+          "features": [
+            "elevation_m",
+            "slope_deg",
+            "hand_m",
+            "twi_dinf"
+          ],
+          "n_features": 4,
+          "bloco": {
+            "folds": 0,
+            "veredito": "SEM_FOLD_COM_EPV_SUFICIENTE"
+          }
+        },
+        "COMPLETO": {
+          "features": [
+            "elevation_m",
+            "slope_deg",
+            "hand_m",
+            "twi_dinf",
+            "rain_max_24h",
+            "rain_decay_index"
+          ],
+          "n_features": 6,
+          "bloco": {
+            "folds": 0,
+            "veredito": "SEM_FOLD_COM_EPV_SUFICIENTE"
+          }
+        }
+      }
+    },
+    "sen1floods11": {
+      "variante_aplicavel": "heranca",
+      "grupos_puros": false,
+      "anos_cobertos": 4,
+      "positivos": 12949,
+      "negativos": 17482,
+      "pontos_por_grupo": 2766.5,
+      "conjuntos": {
+        "TERRENO": {
+          "features": [
+            "elevation_m",
+            "slope_deg",
+            "hand_m",
+            "twi_dinf"
+          ],
+          "n_features": 4,
+          "heranca": {
+            "folds": 0,
+            "veredito": "SEM_FOLD_COM_EPV_SUFICIENTE"
+          }
+        },
+        "COMPLETO": {
+          "features": [
+            "elevation_m",
+            "slope_deg",
+            "hand_m",
+            "twi_dinf",
+            "rain_max_24h",
+            "rain_decay_index"
+          ],
+          "n_features": 6,
+          "heranca": {
+            "folds": 0,
+            "veredito": "SEM_FOLD_COM_EPV_SUFICIENTE"
+          }
+        }
+      }
+    }
+  },
+  "leitura_dos_secundarios": "nao respondem o E4 e nao entram no veredito: CEMS e Curitiba cobrem 3 e 4 anos, entao o que medem e variacao dentro de um mesmo regime, nao horizonte. Estao aqui para que a escolha do estrato primario seja conferivel em vez de afirmada",
+  "confusao_fonte_periodo": {
+    "corte_ilustrativo": "2020-01-01",
+    "lados": {
+      "treino_antes_de_2020": {
+        "pontos": 34854,
+        "grupos": 328,
+        "fontes": {
+          "sen1floods11": 30431,
+          "uk": 4423
+        },
+        "classe_relevo": {
+          "PLANO_OU_ONDULADO": 34073,
+          "INGREME": 775,
+          "NAO_CLASSIFICADO": 6
+        }
+      },
+      "teste_2020_em_diante": {
+        "pontos": 28320,
+        "grupos": 1558,
+        "fontes": {
+          "cems": 23915,
+          "uk": 3053,
+          "curitiba": 1352
+        },
+        "classe_relevo": {
+          "PLANO_OU_ONDULADO": 23933,
+          "INGREME": 4387
+        }
+      }
+    },
+    "leitura": "nenhuma fonte aparece dos dois lados com peso comparavel: o corte temporal no pool e um corte de fonte disfarcado, e por isso o E4 e medido no estrato de serie longa"
+  },
+  "precedente": {
+    "mod-prosp-01": "ds-01, 328 grupos, 9 folds, AUC medio 0,7686, PROSPECTIVAMENTE_ESTAVEL, sem IC",
+    "o_que_muda_aqui": [
+      "base congelada ds-05",
+      "variante `bloco` sem data artificial de negativo",
+      "IC95 por bootstrap de grupos em todo fold"
+    ]
+  },
+  "segundos": 28.3,
+  "nao_e": "nao e validacao operacional nem autoriza uso preditivo: e holdout temporal num piloto de exclusao qualificada, medido num unico pais"
+}

@@ -1,9 +1,13 @@
-# REV-P — Documentação técnica consolidada
+# Método
 
-Documento único da linha causal SUSC-20. Reúne a premissa física, o que funcionou e o
-que foi descartado no caminho, como o contrato de inferência decide, e as métricas
-oficiais de validação. Não introduz afirmação nova: consolida o que está registrado nos
-artefatos de `outputs_public/data/susc_20*/` e no documento de entrega.
+Como o serviço funciona e por que funciona assim. Reúne a premissa física, o vocabulário
+do projeto, o que funcionou e o que foi descartado, como o contrato de inferência decide
+e as métricas oficiais.
+
+A procedência de cada número — data, script, artefato, veredito — está em
+[`EVIDENCIA.md`](EVIDENCIA.md). O modelo servido está descrito em
+[`../modelo/MODELO.md`](../modelo/MODELO.md) e a base em
+[`../modelo/DADOS.md`](../modelo/DADOS.md).
 
 Estado em 22/08/2026.
 
@@ -286,31 +290,120 @@ Grade a 120 m, derivada da cadeia de terreno já existente, sem aquisição nova
 | **Curitiba** | 65.275 | `transferencia_caracterizada` | Extrapolação de `elevation_m` declarada: 5,05 desvios do domínio de ajuste, nenhuma célula na faixa vista |
 | **Petrópolis** | 172.015 | `transferencia_sem_referencia_local` | Escore por semelhança de terreno; 91,3% do território cabe na faixa de HAND do modelo de serra |
 
-### 4.4 O que pode e o que não pode ser afirmado
+## 5. Protocolo C — como o projeto decide o que conta como evidência
 
-**Pode:**
-- O modelo causal de Recife é real, auditado ponta a ponta, e generaliza sob validação cruzada.
-- O modelo próprio de Curitiba não generaliza para 2026, e a limitação foi investigada exaustivamente, não apenas constatada.
-- O método transfere entre contextos geográficos distintos, com desempenho na faixa fixada antes.
-- O DINOv2 foi testado como variável causal com rigor e descartado — decisão baseada em evidência, não em suposição.
+O Protocolo C é a camada de auditoria que tentou estabelecer referência de campo
+operacional em Recife a partir de Sentinel-2 pré/pós-evento, fontes oficiais e
+embeddings visuais. Ele não está neste repositório como código — foi retirado da árvore
+de trabalho na curadoria de entrega e permanece no histórico do repositório de origem.
+Mas o **resultado** dele governa tudo o que veio depois, e por isso está aqui.
 
-**Não pode:**
-- Que o modelo de Curitiba esteja pronto para uso operacional.
-- Que o escore servido para Petrópolis tenha sido validado contra evento local.
-- Que o DINOv2 meça acurácia de detecção de inundação ou substitua a base físico-hidrológica.
-- Que a definição de negativo seja neutra em relação à métrica.
+O que ele mediu: 2.654 patches avaliados, **zero** datas de produto Sentinel
+confirmadas; 330 fontes escaneadas, 22 candidatos liberados, **nenhum** confirmado por
+fonte institucional adquirida; 12 vínculos evento-patch, todos contextuais ou
+temporalmente bloqueados.
 
-### 4.5 Limitações declaradas
+A escala de níveis que ele deixou:
 
-- Nenhuma das três regiões brasileiras tem negativo formal aceito por portão metodológico. A ausência é documentada, não contornada por proxy.
-- A chuva não discrimina na escala do modelo (~11 km contra comparação intra-evento). Entra como cenário.
-- O contrato roda como função pura; falta o transporte HTTP.
-- 21 de 22 testes de invariante da base passam. No ambiente fixado do projeto a reprodução bate exata; a sensibilidade que resta é entre ambientes diferentes desse, ainda dependente de versão de biblioteca.
-- Petrópolis mistura enchente e movimento de massa nas fontes disponíveis, e o ajuste fluvial estima suscetibilidade a enchente — não a outro mecanismo.
+| Nível | Significa | Alcançado |
+|---|---|---:|
+| C1 | Contextual — evidência territorial documentada | 2 |
+| C2 | Somente revisão — representação visual sem rótulo | 2 |
+| C3 | Evento vinculado a patch, com data confirmada | 0 |
+| C3+ | Temporal **e** espacial confirmados | 0 |
+| C4 | Rótulo operacional — exige negativo formal explícito | 0 |
+
+**Por que isso importa para o serviço.** O gate `C4_BLOCKED_NO_FORMAL_NEGATIVES` segue
+aberto para Recife, Curitiba e Petrópolis. É daí que vem a hierarquia de três níveis do
+negativo descrita em §1.4: como não existe negativo formal nas regiões brasileiras, o
+projeto usa negativo **observado** (Copernicus EMS), **por exclusão qualificada**
+(Environment Agency e 114 pontos de Curitiba) e declara **ausência de registro** onde não
+tem nenhum dos dois. Sem o Protocolo C, essa hierarquia pareceria escolha arbitrária;
+com ele, é consequência de uma auditoria que falhou de forma documentada.
+
+O Protocolo C também fixou os guardrails que o código ainda carrega: nenhum artefato
+pode marcar `ground_truth=true`, `can_train_model=true` ou
+`can_create_operational_label=true`. O script `scripts/dino/revp_v1px_dino_queue_leakage_audit.py`
+existe só para conferir isso a cada execução.
 
 ---
 
-## 5. Referências de método
+## 6. Glossário
+
+O projeto tem vocabulário próprio, e ele aparece dentro do código, não só na prosa.
+
+| Termo | O que significa aqui |
+|---|---|
+| **REV-P** | Código interno do projeto, herdado dos prefixos `revp_` nos arquivos e da nomenclatura de estágios (`SUSC-20A`, `MOD-SERRA-03`, `v1pv`). Não é um acrônimo com expansão definida |
+| **Linha causal** | A sequência SUSC-20, de `20a` a `20k`: aquisição de evento real, features, modelo, motor, contrato. É o produto |
+| **Patch** | Recorte espacial padronizado usado como unidade de análise visual, identificado por `REC_00205`, `CUR_00038`, `PET_00016` |
+| **Ajuste fluvial** | O ajuste que estima suscetibilidade a **enchente**, e não a outro mecanismo — como o movimento de massa que também aparece em Petrópolis |
+| **Unidade de validação** | O **evento**, ou a AOI, nunca o ponto. Pontos do mesmo evento não são observações independentes |
+| **EPV** | Eventos por preditor. Piso que decide quantas variáveis um estrato comporta. Vale para as duas classes, não só para a rara |
+| **Negativo observado** | Área que um analista examinou e onde não detectou inundação |
+| **Exclusão qualificada** | Área excluída por critério explícito (os quatro critérios N1–N4), não por falta de registro |
+| **Ausência de registro** | Nem observação nem exclusão: só não há dado. **Não é negativo** |
+| **Maturidade** | O quanto se pode confiar no escore de uma região — ver §3.3 |
+| **Fail-closed** | Diante de dado ausente ou ambíguo, o pipeline recusa e escreve o motivo, em vez de assumir um valor |
+| **Review-only** | Artefato que serve à revisão humana e nunca alimenta treino nem vira rótulo. É o estatuto do DINOv2 no projeto |
+| **Nível C1–C4** | A escala do Protocolo C — ver §5 |
+
+---
+
+## 7. Mapa do código
+
+| Pasta | Papel | Arquivos |
+|---|---|---:|
+| `scripts/treino/` | Monta a tabela única (`ds03`→`ds05`), ajusta por classe de relevo (E3), roda o holdout temporal (E4), audita a escala da chuva | 9 |
+| `scripts/servico/` | `svc01` treina e serializa os modelos servidos; `svc02` é o contrato com os cinco portões; `svc03` gera a grade (E5) | 3 |
+| `scripts/terreno/` | `ter01`–`ter06`: a cadeia D-infinity que torna HAND e TWI comparáveis entre as seis fontes | 6 |
+| `scripts/externo/` | Aquisição do negativo externo, em cinco estágios — ver abaixo | 29 |
+| `scripts/dino/` | Fila de revisão visual. Nada aqui entra no modelo | 15 |
+| `outputs_public/data/susc_20*/` | As onze etapas da linha causal, cada uma com script, dado curado e relatório | 191 |
+| `tests/` | Regressão: 23 arquivos da linha causal, 7 do treino e do serviço | 30 |
+
+A frente externa está organizada por estágio:
+
+| Estágio | Conteúdo |
+|---|---|
+| `externo/comum/` | Armazenamento GeoParquet com poda por bbox e utilitários de aquisição |
+| `externo/aquisicao/` | Sen1Floods11, UFO, Copernicus EMS e Global Flood Database — as quatro fontes do Nível 1 |
+| `externo/cems/` | Seleção de ativações por analogia de relevo, fila de aquisição, download dos pacotes e o negativo observado do EMSR720 |
+| `externo/uk/` | Piloto inglês: Recorded Flood Outlines, AOI, flood zones, contabilidade do negativo, WorldCover e as quatro etapas de feature |
+| `externo/pontos/` | Redução de polígono a ponto e extração de features topográficas |
+
+**Uma diferença que vale saber.** O `gates.py` de `susc_20e` é a versão anterior do
+contrato: ele avalia geometria, CRS, região, modelo e variáveis — **sem o portão de
+domínio**. O contrato atual, com os cinco portões da §3.1, está em
+`scripts/servico/svc02_contrato_inferencia.py`. O `20e` fica como registro da etapa em
+que a API foi desenhada.
+
+---
+
+## 8. Ambiente
+
+São dois ambientes, de propósito: o modelo causal não carrega `torch`.
+
+```bash
+conda env create -f environment.yml
+conda activate revp-susc
+python -m pytest tests -q
+```
+
+| Ambiente | Para quê | Restrição |
+|---|---|---|
+| `environment.yml` | Linha causal, treino e serviço | Python `<3.11`, exigência do estimador de Firth |
+| `requirements.txt` | Camada DINOv2 | Python padrão |
+
+Parte dos testes lê artefatos de execução grandes demais para versionar — a tabela única
+tem 189 MB e a grade por célula, 19 MB. Esses testes **pulam** em vez de falhar, e a
+mensagem do skip traz o comando exato que os regenera. Os artefatos pequenos estão
+versionados em `modelo/execucoes/`, e os testes os encontram automaticamente quando
+`local_runs/` não existe.
+
+---
+
+## 9. Referências de método
 
 1. Tellman, B. *et al.* Satellite imaging reveals increased proportion of population exposed to floods. *Nature*, 2021.
 2. Nobre, A. D. *et al.* HAND, a new terrain descriptor using SRTM-DEM. *Journal of Hydrology*, 2011.

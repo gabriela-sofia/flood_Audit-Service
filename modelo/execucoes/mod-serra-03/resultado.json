@@ -1,0 +1,381 @@
+{
+  "entrada": "local_runs/ds-05-tabela-unica/tabela_unica_pool_fluvial_v2.csv",
+  "epv_minimo": 10,
+  "n_boot": 1000,
+  "semente": 20260820,
+  "criterios": {
+    "faixa_auc": [
+      0.7,
+      0.88
+    ],
+    "auc_suspeita": 0.95,
+    "sinal_exigido": {
+      "hand_m": -1,
+      "twi_dinf": 1
+    }
+  },
+  "leituras_da_regra_de_epv": {
+    "LEITURA_PRECEDENTE": "grupos totais / n_variaveis (MOD-SERRA-01)",
+    "LEITURA_ESTRITA": "grupos da classe minoritaria / n_variaveis"
+  },
+  "estratos": {
+    "INGREME": {
+      "n": 5162,
+      "grupos": 24,
+      "grupos_positivos": 19,
+      "grupos_negativos": 24,
+      "fontes": {
+        "cems": 4387,
+        "sen1floods11": 775
+      },
+      "orcamento": {
+        "LEITURA_PRECEDENTE": 2,
+        "LEITURA_ESTRITA": 1
+      },
+      "conjuntos": {
+        "CAUSAL_1": {
+          "features": [
+            "hand_m"
+          ],
+          "cabe": {
+            "LEITURA_PRECEDENTE": true,
+            "LEITURA_ESTRITA": true
+          },
+          "rodado": true,
+          "auc_cv": 0.7916,
+          "folds": 5,
+          "auc_treino_medio": 0.7957,
+          "gap": 0.0041,
+          "cobertura": 1.0,
+          "coef": {
+            "hand_m": -1.4423
+          },
+          "ic95": {
+            "hand_m": [
+              -3.1126,
+              -0.8283
+            ]
+          },
+          "boot_validos": 1000,
+          "falhas": [],
+          "veredito": "COERENTE_COM_CRITERIOS"
+        },
+        "CAUSAL_2": {
+          "features": [
+            "hand_m",
+            "twi_dinf"
+          ],
+          "cabe": {
+            "LEITURA_PRECEDENTE": true,
+            "LEITURA_ESTRITA": false
+          },
+          "rodado": true,
+          "auc_cv": 0.7847,
+          "folds": 5,
+          "auc_treino_medio": 0.7889,
+          "gap": 0.0043,
+          "cobertura": 1.0,
+          "coef": {
+            "hand_m": -0.8221,
+            "twi_dinf": 0.7226
+          },
+          "ic95": {
+            "hand_m": [
+              -2.183,
+              -0.3593
+            ],
+            "twi_dinf": [
+              0.4643,
+              0.9028
+            ]
+          },
+          "boot_validos": 1000,
+          "falhas": [],
+          "veredito": "COERENTE_COM_CRITERIOS"
+        },
+        "TERRENO": {
+          "features": [
+            "elevation_m",
+            "slope_deg",
+            "hand_m",
+            "twi_dinf"
+          ],
+          "cabe": {
+            "LEITURA_PRECEDENTE": false,
+            "LEITURA_ESTRITA": false
+          },
+          "rodado": false,
+          "motivo": "acima do orcamento nas duas leituras"
+        },
+        "COMPLETO": {
+          "features": [
+            "elevation_m",
+            "slope_deg",
+            "hand_m",
+            "twi_dinf",
+            "rain_max_24h",
+            "rain_decay_index"
+          ],
+          "cabe": {
+            "LEITURA_PRECEDENTE": false,
+            "LEITURA_ESTRITA": false
+          },
+          "rodado": false,
+          "motivo": "acima do orcamento nas duas leituras"
+        }
+      }
+    },
+    "NAO_CLASSIFICADO": {
+      "n": 6,
+      "grupos": 1,
+      "grupos_positivos": 0,
+      "grupos_negativos": 1,
+      "fontes": {
+        "sen1floods11": 6
+      },
+      "orcamento": {
+        "LEITURA_PRECEDENTE": 0,
+        "LEITURA_ESTRITA": 0
+      },
+      "conjuntos": {},
+      "motivo": "estrato sem as duas classes"
+    },
+    "PLANO_OU_ONDULADO": {
+      "n": 58006,
+      "grupos": 1666,
+      "grupos_positivos": 1334,
+      "grupos_negativos": 420,
+      "fontes": {
+        "sen1floods11": 29650,
+        "cems": 19528,
+        "uk": 7476,
+        "curitiba": 1352
+      },
+      "orcamento": {
+        "LEITURA_PRECEDENTE": 166,
+        "LEITURA_ESTRITA": 42
+      },
+      "conjuntos": {
+        "CAUSAL_1": {
+          "features": [
+            "hand_m"
+          ],
+          "cabe": {
+            "LEITURA_PRECEDENTE": true,
+            "LEITURA_ESTRITA": true
+          },
+          "rodado": true,
+          "auc_cv": 0.7121,
+          "folds": 5,
+          "auc_treino_medio": 0.7323,
+          "gap": 0.0202,
+          "cobertura": 1.0,
+          "coef": {
+            "hand_m": -2.2536
+          },
+          "ic95": {
+            "hand_m": [
+              -2.9506,
+              -1.7001
+            ]
+          },
+          "boot_validos": 1000,
+          "falhas": [],
+          "veredito": "COERENTE_COM_CRITERIOS"
+        },
+        "CAUSAL_2": {
+          "features": [
+            "hand_m",
+            "twi_dinf"
+          ],
+          "cabe": {
+            "LEITURA_PRECEDENTE": true,
+            "LEITURA_ESTRITA": true
+          },
+          "rodado": true,
+          "auc_cv": 0.7131,
+          "folds": 5,
+          "auc_treino_medio": 0.7162,
+          "gap": 0.0031,
+          "cobertura": 1.0,
+          "coef": {
+            "hand_m": -1.6325,
+            "twi_dinf": 0.3636
+          },
+          "ic95": {
+            "hand_m": [
+              -2.2171,
+              -1.1973
+            ],
+            "twi_dinf": [
+              0.3028,
+              0.4101
+            ]
+          },
+          "boot_validos": 1000,
+          "falhas": [],
+          "veredito": "COERENTE_COM_CRITERIOS"
+        },
+        "TERRENO": {
+          "features": [
+            "elevation_m",
+            "slope_deg",
+            "hand_m",
+            "twi_dinf"
+          ],
+          "cabe": {
+            "LEITURA_PRECEDENTE": true,
+            "LEITURA_ESTRITA": true
+          },
+          "rodado": true,
+          "auc_cv": 0.7245,
+          "folds": 5,
+          "auc_treino_medio": 0.7273,
+          "gap": 0.0028,
+          "cobertura": 1.0,
+          "coef": {
+            "elevation_m": 0.295,
+            "slope_deg": 0.1946,
+            "hand_m": -2.0985,
+            "twi_dinf": 0.3991
+          },
+          "ic95": {
+            "elevation_m": [
+              0.2175,
+              0.4232
+            ],
+            "slope_deg": [
+              0.0138,
+              0.3151
+            ],
+            "hand_m": [
+              -2.7783,
+              -1.5612
+            ],
+            "twi_dinf": [
+              0.3267,
+              0.4507
+            ]
+          },
+          "boot_validos": 1000,
+          "falhas": [],
+          "veredito": "COERENTE_COM_CRITERIOS"
+        },
+        "COMPLETO": {
+          "features": [
+            "elevation_m",
+            "slope_deg",
+            "hand_m",
+            "twi_dinf",
+            "rain_max_24h",
+            "rain_decay_index"
+          ],
+          "cabe": {
+            "LEITURA_PRECEDENTE": true,
+            "LEITURA_ESTRITA": true
+          },
+          "rodado": true,
+          "auc_cv": 0.7234,
+          "folds": 5,
+          "auc_treino_medio": 0.7288,
+          "gap": 0.0053,
+          "cobertura": 1.0,
+          "coef": {
+            "elevation_m": 0.2976,
+            "slope_deg": 0.1865,
+            "hand_m": -2.0912,
+            "twi_dinf": 0.4006,
+            "rain_max_24h": -0.1408,
+            "rain_decay_index": 0.1783
+          },
+          "ic95": {
+            "elevation_m": [
+              0.2242,
+              0.4302
+            ],
+            "slope_deg": [
+              0.0101,
+              0.3087
+            ],
+            "hand_m": [
+              -2.7752,
+              -1.5696
+            ],
+            "twi_dinf": [
+              0.3264,
+              0.4514
+            ],
+            "rain_max_24h": [
+              -0.3529,
+              0.0996
+            ],
+            "rain_decay_index": [
+              -0.0926,
+              0.4086
+            ]
+          },
+          "boot_validos": 1000,
+          "falhas": [],
+          "veredito": "COERENTE_COM_CRITERIOS"
+        }
+      }
+    }
+  },
+  "transferencia": {
+    "CAUSAL_1": {
+      "features": [
+        "hand_m"
+      ],
+      "cabe_nos_dois_estratos": true,
+      "planicie_para_serra": {
+        "auc": 0.7957,
+        "ic95": [
+          0.7433,
+          0.846
+        ],
+        "n_destino": 5162,
+        "grupos_destino": 24,
+        "boot_validos": 1000
+      },
+      "serra_para_planicie": {
+        "auc": 0.7322,
+        "ic95": [
+          0.7106,
+          0.7521
+        ],
+        "n_destino": 58006,
+        "grupos_destino": 1666,
+        "boot_validos": 1000
+      }
+    },
+    "CAUSAL_2": {
+      "features": [
+        "hand_m",
+        "twi_dinf"
+      ],
+      "cabe_nos_dois_estratos": true,
+      "planicie_para_serra": {
+        "auc": 0.8017,
+        "ic95": [
+          0.7505,
+          0.8524
+        ],
+        "n_destino": 5162,
+        "grupos_destino": 24,
+        "boot_validos": 1000
+      },
+      "serra_para_planicie": {
+        "auc": 0.6831,
+        "ic95": [
+          0.6615,
+          0.7036
+        ],
+        "n_destino": 58006,
+        "grupos_destino": 1666,
+        "boot_validos": 1000
+      }
+    }
+  },
+  "segundos": 557.6,
+  "nao_e": "nao e validacao operacional nem autoriza uso preditivo: e o ajuste por classe de relevo sobre a tabela unica"
+}

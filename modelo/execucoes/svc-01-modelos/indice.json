@@ -1,0 +1,57 @@
+{
+  "gerado_em": "2026-08-20T23:31:22",
+  "semente": 20260820,
+  "n_boot": 1000,
+  "decisao_do_ic": "bootstrap do preditor linear reamostrando grupos; resolve a pendencia declarada em revp_contrato_inferencia_v0_revalidacao_cientifica.md secao 3.5",
+  "modelos": {
+    "recife_pluvial": {
+      "servivel": true,
+      "features": [
+        "elevation_m",
+        "slope_deg",
+        "hand_m",
+        "twi_dinf",
+        "rain_max_24h",
+        "rain_decay_index"
+      ],
+      "n": 269,
+      "grupos": 269,
+      "auc_cv": 0.6409,
+      "veredito": "FORA_DOS_CRITERIOS",
+      "regioes_servidas": [
+        "recife"
+      ]
+    },
+    "fluvial_planicie": {
+      "servivel": true,
+      "features": [
+        "elevation_m",
+        "slope_deg",
+        "hand_m",
+        "twi_dinf"
+      ],
+      "n": 56654,
+      "grupos": 509,
+      "auc_cv": 0.7336,
+      "veredito": "COERENTE_COM_CRITERIOS",
+      "regioes_servidas": [
+        "curitiba"
+      ]
+    },
+    "fluvial_serra": {
+      "servivel": true,
+      "features": [
+        "hand_m"
+      ],
+      "n": 5162,
+      "grupos": 24,
+      "auc_cv": 0.7916,
+      "veredito": "COERENTE_COM_CRITERIOS",
+      "regioes_servidas": [
+        "petropolis"
+      ]
+    }
+  },
+  "segundos": 151.8,
+  "nao_e": "nao e validacao operacional: e o artefato que o contrato de inferencia serve, com limitacoes declaradas por modelo"
+}

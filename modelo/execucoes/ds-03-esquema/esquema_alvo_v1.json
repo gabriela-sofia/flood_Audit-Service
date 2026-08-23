@@ -1,0 +1,274 @@
+{
+  "versao": "v1",
+  "n_colunas": 24,
+  "colunas": [
+    {
+      "nome": "ponto_id",
+      "tipo": "str",
+      "papel": "identidade",
+      "obrigatoria": true,
+      "descricao": "identificador do ponto, unico em toda a tabela consolidada",
+      "dominio": null
+    },
+    {
+      "nome": "fonte",
+      "tipo": "str",
+      "papel": "identidade",
+      "obrigatoria": true,
+      "descricao": "pipeline de origem: recife | curitiba | cems | uk | sen1floods11 | ufo",
+      "dominio": null
+    },
+    {
+      "nome": "aoi",
+      "tipo": "str",
+      "papel": "identidade",
+      "obrigatoria": true,
+      "descricao": "area de interesse declarada a que o ponto pertence",
+      "dominio": null
+    },
+    {
+      "nome": "procedencia",
+      "tipo": "str",
+      "papel": "procedencia",
+      "obrigatoria": true,
+      "descricao": "como o rotulo foi produzido (herda fonte_label do ds01)",
+      "dominio": null
+    },
+    {
+      "nome": "resolucao_nativa_m",
+      "tipo": "float",
+      "papel": "procedencia",
+      "obrigatoria": true,
+      "descricao": "resolucao da observacao que originou o ponto, em metros",
+      "dominio": null
+    },
+    {
+      "nome": "cadeia_terreno",
+      "tipo": "enum",
+      "papel": "procedencia",
+      "obrigatoria": true,
+      "descricao": "cadeia que derivou as quatro variaveis de terreno desta linha",
+      "dominio": [
+        "wbt30",
+        "nativa_10m",
+        "global",
+        "ausente"
+      ]
+    },
+    {
+      "nome": "fonte_chuva",
+      "tipo": "enum",
+      "papel": "procedencia",
+      "obrigatoria": true,
+      "descricao": "produto de precipitacao que originou rain_max_24h e rain_decay_index",
+      "dominio": [
+        "chirps_v2_gauge_satellite_blend",
+        "chirps_v3_rnl",
+        "open_meteo_era5_land",
+        "ausente"
+      ]
+    },
+    {
+      "nome": "classe",
+      "tipo": "int",
+      "papel": "rotulo",
+      "obrigatoria": true,
+      "descricao": "1 inundacao | 2 movimento de massa | 0 nao inundado | 9 agua permanente",
+      "dominio": null
+    },
+    {
+      "nome": "classe_nome",
+      "tipo": "str",
+      "papel": "rotulo",
+      "obrigatoria": true,
+      "descricao": "nome da classe por extenso",
+      "dominio": null
+    },
+    {
+      "nome": "nivel_negativo",
+      "tipo": "enum",
+      "papel": "rotulo",
+      "obrigatoria": true,
+      "descricao": "hierarquia do negativo; 'ausencia' nao constitui registro de ausencia",
+      "dominio": [
+        "observado",
+        "exclusao_qualificada",
+        "ausencia",
+        "nao_aplicavel"
+      ]
+    },
+    {
+      "nome": "grupo_cv",
+      "tipo": "str",
+      "papel": "agrupamento",
+      "obrigatoria": true,
+      "descricao": "unidade de validacao; nenhum split pode partir um grupo",
+      "dominio": null
+    },
+    {
+      "nome": "unidade_agrupamento",
+      "tipo": "enum",
+      "papel": "agrupamento",
+      "obrigatoria": true,
+      "descricao": "o que o grupo_cv representa",
+      "dominio": [
+        "evento",
+        "aoi",
+        "chip",
+        "unidade_observacao",
+        "ponto"
+      ]
+    },
+    {
+      "nome": "classe_relevo",
+      "tipo": "enum",
+      "papel": "estrato",
+      "obrigatoria": true,
+      "descricao": "serra ou planicie, criterio relevo_local>=400m E frac_gt15>=0,25",
+      "dominio": [
+        "INGREME",
+        "PLANO_OU_ONDULADO",
+        "NAO_CLASSIFICADO"
+      ]
+    },
+    {
+      "nome": "classe_relevo_base",
+      "tipo": "enum",
+      "papel": "estrato",
+      "obrigatoria": true,
+      "descricao": "como classe_relevo foi obtida",
+      "dominio": [
+        "janela_raster_cems03",
+        "pontos_amostrados",
+        "declarada",
+        "ausente"
+      ]
+    },
+    {
+      "nome": "mecanismo",
+      "tipo": "enum",
+      "papel": "estrato",
+      "obrigatoria": true,
+      "descricao": "mecanismo declarado com evidencia, nunca inferido de desempenho",
+      "dominio": [
+        "FLUVIAL_ENXURRADA",
+        "PLUVIAL_URBANO",
+        "MISTO_NAO_SEPARAVEL",
+        "NAO_CLASSIFICADO"
+      ]
+    },
+    {
+      "nome": "lat",
+      "tipo": "float",
+      "papel": "geo",
+      "obrigatoria": true,
+      "descricao": "latitude WGS84",
+      "dominio": null
+    },
+    {
+      "nome": "lon",
+      "tipo": "float",
+      "papel": "geo",
+      "obrigatoria": true,
+      "descricao": "longitude WGS84",
+      "dominio": null
+    },
+    {
+      "nome": "data_evento",
+      "tipo": "str",
+      "papel": "geo",
+      "obrigatoria": false,
+      "descricao": "data do evento; nulo declarado onde a fonte nao registra",
+      "dominio": null
+    },
+    {
+      "nome": "elevation_m",
+      "tipo": "float",
+      "papel": "fisica",
+      "obrigatoria": false,
+      "descricao": "elevacao, metros",
+      "dominio": null
+    },
+    {
+      "nome": "slope_deg",
+      "tipo": "float",
+      "papel": "fisica",
+      "obrigatoria": false,
+      "descricao": "declividade, graus",
+      "dominio": null
+    },
+    {
+      "nome": "hand_m",
+      "tipo": "float",
+      "papel": "fisica",
+      "obrigatoria": false,
+      "descricao": "altura acima da drenagem mais proxima, metros",
+      "dominio": null
+    },
+    {
+      "nome": "twi_dinf",
+      "tipo": "float",
+      "papel": "fisica",
+      "obrigatoria": false,
+      "descricao": "indice topografico de umidade, SCA D-infinito",
+      "dominio": null
+    },
+    {
+      "nome": "rain_max_24h",
+      "tipo": "float",
+      "papel": "fisica",
+      "obrigatoria": false,
+      "descricao": "precipitacao maxima em 24 h na janela do evento, mm",
+      "dominio": null
+    },
+    {
+      "nome": "rain_decay_index",
+      "tipo": "float",
+      "papel": "fisica",
+      "obrigatoria": false,
+      "descricao": "indice de precipitacao antecedente com decaimento (API)",
+      "dominio": null
+    }
+  ],
+  "classes": {
+    "1": "INUNDACAO",
+    "2": "MOVIMENTO_DE_MASSA",
+    "0": "NAO_INUNDADO",
+    "9": "AGUA_PERMANENTE",
+    "-1": "SEM_DADO"
+  },
+  "variaveis_fisicas": [
+    "elevation_m",
+    "slope_deg",
+    "hand_m",
+    "twi_dinf",
+    "rain_max_24h",
+    "rain_decay_index"
+  ],
+  "variaveis_terreno": [
+    "elevation_m",
+    "slope_deg",
+    "hand_m",
+    "twi_dinf"
+  ],
+  "criterios_admissao": {
+    "A_dentro_da_aoi": "o ponto tem AOI declarada e coordenada finita dentro dela",
+    "B_mesma_cadeia": "as quatro variaveis de terreno vem de uma cadeia declarada e nao 'global' -- global e outro instrumento, nao outra resolucao",
+    "C_grupo_identificavel": "existe grupo_cv nao nulo, para que o split nao parta um grupo"
+  },
+  "gate_pool_fluvial_30m": {
+    "cadeia_terreno": "wbt30",
+    "mecanismo": "FLUVIAL_ENXURRADA",
+    "terreno_completo": [
+      "elevation_m",
+      "slope_deg",
+      "hand_m",
+      "twi_dinf"
+    ]
+  },
+  "regra_de_ouro": "nenhuma coluna de valor sem a coluna de procedencia correspondente; ausencia e nulo declarado, nunca estimativa",
+  "cadeia_canonica": "wbt30",
+  "regra_resolucao": "resolucao unica em todo o projeto desde 13/08/2026: 30 m, cadeia WhiteboxTools, limiar de canal em 0,1123 km2. Substitui a regra anterior de resolucao por mecanismo. Linha canonica fora de wbt30 e erro de reducao",
+  "regra_twi": "TWI a 10 m e TWI a 30 m nao sao a mesma variavel (pearson 0,293 em Recife, 0,205 em Curitiba). A regra era: ou todo o TWI vem de 30 m, ou TWI sai do conjunto. Com resolucao unica ela passa a ser satisfeita por construcao, e nao por vigilancia",
+  "regra_chuva": "duas fontes de precipitacao nao podem ocupar a mesma coluna. Pool so e licito dentro de uma fonte_chuva"
+}

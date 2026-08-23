@@ -1,0 +1,316 @@
+{
+  "passo": 4,
+  "resolucao_m": 120,
+  "semente": 20260820,
+  "cenarios_de_chuva": {
+    "mediana_observada": {
+      "rain_max_24h": 13.6,
+      "rain_decay_index": 23.18
+    },
+    "p90_observado": {
+      "rain_max_24h": 34.4,
+      "rain_decay_index": 54.45
+    },
+    "maximo_observado": {
+      "rain_max_24h": 100.2,
+      "rain_decay_index": 115.22
+    }
+  },
+  "por_que_chuva_e_cenario": "a chuva nao varia na escala desta grade -- Recife inteiro cabe em 4 celulas do produto de precipitacao. Entrando como cenario, ela desloca o escore e nao muda o ordenamento: o mapa ordena terreno",
+  "regioes": [
+    {
+      "regiao": "recife",
+      "status": "ok",
+      "grade_gerada": true,
+      "modelo": "recife_pluvial",
+      "maturidade": "mvp_local",
+      "resolucao_m": 120,
+      "celulas_da_grade": 57994,
+      "celulas_validas": 56666,
+      "pct_validas": 97.7,
+      "celulas_serviveis": 56611,
+      "pct_servivel_do_valido": 99.9,
+      "variaveis_do_modelo": [
+        "elevation_m",
+        "slope_deg",
+        "hand_m",
+        "twi_dinf",
+        "rain_max_24h",
+        "rain_decay_index"
+      ],
+      "variaveis_do_raster": [
+        "elevation_m",
+        "slope_deg",
+        "hand_m",
+        "twi_dinf"
+      ],
+      "variaveis_por_cenario": [
+        "rain_max_24h",
+        "rain_decay_index"
+      ],
+      "cenarios": {
+        "mediana_observada": {
+          "cenario_de_chuva": {
+            "rain_max_24h": 13.6,
+            "rain_decay_index": 23.18
+          },
+          "celulas_serviveis": 56611,
+          "celulas_recusadas_por_dominio": 55,
+          "pct_servivel": 99.9,
+          "escore_mediano": 0.5853,
+          "escore_p90": 0.7943,
+          "escore_minimo": 0.3532,
+          "escore_maximo": 0.9437,
+          "largura_mediana_do_ic": 0.3022
+        },
+        "p90_observado": {
+          "cenario_de_chuva": {
+            "rain_max_24h": 34.4,
+            "rain_decay_index": 54.45
+          },
+          "celulas_serviveis": 56611,
+          "celulas_recusadas_por_dominio": 55,
+          "pct_servivel": 99.9,
+          "escore_mediano": 0.7174,
+          "escore_p90": 0.8741,
+          "escore_minimo": 0.4954,
+          "escore_maximo": 0.9679,
+          "largura_mediana_do_ic": 0.3127
+        },
+        "maximo_observado": {
+          "cenario_de_chuva": {
+            "rain_max_24h": 100.2,
+            "rain_decay_index": 115.22
+          },
+          "celulas_serviveis": 45281,
+          "celulas_recusadas_por_dominio": 11385,
+          "pct_servivel": 79.9,
+          "escore_mediano": 0.8155,
+          "escore_p90": 0.9251,
+          "escore_minimo": 0.6625,
+          "escore_maximo": 0.9796,
+          "largura_mediana_do_ic": 0.543
+        }
+      },
+      "distancia_de_dominio": {
+        "elevation_m": {
+          "media_da_grade": 41.902,
+          "media_do_ajuste": 26.029,
+          "diferenca_padronizada": 0.685,
+          "faixa_do_ajuste_5_95": [
+            3.9375,
+            69.7087
+          ],
+          "pct_dentro_da_faixa": 67.3
+        },
+        "slope_deg": {
+          "media_da_grade": 5.177,
+          "media_do_ajuste": 5.728,
+          "diferenca_padronizada": -0.088,
+          "faixa_do_ajuste_5_95": [
+            0.1863,
+            17.5814
+          ],
+          "pct_dentro_da_faixa": 72.4
+        },
+        "hand_m": {
+          "media_da_grade": 10.797,
+          "media_do_ajuste": 12.605,
+          "diferenca_padronizada": -0.11,
+          "faixa_do_ajuste_5_95": [
+            0.0,
+            46.3916
+          ],
+          "pct_dentro_da_faixa": 96.5
+        },
+        "twi_dinf": {
+          "media_da_grade": 8.579,
+          "media_do_ajuste": 7.862,
+          "diferenca_padronizada": 0.274,
+          "faixa_do_ajuste_5_95": [
+            4.953,
+            12.754
+          ],
+          "pct_dentro_da_faixa": 85.1
+        },
+        "rain_max_24h": {
+          "media_da_grade": 13.6,
+          "media_do_ajuste": 14.959,
+          "diferenca_padronizada": -0.095,
+          "faixa_do_ajuste_5_95": [
+            3.3,
+            37.72
+          ],
+          "pct_dentro_da_faixa": 100.0
+        },
+        "rain_decay_index": {
+          "media_da_grade": 23.18,
+          "media_do_ajuste": 26.85,
+          "diferenca_padronizada": -0.16,
+          "faixa_do_ajuste_5_95": [
+            5.9962,
+            68.8708
+          ],
+          "pct_dentro_da_faixa": 100.0
+        }
+      },
+      "conferencia_contra_o_contrato": {
+        "celulas": 25,
+        "divergencias": 0
+      },
+      "limitacoes": [
+        "negativo por ausencia de registro, o nivel mais fraco da hierarquia",
+        "positivos e negativos dividem 5 das 205 datas: a chuva separa dias, nao lugares (ext_chuva_estado_do_projeto_v1.md)",
+        "HAND nao separa as classes em Recife -- num evento pluvial HAND nao e o mecanismo"
+      ],
+      "nao_e": "nao e afirmacao de acerto: nenhuma destas regioes tem inventario local usado como criterio de aprovacao"
+    },
+    {
+      "regiao": "curitiba",
+      "status": "ok",
+      "grade_gerada": true,
+      "modelo": "fluvial_planicie",
+      "maturidade": "transferencia_caracterizada",
+      "resolucao_m": 120,
+      "celulas_da_grade": 67521,
+      "celulas_validas": 65275,
+      "pct_validas": 96.7,
+      "celulas_serviveis": 60195,
+      "pct_servivel_do_valido": 92.2,
+      "variaveis_do_modelo": [
+        "elevation_m",
+        "slope_deg",
+        "hand_m",
+        "twi_dinf"
+      ],
+      "variaveis_do_raster": [
+        "elevation_m",
+        "slope_deg",
+        "hand_m",
+        "twi_dinf"
+      ],
+      "variaveis_por_cenario": [],
+      "cenarios": {
+        "unico": {
+          "cenario_de_chuva": null,
+          "celulas_serviveis": 60195,
+          "celulas_recusadas_por_dominio": 5080,
+          "pct_servivel": 92.2,
+          "escore_mediano": 0.2429,
+          "escore_p90": 0.5238,
+          "escore_minimo": 0.0,
+          "escore_maximo": 0.8628,
+          "largura_mediana_do_ic": 0.2644
+        }
+      },
+      "distancia_de_dominio": {
+        "elevation_m": {
+          "media_da_grade": 915.238,
+          "media_do_ajuste": 116.806,
+          "diferenca_padronizada": 5.054,
+          "faixa_do_ajuste_5_95": [
+            3.5144,
+            316.1373
+          ],
+          "pct_dentro_da_faixa": 0.0
+        },
+        "slope_deg": {
+          "media_da_grade": 4.576,
+          "media_do_ajuste": 2.587,
+          "diferenca_padronizada": 0.45,
+          "faixa_do_ajuste_5_95": [
+            0.0001,
+            11.053
+          ],
+          "pct_dentro_da_faixa": 92.3
+        },
+        "hand_m": {
+          "media_da_grade": 11.319,
+          "media_do_ajuste": 6.041,
+          "diferenca_padronizada": 0.291,
+          "faixa_do_ajuste_5_95": [
+            0.0,
+            27.4659
+          ],
+          "pct_dentro_da_faixa": 89.8
+        },
+        "twi_dinf": {
+          "media_da_grade": 7.842,
+          "media_do_ajuste": 9.429,
+          "diferenca_padronizada": -0.528,
+          "faixa_do_ajuste_5_95": [
+            5.8065,
+            15.6099
+          ],
+          "pct_dentro_da_faixa": 85.5
+        }
+      },
+      "conferencia_contra_o_contrato": {
+        "celulas": 25,
+        "divergencias": 0
+      },
+      "limitacoes": [
+        "elevation_m e altitude absoluta, nao grandeza causal comparavel entre cidades de altitude de base diferente -- o portao de dominio do SVC-02 mede isso por requisicao",
+        "chuva fora do conjunto: nao discrimina na escala em que o modelo compara (ext_chuva_estado_do_projeto_v1.md)"
+      ],
+      "nao_e": "nao e afirmacao de acerto: nenhuma destas regioes tem inventario local usado como criterio de aprovacao"
+    },
+    {
+      "regiao": "petropolis",
+      "status": "ok",
+      "grade_gerada": true,
+      "modelo": "fluvial_serra",
+      "maturidade": "transferencia_sem_referencia_local",
+      "resolucao_m": 120,
+      "celulas_da_grade": 176818,
+      "celulas_validas": 172015,
+      "pct_validas": 97.3,
+      "celulas_serviveis": 157005,
+      "pct_servivel_do_valido": 91.3,
+      "variaveis_do_modelo": [
+        "hand_m"
+      ],
+      "variaveis_do_raster": [
+        "hand_m"
+      ],
+      "variaveis_por_cenario": [],
+      "cenarios": {
+        "unico": {
+          "cenario_de_chuva": null,
+          "celulas_serviveis": 157005,
+          "celulas_recusadas_por_dominio": 15010,
+          "pct_servivel": 91.3,
+          "escore_mediano": 0.346,
+          "escore_p90": 0.5634,
+          "escore_minimo": 0.0262,
+          "escore_maximo": 0.5666,
+          "largura_mediana_do_ic": 0.2205
+        }
+      },
+      "distancia_de_dominio": {
+        "hand_m": {
+          "media_da_grade": 74.114,
+          "media_do_ajuste": 43.166,
+          "diferenca_padronizada": 0.445,
+          "faixa_do_ajuste_5_95": [
+            0.0,
+            187.4298
+          ],
+          "pct_dentro_da_faixa": 91.3
+        }
+      },
+      "conferencia_contra_o_contrato": {
+        "celulas": 25,
+        "divergencias": 0
+      },
+      "limitacoes": [
+        "nenhuma AOI brasileira no ajuste: os grupos ingremes sao todos estrangeiros",
+        "Petropolis nao tem nenhuma linha na tabela unica: nenhum ponto rotulado, nenhum inventario local, nenhuma validacao possivel hoje",
+        "o escore para Petropolis e predicao por semelhanca de terreno, nunca afirmacao de acerto"
+      ],
+      "nao_e": "nao e afirmacao de acerto: nenhuma destas regioes tem inventario local usado como criterio de aprovacao"
+    }
+  ],
+  "segundos": 19.1,
+  "nao_e": "nao e mapa operacional nem previsao de evento: e escore de predisposicao do terreno com maturidade declarada por regiao"
+}

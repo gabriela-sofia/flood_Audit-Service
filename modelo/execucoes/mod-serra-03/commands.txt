@@ -1,0 +1,3 @@
+python scripts/suscetibilidade/ds05_admissao_consolidacao.py
+python scripts/suscetibilidade/mod_serra03_relevo_ds05.py
+python -m pytest tests/test_mod_serra03_relevo.py -q

@@ -1,0 +1,844 @@
+[
+  {
+    "caso": "recife: area com todas as camadas",
+    "requisicao": {
+      "geometria": {
+        "tipo": "aoi",
+        "crs": "EPSG:4326",
+        "pontos": [
+          {
+            "lat": -8.0862852,
+            "lon": -34.968078,
+            "camadas": {
+              "elevation_m": 52.45222091674805,
+              "slope_deg": 12.735869407653809,
+              "hand_m": 36.77759256225588,
+              "twi_dinf": 4.888339519500732,
+              "rain_max_24h": 5.8,
+              "rain_decay_index": 12.065
+            }
+          },
+          {
+            "lat": -7.9949474,
+            "lon": -34.9323028,
+            "camadas": {
+              "elevation_m": 56.5574836730957,
+              "slope_deg": 19.420324325561523,
+              "hand_m": 32.024038314819336,
+              "twi_dinf": 4.955085277557373,
+              "rain_max_24h": 3.6,
+              "rain_decay_index": 8.662
+            }
+          },
+          {
+            "lat": -8.0234573,
+            "lon": -34.8954024,
+            "camadas": {
+              "elevation_m": 7.025895595550537,
+              "slope_deg": 1.190412521362305,
+              "hand_m": 1.572142538818362,
+              "twi_dinf": 7.274980545043945,
+              "rain_max_24h": 8.7,
+              "rain_decay_index": 10.268
+            }
+          },
+          {
+            "lat": -8.1133219,
+            "lon": -34.9456446,
+            "camadas": {
+              "elevation_m": 22.828088760375977,
+              "slope_deg": 4.272037029266357,
+              "hand_m": 9.631223509277344,
+              "twi_dinf": 6.982116222381592,
+              "rain_max_24h": 3.5,
+              "rain_decay_index": 8.108
+            }
+          },
+          {
+            "lat": -8.1386234,
+            "lon": -34.9453491,
+            "camadas": {
+              "elevation_m": 41.32168960571289,
+              "slope_deg": 4.143864631652832,
+              "hand_m": 26.650827323181154,
+              "twi_dinf": 6.026049613952637,
+              "rain_max_24h": 6.3,
+              "rain_decay_index": 19.967
+            }
+          },
+          {
+            "lat": -8.1183956,
+            "lon": -34.9445109,
+            "camadas": {
+              "elevation_m": 55.88297271728516,
+              "slope_deg": 13.672213554382324,
+              "hand_m": 46.07678031921387,
+              "twi_dinf": 6.323761940002441,
+              "rain_max_24h": 4.1,
+              "rain_decay_index": 8.533
+            }
+          },
+          {
+            "lat": -8.1097304,
+            "lon": -34.936031,
+            "camadas": {
+              "elevation_m": 5.546655578887936,
+              "slope_deg": 0.2496819347143173,
+              "hand_m": 0.0004299999999979,
+              "twi_dinf": 10.998937606811523,
+              "rain_max_24h": 9.7,
+              "rain_decay_index": 15.389
+            }
+          },
+          {
+            "lat": -7.9977058,
+            "lon": -34.9336782,
+            "camadas": {
+              "elevation_m": 75.67740631103516,
+              "slope_deg": 17.581449508666992,
+              "hand_m": 44.03117908947753,
+              "twi_dinf": 4.550485134124756,
+              "rain_max_24h": 11.8,
+              "rain_decay_index": 10.995
+            }
+          },
+          {
+            "lat": -7.9977058,
+            "lon": -34.9336782,
+            "camadas": {
+              "elevation_m": 75.67740631103516,
+              "slope_deg": 17.581449508666992,
+              "hand_m": 44.03117908947753,
+              "twi_dinf": 4.550485134124756,
+              "rain_max_24h": 15.4,
+              "rain_decay_index": 20.883
+            }
+          },
+          {
+            "lat": -8.0050731,
+            "lon": -34.9020178,
+            "camadas": {
+              "elevation_m": 8.349268806152342,
+              "slope_deg": 1.0523855686187744,
+              "hand_m": 0.0002579999999987,
+              "twi_dinf": 12.083158493041992,
+              "rain_max_24h": 16.5,
+              "rain_decay_index": 31.431
+            }
+          },
+          {
+            "lat": -8.1168117,
+            "lon": -34.9293051,
+            "camadas": {
+              "elevation_m": 7.300969208496093,
+              "slope_deg": 1.8173032999038696,
+              "hand_m": 1.783531496490479,
+              "twi_dinf": 8.570902824401855,
+              "rain_max_24h": 16.5,
+              "rain_decay_index": 38.023
+            }
+          },
+          {
+            "lat": -7.9849093,
+            "lon": -34.9302439,
+            "camadas": {
+              "elevation_m": 65.62321472167969,
+              "slope_deg": 2.7326929569244385,
+              "hand_m": 42.18448621984863,
+              "twi_dinf": 6.44337797164917,
+              "rain_max_24h": 23.6,
+              "rain_decay_index": 38.133
+            }
+          }
+        ]
+      },
+      "periodo": {
+        "inicio": "2024-01-01",
+        "fim": "2024-12-31"
+      }
+    },
+    "resposta": {
+      "status": "ok",
+      "contrato": "v1",
+      "regiao": "recife",
+      "maturidade": "mvp_local",
+      "unidade_de_resposta": "area",
+      "n_pontos": 12,
+      "escore": 0.5346,
+      "ic95": [
+        0.4561,
+        0.6079
+      ],
+      "variaveis_usadas": [
+        "elevation_m",
+        "slope_deg",
+        "hand_m",
+        "twi_dinf",
+        "rain_max_24h",
+        "rain_decay_index"
+      ],
+      "dominio": {
+        "cobertura_por_variavel_pct": {
+          "elevation_m": 83.3,
+          "slope_deg": 75.0,
+          "hand_m": 100.0,
+          "twi_dinf": 75.0,
+          "rain_max_24h": 100.0,
+          "rain_decay_index": 100.0
+        },
+        "variaveis_em_extrapolacao": []
+      },
+      "limitacoes": [
+        "negativo por ausencia de registro, o nivel mais fraco da hierarquia",
+        "positivos e negativos dividem 5 das 205 datas: a chuva separa dias, nao lugares (ext_chuva_estado_do_projeto_v1.md)",
+        "HAND nao separa as classes em Recife -- num evento pluvial HAND nao e o mecanismo",
+        "criterio de leitura nao atingido no ajuste: IC95 de hand_m cruza zero; AUC 0.6409 fora da faixa [0.7; 0.88]"
+      ],
+      "model_card": {
+        "modelo": "recife_pluvial",
+        "regiao": "recife",
+        "maturidade": "mvp_local",
+        "mecanismo": "PLUVIAL_URBANO",
+        "variaveis": [
+          "elevation_m",
+          "slope_deg",
+          "hand_m",
+          "twi_dinf",
+          "rain_max_24h",
+          "rain_decay_index"
+        ],
+        "estimador": "regressao logistica penalizada de Firth",
+        "ajustado_em": {
+          "n": 269,
+          "grupos": 269,
+          "grupos_positivos": 145,
+          "grupos_negativos": 124,
+          "fontes": {
+            "recife": 269
+          },
+          "niveis_de_negativo": {
+            "ausencia": 122,
+            "exclusao_qualificada": 2
+          },
+          "prevalencia": 0.539
+        },
+        "desempenho": {
+          "auc_agrupada": 0.6409,
+          "folds": 5
+        },
+        "criterios_nao_atingidos": [
+          "IC95 de hand_m cruza zero",
+          "AUC 0.6409 fora da faixa [0.7; 0.88]"
+        ],
+        "limites_de_uso": [
+          "negativo por ausencia de registro, o nivel mais fraco da hierarquia",
+          "positivos e negativos dividem 5 das 205 datas: a chuva separa dias, nao lugares (ext_chuva_estado_do_projeto_v1.md)",
+          "HAND nao separa as classes em Recife -- num evento pluvial HAND nao e o mecanismo"
+        ],
+        "por_que_este_conjunto": "Recife tem modelo proprio porque o mecanismo e outro: a agua vem da chuva excedendo a drenagem, nao do canal subindo. Somar Recife ao conjunto fluvial assumiria um processo gerador unico",
+        "ic_do_escore": "bootstrap do preditor linear reamostrando grupos, 1000 replicas",
+        "nao_e": "nao e previsao de evento nem mapa operacional: e escore de predisposicao do terreno, com as limitacoes acima"
+      },
+      "explicacao": {
+        "gerador": "regras_sobre_o_payload",
+        "escore_explicado": 0.5346,
+        "itens": [
+          {
+            "variavel": "rain_decay_index",
+            "nome": "chuva antecedente com decaimento",
+            "valor_medio": 18.538,
+            "unidade": "mm",
+            "contribuicao": -0.2535,
+            "sentido": "contra"
+          },
+          {
+            "variavel": "elevation_m",
+            "nome": "elevacao",
+            "valor_medio": 39.52,
+            "unidade": "m",
+            "contribuicao": 0.2025,
+            "sentido": "a favor"
+          },
+          {
+            "variavel": "slope_deg",
+            "nome": "declividade",
+            "valor_medio": 8.037,
+            "unidade": "graus",
+            "contribuicao": 0.1583,
+            "sentido": "a favor"
+          },
+          {
+            "variavel": "twi_dinf",
+            "nome": "indice topografico de umidade (TWI)",
+            "valor_medio": 6.971,
+            "unidade": "",
+            "contribuicao": -0.1474,
+            "sentido": "contra"
+          },
+          {
+            "variavel": "hand_m",
+            "nome": "altura acima da drenagem (HAND)",
+            "valor_medio": 23.73,
+            "unidade": "m",
+            "contribuicao": -0.0833,
+            "sentido": "contra"
+          },
+          {
+            "variavel": "rain_max_24h",
+            "nome": "pico de chuva em 24 h",
+            "valor_medio": 10.458,
+            "unidade": "mm",
+            "contribuicao": 0.0794,
+            "sentido": "a favor"
+          }
+        ],
+        "texto": "chuva antecedente com decaimento = 18.538 mm pesa contra; elevacao = 39.52 m pesa a favor; declividade = 8.037 graus pesa a favor; indice topografico de umidade (TWI) = 6.971 pesa contra; altura acima da drenagem (HAND) = 23.73 m pesa contra; pico de chuva em 24 h = 10.458 mm pesa a favor."
+      }
+    }
+  },
+  {
+    "caso": "curitiba: area com todas as camadas",
+    "requisicao": {
+      "geometria": {
+        "tipo": "aoi",
+        "crs": "EPSG:4326",
+        "pontos": [
+          {
+            "lat": -25.4283039,
+            "lon": -49.2503145,
+            "camadas": {
+              "elevation_m": 895.813720703125,
+              "slope_deg": 3.0316758155822754,
+              "hand_m": 0.1281100390624487,
+              "twi_dinf": 7.027444362640381,
+              "rain_max_24h": 18.4,
+              "rain_decay_index": 39.521
+            }
+          },
+          {
+            "lat": -25.5050446,
+            "lon": -49.3195865,
+            "camadas": {
+              "elevation_m": 926.998046875,
+              "slope_deg": 3.154978513717652,
+              "hand_m": 32.934326171875,
+              "twi_dinf": 8.242016792297363,
+              "rain_max_24h": 4.3,
+              "rain_decay_index": 1.081
+            }
+          },
+          {
+            "lat": -25.5265376,
+            "lon": -49.2759328,
+            "camadas": {
+              "elevation_m": 900.577392578125,
+              "slope_deg": 2.262779235839844,
+              "hand_m": 6.00537109375,
+              "twi_dinf": 7.963021755218506,
+              "rain_max_24h": 10.6,
+              "rain_decay_index": 20.295
+            }
+          },
+          {
+            "lat": -25.5095439,
+            "lon": -49.3396684,
+            "camadas": {
+              "elevation_m": 892.9765014648438,
+              "slope_deg": 2.7814974784851074,
+              "hand_m": 11.83735828124918,
+              "twi_dinf": 8.99621295928955,
+              "rain_max_24h": 11.1,
+              "rain_decay_index": 29.215
+            }
+          },
+          {
+            "lat": -25.5537218,
+            "lon": -49.2528012,
+            "camadas": {
+              "elevation_m": 886.4320068359375,
+              "slope_deg": 0.963281512260437,
+              "hand_m": 5.37200927734375,
+              "twi_dinf": 8.097517013549805,
+              "rain_max_24h": 3.1,
+              "rain_decay_index": 2.815
+            }
+          },
+          {
+            "lat": -25.4767366,
+            "lon": -49.1923361,
+            "camadas": {
+              "elevation_m": 876.4744262695312,
+              "slope_deg": 0.9071370363235474,
+              "hand_m": 2.24578857421875,
+              "twi_dinf": 9.007643699645996,
+              "rain_max_24h": 2.0,
+              "rain_decay_index": 1.371
+            }
+          },
+          {
+            "lat": -25.37057,
+            "lon": -49.2477366,
+            "camadas": {
+              "elevation_m": 958.5150756835938,
+              "slope_deg": 9.25034999847412,
+              "hand_m": 33.60690330078069,
+              "twi_dinf": 6.170431137084961,
+              "rain_max_24h": 21.2,
+              "rain_decay_index": 32.122
+            }
+          },
+          {
+            "lat": -25.3675077,
+            "lon": -49.2269901,
+            "camadas": {
+              "elevation_m": 940.8115234375,
+              "slope_deg": 4.350561618804932,
+              "hand_m": 22.96502410156245,
+              "twi_dinf": 6.690589904785156,
+              "rain_max_24h": 22.9,
+              "rain_decay_index": 43.416
+            }
+          },
+          {
+            "lat": -25.5378725,
+            "lon": -49.2433394,
+            "camadas": {
+              "elevation_m": 902.6006469726562,
+              "slope_deg": 1.843268632888794,
+              "hand_m": 8.774899589843699,
+              "twi_dinf": 7.43023681640625,
+              "rain_max_24h": 56.3,
+              "rain_decay_index": 83.935
+            }
+          },
+          {
+            "lat": -25.4006629,
+            "lon": -49.3255125,
+            "camadas": {
+              "elevation_m": 938.6160278320312,
+              "slope_deg": 13.334060668945312,
+              "hand_m": 10.453599511718494,
+              "twi_dinf": 6.210203647613525,
+              "rain_max_24h": 60.7,
+              "rain_decay_index": 86.167
+            }
+          },
+          {
+            "lat": -25.4192599,
+            "lon": -49.2977595,
+            "camadas": {
+              "elevation_m": 948.8282470703124,
+              "slope_deg": 4.063093662261963,
+              "hand_m": 20.2025118945312,
+              "twi_dinf": 7.913750648498535,
+              "rain_max_24h": 82.3,
+              "rain_decay_index": 70.265
+            }
+          },
+          {
+            "lat": -25.481273,
+            "lon": -49.3253888,
+            "camadas": {
+              "elevation_m": 897.7566528320312,
+              "slope_deg": 6.273728847503662,
+              "hand_m": 7.804440605468699,
+              "twi_dinf": 7.129057884216309,
+              "rain_max_24h": 12.9,
+              "rain_decay_index": 36.828
+            }
+          }
+        ]
+      },
+      "periodo": {
+        "inicio": "2024-01-01",
+        "fim": "2024-12-31"
+      }
+    },
+    "resposta": {
+      "status": "ok",
+      "contrato": "v1",
+      "regiao": "curitiba",
+      "maturidade": "transferencia_caracterizada",
+      "unidade_de_resposta": "area",
+      "n_pontos": 12,
+      "escore": 0.1822,
+      "ic95": [
+        0.0615,
+        0.2543
+      ],
+      "variaveis_usadas": [
+        "elevation_m",
+        "slope_deg",
+        "hand_m",
+        "twi_dinf"
+      ],
+      "dominio": {
+        "cobertura_por_variavel_pct": {
+          "elevation_m": 0.0,
+          "slope_deg": 91.7,
+          "hand_m": 83.3,
+          "twi_dinf": 100.0
+        },
+        "variaveis_em_extrapolacao": [
+          "elevation_m"
+        ]
+      },
+      "limitacoes": [
+        "elevation_m e altitude absoluta, nao grandeza causal comparavel entre cidades de altitude de base diferente -- o portao de dominio do SVC-02 mede isso por requisicao",
+        "chuva fora do conjunto: nao discrimina na escala em que o modelo compara (ext_chuva_estado_do_projeto_v1.md)",
+        "extrapolacao de dominio em ['elevation_m']: a requisicao esta fora da faixa 5-95% que o modelo viu no ajuste"
+      ],
+      "model_card": {
+        "modelo": "fluvial_planicie",
+        "regiao": "curitiba",
+        "maturidade": "transferencia_caracterizada",
+        "mecanismo": "FLUVIAL_ENXURRADA",
+        "variaveis": [
+          "elevation_m",
+          "slope_deg",
+          "hand_m",
+          "twi_dinf"
+        ],
+        "estimador": "regressao logistica penalizada de Firth",
+        "ajustado_em": {
+          "n": 56654,
+          "grupos": 509,
+          "grupos_positivos": 289,
+          "grupos_negativos": 308,
+          "fontes": {
+            "sen1floods11": 29650,
+            "cems": 19528,
+            "uk": 7476
+          },
+          "niveis_de_negativo": {
+            "observado": 27831,
+            "exclusao_qualificada": 3738
+          },
+          "prevalencia": 0.4428
+        },
+        "desempenho": {
+          "auc_agrupada": 0.7336,
+          "folds": 5
+        },
+        "criterios_nao_atingidos": [],
+        "limites_de_uso": [
+          "elevation_m e altitude absoluta, nao grandeza causal comparavel entre cidades de altitude de base diferente -- o portao de dominio do SVC-02 mede isso por requisicao",
+          "chuva fora do conjunto: nao discrimina na escala em que o modelo compara (ext_chuva_estado_do_projeto_v1.md)"
+        ],
+        "por_que_este_conjunto": "a regiao alvo nao entra no treino em nenhuma linha: o proposito e prever onde nao ha inventario local, e validar contra o rotulo da propria regiao seria a pergunta errada (metodo_aplicacao_sem_rotulo_local_v1.md)",
+        "ic_do_escore": "bootstrap do preditor linear reamostrando grupos, 1000 replicas",
+        "nao_e": "nao e previsao de evento nem mapa operacional: e escore de predisposicao do terreno, com as limitacoes acima"
+      },
+      "explicacao": {
+        "gerador": "regras_sobre_o_payload",
+        "escore_explicado": 0.1822,
+        "itens": [
+          {
+            "variavel": "hand_m",
+            "nome": "altura acima da drenagem (HAND)",
+            "valor_medio": 13.528,
+            "unidade": "m",
+            "contribuicao": -1.0744,
+            "sentido": "contra"
+          },
+          {
+            "variavel": "twi_dinf",
+            "nome": "indice topografico de umidade (TWI)",
+            "valor_medio": 7.573,
+            "unidade": "",
+            "contribuicao": -0.2546,
+            "sentido": "contra"
+          },
+          {
+            "variavel": "elevation_m",
+            "nome": "elevacao",
+            "valor_medio": 913.867,
+            "unidade": "m",
+            "contribuicao": -0.2396,
+            "sentido": "contra"
+          },
+          {
+            "variavel": "slope_deg",
+            "nome": "declividade",
+            "valor_medio": 4.351,
+            "unidade": "graus",
+            "contribuicao": 0.1233,
+            "sentido": "a favor"
+          }
+        ],
+        "texto": "altura acima da drenagem (HAND) = 13.528 m pesa contra; indice topografico de umidade (TWI) = 7.573 pesa contra; elevacao = 913.867 m pesa contra; declividade = 4.351 graus pesa a favor."
+      }
+    }
+  },
+  {
+    "caso": "petropolis: area sem nenhum ponto rotulado",
+    "requisicao": {
+      "regiao": "petropolis",
+      "geometria": {
+        "tipo": "aoi",
+        "crs": "EPSG:4326",
+        "pontos": [
+          {
+            "lat": -22.164127,
+            "lon": -43.418285,
+            "camadas": {
+              "hand_m": 0.0039
+            }
+          },
+          {
+            "lat": -22.164116,
+            "lon": -43.417121,
+            "camadas": {
+              "hand_m": 0.0039
+            }
+          },
+          {
+            "lat": -22.164104,
+            "lon": -43.415958,
+            "camadas": {
+              "hand_m": 0.0043
+            }
+          },
+          {
+            "lat": -22.164093,
+            "lon": -43.414794,
+            "camadas": {
+              "hand_m": 37.0635
+            }
+          },
+          {
+            "lat": -22.164082,
+            "lon": -43.413631,
+            "camadas": {
+              "hand_m": 8.9086
+            }
+          },
+          {
+            "lat": -22.16407,
+            "lon": -43.412468,
+            "camadas": {
+              "hand_m": 0.0026
+            }
+          },
+          {
+            "lat": -22.164059,
+            "lon": -43.411304,
+            "camadas": {
+              "hand_m": 0.0017
+            }
+          },
+          {
+            "lat": -22.164048,
+            "lon": -43.410141,
+            "camadas": {
+              "hand_m": 71.5101
+            }
+          },
+          {
+            "lat": -22.164036,
+            "lon": -43.408977,
+            "camadas": {
+              "hand_m": 20.418
+            }
+          },
+          {
+            "lat": -22.164025,
+            "lon": -43.407814,
+            "camadas": {
+              "hand_m": 0.0
+            }
+          }
+        ]
+      }
+    },
+    "resposta": {
+      "status": "ok",
+      "contrato": "v1",
+      "regiao": "petropolis",
+      "maturidade": "transferencia_sem_referencia_local",
+      "unidade_de_resposta": "area",
+      "n_pontos": 10,
+      "escore": 0.4989,
+      "ic95": [
+        0.4268,
+        0.5515
+      ],
+      "variaveis_usadas": [
+        "hand_m"
+      ],
+      "dominio": {
+        "cobertura_por_variavel_pct": {
+          "hand_m": 100.0
+        },
+        "variaveis_em_extrapolacao": []
+      },
+      "limitacoes": [
+        "nenhuma AOI brasileira no ajuste: os grupos ingremes sao todos estrangeiros",
+        "Petropolis nao tem nenhuma linha na tabela unica: nenhum ponto rotulado, nenhum inventario local, nenhuma validacao possivel hoje",
+        "o escore para Petropolis e predicao por semelhanca de terreno, nunca afirmacao de acerto"
+      ],
+      "model_card": {
+        "modelo": "fluvial_serra",
+        "regiao": "petropolis",
+        "maturidade": "transferencia_sem_referencia_local",
+        "mecanismo": "FLUVIAL_ENXURRADA",
+        "variaveis": [
+          "hand_m"
+        ],
+        "estimador": "regressao logistica penalizada de Firth",
+        "ajustado_em": {
+          "n": 5162,
+          "grupos": 24,
+          "grupos_positivos": 19,
+          "grupos_negativos": 24,
+          "fontes": {
+            "cems": 4387,
+            "sen1floods11": 775
+          },
+          "niveis_de_negativo": {
+            "observado": 3037
+          },
+          "prevalencia": 0.4117
+        },
+        "desempenho": {
+          "auc_agrupada": 0.7916,
+          "folds": 5
+        },
+        "criterios_nao_atingidos": [],
+        "limites_de_uso": [
+          "nenhuma AOI brasileira no ajuste: os grupos ingremes sao todos estrangeiros",
+          "Petropolis nao tem nenhuma linha na tabela unica: nenhum ponto rotulado, nenhum inventario local, nenhuma validacao possivel hoje",
+          "o escore para Petropolis e predicao por semelhanca de terreno, nunca afirmacao de acerto"
+        ],
+        "por_que_este_conjunto": "o estrato ingreme tem 19 grupos positivos; o orcamento de EPV da classe minoritaria decide quantas variaveis cabem, e nao o desempenho",
+        "ic_do_escore": "bootstrap do preditor linear reamostrando grupos, 1000 replicas",
+        "nao_e": "nao e previsao de evento nem mapa operacional: e escore de predisposicao do terreno, com as limitacoes acima"
+      },
+      "explicacao": {
+        "gerador": "regras_sobre_o_payload",
+        "escore_explicado": 0.4989,
+        "itens": [
+          {
+            "variavel": "hand_m",
+            "nome": "altura acima da drenagem (HAND)",
+            "valor_medio": 13.792,
+            "unidade": "m",
+            "contribuicao": 0.6086,
+            "sentido": "a favor"
+          }
+        ],
+        "texto": "altura acima da drenagem (HAND) = 13.792 m pesa a favor."
+      }
+    }
+  },
+  {
+    "caso": "petropolis: sem as camadas que o modelo exige",
+    "requisicao": {
+      "regiao": "petropolis",
+      "geometria": {
+        "tipo": "aoi",
+        "crs": "EPSG:4326",
+        "pontos": [
+          {
+            "lat": -22.505,
+            "lon": -43.178,
+            "camadas": {}
+          }
+        ]
+      }
+    },
+    "resposta": {
+      "status": "insufficient_data",
+      "gate_que_nao_fechou": "variaveis_presentes",
+      "detalhe": "variavel 'hand_m' ausente ou nao finita no ponto 0",
+      "escore": null,
+      "contrato": "v1",
+      "variaveis_exigidas": [
+        "hand_m"
+      ]
+    }
+  },
+  {
+    "caso": "variavel faltando",
+    "requisicao": {
+      "regiao": "recife",
+      "geometria": {
+        "tipo": "ponto",
+        "crs": "EPSG:4326",
+        "pontos": [
+          {
+            "lat": -8.05,
+            "lon": -34.9,
+            "camadas": {
+              "hand_m": 3.0
+            }
+          }
+        ]
+      }
+    },
+    "resposta": {
+      "status": "insufficient_data",
+      "gate_que_nao_fechou": "variaveis_presentes",
+      "detalhe": "variavel 'elevation_m' ausente ou nao finita no ponto 0",
+      "escore": null,
+      "contrato": "v1",
+      "variaveis_exigidas": [
+        "elevation_m",
+        "slope_deg",
+        "hand_m",
+        "twi_dinf",
+        "rain_max_24h",
+        "rain_decay_index"
+      ]
+    }
+  },
+  {
+    "caso": "CRS nao suportado",
+    "requisicao": {
+      "regiao": "recife",
+      "geometria": {
+        "tipo": "ponto",
+        "crs": "EPSG:31985",
+        "pontos": [
+          {
+            "lat": -8.05,
+            "lon": -34.9
+          }
+        ]
+      }
+    },
+    "resposta": {
+      "status": "insufficient_data",
+      "gate_que_nao_fechou": "geometria_valida",
+      "detalhe": "CRS 'EPSG:31985' nao suportado; suportados: ['EPSG:4326']",
+      "escore": null,
+      "contrato": "v1"
+    }
+  },
+  {
+    "caso": "geometria fora de toda regiao com modelo",
+    "requisicao": {
+      "geometria": {
+        "tipo": "ponto",
+        "crs": "EPSG:4326",
+        "pontos": [
+          {
+            "lat": 48.85,
+            "lon": 2.35,
+            "camadas": {
+              "hand_m": 1.0,
+              "twi_dinf": 9.0
+            }
+          }
+        ]
+      }
+    },
+    "resposta": {
+      "status": "region_not_supported",
+      "gate_que_nao_fechou": "regiao_resolvida",
+      "detalhe": "geometria nao cai em nenhuma regiao com modelo, e a requisicao nao declarou `regiao`",
+      "escore": null,
+      "contrato": "v1"
+    }
+  }
+]

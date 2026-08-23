@@ -1,0 +1,4 @@
+python scripts/suscetibilidade/ds05_admissao_consolidacao.py
+python scripts/suscetibilidade/aud_chuva01_fontes_incompativeis.py
+python scripts/suscetibilidade/aud_chuva02_escala_do_contraste.py
+python -m pytest tests/test_aud_chuva02_escala.py -q

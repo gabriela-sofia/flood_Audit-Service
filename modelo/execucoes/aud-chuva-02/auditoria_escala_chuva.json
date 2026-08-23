@@ -1,0 +1,472 @@
+{
+  "entrada": "local_runs/ds-05-tabela-unica/tabela_unica_v2.csv",
+  "grade_graus": 0.1,
+  "limiares": {
+    "pct_datas_compartilhadas": 20.0,
+    "faixa_acaso": [
+      0.45,
+      0.55
+    ]
+  },
+  "semente": 20260820,
+  "fontes": {
+    "cems": {
+      "n": 23915,
+      "fonte_chuva": [
+        "open_meteo_era5_land"
+      ],
+      "grupos": 119,
+      "pontos_por_grupo": 201.0,
+      "variaveis": {
+        "rain_max_24h": {
+          "n": 23915,
+          "escala_espacial": {
+            "celulas": 797,
+            "celula_dia": 797,
+            "valores_distintos": 586,
+            "pontos_por_valor": 40.8,
+            "valores_distintos_por_data_mediana": 30.0
+          },
+          "decomposicao": {
+            "var_total": 5601.615,
+            "pct_entre_grupos": 96.5
+          },
+          "dentro_do_grupo": {
+            "grupos_com_duas_classes": 94,
+            "grupos_com_chuva_constante": 9,
+            "grupos_usaveis": 85,
+            "auc_media_dentro_do_grupo": 0.4934
+          },
+          "contraste_temporal": {
+            "datas_de_positivo": 12,
+            "datas_de_negativo": 12,
+            "datas_compartilhadas": 12,
+            "pontos_em_datas_compartilhadas": 23915,
+            "pct_pontos_em_datas_compartilhadas": 100.0,
+            "auc_global": 0.5179,
+            "auc_em_datas_compartilhadas": 0.5179,
+            "n_em_datas_compartilhadas": 23915
+          },
+          "veredito_espacial": "RUIDO_NA_ESCALA_DO_MODELO",
+          "veredito_temporal": "DATAS_COMPARTILHADAS"
+        },
+        "rain_decay_index": {
+          "n": 23915,
+          "escala_espacial": {
+            "celulas": 797,
+            "celula_dia": 797,
+            "valores_distintos": 755,
+            "pontos_por_valor": 31.7,
+            "valores_distintos_por_data_mediana": 31.0
+          },
+          "decomposicao": {
+            "var_total": 13131.8,
+            "pct_entre_grupos": 97.7
+          },
+          "dentro_do_grupo": {
+            "grupos_com_duas_classes": 94,
+            "grupos_com_chuva_constante": 9,
+            "grupos_usaveis": 85,
+            "auc_media_dentro_do_grupo": 0.4923
+          },
+          "contraste_temporal": {
+            "datas_de_positivo": 12,
+            "datas_de_negativo": 12,
+            "datas_compartilhadas": 12,
+            "pontos_em_datas_compartilhadas": 23915,
+            "pct_pontos_em_datas_compartilhadas": 100.0,
+            "auc_global": 0.5135,
+            "auc_em_datas_compartilhadas": 0.5135,
+            "n_em_datas_compartilhadas": 23915
+          },
+          "veredito_espacial": "RUIDO_NA_ESCALA_DO_MODELO",
+          "veredito_temporal": "DATAS_COMPARTILHADAS"
+        }
+      }
+    },
+    "curitiba": {
+      "n": 1680,
+      "fonte_chuva": [
+        "open_meteo_era5_land"
+      ],
+      "grupos": 1471,
+      "pontos_por_grupo": 1.1,
+      "variaveis": {
+        "rain_max_24h": {
+          "n": 1680,
+          "escala_espacial": {
+            "celulas": 10,
+            "celula_dia": 964,
+            "valores_distintos": 302,
+            "pontos_por_valor": 5.6,
+            "valores_distintos_por_data_mediana": 1.0
+          },
+          "decomposicao": {
+            "var_total": 121.207,
+            "pct_entre_grupos": 100.0
+          },
+          "dentro_do_grupo": {
+            "grupos_com_duas_classes": 0,
+            "grupos_com_chuva_constante": 0,
+            "grupos_usaveis": 0,
+            "auc_media_dentro_do_grupo": null
+          },
+          "contraste_temporal": {
+            "datas_de_positivo": 386,
+            "datas_de_negativo": 364,
+            "datas_compartilhadas": 108,
+            "pontos_em_datas_compartilhadas": 497,
+            "pct_pontos_em_datas_compartilhadas": 29.6,
+            "auc_global": 0.5155,
+            "auc_em_datas_compartilhadas": 0.507,
+            "n_em_datas_compartilhadas": 497
+          },
+          "veredito_espacial": "GRUPO_E_O_PONTO",
+          "veredito_temporal": "DATAS_COMPARTILHADAS"
+        },
+        "rain_decay_index": {
+          "n": 1680,
+          "escala_espacial": {
+            "celulas": 10,
+            "celula_dia": 964,
+            "valores_distintos": 1001,
+            "pontos_por_valor": 1.7,
+            "valores_distintos_por_data_mediana": 1.0
+          },
+          "decomposicao": {
+            "var_total": 382.83,
+            "pct_entre_grupos": 100.0
+          },
+          "dentro_do_grupo": {
+            "grupos_com_duas_classes": 0,
+            "grupos_com_chuva_constante": 0,
+            "grupos_usaveis": 0,
+            "auc_media_dentro_do_grupo": null
+          },
+          "contraste_temporal": {
+            "datas_de_positivo": 386,
+            "datas_de_negativo": 364,
+            "datas_compartilhadas": 108,
+            "pontos_em_datas_compartilhadas": 497,
+            "pct_pontos_em_datas_compartilhadas": 29.6,
+            "auc_global": 0.6195,
+            "auc_em_datas_compartilhadas": 0.6094,
+            "n_em_datas_compartilhadas": 497
+          },
+          "veredito_espacial": "GRUPO_E_O_PONTO",
+          "veredito_temporal": "DATAS_COMPARTILHADAS"
+        }
+      }
+    },
+    "recife": {
+      "n": 278,
+      "fonte_chuva": [
+        "open_meteo_era5_land"
+      ],
+      "grupos": 278,
+      "pontos_por_grupo": 1.0,
+      "variaveis": {
+        "rain_max_24h": {
+          "n": 269,
+          "escala_espacial": {
+            "celulas": 4,
+            "celula_dia": 219,
+            "valores_distintos": 123,
+            "pontos_por_valor": 2.2,
+            "valores_distintos_por_data_mediana": 1.0
+          },
+          "decomposicao": {
+            "var_total": 206.771,
+            "pct_entre_grupos": 100.0
+          },
+          "dentro_do_grupo": {
+            "grupos_com_duas_classes": 0,
+            "grupos_com_chuva_constante": 0,
+            "grupos_usaveis": 0,
+            "auc_media_dentro_do_grupo": null
+          },
+          "contraste_temporal": {
+            "datas_de_positivo": 103,
+            "datas_de_negativo": 107,
+            "datas_compartilhadas": 5,
+            "pontos_em_datas_compartilhadas": 10,
+            "pct_pontos_em_datas_compartilhadas": 3.7,
+            "auc_global": 0.6282,
+            "auc_em_datas_compartilhadas": 0.46,
+            "n_em_datas_compartilhadas": 10
+          },
+          "veredito_espacial": "GRUPO_E_O_PONTO",
+          "veredito_temporal": "DATAS_DISJUNTAS"
+        },
+        "rain_decay_index": {
+          "n": 269,
+          "escala_espacial": {
+            "celulas": 4,
+            "celula_dia": 219,
+            "valores_distintos": 216,
+            "pontos_por_valor": 1.2,
+            "valores_distintos_por_data_mediana": 1.0
+          },
+          "decomposicao": {
+            "var_total": 529.63,
+            "pct_entre_grupos": 100.0
+          },
+          "dentro_do_grupo": {
+            "grupos_com_duas_classes": 0,
+            "grupos_com_chuva_constante": 0,
+            "grupos_usaveis": 0,
+            "auc_media_dentro_do_grupo": null
+          },
+          "contraste_temporal": {
+            "datas_de_positivo": 103,
+            "datas_de_negativo": 107,
+            "datas_compartilhadas": 5,
+            "pontos_em_datas_compartilhadas": 10,
+            "pct_pontos_em_datas_compartilhadas": 3.7,
+            "auc_global": 0.6191,
+            "auc_em_datas_compartilhadas": 0.5,
+            "n_em_datas_compartilhadas": 10
+          },
+          "veredito_espacial": "GRUPO_E_O_PONTO",
+          "veredito_temporal": "DATAS_DISJUNTAS"
+        }
+      }
+    },
+    "sen1floods11": {
+      "n": 30431,
+      "fonte_chuva": [
+        "open_meteo_era5_land"
+      ],
+      "grupos": 11,
+      "pontos_por_grupo": 2766.5,
+      "variaveis": {
+        "rain_max_24h": {
+          "n": 30431,
+          "escala_espacial": {
+            "celulas": 642,
+            "celula_dia": 642,
+            "valores_distintos": 348,
+            "pontos_por_valor": 87.4,
+            "valores_distintos_por_data_mediana": 45.0
+          },
+          "decomposicao": {
+            "var_total": 516.788,
+            "pct_entre_grupos": 81.7
+          },
+          "dentro_do_grupo": {
+            "grupos_com_duas_classes": 11,
+            "grupos_com_chuva_constante": 0,
+            "grupos_usaveis": 11,
+            "auc_media_dentro_do_grupo": 0.4737
+          },
+          "contraste_temporal": {
+            "datas_de_positivo": 11,
+            "datas_de_negativo": 11,
+            "datas_compartilhadas": 11,
+            "pontos_em_datas_compartilhadas": 30431,
+            "pct_pontos_em_datas_compartilhadas": 100.0,
+            "auc_global": 0.4982,
+            "auc_em_datas_compartilhadas": 0.4982,
+            "n_em_datas_compartilhadas": 30431
+          },
+          "veredito_espacial": "RUIDO_NA_ESCALA_DO_MODELO",
+          "veredito_temporal": "DATAS_COMPARTILHADAS"
+        },
+        "rain_decay_index": {
+          "n": 30431,
+          "escala_espacial": {
+            "celulas": 642,
+            "celula_dia": 642,
+            "valores_distintos": 561,
+            "pontos_por_valor": 54.2,
+            "valores_distintos_por_data_mediana": 49.0
+          },
+          "decomposicao": {
+            "var_total": 1167.849,
+            "pct_entre_grupos": 76.2
+          },
+          "dentro_do_grupo": {
+            "grupos_com_duas_classes": 11,
+            "grupos_com_chuva_constante": 0,
+            "grupos_usaveis": 11,
+            "auc_media_dentro_do_grupo": 0.4778
+          },
+          "contraste_temporal": {
+            "datas_de_positivo": 11,
+            "datas_de_negativo": 11,
+            "datas_compartilhadas": 11,
+            "pontos_em_datas_compartilhadas": 30431,
+            "pct_pontos_em_datas_compartilhadas": 100.0,
+            "auc_global": 0.5165,
+            "auc_em_datas_compartilhadas": 0.5165,
+            "n_em_datas_compartilhadas": 30431
+          },
+          "veredito_espacial": "RUIDO_NA_ESCALA_DO_MODELO",
+          "veredito_temporal": "DATAS_COMPARTILHADAS"
+        }
+      }
+    },
+    "ufo": {
+      "n": 24044,
+      "fonte_chuva": [
+        "open_meteo_era5_land"
+      ],
+      "grupos": 215,
+      "pontos_por_grupo": 111.8,
+      "variaveis": {
+        "rain_max_24h": {
+          "n": 24044,
+          "escala_espacial": {
+            "celulas": 128,
+            "celula_dia": 144,
+            "valores_distintos": 108,
+            "pontos_por_valor": 222.6,
+            "valores_distintos_por_data_mediana": 6.0
+          },
+          "decomposicao": {
+            "var_total": 2518.406,
+            "pct_entre_grupos": 99.2
+          },
+          "dentro_do_grupo": {
+            "grupos_com_duas_classes": 215,
+            "grupos_com_chuva_constante": 114,
+            "grupos_usaveis": 101,
+            "auc_media_dentro_do_grupo": 0.5113
+          },
+          "contraste_temporal": {
+            "datas_de_positivo": 18,
+            "datas_de_negativo": 18,
+            "datas_compartilhadas": 18,
+            "pontos_em_datas_compartilhadas": 24044,
+            "pct_pontos_em_datas_compartilhadas": 100.0,
+            "auc_global": 0.4935,
+            "auc_em_datas_compartilhadas": 0.4935,
+            "n_em_datas_compartilhadas": 24044
+          },
+          "veredito_espacial": "RUIDO_NA_ESCALA_DO_MODELO",
+          "veredito_temporal": "DATAS_COMPARTILHADAS"
+        },
+        "rain_decay_index": {
+          "n": 24044,
+          "escala_espacial": {
+            "celulas": 128,
+            "celula_dia": 144,
+            "valores_distintos": 132,
+            "pontos_por_valor": 182.2,
+            "valores_distintos_por_data_mediana": 6.0
+          },
+          "decomposicao": {
+            "var_total": 10635.467,
+            "pct_entre_grupos": 99.8
+          },
+          "dentro_do_grupo": {
+            "grupos_com_duas_classes": 215,
+            "grupos_com_chuva_constante": 113,
+            "grupos_usaveis": 102,
+            "auc_media_dentro_do_grupo": 0.5175
+          },
+          "contraste_temporal": {
+            "datas_de_positivo": 18,
+            "datas_de_negativo": 18,
+            "datas_compartilhadas": 18,
+            "pontos_em_datas_compartilhadas": 24044,
+            "pct_pontos_em_datas_compartilhadas": 100.0,
+            "auc_global": 0.4898,
+            "auc_em_datas_compartilhadas": 0.4898,
+            "n_em_datas_compartilhadas": 24044
+          },
+          "veredito_espacial": "RUIDO_NA_ESCALA_DO_MODELO",
+          "veredito_temporal": "DATAS_COMPARTILHADAS"
+        }
+      }
+    },
+    "uk": {
+      "n": 7476,
+      "fonte_chuva": [
+        "open_meteo_era5_land"
+      ],
+      "grupos": 401,
+      "pontos_por_grupo": 18.6,
+      "variaveis": {
+        "rain_max_24h": {
+          "n": 7476,
+          "escala_espacial": {
+            "celulas": 85,
+            "celula_dia": 2225,
+            "valores_distintos": 323,
+            "pontos_por_valor": 23.1,
+            "valores_distintos_por_data_mediana": 10.5
+          },
+          "decomposicao": {
+            "var_total": 80.407,
+            "pct_entre_grupos": 66.3
+          },
+          "dentro_do_grupo": {
+            "grupos_com_duas_classes": 0,
+            "grupos_com_chuva_constante": 0,
+            "grupos_usaveis": 0,
+            "auc_media_dentro_do_grupo": null
+          },
+          "contraste_temporal": {
+            "datas_de_positivo": 110,
+            "datas_de_negativo": 106,
+            "datas_compartilhadas": 106,
+            "pontos_em_datas_compartilhadas": 7472,
+            "pct_pontos_em_datas_compartilhadas": 99.9,
+            "auc_global": 0.5171,
+            "auc_em_datas_compartilhadas": 0.5173,
+            "n_em_datas_compartilhadas": 7472
+          },
+          "veredito_espacial": "GRUPOS_PUROS",
+          "veredito_temporal": "DATAS_COMPARTILHADAS"
+        },
+        "rain_decay_index": {
+          "n": 7476,
+          "escala_espacial": {
+            "celulas": 85,
+            "celula_dia": 2225,
+            "valores_distintos": 1354,
+            "pontos_por_valor": 5.5,
+            "valores_distintos_por_data_mediana": 11.0
+          },
+          "decomposicao": {
+            "var_total": 208.591,
+            "pct_entre_grupos": 59.5
+          },
+          "dentro_do_grupo": {
+            "grupos_com_duas_classes": 0,
+            "grupos_com_chuva_constante": 0,
+            "grupos_usaveis": 0,
+            "auc_media_dentro_do_grupo": null
+          },
+          "contraste_temporal": {
+            "datas_de_positivo": 110,
+            "datas_de_negativo": 106,
+            "datas_compartilhadas": 106,
+            "pontos_em_datas_compartilhadas": 7472,
+            "pct_pontos_em_datas_compartilhadas": 99.9,
+            "auc_global": 0.5295,
+            "auc_em_datas_compartilhadas": 0.5297,
+            "n_em_datas_compartilhadas": 7472
+          },
+          "veredito_espacial": "GRUPOS_PUROS",
+          "veredito_temporal": "DATAS_COMPARTILHADAS"
+        }
+      }
+    }
+  },
+  "contagem_de_vereditos": {
+    "espacial": {
+      "RUIDO_NA_ESCALA_DO_MODELO": 6,
+      "GRUPO_E_O_PONTO": 4,
+      "GRUPOS_PUROS": 2
+    },
+    "temporal": {
+      "DATAS_COMPARTILHADAS": 10,
+      "DATAS_DISJUNTAS": 2
+    }
+  },
+  "regra": "chuva so pode ser interpretada como preditor de LUGAR se variar e discriminar na escala em que o modelo compara. Discriminacao que so existe entre datas e afirmacao sobre quando, nao sobre onde",
+  "nao_e": "nao e decisao de remover variavel nem reajuste de modelo: e medida de escala",
+  "segundos": 4.0
+}

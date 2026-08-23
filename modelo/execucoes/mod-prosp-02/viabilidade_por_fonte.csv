@@ -1,0 +1,5 @@
+fonte,pontos,grupos,eventos_positivos,datas_distintas,inicio,fim,anos_cobertos,positivos,negativos,prevalencia,pontos_por_grupo,grupos_puros,variante_aplicavel,folds_sustentaveis
+uk,7476,401,201,110,2000-06-01,2025-01-01,21,3738,3738,0.5,18.6,True,bloco,7
+curitiba,1352,1157,1045,386,2023-01-16,2026-07-29,4,1238,114,0.916,1.2,True,bloco,10
+sen1floods11,30431,11,11,11,2016-08-12,2019-09-17,4,12949,17482,0.426,2766.5,False,heranca,0
+cems,23915,119,94,12,2024-07-01,2026-03-02,3,10523,13392,0.44,201.0,False,heranca,7

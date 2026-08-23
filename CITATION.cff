@@ -1,0 +1,31 @@
+cff-version: 1.2.0
+title: >-
+  Suscetibilidade urbana a enchentes com base causal físico-hidrológica:
+  da evidência heterogênea ao serviço de inferência auditável
+message: Se usar este trabalho, cite-o conforme abaixo.
+type: software
+authors:
+  - given-names: Gabriela Sofia
+    family-names: Milani
+  - given-names: Bárbara
+    family-names: Borges
+  - given-names: Nicole
+    family-names: Guarnieri
+  - given-names: Rafaella
+    family-names: Guerra
+repository-code: https://github.com/gabriela-sofia/flood_Audit-Service
+abstract: >-
+  Modelo causal de suscetibilidade urbana a enchentes a partir de relações
+  físico-hidrológicas conhecidas (HAND, TWI por D-infinity e chuva antecedente),
+  validado contra evento oficial em Recife, Curitiba e Petrópolis, com frente
+  externa no Reino Unido e no Copernicus EMS. Inclui contrato de inferência
+  auditável com portões declarados e maturidade por região.
+keywords:
+  - suscetibilidade a enchentes
+  - HAND
+  - índice topográfico de umidade
+  - regressão de Firth
+  - validação agrupada
+  - modelo de predição auditável
+license: MIT
+date-released: '2026-08-22'
