@@ -125,7 +125,7 @@ def run() -> None:
         "e referências Sentinel TIF. Não executa embedding. Não cria rotulo.",
         "## Scene date",
         "A elegibilidade para fila DINO NÃO requer scene_date confirmada. A extração "
-        "de embedding é uma representação visual review-only independente de adjudicação "
+        "de embedding é uma representação visual modo de revisao independente de adjudicação "
         "temporal.",
         "## Guardrails",
         "can_create_label, can_train_model e target_created sempre false.",
@@ -137,5 +137,5 @@ def run() -> None:
 
 
 if __name__ == "__main__":
-    argparse.ArgumentParser(description="v1pw dino review-only queue expansion").parse_args()
+    argparse.ArgumentParser(description="v1pw dino modo de revisao queue expansion").parse_args()
     run()

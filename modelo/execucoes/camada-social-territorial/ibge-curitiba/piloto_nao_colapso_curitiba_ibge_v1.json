@@ -1,0 +1,297 @@
+[
+  {
+    "contrato": "social_v0_review_only",
+    "status": "ok",
+    "unidade_de_resposta": "area",
+    "aoi": {
+      "lat_min": -25.627520299999958,
+      "lon_min": -49.35924689999996,
+      "lat_max": -25.620764899999983,
+      "lon_max": -49.356543699999975
+    },
+    "eixos": {
+      "suscetibilidade_fisica": {
+        "status": "ok",
+        "escore_recebido": 0.82,
+        "classe_relativa": "alta",
+        "maturidade": "transferencia_caracterizada",
+        "fonte": "payload_do_svc02_ou_equivalente",
+        "alterado_pela_camada_social": false
+      },
+      "vulnerabilidade_exposicao": {
+        "status": "ok",
+        "cobertura_da_aoi": 1.0,
+        "indicadores_agregados": {
+          "exposicao_populacional": 0.3646,
+          "condicao_socioeconomica": 0.9073,
+          "moradia_infraestrutura": 0.9316,
+          "lacuna_institucional": 0.6903
+        },
+        "media_relativa": 0.7235,
+        "classe_relativa": "alta",
+        "fontes": [
+          "ibge_censo_2022_setores_curitiba"
+        ],
+        "nao_e": "variavel causal do alagamento"
+      },
+      "lacuna_de_conhecimento_publico": {
+        "status": "avaliada",
+        "lacunas": [
+          "composicao_demografica",
+          "raca_genero",
+          "mobilidade_acesso"
+        ],
+        "nao_e": "baixo risco"
+      }
+    },
+    "partes_intersectadas": [
+      {
+        "unidade_id": "ibge_setor_410690205100179",
+        "nome": "Curitiba / Caximba",
+        "fracao_da_aoi": 0.38550606688824335,
+        "indicadores": {
+          "exposicao_populacional": 0.0125,
+          "condicao_socioeconomica": 0.8769,
+          "moradia_infraestrutura": 0.7617,
+          "lacuna_institucional": 0.4092
+        },
+        "fonte": "ibge_censo_2022_setores_curitiba",
+        "observacao": "indicadores relativos dentro de Curitiba; bbox da geometria setorial usado no piloto v1"
+      },
+      {
+        "unidade_id": "ibge_setor_410690205100180",
+        "nome": "Curitiba / Caximba",
+        "fracao_da_aoi": 1.0,
+        "indicadores": {
+          "exposicao_populacional": 0.0097,
+          "condicao_socioeconomica": 0.7502,
+          "moradia_infraestrutura": 0.8721,
+          "lacuna_institucional": 0.6221
+        },
+        "fonte": "ibge_censo_2022_setores_curitiba",
+        "observacao": "indicadores relativos dentro de Curitiba; bbox da geometria setorial usado no piloto v1"
+      },
+      {
+        "unidade_id": "ibge_setor_410690205100181",
+        "nome": "Curitiba / Caximba",
+        "fracao_da_aoi": 1.0,
+        "indicadores": {
+          "exposicao_populacional": 0.5732,
+          "condicao_socioeconomica": 1.0,
+          "moradia_infraestrutura": 1.0,
+          "lacuna_institucional": 0.9094
+        },
+        "fonte": "ibge_censo_2022_setores_curitiba",
+        "observacao": "indicadores relativos dentro de Curitiba; bbox da geometria setorial usado no piloto v1"
+      },
+      {
+        "unidade_id": "ibge_setor_410690205100182",
+        "nome": "Curitiba / Caximba",
+        "fracao_da_aoi": 0.6494968751507849,
+        "indicadores": {
+          "exposicao_populacional": 0.6786,
+          "condicao_socioeconomica": 0.9997,
+          "moradia_infraestrutura": 1.0,
+          "lacuna_institucional": 0.5989
+        },
+        "fonte": "ibge_censo_2022_setores_curitiba",
+        "observacao": "indicadores relativos dentro de Curitiba; bbox da geometria setorial usado no piloto v1"
+      },
+      {
+        "unidade_id": "ibge_setor_410690205100183",
+        "nome": "Curitiba / Caximba",
+        "fracao_da_aoi": 0.1760517511870525,
+        "indicadores": {
+          "exposicao_populacional": 0.8084,
+          "condicao_socioeconomica": 0.9994,
+          "moradia_infraestrutura": 1.0,
+          "lacuna_institucional": 0.7852
+        },
+        "fonte": "ibge_censo_2022_setores_curitiba",
+        "observacao": "indicadores relativos dentro de Curitiba; bbox da geometria setorial usado no piloto v1"
+      }
+    ],
+    "prioridade_publica": {
+      "classe": "prioridade_publica_forte",
+      "razao": "suscetibilidade fisica alta coincide com alta vulnerabilidade/exposicao",
+      "nao_e": "previsao individual de evento"
+    },
+    "invariantes": {
+      "nao_altera_escore_fisico": true,
+      "nao_treina_modelo": true,
+      "nao_cria_rotulo": true,
+      "ausencia_social_nao_e_baixa_vulnerabilidade": true,
+      "vulnerabilidade_nao_e_causa_hidrologica": true
+    },
+    "caso": "curitiba_ibge_alta_vulnerabilidade",
+    "setor_base": "410690205100181",
+    "bairro": "Caximba"
+  },
+  {
+    "contrato": "social_v0_review_only",
+    "status": "ok",
+    "unidade_de_resposta": "area",
+    "aoi": {
+      "lat_min": -25.435270999999943,
+      "lon_min": -49.29430789999998,
+      "lat_max": -25.432637299999953,
+      "lon_max": -49.29136659999995
+    },
+    "eixos": {
+      "suscetibilidade_fisica": {
+        "status": "ok",
+        "escore_recebido": 0.82,
+        "classe_relativa": "alta",
+        "maturidade": "transferencia_caracterizada",
+        "fonte": "payload_do_svc02_ou_equivalente",
+        "alterado_pela_camada_social": false
+      },
+      "vulnerabilidade_exposicao": {
+        "status": "ok",
+        "cobertura_da_aoi": 1.0,
+        "indicadores_agregados": {
+          "exposicao_populacional": 0.2759,
+          "condicao_socioeconomica": 0.0531,
+          "moradia_infraestrutura": 0.1414,
+          "lacuna_institucional": 0.3178
+        },
+        "media_relativa": 0.1971,
+        "classe_relativa": "baixa",
+        "fontes": [
+          "ibge_censo_2022_setores_curitiba"
+        ],
+        "nao_e": "variavel causal do alagamento"
+      },
+      "lacuna_de_conhecimento_publico": {
+        "status": "avaliada",
+        "lacunas": [
+          "composicao_demografica",
+          "raca_genero",
+          "mobilidade_acesso"
+        ],
+        "nao_e": "baixo risco"
+      }
+    },
+    "partes_intersectadas": [
+      {
+        "unidade_id": "ibge_setor_410690205010201",
+        "nome": "Curitiba / Bigorrilho",
+        "fracao_da_aoi": 0.18383146806255854,
+        "indicadores": {
+          "exposicao_populacional": 0.6541,
+          "condicao_socioeconomica": 0.1064,
+          "moradia_infraestrutura": 0.0536,
+          "lacuna_institucional": 0.5823
+        },
+        "fonte": "ibge_censo_2022_setores_curitiba",
+        "observacao": "indicadores relativos dentro de Curitiba; bbox da geometria setorial usado no piloto v1"
+      },
+      {
+        "unidade_id": "ibge_setor_410690205010211",
+        "nome": "Curitiba / Bigorrilho",
+        "fracao_da_aoi": 0.23088408728350351,
+        "indicadores": {
+          "exposicao_populacional": 0.3045,
+          "condicao_socioeconomica": 0.1759,
+          "moradia_infraestrutura": 0.2339,
+          "lacuna_institucional": 0.7758
+        },
+        "fonte": "ibge_censo_2022_setores_curitiba",
+        "observacao": "indicadores relativos dentro de Curitiba; bbox da geometria setorial usado no piloto v1"
+      },
+      {
+        "unidade_id": "ibge_setor_410690205010216",
+        "nome": "Curitiba / Bigorrilho",
+        "fracao_da_aoi": 0.17229295787559654,
+        "indicadores": {
+          "exposicao_populacional": 0.8112,
+          "condicao_socioeconomica": 0.1058,
+          "moradia_infraestrutura": 0.137,
+          "lacuna_institucional": 0.4613
+        },
+        "fonte": "ibge_censo_2022_setores_curitiba",
+        "observacao": "indicadores relativos dentro de Curitiba; bbox da geometria setorial usado no piloto v1"
+      },
+      {
+        "unidade_id": "ibge_setor_410690205010217",
+        "nome": "Curitiba / Bigorrilho",
+        "fracao_da_aoi": 0.01210757865867587,
+        "indicadores": {
+          "exposicao_populacional": 0.7733,
+          "condicao_socioeconomica": 0.0537,
+          "moradia_infraestrutura": 0.0279,
+          "lacuna_institucional": 0.5679
+        },
+        "fonte": "ibge_censo_2022_setores_curitiba",
+        "observacao": "indicadores relativos dentro de Curitiba; bbox da geometria setorial usado no piloto v1"
+      },
+      {
+        "unidade_id": "ibge_setor_410690205010225",
+        "nome": "Curitiba / Bigorrilho",
+        "fracao_da_aoi": 0.06380757818866542,
+        "indicadores": {
+          "exposicao_populacional": 0.3227,
+          "condicao_socioeconomica": 0.0401,
+          "moradia_infraestrutura": 0.1373,
+          "lacuna_institucional": 0.3111
+        },
+        "fonte": "ibge_censo_2022_setores_curitiba",
+        "observacao": "indicadores relativos dentro de Curitiba; bbox da geometria setorial usado no piloto v1"
+      },
+      {
+        "unidade_id": "ibge_setor_410690205010226",
+        "nome": "Curitiba / Bigorrilho",
+        "fracao_da_aoi": 0.45563275999074054,
+        "indicadores": {
+          "exposicao_populacional": 0.0916,
+          "condicao_socioeconomica": 0.0748,
+          "moradia_infraestrutura": 0.1377,
+          "lacuna_institucional": 0.6143
+        },
+        "fonte": "ibge_censo_2022_setores_curitiba",
+        "observacao": "indicadores relativos dentro de Curitiba; bbox da geometria setorial usado no piloto v1"
+      },
+      {
+        "unidade_id": "ibge_setor_410690205010506",
+        "nome": "Curitiba / Bigorrilho",
+        "fracao_da_aoi": 1.0,
+        "indicadores": {
+          "exposicao_populacional": 0.1314,
+          "condicao_socioeconomica": 0.0,
+          "moradia_infraestrutura": 0.1483,
+          "lacuna_institucional": 0.0235
+        },
+        "fonte": "ibge_censo_2022_setores_curitiba",
+        "observacao": "indicadores relativos dentro de Curitiba; bbox da geometria setorial usado no piloto v1"
+      },
+      {
+        "unidade_id": "ibge_setor_410690205010507",
+        "nome": "Curitiba / Bigorrilho",
+        "fracao_da_aoi": 0.1434434867810968,
+        "indicadores": {
+          "exposicao_populacional": 0.6315,
+          "condicao_socioeconomica": 0.0309,
+          "moradia_infraestrutura": 0.0856,
+          "lacuna_institucional": 0.1615
+        },
+        "fonte": "ibge_censo_2022_setores_curitiba",
+        "observacao": "indicadores relativos dentro de Curitiba; bbox da geometria setorial usado no piloto v1"
+      }
+    ],
+    "prioridade_publica": {
+      "classe": "prioridade_tecnica",
+      "razao": "suscetibilidade fisica alta; acao publica segue relevante mesmo sem alta vulnerabilidade social",
+      "nao_e": "previsao individual de evento"
+    },
+    "invariantes": {
+      "nao_altera_escore_fisico": true,
+      "nao_treina_modelo": true,
+      "nao_cria_rotulo": true,
+      "ausencia_social_nao_e_baixa_vulnerabilidade": true,
+      "vulnerabilidade_nao_e_causa_hidrologica": true
+    },
+    "caso": "curitiba_ibge_baixa_vulnerabilidade",
+    "setor_base": "410690205010506",
+    "bairro": "Bigorrilho"
+  }
+]

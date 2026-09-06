@@ -97,11 +97,15 @@ import numpy as np
 
 REPO = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-sys.path.insert(0, str(REPO / "scripts" / "suscetibilidade"))
+sys.path.insert(0, str(REPO / "scripts" / "treino"))
+sys.path.insert(0, str(REPO / "scripts"))
+from chuva.contrato_chuva import (  # noqa: E402
+    SCENARIOS, scenario_evidence, scenario_values,
+)
 from ds03_esquema_alvo import VERSAO  # noqa: E402
 from svc02_contrato_inferencia import (  # noqa: E402
-    MAX_PCT_EXTRAPOLACAO, carregar_modelos, inferir, maturidade_da_regiao,
-    modelo_da_regiao, regioes_com_referencia_local,
+    DERIVADAS_RELATIVAS, MAX_PCT_EXTRAPOLACAO, carregar_modelos, inferir,
+    maturidade_da_regiao, modelo_da_regiao, regioes_com_referencia_local,
 )
 
 RUNS = REPO / "local_runs"
@@ -125,13 +129,8 @@ BLOCO_IC = 20000             # celulas por bloco no calculo do IC
 N_CONFERENCIA = 25           # celulas sorteadas para bater contra inferir()
 SEMENTE = 20260820
 
-# Cenarios de chuva para Recife, da distribuicao dos eventos observados na
-# propria regiao (n=145 positivos na tabela unica).
-CENARIOS_CHUVA = {
-    "mediana_observada": {"rain_max_24h": 13.6, "rain_decay_index": 23.18},
-    "p90_observado": {"rain_max_24h": 34.4, "rain_decay_index": 54.45},
-    "maximo_observado": {"rain_max_24h": 100.2, "rain_decay_index": 115.22},
-}
+# Mesma fonte unica usada pela inferencia pontual e pela interface.
+CENARIOS_CHUVA = {nome: scenario_values(nome) for nome in SCENARIOS}
 
 
 def ler_grade(dir_regiao: Path, passo: int) -> dict:
@@ -245,7 +244,7 @@ def gravar_figura(caminho: Path, valores: np.ndarray, forma, titulo: str,
     ax.set_title(titulo, fontsize=10)
     ax.set_xticks([])
     ax.set_yticks([])
-    fig.colorbar(im, ax=ax, shrink=0.75, rotulo="escore de suscetibilidade")
+    fig.colorbar(im, ax=ax, shrink=0.75, label="escore de suscetibilidade")
     fig.text(0.5, 0.02, rodape, ha="center", fontsize=7, wrap=True)
     fig.tight_layout(rect=(0, 0.06, 1, 1))
     fig.savefig(caminho, dpi=130)
@@ -272,8 +271,32 @@ def processar(regiao: str, modelos: dict, com_ref: set, passo: int) -> dict:
 
     g = ler_grade(dir_regiao, passo)
     feats = modelo["features"]
-    terreno = [f for f in feats if f in RASTER_DE]
-    faltantes = [f for f in feats if f not in RASTER_DE]
+
+    # Variavel relativa nao esta no raster e NAO e cenario: ela se deriva do
+    # raster de origem menos a linha-base da REGIAO, gravada no artefato
+    # servido. Sem isto o `elevation_rel_m` do modelo de 01/09 caia na lista de
+    # "fora do raster" e o script tentava le-lo do cenario de chuva -- ele
+    # quebrava com KeyError, e quebrar foi a sorte: preencher com a constante de
+    # chuva daria a mesma elevacao a cidade inteira, sem erro visivel.
+    #
+    # A derivacao usa a MESMA fonte de verdade do contrato de inferencia
+    # (`derivar_relativas`), para que a grade e o servico nao possam divergir.
+    baselines = modelo.get("elevacao_baseline_por_regiao") or {}
+    base_regiao = baselines.get(regiao)
+    derivaveis = {f: DERIVADAS_RELATIVAS[f] for f in feats
+                  if f in DERIVADAS_RELATIVAS
+                  and DERIVADAS_RELATIVAS[f] in RASTER_DE
+                  and base_regiao is not None}
+    for destino, origem in derivaveis.items():
+        g["dados"][destino] = g["dados"][origem] - float(base_regiao)
+
+    no_raster = dict(RASTER_DE)
+    no_raster.update({f: None for f in derivaveis})
+    terreno = [f for f in feats if f in no_raster]
+    faltantes = [f for f in feats if f not in no_raster]
+    if derivaveis:
+        print(f"  derivadas do raster com a linha-base da regiao "
+              f"({base_regiao:.4f} m): {list(derivaveis)}")
 
     X_terr = np.column_stack([g["dados"][f].ravel() for f in terreno])
     valido = np.all(np.isfinite(X_terr), axis=1)
@@ -310,6 +333,10 @@ def processar(regiao: str, modelos: dict, com_ref: set, passo: int) -> dict:
         n_serv = int(servivel.sum())
         resumo_cenarios[nome_cen] = {
             "cenario_de_chuva": valores_cen or None,
+            "rain_evidence": (scenario_evidence(
+                nome_cen, modelo.get("faixa_dominio_5_95"))
+                if nome_cen != "unico" else {
+                    "used": False, "reason": "regional model does not use rain"}),
             "celulas_serviveis": n_serv,
             "celulas_recusadas_por_dominio": int((~servivel).sum()),
             "pct_servivel": round(100.0 * n_serv / len(servivel), 1),

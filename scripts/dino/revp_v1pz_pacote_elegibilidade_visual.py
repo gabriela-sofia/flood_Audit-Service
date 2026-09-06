@@ -83,7 +83,7 @@ def build_summary() -> tuple[list[dict[str, Any]], str]:
 
     rows = [
         s(1, "visual_assets_audited", audited, "Assets visuais de manifests auditados", "AUDITAVEL", "metodologia_auditoria"),
-        s(2, "eligible_review_only_assets", eligible, "Assets elegíveis para DINO review-only (sem scene_date)"),
+        s(2, "eligible_review_only_assets", eligible, "Assets elegíveis para DINO modo de revisao (sem scene_date)"),
         s(3, "manual_check_candidates", manual, "Candidatos que requerem verificação manual"),
         s(4, "blocked_assets", blocked, "Assets bloqueados (fixture, não-patch, sem ID)"),
         s(5, "linked_patches_eligible", linked, "Patches únicos com linkage elegível", "AUDITAVEL", "metodologia_auditoria"),
@@ -112,7 +112,7 @@ def run() -> None:
         "Consolidar v1pu-v1py em manifest, summary científico e doc final.",
         "## Princípio metodológico",
         "Elegibilidade visual para DINO não requer scene_date confirmada nem temporal "
-        "unlock. A representação vetorial é review-only e não equivale a validação de "
+        "unlock. A representação vetorial é modo de revisao e não equivale a validação de "
         "evento, ground truth ou rótulo supervisionado.",
         f"## Status final",
         f"**{final}**. Fila expandida: {queue_n} itens.",

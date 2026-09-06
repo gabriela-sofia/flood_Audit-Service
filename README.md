@@ -1,87 +1,81 @@
-# Suscetibilidade urbana a enchentes com base causal físico-hidrológica
+# Suscetibilidade urbana a inundacoes
 
-Da evidência heterogênea ao serviço de inferência auditável.
+Da evidencia heterogenea ao servico de inferencia auditavel.
 
-Enchentes são o desastre de maior recorrência no Brasil, e atingem primeiro quem não
-escolheu onde morar. Este projeto parte do caminho oposto ao usual: em vez de deixar um
-modelo descobrir padrões em imagem de satélite, usa relações físico-hidrológicas já
-conhecidas como base causal e testa essas relações contra evento real registrado por
-fonte oficial.
+Este repositorio organiza uma cadeia reprodutivel para estimar suscetibilidade
+fisico-hidrologica a inundacoes em areas urbanas. O projeto separa tres coisas que
+nao devem ser confundidas: o dado de entrada, o ajuste estatistico treinado com
+fontes curadas e o contrato de inferencia que decide quando uma resposta pode ser
+entregue.
 
-Suscetibilidade, aqui, é a predisposição do terreno a acumular água sob um dado
-forçamento de chuva — **quanto chega** (chuva antecedente), **para onde converge** (índice
-topográfico de umidade) e **quanto precisa subir para ser alcançado** (HAND), com o
-escoamento repartido por D-infinity em vez de despejado numa das oito células vizinhas.
+Suscetibilidade, aqui, e a predisposicao fisica do terreno a receber, concentrar ou
+reter agua sob um dado contexto de chuva. A resposta do servico nao e promessa de
+ocorrencia, alerta em tempo real, diagnostico individual ou medida de vulnerabilidade
+social. Quando a evidencia local nao permite uma afirmacao, o repositorio registra a
+lacuna em vez de transformar ausencia de dado em resultado negativo.
 
-O produto final é um contrato de inferência: você entrega uma geometria, ele devolve um
-escore por área com intervalo de confiança, a maturidade da região e a explicação — ou
-recusa, dizendo qual portão falhou.
-
-> `REV-P` é o código interno do projeto. Aparece nos prefixos `revp_` dos arquivos e na
-> nomenclatura de estágios (`SUSC-20A`, `MOD-SERRA-03`, `v1pv`). Não é sigla com
-> expansão: é só o nome que o repositório recebeu quando nasceu.
-
----
+`REV-P` e o nome interno do projeto. Ele aparece em prefixos de arquivos, estagios e
+artefatos historicos, mas nao altera o escopo tecnico do repositorio.
 
 ## Comece por aqui
 
-| Se você quer | Leia |
+| Se voce quer | Leia |
 |---|---|
-| Entender **como funciona** e por que assim | [`docs/METODO.md`](docs/METODO.md) |
-| Saber **por que confiar** nos números | [`docs/EVIDENCIA.md`](docs/EVIDENCIA.md) |
-| Ver **o que foi treinado** e onde não vale | [`modelo/MODELO.md`](modelo/MODELO.md) |
-| Ver **de que dados** ele saiu | [`modelo/DADOS.md`](modelo/DADOS.md) |
+| Entender a cadeia tecnica e os portoes de resposta | [`docs/METODO.md`](docs/METODO.md) |
+| Ver o que esta provado, o que e inconclusivo e o que nao foi testado | [`docs/EVIDENCIA.md`](docs/EVIDENCIA.md) |
+| Conferir fontes, recortes e limites de uso | [`docs/FONTES.md`](docs/FONTES.md) |
+| Consultar o estado atual do pacote publico | [`docs/ESTADO_ATUAL.md`](docs/ESTADO_ATUAL.md) |
+| Ver os artefatos curados incluidos nesta versao | [`docs/ARTEFATOS_CURADOS.md`](docs/ARTEFATOS_CURADOS.md) |
+| Entender os modelos servidos | [`modelo/MODELO.md`](modelo/MODELO.md) |
+| Entender a base de dados consolidada | [`modelo/DADOS.md`](modelo/DADOS.md) |
 
----
+## Estado atual
 
-## Resultados
+O pacote publico contem os scripts de treino curado, os scripts de servico e os
+artefatos consolidados necessarios para auditar o estado atual do projeto.
 
-Base harmonizada com **65.070 pontos elegíveis ao ajuste fluvial**, reduzidos de seis
-fontes, todas na mesma cadeia de derivação de terreno e com chuva de fonte única
-(ERA5-Land, cobertura 99,99%).
-
-| Região | Resultado | Maturidade |
-|---|---|---|
-| **Recife** | Firth, n=278 (154 positivos da SEDEC / 124 negativos), LOO-AUC 0,68. Motor de inferência e contrato entregues | `mvp_local` |
-| **Curitiba** | 1.045 positivos do SIAC 156, 1.471 unidades de validação. Servida pelo ajuste fluvial de planície, com a distância de domínio declarada na resposta | `transferencia_caracterizada` |
-| **Petrópolis** | Servida pelo ajuste de serra; 91,3% do território cabe na faixa de HAND que o modelo viu | `transferencia_sem_referencia_local` |
-
-| Etapa | Resultado |
+| Frente | Estado |
 |---|---|
-| **E3** — ajuste por classe de relevo | Serra 0,7916 (`hand_m` −1,44 [−3,11; −0,83]); planície 0,7245 (`hand_m` −2,10 [−2,78; −1,56]; `twi_dinf` +0,40 [+0,33; +0,45]); transferência planície→serra **0,7957** |
-| **E4** — holdout temporal | 201 eventos em 110 datas (2000–2025), 8 cortes na faixa 0,70–0,88, AUC médio **0,7992** |
-| **E5** — grade de aplicação | 56.666 células em Recife, 65.275 em Curitiba, 172.015 em Petrópolis, a 120 m |
-| **E6** — contrato de inferência | Função pura com cinco portões em ordem declarada; falta o transporte HTTP |
+| Tabela unica | Manifesto v2 consolidado com 595.865 observacoes de entrada, 568.265 admitidas e 65.070 pontos no pool fluvial. As tabelas completas nao entram no pacote publico por tamanho; o manifesto registra os arquivos, tamanhos e checksums esperados. |
+| Modelos servidos | Cinco candidatos auditados. Quatro sao serviveis pelo contrato atual: Recife pluvial, NYC pluvial urbano, fluvial de planicie e fluvial de serra. Sao Paulo pluvial urbano fica registrado como nao servivel. |
+| Contrato de inferencia | Implementado como funcao pura, com portoes em ordem declarada, maturidade regional, distancia de dominio, explicacao estruturada e recusa quando o caso nao atende ao contrato. |
+| Grade de aplicacao | Gerada a 120 m para Recife, Curitiba e Petropolis, com CSV, GeoTIFF, PNG e resumo JSON. |
+| Chuva | Analise caso-controle temporal suporta associacao entre chuva antecedente e eventos em NYC e Sao Paulo. Esse resultado qualifica o forcamento, mas nao promove modelo de suscetibilidade sozinho. |
+| Temporalidade | Matrizes registram casos `supported`, `inconclusive` e `not_testable`. Onde o protocolo nao separa efeito temporal de ruido ou confundimento, o resultado permanece inconclusivo. |
+| Camada social | Camada territorial v0 para Curitiba em modo de revisao. Ela nao altera escore fisico, nao treina modelo e nao cria rotulo hidrologico. |
+| Recuperacao de fonte | Recuperador denso supera busca lexical na tarefa auditada. Esse componente serve para rastreabilidade de fontes, nao para alterar portoes ou escores. |
 
----
+## Resultados numericos versionados
+
+| Modelo | Uso no contrato | n | grupos | AUC | Veredito |
+|---|---:|---:|---:|---:|---|
+| Recife pluvial | Recife | 269 | 227 | 0,6422 | Servivel, fora dos criterios fortes |
+| Pluvial urbano NYC | NYC | 471.727 | 751 | 0,6089 | Servivel, fora dos criterios fortes |
+| Pluvial urbano Sao Paulo | Nao servido | 7.146 | 1.438 | 0,4753 | Abaixo do acaso |
+| Fluvial planicie | Curitiba | 56.654 | 509 | 0,7334 | Coerente com criterios |
+| Fluvial serra | Petropolis | 5.162 | 24 | 0,7916 | Coerente com criterios |
+
+| Regiao | Celulas validas | Celulas serviveis | Mediana do escore | p90 | Maturidade |
+|---|---:|---:|---:|---:|---|
+| Recife | 56.666 | 54.963 | 0,5808 | 0,7785 | `mvp_local` |
+| Curitiba | 65.275 | 64.310 | 0,2746 | 0,5804 | `transferencia_caracterizada` |
+| Petropolis | 172.015 | 157.005 | 0,3460 | 0,5634 | `transferencia_sem_referencia_local` |
 
 ## Estrutura
 
 ```text
-├── docs/
-│   ├── METODO.md          premissa física, portões, glossário, Protocolo C, mapa do código
-│   ├── EVIDENCIA.md       tabela-mestra das rodadas: data, script, artefato, veredito
-│   └── FONTES.md          de onde veio cada dado, quando, e por que é válido
-├── modelo/
-│   ├── MODELO.md          cartão do modelo — uso pretendido, desempenho, onde não vale
-│   ├── DADOS.md           ficha da base — composição, coleta, o que ficou de fora
-│   ├── execucoes/         artefatos das rodadas de treino e do contrato
-│   └── grade/             escore por célula a 120 m, GeoTIFF das três regiões
-├── scripts/
-│   ├── treino/            tabela única, E3, E4, auditoria da chuva
-│   ├── servico/           modelos servidos, contrato de inferência, grade
-│   ├── terreno/           cadeia D-infinity harmonizada
-│   ├── externo/           aquisição do negativo: Copernicus EMS, UK, fontes globais
-│   └── dino/              fila de revisão visual (nada aqui entra no modelo)
-├── outputs_public/data/   as onze etapas da linha causal, autocontidas
-└── tests/                 regressão da linha causal, do treino e do serviço
+docs/                    metodo, evidencia, fontes e estado publico
+modelo/                  cartao do modelo, ficha dos dados e artefatos curados
+modelo/execucoes/        saidas versionadas de treino, contrato, grade e auditorias
+modelo/grade/            grade publica por regiao a 120 m
+scripts/treino/          scripts curados de preparacao, treino e auditoria
+scripts/servico/         modelos servidos, contrato de inferencia e grade
+scripts/terreno/         cadeia fisico-hidrologica de terreno
+scripts/externo/         rotinas de aquisicao e preparacao de fontes externas
+scripts/social/          camada social territorial em revisao
+scripts/temporalidade/   auditorias temporais e ontologia de estados
+tests/                   testes de regressao da cadeia publica
 ```
-
-Cada etapa em `outputs_public/data/susc_20*/` é autocontida: traz os scripts que a
-produziram e os dados curados de saída. As fontes de todas elas estão consolidadas em
-[`docs/FONTES.md`](docs/FONTES.md).
-
----
 
 ## Executar
 
@@ -91,10 +85,6 @@ conda activate revp-susc
 python -m pytest tests -q
 ```
 
-São dois ambientes, de propósito: `environment.yml` para a linha causal e o serviço
-(Python `<3.11`, exigência do estimador de Firth) e `requirements.txt` para a camada
-DINOv2. Toda a modelagem roda localmente, sem serviço externo de treinamento.
-
-Parte dos testes lê artefatos grandes demais para versionar — a tabela única tem 189 MB.
-Eles **pulam** em vez de falhar, e a mensagem traz o comando que os regenera. Para
-reproduzir a cadeia inteira, ver [`modelo/MODELO.md`](modelo/MODELO.md) §8.
+Alguns testes pulam quando a tabela unica completa nao esta presente no checkout. Isso
+e esperado no pacote publico: os artefatos grandes sao descritos por manifesto e podem
+ser regenerados pela cadeia de scripts curados.

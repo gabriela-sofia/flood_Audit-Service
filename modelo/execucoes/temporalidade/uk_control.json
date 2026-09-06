@@ -1,0 +1,40 @@
+{
+  "dataset": "Environment Agency/UK",
+  "fonte": "local_runs/mod-prosp-02/resultado.json",
+  "base_do_estrato": {
+    "pontos": 7476,
+    "grupos": 401,
+    "eventos_positivos": 201,
+    "blocos_negativos": 200,
+    "datas_distintas": 110,
+    "periodo": [
+      "2000-06-01",
+      "2025-01-01"
+    ],
+    "datas_por_bloco_negativo_mediana": 11.5,
+    "datas_por_bloco_negativo_max": 35
+  },
+  "features": [
+    "elevation_m",
+    "slope_deg",
+    "hand_m",
+    "twi_dinf"
+  ],
+  "teste": "janela expansiva por grupos/blocos",
+  "identificabilidade": "IDENTIFICAVEL",
+  "por_que_identificavel": [
+    "eventos positivos independentes e blocos negativos qualificados",
+    "multiplos cortes prospectivos",
+    "ambas classes avaliaveis em folds de bloco",
+    "IC95 por bootstrap de grupos"
+  ],
+  "resultado_terreno_bloco": {
+    "folds": 8,
+    "auc_medio": 0.7992,
+    "auc_min": 0.7309,
+    "auc_max": 0.8559,
+    "veredito_original": "PROSPECTIVAMENTE_ESTAVEL"
+  },
+  "status_review_only": "TEMPORAL_SUPPORT",
+  "nao_e": "nao e validacao operacional nem autoriza uso preditivo: e holdout temporal num piloto de exclusao qualificada, medido num unico pais"
+}

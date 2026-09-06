@@ -100,7 +100,7 @@ def run() -> None:
         "## Guardrails",
         "can_create_label, can_train_model e target_created sempre false.",
         f"## Resultado",
-        f"Linkages: {len(rows)}. Elegíveis review-only: {eligible}. "
+        f"Linkages: {len(rows)}. Elegíveis modo de revisao: {eligible}. "
         f"Manual check: {manual}.",
     ])
     print(f"[v1pv] rows={len(rows)} eligible={eligible}")

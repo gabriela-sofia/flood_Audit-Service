@@ -111,7 +111,7 @@ resultado, nao declara modelo final, nao promove rotulo. O negativo ingles e
 `exclusao_qualificada`, nao observacao de nao-ocorrencia.
 
 Uso:
-    python scripts/suscetibilidade/mod_prosp02_holdout_temporal_ds05.py
+    python scripts/treino/mod_prosp02_holdout_temporal_ds05.py
 """
 
 from __future__ import annotations
@@ -458,7 +458,7 @@ def main() -> int:
 
     if not DATASET.exists():
         print(f"ABORTADO: {DATASET} ausente. Gere com: "
-              "python scripts/suscetibilidade/ds05_admissao_consolidacao.py")
+              "python scripts/treino/ds05_admissao_consolidacao.py")
         return 1
 
     pool = pd.read_csv(DATASET, low_memory=False)
@@ -561,8 +561,8 @@ def main() -> int:
     }, indent=2, ensure_ascii=False), encoding="utf-8")
 
     (OUT / "commands.txt").write_text(
-        "python scripts/suscetibilidade/ds05_admissao_consolidacao.py\n"
-        "python scripts/suscetibilidade/mod_prosp02_holdout_temporal_ds05.py\n"
+        "python scripts/treino/ds05_admissao_consolidacao.py\n"
+        "python scripts/treino/mod_prosp02_holdout_temporal_ds05.py\n"
         "python -m pytest tests/test_mod_prosp02_holdout_temporal.py -q\n",
         encoding="utf-8")
 

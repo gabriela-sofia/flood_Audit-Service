@@ -319,7 +319,7 @@ def read_embedding_rows(path: Path) -> list[dict[str, Any]]:
 
 
 # ---------------------------------------------------------------------------
-# PCA / clustering (review-only, never a class)
+# PCA / clustering (modo de revisao, never a class)
 # ---------------------------------------------------------------------------
 
 def pca_2d_review(vectors: list[list[float]]) -> tuple[list[tuple[float, float]],

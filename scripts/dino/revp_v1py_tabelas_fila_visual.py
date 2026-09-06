@@ -32,7 +32,7 @@ T_QUEUE_FIELDS = [
 ]
 
 TCC_TEXT = (
-    "A fila de execução DINO foi construída como camada de representação visual review-only. "
+    "A fila de execução DINO foi construída como camada de representação visual modo de revisao. "
     "A elegibilidade de um patch para extração de embedding não equivale à confirmação "
     "temporal Sentinel nem à validação de evento observado; ela apenas indica que existe "
     "um artefato visual adequado para gerar representação vetorial sem rótulo."
@@ -59,11 +59,11 @@ def run() -> None:
     write_schema(SCH_QUEUE, T_QUEUE_FIELDS, "v1py_tcc_review_queue")
     write_doc(DOC, "v1py — DINO Visual Queue TCC Update", [
         "## Objetivo",
-        "Tabelas TCC-ready para elegibilidade visual e fila expandida DINO review-only.",
+        "Tabelas TCC-ready para elegibilidade visual e fila expandida DINO modo de revisao.",
         "## Interpretação metodológica (texto para o TCC)",
         TCC_TEXT,
         "## Guardrails",
-        "DINO é representação visual review-only. Elegibilidade ≠ confirmação temporal "
+        "DINO é representação visual modo de revisao. Elegibilidade ≠ confirmação temporal "
         "≠ validação de evento. Nenhum rotulo, target ou treino criado.",
         f"## Resultado",
         f"Linhas eligibilidade: {len(t_elig)}. Linhas fila: {len(t_queue)}.",

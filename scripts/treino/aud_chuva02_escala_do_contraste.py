@@ -76,7 +76,7 @@ politica. Ele mede e nomeia. A decisao sobre o que fazer com cada veredito e da
 Gabriela, e esta escrita em `ext_chuva_estado_do_projeto_v1.md`.
 
 Uso:
-    python scripts/suscetibilidade/aud_chuva02_escala_do_contraste.py
+    python scripts/treino/aud_chuva02_escala_do_contraste.py
 """
 
 from __future__ import annotations
@@ -91,6 +91,8 @@ import pandas as pd
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from ds03_esquema_alvo import VERSAO  # noqa: E402
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+from chuva.contrato_chuva import METHOD_VERSION, parse_event_dates  # noqa: E402
 
 REPO = Path(__file__).resolve().parents[2]
 RUNS = REPO / "local_runs"
@@ -196,18 +198,21 @@ def main() -> int:
 
     if not DATASET.exists():
         print(f"ABORTADO: {DATASET} ausente. Gere com: "
-              "python scripts/suscetibilidade/ds05_admissao_consolidacao.py")
+              "python scripts/treino/ds05_admissao_consolidacao.py")
         return 1
 
     d = pd.read_csv(DATASET, low_memory=False)
     d = d[(d.admitido == True) & d.classe.isin([0, 1])].copy()  # noqa: E712
-    d["dia"] = d.data_evento.astype(str).str.slice(0, 10)
+    datas = parse_event_dates(d["data_evento"])
+    d["dia"] = datas.dt.strftime("%Y-%m-%d")
 
     resultados, linhas = {}, []
     for fonte, s0 in d.groupby("fonte"):
         resultados[fonte] = {
             "n": int(len(s0)),
-            "fonte_chuva": sorted(s0.fonte_chuva.dropna().unique().tolist()),
+            "fonte_chuva": sorted(
+                v for v in s0.fonte_chuva.dropna().unique().tolist()
+                if v != "ausente"),
             "grupos": int(s0.grupo_cv.nunique()),
             "pontos_por_grupo": round(len(s0) / s0.grupo_cv.nunique(), 1),
             "variaveis": {},
@@ -218,7 +223,20 @@ def main() -> int:
             s = s0.dropna(subset=[var, "dia"])
             if s.empty or s.classe.nunique() < 2:
                 resultados[fonte]["variaveis"][var] = {
-                    "veredito": "SEM_DADO_UTILIZAVEL", "n": int(len(s))}
+                    "veredito": "SEM_DADO_UTILIZAVEL", "n": int(len(s)),
+                    "veredito_espacial": "DADO_INDISPONIVEL",
+                    "veredito_temporal": "DADO_INDISPONIVEL",
+                    "classificacao_escala": "DADO_INDISPONIVEL"}
+                linhas.append({
+                    "fonte": fonte, "variavel": var, "n": len(s),
+                    "celulas_0_1_grau": None, "valores_distintos": None,
+                    "pct_var_entre_grupos": None, "grupos_usaveis": 0,
+                    "auc_dentro_do_grupo": None,
+                    "pct_datas_compartilhadas": None,
+                    "auc_global": None, "auc_datas_compartilhadas": None,
+                    "veredito_espacial": "DADO_INDISPONIVEL",
+                    "veredito_temporal": "DADO_INDISPONIVEL",
+                })
                 print(f"  {var}: sem dado utilizavel")
                 continue
             esp = escala_espacial(s, var)
@@ -231,6 +249,9 @@ def main() -> int:
                 "n": int(len(s)), "escala_espacial": esp, "decomposicao": dec,
                 "dentro_do_grupo": den, "contraste_temporal": tmp,
                 "veredito_espacial": v, "veredito_temporal": vt,
+                "classificacao_escala": (
+                    "DISCRIMINA_NA_ESCALA" if v == "SINAL_NA_ESCALA_DO_MODELO"
+                    else v),
             }
             linhas.append({
                 "fonte": fonte, "variavel": var, "n": len(s),
@@ -280,6 +301,7 @@ def main() -> int:
             "faixa_acaso": list(FAIXA_ACASO),
         },
         "semente": SEMENTE,
+        "method_version": METHOD_VERSION,
         "fontes": resultados,
         "contagem_de_vereditos": contagem,
         "regra": ("chuva so pode ser interpretada como preditor de LUGAR se "
@@ -292,9 +314,9 @@ def main() -> int:
     }, indent=2, ensure_ascii=False), encoding="utf-8")
 
     (OUT / "commands.txt").write_text(
-        "python scripts/suscetibilidade/ds05_admissao_consolidacao.py\n"
-        "python scripts/suscetibilidade/aud_chuva01_fontes_incompativeis.py\n"
-        "python scripts/suscetibilidade/aud_chuva02_escala_do_contraste.py\n"
+        "python scripts/treino/ds05_admissao_consolidacao.py\n"
+        "python scripts/treino/aud_chuva01_fontes_incompativeis.py\n"
+        "python scripts/treino/aud_chuva02_escala_do_contraste.py\n"
         "python -m pytest tests/test_aud_chuva02_escala.py -q\n",
         encoding="utf-8")
 

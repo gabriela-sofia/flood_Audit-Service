@@ -48,7 +48,7 @@ DELTA v2 (2026-08-19) -- elevacao relativa, permanente:
   fontes. Ver `regra_elevacao` em `contrato()`.
 
 Uso:
-    python scripts/suscetibilidade/ds03_esquema_alvo.py
+    python scripts/treino/ds03_esquema_alvo.py
 """
 
 from __future__ import annotations
@@ -137,6 +137,18 @@ FONTE_CHUVA = (
     "ausente",
 )
 
+# Como a data do evento foi obtida. Nao e metadado de conveniencia: e a
+# procedencia de `data_evento`, e sem ela a coluna de valor viaja sozinha --
+# o que a regra de ouro proibe para qualquer outro campo. O `chuva03` ja
+# produz estes valores e o `ds04` os descartava.
+PRECISAO_DATA = (
+    "chip_stac",        # data da cena que o analista rotulou; a melhor
+    "nome_do_chip",     # embutida no identificador pelo proprio produtor
+    "ativacao_cems",    # data da ATIVACAO, que cobre varias AOIs e varios dias
+    "registro_local",   # a fonte trouxe a data no proprio registro da ocorrencia
+    "nao_declarada",    # nulo declarado: a fonte nao diz como obteve a data
+)
+
 CLASSE = {
     1: "INUNDACAO",
     2: "MOVIMENTO_DE_MASSA",   # classe propria: nem positivo, nem negativo
@@ -188,6 +200,10 @@ ESQUEMA: tuple[Coluna, ...] = (
     Coluna("fonte_chuva", "enum", "procedencia", True,
            "produto de precipitacao que originou rain_max_24h e rain_decay_index",
            FONTE_CHUVA),
+    Coluna("precisao_data", "enum", "procedencia", True,
+           "como data_evento foi obtida; carimbo de lote (ativacao_cems) nao "
+           "e medida de ocorrencia e nao pode ser lido como tal",
+           PRECISAO_DATA),
 
     # ---- rotulo ----
     Coluna("classe", "int", "rotulo", True,

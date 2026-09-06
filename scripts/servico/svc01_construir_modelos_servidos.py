@@ -36,6 +36,13 @@ Por que reamostrar GRUPO e nao linha: e a regra U2 do projeto
 pseudo-replicacao, e o IC sairia estreito demais -- que e o modo de falha mais
 perigoso num numero que vai para dentro de uma resposta de API.
 
+CORRECAO DE 23/08/2026 -- a regra U2 nao estava sendo cumprida em Recife.
+O `grupo_cv` vinha um por PONTO (269 grupos, 269 pontos), enquanto a base tem
+71 pontos empilhados em 26 celulas: reamostrar aquele grupo era reamostrar
+linha, e o IC de Recife saia estreito demais exatamente pelo motivo que a
+regra existe para impedir. `grupo_nunca_mais_fino_que_a_celula()` passa a
+valer para todos os modelos, como invariante e nao como excecao de Recife.
+
 Custo: o reajuste custa ~0,2 s no maior conjunto, entao N=1000 custa ~200 s por
 modelo. Isso acontece AQUI, uma vez, e nao por requisicao: o artefato servido
 guarda as replicas de coeficiente, e a requisicao so projeta. Servir e
@@ -97,28 +104,127 @@ import numpy as np
 import pandas as pd
 
 REPO = Path(__file__).resolve().parents[2]
-sys.path.insert(0, str(REPO / "scripts" / "suscetibilidade"))
-import susc_firth_adaptador  # noqa: F401,E402
+sys.path.insert(0, str(REPO / "scripts" / "treino"))
+import susc_firth_shim  # noqa: F401,E402
 from ds03_esquema_alvo import VERSAO  # noqa: E402
+from aud_desenho02_natureza_dos_negativos import (  # noqa: E402
+    negativos_da_fonte,
+)
 
 RUNS = REPO / "local_runs"
 POOL = RUNS / "ds-05-tabela-unica" / f"tabela_unica_pool_fluvial_{VERSAO}.csv"
 UNICA = RUNS / "ds-05-tabela-unica" / f"tabela_unica_{VERSAO}.csv"
 OUT = RUNS / "svc-01-modelos"
 
-TOPO = ["elevation_m", "slope_deg", "hand_m", "twi_dinf"]
-CHUVA = ["rain_max_24h", "rain_decay_index"]
+# `elevation_rel_m` e nao `elevation_m`. A troca nao e preferencia teorica: na
+# transferencia que este servico faz -- pool sem Curitiba aplicado a Curitiba --
+# a absoluta poe 0,0% dos pontos do alvo dentro do dominio do treino, contra
+# 94,5% da relativa (aud_desenho04). O `ds03` ja declarava `elevation_rel_m`
+# como regra permanente do contrato, e o vetor servido nao a usava.
+TOPO = ["elevation_rel_m", "slope_deg", "hand_m", "twi_dinf"]
+
+# `rain_max_24h` saiu. Ela nao e o pico do evento que o nome sugere: e o maior
+# acumulado diario da janela ANTERIOR, uma parcela da soma que o
+# `rain_decay_index` ja acumula (correlacao 0,66 a 0,92, e menor ou igual em
+# 77% a 94% dos casos). Duas variaveis competindo pela mesma informacao, e so
+# uma com interpretacao fisica propria.
+CHUVA = ["rain_decay_index"]
+
+# CAUSAIS sao as variaveis cujo sinal foi fixado ANTES do ajuste como criterio
+# de leitura. Elas continuam sendo as unicas que derrubam o veredito -- mudar
+# isso depois de ver o resultado seria mover a trave.
 CAUSAIS = ["hand_m", "twi_dinf"]
-SINAL_EXIGIDO = {"hand_m": -1, "twi_dinf": +1}
+
+# SINAL_FISICO cobre TODAS as variaveis. Nao decide veredito: decide o que a
+# camada de explicacao pode dizer, e entra como limitacao declarada quando o
+# ajuste contraria a fisica. A diferenca entre as duas listas e deliberada.
+SINAL_FISICO = {
+    "elevation_m": -1,       # mais alto, menos agua acumulada
+    "elevation_rel_m": -1,   # idem, medido contra o piso da propria regiao
+    "slope_deg": -1,         # mais ingreme, a agua escorre em vez de empocar
+    "hand_m": -1,            # mais acima da drenagem, menos alcancavel
+    "twi_dinf": +1,          # mais umidade topografica acumulada
+    "rain_max_24h": +1,      # mais chuva, mais agua
+    "rain_decay_index": +1,  # mais chuva antecedente, solo mais saturado
+}
+SINAL_EXIGIDO = {f: SINAL_FISICO[f] for f in CAUSAIS}
 NEGATIVO_ADMITIDO = ("observado", "exclusao_qualificada", "nao_aplicavel")
+
+# A grade em que o ds05 conta duplicidade (`intra_fonte_mesma_celula`). Dois
+# pontos dentro da mesma celula nao sao observacoes independentes.
+GRADE_CELULA_GRAUS = 1e-4
 
 EPV_MINIMO = 10
 N_BOOT = 1000
 SEMENTE = 20260820
 AUC_MIN, AUC_MAX = 0.70, 0.88
 
+# Piso logico, e nao criterio de leitura. Fora da faixa [AUC_MIN, AUC_MAX] o
+# modelo serve com a limitacao declarada; ABAIXO deste piso ele nao serve, e a
+# diferenca nao e de grau: um escore que ordena pior que sorteio nao sustenta
+# nem a leitura ordinal.
+AUC_ACASO = 0.5
+
 # Regioes-alvo brasileiras: nunca entram no ajuste do modelo que as serve.
 REGIOES_ALVO = ("curitiba", "recife")
+
+
+def grupo_nunca_mais_fino_que_a_celula(s: pd.DataFrame) -> pd.Series:
+    """Funde grupos que compartilham celula, e devolve o rotulo de grupo a usar.
+
+    POR QUE ISTO EXISTE, e por que so aparece em Recife:
+
+    a regra U2 do projeto manda reamostrar GRUPO e nao linha, para o IC nao
+    sair estreito demais por pseudo-replicacao. Em Recife essa protecao nao
+    agia: o `grupo_cv` vinha um por PONTO (269 grupos para 269 pontos), e a
+    base tem 71 pontos empilhados em 26 celulas -- ate 6 linhas na mesma
+    coordenada, com variaveis e classe identicas. Reamostrar aquele `grupo_cv`
+    era, na pratica, reamostrar linha: exatamente o que a regra proibia.
+
+    Nas fontes fluviais o grupo ja e a AOI ou o evento, muito mais grosso que a
+    celula, e nada muda. Por isso a correcao e escrita como INVARIANTE e nao
+    como excecao de Recife: nenhum grupo pode ser mais fino que a celula.
+
+    A fusao e por componente conexa (union-find) e nao por "renomear para a
+    celula": um grupo legitimo pode cobrir varias celulas, e uma celula pode
+    ser tocada por mais de um grupo. Renomear quebraria o primeiro caso; a
+    componente conexa preserva os dois.
+
+    O rotulo final da componente e o MENOR `grupo_cv` original que ela contem.
+    Isso importa: quando nada funde, o rotulo sai identico ao de antes, e o
+    GroupKFold reproduz os mesmos folds. Sem essa garantia, a correcao mexeria
+    na AUC dos modelos fluviais -- onde nao ha pseudo-replicacao nenhuma para
+    corrigir -- so porque o nome do grupo mudou.
+    """
+    pai: dict = {}
+
+    def achar(x):
+        pai.setdefault(x, x)
+        while pai[x] != x:
+            pai[x] = pai[pai[x]]
+            x = pai[x]
+        return x
+
+    def unir(a, b):
+        ra, rb = achar(a), achar(b)
+        if ra != rb:
+            pai[ra] = rb
+
+    celula = (
+        (s.lat / GRADE_CELULA_GRAUS).round().astype("int64").astype(str)
+        + "_"
+        + (s.lon / GRADE_CELULA_GRAUS).round().astype("int64").astype(str)
+    )
+    grupos = s.grupo_cv.astype(str)
+    for g, c in zip(grupos, celula):
+        unir(("g", g), ("c", c))
+
+    rotulo: dict = {}
+    for g in grupos.unique():
+        raiz = achar(("g", g))
+        if raiz not in rotulo or g < rotulo[raiz]:
+            rotulo[raiz] = g
+    return pd.Series([rotulo[achar(("g", g))] for g in grupos], index=s.index)
 
 
 def ajustar(X: np.ndarray, y: np.ndarray):
@@ -132,6 +238,21 @@ def ajustar(X: np.ndarray, y: np.ndarray):
 def padronizar(X: np.ndarray) -> tuple[np.ndarray, np.ndarray]:
     mu, sd = X.mean(0), X.std(0)
     return mu, np.where(sd == 0, 1, sd)
+
+
+# Lado do bloco espacial usado quando a fusao por celula colapsa a unidade de
+# validacao. Nao e ajuste fino: e a menor escala em que Nova York e Sao Paulo
+# ainda tem centenas de blocos, e vem da blocagem espacial de Roberts et al.
+# (2017), que o projeto ja usa como referencia para dado com estrutura espacial.
+BLOCO_ESPACIAL_KM = 1.0
+GRAUS_POR_KM = 1.0 / 111.0
+
+
+def bloco_espacial(s: pd.DataFrame, km: float = BLOCO_ESPACIAL_KM) -> pd.Series:
+    """Rotulo de bloco de `km` de lado, para usar como unidade de validacao."""
+    g = km * GRAUS_POR_KM
+    return ((s.lat / g).round().astype(int).astype(str) + "_"
+            + (s.lon / g).round().astype(int).astype(str))
 
 
 def orcamento_estrito(s: pd.DataFrame) -> int:
@@ -166,16 +287,192 @@ def auc_agrupada(s: pd.DataFrame, feats: list[str]) -> dict:
             "folds": n_folds, "cobertura": round(float(ok.mean()), 3)}
 
 
+def aderencia_temporal(s: pd.DataFrame, feats: list[str]) -> dict:
+    """Positivos e negativos compartilham as mesmas datas?
+
+    O QUE ESTA METRICA MEDE, e por que ela e diferente do suporte temporal:
+
+    `suporte_cientifico.temporal` pergunta se o desempenho se sustenta numa
+    janela FUTURA a do ajuste. Esta pergunta e outra, e vem antes: dentro do
+    proprio conjunto de ajuste, as duas classes foram observadas nos MESMOS
+    dias?
+
+    Quando nao foram, qualquer variavel que varie no tempo -- a chuva, aqui --
+    deixa de medir "quanto choveu neste lugar" e passa a identificar "que dia
+    e este". E, se os dias positivos sao dias diferentes dos negativos, o
+    modelo pode separar as classes acertando a DATA e nao o LUGAR. O escore
+    continua saindo, a AUC continua sendo calculavel, e nada no ajuste acusa:
+    o defeito e do desenho amostral, nao do estimador.
+
+    Isto ja estava escrito no cartao do modelo de Recife, mas como frase fixa no
+    codigo -- "positivos e negativos dividem 5 das 205 datas". A afirmacao
+    mais importante do card era a unica que ninguem recalculava. Agora ela e
+    derivada da propria tabela que ajustou o modelo, e muda quando a base
+    mudar.
+
+    Duas fracoes, e a segunda importa mais: `datas_com_ambas_as_classes` conta
+    dias; `pontos_em_data_compartilhada` conta observacoes. Um conjunto pode
+    ter metade dos dias mistos e quase nenhum ponto neles.
+    """
+    coluna = "data_evento"
+    usa_tempo = sorted(f for f in feats if f.startswith("rain_"))
+    if coluna not in s.columns:
+        return {"avaliada": False,
+                "motivo": f"a tabela do ajuste nao tem a coluna {coluna!r}",
+                "variaveis_que_dependem_do_tempo": usa_tempo}
+
+    # `format="mixed"` nao e detalhe: a coluna tem `YYYY-MM-DD` e
+    # `YYYY-MM-DD HH:MM:SS` juntos, e sem isto o pandas infere UM formato pelo
+    # inicio e coage todo o resto a NaT -- Recife inteiro sumiria em silencio.
+    # `utc=True` pelo mesmo motivo, um nivel acima: no conjunto multirregional
+    # convivem timestamps ingenuos e com fuso explicito, e ai o pandas levanta
+    # em vez de coagir. Comparamos DIAS de evento, nao hora local.
+    ts = pd.to_datetime(s[coluna], format="mixed", utc=True, errors="coerce")
+    com = s[ts.notna()]
+    dias = ts[ts.notna()].dt.normalize()
+    sem_data = int(len(s) - len(com))
+    if not len(com):
+        return {"avaliada": False, "motivo": "nenhuma linha do ajuste tem data",
+                "linhas_sem_data": sem_data,
+                "variaveis_que_dependem_do_tempo": usa_tempo}
+
+    por_dia = com.assign(_dia=dias.values).groupby("_dia").classe.agg(
+        ["min", "max", "size"])
+    ambas = por_dia[(por_dia["min"] == 0) & (por_dia["max"] == 1)]
+    pontos_ambas = int(ambas["size"].sum())
+
+    frac_datas = len(ambas) / len(por_dia)
+    frac_pontos = pontos_ambas / len(com)
+
+    saida = {
+        "avaliada": True,
+        "datas_distintas": int(len(por_dia)),
+        "datas_com_ambas_as_classes": int(len(ambas)),
+        "fracao_de_datas_com_ambas_as_classes": round(frac_datas, 4),
+        "pontos_em_data_compartilhada": pontos_ambas,
+        "fracao_de_pontos_em_data_compartilhada": round(frac_pontos, 4),
+        "linhas_sem_data": sem_data,
+        "janela": {"inicio": str(por_dia.index.min().date()),
+                   "fim": str(por_dia.index.max().date())},
+        "variaveis_que_dependem_do_tempo": usa_tempo,
+        "o_que_mede": ("se as duas classes foram observadas nos mesmos dias "
+                       "dentro do conjunto de ajuste"),
+        "nao_e": ("nao e o suporte temporal: aquele pergunta se o desempenho "
+                  "se sustenta em janela futura, e este pergunta se o desenho "
+                  "amostral separa lugares ou apenas dias"),
+    }
+
+    # O risco so se concretiza quando o modelo USA variavel que varia no
+    # tempo. Sem chuva no conjunto, baixa aderencia continua sendo um fato do
+    # desenho, mas nao ha por onde ele virar atalho.
+    if not usa_tempo:
+        saida["risco"] = "nao_aplicavel"
+        saida["risco_motivo"] = (
+            "nenhuma variavel do modelo depende do tempo: a data nao tem por "
+            "onde entrar no escore")
+    elif frac_pontos < 0.25:
+        saida["risco"] = "alto"
+        saida["risco_motivo"] = (
+            f"apenas {frac_pontos:.1%} dos pontos estao em datas que contem as "
+            f"duas classes, e o modelo usa {usa_tempo}: nesta base, saber a "
+            "data e quase saber a classe, e a chuva pode estar separando dias "
+            "em vez de lugares")
+    elif frac_pontos < 0.75:
+        saida["risco"] = "medio"
+        saida["risco_motivo"] = (
+            f"{frac_pontos:.1%} dos pontos estao em datas com as duas classes; "
+            f"parte do sinal de {usa_tempo} ainda pode ser data e nao lugar")
+    else:
+        saida["risco"] = "baixo"
+        saida["risco_motivo"] = (
+            f"{frac_pontos:.1%} dos pontos estao em datas que contem as duas "
+            "classes: a variavel temporal e comparada dentro do mesmo dia")
+    return saida
+
+
+def baselines_das_regioes(unica: pd.DataFrame, regioes: list[str]) -> dict:
+    """O piso de elevacao de cada regiao servida, para reconstruir a relativa.
+
+    `elevation_rel_m` so existe contra um baseline, e o baseline e propriedade
+    da REGIAO -- P1 da elevacao dentro da fonte, exatamente como o `ds04` o
+    define. Numa requisicao o servico recebe `elevation_m` derivada do DEM e
+    precisa do mesmo numero que o ajuste usou; tira-lo da propria AOI daria
+    outro valor a cada recorte, e o escore deixaria de ser reproduzivel.
+
+    Regiao sem baseline nao recebe a chave, e o `SVC-02` recusa em vez de
+    inventar zero -- que seria tratar o nivel do mar como piso local, o erro
+    que a troca de variavel existe para corrigir.
+    """
+    saida = {}
+    for r in regioes:
+        s = unica.loc[unica.fonte == r, "elevation_baseline_m"].dropna()
+        if s.empty:
+            continue
+        v = s.unique()
+        # constante por fonte por construcao do ds04; se nao for, algo mudou
+        # no redutor e o servico nao pode escolher um valor por conta propria
+        if len(v) != 1:
+            print(f"  AVISO baseline nao unico em {r}: {len(v)} valores; "
+                  f"regiao fica sem baseline")
+            continue
+        saida[r] = round(float(v[0]), 6)
+    return saida
+
+
 def construir(nome: str, s: pd.DataFrame, feats: list[str], meta: dict) -> dict:
     print(f"\n=== {nome} ===")
-    print(f"  n={len(s):,} grupos={s.grupo_cv.nunique():,} "
-          f"variaveis={feats}")
+    s = s.copy()
+    grupos_antes = int(s.grupo_cv.nunique())
+    s["grupo_cv"] = grupo_nunca_mais_fino_que_a_celula(s)
+    grupos_depois = int(s.grupo_cv.nunique())
+    if grupos_depois != grupos_antes:
+        print(f"  celula funde grupos: {grupos_antes:,} -> {grupos_depois:,} "
+              f"({grupos_antes - grupos_depois:,} eram pseudo-replicacao)")
+    print(f"  n={len(s):,} grupos={grupos_depois:,} variaveis={feats}")
     orc = orcamento_estrito(s)
+    # FALLBACK DE UNIDADE DE VALIDACAO. A fusao por celula (regra U2) encontra
+    # dependencia espacial real, e em base de chamados densa ela encontra
+    # DEMAIS: o mesmo endereco reaparece em muitos dias, a componente conexa
+    # une todos e sobra um grupo so -- Nova York vai de 69 grupos para 1, Sao
+    # Paulo de 30 para 1. Um grupo nao valida nada, e concluir "nao ha
+    # evidencia" dali seria confundir colapso da unidade com falta de dado.
+    #
+    # Onde isso acontece, a unidade passa a ser o BLOCO ESPACIAL de 1 km, que
+    # e a resposta padrao da literatura para estrutura espacial (Roberts et al.
+    # 2017) e que o projeto ja cita. Onde a fusao NAO colapsa -- Recife,
+    # Curitiba, as fluviais -- nada muda: o fallback so dispara no caso que ele
+    # existe para tratar, e fica declarado no artefato.
+    unidade = "componente_conexa_de_celulas"
+    if len(feats) > orc and grupos_antes >= EPV_MINIMO and grupos_depois <= 2:
+        s = s.assign(grupo_cv=bloco_espacial(s))
+        grupos_depois = int(s.grupo_cv.nunique())
+        orc = orcamento_estrito(s)
+        unidade = f"bloco_espacial_{BLOCO_ESPACIAL_KM:g}km"
+        print(f"  unidade de validacao -> {unidade}: {grupos_depois:,} grupos, "
+              f"orcamento {orc}")
     if len(feats) > orc:
-        print(f"  ABORTADO: {len(feats)} variaveis acima do orcamento de EPV ({orc})")
-        return {"nome": nome, "servivel": False,
-                "motivo": f"{len(feats)} variaveis acima do orcamento de EPV ({orc})",
-                "orcamento_estrito": orc, "features": feats, **meta}
+        # Quando a fusao por celula colapsa o conjunto em pouquissimos grupos,
+        # dizer so "EPV 0" esconde a causa. A regra U2 nao esta errada -- ela
+        # esta encontrando dependencia espacial real --, mas numa base de
+        # chamados densa o mesmo endereco reaparece em muitos dias e a
+        # componente conexa engole o desenho temporal inteiro. Quem ler o
+        # artefato precisa distinguir "faltam eventos" de "a unidade de
+        # validacao colapsou".
+        colapso = grupos_antes >= EPV_MINIMO and grupos_depois <= 2
+        motivo = (
+            f"a fusao por celula reduziu {grupos_antes:,} grupos a "
+            f"{grupos_depois}: o mesmo local reaparece em dias diferentes e a "
+            f"componente conexa une todos. Nao ha unidade de validacao cruzada "
+            f"neste conjunto sob a regra atual (U2 espacial)"
+            if colapso else
+            f"{len(feats)} variaveis acima do orcamento de EPV ({orc})")
+        print(f"  ABORTADO: {motivo}")
+        return {"nome": nome, "servivel": False, "motivo": motivo,
+                "orcamento_estrito": orc,
+        "unidade_de_validacao": unidade, "features": feats,
+                "grupos_antes_da_fusao": int(grupos_antes),
+                "grupos_depois_da_fusao": int(grupos_depois),
+                "colapso_da_unidade_de_validacao": bool(colapso), **meta}
 
     X = s[feats].to_numpy(dtype=float)
     y = s.classe.to_numpy().astype(int)
@@ -209,6 +506,28 @@ def construir(nome: str, s: pd.DataFrame, feats: list[str], meta: dict) -> dict:
                for j, f in enumerate(feats)} if len(arr) >= 100 else {}
 
     desempenho = auc_agrupada(s, feats)
+
+    # Verificacao de sinal de TODAS as variaveis. Uma variavel so e dada como
+    # fisicamente verificada quando as duas coisas valem: o sinal bate com o
+    # esperado E o IC95 nao cruza zero. Sinal certo com IC cruzando zero nao e
+    # coerencia fisica -- e o ajuste nao tendo estabelecido nada sobre ela.
+    sinal_por_variavel, invertidas, indefinidas = {}, [], []
+    for j, f in enumerate(feats):
+        c = coef[j]
+        esperado = SINAL_FISICO.get(f)
+        ic = ic_coef.get(f)
+        cruza = bool(ic and ic[0] <= 0 <= ic[1])
+        bate = None if esperado is None else bool(np.sign(c) == esperado)
+        sinal_por_variavel[f] = {
+            "coef": round(c, 6), "sinal_esperado": esperado,
+            "sinal_bate": bate, "ic95": ic, "ic_cruza_zero": cruza,
+            "fisicamente_verificada": bool(bate and not cruza),
+        }
+        if bate is False:
+            invertidas.append(f)
+        elif bate and cruza:
+            indefinidas.append(f)
+
     falhas = []
     for f, esperado in SINAL_EXIGIDO.items():
         if f not in feats:
@@ -222,6 +541,33 @@ def construir(nome: str, s: pd.DataFrame, feats: list[str], meta: dict) -> dict:
     if auc is not None and not (AUC_MIN <= auc <= AUC_MAX):
         falhas.append(f"AUC {auc} fora da faixa [{AUC_MIN}; {AUC_MAX}]")
 
+    # Sinal invertido em variavel nao-causal nao derruba o veredito -- o
+    # criterio de leitura foi fixado antes do ajuste sobre as causais, e
+    # ampliar a trava depois de ver o resultado seria mover a trave. Mas
+    # tambem nao pode ficar escondido: entra como limitacao declarada, e a
+    # camada de explicacao para de citar a variavel.
+    limitacoes = list(meta.get("limitacoes_declaradas", []))
+
+    # A aderencia temporal vira limitacao DERIVADA. Ate aqui esta afirmacao
+    # existia como frase fixa no codigo ("positivos e negativos dividem 5 das
+    # 205 datas") -- a mais importante do card era a unica que ninguem
+    # recalculava, e ela ficaria congelada se a base mudasse.
+    aderencia = aderencia_temporal(s, feats)
+    if aderencia.get("risco") in ("alto", "medio"):
+        limitacoes.append(
+            "aderencia temporal "
+            f"{aderencia['risco']}: {aderencia['risco_motivo']}")
+    if invertidas:
+        limitacoes.append(
+            "sinal contrario ao fisicamente esperado em "
+            f"{', '.join(invertidas)}: a variavel entra no escore mas fica fora "
+            "da frase de explicacao")
+    if indefinidas:
+        limitacoes.append(
+            f"IC95 cruza zero em {', '.join(indefinidas)}: o ajuste nao "
+            "estabeleceu o efeito, e a variavel fica fora da frase de explicacao")
+    meta = {**meta, "limitacoes_declaradas": limitacoes}
+
     faixa = {f: [round(float(np.percentile(X[:, j], 5)), 4),
                  round(float(np.percentile(X[:, j], 95)), 4)]
              for j, f in enumerate(feats)}
@@ -230,9 +576,52 @@ def construir(nome: str, s: pd.DataFrame, feats: list[str], meta: dict) -> dict:
     print(f"  bootstrap: {len(arr)} replicas validas de {N_BOOT} "
           f"({time.time() - t0:.0f}s)")
     print(f"  falhas={falhas if falhas else 'nenhuma'}")
+    verificadas = [f for f, v in sinal_por_variavel.items()
+                   if v["fisicamente_verificada"]]
+    print(f"  sinal fisico verificado em: {verificadas or 'nenhuma'}")
+    if invertidas:
+        print(f"  sinal INVERTIDO em: {invertidas} (fora da frase de explicacao)")
+    if indefinidas:
+        print(f"  IC cruza zero em: {indefinidas} (fora da frase de explicacao)")
+
+    print(f"  aderencia temporal: risco={aderencia.get('risco')} "
+          f"pontos em data compartilhada="
+          f"{aderencia.get('fracao_de_pontos_em_data_compartilhada')}")
+
+    # PISO DO ACASO: abaixo dele o modelo nao e fraco, e ANTI-INFORMATIVO.
+    #
+    # `AUC_MIN = 0,70` produz `falhas_de_criterio` e nao impede servir -- e a
+    # politica esta certa: Recife serve com 0,6422 e a limitacao declarada,
+    # porque 0,64 ordena melhor que sorteio e a unica leitura reivindicada e a
+    # ORDINAL. Abaixo de 0,50 essa leitura tambem cai: a ordem produzida e pior
+    # que aleatoria, e nao ha frase honesta que a acompanhe.
+    #
+    # Isto apareceu quando o rotulo de Sao Paulo foi separado entre ocorrencia
+    # e manutencao. Com pedido de limpeza de bueiro dentro, a AUC era 0,6223 --
+    # o terreno prevendo onde a rede entope. Com so ocorrencia de Defesa Civil,
+    # ela cai para 0,4753, e o achado e cientifico: em pluvial urbano o terreno
+    # nao separa alagamento, que e o que o cartao do modelo ja declarava como
+    # limitacao. Servir 0,4753 seria publicar essa limitacao como escore.
+    if auc is not None and auc <= AUC_ACASO:
+        print(f"  NAO SERVIVEL: AUC {auc} nao supera o acaso ({AUC_ACASO})")
+        return {
+            "nome": nome, "servivel": False,
+            "motivo": (f"AUC agrupada {auc} nao supera o acaso ({AUC_ACASO}): "
+                       "a ordem produzida e pior que aleatoria, e a leitura "
+                       "ordinal -- a unica que o projeto reivindica -- nao se "
+                       "sustenta"),
+            "features": feats, "desempenho": desempenho,
+            "aderencia_temporal": aderencia,
+            "falhas_de_criterio": falhas,
+            "veredito": "ABAIXO_DO_ACASO",
+            "sinal_por_variavel": sinal_por_variavel,
+            "n": int(len(s)), "grupos": int(s.grupo_cv.nunique()),
+            **meta,
+        }
 
     return {
         "nome": nome, "servivel": True, "features": feats,
+        "aderencia_temporal": aderencia,
         "intercepto": round(intercepto, 6),
         "coef": {f: round(c, 6) for f, c in zip(feats, coef)},
         "ic95_coef": ic_coef,
@@ -245,9 +634,31 @@ def construir(nome: str, s: pd.DataFrame, feats: list[str], meta: dict) -> dict:
         "desempenho": desempenho,
         "orcamento_estrito": orc,
         "prevalencia_do_ajuste": round(float(y.mean()), 4),
+        # Que leitura o escore admite, derivada da natureza da amostra
+        # negativa e nao de escolha de apresentacao. Com fundo -- amostra
+        # do ambiente disponivel, e nao observacao de que ali nao inundou
+        # -- a prevalencia nao e identificavel, e nenhuma correcao de
+        # intercepto a recupera: so a ordem entre celulas sobrevive.
+        "amostra_negativa": negativos_da_fonte(s),
+        "elevacao_baseline_por_regiao": meta.pop("elevacao_baseline_por_regiao", {}),
         "n": int(len(s)), "grupos": int(s.grupo_cv.nunique()),
+        "grupos_antes_da_fusao_por_celula": grupos_antes,
+        # A unidade tem de dizer qual das duas foi usada. Declarar componente
+        # conexa num modelo que caiu no bloco espacial faria o card afirmar uma
+        # protecao que nao agiu -- e o card e o que quem le o escore consulta.
+        "unidade_de_reamostragem": (
+            "componente conexa de grupo e celula: nenhum grupo mais fino que a "
+            f"celula de {GRADE_CELULA_GRAUS} grau"
+            if unidade == "componente_conexa_de_celulas" else
+            f"bloco espacial de {BLOCO_ESPACIAL_KM:g} km (Roberts et al. 2017): "
+            "a fusao por celula colapsou a unidade neste conjunto, porque o "
+            "mesmo local reaparece em muitos dias"),
+        "unidade_de_validacao": unidade,
         "grupos_positivos": int(s.loc[s.classe == 1, "grupo_cv"].nunique()),
         "grupos_negativos": int(s.loc[s.classe == 0, "grupo_cv"].nunique()),
+        "sinal_por_variavel": sinal_por_variavel,
+        "variaveis_fisicamente_verificadas": [
+            f for f, v in sinal_por_variavel.items() if v["fisicamente_verificada"]],
         "fontes_do_ajuste": s.fonte.value_counts().to_dict(),
         "niveis_de_negativo": s.loc[s.classe == 0, "nivel_negativo"]
                                .value_counts().to_dict(),
@@ -265,7 +676,7 @@ def main() -> int:
     for p in (POOL, UNICA):
         if not p.exists():
             print(f"ABORTADO: {p} ausente. Gere com: "
-                  "python scripts/suscetibilidade/ds05_admissao_consolidacao.py")
+                  "python scripts/treino/ds05_admissao_consolidacao.py")
             return 1
 
     pool = pd.read_csv(POOL, low_memory=False)
@@ -277,41 +688,94 @@ def main() -> int:
     modelos = []
 
     # 1. Recife -- pluvial urbano, modelo proprio
-    rec = unica[unica.fonte == "recife"].dropna(subset=TOPO + CHUVA + ["grupo_cv"])
+    rec = unica[unica.fonte == "recife"].dropna(subset=TOPO + CHUVA + ["grupo_cv", "lat", "lon"])
     modelos.append(construir(
         "recife_pluvial", rec, TOPO + CHUVA,
         {"mecanismo": "PLUVIAL_URBANO",
          "regioes_servidas": ["recife"],
+         "elevacao_baseline_por_regiao": baselines_das_regioes(unica, ["recife"]),
          "por_que_este_conjunto":
              "Recife tem modelo proprio porque o mecanismo e outro: a agua vem "
              "da chuva excedendo a drenagem, nao do canal subindo. Somar Recife "
              "ao conjunto fluvial assumiria um processo gerador unico",
          "limitacoes_declaradas": [
-             "negativo por ausencia de registro, o nivel mais fraco da hierarquia",
-             "positivos e negativos dividem 5 das 205 datas: a chuva separa dias, "
-             "nao lugares (ext_chuva_estado_do_projeto_v1.md)",
+             "negativo por ausencia de registro, o nivel mais fraco da hierarquia "
+             "-- 98,4% dos negativos sao fundo, e o escore so sustenta ordem",
+             "rain_max_24h saiu do vetor: media a janela ANTERIOR ao evento e "
+             "e parcela da soma que rain_decay_index acumula",
              "HAND nao separa as classes em Recife -- num evento pluvial HAND nao "
              "e o mecanismo",
          ]}))
 
+    # 1b. Pluvial urbano das cidades novas -- modelo LOCAL, como Recife.
+    #
+    # A primeira tentativa aplicou aqui o desenho de Curitiba, excluindo a
+    # regiao alvo do treino, e o resultado refutou a escolha: `pluvial_nyc`
+    # ajustado em Recife mais Sao Paulo deu AUC 0,4385 na CV do PROPRIO treino,
+    # abaixo do acaso. O conjunto e heterogeneo demais -- Recife na planicie
+    # costeira a 14 m e Sao Paulo no planalto a 763 m --, e a validacao por
+    # grupos separa por cidade, entao o modelo treina numa e e cobrado na outra.
+    #
+    # O erro foi de premissa, e nao de ajuste. Curitiba e servida por
+    # transferencia porque NAO TEM inventario local; Nova York e Sao Paulo
+    # entraram COM inventario proprio -- chamados do cidadao, com rotulo,
+    # geometria e data. Para quem tem dado local, a dinamica que se aplica e a
+    # de Recife: modelo local, e a maturidade que vem com ele.
+    pluvial = unica[(unica.mecanismo == "PLUVIAL_URBANO")
+                    & unica.classe.isin([0, 1])]
+    for alvo in ("nyc", "sao_paulo"):
+        conj = pluvial[pluvial.fonte == alvo].dropna(
+            subset=TOPO + ["grupo_cv", "lat", "lon"])
+        if conj.empty or conj.classe.nunique() < 2:
+            print(f"\n=== pluvial_{alvo}: sem conjunto de treino ===")
+            continue
+        base = baselines_das_regioes(unica, [alvo])
+        modelos.append(construir(
+            f"pluvial_urbano_{alvo}", conj, TOPO,
+            {"mecanismo": "PLUVIAL_URBANO",
+             "classe_relevo": "PLANO_OU_ONDULADO",
+             "regioes_servidas": [alvo],
+             "elevacao_baseline_por_regiao": base,
+             "por_que_este_conjunto":
+                 f"{alvo} tem inventario proprio -- chamados do cidadao com "
+                 "rotulo, geometria e data --, entao o modelo e local, como o "
+                 "de Recife. Transferir de outra cidade foi tentado e refutado: "
+                 "o conjunto Recife+Sao Paulo da AUC 0,4385 na CV do proprio "
+                 "treino, porque planicie costeira e planalto nao formam um "
+                 "processo gerador unico",
+             "limitacoes_declaradas": [
+                 "mecanismo pluvial urbano: a agua vem da chuva excedendo a "
+                 "drenagem, e a CAPACIDADE da rede nao esta no vetor -- HAND e "
+                 "TWI descrevem para onde a agua corre naturalmente, e na "
+                 "cidade ela corre para onde a engenharia mandou",
+                 "chuva fora do conjunto: o gatilho `rain_event_day` esta "
+                 "adquirido e medido (leva Nova York de 0,6090 para 0,7395), e "
+                 "nao entra porque Recife nao o tem e porque a chuva do dia do "
+                 "evento e posterior a decisao de rotular o ponto",
+                 "negativo de fundo: chamado de outro assunto da oportunidade "
+                 "de observacao, nao vistoria; o escore sustenta ordem, nao "
+                 "valor absoluto",
+             ]}))
+
     # 2. Planicie fluvial -- sem nenhuma linha da regiao alvo
     pla = pool[(pool.classe_relevo == "PLANO_OU_ONDULADO")
                & (~pool.fonte.isin(REGIOES_ALVO))].dropna(
-                   subset=TOPO + ["grupo_cv"])
+                   subset=TOPO + ["grupo_cv", "lat", "lon"])
     modelos.append(construir(
         "fluvial_planicie", pla, TOPO,
         {"mecanismo": "FLUVIAL_ENXURRADA",
          "classe_relevo": "PLANO_OU_ONDULADO",
          "regioes_servidas": ["curitiba"],
+         "elevacao_baseline_por_regiao": baselines_das_regioes(unica, ["curitiba"]),
          "por_que_este_conjunto":
              "a regiao alvo nao entra no treino em nenhuma linha: o proposito e "
              "prever onde nao ha inventario local, e validar contra o rotulo da "
              "propria regiao seria a pergunta errada "
              "(metodo_aplicacao_sem_rotulo_local_v1.md)",
          "limitacoes_declaradas": [
-             "elevation_m e altitude absoluta, nao grandeza causal comparavel "
-             "entre cidades de altitude de base diferente -- o portao de dominio "
-             "do SVC-02 mede isso por requisicao",
+             "elevation_rel_m e a elevacao contra o P1 da propria regiao; a "
+             "absoluta saiu do vetor em 30/08/2026 porque punha 0,0% dos pontos "
+             "de Curitiba no dominio do treino, contra 94,5% da relativa",
              "chuva fora do conjunto: nao discrimina na escala em que o modelo "
              "compara (ext_chuva_estado_do_projeto_v1.md)",
          ]}))
@@ -319,7 +783,7 @@ def main() -> int:
     # 3. Serra fluvial -- orcamento de EPV manda no numero de variaveis
     ser = pool[(pool.classe_relevo == "INGREME")
                & (~pool.fonte.isin(REGIOES_ALVO))].dropna(
-                   subset=TOPO + ["grupo_cv"])
+                   subset=TOPO + ["grupo_cv", "lat", "lon"])
     orc_ser = orcamento_estrito(ser)
     feats_ser = (CAUSAIS if orc_ser >= 2 else ["hand_m"])[:max(orc_ser, 1)]
     modelos.append(construir(

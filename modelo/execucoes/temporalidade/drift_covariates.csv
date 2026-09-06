@@ -1,0 +1,7 @@
+dataset,feature,n_treino,n_teste,media_treino,media_teste,smd,smd_magnitude,ks_stat,ks_pvalue,psi,psi_leitura,p05_treino,p95_treino,pct_teste_fora_5_95_do_treino,axis,shift_interpretation
+curitiba_autopsia,elevation_m,1361,319,909.6424,908.5966,-0.0435,desprezivel,0.0666,0.1914261596112834,0.0352,estavel,877.261,960.7059,8.15,covariate,sem covariate shift material por PSI
+curitiba_autopsia,slope_deg,1361,319,3.1244,2.986,-0.0541,desprezivel,0.0764,0.0924270414694457,0.0555,estavel,0.3627,7.9177,10.03,covariate,sem covariate shift material por PSI
+curitiba_autopsia,hand_m,1361,319,8.5377,8.1396,-0.0472,desprezivel,0.0611,0.2757814963519749,0.0596,estavel,0.0004,25.456,12.85,covariate,sem covariate shift material por PSI
+curitiba_autopsia,twi_dinf,1361,319,8.1807,8.4764,0.1307,moderada,0.076,0.0951113401676611,0.0399,estavel,5.9784,12.2618,13.48,covariate,sem covariate shift material por PSI
+curitiba_autopsia,rain_max_24h,1361,319,20.7561,23.2511,0.2315,moderada,0.2442,4.863101286896027e-14,0.3261,grande,6.8,38.5,10.34,forcing,covariate shift grande
+curitiba_autopsia,rain_decay_index,1361,319,32.2878,29.5531,-0.1519,moderada,0.0959,0.0159254301537153,0.2416,moderado,4.137,67.304,5.02,forcing,covariate shift moderado

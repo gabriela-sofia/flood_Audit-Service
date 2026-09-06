@@ -101,7 +101,7 @@ def _render_overlay(img: Any, cls_to_patch: Any, grid: int, out_path: Path) -> N
     axes[0].imshow(base.astype("uint8")); axes[0].set_title("RGB preview", fontsize=9); axes[0].axis("off")
     axes[1].imshow(heat_img, cmap="inferno"); axes[1].set_title("CLS attention rollout", fontsize=9); axes[1].axis("off")
     axes[2].imshow(overlay); axes[2].set_title("overlay", fontsize=9); axes[2].axis("off")
-    fig.suptitle("DINOv2-with-registers — review-only attention rollout (not an event confirmation)", fontsize=8)
+    fig.suptitle("DINOv2-with-registers — modo de revisao attention rollout (not an event confirmation)", fontsize=8)
     fig.tight_layout()
     out_path.parent.mkdir(parents=True, exist_ok=True)
     fig.savefig(out_path, dpi=150)
@@ -211,7 +211,7 @@ def _write(manifest: list[dict[str, Any]], final: str, gate: str,
     write_csv(OUT_MAN, manifest, MAN_FIELDS)
     write_csv(OUT_SUM, summary, SUM_FIELDS)
     write_schema(SCH_MAN, MAN_FIELDS, "v1qv_dino_attention_rollout_manifest")
-    write_doc(DOC, "v1qv — DINOv2 Attention Rollout Visualizer (review-only)", [
+    write_doc(DOC, "v1qv — DINOv2 Attention Rollout Visualizer (modo de revisao)", [
         "## Objetivo",
         "Extrair pesos de atenção REAIS (CLS -> tokens de patch) do DINOv2-with-registers "
         "local e renderizar rollout (Abnar & Zuidema, 2020) como heatmap. Auxílio de "

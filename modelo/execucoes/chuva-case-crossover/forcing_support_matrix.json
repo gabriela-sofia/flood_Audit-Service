@@ -1,0 +1,169 @@
+{
+  "tipo": "scientific_support_matrix",
+  "versao": "1",
+  "dimensao": "event_forcing",
+  "gerado_em": "2026-09-01T17:46:49+00:00",
+  "estados_possiveis": [
+    "supported",
+    "not_supported",
+    "inconclusive",
+    "not_testable"
+  ],
+  "definicoes": {
+    "supported": "ha evidencia suficiente, segundo o protocolo declarado, para sustentar a propriedade avaliada neste escopo",
+    "not_supported": "existe teste identificavel e a evidencia e suficiente para nao sustentar a propriedade avaliada neste escopo",
+    "inconclusive": "ha evidencia relevante, mas ela nao identifica suficientemente a conclusao neste escopo",
+    "not_testable": "a evidencia necessaria para o teste nao existe, ou o desenho nao permite o teste neste escopo"
+  },
+  "pergunta": "a chuva transitoria aumenta o risco de ocorrencia notificada no mesmo lugar?",
+  "nao_e_a_dimensao_temporal": "temporal pergunta se o modelo transporta para eventos posteriores; forcamento pergunta se a chuva muda o risco no mesmo lugar. Compartilhar a palavra tempo nao as torna a mesma",
+  "avaliacoes": [
+    {
+      "dimension": "event_forcing",
+      "support": "supported",
+      "support_significa": "ha evidencia suficiente, segundo o protocolo declarado, para sustentar a propriedade avaliada neste escopo",
+      "nao_equivale_a": [
+        "validado",
+        "not_testable"
+      ],
+      "scope": {
+        "region_id": "nyc",
+        "model_id": "case_crossover:gatilho_diario",
+        "protocol_id": "case_crossover/mes_dow",
+        "evidence_version": "6d758dad38ebf9f2",
+        "evaluation_window": "2020-01-01..2026-07-29",
+        "evaluation_domain": "celula do produto de chuva x dia",
+        "forcing_source": "open_meteo/era5_land",
+        "observation_process": "chamado do cidadao a central de atendimento; ausencia de chamado nao e ausencia de alagamento",
+        "label_definition": "categoria hidrica da propria base"
+      },
+      "protocol_id": "case_crossover/mes_dow",
+      "razao_tecnica": "ic95_de_rain_event_day_inteiramente_acima_de_1",
+      "razao_tecnica_do_protocolo_primario": "ic95_de_rain_event_day_inteiramente_acima_de_1",
+      "diagnostico_de_identificabilidade": "efeito_positivo",
+      "leitura_consolidada": {
+        "support": "supported",
+        "suporte_do_protocolo_primario": "supported",
+        "controle_negativo_dentro_da_tolerancia": true,
+        "magnitude_do_controle_sobre_o_efeito": 0.1211,
+        "razao_de_taxas_do_primario": 1.5099,
+        "os_dois_bootstraps_excluem_1": true,
+        "algum_protocolo_inverte_a_direcao": false,
+        "razoes_de_taxas_por_protocolo": {
+          "mes_dow": 1.5099,
+          "semana_iso": 1.3186,
+          "mes": 1.3833
+        },
+        "regra": "primario congelado antes de estimar; rebaixa para inconclusive se algum bootstrap incluir 1, se a direcao inverter entre protocolos, ou se o controle negativo sair da tolerancia",
+        "escrita_depois_de_ver_os_resultados": true
+      },
+      "evidence": [
+        {
+          "medida": "razao_de_taxas_por_10mm",
+          "valor": 1.5099,
+          "ic95_bootstrap_de_estrato": [
+            1.4645,
+            1.561
+          ],
+          "estratos_informativos": 8552,
+          "estimador": "poisson_condicional"
+        }
+      ],
+      "limitations": [
+        "zero de CHAMADO nao e zero de alagamento: a ausencia de registro e ausencia de notificacao, e o desenho estima efeito sobre OCORRENCIA NOTIFICADA",
+        "a exposicao e constante dentro da celula de ~11 km: o efeito e estimado na escala da celula, e nao na do endereco",
+        "esforco de notificacao so esta cancelado no que e constante dentro do estrato (lugar, mes, dia da semana); um evento que mude a propensao a ligar num dia especifico nao esta controlado",
+        "acumulado diario nao distingue intensidade: 80 mm em duas horas e 80 mm no dia inteiro sao o mesmo numero neste produto"
+      ],
+      "provenance": [
+        {
+          "casos": {
+            "arquivo": "local_runs/chuva-casos-centrais/casos_celula_dia_nyc.csv",
+            "sha256": "3a765284046ae7656e86d56f6d1cfbf7339c794668bc176a71681361d77d397e"
+          },
+          "serie_de_chuva": {
+            "arquivo": "local_runs/chuva-serie-celula/serie_diaria_por_celula_nyc.csv",
+            "sha256": "6d758dad38ebf9f29d337a0f68d6b29869a386e6de2c80cfd32bf4b83bcc3b55"
+          }
+        }
+      ],
+      "operational_effect": "suporte_demonstrado",
+      "operational_effect_motivo": "a evidencia sustenta a propriedade sob o protocolo declarado",
+      "avaliado_em": "2026-09-01T17:43:48+00:00"
+    },
+    {
+      "dimension": "event_forcing",
+      "support": "supported",
+      "support_significa": "ha evidencia suficiente, segundo o protocolo declarado, para sustentar a propriedade avaliada neste escopo",
+      "nao_equivale_a": [
+        "validado",
+        "not_testable"
+      ],
+      "scope": {
+        "region_id": "sao_paulo",
+        "model_id": "case_crossover:gatilho_diario",
+        "protocol_id": "case_crossover/mes_dow",
+        "evidence_version": "c792c4e543bacaea",
+        "evaluation_window": "2020-01-01..2026-09-01",
+        "evaluation_domain": "celula do produto de chuva x dia",
+        "forcing_source": "open_meteo/era5_land",
+        "observation_process": "chamado do cidadao a central de atendimento; ausencia de chamado nao e ausencia de alagamento",
+        "label_definition": "categoria hidrica da propria base"
+      },
+      "protocol_id": "case_crossover/mes_dow",
+      "razao_tecnica": "ic95_de_rain_event_day_inteiramente_acima_de_1",
+      "razao_tecnica_do_protocolo_primario": "ic95_de_rain_event_day_inteiramente_acima_de_1",
+      "diagnostico_de_identificabilidade": "efeito_positivo",
+      "leitura_consolidada": {
+        "support": "supported",
+        "suporte_do_protocolo_primario": "supported",
+        "controle_negativo_dentro_da_tolerancia": true,
+        "magnitude_do_controle_sobre_o_efeito": 0.4391,
+        "razao_de_taxas_do_primario": 1.2158,
+        "os_dois_bootstraps_excluem_1": true,
+        "algum_protocolo_inverte_a_direcao": false,
+        "razoes_de_taxas_por_protocolo": {
+          "mes_dow": 1.2158,
+          "semana_iso": 1.3442,
+          "mes": 1.3398
+        },
+        "regra": "primario congelado antes de estimar; rebaixa para inconclusive se algum bootstrap incluir 1, se a direcao inverter entre protocolos, ou se o controle negativo sair da tolerancia",
+        "escrita_depois_de_ver_os_resultados": true
+      },
+      "evidence": [
+        {
+          "medida": "razao_de_taxas_por_10mm",
+          "valor": 1.2158,
+          "ic95_bootstrap_de_estrato": [
+            1.047,
+            1.4998
+          ],
+          "estratos_informativos": 1753,
+          "estimador": "poisson_condicional"
+        }
+      ],
+      "limitations": [
+        "zero de CHAMADO nao e zero de alagamento: a ausencia de registro e ausencia de notificacao, e o desenho estima efeito sobre OCORRENCIA NOTIFICADA",
+        "a exposicao e constante dentro da celula de ~11 km: o efeito e estimado na escala da celula, e nao na do endereco",
+        "esforco de notificacao so esta cancelado no que e constante dentro do estrato (lugar, mes, dia da semana); um evento que mude a propensao a ligar num dia especifico nao esta controlado",
+        "acumulado diario nao distingue intensidade: 80 mm em duas horas e 80 mm no dia inteiro sao o mesmo numero neste produto"
+      ],
+      "provenance": [
+        {
+          "casos": {
+            "arquivo": "local_runs/chuva-casos-centrais/casos_celula_dia_sao_paulo.csv",
+            "sha256": "de2a379a2af3e8c3bdac36209cf6a0bd7aaeae17194b818891d073f2359d77ac"
+          },
+          "serie_de_chuva": {
+            "arquivo": "local_runs/chuva-serie-celula/serie_diaria_por_celula_sao_paulo.csv",
+            "sha256": "c792c4e543bacaea7766d117dbc49e265255a8a266517e7267ddacdd016940cb"
+          }
+        }
+      ],
+      "operational_effect": "suporte_demonstrado",
+      "operational_effect_motivo": "a evidencia sustenta a propriedade sob o protocolo declarado",
+      "avaliado_em": "2026-09-01T17:46:38+00:00"
+    }
+  ],
+  "nao_e": "nao e portao do contrato, nao entra na escada de recusa e nao altera escore: e evidencia registrada"
+}

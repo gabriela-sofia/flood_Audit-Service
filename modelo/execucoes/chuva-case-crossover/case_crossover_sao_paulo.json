@@ -1,0 +1,910 @@
+{
+  "artefato": "chuva_case_crossover",
+  "schema_version": "1.0.0",
+  "gerado_em": "2026-09-01T17:46:38+00:00",
+  "method_version": "rain-method-v1.0.0",
+  "pergunta": "a chuva transitoria aumenta o risco de ocorrencia NO MESMO LUGAR?",
+  "desenho": {
+    "nome": "autopareado no tempo (case-crossover)",
+    "referencia": "Maclure (1991); Janes, Sheppard & Lumley (2005)",
+    "estimador": "Poisson condicional com intercepto de estrato condicionado para fora (Armstrong, Gasparrini & Tobias, 2014)",
+    "unidade_de_analise": "celula do produto de chuva x dia",
+    "unidade_de_reamostragem": "estrato; sensibilidade por celula",
+    "sem_classe_negativa": "o caso e o proprio controle em outras datas; o desenho nao usa fundo e por isso nao herda o descasamento de janela medido em `auditar_janelas`",
+    "protocolos_congelados_antes_de_estimar": [
+      "mes_dow",
+      "semana_iso",
+      "mes"
+    ],
+    "efeito_reportado_por_mm": 10.0
+  },
+  "auditoria_da_aquisicao": {
+    "auditado": true,
+    "fonte": "sao_paulo",
+    "n_positivos": 1446,
+    "n_negativos": 5700,
+    "dias_com_positivo": 358,
+    "dias_com_negativo": 1954,
+    "dias_com_as_duas_classes": 336,
+    "positivos_em_dia_sem_negativo": 54,
+    "pct_positivos_em_dia_sem_negativo": 3.7,
+    "negativos_em_dia_sem_positivo": 4583,
+    "pct_negativos_em_dia_sem_positivo": 80.4,
+    "auc_de_um_preditor_que_so_conhece_o_dia": 0.5754,
+    "leitura": "as janelas se sobrepoem o bastante para que a data sozinha nao separe as classes",
+    "consequencia": "o desenho autopareado nao usa a classe negativa e por isso nao herda este defeito; leituras comparando classes nesta base ficam condicionadas a correcao da janela de aquisicao",
+    "cobertura_do_rotulo": {
+      "medida": true,
+      "casos_no_bruto_com_lugar_e_dia": 5909,
+      "positivos_na_tabela_unica": 1446,
+      "fracao_usada": 0.2447,
+      "janela_do_bruto": [
+        "2020-01-01",
+        "2026-09-01"
+      ],
+      "dias_no_bruto": 753,
+      "leitura": "a tabela unica usa uma fracao do rotulo disponivel; a fracao nao foi escolhida por criterio cientifico, e o que sobrou da leitura do bruto"
+    }
+  },
+  "resultado": {
+    "fonte": "sao_paulo",
+    "celulas": 21,
+    "dias_de_serie": 43619,
+    "primeiro_dia": "2020-01-01",
+    "ultimo_dia": "2026-09-01",
+    "casos": 5909,
+    "dias_com_caso": 2145,
+    "protocolo_primario": "mes_dow",
+    "por_protocolo": {
+      "mes_dow": {
+        "descricao": "estratificado no tempo: celula x mes-calendario x dia da semana. Referentes sao os demais dias do mesmo mes e mesmo dia da semana",
+        "por_que": "e o esquema de referentes que nao sofre viés de sobreposicao (Janes, Sheppard & Lumley, 2005): os estratos particionam o tempo, entao nenhum dia serve de referente para um caso fora do proprio estrato",
+        "cancela_por_construcao": [
+          "tudo invariante no lugar",
+          "tendencia de longo prazo",
+          "sazonalidade dentro do mes",
+          "ciclo semanal de chamados"
+        ],
+        "por_exposicao": {
+          "gatilho": {
+            "exposicoes": [
+              "rain_event_day"
+            ],
+            "amostra": {
+              "estratos_totais": 10103,
+              "estratos_informativos": 1753,
+              "casos_totais": 5909,
+              "casos_em_estrato_informativo": 5695,
+              "dias_em_estrato_informativo": 7772
+            },
+            "identificabilidade": {
+              "identificavel": true,
+              "estratos_informativos": 1753,
+              "estratos_por_parametro": 1753.0,
+              "fracao_da_variancia_dentro_do_estrato": {
+                "rain_event_day": 0.732096
+              },
+              "requisitos_nao_atendidos": [],
+              "criterios": {
+                "min_estratos_por_parametro": 10,
+                "min_fracao_variancia_intra": 0.01,
+                "declarados_antes_de_estimar": true
+              }
+            },
+            "estimativa": {
+              "estimado": true,
+              "estimador": "poisson_condicional",
+              "por_variavel": {
+                "rain_event_day": {
+                  "coeficiente_por_mm": 0.019543,
+                  "razao_de_taxas_por_10mm": 1.2158,
+                  "fracao_da_variancia_dentro_do_estrato": 0.732096,
+                  "ic95_bootstrap_de_estrato": [
+                    1.047,
+                    1.4998
+                  ],
+                  "ic95_exclui_1": true,
+                  "ic95_bootstrap_de_celula": [
+                    1.149,
+                    1.3305
+                  ],
+                  "ic95_de_celula_exclui_1": true
+                }
+              },
+              "replicas_por_estrato": 400,
+              "replicas_por_celula": 400
+            },
+            "suporte": {
+              "support": "supported",
+              "diagnostico": "efeito_positivo",
+              "razao_tecnica": "ic95_de_rain_event_day_inteiramente_acima_de_1"
+            }
+          },
+          "antecedente": {
+            "exposicoes": [
+              "rain_decay_index"
+            ],
+            "amostra": {
+              "estratos_totais": 10103,
+              "estratos_informativos": 1798,
+              "casos_totais": 5909,
+              "casos_em_estrato_informativo": 5779,
+              "dias_em_estrato_informativo": 7967
+            },
+            "identificabilidade": {
+              "identificavel": true,
+              "estratos_informativos": 1798,
+              "estratos_por_parametro": 1798.0,
+              "fracao_da_variancia_dentro_do_estrato": {
+                "rain_decay_index": 0.477365
+              },
+              "requisitos_nao_atendidos": [],
+              "criterios": {
+                "min_estratos_por_parametro": 10,
+                "min_fracao_variancia_intra": 0.01,
+                "declarados_antes_de_estimar": true
+              }
+            },
+            "estimativa": {
+              "estimado": true,
+              "estimador": "poisson_condicional",
+              "por_variavel": {
+                "rain_decay_index": {
+                  "coeficiente_por_mm": 0.004085,
+                  "razao_de_taxas_por_10mm": 1.0417,
+                  "fracao_da_variancia_dentro_do_estrato": 0.477365,
+                  "ic95_bootstrap_de_estrato": [
+                    0.9886,
+                    1.1012
+                  ],
+                  "ic95_exclui_1": false,
+                  "ic95_bootstrap_de_celula": [
+                    0.9545,
+                    1.1283
+                  ],
+                  "ic95_de_celula_exclui_1": false
+                }
+              },
+              "replicas_por_estrato": 400,
+              "replicas_por_celula": 400
+            },
+            "suporte": {
+              "support": "inconclusive",
+              "diagnostico": "ic_cruza_1",
+              "razao_tecnica": "ic95_de_rain_decay_index_contem_1"
+            }
+          },
+          "gatilho_e_antecedente": {
+            "exposicoes": [
+              "rain_event_day",
+              "rain_decay_index"
+            ],
+            "amostra": {
+              "estratos_totais": 10103,
+              "estratos_informativos": 1798,
+              "casos_totais": 5909,
+              "casos_em_estrato_informativo": 5779,
+              "dias_em_estrato_informativo": 7967
+            },
+            "identificabilidade": {
+              "identificavel": true,
+              "estratos_informativos": 1798,
+              "estratos_por_parametro": 899.0,
+              "fracao_da_variancia_dentro_do_estrato": {
+                "rain_event_day": 0.724786,
+                "rain_decay_index": 0.477365
+              },
+              "requisitos_nao_atendidos": [],
+              "criterios": {
+                "min_estratos_por_parametro": 10,
+                "min_fracao_variancia_intra": 0.01,
+                "declarados_antes_de_estimar": true
+              }
+            },
+            "estimativa": {
+              "estimado": true,
+              "estimador": "poisson_condicional",
+              "por_variavel": {
+                "rain_event_day": {
+                  "coeficiente_por_mm": 0.018628,
+                  "razao_de_taxas_por_10mm": 1.2048,
+                  "fracao_da_variancia_dentro_do_estrato": 0.724786,
+                  "ic95_bootstrap_de_estrato": [
+                    1.0083,
+                    1.5484
+                  ],
+                  "ic95_exclui_1": true,
+                  "ic95_bootstrap_de_celula": [
+                    1.0764,
+                    1.3383
+                  ],
+                  "ic95_de_celula_exclui_1": true
+                },
+                "rain_decay_index": {
+                  "coeficiente_por_mm": 0.001378,
+                  "razao_de_taxas_por_10mm": 1.0139,
+                  "fracao_da_variancia_dentro_do_estrato": 0.477365,
+                  "ic95_bootstrap_de_estrato": [
+                    0.9556,
+                    1.0761
+                  ],
+                  "ic95_exclui_1": false,
+                  "ic95_bootstrap_de_celula": [
+                    0.9287,
+                    1.109
+                  ],
+                  "ic95_de_celula_exclui_1": false
+                }
+              },
+              "replicas_por_estrato": 400,
+              "replicas_por_celula": 400
+            },
+            "suporte": {
+              "support": "supported",
+              "diagnostico": "efeito_positivo",
+              "razao_tecnica": "ic95_de_rain_event_day_inteiramente_acima_de_1"
+            }
+          }
+        }
+      },
+      "semana_iso": {
+        "descricao": "celula x semana ISO",
+        "por_que": "janela mais curta: controla tendencia com mais forca e deixa menos dias por estrato",
+        "cancela_por_construcao": [
+          "tudo invariante no lugar",
+          "tendencia",
+          "sazonalidade"
+        ],
+        "por_exposicao": {
+          "gatilho": {
+            "exposicoes": [
+              "rain_event_day"
+            ],
+            "amostra": {
+              "estratos_totais": 6254,
+              "estratos_informativos": 1423,
+              "casos_totais": 5909,
+              "casos_em_estrato_informativo": 5672,
+              "dias_em_estrato_informativo": 9904
+            },
+            "identificabilidade": {
+              "identificavel": true,
+              "estratos_informativos": 1423,
+              "estratos_por_parametro": 1423.0,
+              "fracao_da_variancia_dentro_do_estrato": {
+                "rain_event_day": 0.702739
+              },
+              "requisitos_nao_atendidos": [],
+              "criterios": {
+                "min_estratos_por_parametro": 10,
+                "min_fracao_variancia_intra": 0.01,
+                "declarados_antes_de_estimar": true
+              }
+            },
+            "estimativa": {
+              "estimado": true,
+              "estimador": "poisson_condicional",
+              "por_variavel": {
+                "rain_event_day": {
+                  "coeficiente_por_mm": 0.029577,
+                  "razao_de_taxas_por_10mm": 1.3442,
+                  "fracao_da_variancia_dentro_do_estrato": 0.702739,
+                  "ic95_bootstrap_de_estrato": [
+                    1.2216,
+                    1.5138
+                  ],
+                  "ic95_exclui_1": true,
+                  "ic95_bootstrap_de_celula": [
+                    1.2184,
+                    1.4963
+                  ],
+                  "ic95_de_celula_exclui_1": true
+                }
+              },
+              "replicas_por_estrato": 400,
+              "replicas_por_celula": 400
+            },
+            "suporte": {
+              "support": "supported",
+              "diagnostico": "efeito_positivo",
+              "razao_tecnica": "ic95_de_rain_event_day_inteiramente_acima_de_1"
+            }
+          },
+          "antecedente": {
+            "exposicoes": [
+              "rain_decay_index"
+            ],
+            "amostra": {
+              "estratos_totais": 6254,
+              "estratos_informativos": 1476,
+              "casos_totais": 5909,
+              "casos_em_estrato_informativo": 5802,
+              "dias_em_estrato_informativo": 10263
+            },
+            "identificabilidade": {
+              "identificavel": true,
+              "estratos_informativos": 1476,
+              "estratos_por_parametro": 1476.0,
+              "fracao_da_variancia_dentro_do_estrato": {
+                "rain_decay_index": 0.156039
+              },
+              "requisitos_nao_atendidos": [],
+              "criterios": {
+                "min_estratos_por_parametro": 10,
+                "min_fracao_variancia_intra": 0.01,
+                "declarados_antes_de_estimar": true
+              }
+            },
+            "estimativa": {
+              "estimado": true,
+              "estimador": "poisson_condicional",
+              "por_variavel": {
+                "rain_decay_index": {
+                  "coeficiente_por_mm": -0.006096,
+                  "razao_de_taxas_por_10mm": 0.9409,
+                  "fracao_da_variancia_dentro_do_estrato": 0.156039,
+                  "ic95_bootstrap_de_estrato": [
+                    0.8571,
+                    1.0123
+                  ],
+                  "ic95_exclui_1": false,
+                  "ic95_bootstrap_de_celula": [
+                    0.8595,
+                    1.0222
+                  ],
+                  "ic95_de_celula_exclui_1": false
+                }
+              },
+              "replicas_por_estrato": 400,
+              "replicas_por_celula": 400
+            },
+            "suporte": {
+              "support": "inconclusive",
+              "diagnostico": "ic_cruza_1",
+              "razao_tecnica": "ic95_de_rain_decay_index_contem_1"
+            }
+          },
+          "gatilho_e_antecedente": {
+            "exposicoes": [
+              "rain_event_day",
+              "rain_decay_index"
+            ],
+            "amostra": {
+              "estratos_totais": 6254,
+              "estratos_informativos": 1476,
+              "casos_totais": 5909,
+              "casos_em_estrato_informativo": 5802,
+              "dias_em_estrato_informativo": 10263
+            },
+            "identificabilidade": {
+              "identificavel": true,
+              "estratos_informativos": 1476,
+              "estratos_por_parametro": 738.0,
+              "fracao_da_variancia_dentro_do_estrato": {
+                "rain_event_day": 0.692484,
+                "rain_decay_index": 0.156039
+              },
+              "requisitos_nao_atendidos": [],
+              "criterios": {
+                "min_estratos_por_parametro": 10,
+                "min_fracao_variancia_intra": 0.01,
+                "declarados_antes_de_estimar": true
+              }
+            },
+            "estimativa": {
+              "estimado": true,
+              "estimador": "poisson_condicional",
+              "por_variavel": {
+                "rain_event_day": {
+                  "coeficiente_por_mm": 0.029239,
+                  "razao_de_taxas_por_10mm": 1.3396,
+                  "fracao_da_variancia_dentro_do_estrato": 0.692484,
+                  "ic95_bootstrap_de_estrato": [
+                    1.2001,
+                    1.5039
+                  ],
+                  "ic95_exclui_1": true,
+                  "ic95_bootstrap_de_celula": [
+                    1.2291,
+                    1.4847
+                  ],
+                  "ic95_de_celula_exclui_1": true
+                },
+                "rain_decay_index": {
+                  "coeficiente_por_mm": -0.001166,
+                  "razao_de_taxas_por_10mm": 0.9884,
+                  "fracao_da_variancia_dentro_do_estrato": 0.156039,
+                  "ic95_bootstrap_de_estrato": [
+                    0.9002,
+                    1.0693
+                  ],
+                  "ic95_exclui_1": false,
+                  "ic95_bootstrap_de_celula": [
+                    0.9037,
+                    1.0774
+                  ],
+                  "ic95_de_celula_exclui_1": false
+                }
+              },
+              "replicas_por_estrato": 400,
+              "replicas_por_celula": 400
+            },
+            "suporte": {
+              "support": "supported",
+              "diagnostico": "efeito_positivo",
+              "razao_tecnica": "ic95_de_rain_event_day_inteiramente_acima_de_1"
+            }
+          }
+        }
+      },
+      "mes": {
+        "descricao": "celula x mes-calendario, sem casar dia da semana",
+        "por_que": "serve para MEDIR quanto o casamento por dia da semana muda a estimativa: se mudar muito, o ciclo semanal de chamados estava dentro do efeito",
+        "cancela_por_construcao": [
+          "tudo invariante no lugar",
+          "tendencia",
+          "sazonalidade"
+        ],
+        "por_exposicao": {
+          "gatilho": {
+            "exposicoes": [
+              "rain_event_day"
+            ],
+            "amostra": {
+              "estratos_totais": 1454,
+              "estratos_informativos": 851,
+              "casos_totais": 5909,
+              "casos_em_estrato_informativo": 5780,
+              "dias_em_estrato_informativo": 25739
+            },
+            "identificabilidade": {
+              "identificavel": true,
+              "estratos_informativos": 851,
+              "estratos_por_parametro": 851.0,
+              "fracao_da_variancia_dentro_do_estrato": {
+                "rain_event_day": 0.861073
+              },
+              "requisitos_nao_atendidos": [],
+              "criterios": {
+                "min_estratos_por_parametro": 10,
+                "min_fracao_variancia_intra": 0.01,
+                "declarados_antes_de_estimar": true
+              }
+            },
+            "estimativa": {
+              "estimado": true,
+              "estimador": "poisson_condicional",
+              "por_variavel": {
+                "rain_event_day": {
+                  "coeficiente_por_mm": 0.029253,
+                  "razao_de_taxas_por_10mm": 1.3398,
+                  "fracao_da_variancia_dentro_do_estrato": 0.861073,
+                  "ic95_bootstrap_de_estrato": [
+                    1.2316,
+                    1.4632
+                  ],
+                  "ic95_exclui_1": true,
+                  "ic95_bootstrap_de_celula": [
+                    1.2691,
+                    1.4393
+                  ],
+                  "ic95_de_celula_exclui_1": true
+                }
+              },
+              "replicas_por_estrato": 400,
+              "replicas_por_celula": 400
+            },
+            "suporte": {
+              "support": "supported",
+              "diagnostico": "efeito_positivo",
+              "razao_tecnica": "ic95_de_rain_event_day_inteiramente_acima_de_1"
+            }
+          },
+          "antecedente": {
+            "exposicoes": [
+              "rain_decay_index"
+            ],
+            "amostra": {
+              "estratos_totais": 1454,
+              "estratos_informativos": 864,
+              "casos_totais": 5909,
+              "casos_em_estrato_informativo": 5906,
+              "dias_em_estrato_informativo": 25778
+            },
+            "identificabilidade": {
+              "identificavel": true,
+              "estratos_informativos": 864,
+              "estratos_por_parametro": 864.0,
+              "fracao_da_variancia_dentro_do_estrato": {
+                "rain_decay_index": 0.464364
+              },
+              "requisitos_nao_atendidos": [],
+              "criterios": {
+                "min_estratos_por_parametro": 10,
+                "min_fracao_variancia_intra": 0.01,
+                "declarados_antes_de_estimar": true
+              }
+            },
+            "estimativa": {
+              "estimado": true,
+              "estimador": "poisson_condicional",
+              "por_variavel": {
+                "rain_decay_index": {
+                  "coeficiente_por_mm": 0.005384,
+                  "razao_de_taxas_por_10mm": 1.0553,
+                  "fracao_da_variancia_dentro_do_estrato": 0.464364,
+                  "ic95_bootstrap_de_estrato": [
+                    0.9851,
+                    1.124
+                  ],
+                  "ic95_exclui_1": false,
+                  "ic95_bootstrap_de_celula": [
+                    0.9661,
+                    1.1482
+                  ],
+                  "ic95_de_celula_exclui_1": false
+                }
+              },
+              "replicas_por_estrato": 400,
+              "replicas_por_celula": 400
+            },
+            "suporte": {
+              "support": "inconclusive",
+              "diagnostico": "ic_cruza_1",
+              "razao_tecnica": "ic95_de_rain_decay_index_contem_1"
+            }
+          },
+          "gatilho_e_antecedente": {
+            "exposicoes": [
+              "rain_event_day",
+              "rain_decay_index"
+            ],
+            "amostra": {
+              "estratos_totais": 1454,
+              "estratos_informativos": 864,
+              "casos_totais": 5909,
+              "casos_em_estrato_informativo": 5906,
+              "dias_em_estrato_informativo": 25778
+            },
+            "identificabilidade": {
+              "identificavel": true,
+              "estratos_informativos": 864,
+              "estratos_por_parametro": 432.0,
+              "fracao_da_variancia_dentro_do_estrato": {
+                "rain_event_day": 0.860656,
+                "rain_decay_index": 0.464364
+              },
+              "requisitos_nao_atendidos": [],
+              "criterios": {
+                "min_estratos_por_parametro": 10,
+                "min_fracao_variancia_intra": 0.01,
+                "declarados_antes_de_estimar": true
+              }
+            },
+            "estimativa": {
+              "estimado": true,
+              "estimador": "poisson_condicional",
+              "por_variavel": {
+                "rain_event_day": {
+                  "coeficiente_por_mm": 0.028325,
+                  "razao_de_taxas_por_10mm": 1.3274,
+                  "fracao_da_variancia_dentro_do_estrato": 0.860656,
+                  "ic95_bootstrap_de_estrato": [
+                    1.1795,
+                    1.4603
+                  ],
+                  "ic95_exclui_1": true,
+                  "ic95_bootstrap_de_celula": [
+                    1.2315,
+                    1.4458
+                  ],
+                  "ic95_de_celula_exclui_1": true
+                },
+                "rain_decay_index": {
+                  "coeficiente_por_mm": 0.002622,
+                  "razao_de_taxas_por_10mm": 1.0266,
+                  "fracao_da_variancia_dentro_do_estrato": 0.464364,
+                  "ic95_bootstrap_de_estrato": [
+                    0.963,
+                    1.0939
+                  ],
+                  "ic95_exclui_1": false,
+                  "ic95_bootstrap_de_celula": [
+                    0.9358,
+                    1.1201
+                  ],
+                  "ic95_de_celula_exclui_1": false
+                }
+              },
+              "replicas_por_estrato": 400,
+              "replicas_por_celula": 400
+            },
+            "suporte": {
+              "support": "supported",
+              "diagnostico": "efeito_positivo",
+              "razao_tecnica": "ic95_de_rain_event_day_inteiramente_acima_de_1"
+            }
+          }
+        }
+      }
+    },
+    "leitura_consolidada": {
+      "support": "supported",
+      "suporte_do_protocolo_primario": "supported",
+      "controle_negativo_dentro_da_tolerancia": true,
+      "magnitude_do_controle_sobre_o_efeito": 0.4391,
+      "razao_de_taxas_do_primario": 1.2158,
+      "os_dois_bootstraps_excluem_1": true,
+      "algum_protocolo_inverte_a_direcao": false,
+      "razoes_de_taxas_por_protocolo": {
+        "mes_dow": 1.2158,
+        "semana_iso": 1.3442,
+        "mes": 1.3398
+      },
+      "regra": "primario congelado antes de estimar; rebaixa para inconclusive se algum bootstrap incluir 1, se a direcao inverter entre protocolos, ou se o controle negativo sair da tolerancia",
+      "escrita_depois_de_ver_os_resultados": true
+    },
+    "dose_resposta_do_gatilho": {
+      "avaliado": true,
+      "variavel": "rain_event_day",
+      "faixas": 4,
+      "referencia": "faixa 0 (menor exposicao)",
+      "limites_da_faixa": {
+        "0": {
+          "min": 0.0,
+          "max": 0.8,
+          "size": 3118
+        },
+        "1": {
+          "min": 0.9,
+          "max": 3.3,
+          "size": 1568
+        },
+        "2": {
+          "min": 3.4,
+          "max": 9.8,
+          "size": 1533
+        },
+        "3": {
+          "min": 9.9,
+          "max": 215.0,
+          "size": 1553
+        }
+      },
+      "razao_de_taxas_por_faixa": {
+        "1": 0.7269,
+        "2": 1.1431,
+        "3": 1.7683
+      },
+      "monotonica": true
+    },
+    "controle_negativo_chuva_futura": {
+      "o_que_e": "a chuva de 30 dias DEPOIS, no mesmo lugar, no lugar do gatilho",
+      "o_que_esperar": "razao de taxas proxima de 1 com IC contendo 1; efeito aqui significa que o desenho esta lendo estrutura sazonal residual, e derruba junto o resultado principal",
+      "amostra": {
+        "estratos_totais": 9981,
+        "estratos_informativos": 1741,
+        "casos_totais": 5761,
+        "casos_em_estrato_informativo": 5653,
+        "dias_em_estrato_informativo": 7728
+      },
+      "identificabilidade": {
+        "identificavel": true,
+        "estratos_informativos": 1741,
+        "estratos_por_parametro": 1741.0,
+        "fracao_da_variancia_dentro_do_estrato": {
+          "rain_event_day_futuro": 0.709879
+        },
+        "requisitos_nao_atendidos": [],
+        "criterios": {
+          "min_estratos_por_parametro": 10,
+          "min_fracao_variancia_intra": 0.01,
+          "declarados_antes_de_estimar": true
+        }
+      },
+      "estimativa": {
+        "estimado": true,
+        "estimador": "poisson_condicional",
+        "por_variavel": {
+          "rain_event_day_futuro": {
+            "coeficiente_por_mm": 0.008581,
+            "razao_de_taxas_por_10mm": 1.0896,
+            "fracao_da_variancia_dentro_do_estrato": 0.709879,
+            "ic95_bootstrap_de_estrato": [
+              0.8113,
+              1.4848
+            ],
+            "ic95_exclui_1": false,
+            "ic95_bootstrap_de_celula": [
+              0.8674,
+              1.2243
+            ],
+            "ic95_de_celula_exclui_1": false
+          }
+        },
+        "replicas_por_estrato": 400,
+        "replicas_por_celula": 400
+      },
+      "desviou_de_1": false,
+      "razao_de_taxas": 1.0896,
+      "magnitude_relativa_ao_efeito_principal": 0.4391,
+      "fracao_maxima_tolerada": 0.3333333333333333,
+      "criterio_escrito_depois_de_ver_o_resultado": true,
+      "dentro_da_tolerancia": true,
+      "leitura": "o controle e nulo: nao ha vies temporal residual detectavel"
+    },
+    "desfecho_ocorrencia_em_vez_de_volume": {
+      "o_que_muda": "o desfecho passa a ser HOUVE chamado, e nao quantos: o dia de tempestade deixa de pesar centenas de vezes mais que os demais",
+      "amostra": {
+        "estratos_totais": 10103,
+        "estratos_informativos": 1753,
+        "casos_totais": 2145,
+        "casos_em_estrato_informativo": 2075,
+        "dias_em_estrato_informativo": 7772
+      },
+      "identificabilidade": {
+        "identificavel": true,
+        "estratos_informativos": 1753,
+        "estratos_por_parametro": 1753.0,
+        "fracao_da_variancia_dentro_do_estrato": {
+          "rain_event_day": 0.732096
+        },
+        "requisitos_nao_atendidos": [],
+        "criterios": {
+          "min_estratos_por_parametro": 10,
+          "min_fracao_variancia_intra": 0.01,
+          "declarados_antes_de_estimar": true
+        }
+      },
+      "estimativa": {
+        "estimado": true,
+        "estimador": "poisson_condicional",
+        "por_variavel": {
+          "rain_event_day": {
+            "coeficiente_por_mm": 0.042273,
+            "razao_de_taxas_por_10mm": 1.5261,
+            "fracao_da_variancia_dentro_do_estrato": 0.732096,
+            "ic95_bootstrap_de_estrato": [
+              1.4304,
+              1.6507
+            ],
+            "ic95_exclui_1": true,
+            "ic95_bootstrap_de_celula": [
+              1.4402,
+              1.6022
+            ],
+            "ic95_de_celula_exclui_1": true
+          }
+        },
+        "replicas_por_estrato": 400,
+        "replicas_por_celula": 400
+      },
+      "suporte": {
+        "support": "supported",
+        "diagnostico": "efeito_positivo",
+        "razao_tecnica": "ic95_de_rain_event_day_inteiramente_acima_de_1"
+      }
+    },
+    "por_subtipo_de_chamado": {
+      "alagamento": {
+        "amostra": {
+          "estratos_totais": 10103,
+          "estratos_informativos": 1089,
+          "casos_totais": 2619,
+          "casos_em_estrato_informativo": 2522,
+          "dias_em_estrato_informativo": 4858
+        },
+        "identificabilidade": {
+          "identificavel": true,
+          "estratos_informativos": 1089,
+          "estratos_por_parametro": 1089.0,
+          "fracao_da_variancia_dentro_do_estrato": {
+            "rain_event_day": 0.732368
+          },
+          "requisitos_nao_atendidos": [],
+          "criterios": {
+            "min_estratos_por_parametro": 10,
+            "min_fracao_variancia_intra": 0.01,
+            "declarados_antes_de_estimar": true
+          }
+        },
+        "estimativa": {
+          "estimado": true,
+          "estimador": "poisson_condicional",
+          "por_variavel": {
+            "rain_event_day": {
+              "coeficiente_por_mm": 0.025222,
+              "razao_de_taxas_por_10mm": 1.2869,
+              "fracao_da_variancia_dentro_do_estrato": 0.732368,
+              "ic95_bootstrap_de_estrato": [
+                1.0901,
+                1.5688
+              ],
+              "ic95_exclui_1": true,
+              "ic95_bootstrap_de_celula": [
+                1.2178,
+                1.3717
+              ],
+              "ic95_de_celula_exclui_1": true
+            }
+          },
+          "replicas_por_estrato": 400,
+          "replicas_por_celula": 400
+        },
+        "suporte": {
+          "support": "supported",
+          "diagnostico": "efeito_positivo",
+          "razao_tecnica": "ic95_de_rain_event_day_inteiramente_acima_de_1"
+        }
+      },
+      "inundacao": {
+        "amostra": {
+          "estratos_totais": 10103,
+          "estratos_informativos": 1200,
+          "casos_totais": 3290,
+          "casos_em_estrato_informativo": 3173,
+          "dias_em_estrato_informativo": 5325
+        },
+        "identificabilidade": {
+          "identificavel": true,
+          "estratos_informativos": 1200,
+          "estratos_por_parametro": 1200.0,
+          "fracao_da_variancia_dentro_do_estrato": {
+            "rain_event_day": 0.736718
+          },
+          "requisitos_nao_atendidos": [],
+          "criterios": {
+            "min_estratos_por_parametro": 10,
+            "min_fracao_variancia_intra": 0.01,
+            "declarados_antes_de_estimar": true
+          }
+        },
+        "estimativa": {
+          "estimado": true,
+          "estimador": "poisson_condicional",
+          "por_variavel": {
+            "rain_event_day": {
+              "coeficiente_por_mm": 0.014964,
+              "razao_de_taxas_por_10mm": 1.1614,
+              "fracao_da_variancia_dentro_do_estrato": 0.736718,
+              "ic95_bootstrap_de_estrato": [
+                0.9942,
+                1.4438
+              ],
+              "ic95_exclui_1": false,
+              "ic95_bootstrap_de_celula": [
+                1.0706,
+                1.3372
+              ],
+              "ic95_de_celula_exclui_1": true
+            }
+          },
+          "replicas_por_estrato": 400,
+          "replicas_por_celula": 400
+        },
+        "suporte": {
+          "support": "inconclusive",
+          "diagnostico": "ic_cruza_1",
+          "razao_tecnica": "ic95_de_rain_event_day_contem_1"
+        }
+      }
+    }
+  },
+  "limitacoes": [
+    "zero de CHAMADO nao e zero de alagamento: a ausencia de registro e ausencia de notificacao, e o desenho estima efeito sobre OCORRENCIA NOTIFICADA",
+    "a exposicao e constante dentro da celula de ~11 km: o efeito e estimado na escala da celula, e nao na do endereco",
+    "esforco de notificacao so esta cancelado no que e constante dentro do estrato (lugar, mes, dia da semana); um evento que mude a propensao a ligar num dia especifico nao esta controlado",
+    "acumulado diario nao distingue intensidade: 80 mm em duas horas e 80 mm no dia inteiro sao o mesmo numero neste produto"
+  ],
+  "nao_e": "nao e escore, nao substitui a suscetibilidade territorial, nao cria campo de contrato e nao promove modelo",
+  "proveniencia": {
+    "casos": {
+      "arquivo": "local_runs/chuva-casos-centrais/casos_celula_dia_sao_paulo.csv",
+      "sha256": "de2a379a2af3e8c3bdac36209cf6a0bd7aaeae17194b818891d073f2359d77ac"
+    },
+    "serie_de_chuva": {
+      "arquivo": "local_runs/chuva-serie-celula/serie_diaria_por_celula_sao_paulo.csv",
+      "sha256": "c792c4e543bacaea7766d117dbc49e265255a8a266517e7267ddacdd016940cb"
+    }
+  }
+}

@@ -1,0 +1,135 @@
+{
+  "tipo": "harness_reconciliation",
+  "versao": "1",
+  "gerado_em": "2026-09-01T19:00:35.491891Z",
+  "o_que_mudou": "`temporal_not_worse` deixou de ser calculado no harness e passou a ser DERIVADO do estado de suporte. Ausencia de teste, que antes entrava como `false` (isto e, como piora demonstrada), agora sai como `not_testable` -- e continua bloqueando revisao humana, pelo motivo certo",
+  "avaliacoes_conferidas": 12,
+  "sem_mudanca": 12,
+  "com_mudanca_de_elegibilidade": [],
+  "com_mudanca_apenas_semantica": [],
+  "estados_temporais_por_challenger": {
+    "supported": [
+      "fluvial_planicie/logistica_l2",
+      "fluvial_planicie/gam_spline_aditivo",
+      "fluvial_planicie/interacoes_pre_especificadas",
+      "fluvial_planicie/gbm_monotonico",
+      "fluvial_serra/logistica_l2",
+      "fluvial_serra/gam_spline_aditivo",
+      "fluvial_serra/interacoes_pre_especificadas",
+      "fluvial_serra/gbm_monotonico"
+    ],
+    "not_testable": [
+      "recife_pluvial/logistica_l2",
+      "recife_pluvial/gam_spline_aditivo",
+      "recife_pluvial/interacoes_pre_especificadas",
+      "recife_pluvial/gbm_monotonico"
+    ]
+  },
+  "dimensoes_por_challenger": {
+    "fluvial_planicie/logistica_l2": {
+      "sample_size_support": "supported",
+      "temporal_support": "supported",
+      "spatial_support": "not_assessed",
+      "physical_consistency": "not_supported",
+      "calibration": "supported",
+      "domain_support": "not_assessed"
+    },
+    "fluvial_planicie/gam_spline_aditivo": {
+      "sample_size_support": "supported",
+      "temporal_support": "supported",
+      "spatial_support": "not_assessed",
+      "physical_consistency": "not_supported",
+      "calibration": "supported",
+      "domain_support": "not_assessed"
+    },
+    "fluvial_planicie/interacoes_pre_especificadas": {
+      "sample_size_support": "supported",
+      "temporal_support": "supported",
+      "spatial_support": "not_assessed",
+      "physical_consistency": "not_supported",
+      "calibration": "supported",
+      "domain_support": "not_assessed"
+    },
+    "fluvial_planicie/gbm_monotonico": {
+      "sample_size_support": "supported",
+      "temporal_support": "supported",
+      "spatial_support": "not_assessed",
+      "physical_consistency": "not_supported",
+      "calibration": "supported",
+      "domain_support": "not_assessed"
+    },
+    "fluvial_serra/logistica_l2": {
+      "sample_size_support": "not_supported",
+      "temporal_support": "supported",
+      "spatial_support": "not_assessed",
+      "physical_consistency": "supported",
+      "calibration": "supported",
+      "domain_support": "not_assessed"
+    },
+    "fluvial_serra/gam_spline_aditivo": {
+      "sample_size_support": "not_supported",
+      "temporal_support": "supported",
+      "spatial_support": "not_assessed",
+      "physical_consistency": "not_supported",
+      "calibration": "supported",
+      "domain_support": "not_assessed"
+    },
+    "fluvial_serra/interacoes_pre_especificadas": {
+      "sample_size_support": "not_supported",
+      "temporal_support": "supported",
+      "spatial_support": "not_assessed",
+      "physical_consistency": "supported",
+      "calibration": "supported",
+      "domain_support": "not_assessed"
+    },
+    "fluvial_serra/gbm_monotonico": {
+      "sample_size_support": "not_supported",
+      "temporal_support": "supported",
+      "spatial_support": "not_assessed",
+      "physical_consistency": "not_supported",
+      "calibration": "supported",
+      "domain_support": "not_assessed"
+    },
+    "recife_pluvial/logistica_l2": {
+      "sample_size_support": "supported",
+      "temporal_support": "not_testable",
+      "spatial_support": "not_assessed",
+      "physical_consistency": "not_supported",
+      "calibration": "not_supported",
+      "domain_support": "not_assessed"
+    },
+    "recife_pluvial/gam_spline_aditivo": {
+      "sample_size_support": "supported",
+      "temporal_support": "not_testable",
+      "spatial_support": "not_assessed",
+      "physical_consistency": "not_supported",
+      "calibration": "not_supported",
+      "domain_support": "not_assessed"
+    },
+    "recife_pluvial/interacoes_pre_especificadas": {
+      "sample_size_support": "supported",
+      "temporal_support": "not_testable",
+      "spatial_support": "not_assessed",
+      "physical_consistency": "not_supported",
+      "calibration": "not_supported",
+      "domain_support": "not_assessed"
+    },
+    "recife_pluvial/gbm_monotonico": {
+      "sample_size_support": "supported",
+      "temporal_support": "not_testable",
+      "spatial_support": "not_assessed",
+      "physical_consistency": "not_supported",
+      "calibration": "not_supported",
+      "domain_support": "not_assessed"
+    }
+  },
+  "dimensoes_sem_protocolo_formal": [
+    "spatial",
+    "domain",
+    "local_reference",
+    "physical_consistency"
+  ],
+  "por_que_dimensoes_separadas": "EPV insuficiente e temporalidade insuficiente sao razoes diferentes para bloquear revisao. Colapsa-las num criterio so faria um challenger reprovado por tamanho de amostra parecer reprovado no tempo",
+  "nenhum_promovido": true,
+  "historico_preservado": "`local_runs/experimentos-cientificos/experimentos.json` nao foi reescrito por esta rodada; a comparacao e contra ele"
+}

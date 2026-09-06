@@ -407,6 +407,10 @@ def test_consolidacao_e_deterministica():
     """Rodar de novo com a mesma entrada tem de dar o mesmo hash."""
     p = UNI / f"manifesto_{VERSAO}.json"
     _exige(p, "python scripts/treino/ds05_admissao_consolidacao.py")
+    if not _arquivos_reduzidos():
+        pytest.skip(
+            "fontes reduzidas ausentes no pacote publico -- determinismo fica "
+            "testavel quando ds04 estiver materializado localmente")
     alvo = f"tabela_unica_{VERSAO}.csv"
     antes = json.loads(p.read_text(encoding="utf-8"))["arquivos"][alvo]["sha256"]
     subprocess.run(

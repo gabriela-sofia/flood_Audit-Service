@@ -607,7 +607,7 @@ def build_synthesis(rows: list[dict], summary: dict) -> str:
         "",
         f"**Data**: {datetime.now(timezone.utc).date()}  ",
         "**Revisor**: ASSISTED-v1hd (estatísticas de imagem)  ",
-        "**Status**: Review-only; Interpretativa; Exploratória  ",
+        "**Status**: Revisao; Interpretativa; Exploratória  ",
         "",
         "---",
         "",
@@ -716,7 +716,7 @@ def build_synthesis(rows: list[dict], summary: dict) -> str:
         "",
         f"**Versão**: v1hd  ",
         f"**Gerado em**: {datetime.now(timezone.utc).date()}  ",
-        "**Status**: Review-only; Estatísticas de imagem; Interpretativo  ",
+        "**Status**: Revisao; Estatísticas de imagem; Interpretativo  ",
     ]
 
     return "\n".join(lines)

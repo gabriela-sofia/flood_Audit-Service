@@ -184,16 +184,16 @@ def run() -> None:
     write_doc(DOC, "v1pu — Visual Asset Eligibility Audit", [
         "## Objetivo",
         "Auditar elegibilidade de assets visuais (referências de manifesto) para "
-        "fila DINO review-only. Não requer scene_date nem temporal unlock. "
+        "fila DINO modo de revisao. Não requer scene_date nem temporal unlock. "
         "Apenas metadados — sem leitura de pixels.",
         "## Fontes",
         "v1fu Sentinel manifest (128 entradas), v1fm patch designation (59 entradas), "
         "v1pn inventory.",
         "## Guardrails",
         "can_create_label, can_train_model e target_created sempre false. "
-        "DINO é representação visual review-only.",
+        "DINO é representação visual modo de revisao.",
         f"## Resultado",
-        f"Assets auditados: {len(rows)}. Elegíveis review-only: {eligible}.",
+        f"Assets auditados: {len(rows)}. Elegíveis modo de revisao: {eligible}.",
     ])
     print(f"[v1pu] audited={len(rows)} eligible={eligible}")
 

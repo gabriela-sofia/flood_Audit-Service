@@ -40,7 +40,7 @@ caber mais ponto, e nao remove linha do arquivo consolidado -- tudo fica, com
 a coluna que diz se entra e por que nao.
 
 Uso:
-    python scripts/suscetibilidade/ds05_admissao_consolidacao.py
+    python scripts/treino/ds05_admissao_consolidacao.py
 """
 
 from __future__ import annotations
@@ -67,7 +67,11 @@ OUT = RUNS / "ds-05-tabela-unica"
 
 # fontes que compoem a tabela unica. As variantes do ds04 ficam de fora por
 # construcao: sao a MESMA observacao noutra cadeia, e entrariam como duplicata.
-FONTES = ("uk", "cems", "sen1floods11", "ufo", "recife", "curitiba")
+# `nyc` e `sao_paulo` sao centrais de atendimento ao cidadao promovidas
+# pelo `aq_chamados03`. Entram na lista como qualquer outra: os criterios
+# de admissao e de pool sao os mesmos, e fonte nova nao ganha excecao.
+FONTES = ("uk", "cems", "sen1floods11", "ufo", "recife", "curitiba",
+          "nyc", "sao_paulo")
 
 # ~11 m no equador. Abaixo de meio pixel de 30 m: dois pontos que caem aqui
 # dentro sao a mesma celula, venham de onde vierem.

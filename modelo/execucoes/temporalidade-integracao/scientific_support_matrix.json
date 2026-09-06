@@ -1,0 +1,1256 @@
+{
+  "tipo": "scientific_support_matrix",
+  "versao": "1",
+  "gerado_em": "2026-09-01T18:59:18.407773Z",
+  "estados_possiveis": [
+    "supported",
+    "not_supported",
+    "inconclusive",
+    "not_testable"
+  ],
+  "definicoes": {
+    "supported": "ha evidencia suficiente, segundo o protocolo declarado, para sustentar a propriedade avaliada neste escopo",
+    "not_supported": "existe teste identificavel e a evidencia e suficiente para nao sustentar a propriedade avaliada neste escopo",
+    "inconclusive": "ha evidencia relevante, mas ela nao identifica suficientemente a conclusao neste escopo",
+    "not_testable": "a evidencia necessaria para o teste nao existe, ou o desenho nao permite o teste neste escopo"
+  },
+  "nao_equivale": {
+    "inconclusive": [
+      "not_supported"
+    ],
+    "not_testable": [
+      "not_supported",
+      "supported"
+    ],
+    "not_supported": [
+      "inconclusive",
+      "not_testable"
+    ],
+    "supported": [
+      "validado",
+      "not_testable"
+    ]
+  },
+  "dimensoes_declaradas": {
+    "temporal": {
+      "pergunta": "qual e o suporte temporal demonstravel para o uso deste modelo nesta regiao e neste enquadramento?",
+      "tem_protocolo_formal": true,
+      "protocolo": "scripts/temporalidade/ontologia_temporal.py"
+    },
+    "spatial": {
+      "pergunta": "o modelo transporta entre blocos espaciais independentes?",
+      "tem_protocolo_formal": false,
+      "protocolo": null
+    },
+    "domain": {
+      "pergunta": "a requisicao cai no dominio multivariado do ajuste?",
+      "tem_protocolo_formal": false,
+      "protocolo": null
+    },
+    "local_reference": {
+      "pergunta": "ha referencia observacional local com que verificar?",
+      "tem_protocolo_formal": false,
+      "protocolo": null
+    },
+    "physical_consistency": {
+      "pergunta": "os efeitos tem o sinal fisico esperado com IC firme?",
+      "tem_protocolo_formal": false,
+      "protocolo": null
+    }
+  },
+  "dimensoes_avaliaveis": [
+    "temporal"
+  ],
+  "politica_operacional": {
+    "efeito_por_estado": {
+      "supported": "suporte_demonstrado",
+      "not_supported": "suporte_refutado",
+      "inconclusive": "suporte_nao_demonstrado",
+      "not_testable": "suporte_nao_demonstrado"
+    },
+    "motivo_por_estado": {
+      "supported": "a evidencia sustenta a propriedade sob o protocolo declarado",
+      "not_supported": "a evidencia identificavel nao sustenta a propriedade",
+      "inconclusive": "politica conservadora: evidencia relevante existe mas nao identifica a conclusao, entao o suporte nao esta demonstrado",
+      "not_testable": "politica conservadora: nao ha teste identificavel neste escopo, entao o suporte nao esta demonstrado"
+    },
+    "so_supported_demonstra": true,
+    "consequencia_igual_razao_diferente": "inconclusive e not_testable levam ao mesmo efeito e permanecem estados distintos no registro"
+  },
+  "avaliacoes": [
+    {
+      "dimension": "temporal",
+      "support": "not_testable",
+      "support_significa": "a evidencia necessaria para o teste nao existe, ou o desenho nao permite o teste neste escopo",
+      "nao_equivale_a": [
+        "not_supported",
+        "supported"
+      ],
+      "scope": {
+        "region_id": "curitiba",
+        "model_id": "fluvial_planicie",
+        "protocol_id": "revp_temporal_v1",
+        "evidence_version": "71757e5acfb08c17",
+        "training_window": null,
+        "evaluation_window": null,
+        "evaluation_domain": "curitiba",
+        "region_data_window": "2023-01-03..2026-07-29",
+        "forcing_source": "open_meteo_era5_land/CHIRPS conforme artefato",
+        "dataset_version": "ds05:curitiba"
+      },
+      "protocol_id": "revp_temporal_v1",
+      "razao_tecnica": "protocolo_nao_declara_teste_neste_escopo",
+      "evidence": [
+        {
+          "modelo_de_transferencia": true
+        },
+        {
+          "dominio_do_teste_do_modelo": "dominio_de_ajuste:fluvial_planicie"
+        },
+        {
+          "por_que_sem_corte": "os cortes prospectivos deste modelo foram avaliados no pool de ajuste, que nao contem esta regiao"
+        },
+        {
+          "capacidade_justificativa": "estrutura temporal parcial; confundimentos de fonte, evento ou amostragem permanecem"
+        },
+        {
+          "identificabilidade": "PARCIALMENTE_IDENTIFICAVEL"
+        },
+        {
+          "teste_executado": false
+        },
+        {
+          "dados_permitiriam_teste": true
+        },
+        {
+          "performance_stability": null
+        },
+        {
+          "ci95_inclui_acaso": null
+        },
+        {
+          "status_temporal_legado": "TEMPORAL_TEST_INVALID"
+        },
+        {
+          "motivo_do_juri": "teste temporal invalido ou com vazamento/criterio ausente"
+        },
+        {
+          "forcing_shift_detected": true
+        }
+      ],
+      "limitations": [
+        "114 de 442 negativos tem qualidade temporal comparavel",
+        "shift de forcing (chuva) detectado no periodo: e mudanca de cenario, e nao demonstracao de que a relacao aprendida deixou de valer",
+        "o suporte temporal medido no dominio de ajuste deste modelo nao transfere para esta regiao: e escopo diferente"
+      ],
+      "provenance": [
+        {
+          "artefato": "local_runs/ds-05-tabela-unica/tabela_unica_admitidos_v2.csv",
+          "existe": true,
+          "sha256": "sha256:a89c77538f10283820ad3ded9369c1c084413100f263376c64b74f38987883e0",
+          "papel": "capacidade temporal por fonte"
+        },
+        {
+          "artefato": "local_runs/experimentos-cientificos/folds.csv",
+          "existe": true,
+          "sha256": "sha256:26583a2c6db3ab1bbe442e660aa9ccd5321fbc2d9c99bdc4d3039efd6271850f",
+          "papel": "cortes prospectivos do harness de challengers"
+        },
+        {
+          "artefato": "local_runs/experimentos-cientificos/metrics.csv",
+          "existe": true,
+          "sha256": "sha256:62058cdcab37795b7885c73becf76b3376e9af759e3015bdd5f57f192eb88832",
+          "papel": "IC95 por conjunto/modelo/esquema"
+        },
+        {
+          "artefato": "local_runs/mod-prosp-02/folds.csv",
+          "existe": true,
+          "sha256": "sha256:f5b2e2f7393740d0db706786f274331e10006a8315da8796a74a4d9972ad5835",
+          "papel": "janela expansiva prospectiva do piloto ingles"
+        },
+        {
+          "artefato": "outputs_public/data/susc_20k_siac156_curitiba_flood_candidates/results/v20q_walk_forward_cutoffs.csv",
+          "existe": true,
+          "sha256": "sha256:14130710f55b2311517fa7be7036ea0dd541912d957b0fb6413b84ce97c96335",
+          "papel": "walk-forward do modelo local de Curitiba"
+        },
+        {
+          "artefato": "local_runs/svc-01-modelos/indice.json",
+          "existe": true,
+          "sha256": "sha256:0ffc2387f82a87503163c5f794896e97b336f6b41d04d4ba280f642e6a5e9c5a",
+          "papel": "modelos servidos e regioes servidas"
+        }
+      ],
+      "operational_effect": "suporte_nao_demonstrado",
+      "operational_effect_motivo": "politica conservadora: nao ha teste identificavel neste escopo, entao o suporte nao esta demonstrado",
+      "avaliado_em": "2026-09-01T18:59:18.407773Z"
+    },
+    {
+      "dimension": "temporal",
+      "support": "inconclusive",
+      "support_significa": "ha evidencia relevante, mas ela nao identifica suficientemente a conclusao neste escopo",
+      "nao_equivale_a": [
+        "not_supported"
+      ],
+      "scope": {
+        "region_id": "dominio_de_ajuste:fluvial_planicie",
+        "model_id": "fluvial_planicie",
+        "protocol_id": "revp_temporal_v1",
+        "evidence_version": "71757e5acfb08c17",
+        "training_window": "2000-06-01..2025-11-30",
+        "evaluation_window": "treino<2026_teste2026",
+        "evaluation_domain": "dominio_de_ajuste:fluvial_planicie",
+        "region_data_window": null,
+        "dataset_version": "pool:cems,sen1floods11,uk"
+      },
+      "protocol_id": "revp_temporal_v1",
+      "razao_tecnica": "serie_curta_1_corte(s)_minimo_3",
+      "evidence": [
+        {
+          "corte": "treino<2026_teste2026",
+          "auc": 0.7423,
+          "ic95": [
+            0.7164,
+            0.7747
+          ],
+          "n_teste": 5573
+        },
+        {
+          "fontes_do_ajuste": [
+            "cems",
+            "sen1floods11",
+            "uk"
+          ]
+        },
+        {
+          "execucao": {
+            "estado": "EVALUABLE",
+            "protocolo_declara": true,
+            "folds_materializados": 1,
+            "folds_validos": 1,
+            "folds_descartados": 0,
+            "metrica_definida": true,
+            "motivo_da_parada": null,
+            "corte_declarado": "holdout_temporal ano_corte=2026"
+          }
+        },
+        {
+          "capacidade_justificativa": "pool de ajuste, nao regiao"
+        },
+        {
+          "identificabilidade": "PARCIALMENTE_IDENTIFICAVEL"
+        },
+        {
+          "teste_executado": true
+        },
+        {
+          "dados_permitiriam_teste": true
+        },
+        {
+          "performance_stability": null
+        },
+        {
+          "ci95_inclui_acaso": null
+        },
+        {
+          "status_temporal_legado": "TEMPORAL_INCONCLUSIVE"
+        },
+        {
+          "motivo_do_juri": "ha evidencias temporais, mas ha confundimento nao separado"
+        },
+        {
+          "forcing_shift_detected": null
+        }
+      ],
+      "limitations": [
+        "o pool mistura fontes; o confundimento fonte x periodo nao foi decomposto",
+        "dominio de ajuste do modelo; nao e uma regiao servida"
+      ],
+      "provenance": [
+        {
+          "artefato": "local_runs/ds-05-tabela-unica/tabela_unica_admitidos_v2.csv",
+          "existe": true,
+          "sha256": "sha256:a89c77538f10283820ad3ded9369c1c084413100f263376c64b74f38987883e0",
+          "papel": "capacidade temporal por fonte"
+        },
+        {
+          "artefato": "local_runs/experimentos-cientificos/folds.csv",
+          "existe": true,
+          "sha256": "sha256:26583a2c6db3ab1bbe442e660aa9ccd5321fbc2d9c99bdc4d3039efd6271850f",
+          "papel": "cortes prospectivos do harness de challengers"
+        },
+        {
+          "artefato": "local_runs/experimentos-cientificos/metrics.csv",
+          "existe": true,
+          "sha256": "sha256:62058cdcab37795b7885c73becf76b3376e9af759e3015bdd5f57f192eb88832",
+          "papel": "IC95 por conjunto/modelo/esquema"
+        },
+        {
+          "artefato": "local_runs/mod-prosp-02/folds.csv",
+          "existe": true,
+          "sha256": "sha256:f5b2e2f7393740d0db706786f274331e10006a8315da8796a74a4d9972ad5835",
+          "papel": "janela expansiva prospectiva do piloto ingles"
+        },
+        {
+          "artefato": "outputs_public/data/susc_20k_siac156_curitiba_flood_candidates/results/v20q_walk_forward_cutoffs.csv",
+          "existe": true,
+          "sha256": "sha256:14130710f55b2311517fa7be7036ea0dd541912d957b0fb6413b84ce97c96335",
+          "papel": "walk-forward do modelo local de Curitiba"
+        },
+        {
+          "artefato": "local_runs/svc-01-modelos/indice.json",
+          "existe": true,
+          "sha256": "sha256:0ffc2387f82a87503163c5f794896e97b336f6b41d04d4ba280f642e6a5e9c5a",
+          "papel": "modelos servidos e regioes servidas"
+        }
+      ],
+      "operational_effect": "suporte_nao_demonstrado",
+      "operational_effect_motivo": "politica conservadora: evidencia relevante existe mas nao identifica a conclusao, entao o suporte nao esta demonstrado",
+      "avaliado_em": "2026-09-01T18:59:18.407773Z"
+    },
+    {
+      "dimension": "temporal",
+      "support": "not_testable",
+      "support_significa": "a evidencia necessaria para o teste nao existe, ou o desenho nao permite o teste neste escopo",
+      "nao_equivale_a": [
+        "not_supported",
+        "supported"
+      ],
+      "scope": {
+        "region_id": "petropolis",
+        "model_id": "fluvial_serra",
+        "protocol_id": "revp_temporal_v1",
+        "evidence_version": "71757e5acfb08c17",
+        "training_window": null,
+        "evaluation_window": null,
+        "evaluation_domain": "petropolis",
+        "region_data_window": null,
+        "dataset_version": "sem_inventario_local"
+      },
+      "protocol_id": "revp_temporal_v1",
+      "razao_tecnica": "sem_dado_para_montar_teste",
+      "evidence": [
+        {
+          "modelo_de_transferencia": true
+        },
+        {
+          "dominio_do_teste_do_modelo": "dominio_de_ajuste:fluvial_serra"
+        },
+        {
+          "por_que_sem_corte": "os cortes prospectivos deste modelo foram avaliados no pool de ajuste, que nao contem esta regiao"
+        },
+        {
+          "capacidade_justificativa": "sem ponto rotulado local: nao existe AUC, calibracao ou teste temporal local definivel"
+        },
+        {
+          "identificabilidade": "NAO_IDENTIFICAVEL"
+        },
+        {
+          "teste_executado": false
+        },
+        {
+          "dados_permitiriam_teste": false
+        },
+        {
+          "performance_stability": null
+        },
+        {
+          "ci95_inclui_acaso": null
+        },
+        {
+          "status_temporal_legado": "TEMPORAL_TEST_INVALID"
+        },
+        {
+          "motivo_do_juri": "teste temporal invalido ou com vazamento/criterio ausente"
+        },
+        {
+          "forcing_shift_detected": null
+        }
+      ],
+      "limitations": [
+        "a fonte nao tem as duas classes rotuladas",
+        "nenhum negativo com qualidade temporal comparavel",
+        "nenhuma data tem as duas classes de modo avaliavel",
+        "a fonte nao sustenta fold prospectivo segundo a viabilidade",
+        "o suporte temporal medido no dominio de ajuste deste modelo nao transfere para esta regiao: e escopo diferente"
+      ],
+      "provenance": [
+        {
+          "artefato": "local_runs/ds-05-tabela-unica/tabela_unica_admitidos_v2.csv",
+          "existe": true,
+          "sha256": "sha256:a89c77538f10283820ad3ded9369c1c084413100f263376c64b74f38987883e0",
+          "papel": "capacidade temporal por fonte"
+        },
+        {
+          "artefato": "local_runs/experimentos-cientificos/folds.csv",
+          "existe": true,
+          "sha256": "sha256:26583a2c6db3ab1bbe442e660aa9ccd5321fbc2d9c99bdc4d3039efd6271850f",
+          "papel": "cortes prospectivos do harness de challengers"
+        },
+        {
+          "artefato": "local_runs/experimentos-cientificos/metrics.csv",
+          "existe": true,
+          "sha256": "sha256:62058cdcab37795b7885c73becf76b3376e9af759e3015bdd5f57f192eb88832",
+          "papel": "IC95 por conjunto/modelo/esquema"
+        },
+        {
+          "artefato": "local_runs/mod-prosp-02/folds.csv",
+          "existe": true,
+          "sha256": "sha256:f5b2e2f7393740d0db706786f274331e10006a8315da8796a74a4d9972ad5835",
+          "papel": "janela expansiva prospectiva do piloto ingles"
+        },
+        {
+          "artefato": "outputs_public/data/susc_20k_siac156_curitiba_flood_candidates/results/v20q_walk_forward_cutoffs.csv",
+          "existe": true,
+          "sha256": "sha256:14130710f55b2311517fa7be7036ea0dd541912d957b0fb6413b84ce97c96335",
+          "papel": "walk-forward do modelo local de Curitiba"
+        },
+        {
+          "artefato": "local_runs/svc-01-modelos/indice.json",
+          "existe": true,
+          "sha256": "sha256:0ffc2387f82a87503163c5f794896e97b336f6b41d04d4ba280f642e6a5e9c5a",
+          "papel": "modelos servidos e regioes servidas"
+        }
+      ],
+      "operational_effect": "suporte_nao_demonstrado",
+      "operational_effect_motivo": "politica conservadora: nao ha teste identificavel neste escopo, entao o suporte nao esta demonstrado",
+      "avaliado_em": "2026-09-01T18:59:18.407773Z"
+    },
+    {
+      "dimension": "temporal",
+      "support": "inconclusive",
+      "support_significa": "ha evidencia relevante, mas ela nao identifica suficientemente a conclusao neste escopo",
+      "nao_equivale_a": [
+        "not_supported"
+      ],
+      "scope": {
+        "region_id": "dominio_de_ajuste:fluvial_serra",
+        "model_id": "fluvial_serra",
+        "protocol_id": "revp_temporal_v1",
+        "evidence_version": "71757e5acfb08c17",
+        "training_window": "2016-08-12..2025-11-30",
+        "evaluation_window": "treino<2026_teste2026",
+        "evaluation_domain": "dominio_de_ajuste:fluvial_serra",
+        "region_data_window": null,
+        "dataset_version": "pool:cems,sen1floods11"
+      },
+      "protocol_id": "revp_temporal_v1",
+      "razao_tecnica": "serie_curta_1_corte(s)_minimo_3",
+      "evidence": [
+        {
+          "corte": "treino<2026_teste2026",
+          "auc": 0.8859,
+          "ic95": null,
+          "n_teste": 159
+        },
+        {
+          "fontes_do_ajuste": [
+            "cems",
+            "sen1floods11"
+          ]
+        },
+        {
+          "execucao": {
+            "estado": "EVALUABLE",
+            "protocolo_declara": true,
+            "folds_materializados": 1,
+            "folds_validos": 1,
+            "folds_descartados": 0,
+            "metrica_definida": true,
+            "motivo_da_parada": null,
+            "corte_declarado": "holdout_temporal ano_corte=2026; anos na base: [2016]..[2026]"
+          }
+        },
+        {
+          "capacidade_justificativa": "pool de ajuste, nao regiao"
+        },
+        {
+          "identificabilidade": "PARCIALMENTE_IDENTIFICAVEL"
+        },
+        {
+          "teste_executado": true
+        },
+        {
+          "dados_permitiriam_teste": true
+        },
+        {
+          "performance_stability": null
+        },
+        {
+          "ci95_inclui_acaso": null
+        },
+        {
+          "status_temporal_legado": "TEMPORAL_INCONCLUSIVE"
+        },
+        {
+          "motivo_do_juri": "ha evidencias temporais, mas ha confundimento nao separado"
+        },
+        {
+          "forcing_shift_detected": null
+        }
+      ],
+      "limitations": [
+        "o pool mistura fontes; o confundimento fonte x periodo nao foi decomposto",
+        "dominio de ajuste do modelo; nao e uma regiao servida"
+      ],
+      "provenance": [
+        {
+          "artefato": "local_runs/ds-05-tabela-unica/tabela_unica_admitidos_v2.csv",
+          "existe": true,
+          "sha256": "sha256:a89c77538f10283820ad3ded9369c1c084413100f263376c64b74f38987883e0",
+          "papel": "capacidade temporal por fonte"
+        },
+        {
+          "artefato": "local_runs/experimentos-cientificos/folds.csv",
+          "existe": true,
+          "sha256": "sha256:26583a2c6db3ab1bbe442e660aa9ccd5321fbc2d9c99bdc4d3039efd6271850f",
+          "papel": "cortes prospectivos do harness de challengers"
+        },
+        {
+          "artefato": "local_runs/experimentos-cientificos/metrics.csv",
+          "existe": true,
+          "sha256": "sha256:62058cdcab37795b7885c73becf76b3376e9af759e3015bdd5f57f192eb88832",
+          "papel": "IC95 por conjunto/modelo/esquema"
+        },
+        {
+          "artefato": "local_runs/mod-prosp-02/folds.csv",
+          "existe": true,
+          "sha256": "sha256:f5b2e2f7393740d0db706786f274331e10006a8315da8796a74a4d9972ad5835",
+          "papel": "janela expansiva prospectiva do piloto ingles"
+        },
+        {
+          "artefato": "outputs_public/data/susc_20k_siac156_curitiba_flood_candidates/results/v20q_walk_forward_cutoffs.csv",
+          "existe": true,
+          "sha256": "sha256:14130710f55b2311517fa7be7036ea0dd541912d957b0fb6413b84ce97c96335",
+          "papel": "walk-forward do modelo local de Curitiba"
+        },
+        {
+          "artefato": "local_runs/svc-01-modelos/indice.json",
+          "existe": true,
+          "sha256": "sha256:0ffc2387f82a87503163c5f794896e97b336f6b41d04d4ba280f642e6a5e9c5a",
+          "papel": "modelos servidos e regioes servidas"
+        }
+      ],
+      "operational_effect": "suporte_nao_demonstrado",
+      "operational_effect_motivo": "politica conservadora: evidencia relevante existe mas nao identifica a conclusao, entao o suporte nao esta demonstrado",
+      "avaliado_em": "2026-09-01T18:59:18.407773Z"
+    },
+    {
+      "dimension": "temporal",
+      "support": "not_testable",
+      "support_significa": "a evidencia necessaria para o teste nao existe, ou o desenho nao permite o teste neste escopo",
+      "nao_equivale_a": [
+        "not_supported",
+        "supported"
+      ],
+      "scope": {
+        "region_id": "nyc",
+        "model_id": "pluvial_urbano_nyc",
+        "protocol_id": "revp_temporal_v1",
+        "evidence_version": "71757e5acfb08c17",
+        "training_window": null,
+        "evaluation_window": null,
+        "evaluation_domain": "nyc",
+        "region_data_window": "2020-01-01..2026-07-29",
+        "dataset_version": "ds05:nyc"
+      },
+      "protocol_id": "revp_temporal_v1",
+      "razao_tecnica": "protocolo_nao_declara_teste_neste_escopo",
+      "evidence": [
+        {
+          "dataset_do_harness": "pluvial_urbano_nyc"
+        },
+        {
+          "modelo_avaliado": "firth_servido"
+        },
+        {
+          "execucao": {
+            "estado": "DECLARED",
+            "protocolo_declara": false,
+            "folds_materializados": 0,
+            "folds_validos": 0,
+            "folds_descartados": 0,
+            "metrica_definida": false,
+            "motivo_da_parada": "protocolo_nao_declara_teste_neste_escopo",
+            "corte_declarado": "holdout_temporal ano_corte=2026"
+          }
+        },
+        {
+          "capacidade_justificativa": "negativos existem, mas nao tem qualidade temporal comparavel suficiente"
+        },
+        {
+          "identificabilidade": "NAO_IDENTIFICAVEL"
+        },
+        {
+          "teste_executado": false
+        },
+        {
+          "dados_permitiriam_teste": true
+        },
+        {
+          "performance_stability": null
+        },
+        {
+          "ci95_inclui_acaso": null
+        },
+        {
+          "status_temporal_legado": "TEMPORAL_TEST_INVALID"
+        },
+        {
+          "motivo_do_juri": "teste temporal invalido ou com vazamento/criterio ausente"
+        },
+        {
+          "forcing_shift_detected": null
+        }
+      ],
+      "limitations": [
+        "nenhum negativo com qualidade temporal comparavel",
+        "a fonte nao sustenta fold prospectivo segundo a viabilidade",
+        "o teste temporal parou em DECLARED: protocolo_nao_declara_teste_neste_escopo. Nao ha AUC baixa aqui -- ha teste que nao chegou a produzir evidencia sobre o modelo"
+      ],
+      "provenance": [
+        {
+          "artefato": "local_runs/ds-05-tabela-unica/tabela_unica_admitidos_v2.csv",
+          "existe": true,
+          "sha256": "sha256:a89c77538f10283820ad3ded9369c1c084413100f263376c64b74f38987883e0",
+          "papel": "capacidade temporal por fonte"
+        },
+        {
+          "artefato": "local_runs/experimentos-cientificos/folds.csv",
+          "existe": true,
+          "sha256": "sha256:26583a2c6db3ab1bbe442e660aa9ccd5321fbc2d9c99bdc4d3039efd6271850f",
+          "papel": "cortes prospectivos do harness de challengers"
+        },
+        {
+          "artefato": "local_runs/experimentos-cientificos/metrics.csv",
+          "existe": true,
+          "sha256": "sha256:62058cdcab37795b7885c73becf76b3376e9af759e3015bdd5f57f192eb88832",
+          "papel": "IC95 por conjunto/modelo/esquema"
+        },
+        {
+          "artefato": "local_runs/mod-prosp-02/folds.csv",
+          "existe": true,
+          "sha256": "sha256:f5b2e2f7393740d0db706786f274331e10006a8315da8796a74a4d9972ad5835",
+          "papel": "janela expansiva prospectiva do piloto ingles"
+        },
+        {
+          "artefato": "outputs_public/data/susc_20k_siac156_curitiba_flood_candidates/results/v20q_walk_forward_cutoffs.csv",
+          "existe": true,
+          "sha256": "sha256:14130710f55b2311517fa7be7036ea0dd541912d957b0fb6413b84ce97c96335",
+          "papel": "walk-forward do modelo local de Curitiba"
+        },
+        {
+          "artefato": "local_runs/svc-01-modelos/indice.json",
+          "existe": true,
+          "sha256": "sha256:0ffc2387f82a87503163c5f794896e97b336f6b41d04d4ba280f642e6a5e9c5a",
+          "papel": "modelos servidos e regioes servidas"
+        }
+      ],
+      "operational_effect": "suporte_nao_demonstrado",
+      "operational_effect_motivo": "politica conservadora: nao ha teste identificavel neste escopo, entao o suporte nao esta demonstrado",
+      "avaliado_em": "2026-09-01T18:59:18.407773Z"
+    },
+    {
+      "dimension": "temporal",
+      "support": "not_testable",
+      "support_significa": "a evidencia necessaria para o teste nao existe, ou o desenho nao permite o teste neste escopo",
+      "nao_equivale_a": [
+        "not_supported",
+        "supported"
+      ],
+      "scope": {
+        "region_id": "recife",
+        "model_id": "recife_pluvial",
+        "protocol_id": "revp_temporal_v1",
+        "evidence_version": "71757e5acfb08c17",
+        "training_window": null,
+        "evaluation_window": null,
+        "evaluation_domain": "recife",
+        "region_data_window": "2008-03-30..2025-01-23",
+        "forcing_source": "open_meteo_era5_land/CHIRPS conforme artefato",
+        "dataset_version": "ds05:recife"
+      },
+      "protocol_id": "revp_temporal_v1",
+      "razao_tecnica": "corte_declarado_nao_materializou_nenhum_fold",
+      "evidence": [
+        {
+          "dataset_do_harness": "recife_pluvial"
+        },
+        {
+          "modelo_avaliado": "firth_servido"
+        },
+        {
+          "execucao": {
+            "estado": "DECLARED",
+            "protocolo_declara": true,
+            "folds_materializados": 0,
+            "folds_validos": 0,
+            "folds_descartados": 0,
+            "metrica_definida": false,
+            "motivo_da_parada": "corte_declarado_nao_materializou_nenhum_fold",
+            "corte_declarado": "holdout_temporal ano_corte=2026; anos na base: [2008]..[2025]"
+          }
+        },
+        {
+          "materializacao_do_corte_declarado": {
+            "ano_corte": 2026,
+            "folds_materializados": 0,
+            "folds_com_duas_classes": 0,
+            "anos_na_base": [
+              2008,
+              2014,
+              2015,
+              2016,
+              2017,
+              2018,
+              2019,
+              2020,
+              2021,
+              2022,
+              2023,
+              2024,
+              2025
+            ]
+          }
+        },
+        {
+          "capacidade_justificativa": "estrutura temporal parcial; confundimentos de fonte, evento ou amostragem permanecem"
+        },
+        {
+          "identificabilidade": "NAO_IDENTIFICAVEL"
+        },
+        {
+          "teste_executado": false
+        },
+        {
+          "dados_permitiriam_teste": true
+        },
+        {
+          "performance_stability": null
+        },
+        {
+          "ci95_inclui_acaso": null
+        },
+        {
+          "status_temporal_legado": "TEMPORAL_TEST_INVALID"
+        },
+        {
+          "motivo_do_juri": "teste temporal invalido ou com vazamento/criterio ausente"
+        },
+        {
+          "forcing_shift_detected": null
+        }
+      ],
+      "limitations": [
+        "2 de 124 negativos tem qualidade temporal comparavel",
+        "a fonte nao sustenta fold prospectivo segundo a viabilidade",
+        "o teste temporal parou em DECLARED: corte_declarado_nao_materializou_nenhum_fold. Nao ha AUC baixa aqui -- ha teste que nao chegou a produzir evidencia sobre o modelo",
+        "o corte declarado e o ano 2026 e a base termina em 2025: nenhum par (treino, teste) chega a existir. Um corte avaliavel exigiria protocolo novo, congelado antes de rodar -- esta auditoria nao produz resultado com corte que ninguem congelou"
+      ],
+      "provenance": [
+        {
+          "artefato": "local_runs/ds-05-tabela-unica/tabela_unica_admitidos_v2.csv",
+          "existe": true,
+          "sha256": "sha256:a89c77538f10283820ad3ded9369c1c084413100f263376c64b74f38987883e0",
+          "papel": "capacidade temporal por fonte"
+        },
+        {
+          "artefato": "local_runs/experimentos-cientificos/folds.csv",
+          "existe": true,
+          "sha256": "sha256:26583a2c6db3ab1bbe442e660aa9ccd5321fbc2d9c99bdc4d3039efd6271850f",
+          "papel": "cortes prospectivos do harness de challengers"
+        },
+        {
+          "artefato": "local_runs/experimentos-cientificos/metrics.csv",
+          "existe": true,
+          "sha256": "sha256:62058cdcab37795b7885c73becf76b3376e9af759e3015bdd5f57f192eb88832",
+          "papel": "IC95 por conjunto/modelo/esquema"
+        },
+        {
+          "artefato": "local_runs/mod-prosp-02/folds.csv",
+          "existe": true,
+          "sha256": "sha256:f5b2e2f7393740d0db706786f274331e10006a8315da8796a74a4d9972ad5835",
+          "papel": "janela expansiva prospectiva do piloto ingles"
+        },
+        {
+          "artefato": "outputs_public/data/susc_20k_siac156_curitiba_flood_candidates/results/v20q_walk_forward_cutoffs.csv",
+          "existe": true,
+          "sha256": "sha256:14130710f55b2311517fa7be7036ea0dd541912d957b0fb6413b84ce97c96335",
+          "papel": "walk-forward do modelo local de Curitiba"
+        },
+        {
+          "artefato": "local_runs/svc-01-modelos/indice.json",
+          "existe": true,
+          "sha256": "sha256:0ffc2387f82a87503163c5f794896e97b336f6b41d04d4ba280f642e6a5e9c5a",
+          "papel": "modelos servidos e regioes servidas"
+        }
+      ],
+      "operational_effect": "suporte_nao_demonstrado",
+      "operational_effect_motivo": "politica conservadora: nao ha teste identificavel neste escopo, entao o suporte nao esta demonstrado",
+      "avaliado_em": "2026-09-01T18:59:18.407773Z"
+    },
+    {
+      "dimension": "temporal",
+      "support": "inconclusive",
+      "support_significa": "ha evidencia relevante, mas ela nao identifica suficientemente a conclusao neste escopo",
+      "nao_equivale_a": [
+        "not_supported"
+      ],
+      "scope": {
+        "region_id": "uk",
+        "model_id": "MOD-PROSP-02:TERRENO/bloco",
+        "protocol_id": "revp_temporal_v1",
+        "evidence_version": "71757e5acfb08c17",
+        "training_window": "2000-06-01..2025-01-01 (janela expansiva, 8 cortes)",
+        "evaluation_window": "2025-01-01",
+        "evaluation_domain": "uk",
+        "region_data_window": "2000-06-01..2025-01-01",
+        "dataset_version": "ds05:uk"
+      },
+      "protocol_id": "revp_temporal_v1",
+      "razao_tecnica": "todos_os_cortes_discriminam_acima_do_acaso",
+      "evidence": [
+        {
+          "corte": "2002-06-13",
+          "auc": 0.8403,
+          "ic95": [
+            0.7616,
+            0.9096
+          ],
+          "n_teste": 585
+        },
+        {
+          "corte": "2004-08-20",
+          "auc": 0.7928,
+          "ic95": [
+            0.6616,
+            0.8853
+          ],
+          "n_teste": 506
+        },
+        {
+          "corte": "2010-07-14",
+          "auc": 0.7992,
+          "ic95": [
+            0.6821,
+            0.8966
+          ],
+          "n_teste": 742
+        },
+        {
+          "corte": "2016-06-11",
+          "auc": 0.771,
+          "ic95": [
+            0.7121,
+            0.8234
+          ],
+          "n_teste": 1231
+        },
+        {
+          "corte": "2020-02-09",
+          "auc": 0.7309,
+          "ic95": [
+            0.632,
+            0.8258
+          ],
+          "n_teste": 869
+        },
+        {
+          "corte": "2023-10-20",
+          "auc": 0.7779,
+          "ic95": [
+            0.6646,
+            0.8786
+          ],
+          "n_teste": 515
+        },
+        {
+          "corte": "2025-01-01",
+          "auc": 0.8253,
+          "ic95": [
+            0.7762,
+            0.8788
+          ],
+          "n_teste": 645
+        },
+        {
+          "corte": "2025-01-01",
+          "auc": 0.8559,
+          "ic95": [
+            0.8104,
+            0.8992
+          ],
+          "n_teste": 799
+        },
+        {
+          "conjunto": "TERRENO"
+        },
+        {
+          "variante": "bloco"
+        },
+        {
+          "capacidade_justificativa": "datas/eventos nao tem ambas classes de modo avaliavel"
+        },
+        {
+          "identificabilidade": "PARCIALMENTE_IDENTIFICAVEL"
+        },
+        {
+          "teste_executado": true
+        },
+        {
+          "dados_permitiriam_teste": true
+        },
+        {
+          "performance_stability": "stable"
+        },
+        {
+          "ci95_inclui_acaso": false
+        },
+        {
+          "status_temporal_legado": "TEMPORAL_INCONCLUSIVE"
+        },
+        {
+          "motivo_do_juri": "ha evidencias temporais, mas ha confundimento nao separado"
+        },
+        {
+          "forcing_shift_detected": null
+        }
+      ],
+      "limitations": [
+        "nenhuma data tem as duas classes de modo avaliavel",
+        "nao autoriza uso operacional: e piloto",
+        "piloto de exclusao qualificada medido num unico pais"
+      ],
+      "provenance": [
+        {
+          "artefato": "local_runs/ds-05-tabela-unica/tabela_unica_admitidos_v2.csv",
+          "existe": true,
+          "sha256": "sha256:a89c77538f10283820ad3ded9369c1c084413100f263376c64b74f38987883e0",
+          "papel": "capacidade temporal por fonte"
+        },
+        {
+          "artefato": "local_runs/experimentos-cientificos/folds.csv",
+          "existe": true,
+          "sha256": "sha256:26583a2c6db3ab1bbe442e660aa9ccd5321fbc2d9c99bdc4d3039efd6271850f",
+          "papel": "cortes prospectivos do harness de challengers"
+        },
+        {
+          "artefato": "local_runs/experimentos-cientificos/metrics.csv",
+          "existe": true,
+          "sha256": "sha256:62058cdcab37795b7885c73becf76b3376e9af759e3015bdd5f57f192eb88832",
+          "papel": "IC95 por conjunto/modelo/esquema"
+        },
+        {
+          "artefato": "local_runs/mod-prosp-02/folds.csv",
+          "existe": true,
+          "sha256": "sha256:f5b2e2f7393740d0db706786f274331e10006a8315da8796a74a4d9972ad5835",
+          "papel": "janela expansiva prospectiva do piloto ingles"
+        },
+        {
+          "artefato": "outputs_public/data/susc_20k_siac156_curitiba_flood_candidates/results/v20q_walk_forward_cutoffs.csv",
+          "existe": true,
+          "sha256": "sha256:14130710f55b2311517fa7be7036ea0dd541912d957b0fb6413b84ce97c96335",
+          "papel": "walk-forward do modelo local de Curitiba"
+        },
+        {
+          "artefato": "local_runs/svc-01-modelos/indice.json",
+          "existe": true,
+          "sha256": "sha256:0ffc2387f82a87503163c5f794896e97b336f6b41d04d4ba280f642e6a5e9c5a",
+          "papel": "modelos servidos e regioes servidas"
+        }
+      ],
+      "operational_effect": "suporte_nao_demonstrado",
+      "operational_effect_motivo": "politica conservadora: evidencia relevante existe mas nao identifica a conclusao, entao o suporte nao esta demonstrado",
+      "avaliado_em": "2026-09-01T18:59:18.407773Z"
+    },
+    {
+      "dimension": "temporal",
+      "support": "inconclusive",
+      "support_significa": "ha evidencia relevante, mas ela nao identifica suficientemente a conclusao neste escopo",
+      "nao_equivale_a": [
+        "not_supported"
+      ],
+      "scope": {
+        "region_id": "uk",
+        "model_id": "MOD-PROSP-02:COMPLETO/bloco",
+        "protocol_id": "revp_temporal_v1",
+        "evidence_version": "71757e5acfb08c17",
+        "training_window": "2000-06-01..2025-01-01 (janela expansiva, 7 cortes)",
+        "evaluation_window": "2025-01-01",
+        "evaluation_domain": "uk",
+        "region_data_window": "2000-06-01..2025-01-01",
+        "dataset_version": "ds05:uk"
+      },
+      "protocol_id": "revp_temporal_v1",
+      "razao_tecnica": "todos_os_cortes_discriminam_acima_do_acaso",
+      "evidence": [
+        {
+          "corte": "2004-08-20",
+          "auc": 0.9148,
+          "ic95": [
+            0.8642,
+            0.9523
+          ],
+          "n_teste": 470
+        },
+        {
+          "corte": "2010-07-14",
+          "auc": 0.8224,
+          "ic95": [
+            0.7062,
+            0.9062
+          ],
+          "n_teste": 737
+        },
+        {
+          "corte": "2016-06-11",
+          "auc": 0.7632,
+          "ic95": [
+            0.6876,
+            0.8423
+          ],
+          "n_teste": 1235
+        },
+        {
+          "corte": "2020-02-09",
+          "auc": 0.7452,
+          "ic95": [
+            0.6309,
+            0.8532
+          ],
+          "n_teste": 850
+        },
+        {
+          "corte": "2023-10-20",
+          "auc": 0.7076,
+          "ic95": [
+            0.5908,
+            0.8036
+          ],
+          "n_teste": 512
+        },
+        {
+          "corte": "2025-01-01",
+          "auc": 0.7733,
+          "ic95": [
+            0.6957,
+            0.8493
+          ],
+          "n_teste": 681
+        },
+        {
+          "corte": "2025-01-01",
+          "auc": 0.7853,
+          "ic95": [
+            0.7115,
+            0.8466
+          ],
+          "n_teste": 805
+        },
+        {
+          "conjunto": "COMPLETO"
+        },
+        {
+          "variante": "bloco"
+        },
+        {
+          "capacidade_justificativa": "datas/eventos nao tem ambas classes de modo avaliavel"
+        },
+        {
+          "identificabilidade": "PARCIALMENTE_IDENTIFICAVEL"
+        },
+        {
+          "teste_executado": true
+        },
+        {
+          "dados_permitiriam_teste": true
+        },
+        {
+          "performance_stability": "stable"
+        },
+        {
+          "ci95_inclui_acaso": false
+        },
+        {
+          "status_temporal_legado": "TEMPORAL_INCONCLUSIVE"
+        },
+        {
+          "motivo_do_juri": "ha evidencias temporais, mas ha confundimento nao separado"
+        },
+        {
+          "forcing_shift_detected": null
+        }
+      ],
+      "limitations": [
+        "nenhuma data tem as duas classes de modo avaliavel",
+        "nao autoriza uso operacional: e piloto",
+        "piloto de exclusao qualificada medido num unico pais"
+      ],
+      "provenance": [
+        {
+          "artefato": "local_runs/ds-05-tabela-unica/tabela_unica_admitidos_v2.csv",
+          "existe": true,
+          "sha256": "sha256:a89c77538f10283820ad3ded9369c1c084413100f263376c64b74f38987883e0",
+          "papel": "capacidade temporal por fonte"
+        },
+        {
+          "artefato": "local_runs/experimentos-cientificos/folds.csv",
+          "existe": true,
+          "sha256": "sha256:26583a2c6db3ab1bbe442e660aa9ccd5321fbc2d9c99bdc4d3039efd6271850f",
+          "papel": "cortes prospectivos do harness de challengers"
+        },
+        {
+          "artefato": "local_runs/experimentos-cientificos/metrics.csv",
+          "existe": true,
+          "sha256": "sha256:62058cdcab37795b7885c73becf76b3376e9af759e3015bdd5f57f192eb88832",
+          "papel": "IC95 por conjunto/modelo/esquema"
+        },
+        {
+          "artefato": "local_runs/mod-prosp-02/folds.csv",
+          "existe": true,
+          "sha256": "sha256:f5b2e2f7393740d0db706786f274331e10006a8315da8796a74a4d9972ad5835",
+          "papel": "janela expansiva prospectiva do piloto ingles"
+        },
+        {
+          "artefato": "outputs_public/data/susc_20k_siac156_curitiba_flood_candidates/results/v20q_walk_forward_cutoffs.csv",
+          "existe": true,
+          "sha256": "sha256:14130710f55b2311517fa7be7036ea0dd541912d957b0fb6413b84ce97c96335",
+          "papel": "walk-forward do modelo local de Curitiba"
+        },
+        {
+          "artefato": "local_runs/svc-01-modelos/indice.json",
+          "existe": true,
+          "sha256": "sha256:0ffc2387f82a87503163c5f794896e97b336f6b41d04d4ba280f642e6a5e9c5a",
+          "papel": "modelos servidos e regioes servidas"
+        }
+      ],
+      "operational_effect": "suporte_nao_demonstrado",
+      "operational_effect_motivo": "politica conservadora: evidencia relevante existe mas nao identifica a conclusao, entao o suporte nao esta demonstrado",
+      "avaliado_em": "2026-09-01T18:59:18.407773Z"
+    },
+    {
+      "dimension": "temporal",
+      "support": "inconclusive",
+      "support_significa": "ha evidencia relevante, mas ela nao identifica suficientemente a conclusao neste escopo",
+      "nao_equivale_a": [
+        "not_supported"
+      ],
+      "scope": {
+        "region_id": "curitiba",
+        "model_id": "SUSC-20O/20Q:logistica_l2_diagnostica",
+        "protocol_id": "revp_temporal_v1",
+        "evidence_version": "71757e5acfb08c17",
+        "training_window": "2023-01-03..2026 (janela expansiva, 3 cortes)",
+        "evaluation_window": "teste_2026",
+        "evaluation_domain": "curitiba",
+        "region_data_window": "2023-01-03..2026-07-29",
+        "forcing_source": "open_meteo_era5_land/CHIRPS conforme artefato",
+        "dataset_version": "ds05:curitiba"
+      },
+      "protocol_id": "revp_temporal_v1",
+      "razao_tecnica": "cortes_sem_intervalo_para_separar_queda_de_ruido",
+      "evidence": [
+        {
+          "corte": "teste_2024",
+          "auc": 0.6282,
+          "ic95": null,
+          "n_teste": 350
+        },
+        {
+          "corte": "teste_2025",
+          "auc": 0.6652,
+          "ic95": null,
+          "n_teste": 569
+        },
+        {
+          "corte": "teste_2026",
+          "auc": 0.5246,
+          "ic95": null,
+          "n_teste": 279
+        },
+        {
+          "artefatos": [
+            "v20o_all_reports.json",
+            "v20q_walk_forward_cutoffs.csv"
+          ]
+        },
+        {
+          "capacidade_justificativa": "estrutura temporal parcial; confundimentos de fonte, evento ou amostragem permanecem"
+        },
+        {
+          "identificabilidade": "PARCIALMENTE_IDENTIFICAVEL"
+        },
+        {
+          "teste_executado": true
+        },
+        {
+          "dados_permitiriam_teste": true
+        },
+        {
+          "performance_stability": null
+        },
+        {
+          "ci95_inclui_acaso": null
+        },
+        {
+          "status_temporal_legado": "TEMPORAL_INCONCLUSIVE"
+        },
+        {
+          "motivo_do_juri": "ha evidencias temporais, mas ha confundimento nao separado"
+        },
+        {
+          "forcing_shift_detected": true
+        }
+      ],
+      "limitations": [
+        "114 de 442 negativos tem qualidade temporal comparavel",
+        "os cortes publicados nao carregam IC95: queda e ruido nao estao separados",
+        "processo administrativo e geocodificacao entram no rotulo",
+        "shift de forcing (chuva) detectado no periodo: e mudanca de cenario, e nao demonstracao de que a relacao aprendida deixou de valer",
+        "modelo diagnostico local, nunca servido pelo contrato"
+      ],
+      "provenance": [
+        {
+          "artefato": "local_runs/ds-05-tabela-unica/tabela_unica_admitidos_v2.csv",
+          "existe": true,
+          "sha256": "sha256:a89c77538f10283820ad3ded9369c1c084413100f263376c64b74f38987883e0",
+          "papel": "capacidade temporal por fonte"
+        },
+        {
+          "artefato": "local_runs/experimentos-cientificos/folds.csv",
+          "existe": true,
+          "sha256": "sha256:26583a2c6db3ab1bbe442e660aa9ccd5321fbc2d9c99bdc4d3039efd6271850f",
+          "papel": "cortes prospectivos do harness de challengers"
+        },
+        {
+          "artefato": "local_runs/experimentos-cientificos/metrics.csv",
+          "existe": true,
+          "sha256": "sha256:62058cdcab37795b7885c73becf76b3376e9af759e3015bdd5f57f192eb88832",
+          "papel": "IC95 por conjunto/modelo/esquema"
+        },
+        {
+          "artefato": "local_runs/mod-prosp-02/folds.csv",
+          "existe": true,
+          "sha256": "sha256:f5b2e2f7393740d0db706786f274331e10006a8315da8796a74a4d9972ad5835",
+          "papel": "janela expansiva prospectiva do piloto ingles"
+        },
+        {
+          "artefato": "outputs_public/data/susc_20k_siac156_curitiba_flood_candidates/results/v20q_walk_forward_cutoffs.csv",
+          "existe": true,
+          "sha256": "sha256:14130710f55b2311517fa7be7036ea0dd541912d957b0fb6413b84ce97c96335",
+          "papel": "walk-forward do modelo local de Curitiba"
+        },
+        {
+          "artefato": "local_runs/svc-01-modelos/indice.json",
+          "existe": true,
+          "sha256": "sha256:0ffc2387f82a87503163c5f794896e97b336f6b41d04d4ba280f642e6a5e9c5a",
+          "papel": "modelos servidos e regioes servidas"
+        }
+      ],
+      "operational_effect": "suporte_nao_demonstrado",
+      "operational_effect_motivo": "politica conservadora: evidencia relevante existe mas nao identifica a conclusao, entao o suporte nao esta demonstrado",
+      "avaliado_em": "2026-09-01T18:59:18.407773Z"
+    }
+  ],
+  "nao_e": "nao e maturidade, nao e portao do contrato v1 e nao promove modelo: e a dimensao cientifica separada"
+}

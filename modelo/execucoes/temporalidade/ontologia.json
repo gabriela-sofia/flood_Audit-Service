@@ -1,0 +1,126 @@
+{
+  "tipo": "ontologia_temporal_revp",
+  "versao": "1",
+  "pergunta_alvo": "quando o REV-P e treinado com evidencia disponivel ate t, que evidencia permite afirmar que suas relacoes fisico-hidrologicas e sua capacidade de ordenacao permanecem transportaveis para eventos posteriores?",
+  "termos": {
+    "STATIC_SUSCEPTIBILITY": {
+      "definicao": "Predisposicao espacial relativamente persistente.",
+      "exemplos_revp": "HAND, TWI, slope, elevation.",
+      "nao_equivale_a": "evento, chuva, data administrativa ou modelo."
+    },
+    "EVENT_FORCING": {
+      "definicao": "Condicao temporal que ativa ou testa a predisposicao.",
+      "exemplos_revp": "rain_max_24h, rain_decay_index.",
+      "nao_equivale_a": "suscetibilidade estatica nem rotulo observado."
+    },
+    "EVENT_TIME": {
+      "definicao": "Instante ou periodo do evento hidrologico.",
+      "exemplos_revp": "data_evento ou event_date.",
+      "nao_equivale_a": "data de registro ou data em que a base foi montada."
+    },
+    "OBSERVATION_TIME": {
+      "definicao": "Instante em que a evidencia ou rotulo foi observado.",
+      "exemplos_revp": "data de vistoria, cena, survey ou atendimento.",
+      "nao_equivale_a": "tempo fisico do evento quando ha atraso ou janela."
+    },
+    "RECORD_TIME": {
+      "definicao": "Instante administrativo de entrada do registro.",
+      "exemplos_revp": "protocolo SIAC, publicacao administrativa, ingestao.",
+      "nao_equivale_a": "evento hidrologico nem observacao independente."
+    },
+    "TRAIN_TIME": {
+      "definicao": "Intervalo de evidencia disponivel ao ajuste.",
+      "exemplos_revp": "dados observaveis ate t.",
+      "nao_equivale_a": "tabela completa ou estatistica global."
+    },
+    "TEST_TIME": {
+      "definicao": "Intervalo futuro reservado para avaliacao.",
+      "exemplos_revp": "eventos posteriores a t.",
+      "nao_equivale_a": "fold aleatorio, espacial ou diagnostico embaralhado."
+    },
+    "LABEL_PROCESS": {
+      "definicao": "Processo que produz o rotulo observado.",
+      "exemplos_revp": "SEDEC, SIAC 156, Environment Agency, Copernicus EMS.",
+      "nao_equivale_a": "fenomeno fisico real sem erro de observacao."
+    },
+    "SAMPLING_PROCESS": {
+      "definicao": "Processo que determina quais observacoes entram na amostra.",
+      "exemplos_revp": "exclusao qualificada, ausencia de registro, AOI EMS.",
+      "nao_equivale_a": "prevalencia real do fenomeno no territorio."
+    },
+    "MODEL_TIME": {
+      "definicao": "Versao e data do modelo ou artefato avaliado.",
+      "exemplos_revp": "SVC-01, SVC-07, SUSC-20O, MOD-PROSP-02.",
+      "nao_equivale_a": "tempo do evento ou tempo do registro."
+    }
+  },
+  "tempo_fisico": [
+    "STATIC_SUSCEPTIBILITY",
+    "EVENT_FORCING",
+    "EVENT_TIME"
+  ],
+  "tempo_observacional": [
+    "OBSERVATION_TIME",
+    "RECORD_TIME",
+    "LABEL_PROCESS",
+    "SAMPLING_PROCESS",
+    "MODEL_TIME"
+  ],
+  "dimensoes_nao_equivalentes": [
+    [
+      "EVENT_TIME",
+      "OBSERVATION_TIME",
+      "RECORD_TIME"
+    ],
+    [
+      "STATIC_SUSCEPTIBILITY",
+      "EVENT_FORCING"
+    ],
+    [
+      "LABEL_PROCESS",
+      "SAMPLING_PROCESS"
+    ],
+    [
+      "TRAIN_TIME",
+      "TEST_TIME",
+      "MODEL_TIME"
+    ]
+  ],
+  "alvo_do_teste_temporal": {
+    "treino": "dados observaveis ate t",
+    "teste": "eventos posteriores a t",
+    "proibido": "informacao futura direta ou indireta",
+    "resposta": "a relacao aprendida antes de t transporta para eventos posteriores?"
+  },
+  "checklist_executavel": [
+    "treino_estritamente_anterior",
+    "preprocessing_fitado_apenas_no_treino",
+    "features_disponiveis_no_tempo_correto",
+    "sem_estatistica_global_futura",
+    "sem_evento_compartilhado",
+    "sem_aoi_compartilhada_indevida",
+    "label_comparavel",
+    "sampling_comparavel",
+    "classes_avaliaveis",
+    "eventos_independentes_suficientes",
+    "metrica_definida"
+  ],
+  "identificabilidade": [
+    "IDENTIFICAVEL",
+    "NAO_IDENTIFICAVEL",
+    "PARCIALMENTE_IDENTIFICAVEL"
+  ],
+  "saidas_review_only": [
+    "TEMPORAL_FAILURE",
+    "TEMPORAL_INCONCLUSIVE",
+    "TEMPORAL_SUPPORT",
+    "TEMPORAL_TEST_INVALID"
+  ],
+  "nao_e": [
+    "nao altera modelo servido",
+    "nao altera maturidade",
+    "nao promove challenger",
+    "nao transforma ausencia de registro em ausencia de enchente",
+    "nao declara concept drift apenas por queda de performance"
+  ]
+}

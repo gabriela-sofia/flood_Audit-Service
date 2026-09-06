@@ -53,8 +53,8 @@ DECISOES DE TRADUCAO QUE PRECISAM ESTAR DECLARADAS, porque nenhuma e obvia:
   contagem zero, para que a ausencia seja visivel em vez de silenciosa.
 
 Uso:
-    python scripts/suscetibilidade/ds04_reduzir_por_fonte.py
-    python scripts/suscetibilidade/ds04_reduzir_por_fonte.py --fonte recife
+    python scripts/treino/ds04_reduzir_por_fonte.py
+    python scripts/treino/ds04_reduzir_por_fonte.py --fonte recife
 """
 
 from __future__ import annotations
@@ -83,6 +83,8 @@ HARM_N1 = RUNS / "ter-02-comparacao" / "dataset_harmonizado_nivel1.csv"
 CHUVA_GLOBAL = RUNS / "chuva-04-era5-global" / "chuva_era5_por_ponto.csv"
 NEG_RECLASS_DIR = RUNS / "neg-01-exclusao-qualificada"
 HARM_BR = RUNS / "ter-03-brasil-harmonizado"
+RECIFE_COM_CHUVA = (RUNS / "chuva-02-fonte-unica-recife" /
+                    "recife_harmonizado_com_chuva.csv")
 RELEVO_AOI = RUNS / "cems-02-analogos-v2" / "verificacao_relevo_por_aoi.csv"
 
 FLUVIAL = "FLUVIAL_ENXURRADA"
@@ -120,8 +122,13 @@ def sobrepor_chuva_era5(d: pd.DataFrame) -> pd.DataFrame:
     # a data de evento tambem vem daqui para as fontes que a tinham perdido
     sem_data = d["data_evento"].isna() & d["dt"].notna()
     d.loc[sem_data, "data_evento"] = d.loc[sem_data, "dt"]
+    # `precisao_data` NAO entra mais nesta limpeza. Ela estava aqui junto das
+    # colunas de merge e foi descartada por proximidade, nao por decisao: o
+    # efeito era `data_evento` chegar ao modelo sem a procedencia que diz se
+    # aquela data e da ocorrencia ou o carimbo de um lote inteiro. Em 93% da
+    # base ela e carimbo de lote, e isso mudava a leitura de toda a chuva.
     d = d.drop(columns=[x for x in d.columns
-                        if x.endswith("_era5") or x in ("dt", "precisao_data")])
+                        if x.endswith("_era5") or x == "dt"])
     print(f"   chuva: {int(tem.sum()):,} pontos em ERA5-Land, "
           f"{int((~tem).sum()):,} sem")
     return d
@@ -195,6 +202,10 @@ def moldar(d: pd.DataFrame) -> pd.DataFrame:
         if c not in d.columns:
             d[c] = np.nan
     d["classe_nome"] = d["classe"].map(CLASSE)
+    # Nulo declarado, e nao inferencia: uma fonte que nao diz como obteve a
+    # data fica marcada como nao tendo dito. Preencher com `registro_local`
+    # por ter data seria inventar a procedencia que falta.
+    d["precisao_data"] = d["precisao_data"].fillna("nao_declarada")
     return d[list(COLUNAS)].copy()
 
 
@@ -273,9 +284,10 @@ def reduzir_uk() -> tuple[pd.DataFrame, dict]:
     d["aoi"] = "UK_noroeste_piloto"
     d["procedencia"] = d["fonte_label"]
     d["resolucao_nativa_m"] = 30.0
-    # ft_uk04 amostra CHIRPS v3, flavor rnl. Nao e o mesmo produto do CHIRPS
-    # v2 usado em Recife, e por isso tem valor proprio no dominio.
-    d["fonte_chuva"] = np.where(d["rain_max_24h"].notna(), "chirps_v3_rnl", "ausente")
+    # O adaptador UK preserva a procedencia canonica; nunca inferir produto
+    # pelo simples fato de existir um valor.
+    if "fonte_chuva" not in d.columns:
+        d["fonte_chuva"] = "ausente"
     d["nivel_negativo"] = nivel_negativo(d["classe"], "exclusao_qualificada")
     d["unidade_agrupamento"] = "evento"
     d["mecanismo"] = FLUVIAL
@@ -380,25 +392,26 @@ def reduzir_ufo():
 
 def _reduzir_brasil(nome: str, cfg: dict, sufixo_terreno: str,
                     cadeia: str) -> tuple[pd.DataFrame, dict]:
-    p = HARM_BR / f"{nome}_harmonizado.csv"
+    p = (RECIFE_COM_CHUVA if nome == "recife" and RECIFE_COM_CHUVA.exists()
+         else HARM_BR / f"{nome}_harmonizado.csv")
     if not p.exists():
         return pd.DataFrame(columns=COLUNAS), {"nota": f"{p.name} ausente; rode ter03"}
     b = pd.read_csv(p, low_memory=False)
 
     d = pd.DataFrame(index=b.index)
-    # O identificador da fonte NAO e unico em Curitiba: 150 `ponto_id` aparecem
+    # O identificador da fonte NAO e unico em Curitiba: 150 `point_id` aparecem
     # duas vezes, mesma coordenada, mesma unidade de observacao, mesmo rotulo --
     # a pseudo-replicacao ja conhecida do SIAC 156. O contrato exige ponto_id
     # unico, entao a repeticao ganha ordinal em vez de ser deduplicada aqui:
     # descartar linha e decisao de admissao, e admissao e do ds05.
-    bruto = b["ponto_id"].astype(str)
+    bruto = b["point_id"].astype(str)
     n_repetidos = int(bruto.duplicated().sum())
     ordinal = bruto.groupby(bruto).cumcount()
     d["ponto_id"] = (f"{nome}__" + bruto
                      + np.where(ordinal > 0, "#" + ordinal.astype(str), ""))
     d["fonte"] = nome
     d["aoi"] = cfg["aoi"]
-    d["classe"] = pd.to_numeric(b["rotulo"], errors="coerce").astype("Int64")
+    d["classe"] = pd.to_numeric(b["label"], errors="coerce").astype("Int64")
     d["grupo_cv"] = b[cfg["grupo"]].astype(str)
     d["unidade_agrupamento"] = cfg["unidade"]
     d["resolucao_nativa_m"] = cfg["resolucao_nativa_m"]
@@ -408,12 +421,12 @@ def _reduzir_brasil(nome: str, cfg: dict, sufixo_terreno: str,
     d["classe_relevo_base"] = "declarada"
     d["lat"] = b["lat"]
     d["lon"] = b["lon"]
-    d["data_evento"] = b.get("data_evento")
+    d["data_evento"] = b.get("event_date")
 
     # procedencia carrega o rotulo de origem EXATO, para nada se perder na
     # traducao: e por ele que se reencontra a linha no pipeline da fonte.
-    origem = b.get("tipo_fonte_negativo")
-    papel = b.get("papel_fonte_dataset")
+    origem = b.get("negative_source_type")
+    papel = b.get("dataset_role_source")
     d["procedencia"] = np.where(
         d["classe"] == 0,
         origem.fillna("negativo_sem_tipo_declarado") if origem is not None
@@ -469,7 +482,7 @@ def _reduzir_brasil(nome: str, cfg: dict, sufixo_terreno: str,
 # harmonizacao custou. O que muda e qual das duas e a canonica.
 CFG_RECIFE = {
     "aoi": "recife_rmr",
-    "grupo": "ponto_id",
+    "grupo": "point_id",
     "unidade": "ponto",
     # a observacao continua sendo de 10 m; o que passa a 30 m e a DERIVACAO de
     # terreno. Sao coisas diferentes e a coluna registra a primeira.
@@ -495,7 +508,7 @@ CFG_RECIFE_NATIVA_10M = {
 
 CFG_CURITIBA = {
     "aoi": "curitiba_amc",
-    "grupo": "chave_unidade_observacao",
+    "grupo": "observation_unit_key",
     "unidade": "unidade_observacao",
     "resolucao_nativa_m": 10.0,
     "mecanismo": FLUVIAL,
@@ -520,6 +533,55 @@ def reduzir_curitiba():
     return _reduzir_brasil("curitiba", CFG_CURITIBA, "_wbt30", "wbt30")
 
 
+def _reduzir_chamados(regiao: str, fonte: str) -> tuple[pd.DataFrame, dict]:
+    """Central de atendimento ao cidadao, ja promovida por `aq_chamados03`.
+
+    Diferente das outras fontes, esta NAO passa por `sobrepor_terreno_
+    harmonizado`: o terreno ja veio derivado pela cadeia canonica sobre o MDT
+    da propria cidade, e sobrepor buscaria numa tabela onde a cidade nao
+    existe, zerando tudo em silencio.
+
+    O mecanismo e PLUVIAL_URBANO e nao fluvial. "Street flooding", "sewer
+    backup", alagamento e boca de lobo sao agua da chuva excedendo a drenagem,
+    e nao canal subindo -- o mesmo mecanismo de Recife. Somar ao conjunto
+    fluvial assumiria um processo gerador unico, que e o erro que o `svc01` ja
+    evita ao dar modelo proprio a Recife.
+
+    O negativo e `ausencia`: chamado de outro assunto da oportunidade de
+    observacao, mas ninguem foi ver se havia agua.
+    """
+    d = _ds01(lambda r: r == regiao)
+    if d.empty:
+        return pd.DataFrame(columns=COLUNAS), {"nota": f"ds01 sem {regiao}"}
+    d = d.rename(columns={"rain_decay_index_api": "rain_decay_index"})
+    d["fonte"] = fonte
+    d["procedencia"] = d["fonte_label"]
+    d["resolucao_nativa_m"] = pd.to_numeric(d["resolucao_m"], errors="coerce")
+    d["fonte_chuva"] = "ausente"
+    d["nivel_negativo"] = nivel_negativo(d["classe"], "ausencia")
+    d["unidade_agrupamento"] = "chamado"
+    d["mecanismo"] = PLUVIAL
+    d["aoi"] = regiao
+    # o terreno destas fontes veio do `aq_chamados04`, que chama o mesmo
+    # `_derivar_terreno` do servico: e a cadeia canonica, e nao um produto
+    # global reamostrado
+    d["cadeia_terreno"] = "wbt30"
+    cls, det = relevo_dos_pontos(d["elevation_m"], d["slope_deg"])
+    d["classe_relevo"] = cls
+    d["classe_relevo_base"] = "pontos_amostrados"
+    d = sobrepor_chuva_era5(d)
+    return moldar(d), {"n": int(len(d)), "relevo": cls, "detalhe_relevo": det,
+                       "grupos": int(d["grupo_cv"].nunique())}
+
+
+def reduzir_nyc():
+    return _reduzir_chamados("nyc", "nyc")
+
+
+def reduzir_sao_paulo():
+    return _reduzir_chamados("sao_paulo", "sao_paulo")
+
+
 REDUTORES = {
     "uk": reduzir_uk,
     "cems": reduzir_cems,
@@ -527,6 +589,8 @@ REDUTORES = {
     "ufo": reduzir_ufo,
     "recife": reduzir_recife,
     "curitiba": reduzir_curitiba,
+    "nyc": reduzir_nyc,
+    "sao_paulo": reduzir_sao_paulo,
 }
 
 # nao entram na tabela unica; existem para auditoria e para medir o que a

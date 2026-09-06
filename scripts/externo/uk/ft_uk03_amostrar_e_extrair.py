@@ -1,8 +1,8 @@
 """
 FT-UK-03 -- Amostragem pareada e extracao das features topograficas.
 
-Produz a tabela de pontos do piloto ingles, com as quatro features
-topo-hidrologicas do v12 que ja podem ser calculadas. As duas features de
+Produz a tabela de pontos do piloto ingles, com as quatro variaveis
+topo-hidrologicas do v12 que ja podem ser calculadas. As duas variaveis de
 chuva entram em etapa separada (FT-UK-04), quando a serie CHIRPS estiver no
 disco -- de proposito, para que uma pendencia de download nao bloqueie o que
 ja da para fazer.
@@ -213,7 +213,7 @@ def main() -> int:
         "worldcover_pos_pct": {int(k): float(v) for k, v in comp_pos.items()},
         "worldcover_neg_pct": {int(k): float(v) for k, v in comp_neg.items()},
         "aviso": ("Amostra CANDIDATA. `rotulo` nao e rotulo promovido. Faltam as "
-                  "duas features de chuva (FT-UK-04). Nenhum modelo treinado."),
+                  "duas variaveis de chuva (FT-UK-04). Nenhum modelo treinado."),
         "segundos": round(time.time() - t0, 1),
     }, indent=2, ensure_ascii=False), encoding="utf-8")
     print(f"SAIDA={saida.name} TEMPO={round(time.time()-t0,1)}s")

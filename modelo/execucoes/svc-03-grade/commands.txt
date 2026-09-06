@@ -1,0 +1,3 @@
+python scripts/servico/svc01_construir_modelos_servidos.py
+python scripts/servico/svc03_grade_suscetibilidade.py
+python -m pytest tests/test_svc03_grade.py -q

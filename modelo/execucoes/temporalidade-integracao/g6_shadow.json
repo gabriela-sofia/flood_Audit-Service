@@ -1,0 +1,36 @@
+{
+  "tipo": "g6_shadow",
+  "versao": "1",
+  "gerado_em": "2026-09-01T19:00:31.231688Z",
+  "g6_ativo": false,
+  "como_foi_simulado": "a v1 respondeu normalmente e o portao temporal foi aplicado depois, sobre a resposta; a constante GATE_TEMPORAL_ATIVO nao foi tocada em momento nenhum",
+  "casos_avaliados": 7,
+  "casos_que_mudariam": 3,
+  "por_regiao": {
+    "recife": {
+      "current_v1_status": "ok",
+      "temporal_support": "not_testable",
+      "hypothetical_g6_result": "refuse",
+      "hypothetical_v2_status": "insufficient_data",
+      "decision_changed": true,
+      "reason": "corte_declarado_nao_materializou_nenhum_fold"
+    },
+    "curitiba": {
+      "current_v1_status": "ok",
+      "temporal_support": "not_testable",
+      "hypothetical_g6_result": "refuse",
+      "hypothetical_v2_status": "insufficient_data",
+      "decision_changed": true,
+      "reason": "protocolo_nao_declara_teste_neste_escopo"
+    },
+    "petropolis": {
+      "current_v1_status": "ok",
+      "temporal_support": "not_testable",
+      "hypothetical_g6_result": "refuse",
+      "hypothetical_v2_status": "insufficient_data",
+      "decision_changed": true,
+      "reason": "sem_dado_para_montar_teste"
+    }
+  },
+  "nao_e": "nao e a v2 rodando: e a consequencia dela, medida"
+}

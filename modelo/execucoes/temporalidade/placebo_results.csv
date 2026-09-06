@@ -1,0 +1,7 @@
+dataset,placebo,executed,auc_mean,auc_min,auc_max,folds,n,features,interpretacao
+curitiba_ds05,periodo_por_topografia,True,0.5059,0.4853,0.5407,5,1680.0,"elevation_m,slope_deg,hand_m,twi_dinf",AUC > 0.6 indica que X identifica periodo e pode carregar atalho temporal
+curitiba_ds05,periodo_por_chuva,True,0.6411,0.6171,0.6645,5,1680.0,"rain_max_24h,rain_decay_index",AUC > 0.6 indica que X identifica periodo e pode carregar atalho temporal
+curitiba_ds05,periodo_por_topografia_chuva,True,0.6374,0.6081,0.6685,5,1680.0,"elevation_m,slope_deg,hand_m,twi_dinf,rain_max_24h,rain_decay_index",AUC > 0.6 indica que X identifica periodo e pode carregar atalho temporal
+curitiba_v20n,periodo_por_metadados,True,0.5667,0.5229,0.5915,5,1680.0,"source_registry,negative_source_type,confidence_tier,assunto,subdivisao,rain_status",AUC > 0.6 indica que X identifica periodo e pode carregar atalho temporal
+curitiba,chuva_deslocada_mais_menos_1_dia,False,,,,0,,,nao executado: tabela auditada nao preserva serie diaria por observacao
+curitiba,labels_permutados_dentro_de_evento,False,,,,0,,,nao executado: muitos eventos/data tem classe unica ou amostra pequena

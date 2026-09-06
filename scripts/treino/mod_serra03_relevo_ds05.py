@@ -75,7 +75,7 @@ NAO FAZ: nao escolhe leitura, nao escolhe conjunto pelo resultado, nao declara
 modelo final, nao promove rotulo.
 
 Uso:
-    python scripts/suscetibilidade/mod_serra03_relevo_ds05.py
+    python scripts/treino/mod_serra03_relevo_ds05.py
 """
 
 from __future__ import annotations
@@ -264,7 +264,7 @@ def main() -> int:
 
     if not DATASET.exists():
         print(f"ABORTADO: {DATASET} ausente. Gere com: "
-              "python scripts/suscetibilidade/ds05_admissao_consolidacao.py")
+              "python scripts/treino/ds05_admissao_consolidacao.py")
         return 1
 
     d = pd.read_csv(DATASET, low_memory=False)
@@ -382,8 +382,8 @@ def main() -> int:
     }, indent=2, ensure_ascii=False), encoding="utf-8")
 
     (OUT / "commands.txt").write_text(
-        "python scripts/suscetibilidade/ds05_admissao_consolidacao.py\n"
-        "python scripts/suscetibilidade/mod_serra03_relevo_ds05.py\n"
+        "python scripts/treino/ds05_admissao_consolidacao.py\n"
+        "python scripts/treino/mod_serra03_relevo_ds05.py\n"
         "python -m pytest tests/test_mod_serra03_relevo.py -q\n",
         encoding="utf-8")
 

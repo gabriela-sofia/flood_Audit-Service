@@ -28,24 +28,22 @@
       "celulas_da_grade": 57994,
       "celulas_validas": 56666,
       "pct_validas": 97.7,
-      "celulas_serviveis": 56611,
-      "pct_servivel_do_valido": 99.9,
+      "celulas_serviveis": 54963,
+      "pct_servivel_do_valido": 97.0,
       "variaveis_do_modelo": [
-        "elevation_m",
+        "elevation_rel_m",
         "slope_deg",
         "hand_m",
         "twi_dinf",
-        "rain_max_24h",
         "rain_decay_index"
       ],
       "variaveis_do_raster": [
-        "elevation_m",
+        "elevation_rel_m",
         "slope_deg",
         "hand_m",
         "twi_dinf"
       ],
       "variaveis_por_cenario": [
-        "rain_max_24h",
         "rain_decay_index"
       ],
       "cenarios": {
@@ -54,52 +52,144 @@
             "rain_max_24h": 13.6,
             "rain_decay_index": 23.18
           },
-          "celulas_serviveis": 56611,
-          "celulas_recusadas_por_dominio": 55,
-          "pct_servivel": 99.9,
-          "escore_mediano": 0.5853,
-          "escore_p90": 0.7943,
-          "escore_minimo": 0.3532,
-          "escore_maximo": 0.9437,
-          "largura_mediana_do_ic": 0.3022
+          "rain_evidence": {
+            "known": true,
+            "scenario": "mediana_observada",
+            "definition": "median of observed Recife event distribution",
+            "training_percentile": 50.0,
+            "values": {
+              "rain_max_24h": 13.6,
+              "rain_decay_index": 23.18
+            },
+            "by_variable": {
+              "rain_max_24h": {
+                "value": 13.6,
+                "training_domain_p5_p95": null,
+                "inside_training_domain": null,
+                "distance_to_domain": null
+              },
+              "rain_decay_index": {
+                "value": 23.18,
+                "training_domain_p5_p95": [
+                  5.9962,
+                  68.8708
+                ],
+                "inside_training_domain": true,
+                "distance_to_domain": 0.0
+              }
+            },
+            "inside_training_domain": null,
+            "extrapolation": false,
+            "extrapolation_variables": []
+          },
+          "celulas_serviveis": 54963,
+          "celulas_recusadas_por_dominio": 1703,
+          "pct_servivel": 97.0,
+          "escore_mediano": 0.5808,
+          "escore_p90": 0.7785,
+          "escore_minimo": 0.3565,
+          "escore_maximo": 0.9345,
+          "largura_mediana_do_ic": 0.3117
         },
         "p90_observado": {
           "cenario_de_chuva": {
             "rain_max_24h": 34.4,
             "rain_decay_index": 54.45
           },
-          "celulas_serviveis": 56611,
-          "celulas_recusadas_por_dominio": 55,
-          "pct_servivel": 99.9,
-          "escore_mediano": 0.7174,
-          "escore_p90": 0.8741,
-          "escore_minimo": 0.4954,
-          "escore_maximo": 0.9679,
-          "largura_mediana_do_ic": 0.3127
+          "rain_evidence": {
+            "known": true,
+            "scenario": "p90_observado",
+            "definition": "90th percentile of observed Recife event distribution",
+            "training_percentile": 90.0,
+            "values": {
+              "rain_max_24h": 34.4,
+              "rain_decay_index": 54.45
+            },
+            "by_variable": {
+              "rain_max_24h": {
+                "value": 34.4,
+                "training_domain_p5_p95": null,
+                "inside_training_domain": null,
+                "distance_to_domain": null
+              },
+              "rain_decay_index": {
+                "value": 54.45,
+                "training_domain_p5_p95": [
+                  5.9962,
+                  68.8708
+                ],
+                "inside_training_domain": true,
+                "distance_to_domain": 0.0
+              }
+            },
+            "inside_training_domain": null,
+            "extrapolation": false,
+            "extrapolation_variables": []
+          },
+          "celulas_serviveis": 54963,
+          "celulas_recusadas_por_dominio": 1703,
+          "pct_servivel": 97.0,
+          "escore_mediano": 0.7323,
+          "escore_p90": 0.874,
+          "escore_minimo": 0.5224,
+          "escore_maximo": 0.9657,
+          "largura_mediana_do_ic": 0.3146
         },
         "maximo_observado": {
           "cenario_de_chuva": {
             "rain_max_24h": 100.2,
             "rain_decay_index": 115.22
           },
-          "celulas_serviveis": 45281,
-          "celulas_recusadas_por_dominio": 11385,
+          "rain_evidence": {
+            "known": true,
+            "scenario": "maximo_observado",
+            "definition": "raw observed maximum; extrapolative relative to model p5-p95 domain",
+            "training_percentile": 100.0,
+            "values": {
+              "rain_max_24h": 100.2,
+              "rain_decay_index": 115.22
+            },
+            "by_variable": {
+              "rain_max_24h": {
+                "value": 100.2,
+                "training_domain_p5_p95": null,
+                "inside_training_domain": null,
+                "distance_to_domain": null
+              },
+              "rain_decay_index": {
+                "value": 115.22,
+                "training_domain_p5_p95": [
+                  5.9962,
+                  68.8708
+                ],
+                "inside_training_domain": false,
+                "distance_to_domain": 46.3492
+              }
+            },
+            "inside_training_domain": false,
+            "extrapolation": true,
+            "extrapolation_variables": [
+              "rain_decay_index"
+            ]
+          },
+          "celulas_serviveis": 45293,
+          "celulas_recusadas_por_dominio": 11373,
           "pct_servivel": 79.9,
-          "escore_mediano": 0.8155,
-          "escore_p90": 0.9251,
-          "escore_minimo": 0.6625,
-          "escore_maximo": 0.9796,
-          "largura_mediana_do_ic": 0.543
+          "escore_mediano": 0.9015,
+          "escore_p90": 0.9599,
+          "escore_minimo": 0.8041,
+          "escore_maximo": 0.9886,
+          "largura_mediana_do_ic": 0.2959
         }
       },
       "distancia_de_dominio": {
-        "elevation_m": {
-          "media_da_grade": 41.902,
-          "media_do_ajuste": 26.029,
+        "elevation_rel_m": {
+          "media_da_grade": 37.969,
+          "media_do_ajuste": 22.096,
           "diferenca_padronizada": 0.685,
           "faixa_do_ajuste_5_95": [
-            3.9375,
-            69.7087
+            0.0045,
+            65.7758
           ],
           "pct_dentro_da_faixa": 67.3
         },
@@ -133,16 +223,6 @@
           ],
           "pct_dentro_da_faixa": 85.1
         },
-        "rain_max_24h": {
-          "media_da_grade": 13.6,
-          "media_do_ajuste": 14.959,
-          "diferenca_padronizada": -0.095,
-          "faixa_do_ajuste_5_95": [
-            3.3,
-            37.72
-          ],
-          "pct_dentro_da_faixa": 100.0
-        },
         "rain_decay_index": {
           "media_da_grade": 23.18,
           "media_do_ajuste": 26.85,
@@ -159,9 +239,12 @@
         "divergencias": 0
       },
       "limitacoes": [
-        "negativo por ausencia de registro, o nivel mais fraco da hierarquia",
-        "positivos e negativos dividem 5 das 205 datas: a chuva separa dias, nao lugares (ext_chuva_estado_do_projeto_v1.md)",
-        "HAND nao separa as classes em Recife -- num evento pluvial HAND nao e o mecanismo"
+        "negativo por ausencia de registro, o nivel mais fraco da hierarquia -- 98,4% dos negativos sao fundo, e o escore so sustenta ordem",
+        "rain_max_24h saiu do vetor: media a janela ANTERIOR ao evento e e parcela da soma que rain_decay_index acumula",
+        "HAND nao separa as classes em Recife -- num evento pluvial HAND nao e o mecanismo",
+        "aderencia temporal alto: apenas 3.7% dos pontos estao em datas que contem as duas classes, e o modelo usa ['rain_decay_index']: nesta base, saber a data e quase saber a classe, e a chuva pode estar separando dias em vez de lugares",
+        "sinal contrario ao fisicamente esperado em elevation_rel_m, slope_deg: a variavel entra no escore mas fica fora da frase de explicacao",
+        "IC95 cruza zero em hand_m: o ajuste nao estabeleceu o efeito, e a variavel fica fora da frase de explicacao"
       ],
       "nao_e": "nao e afirmacao de acerto: nenhuma destas regioes tem inventario local usado como criterio de aprovacao"
     },
@@ -175,16 +258,16 @@
       "celulas_da_grade": 67521,
       "celulas_validas": 65275,
       "pct_validas": 96.7,
-      "celulas_serviveis": 60195,
-      "pct_servivel_do_valido": 92.2,
+      "celulas_serviveis": 64310,
+      "pct_servivel_do_valido": 98.5,
       "variaveis_do_modelo": [
-        "elevation_m",
+        "elevation_rel_m",
         "slope_deg",
         "hand_m",
         "twi_dinf"
       ],
       "variaveis_do_raster": [
-        "elevation_m",
+        "elevation_rel_m",
         "slope_deg",
         "hand_m",
         "twi_dinf"
@@ -193,26 +276,30 @@
       "cenarios": {
         "unico": {
           "cenario_de_chuva": null,
-          "celulas_serviveis": 60195,
-          "celulas_recusadas_por_dominio": 5080,
-          "pct_servivel": 92.2,
-          "escore_mediano": 0.2429,
-          "escore_p90": 0.5238,
+          "rain_evidence": {
+            "used": false,
+            "reason": "regional model does not use rain"
+          },
+          "celulas_serviveis": 64310,
+          "celulas_recusadas_por_dominio": 965,
+          "pct_servivel": 98.5,
+          "escore_mediano": 0.2746,
+          "escore_p90": 0.5804,
           "escore_minimo": 0.0,
-          "escore_maximo": 0.8628,
-          "largura_mediana_do_ic": 0.2644
+          "escore_maximo": 0.8916,
+          "largura_mediana_do_ic": 0.0777
         }
       },
       "distancia_de_dominio": {
-        "elevation_m": {
-          "media_da_grade": 915.238,
-          "media_do_ajuste": 116.806,
-          "diferenca_padronizada": 5.054,
+        "elevation_rel_m": {
+          "media_da_grade": 40.604,
+          "media_do_ajuste": 115.565,
+          "diferenca_padronizada": -0.474,
           "faixa_do_ajuste_5_95": [
-            3.5144,
-            316.1373
+            3.179,
+            315.8319
           ],
-          "pct_dentro_da_faixa": 0.0
+          "pct_dentro_da_faixa": 89.1
         },
         "slope_deg": {
           "media_da_grade": 4.576,
@@ -250,8 +337,10 @@
         "divergencias": 0
       },
       "limitacoes": [
-        "elevation_m e altitude absoluta, nao grandeza causal comparavel entre cidades de altitude de base diferente -- o portao de dominio do SVC-02 mede isso por requisicao",
-        "chuva fora do conjunto: nao discrimina na escala em que o modelo compara (ext_chuva_estado_do_projeto_v1.md)"
+        "elevation_rel_m e a elevacao contra o P1 da propria regiao; a absoluta saiu do vetor em 30/08/2026 porque punha 0,0% dos pontos de Curitiba no dominio do treino, contra 94,5% da relativa",
+        "chuva fora do conjunto: nao discrimina na escala em que o modelo compara (ext_chuva_estado_do_projeto_v1.md)",
+        "sinal contrario ao fisicamente esperado em slope_deg: a variavel entra no escore mas fica fora da frase de explicacao",
+        "IC95 cruza zero em elevation_rel_m: o ajuste nao estabeleceu o efeito, e a variavel fica fora da frase de explicacao"
       ],
       "nao_e": "nao e afirmacao de acerto: nenhuma destas regioes tem inventario local usado como criterio de aprovacao"
     },
@@ -277,6 +366,10 @@
       "cenarios": {
         "unico": {
           "cenario_de_chuva": null,
+          "rain_evidence": {
+            "used": false,
+            "reason": "regional model does not use rain"
+          },
           "celulas_serviveis": 157005,
           "celulas_recusadas_por_dominio": 15010,
           "pct_servivel": 91.3,
@@ -311,6 +404,6 @@
       "nao_e": "nao e afirmacao de acerto: nenhuma destas regioes tem inventario local usado como criterio de aprovacao"
     }
   ],
-  "segundos": 19.1,
+  "segundos": 28.5,
   "nao_e": "nao e mapa operacional nem previsao de evento: e escore de predisposicao do terreno com maturidade declarada por regiao"
 }

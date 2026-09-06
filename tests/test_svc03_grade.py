@@ -170,17 +170,14 @@ def test_distancia_de_dominio_e_zero_quando_a_grade_e_o_ajuste():
     assert d["pct_dentro_da_faixa"] == 100.0
 
 
-def test_curitiba_extrapola_elevacao_na_grade(resultado):
-    """Achado que o portao de dominio existe para pegar; medido no territorio.
-
-    Se deixar de valer, `metodo_aplicacao_sem_rotulo_local_v1.md` e o texto do
-    servico precisam mudar junto.
-    """
+def test_curitiba_usa_elevacao_relativa_na_grade(resultado):
+    """A rodada atual compara dominio por elevacao relativa, nao altitude bruta."""
     cur = [r for r in _grades(resultado) if r["regiao"] == "curitiba"]
-    if not cur or "elevation_m" not in cur[0]["distancia_de_dominio"]:
-        pytest.skip("curitiba sem grade ou sem elevacao no modelo")
-    d = cur[0]["distancia_de_dominio"]["elevation_m"]
-    assert d["pct_dentro_da_faixa"] < 50.0, d
+    if not cur or "elevation_rel_m" not in cur[0]["distancia_de_dominio"]:
+        pytest.skip("curitiba sem grade ou sem elevacao relativa no modelo")
+    assert "elevation_m" not in cur[0]["distancia_de_dominio"]
+    d = cur[0]["distancia_de_dominio"]["elevation_rel_m"]
+    assert d["pct_dentro_da_faixa"] > 80.0, d
 
 
 # --------------------------------------------------------- artefatos

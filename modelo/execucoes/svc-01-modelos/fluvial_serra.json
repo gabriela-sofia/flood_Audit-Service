@@ -4,6 +4,24 @@
   "features": [
     "hand_m"
   ],
+  "aderencia_temporal": {
+    "avaliada": true,
+    "datas_distintas": 9,
+    "datas_com_ambas_as_classes": 9,
+    "fracao_de_datas_com_ambas_as_classes": 1.0,
+    "pontos_em_data_compartilhada": 5162,
+    "fracao_de_pontos_em_data_compartilhada": 1.0,
+    "linhas_sem_data": 0,
+    "janela": {
+      "inicio": "2016-08-12",
+      "fim": "2026-01-10"
+    },
+    "variaveis_que_dependem_do_tempo": [],
+    "o_que_mede": "se as duas classes foram observadas nos mesmos dias dentro do conjunto de ajuste",
+    "nao_e": "nao e o suporte temporal: aquele pergunta se o desempenho se sustenta em janela futura, e este pergunta se o desenho amostral separa lugares ou apenas dias",
+    "risco": "nao_aplicavel",
+    "risco_motivo": "nenhuma variavel do modelo depende do tempo: a data nao tem por onde entrar no escore"
+  },
   "intercepto": -0.626171,
   "coef": {
     "hand_m": -1.442269
@@ -4036,10 +4054,43 @@
   },
   "orcamento_estrito": 1,
   "prevalencia_do_ajuste": 0.4117,
+  "amostra_negativa": {
+    "positivos": 2125,
+    "negativos": 3037,
+    "por_nivel": {
+      "observado": 3037
+    },
+    "ausencia_observada": 3037,
+    "fundo": 0,
+    "pct_fundo": 0.0,
+    "amostra": "presenca_e_ausencia",
+    "leitura_admitida": "absoluta",
+    "fundamento": "o escore pode ser lido no proprio valor: os negativos sao ausencia observada ou qualificada"
+  },
+  "elevacao_baseline_por_regiao": {},
   "n": 5162,
   "grupos": 24,
+  "grupos_antes_da_fusao_por_celula": 24,
+  "unidade_de_reamostragem": "componente conexa de grupo e celula: nenhum grupo mais fino que a celula de 0.0001 grau",
+  "unidade_de_validacao": "componente_conexa_de_celulas",
   "grupos_positivos": 19,
   "grupos_negativos": 24,
+  "sinal_por_variavel": {
+    "hand_m": {
+      "coef": -1.442269,
+      "sinal_esperado": -1,
+      "sinal_bate": true,
+      "ic95": [
+        -3.5545,
+        -0.7455
+      ],
+      "ic_cruza_zero": false,
+      "fisicamente_verificada": true
+    }
+  },
+  "variaveis_fisicamente_verificadas": [
+    "hand_m"
+  ],
   "fontes_do_ajuste": {
     "cems": 4387,
     "sen1floods11": 775

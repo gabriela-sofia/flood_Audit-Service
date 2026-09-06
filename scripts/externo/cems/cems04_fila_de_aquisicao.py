@@ -299,7 +299,7 @@ def fila() -> int:
               f"{str(r.paises)[:28]:28s} {r.url}")
     print("\nDepois de baixar, para cada zip:")
     print("  python scripts/externo/cems02_pipeline_ativacao.py --zip <zip> --codigo <EMSRxxx>")
-    print("  python scripts/suscetibilidade/ds01_montar_multirregiao.py")
+    print("  python scripts/treino/ds01_montar_multirregiao.py")
     print("  python scripts/externo/cems03_relevo_e_analogia.py --verificar")
     print("===END===")
     return 0

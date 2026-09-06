@@ -56,7 +56,7 @@ fluxo completo de chamados da SEDEC, entao os criterios N1 e N2 nao teriam como
 ser avaliados. Fica declarado como pendencia, nao resolvido em silencio.
 
 Uso:
-    python scripts/suscetibilidade/neg01_exclusao_qualificada_temporal.py
+    python scripts/treino/neg01_exclusao_qualificada_temporal.py
 """
 
 from __future__ import annotations

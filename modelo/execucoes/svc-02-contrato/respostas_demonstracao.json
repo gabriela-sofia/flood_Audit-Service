@@ -15,7 +15,8 @@
               "hand_m": 36.77759256225588,
               "twi_dinf": 4.888339519500732,
               "rain_max_24h": 5.8,
-              "rain_decay_index": 12.065
+              "rain_decay_index": 12.065,
+              "elevation_rel_m": 48.51929891674805
             }
           },
           {
@@ -27,7 +28,8 @@
               "hand_m": 32.024038314819336,
               "twi_dinf": 4.955085277557373,
               "rain_max_24h": 3.6,
-              "rain_decay_index": 8.662
+              "rain_decay_index": 8.662,
+              "elevation_rel_m": 52.624561673095705
             }
           },
           {
@@ -39,7 +41,8 @@
               "hand_m": 1.572142538818362,
               "twi_dinf": 7.274980545043945,
               "rain_max_24h": 8.7,
-              "rain_decay_index": 10.268
+              "rain_decay_index": 10.268,
+              "elevation_rel_m": 3.092973595550537
             }
           },
           {
@@ -51,7 +54,8 @@
               "hand_m": 9.631223509277344,
               "twi_dinf": 6.982116222381592,
               "rain_max_24h": 3.5,
-              "rain_decay_index": 8.108
+              "rain_decay_index": 8.108,
+              "elevation_rel_m": 18.895166760375975
             }
           },
           {
@@ -63,7 +67,8 @@
               "hand_m": 26.650827323181154,
               "twi_dinf": 6.026049613952637,
               "rain_max_24h": 6.3,
-              "rain_decay_index": 19.967
+              "rain_decay_index": 19.967,
+              "elevation_rel_m": 37.38876760571289
             }
           },
           {
@@ -75,7 +80,8 @@
               "hand_m": 46.07678031921387,
               "twi_dinf": 6.323761940002441,
               "rain_max_24h": 4.1,
-              "rain_decay_index": 8.533
+              "rain_decay_index": 8.533,
+              "elevation_rel_m": 51.950050717285166
             }
           },
           {
@@ -87,7 +93,8 @@
               "hand_m": 0.0004299999999979,
               "twi_dinf": 10.998937606811523,
               "rain_max_24h": 9.7,
-              "rain_decay_index": 15.389
+              "rain_decay_index": 15.389,
+              "elevation_rel_m": 1.6137335788879361
             }
           },
           {
@@ -99,7 +106,8 @@
               "hand_m": 44.03117908947753,
               "twi_dinf": 4.550485134124756,
               "rain_max_24h": 11.8,
-              "rain_decay_index": 10.995
+              "rain_decay_index": 10.995,
+              "elevation_rel_m": 71.74448431103515
             }
           },
           {
@@ -111,7 +119,8 @@
               "hand_m": 44.03117908947753,
               "twi_dinf": 4.550485134124756,
               "rain_max_24h": 15.4,
-              "rain_decay_index": 20.883
+              "rain_decay_index": 20.883,
+              "elevation_rel_m": 71.74448431103515
             }
           },
           {
@@ -123,7 +132,8 @@
               "hand_m": 0.0002579999999987,
               "twi_dinf": 12.083158493041992,
               "rain_max_24h": 16.5,
-              "rain_decay_index": 31.431
+              "rain_decay_index": 31.431,
+              "elevation_rel_m": 4.416346806152342
             }
           },
           {
@@ -135,7 +145,8 @@
               "hand_m": 1.783531496490479,
               "twi_dinf": 8.570902824401855,
               "rain_max_24h": 16.5,
-              "rain_decay_index": 38.023
+              "rain_decay_index": 38.023,
+              "elevation_rel_m": 3.3680472084960926
             }
           },
           {
@@ -147,7 +158,8 @@
               "hand_m": 42.18448621984863,
               "twi_dinf": 6.44337797164917,
               "rain_max_24h": 23.6,
-              "rain_decay_index": 38.133
+              "rain_decay_index": 38.133,
+              "elevation_rel_m": 61.69029272167969
             }
           }
         ]
@@ -164,55 +176,249 @@
       "maturidade": "mvp_local",
       "unidade_de_resposta": "area",
       "n_pontos": 12,
-      "escore": 0.5346,
+      "cobertura_da_area": {
+        "pontos_pedidos": 12,
+        "pontos_usados": 12,
+        "pontos_descartados": 0,
+        "fracao_coberta": 1.0,
+        "politica": "recusar"
+      },
+      "escore": 0.5316,
       "ic95": [
-        0.4561,
-        0.6079
+        0.446,
+        0.612
       ],
+      "escore_detalhe": {
+        "tipo": "probabilidade_projetada",
+        "tipo_se_v2": "ordinal_relativo",
+        "definicao": "media, sobre os pontos da area, da probabilidade que o modelo ajustado atribui a cada ponto",
+        "leitura_admitida": "ordinal",
+        "por_que_esta_leitura": "so a ordem entre celulas e sustentada: com amostra majoritariamente de fundo, a prevalencia nao e identificavel e o nivel absoluto nao e propriedade do terreno",
+        "amostra_negativa_do_ajuste": {
+          "positivos": 145,
+          "negativos": 124,
+          "por_nivel": {
+            "ausencia": 122,
+            "exclusao_qualificada": 2
+          },
+          "ausencia_observada": 2,
+          "fundo": 122,
+          "pct_fundo": 98.4,
+          "amostra": "presenca_e_fundo",
+          "leitura_admitida": "ordinal",
+          "fundamento": "so a ordem entre celulas e sustentada: com amostra majoritariamente de fundo, a prevalencia nao e identificavel e o nivel absoluto nao e propriedade do terreno"
+        },
+        "variaveis_derivadas_na_requisicao": {
+          "elevation_rel_m": {
+            "derivada": true,
+            "a_partir_de": "elevation_m",
+            "baseline_m": 3.932922,
+            "pontos_derivados": 12,
+            "definicao": "elevation_m menos o P1 da propria regiao"
+          }
+        },
+        "ic95_obtido_por": "percentil 2,5-97,5 das projecoes das replicas de bootstrap de grupos gravadas no artefato servido; nenhum reajuste em tempo de requisicao",
+        "n_replicas": 1000,
+        "escala": [
+          0.0,
+          1.0
+        ],
+        "nao_e": "nao e AUC nem escore fora da amostra; nao ha p-valor no artefato servido, e o contrato nao inventa um"
+      },
       "variaveis_usadas": [
-        "elevation_m",
+        "elevation_rel_m",
         "slope_deg",
         "hand_m",
         "twi_dinf",
-        "rain_max_24h",
         "rain_decay_index"
       ],
       "dominio": {
         "cobertura_por_variavel_pct": {
-          "elevation_m": 83.3,
+          "elevation_rel_m": 83.3,
           "slope_deg": 75.0,
           "hand_m": 100.0,
           "twi_dinf": 75.0,
-          "rain_max_24h": 100.0,
           "rain_decay_index": 100.0
         },
         "variaveis_em_extrapolacao": []
       },
       "limitacoes": [
-        "negativo por ausencia de registro, o nivel mais fraco da hierarquia",
-        "positivos e negativos dividem 5 das 205 datas: a chuva separa dias, nao lugares (ext_chuva_estado_do_projeto_v1.md)",
+        "negativo por ausencia de registro, o nivel mais fraco da hierarquia -- 98,4% dos negativos sao fundo, e o escore so sustenta ordem",
+        "rain_max_24h saiu do vetor: media a janela ANTERIOR ao evento e e parcela da soma que rain_decay_index acumula",
         "HAND nao separa as classes em Recife -- num evento pluvial HAND nao e o mecanismo",
-        "criterio de leitura nao atingido no ajuste: IC95 de hand_m cruza zero; AUC 0.6409 fora da faixa [0.7; 0.88]"
+        "aderencia temporal alto: apenas 3.7% dos pontos estao em datas que contem as duas classes, e o modelo usa ['rain_decay_index']: nesta base, saber a data e quase saber a classe, e a chuva pode estar separando dias em vez de lugares",
+        "sinal contrario ao fisicamente esperado em elevation_rel_m, slope_deg: a variavel entra no escore mas fica fora da frase de explicacao",
+        "IC95 cruza zero em hand_m: o ajuste nao estabeleceu o efeito, e a variavel fica fora da frase de explicacao",
+        "criterio de leitura nao atingido no ajuste: IC95 de hand_m cruza zero; AUC 0.6422 fora da faixa [0.7; 0.88]"
       ],
+      "suporte_cientifico": {
+        "temporal": {
+          "dimension": "temporal",
+          "support": "not_testable",
+          "support_significa": "a evidencia necessaria para o teste nao existe, ou o desenho nao permite o teste neste escopo",
+          "nao_equivale_a": [
+            "not_supported",
+            "supported"
+          ],
+          "scope": {
+            "region_id": "recife",
+            "model_id": "recife_pluvial",
+            "protocol_id": "revp_temporal_v1",
+            "evidence_version": "71757e5acfb08c17",
+            "training_window": null,
+            "evaluation_window": null,
+            "evaluation_domain": "recife",
+            "region_data_window": "2008-03-30..2025-01-23",
+            "forcing_source": "open_meteo_era5_land/CHIRPS conforme artefato",
+            "dataset_version": "ds05:recife"
+          },
+          "protocol_id": "revp_temporal_v1",
+          "razao_tecnica": "corte_declarado_nao_materializou_nenhum_fold",
+          "evidence": [
+            {
+              "dataset_do_harness": "recife_pluvial"
+            },
+            {
+              "modelo_avaliado": "firth_servido"
+            },
+            {
+              "execucao": {
+                "estado": "DECLARED",
+                "protocolo_declara": true,
+                "folds_materializados": 0,
+                "folds_validos": 0,
+                "folds_descartados": 0,
+                "metrica_definida": false,
+                "motivo_da_parada": "corte_declarado_nao_materializou_nenhum_fold",
+                "corte_declarado": "holdout_temporal ano_corte=2026; anos na base: [2008]..[2025]"
+              }
+            },
+            {
+              "materializacao_do_corte_declarado": {
+                "ano_corte": 2026,
+                "folds_materializados": 0,
+                "folds_com_duas_classes": 0,
+                "anos_na_base": [
+                  2008,
+                  2014,
+                  2015,
+                  2016,
+                  2017,
+                  2018,
+                  2019,
+                  2020,
+                  2021,
+                  2022,
+                  2023,
+                  2024,
+                  2025
+                ]
+              }
+            },
+            {
+              "capacidade_justificativa": "estrutura temporal parcial; confundimentos de fonte, evento ou amostragem permanecem"
+            },
+            {
+              "identificabilidade": "NAO_IDENTIFICAVEL"
+            },
+            {
+              "teste_executado": false
+            },
+            {
+              "dados_permitiriam_teste": true
+            },
+            {
+              "performance_stability": null
+            },
+            {
+              "ci95_inclui_acaso": null
+            },
+            {
+              "status_temporal_legado": "TEMPORAL_TEST_INVALID"
+            },
+            {
+              "motivo_do_juri": "teste temporal invalido ou com vazamento/criterio ausente"
+            },
+            {
+              "forcing_shift_detected": null
+            }
+          ],
+          "limitations": [
+            "2 de 124 negativos tem qualidade temporal comparavel",
+            "a fonte nao sustenta fold prospectivo segundo a viabilidade",
+            "o teste temporal parou em DECLARED: corte_declarado_nao_materializou_nenhum_fold. Nao ha AUC baixa aqui -- ha teste que nao chegou a produzir evidencia sobre o modelo",
+            "o corte declarado e o ano 2026 e a base termina em 2025: nenhum par (treino, teste) chega a existir. Um corte avaliavel exigiria protocolo novo, congelado antes de rodar -- esta auditoria nao produz resultado com corte que ninguem congelou"
+          ],
+          "provenance": [
+            {
+              "artefato": "local_runs/ds-05-tabela-unica/tabela_unica_admitidos_v2.csv",
+              "existe": true,
+              "sha256": "sha256:a89c77538f10283820ad3ded9369c1c084413100f263376c64b74f38987883e0",
+              "papel": "capacidade temporal por fonte"
+            },
+            {
+              "artefato": "local_runs/experimentos-cientificos/folds.csv",
+              "existe": true,
+              "sha256": "sha256:26583a2c6db3ab1bbe442e660aa9ccd5321fbc2d9c99bdc4d3039efd6271850f",
+              "papel": "cortes prospectivos do harness de challengers"
+            },
+            {
+              "artefato": "local_runs/experimentos-cientificos/metrics.csv",
+              "existe": true,
+              "sha256": "sha256:62058cdcab37795b7885c73becf76b3376e9af759e3015bdd5f57f192eb88832",
+              "papel": "IC95 por conjunto/modelo/esquema"
+            },
+            {
+              "artefato": "local_runs/mod-prosp-02/folds.csv",
+              "existe": true,
+              "sha256": "sha256:f5b2e2f7393740d0db706786f274331e10006a8315da8796a74a4d9972ad5835",
+              "papel": "janela expansiva prospectiva do piloto ingles"
+            },
+            {
+              "artefato": "outputs_public/data/susc_20k_siac156_curitiba_flood_candidates/results/v20q_walk_forward_cutoffs.csv",
+              "existe": true,
+              "sha256": "sha256:14130710f55b2311517fa7be7036ea0dd541912d957b0fb6413b84ce97c96335",
+              "papel": "walk-forward do modelo local de Curitiba"
+            },
+            {
+              "artefato": "local_runs/svc-01-modelos/indice.json",
+              "existe": true,
+              "sha256": "sha256:0ffc2387f82a87503163c5f794896e97b336f6b41d04d4ba280f642e6a5e9c5a",
+              "papel": "modelos servidos e regioes servidas"
+            }
+          ],
+          "operational_effect": "suporte_nao_demonstrado",
+          "operational_effect_motivo": "politica conservadora: nao ha teste identificavel neste escopo, entao o suporte nao esta demonstrado",
+          "avaliado_em": "2026-09-01T18:59:18.407773Z",
+          "avaliado": true,
+          "e_portao_do_contrato": false,
+          "o_que_este_campo_e": "dimensao cientifica em modo modo de revisao: descreve o suporte temporal do par regiao x modelo e nao participa da decisao da v1"
+        },
+        "dimensoes_sem_protocolo_formal": [
+          "spatial",
+          "domain",
+          "local_reference",
+          "physical_consistency"
+        ]
+      },
       "model_card": {
         "modelo": "recife_pluvial",
         "regiao": "recife",
         "maturidade": "mvp_local",
         "mecanismo": "PLUVIAL_URBANO",
         "variaveis": [
-          "elevation_m",
+          "elevation_rel_m",
           "slope_deg",
           "hand_m",
           "twi_dinf",
-          "rain_max_24h",
           "rain_decay_index"
         ],
         "estimador": "regressao logistica penalizada de Firth",
         "ajustado_em": {
           "n": 269,
-          "grupos": 269,
-          "grupos_positivos": 145,
-          "grupos_negativos": 124,
+          "grupos": 227,
+          "grupos_positivos": 111,
+          "grupos_negativos": 121,
           "fontes": {
             "recife": 269
           },
@@ -223,17 +429,108 @@
           "prevalencia": 0.539
         },
         "desempenho": {
-          "auc_agrupada": 0.6409,
-          "folds": 5
+          "auc_agrupada": 0.6422,
+          "folds": 5,
+          "unidade_de_reamostragem": "componente conexa de grupo e celula: nenhum grupo mais fino que a celula de 0.0001 grau"
+        },
+        "orcamento_epv": {
+          "variaveis_usadas": 5,
+          "variaveis_permitidas": 11,
+          "eventos_por_variavel": 22.2,
+          "minimo_exigido": 10
+        },
+        "sinal_por_variavel": {
+          "elevation_rel_m": {
+            "coef": 0.3271,
+            "sinal_esperado": -1,
+            "sinal_bate": false,
+            "ic95": [
+              -0.3778,
+              1.1346
+            ],
+            "ic_cruza_zero": true,
+            "fisicamente_verificada": false
+          },
+          "slope_deg": {
+            "coef": 0.40284,
+            "sinal_esperado": -1,
+            "sinal_bate": false,
+            "ic95": [
+              0.0416,
+              0.8948
+            ],
+            "ic_cruza_zero": false,
+            "fisicamente_verificada": false
+          },
+          "hand_m": {
+            "coef": -0.087229,
+            "sinal_esperado": -1,
+            "sinal_bate": true,
+            "ic95": [
+              -0.7439,
+              0.523
+            ],
+            "ic_cruza_zero": true,
+            "fisicamente_verificada": false
+          },
+          "twi_dinf": {
+            "coef": 0.437241,
+            "sinal_esperado": 1,
+            "sinal_bate": true,
+            "ic95": [
+              0.1076,
+              0.9608
+            ],
+            "ic_cruza_zero": false,
+            "fisicamente_verificada": true
+          },
+          "rain_decay_index": {
+            "coef": 0.499909,
+            "sinal_esperado": 1,
+            "sinal_bate": true,
+            "ic95": [
+              0.1958,
+              0.9571
+            ],
+            "ic_cruza_zero": false,
+            "fisicamente_verificada": true
+          }
+        },
+        "variaveis_fisicamente_verificadas": [
+          "twi_dinf",
+          "rain_decay_index"
+        ],
+        "aderencia_temporal": {
+          "avaliada": true,
+          "datas_distintas": 205,
+          "datas_com_ambas_as_classes": 5,
+          "fracao_de_datas_com_ambas_as_classes": 0.0244,
+          "pontos_em_data_compartilhada": 10,
+          "fracao_de_pontos_em_data_compartilhada": 0.0372,
+          "linhas_sem_data": 0,
+          "janela": {
+            "inicio": "2008-03-30",
+            "fim": "2025-01-23"
+          },
+          "variaveis_que_dependem_do_tempo": [
+            "rain_decay_index"
+          ],
+          "o_que_mede": "se as duas classes foram observadas nos mesmos dias dentro do conjunto de ajuste",
+          "nao_e": "nao e o suporte temporal: aquele pergunta se o desempenho se sustenta em janela futura, e este pergunta se o desenho amostral separa lugares ou apenas dias",
+          "risco": "alto",
+          "risco_motivo": "apenas 3.7% dos pontos estao em datas que contem as duas classes, e o modelo usa ['rain_decay_index']: nesta base, saber a data e quase saber a classe, e a chuva pode estar separando dias em vez de lugares"
         },
         "criterios_nao_atingidos": [
           "IC95 de hand_m cruza zero",
-          "AUC 0.6409 fora da faixa [0.7; 0.88]"
+          "AUC 0.6422 fora da faixa [0.7; 0.88]"
         ],
         "limites_de_uso": [
-          "negativo por ausencia de registro, o nivel mais fraco da hierarquia",
-          "positivos e negativos dividem 5 das 205 datas: a chuva separa dias, nao lugares (ext_chuva_estado_do_projeto_v1.md)",
-          "HAND nao separa as classes em Recife -- num evento pluvial HAND nao e o mecanismo"
+          "negativo por ausencia de registro, o nivel mais fraco da hierarquia -- 98,4% dos negativos sao fundo, e o escore so sustenta ordem",
+          "rain_max_24h saiu do vetor: media a janela ANTERIOR ao evento e e parcela da soma que rain_decay_index acumula",
+          "HAND nao separa as classes em Recife -- num evento pluvial HAND nao e o mecanismo",
+          "aderencia temporal alto: apenas 3.7% dos pontos estao em datas que contem as duas classes, e o modelo usa ['rain_decay_index']: nesta base, saber a data e quase saber a classe, e a chuva pode estar separando dias em vez de lugares",
+          "sinal contrario ao fisicamente esperado em elevation_rel_m, slope_deg: a variavel entra no escore mas fica fora da frase de explicacao",
+          "IC95 cruza zero em hand_m: o ajuste nao estabeleceu o efeito, e a variavel fica fora da frase de explicacao"
         ],
         "por_que_este_conjunto": "Recife tem modelo proprio porque o mecanismo e outro: a agua vem da chuva excedendo a drenagem, nao do canal subindo. Somar Recife ao conjunto fluvial assumiria um processo gerador unico",
         "ic_do_escore": "bootstrap do preditor linear reamostrando grupos, 1000 replicas",
@@ -241,58 +538,121 @@
       },
       "explicacao": {
         "gerador": "regras_sobre_o_payload",
-        "escore_explicado": 0.5346,
+        "escore_explicado": 0.5316,
         "itens": [
+          {
+            "variavel": "elevation_rel_m",
+            "nome": "elevation_rel_m",
+            "valor_medio": 35.587,
+            "unidade": "",
+            "contribuicao": 0.1905,
+            "sentido": "a favor",
+            "fisicamente_verificada": false,
+            "citada_na_frase": false
+          },
           {
             "variavel": "rain_decay_index",
             "nome": "chuva antecedente com decaimento",
             "valor_medio": 18.538,
             "unidade": "mm",
-            "contribuicao": -0.2535,
-            "sentido": "contra"
-          },
-          {
-            "variavel": "elevation_m",
-            "nome": "elevacao",
-            "valor_medio": 39.52,
-            "unidade": "m",
-            "contribuicao": 0.2025,
-            "sentido": "a favor"
-          },
-          {
-            "variavel": "slope_deg",
-            "nome": "declividade",
-            "valor_medio": 8.037,
-            "unidade": "graus",
-            "contribuicao": 0.1583,
-            "sentido": "a favor"
+            "contribuicao": -0.1809,
+            "sentido": "contra",
+            "fisicamente_verificada": true,
+            "citada_na_frase": true
           },
           {
             "variavel": "twi_dinf",
             "nome": "indice topografico de umidade (TWI)",
             "valor_medio": 6.971,
             "unidade": "",
-            "contribuicao": -0.1474,
-            "sentido": "contra"
+            "contribuicao": -0.1493,
+            "sentido": "contra",
+            "fisicamente_verificada": true,
+            "citada_na_frase": true
+          },
+          {
+            "variavel": "slope_deg",
+            "nome": "declividade",
+            "valor_medio": 8.037,
+            "unidade": "graus",
+            "contribuicao": 0.149,
+            "sentido": "a favor",
+            "fisicamente_verificada": false,
+            "citada_na_frase": false
           },
           {
             "variavel": "hand_m",
             "nome": "altura acima da drenagem (HAND)",
             "valor_medio": 23.73,
             "unidade": "m",
-            "contribuicao": -0.0833,
-            "sentido": "contra"
-          },
-          {
-            "variavel": "rain_max_24h",
-            "nome": "pico de chuva em 24 h",
-            "valor_medio": 10.458,
-            "unidade": "mm",
-            "contribuicao": 0.0794,
-            "sentido": "a favor"
+            "contribuicao": -0.0592,
+            "sentido": "contra",
+            "fisicamente_verificada": false,
+            "citada_na_frase": false
           }
         ],
-        "texto": "chuva antecedente com decaimento = 18.538 mm pesa contra; elevacao = 39.52 m pesa a favor; declividade = 8.037 graus pesa a favor; indice topografico de umidade (TWI) = 6.971 pesa contra; altura acima da drenagem (HAND) = 23.73 m pesa contra; pico de chuva em 24 h = 10.458 mm pesa a favor."
+        "filtro": "so variaveis com sinal fisico verificado e IC95 sem cruzar zero",
+        "variaveis_omitidas_da_frase": [
+          "elevation_rel_m",
+          "slope_deg",
+          "hand_m"
+        ],
+        "por_que_omitidas": "entram no escore, mas o ajuste nao estabeleceu sentido fisico confiavel para elas -- afirmar seria inventar",
+        "texto": "chuva antecedente com decaimento = 18.538 mm pesa contra; indice topografico de umidade (TWI) = 6.971 pesa contra.",
+        "evidencia_chuva": {
+          "used": true,
+          "provider": "open_meteo",
+          "product": "era5_land",
+          "scenario": null,
+          "values_used": {
+            "rain_decay_index": {
+              "mean": 18.538083,
+              "min": 8.108,
+              "max": 38.133
+            }
+          },
+          "reference_period": null,
+          "period_policy": "scenario-based served inference; arbitrary requested period is not used unless rain is explicitly acquired and derived for that period",
+          "decay_k": 0.85,
+          "window_days": 14,
+          "spatial_resolution_degrees": 0.1,
+          "timezone": "auto",
+          "method_version": "rain-method-v1.0.0",
+          "training_domain": {
+            "rain_decay_index": [
+              5.9962,
+              68.8708
+            ]
+          },
+          "inside_domain": true,
+          "extrapolation": false,
+          "scenario_evidence": null,
+          "temporal_adherence": {
+            "avaliada": true,
+            "datas_distintas": 205,
+            "datas_com_ambas_as_classes": 5,
+            "fracao_de_datas_com_ambas_as_classes": 0.0244,
+            "pontos_em_data_compartilhada": 10,
+            "fracao_de_pontos_em_data_compartilhada": 0.0372,
+            "linhas_sem_data": 0,
+            "janela": {
+              "inicio": "2008-03-30",
+              "fim": "2025-01-23"
+            },
+            "variaveis_que_dependem_do_tempo": [
+              "rain_decay_index"
+            ],
+            "o_que_mede": "se as duas classes foram observadas nos mesmos dias dentro do conjunto de ajuste",
+            "nao_e": "nao e o suporte temporal: aquele pergunta se o desempenho se sustenta em janela futura, e este pergunta se o desenho amostral separa lugares ou apenas dias",
+            "risco": "alto",
+            "risco_motivo": "apenas 3.7% dos pontos estao em datas que contem as duas classes, e o modelo usa ['rain_decay_index']: nesta base, saber a data e quase saber a classe, e a chuva pode estar separando dias em vez de lugares"
+          },
+          "limitations": [
+            "scenario values are forcing assumptions, not measurements at each point",
+            "rain_max_24h is not physically verified in the served model",
+            "low shared-date support prevents a causal rain claim"
+          ]
+        }
       }
     }
   },
@@ -312,7 +672,8 @@
               "hand_m": 0.1281100390624487,
               "twi_dinf": 7.027444362640381,
               "rain_max_24h": 18.4,
-              "rain_decay_index": 39.521
+              "rain_decay_index": 39.521,
+              "elevation_rel_m": 21.179742703125044
             }
           },
           {
@@ -324,7 +685,8 @@
               "hand_m": 32.934326171875,
               "twi_dinf": 8.242016792297363,
               "rain_max_24h": 4.3,
-              "rain_decay_index": 1.081
+              "rain_decay_index": 1.081,
+              "elevation_rel_m": 52.364068875000044
             }
           },
           {
@@ -336,7 +698,8 @@
               "hand_m": 6.00537109375,
               "twi_dinf": 7.963021755218506,
               "rain_max_24h": 10.6,
-              "rain_decay_index": 20.295
+              "rain_decay_index": 20.295,
+              "elevation_rel_m": 25.943414578125044
             }
           },
           {
@@ -348,7 +711,8 @@
               "hand_m": 11.83735828124918,
               "twi_dinf": 8.99621295928955,
               "rain_max_24h": 11.1,
-              "rain_decay_index": 29.215
+              "rain_decay_index": 29.215,
+              "elevation_rel_m": 18.342523464843794
             }
           },
           {
@@ -360,7 +724,8 @@
               "hand_m": 5.37200927734375,
               "twi_dinf": 8.097517013549805,
               "rain_max_24h": 3.1,
-              "rain_decay_index": 2.815
+              "rain_decay_index": 2.815,
+              "elevation_rel_m": 11.798028835937544
             }
           },
           {
@@ -372,7 +737,8 @@
               "hand_m": 2.24578857421875,
               "twi_dinf": 9.007643699645996,
               "rain_max_24h": 2.0,
-              "rain_decay_index": 1.371
+              "rain_decay_index": 1.371,
+              "elevation_rel_m": 1.8404482695312936
             }
           },
           {
@@ -384,7 +750,8 @@
               "hand_m": 33.60690330078069,
               "twi_dinf": 6.170431137084961,
               "rain_max_24h": 21.2,
-              "rain_decay_index": 32.122
+              "rain_decay_index": 32.122,
+              "elevation_rel_m": 83.8810976835938
             }
           },
           {
@@ -396,7 +763,8 @@
               "hand_m": 22.96502410156245,
               "twi_dinf": 6.690589904785156,
               "rain_max_24h": 22.9,
-              "rain_decay_index": 43.416
+              "rain_decay_index": 43.416,
+              "elevation_rel_m": 66.17754543750004
             }
           },
           {
@@ -408,7 +776,8 @@
               "hand_m": 8.774899589843699,
               "twi_dinf": 7.43023681640625,
               "rain_max_24h": 56.3,
-              "rain_decay_index": 83.935
+              "rain_decay_index": 83.935,
+              "elevation_rel_m": 27.966668972656294
             }
           },
           {
@@ -420,7 +789,8 @@
               "hand_m": 10.453599511718494,
               "twi_dinf": 6.210203647613525,
               "rain_max_24h": 60.7,
-              "rain_decay_index": 86.167
+              "rain_decay_index": 86.167,
+              "elevation_rel_m": 63.982049832031294
             }
           },
           {
@@ -432,7 +802,8 @@
               "hand_m": 20.2025118945312,
               "twi_dinf": 7.913750648498535,
               "rain_max_24h": 82.3,
-              "rain_decay_index": 70.265
+              "rain_decay_index": 70.265,
+              "elevation_rel_m": 74.19426907031243
             }
           },
           {
@@ -444,7 +815,8 @@
               "hand_m": 7.804440605468699,
               "twi_dinf": 7.129057884216309,
               "rain_max_24h": 12.9,
-              "rain_decay_index": 36.828
+              "rain_decay_index": 36.828,
+              "elevation_rel_m": 23.122674832031294
             }
           }
         ]
@@ -461,40 +833,201 @@
       "maturidade": "transferencia_caracterizada",
       "unidade_de_resposta": "area",
       "n_pontos": 12,
-      "escore": 0.1822,
+      "cobertura_da_area": {
+        "pontos_pedidos": 12,
+        "pontos_usados": 12,
+        "pontos_descartados": 0,
+        "fracao_coberta": 1.0,
+        "politica": "recusar"
+      },
+      "escore": 0.2192,
       "ic95": [
-        0.0615,
-        0.2543
+        0.191,
+        0.2556
       ],
+      "escore_detalhe": {
+        "tipo": "probabilidade_projetada",
+        "tipo_se_v2": "probabilidade_projetada",
+        "definicao": "media, sobre os pontos da area, da probabilidade que o modelo ajustado atribui a cada ponto",
+        "leitura_admitida": "absoluta",
+        "por_que_esta_leitura": "o escore pode ser lido no proprio valor: os negativos sao ausencia observada ou qualificada",
+        "amostra_negativa_do_ajuste": {
+          "positivos": 25085,
+          "negativos": 31569,
+          "por_nivel": {
+            "observado": 27831,
+            "exclusao_qualificada": 3738
+          },
+          "ausencia_observada": 31569,
+          "fundo": 0,
+          "pct_fundo": 0.0,
+          "amostra": "presenca_e_ausencia",
+          "leitura_admitida": "absoluta",
+          "fundamento": "o escore pode ser lido no proprio valor: os negativos sao ausencia observada ou qualificada"
+        },
+        "variaveis_derivadas_na_requisicao": {
+          "elevation_rel_m": {
+            "derivada": true,
+            "a_partir_de": "elevation_m",
+            "baseline_m": 874.633978,
+            "pontos_derivados": 12,
+            "definicao": "elevation_m menos o P1 da propria regiao"
+          }
+        },
+        "ic95_obtido_por": "percentil 2,5-97,5 das projecoes das replicas de bootstrap de grupos gravadas no artefato servido; nenhum reajuste em tempo de requisicao",
+        "n_replicas": 1000,
+        "escala": [
+          0.0,
+          1.0
+        ],
+        "nao_e": "nao e AUC nem escore fora da amostra; nao ha p-valor no artefato servido, e o contrato nao inventa um"
+      },
       "variaveis_usadas": [
-        "elevation_m",
+        "elevation_rel_m",
         "slope_deg",
         "hand_m",
         "twi_dinf"
       ],
       "dominio": {
         "cobertura_por_variavel_pct": {
-          "elevation_m": 0.0,
+          "elevation_rel_m": 91.7,
           "slope_deg": 91.7,
           "hand_m": 83.3,
           "twi_dinf": 100.0
         },
-        "variaveis_em_extrapolacao": [
-          "elevation_m"
-        ]
+        "variaveis_em_extrapolacao": []
       },
       "limitacoes": [
-        "elevation_m e altitude absoluta, nao grandeza causal comparavel entre cidades de altitude de base diferente -- o portao de dominio do SVC-02 mede isso por requisicao",
+        "elevation_rel_m e a elevacao contra o P1 da propria regiao; a absoluta saiu do vetor em 30/08/2026 porque punha 0,0% dos pontos de Curitiba no dominio do treino, contra 94,5% da relativa",
         "chuva fora do conjunto: nao discrimina na escala em que o modelo compara (ext_chuva_estado_do_projeto_v1.md)",
-        "extrapolacao de dominio em ['elevation_m']: a requisicao esta fora da faixa 5-95% que o modelo viu no ajuste"
+        "sinal contrario ao fisicamente esperado em slope_deg: a variavel entra no escore mas fica fora da frase de explicacao",
+        "IC95 cruza zero em elevation_rel_m: o ajuste nao estabeleceu o efeito, e a variavel fica fora da frase de explicacao"
       ],
+      "suporte_cientifico": {
+        "temporal": {
+          "dimension": "temporal",
+          "support": "not_testable",
+          "support_significa": "a evidencia necessaria para o teste nao existe, ou o desenho nao permite o teste neste escopo",
+          "nao_equivale_a": [
+            "not_supported",
+            "supported"
+          ],
+          "scope": {
+            "region_id": "curitiba",
+            "model_id": "fluvial_planicie",
+            "protocol_id": "revp_temporal_v1",
+            "evidence_version": "71757e5acfb08c17",
+            "training_window": null,
+            "evaluation_window": null,
+            "evaluation_domain": "curitiba",
+            "region_data_window": "2023-01-03..2026-07-29",
+            "forcing_source": "open_meteo_era5_land/CHIRPS conforme artefato",
+            "dataset_version": "ds05:curitiba"
+          },
+          "protocol_id": "revp_temporal_v1",
+          "razao_tecnica": "protocolo_nao_declara_teste_neste_escopo",
+          "evidence": [
+            {
+              "modelo_de_transferencia": true
+            },
+            {
+              "dominio_do_teste_do_modelo": "dominio_de_ajuste:fluvial_planicie"
+            },
+            {
+              "por_que_sem_corte": "os cortes prospectivos deste modelo foram avaliados no pool de ajuste, que nao contem esta regiao"
+            },
+            {
+              "capacidade_justificativa": "estrutura temporal parcial; confundimentos de fonte, evento ou amostragem permanecem"
+            },
+            {
+              "identificabilidade": "PARCIALMENTE_IDENTIFICAVEL"
+            },
+            {
+              "teste_executado": false
+            },
+            {
+              "dados_permitiriam_teste": true
+            },
+            {
+              "performance_stability": null
+            },
+            {
+              "ci95_inclui_acaso": null
+            },
+            {
+              "status_temporal_legado": "TEMPORAL_TEST_INVALID"
+            },
+            {
+              "motivo_do_juri": "teste temporal invalido ou com vazamento/criterio ausente"
+            },
+            {
+              "forcing_shift_detected": true
+            }
+          ],
+          "limitations": [
+            "114 de 442 negativos tem qualidade temporal comparavel",
+            "shift de forcing (chuva) detectado no periodo: e mudanca de cenario, e nao demonstracao de que a relacao aprendida deixou de valer",
+            "o suporte temporal medido no dominio de ajuste deste modelo nao transfere para esta regiao: e escopo diferente"
+          ],
+          "provenance": [
+            {
+              "artefato": "local_runs/ds-05-tabela-unica/tabela_unica_admitidos_v2.csv",
+              "existe": true,
+              "sha256": "sha256:a89c77538f10283820ad3ded9369c1c084413100f263376c64b74f38987883e0",
+              "papel": "capacidade temporal por fonte"
+            },
+            {
+              "artefato": "local_runs/experimentos-cientificos/folds.csv",
+              "existe": true,
+              "sha256": "sha256:26583a2c6db3ab1bbe442e660aa9ccd5321fbc2d9c99bdc4d3039efd6271850f",
+              "papel": "cortes prospectivos do harness de challengers"
+            },
+            {
+              "artefato": "local_runs/experimentos-cientificos/metrics.csv",
+              "existe": true,
+              "sha256": "sha256:62058cdcab37795b7885c73becf76b3376e9af759e3015bdd5f57f192eb88832",
+              "papel": "IC95 por conjunto/modelo/esquema"
+            },
+            {
+              "artefato": "local_runs/mod-prosp-02/folds.csv",
+              "existe": true,
+              "sha256": "sha256:f5b2e2f7393740d0db706786f274331e10006a8315da8796a74a4d9972ad5835",
+              "papel": "janela expansiva prospectiva do piloto ingles"
+            },
+            {
+              "artefato": "outputs_public/data/susc_20k_siac156_curitiba_flood_candidates/results/v20q_walk_forward_cutoffs.csv",
+              "existe": true,
+              "sha256": "sha256:14130710f55b2311517fa7be7036ea0dd541912d957b0fb6413b84ce97c96335",
+              "papel": "walk-forward do modelo local de Curitiba"
+            },
+            {
+              "artefato": "local_runs/svc-01-modelos/indice.json",
+              "existe": true,
+              "sha256": "sha256:0ffc2387f82a87503163c5f794896e97b336f6b41d04d4ba280f642e6a5e9c5a",
+              "papel": "modelos servidos e regioes servidas"
+            }
+          ],
+          "operational_effect": "suporte_nao_demonstrado",
+          "operational_effect_motivo": "politica conservadora: nao ha teste identificavel neste escopo, entao o suporte nao esta demonstrado",
+          "avaliado_em": "2026-09-01T18:59:18.407773Z",
+          "avaliado": true,
+          "e_portao_do_contrato": false,
+          "o_que_este_campo_e": "dimensao cientifica em modo modo de revisao: descreve o suporte temporal do par regiao x modelo e nao participa da decisao da v1"
+        },
+        "dimensoes_sem_protocolo_formal": [
+          "spatial",
+          "domain",
+          "local_reference",
+          "physical_consistency"
+        ]
+      },
       "model_card": {
         "modelo": "fluvial_planicie",
         "regiao": "curitiba",
         "maturidade": "transferencia_caracterizada",
         "mecanismo": "FLUVIAL_ENXURRADA",
         "variaveis": [
-          "elevation_m",
+          "elevation_rel_m",
           "slope_deg",
           "hand_m",
           "twi_dinf"
@@ -517,13 +1050,90 @@
           "prevalencia": 0.4428
         },
         "desempenho": {
-          "auc_agrupada": 0.7336,
-          "folds": 5
+          "auc_agrupada": 0.7334,
+          "folds": 5,
+          "unidade_de_reamostragem": "componente conexa de grupo e celula: nenhum grupo mais fino que a celula de 0.0001 grau"
+        },
+        "orcamento_epv": {
+          "variaveis_usadas": 4,
+          "variaveis_permitidas": 28,
+          "eventos_por_variavel": 72.25,
+          "minimo_exigido": 10
+        },
+        "sinal_por_variavel": {
+          "elevation_rel_m": {
+            "coef": -0.053458,
+            "sinal_esperado": -1,
+            "sinal_bate": true,
+            "ic95": [
+              -0.325,
+              0.0328
+            ],
+            "ic_cruza_zero": true,
+            "fisicamente_verificada": false
+          },
+          "slope_deg": {
+            "coef": 0.309727,
+            "sinal_esperado": -1,
+            "sinal_bate": false,
+            "ic95": [
+              0.1146,
+              0.4492
+            ],
+            "ic_cruza_zero": false,
+            "fisicamente_verificada": false
+          },
+          "hand_m": {
+            "coef": -2.59671,
+            "sinal_esperado": -1,
+            "sinal_bate": true,
+            "ic95": [
+              -3.5426,
+              -1.7926
+            ],
+            "ic_cruza_zero": false,
+            "fisicamente_verificada": true
+          },
+          "twi_dinf": {
+            "coef": 0.412429,
+            "sinal_esperado": 1,
+            "sinal_bate": true,
+            "ic95": [
+              0.3435,
+              0.4645
+            ],
+            "ic_cruza_zero": false,
+            "fisicamente_verificada": true
+          }
+        },
+        "variaveis_fisicamente_verificadas": [
+          "hand_m",
+          "twi_dinf"
+        ],
+        "aderencia_temporal": {
+          "avaliada": true,
+          "datas_distintas": 132,
+          "datas_com_ambas_as_classes": 21,
+          "fracao_de_datas_com_ambas_as_classes": 0.1591,
+          "pontos_em_data_compartilhada": 49059,
+          "fracao_de_pontos_em_data_compartilhada": 0.9271,
+          "linhas_sem_data": 3738,
+          "janela": {
+            "inicio": "2000-06-01",
+            "fim": "2026-03-02"
+          },
+          "variaveis_que_dependem_do_tempo": [],
+          "o_que_mede": "se as duas classes foram observadas nos mesmos dias dentro do conjunto de ajuste",
+          "nao_e": "nao e o suporte temporal: aquele pergunta se o desempenho se sustenta em janela futura, e este pergunta se o desenho amostral separa lugares ou apenas dias",
+          "risco": "nao_aplicavel",
+          "risco_motivo": "nenhuma variavel do modelo depende do tempo: a data nao tem por onde entrar no escore"
         },
         "criterios_nao_atingidos": [],
         "limites_de_uso": [
-          "elevation_m e altitude absoluta, nao grandeza causal comparavel entre cidades de altitude de base diferente -- o portao de dominio do SVC-02 mede isso por requisicao",
-          "chuva fora do conjunto: nao discrimina na escala em que o modelo compara (ext_chuva_estado_do_projeto_v1.md)"
+          "elevation_rel_m e a elevacao contra o P1 da propria regiao; a absoluta saiu do vetor em 30/08/2026 porque punha 0,0% dos pontos de Curitiba no dominio do treino, contra 94,5% da relativa",
+          "chuva fora do conjunto: nao discrimina na escala em que o modelo compara (ext_chuva_estado_do_projeto_v1.md)",
+          "sinal contrario ao fisicamente esperado em slope_deg: a variavel entra no escore mas fica fora da frase de explicacao",
+          "IC95 cruza zero em elevation_rel_m: o ajuste nao estabeleceu o efeito, e a variavel fica fora da frase de explicacao"
         ],
         "por_que_este_conjunto": "a regiao alvo nao entra no treino em nenhuma linha: o proposito e prever onde nao ha inventario local, e validar contra o rotulo da propria regiao seria a pergunta errada (metodo_aplicacao_sem_rotulo_local_v1.md)",
         "ic_do_escore": "bootstrap do preditor linear reamostrando grupos, 1000 replicas",
@@ -531,42 +1141,61 @@
       },
       "explicacao": {
         "gerador": "regras_sobre_o_payload",
-        "escore_explicado": 0.1822,
+        "escore_explicado": 0.2192,
         "itens": [
           {
             "variavel": "hand_m",
             "nome": "altura acima da drenagem (HAND)",
             "valor_medio": 13.528,
             "unidade": "m",
-            "contribuicao": -1.0744,
-            "sentido": "contra"
+            "contribuicao": -1.0736,
+            "sentido": "contra",
+            "fisicamente_verificada": true,
+            "citada_na_frase": true
           },
           {
             "variavel": "twi_dinf",
             "nome": "indice topografico de umidade (TWI)",
             "valor_medio": 7.573,
             "unidade": "",
-            "contribuicao": -0.2546,
-            "sentido": "contra"
-          },
-          {
-            "variavel": "elevation_m",
-            "nome": "elevacao",
-            "valor_medio": 913.867,
-            "unidade": "m",
-            "contribuicao": -0.2396,
-            "sentido": "contra"
+            "contribuicao": -0.2548,
+            "sentido": "contra",
+            "fisicamente_verificada": true,
+            "citada_na_frase": true
           },
           {
             "variavel": "slope_deg",
             "nome": "declividade",
             "valor_medio": 4.351,
             "unidade": "graus",
-            "contribuicao": 0.1233,
-            "sentido": "a favor"
+            "contribuicao": 0.1236,
+            "sentido": "a favor",
+            "fisicamente_verificada": false,
+            "citada_na_frase": false
+          },
+          {
+            "variavel": "elevation_rel_m",
+            "nome": "elevation_rel_m",
+            "valor_medio": 39.233,
+            "unidade": "",
+            "contribuicao": 0.0258,
+            "sentido": "a favor",
+            "fisicamente_verificada": false,
+            "citada_na_frase": false
           }
         ],
-        "texto": "altura acima da drenagem (HAND) = 13.528 m pesa contra; indice topografico de umidade (TWI) = 7.573 pesa contra; elevacao = 913.867 m pesa contra; declividade = 4.351 graus pesa a favor."
+        "filtro": "so variaveis com sinal fisico verificado e IC95 sem cruzar zero",
+        "variaveis_omitidas_da_frase": [
+          "slope_deg",
+          "elevation_rel_m"
+        ],
+        "por_que_omitidas": "entram no escore, mas o ajuste nao estabeleceu sentido fisico confiavel para elas -- afirmar seria inventar",
+        "texto": "altura acima da drenagem (HAND) = 13.528 m pesa contra; indice topografico de umidade (TWI) = 7.573 pesa contra.",
+        "evidencia_chuva": {
+          "used": false,
+          "scenario": null,
+          "reason": "regional model does not use rain; supplied rain cannot alter score"
+        }
       }
     }
   },
@@ -658,11 +1287,46 @@
       "maturidade": "transferencia_sem_referencia_local",
       "unidade_de_resposta": "area",
       "n_pontos": 10,
+      "cobertura_da_area": {
+        "pontos_pedidos": 10,
+        "pontos_usados": 10,
+        "pontos_descartados": 0,
+        "fracao_coberta": 1.0,
+        "politica": "recusar"
+      },
       "escore": 0.4989,
       "ic95": [
         0.4268,
         0.5515
       ],
+      "escore_detalhe": {
+        "tipo": "probabilidade_projetada",
+        "tipo_se_v2": "probabilidade_projetada",
+        "definicao": "media, sobre os pontos da area, da probabilidade que o modelo ajustado atribui a cada ponto",
+        "leitura_admitida": "absoluta",
+        "por_que_esta_leitura": "o escore pode ser lido no proprio valor: os negativos sao ausencia observada ou qualificada",
+        "amostra_negativa_do_ajuste": {
+          "positivos": 2125,
+          "negativos": 3037,
+          "por_nivel": {
+            "observado": 3037
+          },
+          "ausencia_observada": 3037,
+          "fundo": 0,
+          "pct_fundo": 0.0,
+          "amostra": "presenca_e_ausencia",
+          "leitura_admitida": "absoluta",
+          "fundamento": "o escore pode ser lido no proprio valor: os negativos sao ausencia observada ou qualificada"
+        },
+        "variaveis_derivadas_na_requisicao": null,
+        "ic95_obtido_por": "percentil 2,5-97,5 das projecoes das replicas de bootstrap de grupos gravadas no artefato servido; nenhum reajuste em tempo de requisicao",
+        "n_replicas": 1000,
+        "escala": [
+          0.0,
+          1.0
+        ],
+        "nao_e": "nao e AUC nem escore fora da amostra; nao ha p-valor no artefato servido, e o contrato nao inventa um"
+      },
       "variaveis_usadas": [
         "hand_m"
       ],
@@ -677,6 +1341,125 @@
         "Petropolis nao tem nenhuma linha na tabela unica: nenhum ponto rotulado, nenhum inventario local, nenhuma validacao possivel hoje",
         "o escore para Petropolis e predicao por semelhanca de terreno, nunca afirmacao de acerto"
       ],
+      "suporte_cientifico": {
+        "temporal": {
+          "dimension": "temporal",
+          "support": "not_testable",
+          "support_significa": "a evidencia necessaria para o teste nao existe, ou o desenho nao permite o teste neste escopo",
+          "nao_equivale_a": [
+            "not_supported",
+            "supported"
+          ],
+          "scope": {
+            "region_id": "petropolis",
+            "model_id": "fluvial_serra",
+            "protocol_id": "revp_temporal_v1",
+            "evidence_version": "71757e5acfb08c17",
+            "training_window": null,
+            "evaluation_window": null,
+            "evaluation_domain": "petropolis",
+            "region_data_window": null,
+            "dataset_version": "sem_inventario_local"
+          },
+          "protocol_id": "revp_temporal_v1",
+          "razao_tecnica": "sem_dado_para_montar_teste",
+          "evidence": [
+            {
+              "modelo_de_transferencia": true
+            },
+            {
+              "dominio_do_teste_do_modelo": "dominio_de_ajuste:fluvial_serra"
+            },
+            {
+              "por_que_sem_corte": "os cortes prospectivos deste modelo foram avaliados no pool de ajuste, que nao contem esta regiao"
+            },
+            {
+              "capacidade_justificativa": "sem ponto rotulado local: nao existe AUC, calibracao ou teste temporal local definivel"
+            },
+            {
+              "identificabilidade": "NAO_IDENTIFICAVEL"
+            },
+            {
+              "teste_executado": false
+            },
+            {
+              "dados_permitiriam_teste": false
+            },
+            {
+              "performance_stability": null
+            },
+            {
+              "ci95_inclui_acaso": null
+            },
+            {
+              "status_temporal_legado": "TEMPORAL_TEST_INVALID"
+            },
+            {
+              "motivo_do_juri": "teste temporal invalido ou com vazamento/criterio ausente"
+            },
+            {
+              "forcing_shift_detected": null
+            }
+          ],
+          "limitations": [
+            "a fonte nao tem as duas classes rotuladas",
+            "nenhum negativo com qualidade temporal comparavel",
+            "nenhuma data tem as duas classes de modo avaliavel",
+            "a fonte nao sustenta fold prospectivo segundo a viabilidade",
+            "o suporte temporal medido no dominio de ajuste deste modelo nao transfere para esta regiao: e escopo diferente"
+          ],
+          "provenance": [
+            {
+              "artefato": "local_runs/ds-05-tabela-unica/tabela_unica_admitidos_v2.csv",
+              "existe": true,
+              "sha256": "sha256:a89c77538f10283820ad3ded9369c1c084413100f263376c64b74f38987883e0",
+              "papel": "capacidade temporal por fonte"
+            },
+            {
+              "artefato": "local_runs/experimentos-cientificos/folds.csv",
+              "existe": true,
+              "sha256": "sha256:26583a2c6db3ab1bbe442e660aa9ccd5321fbc2d9c99bdc4d3039efd6271850f",
+              "papel": "cortes prospectivos do harness de challengers"
+            },
+            {
+              "artefato": "local_runs/experimentos-cientificos/metrics.csv",
+              "existe": true,
+              "sha256": "sha256:62058cdcab37795b7885c73becf76b3376e9af759e3015bdd5f57f192eb88832",
+              "papel": "IC95 por conjunto/modelo/esquema"
+            },
+            {
+              "artefato": "local_runs/mod-prosp-02/folds.csv",
+              "existe": true,
+              "sha256": "sha256:f5b2e2f7393740d0db706786f274331e10006a8315da8796a74a4d9972ad5835",
+              "papel": "janela expansiva prospectiva do piloto ingles"
+            },
+            {
+              "artefato": "outputs_public/data/susc_20k_siac156_curitiba_flood_candidates/results/v20q_walk_forward_cutoffs.csv",
+              "existe": true,
+              "sha256": "sha256:14130710f55b2311517fa7be7036ea0dd541912d957b0fb6413b84ce97c96335",
+              "papel": "walk-forward do modelo local de Curitiba"
+            },
+            {
+              "artefato": "local_runs/svc-01-modelos/indice.json",
+              "existe": true,
+              "sha256": "sha256:0ffc2387f82a87503163c5f794896e97b336f6b41d04d4ba280f642e6a5e9c5a",
+              "papel": "modelos servidos e regioes servidas"
+            }
+          ],
+          "operational_effect": "suporte_nao_demonstrado",
+          "operational_effect_motivo": "politica conservadora: nao ha teste identificavel neste escopo, entao o suporte nao esta demonstrado",
+          "avaliado_em": "2026-09-01T18:59:18.407773Z",
+          "avaliado": true,
+          "e_portao_do_contrato": false,
+          "o_que_este_campo_e": "dimensao cientifica em modo modo de revisao: descreve o suporte temporal do par regiao x modelo e nao participa da decisao da v1"
+        },
+        "dimensoes_sem_protocolo_formal": [
+          "spatial",
+          "domain",
+          "local_reference",
+          "physical_consistency"
+        ]
+      },
       "model_card": {
         "modelo": "fluvial_serra",
         "regiao": "petropolis",
@@ -702,7 +1485,48 @@
         },
         "desempenho": {
           "auc_agrupada": 0.7916,
-          "folds": 5
+          "folds": 5,
+          "unidade_de_reamostragem": "componente conexa de grupo e celula: nenhum grupo mais fino que a celula de 0.0001 grau"
+        },
+        "orcamento_epv": {
+          "variaveis_usadas": 1,
+          "variaveis_permitidas": 1,
+          "eventos_por_variavel": 19.0,
+          "minimo_exigido": 10
+        },
+        "sinal_por_variavel": {
+          "hand_m": {
+            "coef": -1.442269,
+            "sinal_esperado": -1,
+            "sinal_bate": true,
+            "ic95": [
+              -3.5545,
+              -0.7455
+            ],
+            "ic_cruza_zero": false,
+            "fisicamente_verificada": true
+          }
+        },
+        "variaveis_fisicamente_verificadas": [
+          "hand_m"
+        ],
+        "aderencia_temporal": {
+          "avaliada": true,
+          "datas_distintas": 9,
+          "datas_com_ambas_as_classes": 9,
+          "fracao_de_datas_com_ambas_as_classes": 1.0,
+          "pontos_em_data_compartilhada": 5162,
+          "fracao_de_pontos_em_data_compartilhada": 1.0,
+          "linhas_sem_data": 0,
+          "janela": {
+            "inicio": "2016-08-12",
+            "fim": "2026-01-10"
+          },
+          "variaveis_que_dependem_do_tempo": [],
+          "o_que_mede": "se as duas classes foram observadas nos mesmos dias dentro do conjunto de ajuste",
+          "nao_e": "nao e o suporte temporal: aquele pergunta se o desempenho se sustenta em janela futura, e este pergunta se o desenho amostral separa lugares ou apenas dias",
+          "risco": "nao_aplicavel",
+          "risco_motivo": "nenhuma variavel do modelo depende do tempo: a data nao tem por onde entrar no escore"
         },
         "criterios_nao_atingidos": [],
         "limites_de_uso": [
@@ -724,10 +1548,20 @@
             "valor_medio": 13.792,
             "unidade": "m",
             "contribuicao": 0.6086,
-            "sentido": "a favor"
+            "sentido": "a favor",
+            "fisicamente_verificada": true,
+            "citada_na_frase": true
           }
         ],
-        "texto": "altura acima da drenagem (HAND) = 13.792 m pesa a favor."
+        "filtro": "so variaveis com sinal fisico verificado e IC95 sem cruzar zero",
+        "variaveis_omitidas_da_frase": [],
+        "por_que_omitidas": null,
+        "texto": "altura acima da drenagem (HAND) = 13.792 m pesa a favor.",
+        "evidencia_chuva": {
+          "used": false,
+          "scenario": null,
+          "reason": "regional model does not use rain; supplied rain cannot alter score"
+        }
       }
     }
   },
@@ -779,15 +1613,14 @@
     "resposta": {
       "status": "insufficient_data",
       "gate_que_nao_fechou": "variaveis_presentes",
-      "detalhe": "variavel 'elevation_m' ausente ou nao finita no ponto 0",
+      "detalhe": "variavel 'elevation_rel_m' ausente ou nao finita no ponto 0",
       "escore": null,
       "contrato": "v1",
       "variaveis_exigidas": [
-        "elevation_m",
+        "elevation_rel_m",
         "slope_deg",
         "hand_m",
         "twi_dinf",
-        "rain_max_24h",
         "rain_decay_index"
       ]
     }

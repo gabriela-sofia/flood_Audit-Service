@@ -184,7 +184,7 @@ def generate_patch_preview(
 
     fig.text(
         0.5, 0.01,
-        "Review-only | No rotulo | No prediction",
+        "Revisao | No rotulo | No prediction",
         ha="center", va="bottom", fontsize=4.5, color="#888888",
     )
 
@@ -345,7 +345,7 @@ def main() -> int:
 
         cat_short = _category_short(rec.candidate_category)
         scope = (
-            f"{cat_short} structural candidate — review-only visual observation; "
+            f"{cat_short} structural candidate — modo de revisao visual observation; "
             "no rotulo, no prediction, no ground truth."
         )
 
@@ -403,28 +403,28 @@ def main() -> int:
     cs_medoids_path = FIGURES_DIR / "contact_sheet_medoids_v1hc.png"
     cs_results["contact_sheet_medoids_v1hc.png"] = build_contact_sheet(
         medoids, preview_map, cs_medoids_path,
-        "REV-P v1hc — Medoids Regionais (Review-only)",
+        "REV-P v1hc — Medoids Regionais (Revisao)",
         ncols=3,
     )
 
     cs_outliers_path = FIGURES_DIR / "contact_sheet_outliers_v1hc.png"
     cs_results["contact_sheet_outliers_v1hc.png"] = build_contact_sheet(
         outliers, preview_map, cs_outliers_path,
-        "REV-P v1hc — Outliers Estruturais (Review-only)",
+        "REV-P v1hc — Outliers Estruturais (Revisao)",
         ncols=3,
     )
 
     cs_low_path = FIGURES_DIR / "contact_sheet_low_external_coverage_v1hc.png"
     cs_results["contact_sheet_low_external_coverage_v1hc.png"] = build_contact_sheet(
         low_coverage, preview_map, cs_low_path,
-        "REV-P v1hc — Baixa Cobertura GIS Externa (Review-only)",
+        "REV-P v1hc — Baixa Cobertura GIS Externa (Revisao)",
         ncols=7,
     )
 
     cs_all_path = FIGURES_DIR / "contact_sheet_all_review_candidates_v1hc.png"
     cs_results["contact_sheet_all_review_candidates_v1hc.png"] = build_contact_sheet(
         records, preview_map, cs_all_path,
-        "REV-P v1hc — Todos os Candidatos de Revisão (Review-only)",
+        "REV-P v1hc — Todos os Candidatos de Revisão (Revisao)",
         ncols=7,
     )
 

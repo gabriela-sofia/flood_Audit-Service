@@ -1,5 +1,5 @@
 """
-FT-UK-04 -- Anexa as duas features de chuva do v12 a amostra do piloto.
+FT-UK-04 -- Anexa as duas variaveis de chuva do v12 a amostra do piloto.
 
 ENTRADAS:
   local_runs/ft-uk-03-amostra/amostra_candidata_uk_v1.csv
