@@ -33,6 +33,11 @@ local_runs/
 # Dados brutos e artefatos geoespaciais pesados
 *.tif
 *.tiff
+# Excecao: as tres grades publicas por regiao SAO artefato curado e ficam
+# versionadas. Sem esta excecao elas continuavam rastreadas por historico, mas
+# um checkout novo que regerasse a grade nao as veria -- inconsistencia que
+# so aparece no dia em que alguem tenta reproduzir.
+!modelo/execucoes/svc-03-grade/*.tif
 *.vrt
 *.aux.xml
 *.ovr

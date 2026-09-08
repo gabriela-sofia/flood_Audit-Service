@@ -27,6 +27,7 @@ from __future__ import annotations
 import argparse
 import csv
 import json
+import os
 import time
 import urllib.parse
 import urllib.request
@@ -34,7 +35,12 @@ from dataclasses import dataclass
 from pathlib import Path
 
 NOMINATIM_URL = "https://nominatim.openstreetmap.org/search"
-USER_AGENT = "REV-P-TCC-Enchentes-Curitiba/1.0 (pesquisa academica; contato: gabrielasofia.bcc@gmail.com)"
+# A politica de uso do Nominatim exige um contato identificavel. Ele fica em
+# variavel de ambiente para nao publicar endereco pessoal no repositorio:
+# quem for rodar declara o proprio contato antes de chamar o servico.
+CONTATO = os.environ.get("NOMINATIM_CONTATO", "")
+USER_AGENT = ("REV-P-Enchentes-Curitiba/1.0 (pesquisa academica"
+              + (f"; contato: {CONTATO}" if CONTATO else "") + ")")
 RATE_LIMIT_S = 1.1
 
 

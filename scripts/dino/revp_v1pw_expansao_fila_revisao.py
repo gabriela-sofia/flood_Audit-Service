@@ -119,7 +119,7 @@ def run() -> None:
     write_csv(OUT_SUM, summary, SUM_FIELDS)
     write_schema(SCH_QUEUE, QUEUE_FIELDS, "v1pw_dino_review_only_queue_expanded")
     write_schema(SCH_SUM, SUM_FIELDS, "v1pw_dino_review_only_queue_expanded_summary")
-    write_doc(DOC, "v1pw — DINO Review-Only Queue Expansion", [
+    write_doc(DOC, "v1pw - Expansao da fila de revisao visual", [
         "## Objetivo",
         "Gerar fila DINO expandida a partir de v1pv, priorizando Protocol C patches "
         "e referências Sentinel TIF. Não executa embedding. Não cria rotulo.",
