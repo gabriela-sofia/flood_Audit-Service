@@ -1,0 +1,3 @@
+python scripts/temporalidade/ontologia_temporal.py
+python scripts/temporalidade/auditoria_temporal.py
+python -m pytest tests/test_suporte_cientifico_temporal.py -q

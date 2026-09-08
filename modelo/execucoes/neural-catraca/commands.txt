@@ -1,0 +1,4 @@
+python scripts/neural/catraca.py
+fora do pacote: scripts/neural/experimento_pote_crescente.py
+fora do pacote: scripts/neural/volatilidade_da_rodada.py
+fora do pacote: scripts/neural/experimento_acumulacao.py

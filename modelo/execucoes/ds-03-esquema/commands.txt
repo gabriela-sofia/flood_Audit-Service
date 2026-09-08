@@ -1,0 +1,2 @@
+python scripts/treino/ds03_esquema_alvo.py
+python -m pytest tests/test_ds03_ds05_tabela_unica.py -q

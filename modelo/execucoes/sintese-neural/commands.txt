@@ -1,0 +1,3 @@
+python scripts/neural/cadeia_seletiva.py
+python scripts/neural/medir_as_quatro_frentes.py
+python -m pytest tests/test_cadeia_seletiva.py -q

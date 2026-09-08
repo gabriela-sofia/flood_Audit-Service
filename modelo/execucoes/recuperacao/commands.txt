@@ -1,0 +1,3 @@
+fora do pacote: scripts/recuperacao/avaliacao_de_recuperacao.py
+fora do pacote: scripts/recuperacao/indice_denso.py
+fora do pacote: scripts/recuperacao/comparar_recuperadores.py

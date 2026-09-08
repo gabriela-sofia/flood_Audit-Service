@@ -465,6 +465,9 @@ def materializacao_do_corte(dataset: str, ano_corte: int) -> dict:
     Devolve `{}` quando a base do harness nao esta disponivel: ausencia de
     base nao pode virar "zero folds", que e uma afirmacao sobre o desenho.
     """
+    # `scripts/challengers` nao faz parte do pacote publico, entao neste
+    # checkout este caminho devolve `{}` sempre -- por desenho, e nao por
+    # engano: ausencia de base nao pode virar "zero folds".
     try:
         sys.path.insert(0, str(REPO / "scripts" / "challengers"))
         import matriz_validacao as mv

@@ -1,0 +1,6 @@
+python scripts/treino/ds01_montar_multirregiao.py
+python scripts/treino/ds02_montar_por_mecanismo.py
+python scripts/treino/ds03_esquema_alvo.py
+python scripts/treino/ds04_reduzir_por_fonte.py
+python scripts/treino/ds05_admissao_consolidacao.py
+python -m pytest tests/test_ds03_ds05_tabela_unica.py -q
