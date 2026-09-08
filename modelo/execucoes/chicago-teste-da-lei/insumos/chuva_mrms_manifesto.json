@@ -1,0 +1,23 @@
+{
+  "tipo": "chuva_mrms_1km_chicago",
+  "gerado_por": "scripts/chuva/adquirir_mrms_chicago.py",
+  "gerado_em": "2026-09-04T05:02:39+00:00",
+  "produto": "MultiSensor_QPE_24H_Pass2 ou GaugeCorr_QPE_24H",
+  "resolucao_graus": 0.01,
+  "caixa": [
+    -87.9882,
+    41.5946,
+    -87.4744,
+    42.0729
+  ],
+  "dias_no_universo": 2438,
+  "dias_baixados": 0,
+  "dias_por_replay": 2438,
+  "dias_com_falha": 0,
+  "pontos_amostrados": 501689,
+  "pontos_com_valor": 501689,
+  "primeiras_falhas": [],
+  "mesmo_codigo_de": "scripts/chuva/adquirir_mrms_nyc.py",
+  "por_que_mesmo_codigo": "a pergunta e se o efeito medido em Nova York se repete aqui; implementacoes diferentes do mesmo produto deixariam a diferenca de resultado indistinguivel de diferenca de codigo",
+  "nao_e": "nao e medida de pluviometro: e estimativa de radar calibrada por pluviometro. E nao entrou em modelo nenhum"
+}

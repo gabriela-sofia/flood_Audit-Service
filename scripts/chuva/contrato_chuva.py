@@ -388,7 +388,7 @@ def derive_peak_feature(times: Sequence[str], values: Sequence[float]) -> dict:
 
     `rain_event_day` mede VOLUME -- quanta agua caiu no dia. Esta mede
     INTENSIDADE -- quao rapido ela caiu. Sao ingredientes diferentes do mesmo
-    evento, e a limitacao ja estava declarada em `case_crossover_*.json`:
+    evento, e a limitacao ja estava declarada em `autopareamento_*.json`:
     "acumulado diario nao distingue intensidade: 80 mm em duas horas e 80 mm no
     dia inteiro sao o mesmo numero neste produto".
 

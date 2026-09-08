@@ -1,0 +1,117 @@
+{
+  "tipo": "chuva_mrms_1km_nyc",
+  "gerado_por": "scripts/chuva/adquirir_mrms_nyc.py",
+  "gerado_em": "2026-09-03T12:47:15+00:00",
+  "produto": "MultiSensor_QPE_24H_Pass2 ou GaugeCorr_QPE_24H",
+  "fonte": "NOAA MRMS via mtarchive.geol.iastate.edu",
+  "resolucao_graus": 0.01,
+  "janela_declarada": "acumulado de 00:00Z do dia ate 00:00Z do dia seguinte; nao e o dia local de Nova York",
+  "por_que_o_desalinhamento_nao_contamina": "a janela e a mesma para todos os pontos do dia, entao ela e constante dentro do estrato e cancela junto com o resto; o que nao cancela, e o objetivo, e a variacao espacial",
+  "modo": "online_autorizado",
+  "dias_no_universo": 2402,
+  "dias_nesta_corrida": 2402,
+  "dias_baixados": 2368,
+  "dias_por_replay": 16,
+  "dias_com_falha": 18,
+  "pontos_com_valor": 468896,
+  "fracao_da_variancia_entre_lugares_no_mesmo_dia": 0.0622,
+  "comparacao": {
+    "era5_land_0_1_grau": 0.075,
+    "o_que_significa": "fracao da variancia do gatilho que e entre lugares no mesmo dia; quanto maior, mais o produto distingue bairros em vez de datas"
+  },
+  "primeiras_falhas": [
+    {
+      "dia": "2020-02-19",
+      "motivo": "ConnectionError",
+      "detalhe": "('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+    },
+    {
+      "dia": "2020-05-28",
+      "motivo": "ConnectionError",
+      "detalhe": "('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+    },
+    {
+      "dia": "2020-07-19",
+      "motivo": "ConnectionError",
+      "detalhe": "('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+    },
+    {
+      "dia": "2020-09-10",
+      "motivo": "ConnectionError",
+      "detalhe": "('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+    },
+    {
+      "dia": "2020-11-06",
+      "motivo": "ConnectionError",
+      "detalhe": "('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+    },
+    {
+      "dia": "2021-02-26",
+      "motivo": "ConnectionError",
+      "detalhe": "('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+    },
+    {
+      "dia": "2021-03-02",
+      "motivo": "ConnectionError",
+      "detalhe": "('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+    },
+    {
+      "dia": "2022-07-23",
+      "motivo": "ConnectionError",
+      "detalhe": "('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+    },
+    {
+      "dia": "2022-07-27",
+      "motivo": "ConnectionError",
+      "detalhe": "('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+    },
+    {
+      "dia": "2022-08-01",
+      "motivo": "ConnectionError",
+      "detalhe": "('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+    },
+    {
+      "dia": "2023-08-15",
+      "motivo": "ConnectionError",
+      "detalhe": "('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+    },
+    {
+      "dia": "2024-07-07",
+      "motivo": "ConnectionError",
+      "detalhe": "('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+    },
+    {
+      "dia": "2024-09-29",
+      "motivo": "ConnectionError",
+      "detalhe": "HTTPSConnectionPool(host='mtarchive.geol.iastate.edu', port=443): Read timed out."
+    },
+    {
+      "dia": "2024-09-30",
+      "motivo": "ConnectTimeout",
+      "detalhe": "HTTPSConnectionPool(host='mtarchive.geol.iastate.edu', port=443): Max retries exceeded with url: /2024/10/01/mrms/ncep/MultiSensor_QPE_24H_Pass2/MultiSensor_QPE"
+    },
+    {
+      "dia": "2024-10-01",
+      "motivo": "ConnectTimeout",
+      "detalhe": "HTTPSConnectionPool(host='mtarchive.geol.iastate.edu', port=443): Max retries exceeded with url: /2024/10/02/mrms/ncep/MultiSensor_QPE_24H_Pass2/MultiSensor_QPE"
+    },
+    {
+      "dia": "2024-10-02",
+      "motivo": "ConnectTimeout",
+      "detalhe": "HTTPSConnectionPool(host='mtarchive.geol.iastate.edu', port=443): Max retries exceeded with url: /2024/10/03/mrms/ncep/MultiSensor_QPE_24H_Pass2/MultiSensor_QPE"
+    },
+    {
+      "dia": "2024-10-05",
+      "motivo": "ConnectionError",
+      "detalhe": "HTTPSConnectionPool(host='mtarchive.geol.iastate.edu', port=443): Read timed out."
+    },
+    {
+      "dia": "2025-12-06",
+      "motivo": "ConnectionError",
+      "detalhe": "('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+    }
+  ],
+  "saida": "local_runs\\chuva-mrms-nyc\\mrms_por_ponto_nyc.csv",
+  "nao_e": "nao e medida direta de lamina: e estimativa de radar corrigida por pluviometro. Cobre apenas os Estados Unidos, entao nao existe equivalente deste produto para as regioes brasileiras",
+  "nao_entrou_em_modelo": true
+}

@@ -1,0 +1,23 @@
+{
+  "tipo": "terreno_nos_pontos_chicago",
+  "gerado_por": "scripts/externo/aq_chicago03_terreno_nos_pontos.py",
+  "gerado_em": "2026-09-04T05:02:23+00:00",
+  "cidade": "chicago",
+  "cadeia": "WhiteboxTools D-infinity 30 m, limiar de canal 0,1123 km2",
+  "rasters": {
+    "elevation_m": "local_runs\\mdt-cidades\\chicago\\chicago_mdt_30m.tif",
+    "hand_m": "local_runs\\mdt-cidades\\chicago\\chicago_mdt_30m_hand.tif",
+    "twi_dinf": "local_runs\\mdt-cidades\\chicago\\chicago_mdt_30m_twi.tif",
+    "slope_deg": "local_runs\\mdt-cidades\\chicago\\chicago_mdt_30m_slope.tif"
+  },
+  "pontos_lidos": 501689,
+  "pontos_completos": 496972,
+  "pct_completos": 99.06,
+  "positivos_completos": 134542,
+  "linha_base_elevacao_m": 175.203,
+  "percentil_da_linha_base": 1.0,
+  "por_que_relativa": "o vetor servido usa elevacao contra o P1 da propria regiao; a absoluta punha 0,0% dos pontos de Curitiba no dominio de treino contra 94,5% da relativa",
+  "ausencia_nao_vira_zero": "ponto fora do raster ou em celula sem dado sai da analise; zero de HAND significa 'no nivel do rio', o valor mais alagavel possivel",
+  "saida": "local_runs\\aq-chicago-03\\chicago_pontos_com_terreno.csv",
+  "nao_e": "nao e promocao de fonte e nao entra na tabela unica: e a leitura do terreno nos pontos de uma cidade que existe para testar se o efeito medido em Nova York se repete"
+}

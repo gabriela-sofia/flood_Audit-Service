@@ -1,0 +1,57 @@
+{
+  "tipo": "chuva_mrms_vs_era5_nyc",
+  "gerado_por": "scripts/chuva/mrms_vs_era5_nyc.py",
+  "gerado_em": "2026-09-03T12:50:01+00:00",
+  "chuva_minima_mm": 1.0,
+  "recortes": {
+    "todos_os_dias": {
+      "pontos": 468793,
+      "dias": 2384,
+      "era5_land_11km": {
+        "valores_distintos_por_dia_mediana": 4,
+        "amplitude_no_dia_mm_mediana": 0.4,
+        "desvio_no_dia_mm_mediano": 0.1096,
+        "variancia_total": 148.395,
+        "variancia_intra_dia": 7.029,
+        "fracao_intra_dia": 0.0474
+      },
+      "mrms_1km": {
+        "valores_distintos_por_dia_mediana": 1,
+        "amplitude_no_dia_mm_mediana": 0.0,
+        "desvio_no_dia_mm_mediano": 0.0,
+        "variancia_total": 271.952,
+        "variancia_intra_dia": 16.905,
+        "fracao_intra_dia": 0.0622
+      }
+    },
+    "dias_de_chuva": {
+      "pontos": 152821,
+      "dias": 684,
+      "era5_land_11km": {
+        "valores_distintos_por_dia_mediana": 9,
+        "amplitude_no_dia_mm_mediana": 5.1,
+        "desvio_no_dia_mm_mediano": 1.3705,
+        "variancia_total": 304.593,
+        "variancia_intra_dia": 20.013,
+        "fracao_intra_dia": 0.0657
+      },
+      "mrms_1km": {
+        "valores_distintos_por_dia_mediana": 28,
+        "amplitude_no_dia_mm_mediana": 7.55,
+        "desvio_no_dia_mm_mediano": 1.7194,
+        "variancia_total": 617.234,
+        "variancia_intra_dia": 51.126,
+        "fracao_intra_dia": 0.0828
+      }
+    }
+  },
+  "ganho_de_distincao_espacial_em_dia_de_chuva": 3.11,
+  "correcao_de_leitura_anterior": {
+    "reportado_no_canario": 0.2138,
+    "por_que_estava_errado": "8 dias: com pouca variancia ENTRE dias, a fracao intra infla por construcao; e o valor do ERA5 usado na comparacao vinha de outra base (serie celula x dia, nao pontos)",
+    "valor_correto_na_serie_inteira": 0.0622,
+    "valor_do_era5_nas_mesmas_linhas": 0.0474
+  },
+  "leitura": "no agregado o MRMS parece pouco melhor, e a fracao chega a punir o produto certo: em dia seco o radar ve zero em toda parte, o que e verdade e conta como variacao espacial nula, enquanto a reanalise devolve valores pequenos e diferentes entre celulas sem que chova. Nos dias de chuva, que sao os que interessam, o MRMS distingue 3x mais valores dentro do mesmo dia",
+  "nao_e": "nao e medida de acerto de nenhum dos dois produtos contra pluviometro: e comparacao de quanta distincao espacial cada um oferece nos mesmos pontos e nas mesmas datas"
+}

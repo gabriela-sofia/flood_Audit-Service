@@ -1,0 +1,84 @@
+{
+  "artefato": "chuva_casos_das_centrais",
+  "schema_version": "1.0.0",
+  "gerado_em": "2026-08-31T20:18:10+00:00",
+  "fonte": "nyc",
+  "procedencia": {
+    "arquivo": "local_runs\\aq-chamados-01\\nyc311\\9qq5-d465_completo.csv",
+    "bytes": 86479374,
+    "sha256": "202d3b882b3e3c78ed28f663af142f84363364dd4dc7c9c2242be25c9aaf7083",
+    "formato_declarado_pela_extensao": "csv",
+    "formato_real": "texto",
+    "linhas_lidas": 142579,
+    "sem_limite_de_linhas": true,
+    "dataset": "NYC Open Data 9qq5-d465 (Sewer / Street Flooding)"
+  },
+  "termos_hidricos": [
+    "street flooding",
+    "sewer backup",
+    "catch basin",
+    "flooding",
+    "highway flooding"
+  ],
+  "subtipos": {
+    "sewer_backup": [
+      "sewer backup"
+    ],
+    "catch_basin": [
+      "catch basin"
+    ],
+    "street_flooding": [
+      "street flooding",
+      "highway flooding"
+    ]
+  },
+  "casos": 141469,
+  "celulas_dia": 29161,
+  "celulas": 19,
+  "dias_distintos": 2402,
+  "primeiro_dia": "2020-01-01",
+  "ultimo_dia": "2026-07-29",
+  "por_subtipo": {
+    "sewer_backup": 75900,
+    "catch_basin": 44256,
+    "street_flooding": 21313
+  },
+  "auditoria_de_janelas": {
+    "nyc": {
+      "auditado": true,
+      "fonte": "nyc",
+      "n_positivos": 3583,
+      "n_negativos": 12200,
+      "dias_com_positivo": 67,
+      "dias_com_negativo": 21,
+      "dias_com_as_duas_classes": 19,
+      "positivos_em_dia_sem_negativo": 2644,
+      "pct_positivos_em_dia_sem_negativo": 73.8,
+      "negativos_em_dia_sem_positivo": 305,
+      "pct_negativos_em_dia_sem_positivo": 2.5,
+      "auc_de_um_preditor_que_so_conhece_o_dia": 0.8873,
+      "leitura": "um preditor sem fisica nenhuma separa as classes: qualquer variavel que varie no tempo herda esse poder, e ganho de AUC nesta base nao sustenta leitura causal",
+      "consequencia": "o desenho autopareado nao usa a classe negativa e por isso nao herda este defeito; leituras comparando classes nesta base ficam condicionadas a correcao da janela de aquisicao"
+    },
+    "sao_paulo": {
+      "auditado": true,
+      "fonte": "sao_paulo",
+      "n_positivos": 464,
+      "n_negativos": 1483,
+      "dias_com_positivo": 30,
+      "dias_com_negativo": 30,
+      "dias_com_as_duas_classes": 30,
+      "positivos_em_dia_sem_negativo": 0,
+      "pct_positivos_em_dia_sem_negativo": 0.0,
+      "negativos_em_dia_sem_positivo": 0,
+      "pct_negativos_em_dia_sem_positivo": 0.0,
+      "auc_de_um_preditor_que_so_conhece_o_dia": 0.5218,
+      "leitura": "as janelas se sobrepoem o bastante para que a data sozinha nao separe as classes",
+      "consequencia": "o desenho autopareado nao usa a classe negativa e por isso nao herda este defeito; leituras comparando classes nesta base ficam condicionadas a correcao da janela de aquisicao"
+    }
+  },
+  "nao_e": "nao e rotulo de referencia, nao promove fonte e nao escreve no ds01: e o conjunto de CASOS datados do autopareamento",
+  "sem_classe_negativa": "o desenho autopareado compara o caso consigo mesmo em outras datas; carregar fundo traria para dentro o viés que ele cancela",
+  "saida": "local_runs\\chuva-casos-centrais\\casos_celula_dia_nyc.csv",
+  "sha256_saida": "3a765284046ae7656e86d56f6d1cfbf7339c794668bc176a71681361d77d397e"
+}

@@ -1,0 +1,121 @@
+{
+  "tipo": "terreno_sob_gatilho_1km",
+  "gerado_por": "scripts/chuva/terreno_sob_gatilho_1km.py",
+  "gerado_em": "2026-09-03T12:52:54+00:00",
+  "method_version": "rain-method-v1.0.0",
+  "semente": 20260902,
+  "desenho": {
+    "estrato": "dia",
+    "por_que_o_dia_basta_agora": "com a chuva a 1 km ela varia DENTRO do dia; com 0,1 grau nao variava, e por isso o estudo anterior precisou estratificar por celula x dia e comparar faixas de dose entre datas",
+    "caso": "chamado hidrico",
+    "controle": "chamado de outro assunto no mesmo dia",
+    "estimador": "logistica centrada por estrato, sem intercepto",
+    "ic": "percentil de 300 reamostragens de dias inteiros",
+    "criterios_fixados_antes": {
+      "sinal_exigido": {
+        "hand_m": -1,
+        "twi_dinf": 1,
+        "slope_deg": -1,
+        "elevation_rel_m": -1,
+        "mrms_qpe_24h_mm": 1,
+        "twi_dinf_x_chuva": 1,
+        "hand_m_x_chuva": -1
+      }
+    }
+  },
+  "amostra": {
+    "chamados": 468896,
+    "dias_informativos": 376,
+    "pontos": 381919,
+    "positivos": 16915,
+    "fracao_intra_estrato": {
+      "hand_m": 0.9782,
+      "twi_dinf": 0.9945,
+      "slope_deg": 0.9862,
+      "elevation_rel_m": 0.9663,
+      "mrms_qpe_24h_mm": 0.0881,
+      "twi_dinf_x_chuva": 0.9876,
+      "hand_m_x_chuva": 0.9812
+    }
+  },
+  "efeitos": {
+    "hand_m": {
+      "coef": -0.0058,
+      "ic95": [
+        -0.0136,
+        0.0034
+      ],
+      "ic95_exclui_zero": false,
+      "sinal_esperado": -1,
+      "sinal_bate": true,
+      "aprendido": false
+    },
+    "twi_dinf": {
+      "coef": 0.039,
+      "ic95": [
+        0.0317,
+        0.0472
+      ],
+      "ic95_exclui_zero": true,
+      "sinal_esperado": 1,
+      "sinal_bate": true,
+      "aprendido": true
+    },
+    "slope_deg": {
+      "coef": -0.0151,
+      "ic95": [
+        -0.0184,
+        -0.0116
+      ],
+      "ic95_exclui_zero": true,
+      "sinal_esperado": -1,
+      "sinal_bate": true,
+      "aprendido": true
+    },
+    "elevation_rel_m": {
+      "coef": -0.0088,
+      "ic95": [
+        -0.019,
+        -0.0002
+      ],
+      "ic95_exclui_zero": true,
+      "sinal_esperado": -1,
+      "sinal_bate": true,
+      "aprendido": true
+    },
+    "mrms_qpe_24h_mm": {
+      "coef": 0.1886,
+      "ic95": [
+        0.1339,
+        0.2221
+      ],
+      "ic95_exclui_zero": true,
+      "sinal_esperado": 1,
+      "sinal_bate": true,
+      "aprendido": true
+    },
+    "twi_dinf_x_chuva": {
+      "coef": 0.0397,
+      "ic95": [
+        0.0221,
+        0.056
+      ],
+      "ic95_exclui_zero": true,
+      "sinal_esperado": 1,
+      "sinal_bate": true,
+      "aprendido": true
+    },
+    "hand_m_x_chuva": {
+      "coef": 0.0022,
+      "ic95": [
+        -0.0093,
+        0.0105
+      ],
+      "ic95_exclui_zero": false,
+      "sinal_esperado": -1,
+      "sinal_bate": false,
+      "aprendido": false
+    }
+  },
+  "nao_e": "nao e modelo servido e nao promove variavel: e a medida da interacao terreno x forcamento na escala do bairro. O MRMS cobre apenas os Estados Unidos, entao este resultado nao transfere sozinho para regiao brasileira"
+}

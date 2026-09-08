@@ -1,0 +1,58 @@
+{
+  "nyc": {
+    "auditado": true,
+    "fonte": "nyc",
+    "n_positivos": 104653,
+    "n_negativos": 367074,
+    "dias_com_positivo": 2402,
+    "dias_com_negativo": 378,
+    "dias_com_as_duas_classes": 378,
+    "positivos_em_dia_sem_negativo": 87670,
+    "pct_positivos_em_dia_sem_negativo": 83.8,
+    "negativos_em_dia_sem_positivo": 0,
+    "pct_negativos_em_dia_sem_positivo": 0.0,
+    "auc_de_um_preditor_que_so_conhece_o_dia": 0.5035,
+    "leitura": "as janelas se sobrepoem o bastante para que a data sozinha nao separe as classes",
+    "consequencia": "o desenho autopareado nao usa a classe negativa e por isso nao herda este defeito; leituras comparando classes nesta base ficam condicionadas a correcao da janela de aquisicao",
+    "cobertura_do_rotulo": {
+      "medida": true,
+      "casos_no_bruto_com_lugar_e_dia": 141469,
+      "positivos_na_tabela_unica": 104653,
+      "fracao_usada": 0.7398,
+      "janela_do_bruto": [
+        "2020-01-01",
+        "2026-07-29"
+      ],
+      "dias_no_bruto": 2402,
+      "leitura": "a tabela unica cobre a maior parte do rotulo disponivel"
+    }
+  },
+  "sao_paulo": {
+    "auditado": true,
+    "fonte": "sao_paulo",
+    "n_positivos": 68749,
+    "n_negativos": 242129,
+    "dias_com_positivo": 2199,
+    "dias_com_negativo": 2201,
+    "dias_com_as_duas_classes": 2199,
+    "positivos_em_dia_sem_negativo": 0,
+    "pct_positivos_em_dia_sem_negativo": 0.0,
+    "negativos_em_dia_sem_positivo": 67,
+    "pct_negativos_em_dia_sem_positivo": 0.0,
+    "auc_de_um_preditor_que_so_conhece_o_dia": 0.504,
+    "leitura": "as janelas se sobrepoem o bastante para que a data sozinha nao separe as classes",
+    "consequencia": "o desenho autopareado nao usa a classe negativa e por isso nao herda este defeito; leituras comparando classes nesta base ficam condicionadas a correcao da janela de aquisicao",
+    "cobertura_do_rotulo": {
+      "medida": true,
+      "casos_no_bruto_com_lugar_e_dia": 5621,
+      "positivos_na_tabela_unica": 68749,
+      "fracao_usada": 12.2307,
+      "janela_do_bruto": [
+        "2021-04-01",
+        "2021-06-30"
+      ],
+      "dias_no_bruto": 91,
+      "leitura": "a tabela unica cobre a maior parte do rotulo disponivel"
+    }
+  }
+}

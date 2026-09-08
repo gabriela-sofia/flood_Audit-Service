@@ -1,0 +1,260 @@
+{
+  "artefato": "chuva_casos_das_centrais",
+  "schema_version": "1.0.0",
+  "gerado_em": "2026-09-01T17:33:25+00:00",
+  "fonte": "sao_paulo",
+  "procedencia": {
+    "fonte_do_leitor": "sp156",
+    "pasta": "local_runs\\aq-chamados-01\\sp156",
+    "arquivos_lidos": 26,
+    "arquivos_com_falha": [],
+    "linhas_lidas": 14930513,
+    "casos_hidricos_apos_reducao": 5965,
+    "por_arquivo": [
+      {
+        "arquivo": "2d020379_Dados do SP156 - 2º TRI 2024.csv",
+        "lido_como": "csv sep=';' latin-1",
+        "linhas": 511779,
+        "linhas_apos_reducao": 0
+      },
+      {
+        "arquivo": "3014d1de_Dados do SP156 - 1º TRI 2021.csv",
+        "lido_como": "csv sep=';' latin-1",
+        "linhas": 1015713,
+        "linhas_apos_reducao": 91
+      },
+      {
+        "arquivo": "33d41278_ Dados do SP156 - 4º TRI 2023.csv",
+        "lido_como": "csv sep=';' latin-1",
+        "linhas": 503341,
+        "linhas_apos_reducao": 260
+      },
+      {
+        "arquivo": "368eb32d_Dados do SP156 - 2º TRI 2026.csv",
+        "lido_como": "csv sep=';' latin-1",
+        "linhas": 463686,
+        "linhas_apos_reducao": 79
+      },
+      {
+        "arquivo": "3b1d2648_Dados do SP156 - 3º TRI 2025.csv",
+        "lido_como": "csv sep=';' latin-1",
+        "linhas": 501685,
+        "linhas_apos_reducao": 50
+      },
+      {
+        "arquivo": "3c12fe0a_Dados do SP156 - 3º TRI 2024.csv",
+        "lido_como": "csv sep=';' latin-1",
+        "linhas": 466543,
+        "linhas_apos_reducao": 12
+      },
+      {
+        "arquivo": "68408b82_Dados do SP156 - 4º TRI 2022.csv",
+        "lido_como": "csv sep=';' latin-1",
+        "linhas": 440469,
+        "linhas_apos_reducao": 170
+      },
+      {
+        "arquivo": "69b1460a_Dados do SP156 - 3º TRI 2022.csv",
+        "lido_como": "csv sep=';' latin-1",
+        "linhas": 448606,
+        "linhas_apos_reducao": 0
+      },
+      {
+        "arquivo": "6de63b14_Dados do SP156 - 2º TRI 2022.csv",
+        "lido_como": "csv sep=';' latin-1",
+        "linhas": 455392,
+        "linhas_apos_reducao": 24
+      },
+      {
+        "arquivo": "6e6b299c_Dados do SP156 - 1º TRI 2022.csv",
+        "lido_como": "csv sep=';' latin-1",
+        "linhas": 540555,
+        "linhas_apos_reducao": 416
+      },
+      {
+        "arquivo": "75105148_Dados do SP156 - 1º TRI 2026.csv",
+        "lido_como": "csv sep=';' latin-1",
+        "linhas": 577989,
+        "linhas_apos_reducao": 674
+      },
+      {
+        "arquivo": "75356e9d_Dados do SP156 - 2º TRI 2020.csv",
+        "lido_como": "csv sep=',' utf-8",
+        "linhas": 317374,
+        "linhas_apos_reducao": 34
+      },
+      {
+        "arquivo": "787c054d_Dados do SP156 - 1º TRI 2024.csv",
+        "lido_como": "csv sep=';' latin-1",
+        "linhas": 611565,
+        "linhas_apos_reducao": 417
+      },
+      {
+        "arquivo": "7978d3ba_Dados do SP156 - 2º TRI 2023.csv",
+        "lido_como": "csv sep=';' latin-1",
+        "linhas": 516512,
+        "linhas_apos_reducao": 52
+      },
+      {
+        "arquivo": "7c5aeb58_Dados do SP156 - 1º TRI 2025.csv",
+        "lido_como": "csv sep=';' latin-1",
+        "linhas": 1048575,
+        "linhas_apos_reducao": 1097
+      },
+      {
+        "arquivo": "91745827_Dados do SP156 - 1º TRI 2020.csv",
+        "lido_como": "csv sep=',' utf-8",
+        "linhas": 350143,
+        "linhas_apos_reducao": 565
+      },
+      {
+        "arquivo": "9aac32a3_Dados do SP156 - 2º TRI 2021.csv",
+        "lido_como": "xlsx",
+        "linhas": 912273,
+        "linhas_apos_reducao": 20
+      },
+      {
+        "arquivo": "9b42cbd8_Dados do SP156 - 3º TRI 2021.csv",
+        "lido_como": "csv sep=';' latin-1",
+        "linhas": 528898,
+        "linhas_apos_reducao": 27
+      },
+      {
+        "arquivo": "a08159cf_Dados do SP156 - 4º TRI 2021.csv",
+        "lido_como": "csv sep=';' latin-1",
+        "linhas": 465045,
+        "linhas_apos_reducao": 92
+      },
+      {
+        "arquivo": "a96a91e1_Dados do SP156 - 4º TRI 2020.csv",
+        "lido_como": "csv sep=',' utf-8",
+        "linhas": 1142531,
+        "linhas_apos_reducao": 197
+      },
+      {
+        "arquivo": "b01a9038_Dados do SP156 - 3º TRI 2023.csv",
+        "lido_como": "csv sep=';' latin-1",
+        "linhas": 508765,
+        "linhas_apos_reducao": 24
+      },
+      {
+        "arquivo": "b9c5aabf_Dados do SP156 - 3º TRI 2020.csv",
+        "lido_como": "csv sep=',' utf-8",
+        "linhas": 356524,
+        "linhas_apos_reducao": 16
+      },
+      {
+        "arquivo": "d3043e41_Dados do SP156 - 1º TRI 2023.csv",
+        "lido_como": "csv sep=';' latin-1",
+        "linhas": 600075,
+        "linhas_apos_reducao": 1066
+      },
+      {
+        "arquivo": "d3a98097_Dados do SP156 - 4º TRI 2025.csv",
+        "lido_como": "csv sep=';' latin-1",
+        "linhas": 479701,
+        "linhas_apos_reducao": 93
+      },
+      {
+        "arquivo": "ed357147_Dados do SP156 - 4º TRI 2024.csv",
+        "lido_como": "csv sep=';' latin-1",
+        "linhas": 576794,
+        "linhas_apos_reducao": 402
+      },
+      {
+        "arquivo": "f5df7f4a_Dados do SP156 - 2º TRI 2025.csv",
+        "lido_como": "csv sep=';' latin-1",
+        "linhas": 589980,
+        "linhas_apos_reducao": 87
+      }
+    ],
+    "sem_limite_de_linhas": true,
+    "dataset": "SP156/SIGRC, os 26 trimestres de 2020 a 2026"
+  },
+  "termos_hidricos": [
+    "defesa civil | alagamento",
+    "defesa civil | inunda"
+  ],
+  "subtipos": {
+    "alagamento": [
+      "alagamento"
+    ],
+    "inundacao": [
+      "inunda"
+    ]
+  },
+  "casos": 5909,
+  "casos_descartados_por_data_no_futuro": 56,
+  "por_que_descartar_data_futura": "ocorrencia datada depois de hoje nao e ocorrencia, e a data futura ainda estoura a janela de aquisicao da chuva: o provedor devolve 400 e a celula inteira fica sem serie",
+  "celulas_dia": 2145,
+  "celulas": 21,
+  "dias_distintos": 753,
+  "primeiro_dia": "2020-01-01",
+  "ultimo_dia": "2026-09-01",
+  "por_subtipo": {
+    "inundacao": 3290,
+    "alagamento": 2619
+  },
+  "auditoria_de_janelas": {
+    "nyc": {
+      "auditado": true,
+      "fonte": "nyc",
+      "n_positivos": 104653,
+      "n_negativos": 367074,
+      "dias_com_positivo": 2402,
+      "dias_com_negativo": 378,
+      "dias_com_as_duas_classes": 378,
+      "positivos_em_dia_sem_negativo": 87670,
+      "pct_positivos_em_dia_sem_negativo": 83.8,
+      "negativos_em_dia_sem_positivo": 0,
+      "pct_negativos_em_dia_sem_positivo": 0.0,
+      "auc_de_um_preditor_que_so_conhece_o_dia": 0.5035,
+      "leitura": "as janelas se sobrepoem o bastante para que a data sozinha nao separe as classes",
+      "consequencia": "o desenho autopareado nao usa a classe negativa e por isso nao herda este defeito; leituras comparando classes nesta base ficam condicionadas a correcao da janela de aquisicao",
+      "cobertura_do_rotulo": {
+        "medida": true,
+        "casos_no_bruto_com_lugar_e_dia": 141469,
+        "positivos_na_tabela_unica": 104653,
+        "fracao_usada": 0.7398,
+        "janela_do_bruto": [
+          "2020-01-01",
+          "2026-07-29"
+        ],
+        "dias_no_bruto": 2402,
+        "leitura": "a tabela unica cobre a maior parte do rotulo disponivel"
+      }
+    },
+    "sao_paulo": {
+      "auditado": true,
+      "fonte": "sao_paulo",
+      "n_positivos": 68749,
+      "n_negativos": 242129,
+      "dias_com_positivo": 2199,
+      "dias_com_negativo": 2201,
+      "dias_com_as_duas_classes": 2199,
+      "positivos_em_dia_sem_negativo": 0,
+      "pct_positivos_em_dia_sem_negativo": 0.0,
+      "negativos_em_dia_sem_positivo": 67,
+      "pct_negativos_em_dia_sem_positivo": 0.0,
+      "auc_de_um_preditor_que_so_conhece_o_dia": 0.504,
+      "leitura": "as janelas se sobrepoem o bastante para que a data sozinha nao separe as classes",
+      "consequencia": "o desenho autopareado nao usa a classe negativa e por isso nao herda este defeito; leituras comparando classes nesta base ficam condicionadas a correcao da janela de aquisicao",
+      "cobertura_do_rotulo": {
+        "medida": true,
+        "casos_no_bruto_com_lugar_e_dia": 181610,
+        "positivos_na_tabela_unica": 68749,
+        "fracao_usada": 0.3786,
+        "janela_do_bruto": [
+          "2020-01-01",
+          "2026-09-01"
+        ],
+        "dias_no_bruto": 2087,
+        "leitura": "a tabela unica usa uma fracao do rotulo disponivel; a fracao nao foi escolhida por criterio cientifico, e o que sobrou da leitura do bruto"
+      }
+    }
+  },
+  "nao_e": "nao e rotulo de referencia, nao promove fonte e nao escreve no ds01: e o conjunto de CASOS datados do autopareamento",
+  "sem_classe_negativa": "o desenho autopareado compara o caso consigo mesmo em outras datas; carregar fundo traria para dentro o viés que ele cancela",
+  "saida": "local_runs\\chuva-casos-centrais\\casos_celula_dia_sao_paulo.csv",
+  "sha256_saida": "de2a379a2af3e8c3bdac36209cf6a0bd7aaeae17194b818891d073f2359d77ac"
+}
