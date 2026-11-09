@@ -1,8 +1,0 @@
-case_id,caso,region,v1_status,v1_gate,temporal_support,shadow_status,shadow_gate,changed
-C01,recife: area com todas as camadas,recife,ok,-,not_testable,insufficient_data,suporte_temporal,True
-C02,curitiba: area com todas as camadas,curitiba,ok,-,not_testable,insufficient_data,suporte_temporal,True
-C03,petropolis: area sem nenhum ponto rotulado,petropolis,ok,-,not_testable,insufficient_data,suporte_temporal,True
-C04,petropolis: sem as camadas que o modelo exige,petropolis,insufficient_data,variaveis_presentes,-,insufficient_data,variaveis_presentes,False
-C05,variavel faltando,recife,insufficient_data,variaveis_presentes,-,insufficient_data,variaveis_presentes,False
-C06,CRS nao suportado,recife,insufficient_data,geometria_valida,-,insufficient_data,geometria_valida,False
-C07,geometria fora de toda regiao com modelo,-,region_not_supported,regiao_resolvida,-,region_not_supported,regiao_resolvida,False

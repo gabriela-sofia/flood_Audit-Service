@@ -1,0 +1,80 @@
+{
+  "tipo": "transferencia_vulnerabilizados:protocolo",
+  "nao_e": "estudo de transferencia para territorios vulnerabilizados; nao e promocao de modelo, previsao de evento, profundidade, risco, dano, vitimas ou identificacao causal",
+  "gerado_por": "scripts/vulnerabilizados",
+  "versao": "f05-territorio-novo-1",
+  "episodio": {
+    "candidato": "porto_velho",
+    "uf": "RO",
+    "cd_mun": "1100205",
+    "rio": "Madeira",
+    "estacao": 15400000,
+    "pico": "2019-03-08",
+    "cota_pico_cm": 1728.0,
+    "tile": "gfd_tile_S09W064"
+  },
+  "natureza": "territorio e episodio nunca examinados pelo projeto; escolhidos pela triagem congelada (so SCL, sem agua)",
+  "funcao": {
+    "arquivo": "local_runs/transferencia-vulnerabilizados/v9_evolucao_abrangente/p0_regularizacao/modelos.pkl",
+    "sha256": "sha256:85ddee8a6eddfd7c1d7fc0ddf114b90afa7485075b2ebec2f73bdcefbf5cb06b",
+    "chave": "Q_sel_ext",
+    "ajuste": "so componentes fora_BR; nenhum reajuste, nenhum limiar escolhido no destino"
+  },
+  "hipotese": "H-F05: em pontos FCU do territorio novo, Q_sel_ext ordena a agua de cheia observada melhor que o HAND",
+  "comparadores": {
+    "A0_hand": "-hand_m",
+    "menos_declive": "-slope_deg"
+  },
+  "populacao": {
+    "universo": "setores urbanos do municipio nas classes fcu,baixa_renda,comparador_urbano,urbano_sem_renda",
+    "grade": "celulas de 30 m com linha e coluna pares (60 m) no quadrado de 1 grau do tile",
+    "teste": "pontos FCU com terreno valido e estado positivo/negativo"
+  },
+  "referencia": {
+    "evento": "S2A_20LMR_20190310_1_L2A",
+    "pre_aguas_baixas": "S2A_20LMR_20181008_0_L2A",
+    "evento_alt": "S2A_20LLR_20190310_1_L2A",
+    "agua": "MNDWI > 0 em 20 m (B03 media 2x2; B11)",
+    "valido_scl": [
+      2,
+      4,
+      5,
+      6,
+      7
+    ],
+    "reflectancia": "se baseline >= 04.00 e o item nao declara offset aplicado, subtrai 1000 de B03/B08/B11",
+    "permanente": "agua valida na cena de aguas baixas (sem JRC no tile)",
+    "estados": "rotulo_referencia() de comum_tv",
+    "ligacao": "pixel de 20 m que contem o ponto",
+    "observacao_de_regime": "positivo inclui alagamento sazonal acima da agua baixa; nao e anomalia sobre a cheia media"
+  },
+  "sensibilidades_planejadas": {
+    "mndwi_0_2": "limiar 0,2",
+    "ndwi_b08": "NDWI B03/B08 > 0",
+    "cena_alternativa": "segunda cena admissivel da triagem, se houver (pode ser tile MGRS vizinho da mesma passagem, nao outra data)"
+  },
+  "criterios": {
+    "nivel_intervalo": 0.95,
+    "bootstrap": {
+      "B": 2000,
+      "semente": 20261028,
+      "grupo": "comunidade CD_FCU"
+    },
+    "primario": "Q_sel_ext - A0_hand em FCU: sustentado se limite inferior do IC95% > 0; contrario se superior < 0; senao inconclusivo",
+    "secundarios": [
+      "AUC(Q_sel_ext) em FCU: limite inferior > 0,5",
+      "Q_sel_ext - menos_declive (mesma leitura)"
+    ],
+    "nao_testavel": "< 8 comunidades com ponto conhecido ou < 20 positivos/negativos em FCU"
+  },
+  "parada": "avaliacao unica; resultado e registrado qualquer que seja; sem segunda escolha de territorio",
+  "codigo": {
+    "scripts/fundamentacao_artigo/f05_territorio_novo.py": "sha256:6b8cf943248aec8849acc83c8f6e87d28df6e3fce6cfdf3ba6169d56006cad4c",
+    "scripts/vulnerabilizados/comum_tv.py": "sha256:5cf143cb290fde3158b396d7229046259e5b7f652ba580a87a48fffe104123f8",
+    "scripts/metodo/mt05_transferencia_sem_amostra.py": "sha256:85007efd125fa0cab06de98156e301e0fde70407291f90a60e32d6695c7ea696"
+  },
+  "sha_grade": "sha256:44364757dea5b6a1fe28e098d39d50c4cf0fdd1c4d24f7657d937a051071fbe2",
+  "sha_cobertura": "sha256:9cdee09156d7cf2ac3cd09b4d8aaa9702321eabf1bc545840e345de140bc78a9",
+  "sha_triagem": "sha256:72a682c20014c2dee80247224d2643dc418e8f0b028a015ff218595fe7ff1066",
+  "quando_utc": "2026-10-27T20:00:54.649257+00:00"
+}

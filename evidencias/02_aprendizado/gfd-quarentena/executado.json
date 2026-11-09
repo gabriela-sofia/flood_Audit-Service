@@ -1,0 +1,103 @@
+{
+ "tipo": "teste_confirmatorio_gfd",
+ "quando_utc": "2026-10-03T19:52:07.864800Z",
+ "pre_registro_avaliacao": "sha256:e78a5bbd6b5edfbdebb53c4e46a644870d9f9c12be4cf569f233530e206e2bc9",
+ "pre_registro_selecao": "sha256:ecce4bf486ad823b236b215cc2f0b4358b6c371d750e19715dccea5372eb5a59",
+ "dataset_de_treino": "v7",
+ "linhas_treino": 354063,
+ "eventos_treino": 69,
+ "linhas_teste": 63841,
+ "eventos_teste": [
+  "GFD:1810",
+  "GFD:2042",
+  "GFD:2130",
+  "GFD:2381",
+  "GFD:2495",
+  "GFD:2596",
+  "GFD:2613",
+  "GFD:2761",
+  "GFD:2782",
+  "GFD:2802",
+  "GFD:3080",
+  "GFD:3212",
+  "GFD:3452",
+  "GFD:4275",
+  "GFD:4340",
+  "GFD:4495"
+ ],
+ "ressalvas_antes_da_leitura": {
+  "tipo": "ressalvas_antes_da_leitura",
+  "quando_utc": "2026-10-03T16:19:21.472617Z",
+  "ressalvas": [
+   "transferencia territorial: os 16 eventos sao da America do Sul fora do Brasil e o treino e quase todo brasileiro (mais eventos externo:gfd); o teste mede evento novo E territorio novo ao mesmo tempo -- perda da logistica para a regra de HAND ali nao separa as duas causas",
+   "minimo de eventos: veredito exige >= 8 eventos pareados com AUC dentro do evento (>= 20 linhas e as duas classes); se a derivacao deixar menos, o veredito e not_testable para aquela comparacao, e isso e desfecho valido, nao motivo para relaxar o criterio",
+   "depois da leitura os 16 eventos viram examinados: o resultado grava a lista de eventos de teste para entrar em testes_registrados do reservas_examinadas; conhecidos_2026_10_03.json nao muda"
+  ],
+  "origem": "sessao paralela 'Auditoria de aprendizado e continuidade', aceitas antes de qualquer linha da quarentena existir",
+  "hash": "sha256:1eb291855c067e6e18936ef05fdfdf7fa8f3c3dadd1d0d85e11e58a369c7f37e"
+ },
+ "medidas": {
+  "M0_regra_hand": {
+   "auc_agrupada_fora_da_dobra": 0.6815,
+   "average_precision": 0.3257,
+   "auc_media_dentro_do_evento": 0.7009,
+   "auc_mediana_dentro_do_evento": 0.7022,
+   "eventos_com_auc": 16,
+   "brier": null
+  },
+  "M1_logistica_terreno": {
+   "auc_agrupada_fora_da_dobra": 0.7223,
+   "average_precision": 0.3828,
+   "auc_media_dentro_do_evento": 0.7327,
+   "auc_mediana_dentro_do_evento": 0.7409,
+   "eventos_com_auc": 16,
+   "brier": 0.1887
+  },
+  "M3_gbm_terreno": {
+   "auc_agrupada_fora_da_dobra": 0.6939,
+   "average_precision": 0.3251,
+   "auc_media_dentro_do_evento": 0.7157,
+   "auc_mediana_dentro_do_evento": 0.7076,
+   "eventos_com_auc": 16,
+   "brier": 0.2055
+  }
+ },
+ "comparacoes": {
+  "M1_logistica_terreno|M0_regra_hand": {
+   "eventos_pareados": 16,
+   "dentro_do_evento_mediana": 0.0409,
+   "dentro_do_evento_media": 0.0318,
+   "eventos_a_favor": 13,
+   "ic95_media_dentro": [
+    0.0091,
+    0.0487
+   ],
+   "agrupada": 0.0409,
+   "ic95_agrupada_por_evento": [
+    0.0261,
+    0.0566
+   ],
+   "p_wilcoxon": 0.01099,
+   "veredito": "ganho"
+  },
+  "M3_gbm_terreno|M1_logistica_terreno": {
+   "eventos_pareados": 16,
+   "dentro_do_evento_mediana": 0.0063,
+   "dentro_do_evento_media": -0.017,
+   "eventos_a_favor": 8,
+   "ic95_media_dentro": [
+    -0.0555,
+    0.0215
+   ],
+   "agrupada": -0.0285,
+   "ic95_agrupada_por_evento": [
+    -0.0867,
+    0.0209
+   ],
+   "p_wilcoxon": 0.66855,
+   "veredito": "indecidivel"
+  }
+ },
+ "regime": "confirmatorio_prospectivo",
+ "nao_e": "nao e validacao no Brasil (os eventos novos sao de fora dele); nao testa cobertura/solo; uma execucao so"
+}

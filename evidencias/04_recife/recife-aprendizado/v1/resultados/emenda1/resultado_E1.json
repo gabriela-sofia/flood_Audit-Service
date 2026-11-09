@@ -1,0 +1,98 @@
+{
+  "descritivo": {
+    "comprimento_mediano_positivas": 556.1334021877038,
+    "comprimento_mediano_fundo": 154.30916427723668,
+    "corr_spearman_comprimento_dist_min_canal": -0.14878082353750893
+  },
+  "contrastes": [
+    {
+      "contraste": "E1a_comprimento_vs_Q",
+      "a": "regra_comprimento",
+      "b": "A1_Q",
+      "AUC_a": 0.7432820901557317,
+      "AUC_b": 0.6686913897290877,
+      "delta": 0.07459070042664395,
+      "ic95_lo": -0.07526881902732899,
+      "ic95_hi": 0.21793941374727432,
+      "rotulo_regra": "inconclusivo"
+    },
+    {
+      "contraste": "E1b_externo_com_urbanos",
+      "a": "A4",
+      "b": "A2u",
+      "AUC_a": 0.7561495377989633,
+      "AUC_b": 0.7751137737905741,
+      "delta": -0.01896423599161079,
+      "ic95_lo": -0.05762155289102808,
+      "ic95_hi": 0.012767932733685481,
+      "rotulo_regra": "inconclusivo"
+    },
+    {
+      "contraste": "E1c_urbano_controlado_comprimento",
+      "a": "A4_comp",
+      "b": "A3_comp",
+      "AUC_a": 0.8323613227778348,
+      "AUC_b": 0.8185198844197891,
+      "delta": 0.013841438358045743,
+      "ic95_lo": -0.011585883911639935,
+      "ic95_hi": 0.037547000410389185,
+      "rotulo_regra": "inconclusivo"
+    },
+    {
+      "contraste": "E1c_externo_controlado",
+      "a": "A4_comp",
+      "b": "A2u_comp",
+      "AUC_a": 0.8323613227778348,
+      "AUC_b": 0.833070192431656,
+      "delta": -0.0007088696538212202,
+      "ic95_lo": -0.0312457231362702,
+      "ic95_hi": 0.028822034668004398,
+      "rotulo_regra": "inconclusivo"
+    },
+    {
+      "contraste": "E1d_urbano_centroide",
+      "a": "A4c",
+      "b": "A3_q",
+      "AUC_a": 0.6845330642260805,
+      "AUC_b": 0.6786740559350045,
+      "delta": 0.0058590082910759955,
+      "ic95_lo": -0.008647980031501018,
+      "ic95_hi": 0.021035640812453595,
+      "rotulo_regra": "inconclusivo"
+    },
+    {
+      "contraste": "E1d_urbano_centroide_comp",
+      "a": "A4c_comp",
+      "b": "A3_comp",
+      "AUC_a": 0.8224546217880805,
+      "AUC_b": 0.8185198844197891,
+      "delta": 0.003934737368291419,
+      "ic95_lo": -0.0064191992576843075,
+      "ic95_hi": 0.012551100067257208,
+      "rotulo_regra": "inconclusivo"
+    },
+    {
+      "contraste": "E1d_externo_centroide",
+      "a": "A4c",
+      "b": "A2uc",
+      "AUC_a": 0.6845330642260805,
+      "AUC_b": 0.6914951597098264,
+      "delta": -0.006962095483745934,
+      "ic95_lo": -0.056194249944212835,
+      "ic95_hi": 0.03989013199431898,
+      "rotulo_regra": "inconclusivo"
+    },
+    {
+      "contraste": "E1_Q_controlado_comprimento",
+      "a": "A3_comp",
+      "b": "regra_comprimento",
+      "AUC_a": 0.8185198844197891,
+      "AUC_b": 0.7432820901557317,
+      "delta": 0.07523779426405741,
+      "ic95_lo": -0.01903370173573008,
+      "ic95_hi": 0.17454683047232822,
+      "rotulo_regra": "inconclusivo"
+    }
+  ],
+  "sha_emenda": "a3d9da09973a12b82e88e98d412ded57b5b1c358e08ad76c0b9a2c1d3b3c882d"
+}

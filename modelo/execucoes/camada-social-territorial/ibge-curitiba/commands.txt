@@ -1,2 +1,0 @@
-python scripts/social/ibge_curitiba.py
-python -m pytest tests/test_camada_social.py tests/test_ibge_curitiba.py -q

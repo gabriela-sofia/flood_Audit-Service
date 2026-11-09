@@ -1,0 +1,812 @@
+{
+  "versao": "continuidade_sar_v3_1",
+  "v1_protocolo_sha256": "488d0bc793be7633b1e15cffad3471b10f05b0c6750d0c8be75633b71887b3e5",
+  "preparo_sha256": "5d5e843ee08df3de9a788f26ee901148e3c806e4a367ab50f80995e6637683c6",
+  "campanha": "C:\\Users\\gabriela\\Documents\\REV-P\\local_runs\\sar-independencia\\campanha_2026_10_06",
+  "inventario": "6957b52301887f119f8b367dd8f00aa795706fceda83c33d7831d03ba31ecf66",
+  "config": {
+    "anotacoes_por_contexto": 5,
+    "passos_por_etapa": 384,
+    "passos_por_epoca": 24,
+    "batch": 16,
+    "base": 4,
+    "recorte": 64,
+    "lr": 0.001,
+    "threads": 2,
+    "modo": "pos",
+    "sementes": [
+      7,
+      11
+    ],
+    "semente_custo": 7,
+    "margem_ap": 0.025,
+    "margem_iou": 0.025,
+    "alfa": 0.05,
+    "limiar_legado": 0.2
+  },
+  "contextos_canonicos": [
+    "sen1:11:2019-05-22",
+    "sen1:2:2018-09-18",
+    "sen1:6:2017-06-28",
+    "sen1:9:2019-09-17",
+    "sen1:3:2016-08-12",
+    "EMSR424"
+  ],
+  "ordens": [
+    [
+      "sen1:11:2019-05-22",
+      "sen1:2:2018-09-18",
+      "sen1:6:2017-06-28",
+      "sen1:9:2019-09-17",
+      "sen1:3:2016-08-12",
+      "EMSR424"
+    ],
+    [
+      "sen1:2:2018-09-18",
+      "sen1:6:2017-06-28",
+      "sen1:9:2019-09-17",
+      "sen1:3:2016-08-12",
+      "EMSR424",
+      "sen1:11:2019-05-22"
+    ],
+    [
+      "sen1:6:2017-06-28",
+      "sen1:9:2019-09-17",
+      "sen1:3:2016-08-12",
+      "EMSR424",
+      "sen1:11:2019-05-22",
+      "sen1:2:2018-09-18"
+    ],
+    [
+      "sen1:9:2019-09-17",
+      "sen1:3:2016-08-12",
+      "EMSR424",
+      "sen1:11:2019-05-22",
+      "sen1:2:2018-09-18",
+      "sen1:6:2017-06-28"
+    ],
+    [
+      "sen1:3:2016-08-12",
+      "EMSR424",
+      "sen1:11:2019-05-22",
+      "sen1:2:2018-09-18",
+      "sen1:6:2017-06-28",
+      "sen1:9:2019-09-17"
+    ],
+    [
+      "EMSR424",
+      "sen1:11:2019-05-22",
+      "sen1:2:2018-09-18",
+      "sen1:6:2017-06-28",
+      "sen1:9:2019-09-17",
+      "sen1:3:2016-08-12"
+    ]
+  ],
+  "sequencias": [
+    {
+      "ordem": 0,
+      "seed": 7,
+      "custo": true
+    },
+    {
+      "ordem": 1,
+      "seed": 7,
+      "custo": true
+    },
+    {
+      "ordem": 2,
+      "seed": 7,
+      "custo": true
+    },
+    {
+      "ordem": 3,
+      "seed": 7,
+      "custo": true
+    },
+    {
+      "ordem": 4,
+      "seed": 7,
+      "custo": true
+    },
+    {
+      "ordem": 5,
+      "seed": 7,
+      "custo": true
+    },
+    {
+      "ordem": 0,
+      "seed": 11,
+      "custo": false
+    },
+    {
+      "ordem": 1,
+      "seed": 11,
+      "custo": false
+    },
+    {
+      "ordem": 2,
+      "seed": 11,
+      "custo": false
+    },
+    {
+      "ordem": 3,
+      "seed": 11,
+      "custo": false
+    },
+    {
+      "ordem": 4,
+      "seed": 11,
+      "custo": false
+    },
+    {
+      "ordem": 5,
+      "seed": 11,
+      "custo": false
+    }
+  ],
+  "anotacoes": {
+    "7": {
+      "sen1:11:2019-05-22": [
+        "USA_86502",
+        "USA_198411",
+        "USA_605492",
+        "USA_908474",
+        "USA_504150"
+      ],
+      "sen1:2:2018-09-18": [
+        "Ghana_308249",
+        "Ghana_135389",
+        "Ghana_1033830",
+        "Ghana_247288",
+        "Ghana_83200"
+      ],
+      "sen1:6:2017-06-28": [
+        "Pakistan_211386",
+        "Pakistan_210595",
+        "Pakistan_760290",
+        "Pakistan_65724",
+        "Pakistan_246718"
+      ],
+      "sen1:9:2019-09-17": [
+        "Spain_6860600",
+        "Spain_8372658",
+        "Spain_5923267",
+        "Spain_5816638",
+        "Spain_2472849"
+      ],
+      "sen1:3:2016-08-12": [
+        "India_265762",
+        "India_500266",
+        "India_103447",
+        "India_70352",
+        "India_1017769"
+      ],
+      "EMSR424": [
+        "EMSR424-1-226:r0:c0",
+        "EMSR424-1-226:r0:c512",
+        "EMSR424-1-226:r512:c0",
+        "EMSR424-1-226:r512:c512",
+        "EMSR424-1-233:r0:c512"
+      ]
+    },
+    "11": {
+      "sen1:11:2019-05-22": [
+        "USA_347609",
+        "USA_664261",
+        "USA_758178",
+        "USA_179917",
+        "USA_1082482"
+      ],
+      "sen1:2:2018-09-18": [
+        "Ghana_128663",
+        "Ghana_5079",
+        "Ghana_24858",
+        "Ghana_313799",
+        "Ghana_194723"
+      ],
+      "sen1:6:2017-06-28": [
+        "Pakistan_664885",
+        "Pakistan_528249",
+        "Pakistan_548910",
+        "Pakistan_246718",
+        "Pakistan_712873"
+      ],
+      "sen1:9:2019-09-17": [
+        "Spain_3285448",
+        "Spain_5816638",
+        "Spain_7604243",
+        "Spain_8372658",
+        "Spain_2472849"
+      ],
+      "sen1:3:2016-08-12": [
+        "India_591549",
+        "India_900498",
+        "India_399883",
+        "India_570384",
+        "India_664410"
+      ],
+      "EMSR424": [
+        "EMSR424-1-226:r0:c0",
+        "EMSR424-1-226:r0:c512",
+        "EMSR424-1-226:r512:c0",
+        "EMSR424-1-226:r512:c512",
+        "EMSR424-1-233:r0:c512"
+      ]
+    }
+  },
+  "grupos": {
+    "validacao_checkpoint": [
+      "Nigeria_22088",
+      "Nigeria_31096",
+      "Nigeria_417184",
+      "Nigeria_707067",
+      "Nigeria_78061",
+      "Nigeria_952958",
+      "Somalia_1068756",
+      "Somalia_1087508",
+      "Somalia_12849",
+      "Somalia_166342",
+      "Somalia_167787",
+      "Somalia_195014",
+      "Somalia_205466",
+      "Somalia_230192",
+      "Somalia_256539",
+      "Somalia_295782",
+      "Somalia_322855",
+      "Somalia_32375",
+      "Somalia_371421",
+      "Somalia_60129",
+      "Somalia_61368",
+      "Somalia_626316",
+      "Somalia_649376",
+      "Somalia_685158",
+      "Somalia_699062",
+      "Somalia_7931",
+      "Somalia_886726",
+      "Somalia_93023",
+      "Somalia_94102",
+      "Somalia_970508",
+      "Somalia_989553",
+      "Somalia_992457"
+    ],
+    "calibracao": [
+      "EMSR698-1-5:r0:c0",
+      "EMSR698-1-5:r0:c512",
+      "EMSR698-1-5:r512:c0",
+      "EMSR698-1-5:r512:c512",
+      "EMSR698-1-6:r0:c0",
+      "EMSR698-1-6:r0:c512",
+      "EMSR698-1-6:r512:c0",
+      "EMSR698-1-6:r512:c512",
+      "EMSR698-1-7:r0:c0",
+      "EMSR698-1-7:r0:c512",
+      "EMSR698-1-7:r512:c0",
+      "EMSR698-1-7:r512:c512",
+      "EMSR698-1-9:r0:c0",
+      "EMSR698-1-9:r0:c512",
+      "EMSR698-1-9:r512:c0",
+      "EMSR698-1-9:r512:c512"
+    ],
+    "controle": [
+      "EMSR728-7-3:r0:c0",
+      "EMSR728-7-3:r0:c512",
+      "EMSR728-7-3:r512:c0",
+      "EMSR728-7-3:r512:c512",
+      "EMSR728-7-4:r0:c0",
+      "EMSR728-7-4:r0:c512",
+      "EMSR728-7-4:r512:c0",
+      "EMSR728-7-4:r512:c512",
+      "EMSR728-7-5:r0:c0",
+      "EMSR728-7-5:r0:c512",
+      "EMSR728-7-5:r512:c0",
+      "EMSR728-7-5:r512:c512",
+      "EMSR728-7-6:r0:c0",
+      "EMSR728-7-6:r0:c512",
+      "EMSR728-7-6:r512:c0",
+      "EMSR728-7-6:r512:c512"
+    ],
+    "retencao": [
+      "EMSR424-1-225:r512:c0",
+      "EMSR424-1-225:r512:c512",
+      "EMSR424-1-232:r0:c0",
+      "EMSR424-1-232:r0:c512",
+      "EMSR424-1-232:r512:c0",
+      "EMSR424-1-232:r512:c512",
+      "Ghana_103272",
+      "Ghana_11745",
+      "Ghana_124834",
+      "Ghana_132163",
+      "Ghana_141910",
+      "Ghana_146222",
+      "Ghana_154838",
+      "Ghana_156478",
+      "Ghana_161233",
+      "Ghana_26376",
+      "Ghana_264787",
+      "Ghana_359826",
+      "Ghana_362274",
+      "Ghana_53713",
+      "Ghana_597288",
+      "Ghana_61925",
+      "Ghana_953791",
+      "Ghana_97516",
+      "India_1018327",
+      "India_118868",
+      "India_136196",
+      "India_177319",
+      "India_373039",
+      "India_534470",
+      "India_56450",
+      "India_566697",
+      "India_59460",
+      "India_691027",
+      "India_698338",
+      "India_747992",
+      "India_773682",
+      "India_774689",
+      "India_804466",
+      "India_828067",
+      "India_833266",
+      "India_842775",
+      "India_91379",
+      "India_943439",
+      "India_952728",
+      "India_979278",
+      "India_981708",
+      "Pakistan_1027214",
+      "Pakistan_132143",
+      "Pakistan_167553",
+      "Pakistan_336228",
+      "Pakistan_401863",
+      "Pakistan_694942",
+      "Pakistan_70625",
+      "Pakistan_740461",
+      "Pakistan_94095",
+      "Pakistan_9684",
+      "Spain_1167260",
+      "Spain_2523247",
+      "Spain_337094",
+      "Spain_5678382",
+      "Spain_6537196",
+      "Spain_7558720",
+      "Spain_7856615",
+      "Spain_8104659",
+      "Spain_8154154",
+      "Spain_8199661",
+      "USA_1010394",
+      "USA_1039203",
+      "USA_19225",
+      "USA_211406",
+      "USA_225017",
+      "USA_231124",
+      "USA_260929",
+      "USA_348639",
+      "USA_366607",
+      "USA_387945",
+      "USA_438959",
+      "USA_486103",
+      "USA_595451",
+      "USA_638521",
+      "USA_646878",
+      "USA_652955",
+      "USA_66511",
+      "USA_670826",
+      "USA_67102",
+      "USA_806273",
+      "USA_826217",
+      "USA_955053",
+      "USA_986268"
+    ],
+    "avaliacao": [
+      "Mekong_1111068",
+      "Mekong_1149855",
+      "Mekong_1191208",
+      "Mekong_119477",
+      "Mekong_1248200",
+      "Mekong_1282475",
+      "Mekong_1395593",
+      "Mekong_1396181",
+      "Mekong_1413877",
+      "Mekong_1439641",
+      "Mekong_1443339",
+      "Mekong_16233",
+      "Mekong_213094",
+      "Mekong_221789",
+      "Mekong_254910",
+      "Mekong_269835",
+      "Mekong_293769",
+      "Mekong_333434",
+      "Mekong_342411",
+      "Mekong_382276",
+      "Mekong_424793",
+      "Mekong_45934",
+      "Mekong_474783",
+      "Mekong_52610",
+      "Mekong_596495",
+      "Mekong_774566",
+      "Mekong_846007",
+      "Mekong_922373",
+      "Mekong_977338",
+      "Mekong_98310",
+      "Paraguay_1019808",
+      "Paraguay_1029042",
+      "Paraguay_1029191",
+      "Paraguay_1056717",
+      "Paraguay_1076204",
+      "Paraguay_11869",
+      "Paraguay_126224",
+      "Paraguay_12870",
+      "Paraguay_148318",
+      "Paraguay_149787",
+      "Paraguay_149830",
+      "Paraguay_153941",
+      "Paraguay_172476",
+      "Paraguay_179624",
+      "Paraguay_191503",
+      "Paraguay_198534",
+      "Paraguay_205585",
+      "Paraguay_212687",
+      "Paraguay_215904",
+      "Paraguay_224845",
+      "Paraguay_225187",
+      "Paraguay_232281",
+      "Paraguay_24341",
+      "Paraguay_246154",
+      "Paraguay_247656",
+      "Paraguay_252217",
+      "Paraguay_271769",
+      "Paraguay_280900",
+      "Paraguay_284928",
+      "Paraguay_305760",
+      "Paraguay_339807",
+      "Paraguay_36015",
+      "Paraguay_36146",
+      "Paraguay_403081",
+      "Paraguay_40936",
+      "Paraguay_44682",
+      "Paraguay_470303",
+      "Paraguay_482517",
+      "Paraguay_48673",
+      "Paraguay_511199",
+      "Paraguay_54421",
+      "Paraguay_581976",
+      "Paraguay_59731",
+      "Paraguay_605682",
+      "Paraguay_62897",
+      "Paraguay_648632",
+      "Paraguay_651904",
+      "Paraguay_657443",
+      "Paraguay_683296",
+      "Paraguay_721886",
+      "Paraguay_76868",
+      "Paraguay_7894",
+      "Paraguay_790830",
+      "Paraguay_791364",
+      "Paraguay_792268",
+      "Paraguay_795075",
+      "Paraguay_80102",
+      "Paraguay_822142",
+      "Paraguay_868895",
+      "Paraguay_892933",
+      "Paraguay_896458",
+      "Paraguay_913449",
+      "Paraguay_921838",
+      "Paraguay_934240",
+      "Paraguay_989230",
+      "Paraguay_997480",
+      "Sri-Lanka_101973",
+      "Sri-Lanka_1038087",
+      "Sri-Lanka_1049830",
+      "Sri-Lanka_117737",
+      "Sri-Lanka_120804",
+      "Sri-Lanka_132922",
+      "Sri-Lanka_135713",
+      "Sri-Lanka_14484",
+      "Sri-Lanka_152185",
+      "Sri-Lanka_163406",
+      "Sri-Lanka_178753",
+      "Sri-Lanka_233609",
+      "Sri-Lanka_236030",
+      "Sri-Lanka_236628",
+      "Sri-Lanka_249079",
+      "Sri-Lanka_31559",
+      "Sri-Lanka_321316",
+      "Sri-Lanka_377277",
+      "Sri-Lanka_400518",
+      "Sri-Lanka_450918",
+      "Sri-Lanka_49764",
+      "Sri-Lanka_52223",
+      "Sri-Lanka_523539",
+      "Sri-Lanka_534068",
+      "Sri-Lanka_551926",
+      "Sri-Lanka_55568",
+      "Sri-Lanka_579082",
+      "Sri-Lanka_612594",
+      "Sri-Lanka_63307",
+      "Sri-Lanka_649970",
+      "Sri-Lanka_653336",
+      "Sri-Lanka_713926",
+      "Sri-Lanka_748447",
+      "Sri-Lanka_845821",
+      "Sri-Lanka_847275",
+      "Sri-Lanka_849649",
+      "Sri-Lanka_85652",
+      "Sri-Lanka_883641",
+      "Sri-Lanka_916628",
+      "Sri-Lanka_922192",
+      "Sri-Lanka_92824",
+      "Sri-Lanka_956740"
+    ]
+  },
+  "bracos": {
+    "continuacao": {
+      "memoria": false,
+      "lwf": null
+    },
+    "replay_m1": {
+      "memoria": true,
+      "lwf": null
+    },
+    "lwf_legado": {
+      "memoria": false,
+      "lwf": {
+        "lambda": 1.0,
+        "T": 2.0,
+        "mascarada": false
+      }
+    },
+    "lwf_mascarado": {
+      "memoria": false,
+      "lwf": {
+        "lambda": 1.0,
+        "T": 2.0,
+        "mascarada": true
+      }
+    },
+    "hibrido": {
+      "memoria": true,
+      "lwf": {
+        "lambda": 1.0,
+        "T": 2.0,
+        "mascarada": true
+      }
+    }
+  },
+  "lwf": {
+    "lambda": 1.0,
+    "T": 2.0
+  },
+  "primaria": {
+    "desfecho": "AP aproximada (1000 faixas) do modelo final por evento",
+    "unidades": "9 eventos: 6 reservas de retencao + 3 de avaliacao",
+    "contrastes": [
+      [
+        "lwf_mascarado",
+        "continuacao"
+      ],
+      [
+        "lwf_mascarado",
+        "lwf_legado"
+      ],
+      [
+        "hibrido",
+        "lwf_mascarado"
+      ],
+      [
+        "hibrido",
+        "replay_m1"
+      ]
+    ],
+    "correcao": "Holm sobre Wilcoxon exato bilateral",
+    "ganho_ou_perda": "p_holm < 0,05 E IC95 t por evento alem de +-margem_ap",
+    "equivalencia": "TOST: IC t de nivel 1-2*alfa/k inteiro dentro de +-margem_ap",
+    "resto": "INDECIDIVEL",
+    "piso_discreto": {
+      "n": 9,
+      "familia": 4,
+      "p_min": 0.00390625,
+      "holm_pode_rejeitar": true,
+      "nao_e": "limite discreto ideal; nao e poder estatistico"
+    }
+  },
+  "secundaria": {
+    "contrastes": [
+      [
+        "replay_m1",
+        "continuacao"
+      ],
+      [
+        "lwf_legado",
+        "continuacao"
+      ],
+      [
+        "hibrido",
+        "continuacao"
+      ],
+      [
+        "reinicio_acumulado",
+        "hibrido"
+      ]
+    ],
+    "regra": "estimacao com IC, sem decisao",
+    "desfechos": [
+      "IoU legado 0,2",
+      "IoU no limiar calibrado na Escocia",
+      "Brier/NLL/ECE",
+      "retencao (6) e transferencia (3) separadas",
+      "pior unidade",
+      "esquecimento/BWT",
+      "aquisicao do contexto novo",
+      "falsos positivos no controle Alemanha",
+      "custo"
+    ]
+  },
+  "grupos_papel": {
+    "validacao_checkpoint": "so escolhe checkpoint (CE)",
+    "calibracao": "so ajusta temperatura e limiar por modelo",
+    "controle": "so mede falso positivo; sem classe 2",
+    "retencao": "medida final; contextos conhecidos, recorte espacial separado",
+    "avaliacao": "medida final; eventos nunca treinados"
+  },
+  "dimensionamento_prospectivo": {
+    "n": 9,
+    "familia": 4,
+    "sims": 20000,
+    "margem_ap": 0.025,
+    "fonte": {
+      "arquivo": "C:\\Users\\gabriela\\Documents\\REV-P\\local_runs\\aprendizado-continuo\\sar_v2_1\\analise.json",
+      "sha256": "0a378d1e22cf5934489cfdf6b3c279ba908b88f5d8232e22bbc9b7107a9c0f65"
+    },
+    "lwf_menos_continuacao": {
+      "media_v2": 0.049804801436403395,
+      "dp_v2": 0.028159446524255435,
+      "p_ganho": 0.5679,
+      "p_equivalencia": 5e-05,
+      "nota": "teste de sinais como aproximacao conservadora do Wilcoxon exato"
+    },
+    "replay_m1_menos_continuacao": {
+      "media_v2": 0.020734860685263087,
+      "dp_v2": 0.016398814404884495,
+      "p_ganho": 0.00445,
+      "p_equivalencia": 0.0595,
+      "nota": "teste de sinais como aproximacao conservadora do Wilcoxon exato"
+    },
+    "replay_total_menos_m4": {
+      "media_v2": 0.03499273308352046,
+      "dp_v2": 0.020935126210981925,
+      "p_ganho": 0.2381,
+      "p_equivalencia": 0.0002,
+      "nota": "teste de sinais como aproximacao conservadora do Wilcoxon exato"
+    }
+  },
+  "codigo": {
+    "C:\\Users\\gabriela\\Documents\\REV-P\\scripts\\sar\\continuidade_v3.py": "17d60229e8c5026cea9efcb333c41e1bb3364152df527e9c07c873d7a4ff1cd1",
+    "C:\\Users\\gabriela\\Documents\\REV-P\\scripts\\sar\\nucleo_sar.py": "6817bc53e308be82ad4aa946038c238bc7143139dd3ad7d3a197925ed0e91b77",
+    "C:\\Users\\gabriela\\Documents\\REV-P\\scripts\\sar\\fontes_sar.py": "7601871825dcdd05090cbe5231cdcd3c07b879bc227ff3e7494743d67f7d3c4a",
+    "C:\\Users\\gabriela\\Documents\\REV-P\\scripts\\sar\\campanha_independencia_autonomia.py": "17f44507dd474d229f62ab6c5c5a0ad5dca652b8d3e416eae7ee252f5963cfbe",
+    "C:\\Users\\gabriela\\Documents\\REV-P\\scripts\\sar\\diagnostico_competencia.py": "8cdf01e8ff4478f21459e88b4fe1db63317e53005055cc6855f8f4a8ca6c61e5",
+    "C:\\Users\\gabriela\\Documents\\REV-P\\scripts\\sar\\continuidade_v2.py": "81eea3946e811697db58bf82b21f4abc77a710db8a426c97c1a88b96a2c1bb26",
+    "C:\\Users\\gabriela\\Documents\\REV-P\\scripts\\sar\\dados_pares_geograficos.py": "54e0a3b4aee2e8e6b58458413ff84d687bf57c2d51135ff7489dace4314563fc",
+    "C:\\Users\\gabriela\\Documents\\REV-P\\scripts\\sar\\modelo_unet.py": "f5104fb59f387344107b5bffed6aac84b67099d702c9af4e1d507f1f0c55b07b",
+    "C:\\Users\\gabriela\\Documents\\REV-P\\scripts\\neural\\proveniencia_de_peso.py": "1b6af51404555e34b0b0d114b407dcb4c0eb9f4a36ea271b1d507f51bee3a298",
+    "C:\\Users\\gabriela\\Documents\\REV-P\\scripts\\sar\\calibracao_decisao.py": "008cf23327018e1bef3a34bcda7eedaad36b63dbc348e0128a4fffd0f003541a"
+  },
+  "regime": "desenvolvimento em dados ja examinados",
+  "promovido": false,
+  "altera_svc02": false,
+  "consome_reservas": false,
+  "torch": "2.11.0+cpu",
+  "pixels_rotulados_por_anotacao": {
+    "7": {
+      "sen1:11:2019-05-22": {
+        "USA_86502": 253918,
+        "USA_198411": 78984,
+        "USA_605492": 261873,
+        "USA_908474": 261864,
+        "USA_504150": 260911
+      },
+      "sen1:2:2018-09-18": {
+        "Ghana_308249": 261781,
+        "Ghana_135389": 24624,
+        "Ghana_1033830": 230785,
+        "Ghana_247288": 38162,
+        "Ghana_83200": 98215
+      },
+      "sen1:6:2017-06-28": {
+        "Pakistan_211386": 255405,
+        "Pakistan_210595": 262144,
+        "Pakistan_760290": 233498,
+        "Pakistan_65724": 262143,
+        "Pakistan_246718": 234735
+      },
+      "sen1:9:2019-09-17": {
+        "Spain_6860600": 261969,
+        "Spain_8372658": 262029,
+        "Spain_5923267": 22338,
+        "Spain_5816638": 262052,
+        "Spain_2472849": 261759
+      },
+      "sen1:3:2016-08-12": {
+        "India_265762": 147296,
+        "India_500266": 262114,
+        "India_103447": 154592,
+        "India_70352": 233145,
+        "India_1017769": 154192
+      },
+      "EMSR424": {
+        "EMSR424-1-226:r0:c0": 0,
+        "EMSR424-1-226:r0:c512": 0,
+        "EMSR424-1-226:r512:c0": 170025,
+        "EMSR424-1-226:r512:c512": 173007,
+        "EMSR424-1-233:r0:c512": 150542
+      }
+    },
+    "11": {
+      "sen1:11:2019-05-22": {
+        "USA_347609": 204266,
+        "USA_664261": 261448,
+        "USA_758178": 261989,
+        "USA_179917": 261950,
+        "USA_1082482": 261659
+      },
+      "sen1:2:2018-09-18": {
+        "Ghana_128663": 168812,
+        "Ghana_5079": 0,
+        "Ghana_24858": 484,
+        "Ghana_313799": 244464,
+        "Ghana_194723": 47399
+      },
+      "sen1:6:2017-06-28": {
+        "Pakistan_664885": 64170,
+        "Pakistan_528249": 76982,
+        "Pakistan_548910": 235696,
+        "Pakistan_246718": 234735,
+        "Pakistan_712873": 119557
+      },
+      "sen1:9:2019-09-17": {
+        "Spain_3285448": 209857,
+        "Spain_5816638": 262052,
+        "Spain_7604243": 243087,
+        "Spain_8372658": 262029,
+        "Spain_2472849": 261759
+      },
+      "sen1:3:2016-08-12": {
+        "India_591549": 245673,
+        "India_900498": 205638,
+        "India_399883": 228202,
+        "India_570384": 239276,
+        "India_664410": 262079
+      },
+      "EMSR424": {
+        "EMSR424-1-226:r0:c0": 0,
+        "EMSR424-1-226:r0:c512": 0,
+        "EMSR424-1-226:r512:c0": 170025,
+        "EMSR424-1-226:r512:c512": 173007,
+        "EMSR424-1-233:r0:c512": 150542
+      }
+    }
+  },
+  "memoria_m1": {
+    "7": {
+      "sen1:11:2019-05-22": "USA_504150",
+      "sen1:2:2018-09-18": "Ghana_1033830",
+      "sen1:6:2017-06-28": "Pakistan_760290",
+      "sen1:9:2019-09-17": "Spain_2472849",
+      "sen1:3:2016-08-12": "India_1017769",
+      "EMSR424": "EMSR424-1-226:r512:c0"
+    },
+    "11": {
+      "sen1:11:2019-05-22": "USA_1082482",
+      "sen1:2:2018-09-18": "Ghana_128663",
+      "sen1:6:2017-06-28": "Pakistan_712873",
+      "sen1:9:2019-09-17": "Spain_3285448",
+      "sen1:3:2016-08-12": "India_900498",
+      "EMSR424": "EMSR424-1-226:r512:c0"
+    }
+  },
+  "versao_anterior": {
+    "pasta": "C:\\Users\\gabriela\\Documents\\REV-P\\local_runs\\aprendizado-continuo\\sar_v3",
+    "versao": "continuidade_sar_v3",
+    "mudanca": "memoria m1 admite o primeiro chip da mesma permutacao com pixel rotulado visivel; a v3 sorteava um chip sem suporte e parava"
+  }
+}

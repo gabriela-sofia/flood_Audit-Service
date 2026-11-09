@@ -1,0 +1,25 @@
+{
+ "regra": "sustentado se limite inferior do IC95% > 0,5",
+ "grupo": "bairro",
+ "bootstrap": 2000,
+ "funcao_transferida": {
+  "auc_dentro_do_bairro": 0.6686913897290876,
+  "ic95": [
+   0.5640695391822156,
+   0.7746777449301119
+  ],
+  "ruas_relatadas": 48,
+  "bairros": 19,
+  "acima_do_acaso": true
+ },
+ "hand": {
+  "auc_dentro_do_bairro": 0.5951376125907373,
+  "ic95": [
+   0.49119598207794024,
+   0.7108651065750505
+  ],
+  "ruas_relatadas": 48,
+  "bairros": 19,
+  "acima_do_acaso": false
+ }
+}

@@ -1,0 +1,83 @@
+{
+  "modelo": "Qsep_sel_fis",
+  "unidades_de_ajuste": 29,
+  "parametros": {
+    "coeficientes": {
+      "f_hand": -0.9041890172828199,
+      "f_sca": 0.08460256020513876,
+      "f_declive": -0.27357963133251556,
+      "f_construido": -0.17021195197432454,
+      "f_areia": -0.2015032978313472,
+      "f_dist_dren": 0.054603456030720206,
+      "f_dist_canal": -0.4325648565780885
+    },
+    "interacoes": [
+      {
+        "colunas": [
+          "f_dist_dren",
+          "z_relevo"
+        ],
+        "peso": -0.00015129774187151097
+      },
+      {
+        "colunas": [
+          "f_dist_canal",
+          "z_relevo"
+        ],
+        "peso": -4.355520281717622e-05
+      },
+      {
+        "colunas": [
+          "f_sca",
+          "z_relevo"
+        ],
+        "peso": 0.00014481645704123304
+      }
+    ],
+    "padronizador": {
+      "colunas": [
+        "f_areia",
+        "f_construido",
+        "f_declive",
+        "f_dist_canal",
+        "f_dist_dren",
+        "f_hand",
+        "f_sca",
+        "z_relevo"
+      ],
+      "media": {
+        "f_areia": 0.378417023272173,
+        "f_construido": 0.03581105271293862,
+        "f_declive": 1.003148028796474,
+        "f_dist_canal": 6.356291686565933,
+        "f_dist_dren": 4.198453408512276,
+        "f_hand": 1.2063526039822698,
+        "f_sca": 5.352288079691241,
+        "z_relevo": 1.2429538880166682
+      },
+      "desvio": {
+        "f_areia": 0.1286234021117367,
+        "f_construido": 0.10052927245936667,
+        "f_declive": 1.0088424491222345,
+        "f_dist_canal": 1.4825068805360742,
+        "f_dist_dren": 1.6287931463916459,
+        "f_hand": 1.4512919242655,
+        "f_sca": 2.3819905719014454,
+        "z_relevo": 0.951951397413694
+      },
+      "mediana": {
+        "f_areia": 0.35733333333333334,
+        "f_construido": 0.0,
+        "f_declive": 0.633812141356658,
+        "f_dist_canal": 6.717089795688976,
+        "f_dist_dren": 4.562975685481548,
+        "f_hand": 0.6009342991708502,
+        "f_sca": 4.645885027217297,
+        "z_relevo": 0.902558183439969
+      }
+    },
+    "convergiu": true,
+    "iteracoes": 376
+  },
+  "sha256_fonte": "dc6483259837026a04cd55026bd8e391ad6feda8192f4b9d6ba0be2f169f8e20"
+}

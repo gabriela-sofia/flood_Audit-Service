@@ -1,6 +1,0 @@
-caso,status_social,status_fisico,escore_fisico_recebido,classe_fisica,classe_social,media_social,cobertura_social_da_aoi,prioridade_publica,razao,lacunas
-alta_fisica_alta_social,ok,ok,0.82,alta,alta,0.8257,1.0,prioridade_publica_forte,suscetibilidade fisica alta coincide com alta vulnerabilidade/exposicao,
-alta_fisica_baixa_social,ok,ok,0.82,alta,baixa,0.2129,1.0,prioridade_tecnica,suscetibilidade fisica alta; acao publica segue relevante mesmo sem alta vulnerabilidade social,
-fisica_recusada_alta_social,ok,insufficient_data,,nao_identificavel,alta,0.8257,1.0,prioridade_de_vistoria_e_coleta,territorio vulneravel sem inferencia fisica suficiente; nao declarar risco baixo,
-alta_fisica_sem_cobertura_social,insufficient_social_data,ok,0.82,alta,nao_identificavel,,0.0,prioridade_tecnica_e_de_dado,"suscetibilidade fisica alta sem cobertura social: a acao tecnica ja se justifica, e nao se sabe quem esta exposto; coletar dado social nao adia a vistoria",exposicao_populacional;condicao_socioeconomica;composicao_demografica;raca_genero;moradia_infraestrutura;mobilidade_acesso;lacuna_institucional;cobertura_geografica_social_insuficiente
-media_fisica_social_intermediaria,ok,ok,0.51,media,media,0.5357,1.0,prioridade_rotineira,sem coincidencia demonstrativa de alta suscetibilidade e alta vulnerabilidade,

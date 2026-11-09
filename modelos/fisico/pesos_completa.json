@@ -1,0 +1,83 @@
+{
+  "modelo": "Q_sel_ext",
+  "unidades_de_ajuste": 43,
+  "parametros": {
+    "coeficientes": {
+      "f_hand": -0.9810338127448696,
+      "f_sca": 0.042549990854683514,
+      "f_declive": -0.3123258153737971,
+      "f_construido": -0.21020186014279496,
+      "f_areia": -0.05097661940760025,
+      "f_dist_dren": 0.030397151858162667,
+      "f_dist_canal": -0.42889670505679667
+    },
+    "interacoes": [
+      {
+        "colunas": [
+          "f_dist_dren",
+          "z_relevo"
+        ],
+        "peso": -0.02691599004720711
+      },
+      {
+        "colunas": [
+          "f_dist_canal",
+          "z_relevo"
+        ],
+        "peso": 0.010049386096346044
+      },
+      {
+        "colunas": [
+          "f_sca",
+          "z_relevo"
+        ],
+        "peso": 0.006735900819388586
+      }
+    ],
+    "padronizador": {
+      "colunas": [
+        "f_areia",
+        "f_construido",
+        "f_declive",
+        "f_dist_canal",
+        "f_dist_dren",
+        "f_hand",
+        "f_sca",
+        "z_relevo"
+      ],
+      "media": {
+        "f_areia": 0.33657064115560065,
+        "f_construido": 0.027142679805125098,
+        "f_declive": 0.9168394609836722,
+        "f_dist_canal": 6.452911591575878,
+        "f_dist_dren": 4.249136071598039,
+        "f_hand": 1.0613314373622125,
+        "f_sca": 5.234077092736345,
+        "z_relevo": 1.069959278070489
+      },
+      "desvio": {
+        "f_areia": 0.14720383209988358,
+        "f_construido": 0.08722313202512476,
+        "f_declive": 0.9442016992626202,
+        "f_dist_canal": 1.4245865991836786,
+        "f_dist_dren": 1.5776284014602509,
+        "f_hand": 1.325944030986257,
+        "f_sca": 2.3139264577284933,
+        "z_relevo": 0.847839328932678
+      },
+      "mediana": {
+        "f_areia": 0.3263333333333333,
+        "f_construido": 0.0,
+        "f_declive": 0.5772199595899715,
+        "f_dist_canal": 6.797924825142032,
+        "f_dist_dren": 4.6928745901981355,
+        "f_hand": 0.4773104111646734,
+        "f_sca": 4.53897119650772,
+        "z_relevo": 0.8454744084861024
+      }
+    },
+    "convergiu": true,
+    "iteracoes": 52
+  },
+  "sha256_fonte": "dc6483259837026a04cd55026bd8e391ad6feda8192f4b9d6ba0be2f169f8e20"
+}

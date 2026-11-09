@@ -1,0 +1,395 @@
+{
+  "tipo": "transferencia_vulnerabilizados:p0_regularizacao/pesos",
+  "nao_e": "estudo de transferencia para territorios vulnerabilizados; nao e promocao de modelo, previsao de evento, profundidade, risco, dano, vitimas ou identificacao causal",
+  "gerado_por": "scripts/vulnerabilizados",
+  "Q_hist": {
+    "coeficientes": {
+      "f_hand": -1.178646591158248,
+      "f_sca": 0.04034051300004572,
+      "f_declive": -0.2337017351412608,
+      "f_construido": -0.22210945031836654,
+      "f_areia": -0.06412306747089284,
+      "f_dist_dren": 0.08221326668390308,
+      "f_dist_canal": -0.4526894539757519
+    },
+    "interacoes": [
+      {
+        "colunas": [
+          "f_dist_dren",
+          "z_relevo"
+        ],
+        "peso": -3.913951495707666e-05
+      },
+      {
+        "colunas": [
+          "f_dist_canal",
+          "z_relevo"
+        ],
+        "peso": 2.9422416556456582e-05
+      },
+      {
+        "colunas": [
+          "f_sca",
+          "z_relevo"
+        ],
+        "peso": 2.365887700532971e-05
+      }
+    ],
+    "padronizador": {
+      "colunas": [
+        "f_areia",
+        "f_construido",
+        "f_declive",
+        "f_dist_canal",
+        "f_dist_dren",
+        "f_hand",
+        "f_sca",
+        "z_relevo"
+      ],
+      "media": {
+        "f_areia": 0.33657064115560065,
+        "f_construido": 0.027142679805125098,
+        "f_declive": 0.9168394609836722,
+        "f_dist_canal": 6.452911591575878,
+        "f_dist_dren": 4.249136071598039,
+        "f_hand": 1.0613314373622125,
+        "f_sca": 5.234077092736345,
+        "z_relevo": 1.069959278070489
+      },
+      "desvio": {
+        "f_areia": 0.14720383209988358,
+        "f_construido": 0.08722313202512476,
+        "f_declive": 0.9442016992626202,
+        "f_dist_canal": 1.4245865991836786,
+        "f_dist_dren": 1.5776284014602509,
+        "f_hand": 1.325944030986257,
+        "f_sca": 2.3139264577284933,
+        "z_relevo": 0.847839328932678
+      },
+      "mediana": {
+        "f_areia": 0.3263333333333333,
+        "f_construido": 0.0,
+        "f_declive": 0.5772199595899715,
+        "f_dist_canal": 6.797924825142032,
+        "f_dist_dren": 4.6928745901981355,
+        "f_hand": 0.4773104111646734,
+        "f_sca": 4.53897119650772,
+        "z_relevo": 0.8454744084861024
+      }
+    },
+    "convergiu": true,
+    "iteracoes": 339
+  },
+  "Q_fixo": {
+    "coeficientes": {
+      "f_hand": -0.9891101478591937,
+      "f_sca": 0.041685527971029264,
+      "f_declive": -0.307813455291684,
+      "f_construido": -0.20973792618759327,
+      "f_areia": -0.05183938695880456,
+      "f_dist_dren": 0.03344462546881604,
+      "f_dist_canal": -0.42848977902303786
+    },
+    "interacoes": [
+      {
+        "colunas": [
+          "f_dist_dren",
+          "z_relevo"
+        ],
+        "peso": -0.0063981681268738
+      },
+      {
+        "colunas": [
+          "f_dist_canal",
+          "z_relevo"
+        ],
+        "peso": 0.0016731172690244212
+      },
+      {
+        "colunas": [
+          "f_sca",
+          "z_relevo"
+        ],
+        "peso": 0.0033418326310951994
+      }
+    ],
+    "padronizador": {
+      "colunas": [
+        "f_areia",
+        "f_construido",
+        "f_declive",
+        "f_dist_canal",
+        "f_dist_dren",
+        "f_hand",
+        "f_sca",
+        "z_relevo"
+      ],
+      "media": {
+        "f_areia": 0.33657064115560065,
+        "f_construido": 0.027142679805125098,
+        "f_declive": 0.9168394609836722,
+        "f_dist_canal": 6.452911591575878,
+        "f_dist_dren": 4.249136071598039,
+        "f_hand": 1.0613314373622125,
+        "f_sca": 5.234077092736345,
+        "z_relevo": 1.069959278070489
+      },
+      "desvio": {
+        "f_areia": 0.14720383209988358,
+        "f_construido": 0.08722313202512476,
+        "f_declive": 0.9442016992626202,
+        "f_dist_canal": 1.4245865991836786,
+        "f_dist_dren": 1.5776284014602509,
+        "f_hand": 1.325944030986257,
+        "f_sca": 2.3139264577284933,
+        "z_relevo": 0.847839328932678
+      },
+      "mediana": {
+        "f_areia": 0.3263333333333333,
+        "f_construido": 0.0,
+        "f_declive": 0.5772199595899715,
+        "f_dist_canal": 6.797924825142032,
+        "f_dist_dren": 4.6928745901981355,
+        "f_hand": 0.4773104111646734,
+        "f_sca": 4.53897119650772,
+        "z_relevo": 0.8454744084861024
+      }
+    },
+    "convergiu": true,
+    "iteracoes": 78
+  },
+  "Q_sel_ext": {
+    "coeficientes": {
+      "f_hand": -0.9810338127448696,
+      "f_sca": 0.042549990854683514,
+      "f_declive": -0.3123258153737971,
+      "f_construido": -0.21020186014279496,
+      "f_areia": -0.05097661940760025,
+      "f_dist_dren": 0.030397151858162667,
+      "f_dist_canal": -0.42889670505679667
+    },
+    "interacoes": [
+      {
+        "colunas": [
+          "f_dist_dren",
+          "z_relevo"
+        ],
+        "peso": -0.02691599004720711
+      },
+      {
+        "colunas": [
+          "f_dist_canal",
+          "z_relevo"
+        ],
+        "peso": 0.010049386096346044
+      },
+      {
+        "colunas": [
+          "f_sca",
+          "z_relevo"
+        ],
+        "peso": 0.006735900819388586
+      }
+    ],
+    "padronizador": {
+      "colunas": [
+        "f_areia",
+        "f_construido",
+        "f_declive",
+        "f_dist_canal",
+        "f_dist_dren",
+        "f_hand",
+        "f_sca",
+        "z_relevo"
+      ],
+      "media": {
+        "f_areia": 0.33657064115560065,
+        "f_construido": 0.027142679805125098,
+        "f_declive": 0.9168394609836722,
+        "f_dist_canal": 6.452911591575878,
+        "f_dist_dren": 4.249136071598039,
+        "f_hand": 1.0613314373622125,
+        "f_sca": 5.234077092736345,
+        "z_relevo": 1.069959278070489
+      },
+      "desvio": {
+        "f_areia": 0.14720383209988358,
+        "f_construido": 0.08722313202512476,
+        "f_declive": 0.9442016992626202,
+        "f_dist_canal": 1.4245865991836786,
+        "f_dist_dren": 1.5776284014602509,
+        "f_hand": 1.325944030986257,
+        "f_sca": 2.3139264577284933,
+        "z_relevo": 0.847839328932678
+      },
+      "mediana": {
+        "f_areia": 0.3263333333333333,
+        "f_construido": 0.0,
+        "f_declive": 0.5772199595899715,
+        "f_dist_canal": 6.797924825142032,
+        "f_dist_dren": 4.6928745901981355,
+        "f_hand": 0.4773104111646734,
+        "f_sca": 4.53897119650772,
+        "z_relevo": 0.8454744084861024
+      }
+    },
+    "convergiu": true,
+    "iteracoes": 52
+  },
+  "Qsep_hist": {
+    "coeficientes": {
+      "f_hand": -1.0812337333700959,
+      "f_sca": 0.09267748433645007,
+      "f_declive": -0.20077356894021567,
+      "f_construido": -0.1802369545468878,
+      "f_areia": -0.23525168701525126,
+      "f_dist_dren": 0.11124422124414786,
+      "f_dist_canal": -0.4542667968662016
+    },
+    "interacoes": [
+      {
+        "colunas": [
+          "f_dist_dren",
+          "z_relevo"
+        ],
+        "peso": -0.00010199758213211217
+      },
+      {
+        "colunas": [
+          "f_dist_canal",
+          "z_relevo"
+        ],
+        "peso": -2.5638851451557837e-05
+      },
+      {
+        "colunas": [
+          "f_sca",
+          "z_relevo"
+        ],
+        "peso": 0.00011020248729071722
+      }
+    ],
+    "padronizador": {
+      "colunas": [
+        "f_areia",
+        "f_construido",
+        "f_declive",
+        "f_dist_canal",
+        "f_dist_dren",
+        "f_hand",
+        "f_sca",
+        "z_relevo"
+      ],
+      "media": {
+        "f_areia": 0.378417023272173,
+        "f_construido": 0.03581105271293862,
+        "f_declive": 1.003148028796474,
+        "f_dist_canal": 6.356291686565933,
+        "f_dist_dren": 4.198453408512276,
+        "f_hand": 1.2063526039822698,
+        "f_sca": 5.352288079691241,
+        "z_relevo": 1.2429538880166682
+      },
+      "desvio": {
+        "f_areia": 0.1286234021117367,
+        "f_construido": 0.10052927245936667,
+        "f_declive": 1.0088424491222345,
+        "f_dist_canal": 1.4825068805360742,
+        "f_dist_dren": 1.6287931463916459,
+        "f_hand": 1.4512919242655,
+        "f_sca": 2.3819905719014454,
+        "z_relevo": 0.951951397413694
+      },
+      "mediana": {
+        "f_areia": 0.35733333333333334,
+        "f_construido": 0.0,
+        "f_declive": 0.633812141356658,
+        "f_dist_canal": 6.717089795688976,
+        "f_dist_dren": 4.562975685481548,
+        "f_hand": 0.6009342991708502,
+        "f_sca": 4.645885027217297,
+        "z_relevo": 0.902558183439969
+      }
+    },
+    "convergiu": true,
+    "iteracoes": 412
+  },
+  "Qsep_sel_fis": {
+    "coeficientes": {
+      "f_hand": -0.9041890172828199,
+      "f_sca": 0.08460256020513876,
+      "f_declive": -0.27357963133251556,
+      "f_construido": -0.17021195197432454,
+      "f_areia": -0.2015032978313472,
+      "f_dist_dren": 0.054603456030720206,
+      "f_dist_canal": -0.4325648565780885
+    },
+    "interacoes": [
+      {
+        "colunas": [
+          "f_dist_dren",
+          "z_relevo"
+        ],
+        "peso": -0.00015129774187151097
+      },
+      {
+        "colunas": [
+          "f_dist_canal",
+          "z_relevo"
+        ],
+        "peso": -4.355520281717622e-05
+      },
+      {
+        "colunas": [
+          "f_sca",
+          "z_relevo"
+        ],
+        "peso": 0.00014481645704123304
+      }
+    ],
+    "padronizador": {
+      "colunas": [
+        "f_areia",
+        "f_construido",
+        "f_declive",
+        "f_dist_canal",
+        "f_dist_dren",
+        "f_hand",
+        "f_sca",
+        "z_relevo"
+      ],
+      "media": {
+        "f_areia": 0.378417023272173,
+        "f_construido": 0.03581105271293862,
+        "f_declive": 1.003148028796474,
+        "f_dist_canal": 6.356291686565933,
+        "f_dist_dren": 4.198453408512276,
+        "f_hand": 1.2063526039822698,
+        "f_sca": 5.352288079691241,
+        "z_relevo": 1.2429538880166682
+      },
+      "desvio": {
+        "f_areia": 0.1286234021117367,
+        "f_construido": 0.10052927245936667,
+        "f_declive": 1.0088424491222345,
+        "f_dist_canal": 1.4825068805360742,
+        "f_dist_dren": 1.6287931463916459,
+        "f_hand": 1.4512919242655,
+        "f_sca": 2.3819905719014454,
+        "z_relevo": 0.951951397413694
+      },
+      "mediana": {
+        "f_areia": 0.35733333333333334,
+        "f_construido": 0.0,
+        "f_declive": 0.633812141356658,
+        "f_dist_canal": 6.717089795688976,
+        "f_dist_dren": 4.562975685481548,
+        "f_hand": 0.6009342991708502,
+        "f_sca": 4.645885027217297,
+        "z_relevo": 0.902558183439969
+      }
+    },
+    "convergiu": true,
+    "iteracoes": 376
+  }
+}

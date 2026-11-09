@@ -1,6 +1,0 @@
-python scripts/externo/aq_chamados01_centrais_de_atendimento.py
-python scripts/externo/aq_chamados02_verificar_requisitos.py
-python scripts/chuva/casos_das_centrais.py --fonte todas
-python scripts/chuva/serie_por_celula.py --online --conferir
-python scripts/chuva/autopareamento_temporal.py --fonte todas
-python -m pytest tests/test_chuva_autopareamento.py tests/test_chuva_serie_e_casos.py -q

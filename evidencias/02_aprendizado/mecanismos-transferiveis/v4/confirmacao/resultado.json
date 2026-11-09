@@ -1,0 +1,1659 @@
+{
+ "tipo": "mt04_confirmacao_protocolo_mt03",
+ "quando_utc": "2026-10-14T01:47:31.533669Z",
+ "protocolo": "sha256:75e72ae425838e4854091e9828f09dad333a1c579160819675fa07b99220c0d5",
+ "candidatas": "sha256:9487a28678cebfbfb02bbb853acf08b4be655909093a90575fe19460772c685c",
+ "predicoes": "sha256:06e72af80701e5fae93c197f86fd30cba5f852edb6b6f006a47c002b07f3c221",
+ "hipoteses": {
+  "HC1": {
+   "hipotese": "G_v2 > regra HAND (todos os processos)",
+   "regra": "delta >= 0,01 e IC95 acima de zero; minimo 8 unidades",
+   "unidades": 10,
+   "delta_medio": 0.02868873047212118,
+   "delta_mediano": 0.04105531159121334,
+   "unidades_a_favor": 9,
+   "acima_da_margem": 9,
+   "abaixo_de_menos_margem": 1,
+   "ic95": [
+    -0.005687389745169514,
+    0.05401168407146439
+   ],
+   "veredito": "indecidivel",
+   "por_unidade": [
+    {
+     "unidade": "U3_187ba66168",
+     "A0_regra_hand": 0.9061751250000001,
+     "G_conexao": 0.94552225,
+     "G_rios10": 0.9377959999999999,
+     "G_terreno": 0.9207312499999999,
+     "G_v2": 0.9201940000000001
+    },
+    {
+     "unidade": "U3_2a2049139c",
+     "A0_regra_hand": 0.8553151140684411,
+     "G_conexao": 0.9293954372623574,
+     "G_rios10": 0.9405712927756654,
+     "G_terreno": 0.9235361216730038,
+     "G_v2": 0.9411863117870723
+    },
+    {
+     "unidade": "U3_5fe462221f",
+     "A0_regra_hand": 0.8511584151663939,
+     "G_conexao": 0.9107538052373159,
+     "G_rios10": 0.9189152414075287,
+     "G_terreno": 0.8987259410801964,
+     "G_v2": 0.9125420076377524
+    },
+    {
+     "unidade": "U3_609ac15bed",
+     "A0_regra_hand": 0.8457641601114838,
+     "G_conexao": 0.9176396872765278,
+     "G_rios10": 0.9078689857344556,
+     "G_terreno": 0.8711341932999614,
+     "G_v2": 0.8784002832939106
+    },
+    {
+     "unidade": "U3_816c1e5832",
+     "A0_regra_hand": 0.8942669172932332,
+     "G_conexao": 0.9428157894736842,
+     "G_rios10": 0.9390037593984962,
+     "G_terreno": 0.9240526315789472,
+     "G_v2": 0.9266428571428571
+    },
+    {
+     "unidade": "U3_a5ae085875",
+     "A0_regra_hand": 0.8109876237623762,
+     "G_conexao": 0.9183564356435644,
+     "G_rios10": 0.9007178217821783,
+     "G_terreno": 0.8668762376237624,
+     "G_v2": 0.8623465346534653
+    },
+    {
+     "unidade": "U3_c28bc083ea",
+     "A0_regra_hand": 0.84285125,
+     "G_conexao": 0.9161560000000001,
+     "G_rios10": 0.9069182499999999,
+     "G_terreno": 0.88512475,
+     "G_v2": 0.8923257499999999
+    },
+    {
+     "unidade": "U3_d7d0c25ba9",
+     "A0_regra_hand": 0.5378928072625698,
+     "G_conexao": 0.42496508379888265,
+     "G_rios10": 0.4256634078212291,
+     "G_terreno": 0.42456354748603353,
+     "G_v2": 0.426588687150838
+    },
+    {
+     "unidade": "U3_d8689b47a8",
+     "A0_regra_hand": 0.8043938779024767,
+     "G_conexao": 0.8562789829334365,
+     "G_rios10": 0.8372890896671826,
+     "G_terreno": 0.8066473280959753,
+     "G_v2": 0.821248538622291
+    },
+    {
+     "unidade": "U3_e6aa298085",
+     "A0_regra_hand": 0.9122156250000001,
+     "G_conexao": 0.9665017500000002,
+     "G_rios10": 0.9676480000000001,
+     "G_terreno": 0.9662114999999999,
+     "G_v2": 0.96643325
+    }
+   ]
+  },
+  "HC2": {
+   "hipotese": "G_conexao (canal >= 10 km2 do raster local) > G_v2 no processo fluvial",
+   "regra": "delta >= 0,01 e IC95 acima de zero; minimo 8 unidades",
+   "unidades": 10,
+   "delta_medio": 0.016689309930513718,
+   "delta_mediano": 0.0146473469944291,
+   "unidades_a_favor": 7,
+   "acima_da_margem": 6,
+   "abaixo_de_menos_margem": 1,
+   "ic95": [
+    0.004988819006679596,
+    0.029606084396209896
+   ],
+   "veredito": "sustentado",
+   "por_unidade": [
+    {
+     "unidade": "U3_187ba66168",
+     "A0_regra_hand": 0.9352448186528498,
+     "G_conexao": 0.9704248704663213,
+     "G_rios10": 0.9667461139896373,
+     "G_terreno": 0.9578316062176165,
+     "G_v2": 0.9573031088082902
+    },
+    {
+     "unidade": "U3_2a2049139c",
+     "A0_regra_hand": 0.8553151140684411,
+     "G_conexao": 0.9293954372623574,
+     "G_rios10": 0.9405712927756654,
+     "G_terreno": 0.9235361216730038,
+     "G_v2": 0.9411863117870723
+    },
+    {
+     "unidade": "U3_5fe462221f",
+     "A0_regra_hand": 0.8511584151663939,
+     "G_conexao": 0.9107538052373159,
+     "G_rios10": 0.9189152414075287,
+     "G_terreno": 0.8987259410801964,
+     "G_v2": 0.9125420076377524
+    },
+    {
+     "unidade": "U3_609ac15bed",
+     "A0_regra_hand": 0.8457641601114838,
+     "G_conexao": 0.9176396872765278,
+     "G_rios10": 0.9078689857344556,
+     "G_terreno": 0.8711341932999614,
+     "G_v2": 0.8784002832939106
+    },
+    {
+     "unidade": "U3_816c1e5832",
+     "A0_regra_hand": 0.8942669172932332,
+     "G_conexao": 0.9428157894736842,
+     "G_rios10": 0.9390037593984962,
+     "G_terreno": 0.9240526315789472,
+     "G_v2": 0.9266428571428571
+    },
+    {
+     "unidade": "U3_a5ae085875",
+     "A0_regra_hand": 0.8109876237623762,
+     "G_conexao": 0.9183564356435644,
+     "G_rios10": 0.9007178217821783,
+     "G_terreno": 0.8668762376237624,
+     "G_v2": 0.8623465346534653
+    },
+    {
+     "unidade": "U3_c28bc083ea",
+     "A0_regra_hand": 0.84285125,
+     "G_conexao": 0.9161560000000001,
+     "G_rios10": 0.9069182499999999,
+     "G_terreno": 0.88512475,
+     "G_v2": 0.8923257499999999
+    },
+    {
+     "unidade": "U3_d7d0c25ba9",
+     "A0_regra_hand": 0.5378928072625698,
+     "G_conexao": 0.42496508379888265,
+     "G_rios10": 0.4256634078212291,
+     "G_terreno": 0.42456354748603353,
+     "G_v2": 0.426588687150838
+    },
+    {
+     "unidade": "U3_d8689b47a8",
+     "A0_regra_hand": 0.8036888436762862,
+     "G_conexao": 0.855248979957246,
+     "G_rios10": 0.8370406908576589,
+     "G_terreno": 0.8071832477388324,
+     "G_v2": 0.8215959493365768
+    },
+    {
+     "unidade": "U3_e6aa298085",
+     "A0_regra_hand": 0.9122156250000001,
+     "G_conexao": 0.9665017500000002,
+     "G_rios10": 0.9676480000000001,
+     "G_terreno": 0.9662114999999999,
+     "G_v2": 0.96643325
+    }
+   ]
+  },
+  "HC3": {
+   "hipotese": "G_rios10 (HydroRIVERS) > G_v2 no fluvial -- secundaria, divergiu entre A e B",
+   "regra": "delta >= 0,01 e IC95 acima de zero; minimo 8 unidades",
+   "unidades": 10,
+   "delta_medio": 0.012572882395608682,
+   "delta_mediano": 0.010901953718493118,
+   "unidades_a_favor": 8,
+   "acima_da_margem": 5,
+   "abaixo_de_menos_margem": 0,
+   "ic95": [
+    0.005911121621029008,
+    0.020442257456642885
+   ],
+   "veredito": "sustentado",
+   "por_unidade": [
+    {
+     "unidade": "U3_187ba66168",
+     "A0_regra_hand": 0.9352448186528498,
+     "G_conexao": 0.9704248704663213,
+     "G_rios10": 0.9667461139896373,
+     "G_terreno": 0.9578316062176165,
+     "G_v2": 0.9573031088082902
+    },
+    {
+     "unidade": "U3_2a2049139c",
+     "A0_regra_hand": 0.8553151140684411,
+     "G_conexao": 0.9293954372623574,
+     "G_rios10": 0.9405712927756654,
+     "G_terreno": 0.9235361216730038,
+     "G_v2": 0.9411863117870723
+    },
+    {
+     "unidade": "U3_5fe462221f",
+     "A0_regra_hand": 0.8511584151663939,
+     "G_conexao": 0.9107538052373159,
+     "G_rios10": 0.9189152414075287,
+     "G_terreno": 0.8987259410801964,
+     "G_v2": 0.9125420076377524
+    },
+    {
+     "unidade": "U3_609ac15bed",
+     "A0_regra_hand": 0.8457641601114838,
+     "G_conexao": 0.9176396872765278,
+     "G_rios10": 0.9078689857344556,
+     "G_terreno": 0.8711341932999614,
+     "G_v2": 0.8784002832939106
+    },
+    {
+     "unidade": "U3_816c1e5832",
+     "A0_regra_hand": 0.8942669172932332,
+     "G_conexao": 0.9428157894736842,
+     "G_rios10": 0.9390037593984962,
+     "G_terreno": 0.9240526315789472,
+     "G_v2": 0.9266428571428571
+    },
+    {
+     "unidade": "U3_a5ae085875",
+     "A0_regra_hand": 0.8109876237623762,
+     "G_conexao": 0.9183564356435644,
+     "G_rios10": 0.9007178217821783,
+     "G_terreno": 0.8668762376237624,
+     "G_v2": 0.8623465346534653
+    },
+    {
+     "unidade": "U3_c28bc083ea",
+     "A0_regra_hand": 0.84285125,
+     "G_conexao": 0.9161560000000001,
+     "G_rios10": 0.9069182499999999,
+     "G_terreno": 0.88512475,
+     "G_v2": 0.8923257499999999
+    },
+    {
+     "unidade": "U3_d7d0c25ba9",
+     "A0_regra_hand": 0.5378928072625698,
+     "G_conexao": 0.42496508379888265,
+     "G_rios10": 0.4256634078212291,
+     "G_terreno": 0.42456354748603353,
+     "G_v2": 0.426588687150838
+    },
+    {
+     "unidade": "U3_d8689b47a8",
+     "A0_regra_hand": 0.8036888436762862,
+     "G_conexao": 0.855248979957246,
+     "G_rios10": 0.8370406908576589,
+     "G_terreno": 0.8071832477388324,
+     "G_v2": 0.8215959493365768
+    },
+    {
+     "unidade": "U3_e6aa298085",
+     "A0_regra_hand": 0.9122156250000001,
+     "G_conexao": 0.9665017500000002,
+     "G_rios10": 0.9676480000000001,
+     "G_terreno": 0.9662114999999999,
+     "G_v2": 0.96643325
+    }
+   ]
+  }
+ },
+ "processo_proprio": [
+  {
+   "unidade": "U3_384a85801d",
+   "A0_regra_hand": 0.8508719879518073,
+   "G_conexao": 0.8635421686746988,
+   "G_rios10": 0.8475060240963854,
+   "G_terreno": 0.8191957831325303,
+   "G_v2": 0.8274728915662651
+  },
+  {
+   "unidade": "U3_f660d3c561",
+   "A0_regra_hand": 0.889936466101695,
+   "G_conexao": 0.9434997306967986,
+   "G_rios10": 0.9282396911487759,
+   "G_terreno": 0.9003003319209041,
+   "G_v2": 0.9021228827683615
+  }
+ ],
+ "por_evento": [
+  {
+   "unidade": "U3_187ba66168",
+   "evento": "CEMS_NOVO:EMSR793",
+   "recorte": "todos",
+   "modelo": "A0_regra_hand",
+   "auc": 0.9061751250000001
+  },
+  {
+   "unidade": "U3_187ba66168",
+   "evento": "CEMS_NOVO:EMSR793",
+   "recorte": "todos",
+   "modelo": "G_v2",
+   "auc": 0.9201940000000001
+  },
+  {
+   "unidade": "U3_187ba66168",
+   "evento": "CEMS_NOVO:EMSR793",
+   "recorte": "todos",
+   "modelo": "G_terreno",
+   "auc": 0.9207312499999999
+  },
+  {
+   "unidade": "U3_187ba66168",
+   "evento": "CEMS_NOVO:EMSR793",
+   "recorte": "todos",
+   "modelo": "G_conexao",
+   "auc": 0.94552225
+  },
+  {
+   "unidade": "U3_187ba66168",
+   "evento": "CEMS_NOVO:EMSR793",
+   "recorte": "todos",
+   "modelo": "G_rios10",
+   "auc": 0.9377959999999999
+  },
+  {
+   "unidade": "U3_187ba66168",
+   "evento": "CEMS_NOVO:EMSR793",
+   "recorte": "fluvial",
+   "modelo": "A0_regra_hand",
+   "auc": 0.9352448186528498
+  },
+  {
+   "unidade": "U3_187ba66168",
+   "evento": "CEMS_NOVO:EMSR793",
+   "recorte": "fluvial",
+   "modelo": "G_v2",
+   "auc": 0.9573031088082902
+  },
+  {
+   "unidade": "U3_187ba66168",
+   "evento": "CEMS_NOVO:EMSR793",
+   "recorte": "fluvial",
+   "modelo": "G_terreno",
+   "auc": 0.9578316062176165
+  },
+  {
+   "unidade": "U3_187ba66168",
+   "evento": "CEMS_NOVO:EMSR793",
+   "recorte": "fluvial",
+   "modelo": "G_conexao",
+   "auc": 0.9704248704663213
+  },
+  {
+   "unidade": "U3_187ba66168",
+   "evento": "CEMS_NOVO:EMSR793",
+   "recorte": "fluvial",
+   "modelo": "G_rios10",
+   "auc": 0.9667461139896373
+  },
+  {
+   "unidade": "U3_2a2049139c",
+   "evento": "CEMS_NOVO:EMSR722",
+   "recorte": "todos",
+   "modelo": "A0_regra_hand",
+   "auc": 0.8553151140684411
+  },
+  {
+   "unidade": "U3_2a2049139c",
+   "evento": "CEMS_NOVO:EMSR722",
+   "recorte": "todos",
+   "modelo": "G_v2",
+   "auc": 0.9411863117870723
+  },
+  {
+   "unidade": "U3_2a2049139c",
+   "evento": "CEMS_NOVO:EMSR722",
+   "recorte": "todos",
+   "modelo": "G_terreno",
+   "auc": 0.9235361216730038
+  },
+  {
+   "unidade": "U3_2a2049139c",
+   "evento": "CEMS_NOVO:EMSR722",
+   "recorte": "todos",
+   "modelo": "G_conexao",
+   "auc": 0.9293954372623574
+  },
+  {
+   "unidade": "U3_2a2049139c",
+   "evento": "CEMS_NOVO:EMSR722",
+   "recorte": "todos",
+   "modelo": "G_rios10",
+   "auc": 0.9405712927756654
+  },
+  {
+   "unidade": "U3_2a2049139c",
+   "evento": "CEMS_NOVO:EMSR722",
+   "recorte": "fluvial",
+   "modelo": "A0_regra_hand",
+   "auc": 0.8553151140684411
+  },
+  {
+   "unidade": "U3_2a2049139c",
+   "evento": "CEMS_NOVO:EMSR722",
+   "recorte": "fluvial",
+   "modelo": "G_v2",
+   "auc": 0.9411863117870723
+  },
+  {
+   "unidade": "U3_2a2049139c",
+   "evento": "CEMS_NOVO:EMSR722",
+   "recorte": "fluvial",
+   "modelo": "G_terreno",
+   "auc": 0.9235361216730038
+  },
+  {
+   "unidade": "U3_2a2049139c",
+   "evento": "CEMS_NOVO:EMSR722",
+   "recorte": "fluvial",
+   "modelo": "G_conexao",
+   "auc": 0.9293954372623574
+  },
+  {
+   "unidade": "U3_2a2049139c",
+   "evento": "CEMS_NOVO:EMSR722",
+   "recorte": "fluvial",
+   "modelo": "G_rios10",
+   "auc": 0.9405712927756654
+  },
+  {
+   "unidade": "U3_384a85801d",
+   "evento": "CEMS_NOVO:EMSR794",
+   "recorte": "todos",
+   "modelo": "A0_regra_hand",
+   "auc": 0.8508719879518073
+  },
+  {
+   "unidade": "U3_384a85801d",
+   "evento": "CEMS_NOVO:EMSR794",
+   "recorte": "todos",
+   "modelo": "G_v2",
+   "auc": 0.8274728915662651
+  },
+  {
+   "unidade": "U3_384a85801d",
+   "evento": "CEMS_NOVO:EMSR794",
+   "recorte": "todos",
+   "modelo": "G_terreno",
+   "auc": 0.8191957831325303
+  },
+  {
+   "unidade": "U3_384a85801d",
+   "evento": "CEMS_NOVO:EMSR794",
+   "recorte": "todos",
+   "modelo": "G_conexao",
+   "auc": 0.8635421686746988
+  },
+  {
+   "unidade": "U3_384a85801d",
+   "evento": "CEMS_NOVO:EMSR794",
+   "recorte": "todos",
+   "modelo": "G_rios10",
+   "auc": 0.8475060240963854
+  },
+  {
+   "unidade": "U3_384a85801d",
+   "evento": "CEMS_NOVO:EMSR794",
+   "recorte": "fluvial",
+   "modelo": "A0_regra_hand",
+   "auc": 0.8508719879518073
+  },
+  {
+   "unidade": "U3_384a85801d",
+   "evento": "CEMS_NOVO:EMSR794",
+   "recorte": "fluvial",
+   "modelo": "G_v2",
+   "auc": 0.8274728915662651
+  },
+  {
+   "unidade": "U3_384a85801d",
+   "evento": "CEMS_NOVO:EMSR794",
+   "recorte": "fluvial",
+   "modelo": "G_terreno",
+   "auc": 0.8191957831325303
+  },
+  {
+   "unidade": "U3_384a85801d",
+   "evento": "CEMS_NOVO:EMSR794",
+   "recorte": "fluvial",
+   "modelo": "G_conexao",
+   "auc": 0.8635421686746988
+  },
+  {
+   "unidade": "U3_384a85801d",
+   "evento": "CEMS_NOVO:EMSR794",
+   "recorte": "fluvial",
+   "modelo": "G_rios10",
+   "auc": 0.8475060240963854
+  },
+  {
+   "unidade": "U3_5fe462221f",
+   "evento": "CEMS_NOVO:EMSR705",
+   "recorte": "todos",
+   "modelo": "A0_regra_hand",
+   "auc": 0.8644658687943262
+  },
+  {
+   "unidade": "U3_5fe462221f",
+   "evento": "CEMS_NOVO:EMSR705",
+   "recorte": "todos",
+   "modelo": "G_v2",
+   "auc": 0.9307154255319149
+  },
+  {
+   "unidade": "U3_5fe462221f",
+   "evento": "CEMS_NOVO:EMSR705",
+   "recorte": "todos",
+   "modelo": "G_terreno",
+   "auc": 0.9199929078014184
+  },
+  {
+   "unidade": "U3_5fe462221f",
+   "evento": "CEMS_NOVO:EMSR705",
+   "recorte": "todos",
+   "modelo": "G_conexao",
+   "auc": 0.9278191489361702
+  },
+  {
+   "unidade": "U3_5fe462221f",
+   "evento": "CEMS_NOVO:EMSR705",
+   "recorte": "todos",
+   "modelo": "G_rios10",
+   "auc": 0.9373253546099292
+  },
+  {
+   "unidade": "U3_5fe462221f",
+   "evento": "CEMS_NOVO:EMSR705",
+   "recorte": "fluvial",
+   "modelo": "A0_regra_hand",
+   "auc": 0.8644658687943262
+  },
+  {
+   "unidade": "U3_5fe462221f",
+   "evento": "CEMS_NOVO:EMSR705",
+   "recorte": "fluvial",
+   "modelo": "G_v2",
+   "auc": 0.9307154255319149
+  },
+  {
+   "unidade": "U3_5fe462221f",
+   "evento": "CEMS_NOVO:EMSR705",
+   "recorte": "fluvial",
+   "modelo": "G_terreno",
+   "auc": 0.9199929078014184
+  },
+  {
+   "unidade": "U3_5fe462221f",
+   "evento": "CEMS_NOVO:EMSR705",
+   "recorte": "fluvial",
+   "modelo": "G_conexao",
+   "auc": 0.9278191489361702
+  },
+  {
+   "unidade": "U3_5fe462221f",
+   "evento": "CEMS_NOVO:EMSR705",
+   "recorte": "fluvial",
+   "modelo": "G_rios10",
+   "auc": 0.9373253546099292
+  },
+  {
+   "unidade": "U3_5fe462221f",
+   "evento": "CEMS_NOVO:EMSR795",
+   "recorte": "todos",
+   "modelo": "A0_regra_hand",
+   "auc": 0.8378509615384616
+  },
+  {
+   "unidade": "U3_5fe462221f",
+   "evento": "CEMS_NOVO:EMSR795",
+   "recorte": "todos",
+   "modelo": "G_v2",
+   "auc": 0.8943685897435898
+  },
+  {
+   "unidade": "U3_5fe462221f",
+   "evento": "CEMS_NOVO:EMSR795",
+   "recorte": "todos",
+   "modelo": "G_terreno",
+   "auc": 0.8774589743589744
+  },
+  {
+   "unidade": "U3_5fe462221f",
+   "evento": "CEMS_NOVO:EMSR795",
+   "recorte": "todos",
+   "modelo": "G_conexao",
+   "auc": 0.8936884615384616
+  },
+  {
+   "unidade": "U3_5fe462221f",
+   "evento": "CEMS_NOVO:EMSR795",
+   "recorte": "todos",
+   "modelo": "G_rios10",
+   "auc": 0.9005051282051282
+  },
+  {
+   "unidade": "U3_5fe462221f",
+   "evento": "CEMS_NOVO:EMSR795",
+   "recorte": "fluvial",
+   "modelo": "A0_regra_hand",
+   "auc": 0.8378509615384616
+  },
+  {
+   "unidade": "U3_5fe462221f",
+   "evento": "CEMS_NOVO:EMSR795",
+   "recorte": "fluvial",
+   "modelo": "G_v2",
+   "auc": 0.8943685897435898
+  },
+  {
+   "unidade": "U3_5fe462221f",
+   "evento": "CEMS_NOVO:EMSR795",
+   "recorte": "fluvial",
+   "modelo": "G_terreno",
+   "auc": 0.8774589743589744
+  },
+  {
+   "unidade": "U3_5fe462221f",
+   "evento": "CEMS_NOVO:EMSR795",
+   "recorte": "fluvial",
+   "modelo": "G_conexao",
+   "auc": 0.8936884615384616
+  },
+  {
+   "unidade": "U3_5fe462221f",
+   "evento": "CEMS_NOVO:EMSR795",
+   "recorte": "fluvial",
+   "modelo": "G_rios10",
+   "auc": 0.9005051282051282
+  },
+  {
+   "unidade": "U3_609ac15bed",
+   "evento": "CEMS_NOVO:EMSR706",
+   "recorte": "todos",
+   "modelo": "A0_regra_hand",
+   "auc": 0.8610954810495627
+  },
+  {
+   "unidade": "U3_609ac15bed",
+   "evento": "CEMS_NOVO:EMSR706",
+   "recorte": "todos",
+   "modelo": "G_v2",
+   "auc": 0.9099110787172013
+  },
+  {
+   "unidade": "U3_609ac15bed",
+   "evento": "CEMS_NOVO:EMSR706",
+   "recorte": "todos",
+   "modelo": "G_terreno",
+   "auc": 0.9040204081632652
+  },
+  {
+   "unidade": "U3_609ac15bed",
+   "evento": "CEMS_NOVO:EMSR706",
+   "recorte": "todos",
+   "modelo": "G_conexao",
+   "auc": 0.9242820699708453
+  },
+  {
+   "unidade": "U3_609ac15bed",
+   "evento": "CEMS_NOVO:EMSR706",
+   "recorte": "todos",
+   "modelo": "G_rios10",
+   "auc": 0.9169001457725949
+  },
+  {
+   "unidade": "U3_609ac15bed",
+   "evento": "CEMS_NOVO:EMSR706",
+   "recorte": "fluvial",
+   "modelo": "A0_regra_hand",
+   "auc": 0.8610954810495627
+  },
+  {
+   "unidade": "U3_609ac15bed",
+   "evento": "CEMS_NOVO:EMSR706",
+   "recorte": "fluvial",
+   "modelo": "G_v2",
+   "auc": 0.9099110787172013
+  },
+  {
+   "unidade": "U3_609ac15bed",
+   "evento": "CEMS_NOVO:EMSR706",
+   "recorte": "fluvial",
+   "modelo": "G_terreno",
+   "auc": 0.9040204081632652
+  },
+  {
+   "unidade": "U3_609ac15bed",
+   "evento": "CEMS_NOVO:EMSR706",
+   "recorte": "fluvial",
+   "modelo": "G_conexao",
+   "auc": 0.9242820699708453
+  },
+  {
+   "unidade": "U3_609ac15bed",
+   "evento": "CEMS_NOVO:EMSR706",
+   "recorte": "fluvial",
+   "modelo": "G_rios10",
+   "auc": 0.9169001457725949
+  },
+  {
+   "unidade": "U3_609ac15bed",
+   "evento": "CEMS_NOVO:EMSR708",
+   "recorte": "todos",
+   "modelo": "A0_regra_hand",
+   "auc": 0.830432839173405
+  },
+  {
+   "unidade": "U3_609ac15bed",
+   "evento": "CEMS_NOVO:EMSR708",
+   "recorte": "todos",
+   "modelo": "G_v2",
+   "auc": 0.8468894878706199
+  },
+  {
+   "unidade": "U3_609ac15bed",
+   "evento": "CEMS_NOVO:EMSR708",
+   "recorte": "todos",
+   "modelo": "G_terreno",
+   "auc": 0.8382479784366577
+  },
+  {
+   "unidade": "U3_609ac15bed",
+   "evento": "CEMS_NOVO:EMSR708",
+   "recorte": "todos",
+   "modelo": "G_conexao",
+   "auc": 0.9109973045822102
+  },
+  {
+   "unidade": "U3_609ac15bed",
+   "evento": "CEMS_NOVO:EMSR708",
+   "recorte": "todos",
+   "modelo": "G_rios10",
+   "auc": 0.8988378256963163
+  },
+  {
+   "unidade": "U3_609ac15bed",
+   "evento": "CEMS_NOVO:EMSR708",
+   "recorte": "fluvial",
+   "modelo": "A0_regra_hand",
+   "auc": 0.830432839173405
+  },
+  {
+   "unidade": "U3_609ac15bed",
+   "evento": "CEMS_NOVO:EMSR708",
+   "recorte": "fluvial",
+   "modelo": "G_v2",
+   "auc": 0.8468894878706199
+  },
+  {
+   "unidade": "U3_609ac15bed",
+   "evento": "CEMS_NOVO:EMSR708",
+   "recorte": "fluvial",
+   "modelo": "G_terreno",
+   "auc": 0.8382479784366577
+  },
+  {
+   "unidade": "U3_609ac15bed",
+   "evento": "CEMS_NOVO:EMSR708",
+   "recorte": "fluvial",
+   "modelo": "G_conexao",
+   "auc": 0.9109973045822102
+  },
+  {
+   "unidade": "U3_609ac15bed",
+   "evento": "CEMS_NOVO:EMSR708",
+   "recorte": "fluvial",
+   "modelo": "G_rios10",
+   "auc": 0.8988378256963163
+  },
+  {
+   "unidade": "U3_816c1e5832",
+   "evento": "CEMS_NOVO:EMSR797",
+   "recorte": "todos",
+   "modelo": "A0_regra_hand",
+   "auc": 0.8942669172932332
+  },
+  {
+   "unidade": "U3_816c1e5832",
+   "evento": "CEMS_NOVO:EMSR797",
+   "recorte": "todos",
+   "modelo": "G_v2",
+   "auc": 0.9266428571428571
+  },
+  {
+   "unidade": "U3_816c1e5832",
+   "evento": "CEMS_NOVO:EMSR797",
+   "recorte": "todos",
+   "modelo": "G_terreno",
+   "auc": 0.9240526315789472
+  },
+  {
+   "unidade": "U3_816c1e5832",
+   "evento": "CEMS_NOVO:EMSR797",
+   "recorte": "todos",
+   "modelo": "G_conexao",
+   "auc": 0.9428157894736842
+  },
+  {
+   "unidade": "U3_816c1e5832",
+   "evento": "CEMS_NOVO:EMSR797",
+   "recorte": "todos",
+   "modelo": "G_rios10",
+   "auc": 0.9390037593984962
+  },
+  {
+   "unidade": "U3_816c1e5832",
+   "evento": "CEMS_NOVO:EMSR797",
+   "recorte": "fluvial",
+   "modelo": "A0_regra_hand",
+   "auc": 0.8942669172932332
+  },
+  {
+   "unidade": "U3_816c1e5832",
+   "evento": "CEMS_NOVO:EMSR797",
+   "recorte": "fluvial",
+   "modelo": "G_v2",
+   "auc": 0.9266428571428571
+  },
+  {
+   "unidade": "U3_816c1e5832",
+   "evento": "CEMS_NOVO:EMSR797",
+   "recorte": "fluvial",
+   "modelo": "G_terreno",
+   "auc": 0.9240526315789472
+  },
+  {
+   "unidade": "U3_816c1e5832",
+   "evento": "CEMS_NOVO:EMSR797",
+   "recorte": "fluvial",
+   "modelo": "G_conexao",
+   "auc": 0.9428157894736842
+  },
+  {
+   "unidade": "U3_816c1e5832",
+   "evento": "CEMS_NOVO:EMSR797",
+   "recorte": "fluvial",
+   "modelo": "G_rios10",
+   "auc": 0.9390037593984962
+  },
+  {
+   "unidade": "U3_a5ae085875",
+   "evento": "CEMS_NOVO:EMSR742",
+   "recorte": "todos",
+   "modelo": "A0_regra_hand",
+   "auc": 0.8109876237623762
+  },
+  {
+   "unidade": "U3_a5ae085875",
+   "evento": "CEMS_NOVO:EMSR742",
+   "recorte": "todos",
+   "modelo": "G_v2",
+   "auc": 0.8623465346534653
+  },
+  {
+   "unidade": "U3_a5ae085875",
+   "evento": "CEMS_NOVO:EMSR742",
+   "recorte": "todos",
+   "modelo": "G_terreno",
+   "auc": 0.8668762376237624
+  },
+  {
+   "unidade": "U3_a5ae085875",
+   "evento": "CEMS_NOVO:EMSR742",
+   "recorte": "todos",
+   "modelo": "G_conexao",
+   "auc": 0.9183564356435644
+  },
+  {
+   "unidade": "U3_a5ae085875",
+   "evento": "CEMS_NOVO:EMSR742",
+   "recorte": "todos",
+   "modelo": "G_rios10",
+   "auc": 0.9007178217821783
+  },
+  {
+   "unidade": "U3_a5ae085875",
+   "evento": "CEMS_NOVO:EMSR742",
+   "recorte": "fluvial",
+   "modelo": "A0_regra_hand",
+   "auc": 0.8109876237623762
+  },
+  {
+   "unidade": "U3_a5ae085875",
+   "evento": "CEMS_NOVO:EMSR742",
+   "recorte": "fluvial",
+   "modelo": "G_v2",
+   "auc": 0.8623465346534653
+  },
+  {
+   "unidade": "U3_a5ae085875",
+   "evento": "CEMS_NOVO:EMSR742",
+   "recorte": "fluvial",
+   "modelo": "G_terreno",
+   "auc": 0.8668762376237624
+  },
+  {
+   "unidade": "U3_a5ae085875",
+   "evento": "CEMS_NOVO:EMSR742",
+   "recorte": "fluvial",
+   "modelo": "G_conexao",
+   "auc": 0.9183564356435644
+  },
+  {
+   "unidade": "U3_a5ae085875",
+   "evento": "CEMS_NOVO:EMSR742",
+   "recorte": "fluvial",
+   "modelo": "G_rios10",
+   "auc": 0.9007178217821783
+  },
+  {
+   "unidade": "U3_c28bc083ea",
+   "evento": "CEMS_NOVO:EMSR711",
+   "recorte": "todos",
+   "modelo": "A0_regra_hand",
+   "auc": 0.84285125
+  },
+  {
+   "unidade": "U3_c28bc083ea",
+   "evento": "CEMS_NOVO:EMSR711",
+   "recorte": "todos",
+   "modelo": "G_v2",
+   "auc": 0.8923257499999999
+  },
+  {
+   "unidade": "U3_c28bc083ea",
+   "evento": "CEMS_NOVO:EMSR711",
+   "recorte": "todos",
+   "modelo": "G_terreno",
+   "auc": 0.88512475
+  },
+  {
+   "unidade": "U3_c28bc083ea",
+   "evento": "CEMS_NOVO:EMSR711",
+   "recorte": "todos",
+   "modelo": "G_conexao",
+   "auc": 0.9161560000000001
+  },
+  {
+   "unidade": "U3_c28bc083ea",
+   "evento": "CEMS_NOVO:EMSR711",
+   "recorte": "todos",
+   "modelo": "G_rios10",
+   "auc": 0.9069182499999999
+  },
+  {
+   "unidade": "U3_c28bc083ea",
+   "evento": "CEMS_NOVO:EMSR711",
+   "recorte": "fluvial",
+   "modelo": "A0_regra_hand",
+   "auc": 0.84285125
+  },
+  {
+   "unidade": "U3_c28bc083ea",
+   "evento": "CEMS_NOVO:EMSR711",
+   "recorte": "fluvial",
+   "modelo": "G_v2",
+   "auc": 0.8923257499999999
+  },
+  {
+   "unidade": "U3_c28bc083ea",
+   "evento": "CEMS_NOVO:EMSR711",
+   "recorte": "fluvial",
+   "modelo": "G_terreno",
+   "auc": 0.88512475
+  },
+  {
+   "unidade": "U3_c28bc083ea",
+   "evento": "CEMS_NOVO:EMSR711",
+   "recorte": "fluvial",
+   "modelo": "G_conexao",
+   "auc": 0.9161560000000001
+  },
+  {
+   "unidade": "U3_c28bc083ea",
+   "evento": "CEMS_NOVO:EMSR711",
+   "recorte": "fluvial",
+   "modelo": "G_rios10",
+   "auc": 0.9069182499999999
+  },
+  {
+   "unidade": "U3_d7d0c25ba9",
+   "evento": "CEMS_NOVO:EMSR841",
+   "recorte": "todos",
+   "modelo": "A0_regra_hand",
+   "auc": 0.5378928072625698
+  },
+  {
+   "unidade": "U3_d7d0c25ba9",
+   "evento": "CEMS_NOVO:EMSR841",
+   "recorte": "todos",
+   "modelo": "G_v2",
+   "auc": 0.426588687150838
+  },
+  {
+   "unidade": "U3_d7d0c25ba9",
+   "evento": "CEMS_NOVO:EMSR841",
+   "recorte": "todos",
+   "modelo": "G_terreno",
+   "auc": 0.42456354748603353
+  },
+  {
+   "unidade": "U3_d7d0c25ba9",
+   "evento": "CEMS_NOVO:EMSR841",
+   "recorte": "todos",
+   "modelo": "G_conexao",
+   "auc": 0.42496508379888265
+  },
+  {
+   "unidade": "U3_d7d0c25ba9",
+   "evento": "CEMS_NOVO:EMSR841",
+   "recorte": "todos",
+   "modelo": "G_rios10",
+   "auc": 0.4256634078212291
+  },
+  {
+   "unidade": "U3_d7d0c25ba9",
+   "evento": "CEMS_NOVO:EMSR841",
+   "recorte": "fluvial",
+   "modelo": "A0_regra_hand",
+   "auc": 0.5378928072625698
+  },
+  {
+   "unidade": "U3_d7d0c25ba9",
+   "evento": "CEMS_NOVO:EMSR841",
+   "recorte": "fluvial",
+   "modelo": "G_v2",
+   "auc": 0.426588687150838
+  },
+  {
+   "unidade": "U3_d7d0c25ba9",
+   "evento": "CEMS_NOVO:EMSR841",
+   "recorte": "fluvial",
+   "modelo": "G_terreno",
+   "auc": 0.42456354748603353
+  },
+  {
+   "unidade": "U3_d7d0c25ba9",
+   "evento": "CEMS_NOVO:EMSR841",
+   "recorte": "fluvial",
+   "modelo": "G_conexao",
+   "auc": 0.42496508379888265
+  },
+  {
+   "unidade": "U3_d7d0c25ba9",
+   "evento": "CEMS_NOVO:EMSR841",
+   "recorte": "fluvial",
+   "modelo": "G_rios10",
+   "auc": 0.4256634078212291
+  },
+  {
+   "unidade": "U3_d8689b47a8",
+   "evento": "CEMS_NOVO:EMSR850",
+   "recorte": "todos",
+   "modelo": "A0_regra_hand",
+   "auc": 0.7979020000000001
+  },
+  {
+   "unidade": "U3_d8689b47a8",
+   "evento": "CEMS_NOVO:EMSR850",
+   "recorte": "todos",
+   "modelo": "G_v2",
+   "auc": 0.8136627999999999
+  },
+  {
+   "unidade": "U3_d8689b47a8",
+   "evento": "CEMS_NOVO:EMSR850",
+   "recorte": "todos",
+   "modelo": "G_terreno",
+   "auc": 0.8116158
+  },
+  {
+   "unidade": "U3_d8689b47a8",
+   "evento": "CEMS_NOVO:EMSR850",
+   "recorte": "todos",
+   "modelo": "G_conexao",
+   "auc": 0.8449924000000001
+  },
+  {
+   "unidade": "U3_d8689b47a8",
+   "evento": "CEMS_NOVO:EMSR850",
+   "recorte": "todos",
+   "modelo": "G_rios10",
+   "auc": 0.8257032
+  },
+  {
+   "unidade": "U3_d8689b47a8",
+   "evento": "CEMS_NOVO:EMSR850",
+   "recorte": "fluvial",
+   "modelo": "A0_regra_hand",
+   "auc": 0.7979020000000001
+  },
+  {
+   "unidade": "U3_d8689b47a8",
+   "evento": "CEMS_NOVO:EMSR850",
+   "recorte": "fluvial",
+   "modelo": "G_v2",
+   "auc": 0.8136627999999999
+  },
+  {
+   "unidade": "U3_d8689b47a8",
+   "evento": "CEMS_NOVO:EMSR850",
+   "recorte": "fluvial",
+   "modelo": "G_terreno",
+   "auc": 0.8116158
+  },
+  {
+   "unidade": "U3_d8689b47a8",
+   "evento": "CEMS_NOVO:EMSR850",
+   "recorte": "fluvial",
+   "modelo": "G_conexao",
+   "auc": 0.8449924000000001
+  },
+  {
+   "unidade": "U3_d8689b47a8",
+   "evento": "CEMS_NOVO:EMSR850",
+   "recorte": "fluvial",
+   "modelo": "G_rios10",
+   "auc": 0.8257032
+  },
+  {
+   "unidade": "U3_d8689b47a8",
+   "evento": "CEMS_NOVO:EMSR854",
+   "recorte": "todos",
+   "modelo": "A0_regra_hand",
+   "auc": 0.8572601102941175
+  },
+  {
+   "unidade": "U3_d8689b47a8",
+   "evento": "CEMS_NOVO:EMSR854",
+   "recorte": "todos",
+   "modelo": "G_v2",
+   "auc": 0.8383878676470589
+  },
+  {
+   "unidade": "U3_d8689b47a8",
+   "evento": "CEMS_NOVO:EMSR854",
+   "recorte": "todos",
+   "modelo": "G_terreno",
+   "auc": 0.8344191176470589
+  },
+  {
+   "unidade": "U3_d8689b47a8",
+   "evento": "CEMS_NOVO:EMSR854",
+   "recorte": "todos",
+   "modelo": "G_conexao",
+   "auc": 0.8950036764705882
+  },
+  {
+   "unidade": "U3_d8689b47a8",
+   "evento": "CEMS_NOVO:EMSR854",
+   "recorte": "todos",
+   "modelo": "G_rios10",
+   "auc": 0.8699558823529412
+  },
+  {
+   "unidade": "U3_d8689b47a8",
+   "evento": "CEMS_NOVO:EMSR854",
+   "recorte": "fluvial",
+   "modelo": "A0_regra_hand",
+   "auc": 0.8572601102941175
+  },
+  {
+   "unidade": "U3_d8689b47a8",
+   "evento": "CEMS_NOVO:EMSR854",
+   "recorte": "fluvial",
+   "modelo": "G_v2",
+   "auc": 0.8383878676470589
+  },
+  {
+   "unidade": "U3_d8689b47a8",
+   "evento": "CEMS_NOVO:EMSR854",
+   "recorte": "fluvial",
+   "modelo": "G_terreno",
+   "auc": 0.8344191176470589
+  },
+  {
+   "unidade": "U3_d8689b47a8",
+   "evento": "CEMS_NOVO:EMSR854",
+   "recorte": "fluvial",
+   "modelo": "G_conexao",
+   "auc": 0.8950036764705882
+  },
+  {
+   "unidade": "U3_d8689b47a8",
+   "evento": "CEMS_NOVO:EMSR854",
+   "recorte": "fluvial",
+   "modelo": "G_rios10",
+   "auc": 0.8699558823529412
+  },
+  {
+   "unidade": "U3_d8689b47a8",
+   "evento": "CEMS_NOVO:EMSR855",
+   "recorte": "todos",
+   "modelo": "A0_regra_hand",
+   "auc": 0.8760230263157894
+  },
+  {
+   "unidade": "U3_d8689b47a8",
+   "evento": "CEMS_NOVO:EMSR855",
+   "recorte": "todos",
+   "modelo": "G_v2",
+   "auc": 0.9247697368421053
+  },
+  {
+   "unidade": "U3_d8689b47a8",
+   "evento": "CEMS_NOVO:EMSR855",
+   "recorte": "todos",
+   "modelo": "G_terreno",
+   "auc": 0.8911578947368421
+  },
+  {
+   "unidade": "U3_d8689b47a8",
+   "evento": "CEMS_NOVO:EMSR855",
+   "recorte": "todos",
+   "modelo": "G_conexao",
+   "auc": 0.9340921052631579
+  },
+  {
+   "unidade": "U3_d8689b47a8",
+   "evento": "CEMS_NOVO:EMSR855",
+   "recorte": "todos",
+   "modelo": "G_rios10",
+   "auc": 0.9223355263157894
+  },
+  {
+   "unidade": "U3_d8689b47a8",
+   "evento": "CEMS_NOVO:EMSR855",
+   "recorte": "fluvial",
+   "modelo": "A0_regra_hand",
+   "auc": 0.8760230263157894
+  },
+  {
+   "unidade": "U3_d8689b47a8",
+   "evento": "CEMS_NOVO:EMSR855",
+   "recorte": "fluvial",
+   "modelo": "G_v2",
+   "auc": 0.9247697368421053
+  },
+  {
+   "unidade": "U3_d8689b47a8",
+   "evento": "CEMS_NOVO:EMSR855",
+   "recorte": "fluvial",
+   "modelo": "G_terreno",
+   "auc": 0.8911578947368421
+  },
+  {
+   "unidade": "U3_d8689b47a8",
+   "evento": "CEMS_NOVO:EMSR855",
+   "recorte": "fluvial",
+   "modelo": "G_conexao",
+   "auc": 0.9340921052631579
+  },
+  {
+   "unidade": "U3_d8689b47a8",
+   "evento": "CEMS_NOVO:EMSR855",
+   "recorte": "fluvial",
+   "modelo": "G_rios10",
+   "auc": 0.9223355263157894
+  },
+  {
+   "unidade": "U3_d8689b47a8",
+   "evento": "CEMS_NOVO:EMSR856",
+   "recorte": "todos",
+   "modelo": "A0_regra_hand",
+   "auc": 0.686390375
+  },
+  {
+   "unidade": "U3_d8689b47a8",
+   "evento": "CEMS_NOVO:EMSR856",
+   "recorte": "todos",
+   "modelo": "G_v2",
+   "auc": 0.70817375
+  },
+  {
+   "unidade": "U3_d8689b47a8",
+   "evento": "CEMS_NOVO:EMSR856",
+   "recorte": "todos",
+   "modelo": "G_terreno",
+   "auc": 0.6893965
+  },
+  {
+   "unidade": "U3_d8689b47a8",
+   "evento": "CEMS_NOVO:EMSR856",
+   "recorte": "todos",
+   "modelo": "G_conexao",
+   "auc": 0.75102775
+  },
+  {
+   "unidade": "U3_d8689b47a8",
+   "evento": "CEMS_NOVO:EMSR856",
+   "recorte": "todos",
+   "modelo": "G_rios10",
+   "auc": 0.73116175
+  },
+  {
+   "unidade": "U3_d8689b47a8",
+   "evento": "CEMS_NOVO:EMSR856",
+   "recorte": "fluvial",
+   "modelo": "A0_regra_hand",
+   "auc": 0.683570238095238
+  },
+  {
+   "unidade": "U3_d8689b47a8",
+   "evento": "CEMS_NOVO:EMSR856",
+   "recorte": "fluvial",
+   "modelo": "G_v2",
+   "auc": 0.7095633928571429
+  },
+  {
+   "unidade": "U3_d8689b47a8",
+   "evento": "CEMS_NOVO:EMSR856",
+   "recorte": "fluvial",
+   "modelo": "G_terreno",
+   "auc": 0.6915401785714286
+  },
+  {
+   "unidade": "U3_d8689b47a8",
+   "evento": "CEMS_NOVO:EMSR856",
+   "recorte": "fluvial",
+   "modelo": "G_conexao",
+   "auc": 0.746907738095238
+  },
+  {
+   "unidade": "U3_d8689b47a8",
+   "evento": "CEMS_NOVO:EMSR856",
+   "recorte": "fluvial",
+   "modelo": "G_rios10",
+   "auc": 0.7301681547619048
+  },
+  {
+   "unidade": "U3_e6aa298085",
+   "evento": "CEMS_NOVO:EMSR788",
+   "recorte": "todos",
+   "modelo": "A0_regra_hand",
+   "auc": 0.9122156250000001
+  },
+  {
+   "unidade": "U3_e6aa298085",
+   "evento": "CEMS_NOVO:EMSR788",
+   "recorte": "todos",
+   "modelo": "G_v2",
+   "auc": 0.96643325
+  },
+  {
+   "unidade": "U3_e6aa298085",
+   "evento": "CEMS_NOVO:EMSR788",
+   "recorte": "todos",
+   "modelo": "G_terreno",
+   "auc": 0.9662114999999999
+  },
+  {
+   "unidade": "U3_e6aa298085",
+   "evento": "CEMS_NOVO:EMSR788",
+   "recorte": "todos",
+   "modelo": "G_conexao",
+   "auc": 0.9665017500000002
+  },
+  {
+   "unidade": "U3_e6aa298085",
+   "evento": "CEMS_NOVO:EMSR788",
+   "recorte": "todos",
+   "modelo": "G_rios10",
+   "auc": 0.9676480000000001
+  },
+  {
+   "unidade": "U3_e6aa298085",
+   "evento": "CEMS_NOVO:EMSR788",
+   "recorte": "fluvial",
+   "modelo": "A0_regra_hand",
+   "auc": 0.9122156250000001
+  },
+  {
+   "unidade": "U3_e6aa298085",
+   "evento": "CEMS_NOVO:EMSR788",
+   "recorte": "fluvial",
+   "modelo": "G_v2",
+   "auc": 0.96643325
+  },
+  {
+   "unidade": "U3_e6aa298085",
+   "evento": "CEMS_NOVO:EMSR788",
+   "recorte": "fluvial",
+   "modelo": "G_terreno",
+   "auc": 0.9662114999999999
+  },
+  {
+   "unidade": "U3_e6aa298085",
+   "evento": "CEMS_NOVO:EMSR788",
+   "recorte": "fluvial",
+   "modelo": "G_conexao",
+   "auc": 0.9665017500000002
+  },
+  {
+   "unidade": "U3_e6aa298085",
+   "evento": "CEMS_NOVO:EMSR788",
+   "recorte": "fluvial",
+   "modelo": "G_rios10",
+   "auc": 0.9676480000000001
+  },
+  {
+   "unidade": "U3_f660d3c561",
+   "evento": "CEMS_NOVO:EMSR718",
+   "recorte": "todos",
+   "modelo": "A0_regra_hand",
+   "auc": 0.905
+  },
+  {
+   "unidade": "U3_f660d3c561",
+   "evento": "CEMS_NOVO:EMSR718",
+   "recorte": "todos",
+   "modelo": "G_v2",
+   "auc": 0.8789583333333333
+  },
+  {
+   "unidade": "U3_f660d3c561",
+   "evento": "CEMS_NOVO:EMSR718",
+   "recorte": "todos",
+   "modelo": "G_terreno",
+   "auc": 0.8787916666666667
+  },
+  {
+   "unidade": "U3_f660d3c561",
+   "evento": "CEMS_NOVO:EMSR718",
+   "recorte": "todos",
+   "modelo": "G_conexao",
+   "auc": 0.9547500000000001
+  },
+  {
+   "unidade": "U3_f660d3c561",
+   "evento": "CEMS_NOVO:EMSR718",
+   "recorte": "todos",
+   "modelo": "G_rios10",
+   "auc": 0.9267500000000001
+  },
+  {
+   "unidade": "U3_f660d3c561",
+   "evento": "CEMS_NOVO:EMSR718",
+   "recorte": "fluvial",
+   "modelo": "A0_regra_hand",
+   "auc": 0.905
+  },
+  {
+   "unidade": "U3_f660d3c561",
+   "evento": "CEMS_NOVO:EMSR718",
+   "recorte": "fluvial",
+   "modelo": "G_v2",
+   "auc": 0.8789583333333333
+  },
+  {
+   "unidade": "U3_f660d3c561",
+   "evento": "CEMS_NOVO:EMSR718",
+   "recorte": "fluvial",
+   "modelo": "G_terreno",
+   "auc": 0.8787916666666667
+  },
+  {
+   "unidade": "U3_f660d3c561",
+   "evento": "CEMS_NOVO:EMSR718",
+   "recorte": "fluvial",
+   "modelo": "G_conexao",
+   "auc": 0.9547500000000001
+  },
+  {
+   "unidade": "U3_f660d3c561",
+   "evento": "CEMS_NOVO:EMSR718",
+   "recorte": "fluvial",
+   "modelo": "G_rios10",
+   "auc": 0.9267500000000001
+  },
+  {
+   "unidade": "U3_f660d3c561",
+   "evento": "CEMS_NOVO:EMSR849",
+   "recorte": "todos",
+   "modelo": "A0_regra_hand",
+   "auc": 0.8538754999999999
+  },
+  {
+   "unidade": "U3_f660d3c561",
+   "evento": "CEMS_NOVO:EMSR849",
+   "recorte": "todos",
+   "modelo": "G_v2",
+   "auc": 0.87390975
+  },
+  {
+   "unidade": "U3_f660d3c561",
+   "evento": "CEMS_NOVO:EMSR849",
+   "recorte": "todos",
+   "modelo": "G_terreno",
+   "auc": 0.86999125
+  },
+  {
+   "unidade": "U3_f660d3c561",
+   "evento": "CEMS_NOVO:EMSR849",
+   "recorte": "todos",
+   "modelo": "G_conexao",
+   "auc": 0.9061910000000001
+  },
+  {
+   "unidade": "U3_f660d3c561",
+   "evento": "CEMS_NOVO:EMSR849",
+   "recorte": "todos",
+   "modelo": "G_rios10",
+   "auc": 0.894738
+  },
+  {
+   "unidade": "U3_f660d3c561",
+   "evento": "CEMS_NOVO:EMSR849",
+   "recorte": "fluvial",
+   "modelo": "A0_regra_hand",
+   "auc": 0.8519991762767709
+  },
+  {
+   "unidade": "U3_f660d3c561",
+   "evento": "CEMS_NOVO:EMSR849",
+   "recorte": "fluvial",
+   "modelo": "G_v2",
+   "auc": 0.8851946732564526
+  },
+  {
+   "unidade": "U3_f660d3c561",
+   "evento": "CEMS_NOVO:EMSR849",
+   "recorte": "fluvial",
+   "modelo": "G_terreno",
+   "auc": 0.8817086765513455
+  },
+  {
+   "unidade": "U3_f660d3c561",
+   "evento": "CEMS_NOVO:EMSR849",
+   "recorte": "fluvial",
+   "modelo": "G_conexao",
+   "auc": 0.9121161449752883
+  },
+  {
+   "unidade": "U3_f660d3c561",
+   "evento": "CEMS_NOVO:EMSR849",
+   "recorte": "fluvial",
+   "modelo": "G_rios10",
+   "auc": 0.903219659527732
+  },
+  {
+   "unidade": "U3_f660d3c561",
+   "evento": "CEMS_NOVO:EMSR860",
+   "recorte": "todos",
+   "modelo": "A0_regra_hand",
+   "auc": 0.9109338983050846
+  },
+  {
+   "unidade": "U3_f660d3c561",
+   "evento": "CEMS_NOVO:EMSR860",
+   "recorte": "todos",
+   "modelo": "G_v2",
+   "auc": 0.9535005649717514
+  },
+  {
+   "unidade": "U3_f660d3c561",
+   "evento": "CEMS_NOVO:EMSR860",
+   "recorte": "todos",
+   "modelo": "G_terreno",
+   "auc": 0.9521180790960453
+  },
+  {
+   "unidade": "U3_f660d3c561",
+   "evento": "CEMS_NOVO:EMSR860",
+   "recorte": "todos",
+   "modelo": "G_conexao",
+   "auc": 0.9695581920903955
+  },
+  {
+   "unidade": "U3_f660d3c561",
+   "evento": "CEMS_NOVO:EMSR860",
+   "recorte": "todos",
+   "modelo": "G_rios10",
+   "auc": 0.9632310734463276
+  },
+  {
+   "unidade": "U3_f660d3c561",
+   "evento": "CEMS_NOVO:EMSR860",
+   "recorte": "fluvial",
+   "modelo": "A0_regra_hand",
+   "auc": 0.9109338983050846
+  },
+  {
+   "unidade": "U3_f660d3c561",
+   "evento": "CEMS_NOVO:EMSR860",
+   "recorte": "fluvial",
+   "modelo": "G_v2",
+   "auc": 0.9535005649717514
+  },
+  {
+   "unidade": "U3_f660d3c561",
+   "evento": "CEMS_NOVO:EMSR860",
+   "recorte": "fluvial",
+   "modelo": "G_terreno",
+   "auc": 0.9521180790960453
+  },
+  {
+   "unidade": "U3_f660d3c561",
+   "evento": "CEMS_NOVO:EMSR860",
+   "recorte": "fluvial",
+   "modelo": "G_conexao",
+   "auc": 0.9695581920903955
+  },
+  {
+   "unidade": "U3_f660d3c561",
+   "evento": "CEMS_NOVO:EMSR860",
+   "recorte": "fluvial",
+   "modelo": "G_rios10",
+   "auc": 0.9632310734463276
+  }
+ ],
+ "nao_confirma": [
+  "enxurrada (11 unidades no desenvolvimento, nada sustentado)",
+  "saida/dique",
+  "causa",
+  "probabilidade anual",
+  "validade em territorio brasileiro"
+ ],
+ "promovido": false,
+ "familia": "HC3 secundaria; IC por hipotese, sem controle conjunto de multiplicidade no protocolo original"
+}

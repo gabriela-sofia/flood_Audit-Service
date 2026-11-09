@@ -1,0 +1,181 @@
+{
+ "tipo": "mt11_reparo_posterior_grafo_3b",
+ "quando_utc": "2026-10-18T01:50:12.865363Z",
+ "natureza": "segunda reparação de independência posterior ao resultado, pelo mesmo critério; não é pré-registro; resultado original e primeiro reparo preservados; nenhuma exclusão por efeito",
+ "grafo_3b": {
+  "nos.parquet": "sha256:30cc3a107314d9ec59c336fde0a8339b062960401d196b6d07cb35f50dd1fd24",
+  "arestas.parquet": "sha256:90054f509ad30cb0b8a9ca9545c64d2e19c0c5d91211f6d812d6064a28791ced",
+  "componentes.parquet": "sha256:15801ef2e1e9392c935c5e71a720a4b7f7ff46a8fe6220f8cd50f6053cc96d2e",
+  "grafo.json": "sha256:83affce8ee36c211d1fc837d6e435c339ac337eca4de634635e68b39d5d80743"
+ },
+ "mudancas_de_eventos": {
+  "emendada_primaria": {
+   "saem": [
+    "GFD:4355",
+    "GFD:4503"
+   ],
+   "entram": [],
+   "componentes_original": 32,
+   "componentes_3b": 30
+  },
+  "sensibilidade_exutorio": {
+   "saem": [
+    "GFD:4666"
+   ],
+   "entram": [],
+   "componentes_original": 20,
+   "componentes_3b": 19
+  }
+ },
+ "evidencia_eventos_que_saem_primario": {
+  "GFD:4355": [
+   {
+    "causa": "onda",
+    "chave": "onda:EMSR164|GFD:4355|4060025450",
+    "evento": [
+     "EMSR164",
+     "GFD:4355"
+    ]
+   }
+  ],
+  "GFD:4503": [
+   {
+    "causa": "L8",
+    "chave": "L8:2080382710",
+    "evento": [
+     "EMSR712",
+     "GFD:4503"
+    ]
+   },
+   {
+    "causa": "L8",
+    "chave": "L8:2080396050",
+    "evento": [
+     "EMSR287",
+     "GFD:4503"
+    ]
+   }
+  ]
+ },
+ "contrastes": {
+  "emendada_primaria": {
+   "HQ1": {
+    "n": 30,
+    "media": 0.05502710366619,
+    "ic": [
+     0.023891063182993322,
+     0.08631876074351576
+    ],
+    "veredito": "sustentado",
+    "a_favor": 26,
+    "original": {
+     "n": 32,
+     "media": 0.05405843796846946,
+     "ic": [
+      0.025933243823949133,
+      0.08452986884257113
+     ],
+     "veredito": "sustentado"
+    }
+   },
+   "HQ2": {
+    "n": 30,
+    "media": 0.029617507084935154,
+    "ic": [
+     0.00611431413298375,
+     0.052540919655923043
+    ],
+    "veredito": "sustentado",
+    "a_favor": 22,
+    "original": {
+     "n": 32,
+     "media": 0.027369493694869282,
+     "ic": [
+      0.003506179196831634,
+      0.05029284375704839
+     ],
+     "veredito": "sustentado"
+    }
+   },
+   "HF": {
+    "n": 15,
+    "media": 0.02941838748749616,
+    "ic": [
+     -0.0032204948925952798,
+     0.06278038788056951
+    ],
+    "veredito": "indecidivel",
+    "a_favor": 9,
+    "original": {
+     "n": 16,
+     "media": 0.04043506303171552,
+     "ic": [
+      0.0034156080842677847,
+      0.08217268893069649
+     ],
+     "veredito": "sustentado"
+    }
+   }
+  },
+  "sensibilidade_exutorio": {
+   "HQ1": {
+    "n": 19,
+    "media": 0.049878188087627444,
+    "ic": [
+     0.00559743929680566,
+     0.09655857598776564
+    ],
+    "veredito": "sustentado",
+    "a_favor": 15,
+    "original": {
+     "n": 20,
+     "media": 0.04880406466516013,
+     "ic": [
+      0.0054676031251025495,
+      0.09113105288381607
+     ],
+     "veredito": "sustentado"
+    }
+   },
+   "HQ2": {
+    "n": 19,
+    "media": 0.027862780309809224,
+    "ic": [
+     -0.007545390231978281,
+     0.056075984542191204
+    ],
+    "veredito": "indecidivel",
+    "a_favor": 15,
+    "original": {
+     "n": 20,
+     "media": 0.025985781468599096,
+     "ic": [
+      -0.005451689058977855,
+      0.052056751806391126
+     ],
+     "veredito": "indecidivel"
+    }
+   },
+   "HF": {
+    "n": 9,
+    "media": 0.031714989730285734,
+    "ic": [
+     -0.012249567384459665,
+     0.07873756724789148
+    ],
+    "veredito": "indecidivel",
+    "a_favor": 6,
+    "original": {
+     "n": 10,
+     "media": 0.028087717362743524,
+     "ic": [
+      -0.012293922733506733,
+      0.07248293742881466
+     ],
+     "veredito": "indecidivel"
+    }
+   }
+  }
+ },
+ "resultado_original": "sha256:3ad4fdb6b22d6f30b4fc3686d717ea4902328c51466cfe67053646b08b53e4c6"
+}

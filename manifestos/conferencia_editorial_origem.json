@@ -1,0 +1,76 @@
+{
+  "tipo": "verificacao_editorial_v16",
+  "nao_e": "novo experimento ou validacao cientifica",
+  "paginas": 7,
+  "tabelas": 9,
+  "associacao_texto_tabela": [
+    {
+      "tabela": "II",
+      "pagina": 4,
+      "coluna": "esquerda",
+      "texto_na_mesma_coluna": true
+    },
+    {
+      "tabela": "III",
+      "pagina": 4,
+      "coluna": "direita",
+      "texto_na_mesma_coluna": true
+    },
+    {
+      "tabela": "IV",
+      "pagina": 5,
+      "coluna": "esquerda",
+      "texto_na_mesma_coluna": true
+    },
+    {
+      "tabela": "V",
+      "pagina": 5,
+      "coluna": "direita",
+      "texto_na_mesma_coluna": true
+    },
+    {
+      "tabela": "VI",
+      "pagina": 5,
+      "coluna": "direita",
+      "texto_na_mesma_coluna": true
+    },
+    {
+      "tabela": "VII",
+      "pagina": 6,
+      "coluna": "esquerda",
+      "texto_na_mesma_coluna": true
+    },
+    {
+      "tabela": "VIII",
+      "pagina": 6,
+      "coluna": "esquerda",
+      "texto_na_mesma_coluna": true
+    },
+    {
+      "tabela": "IX",
+      "pagina": 6,
+      "coluna": "direita",
+      "texto_na_mesma_coluna": true
+    }
+  ],
+  "valores_decimais_v15_preservados": 230,
+  "valores_decimais_faltantes": [],
+  "bibliografia_51_itens_preservados": true,
+  "figuras_e_bibtex_identicos": true,
+  "referencias_internas_resolvidas": true,
+  "sem_overfull_no_log": true,
+  "sem_caracteres_fora_da_pagina": true,
+  "pdf_sha256": "f4bc18ca8cce9744e4f438af5e0bf2fe5863bd6bc79cfcd12f167f9001302c7e",
+  "fonte_sha256": "9954cde489a03e3b82785cad0db717d2499f44c5f8ea50009da3df1950331452",
+  "pdf_v15_sha256": "c72b13a856299a94232eb6c5977a908d97f8052600e90d10f7befe08e85814d6",
+  "revisao_visual_paginas": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "discussao_e_conclusao_organizadas": true
+}

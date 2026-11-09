@@ -1,0 +1,1780 @@
+{
+  "entradas": [
+    "codigo/scripts/fundamentacao_artigo/f01_ic_ganho_atualizacao.py",
+    "codigo/scripts/fundamentacao_artigo/f02_chuva_gatilho_recife.py",
+    "codigo/scripts/fundamentacao_artigo/f03_ic_transferencia_coortes.py",
+    "codigo/scripts/fundamentacao_artigo/f04_encosta_e_retencao.py",
+    "codigo/scripts/fundamentacao_artigo/f05_territorio_novo.py",
+    "codigo/scripts/fundamentacao_artigo/f06_ic_auc_ruas_recife.py",
+    "codigo/scripts/fundamentacao_artigo/f07_estratos_coortes.py",
+    "codigo/scripts/fundamentacao_artigo/f08_ruas_e_comunidades.py",
+    "codigo/scripts/ia/avaliar_integrada_v2.py",
+    "codigo/scripts/ia/consulta_territorial_v2.py",
+    "codigo/scripts/ia/ia_integrada_v2.py",
+    "codigo/scripts/ia/modelo_integrado_v2.py",
+    "codigo/scripts/ia/mt11_fechamento.py",
+    "codigo/scripts/metodo/admissao_cientifica.py",
+    "codigo/scripts/metodo/mt01_bacias_globais.py",
+    "codigo/scripts/metodo/mt01_experimento.py",
+    "codigo/scripts/metodo/mt01_independencia.py",
+    "codigo/scripts/metodo/mt01_ocorrencia_jrc.py",
+    "codigo/scripts/metodo/mt01_populacao.py",
+    "codigo/scripts/metodo/mt01_pos_hoc.py",
+    "codigo/scripts/metodo/mt01_relatorio.py",
+    "codigo/scripts/metodo/mt09_identificacao_causal.py",
+    "codigo/scripts/metodo/mt11_emenda.py",
+    "codigo/scripts/metodo/mt11_independencia.py",
+    "codigo/scripts/metodo/mt11_verificacao_independente.py",
+    "codigo/scripts/neural/experimento_pote_crescente.py",
+    "codigo/scripts/petropolis_aprendizado/pa_00_estado_inicial.py",
+    "codigo/scripts/petropolis_aprendizado/pa_01_aquisicao.py",
+    "codigo/scripts/petropolis_aprendizado/pa_02_terreno.py",
+    "codigo/scripts/petropolis_aprendizado/pa_03_referencias.py",
+    "codigo/scripts/petropolis_aprendizado/pa_04_protocolo.py",
+    "codigo/scripts/petropolis_aprendizado/pa_04b_emenda1.py",
+    "codigo/scripts/petropolis_aprendizado/pa_05_treino.py",
+    "codigo/scripts/petropolis_aprendizado/pa_05b_emenda1.py",
+    "codigo/scripts/petropolis_aprendizado/pa_06_territorio.py",
+    "codigo/scripts/petropolis_aprendizado/pa_06b_casos.py",
+    "codigo/scripts/petropolis_aprendizado/pa_07_figuras.py",
+    "codigo/scripts/petropolis_aprendizado/pa_08_verificacao.py",
+    "codigo/scripts/petropolis_aprendizado/pa_09_manifesto.py",
+    "codigo/scripts/petropolis_aprendizado/pa_comum.py",
+    "codigo/scripts/recife_aprendizado/ra_00_estado_inicial.py",
+    "codigo/scripts/recife_aprendizado/ra_01_referencias.py",
+    "codigo/scripts/recife_aprendizado/ra_02_atributos.py",
+    "codigo/scripts/recife_aprendizado/ra_03_protocolo.py",
+    "codigo/scripts/recife_aprendizado/ra_04_treino.py",
+    "codigo/scripts/recife_aprendizado/ra_04b_emenda1.py",
+    "codigo/scripts/recife_aprendizado/ra_04c_emenda2.py",
+    "codigo/scripts/recife_aprendizado/ra_05_territorio.py",
+    "codigo/scripts/recife_aprendizado/ra_06_figuras.py",
+    "codigo/scripts/recife_aprendizado/ra_07_verificacao.py",
+    "codigo/scripts/recife_aprendizado/ra_08_manifesto.py",
+    "codigo/scripts/recife_aprendizado/ra_comum.py",
+    "codigo/scripts/recuperacao/__init__.py",
+    "codigo/scripts/recuperacao/avaliacao_de_recuperacao.py",
+    "codigo/scripts/recuperacao/comparar_recuperadores.py",
+    "codigo/scripts/recuperacao/indice_denso.py",
+    "codigo/scripts/sar/analise_continuidade_v3.py",
+    "codigo/scripts/sar/avaliar_rede.py",
+    "codigo/scripts/sar/calibrar_recusa.py",
+    "codigo/scripts/sar/continuidade_v3.py",
+    "codigo/scripts/sar/pretreino_mascarado.py",
+    "codigo/scripts/sar/treino.py",
+    "codigo/scripts/servico/rag_corpus.py",
+    "codigo/scripts/servico/resposta_integrada.py",
+    "codigo/scripts/social/social01_censo_municipal.py",
+    "codigo/scripts/social/social02_medidas_territoriais.py",
+    "codigo/scripts/social/social05_contrato_medidas.py",
+    "codigo/scripts/social/social06_consolidacao.py",
+    "codigo/scripts/social/social07_servico_medidas.py",
+    "codigo/scripts/social/social08_exposicao_grade.py",
+    "codigo/scripts/social/social09_avaliacao_cobertura.py",
+    "codigo/scripts/suscetibilidade/ds03_esquema_alvo.py",
+    "codigo/scripts/suscetibilidade/ds05_admissao_consolidacao.py",
+    "codigo/scripts/vulnerabilizados/v10_comum.py",
+    "codigo/scripts/vulnerabilizados/v10_ii_ciclo.py",
+    "codigo/scripts/vulnerabilizados/v10_iii_memoria.py",
+    "codigo/scripts/vulnerabilizados/v10_iv_competencia.py",
+    "codigo/scripts/vulnerabilizados/v10_v_social.py",
+    "codigo/scripts/vulnerabilizados/v6_07_rmr.py",
+    "codigo/scripts/vulnerabilizados/v6_08_ufrgs_triangulacao.py",
+    "codigo/scripts/vulnerabilizados/v8_01_q_externo.py",
+    "codigo/scripts/vulnerabilizados/v8_02_ponte_fisica.py",
+    "codigo/scripts/vulnerabilizados/v8_02b_cobertura_solo.py",
+    "codigo/scripts/vulnerabilizados/v8_04b_analise.py",
+    "codigo/scripts/vulnerabilizados/v8_07b_amostra_pps.py",
+    "codigo/scripts/vulnerabilizados/v9_b_tabular.py",
+    "codigo/scripts/vulnerabilizados/v9_d_conjunta.py",
+    "codigo/scripts/vulnerabilizados/v9_p0_regularizacao.py",
+    "codigo/scripts/vulnerabilizados/v9_s_lacuna.py",
+    "codigo/tests/test_admissao_cientifica.py",
+    "codigo/tests/test_continuidade_v3.py",
+    "codigo/tests/test_fechamento_integrada_v2.py",
+    "codigo/tests/test_fontes_sar.py",
+    "codigo/tests/test_ia_integrada_v2.py",
+    "codigo/tests/test_mt01_mecanismos.py",
+    "codigo/tests/test_mt11_confirmatorio_transdutivo.py",
+    "codigo/tests/test_mt11_emenda.py",
+    "codigo/tests/test_mt11_fechamento.py",
+    "codigo/tests/test_petropolis_aprendizado_v1.py",
+    "codigo/tests/test_recife_aprendizado_v1.py",
+    "codigo/tests/test_recuperacao_frente_c.py",
+    "codigo/tests/test_sar_frente_a4.py",
+    "codigo/tests/test_sar_frente_a5.py",
+    "codigo/tests/test_sar_frente_a7.py",
+    "codigo/tests/test_social01_censo_municipal.py",
+    "codigo/tests/test_social02_medidas_territoriais.py",
+    "codigo/tests/test_social_medidas_consolidadas.py",
+    "codigo/tests/test_social_projecao.py",
+    "codigo/tests/test_v10_ciclo_contextual.py",
+    "codigo/tests/test_verificacao_frente_d.py"
+  ],
+  "arestas": {
+    "codigo/scripts/petropolis_aprendizado/pa_08_verificacao.py": [
+      "codigo/scripts/petropolis_aprendizado/pa_comum.py"
+    ],
+    "codigo/scripts/vulnerabilizados/v8_04b_analise.py": [
+      "codigo/scripts/vulnerabilizados/comum_tv.py",
+      "codigo/scripts/vulnerabilizados/v5_aprendizagem.py",
+      "codigo/scripts/vulnerabilizados/v8_comum.py"
+    ],
+    "codigo/scripts/vulnerabilizados/v8_comum.py": [
+      "codigo/scripts/vulnerabilizados/comum_tv.py",
+      "codigo/scripts/vulnerabilizados/v5_comum.py"
+    ],
+    "codigo/scripts/vulnerabilizados/v5_comum.py": [
+      "codigo/scripts/vulnerabilizados/comum_tv.py"
+    ],
+    "codigo/scripts/vulnerabilizados/v5_aprendizagem.py": [
+      "codigo/scripts/vulnerabilizados/comum_tv.py",
+      "codigo/scripts/vulnerabilizados/v2_aprendizagem.py"
+    ],
+    "codigo/scripts/vulnerabilizados/v2_aprendizagem.py": [
+      "codigo/scripts/vulnerabilizados/comum_tv.py",
+      "codigo/scripts/vulnerabilizados/tv09_manaus.py",
+      "codigo/scripts/vulnerabilizados/tv_transferencia.py",
+      "codigo/scripts/vulnerabilizados/v2_00_partida.py"
+    ],
+    "codigo/scripts/vulnerabilizados/tv09_manaus.py": [
+      "codigo/scripts/vulnerabilizados/comum_tv.py",
+      "codigo/scripts/vulnerabilizados/tv01_universo_escassez.py",
+      "codigo/scripts/vulnerabilizados/tv06_referencia_rmpa.py",
+      "codigo/scripts/vulnerabilizados/tv07_avaliacao_rmpa.py",
+      "codigo/scripts/vulnerabilizados/tv_geo.py",
+      "codigo/scripts/vulnerabilizados/tv_transferencia.py"
+    ],
+    "codigo/scripts/vulnerabilizados/tv01_universo_escassez.py": [
+      "codigo/scripts/vulnerabilizados/comum_tv.py"
+    ],
+    "codigo/scripts/vulnerabilizados/tv07_avaliacao_rmpa.py": [
+      "codigo/scripts/vulnerabilizados/comum_tv.py"
+    ],
+    "codigo/scripts/vulnerabilizados/tv06_referencia_rmpa.py": [
+      "codigo/scripts/vulnerabilizados/comum_tv.py"
+    ],
+    "codigo/scripts/vulnerabilizados/tv_geo.py": [
+      "codigo/scripts/vulnerabilizados/comum_tv.py",
+      "codigo/scripts/vulnerabilizados/tv01_universo_escassez.py"
+    ],
+    "codigo/scripts/vulnerabilizados/v2_00_partida.py": [
+      "codigo/scripts/vulnerabilizados/comum_tv.py"
+    ],
+    "codigo/scripts/vulnerabilizados/tv_transferencia.py": [
+      "codigo/scripts/evolucao_escopo/contexto_local.py",
+      "codigo/scripts/vulnerabilizados/comum_tv.py"
+    ],
+    "codigo/scripts/evolucao_escopo/contexto_local.py": [
+      "codigo/scripts/evolucao_escopo/comum.py",
+      "codigo/scripts/evolucao_escopo/fisica_local.py"
+    ],
+    "codigo/scripts/evolucao_escopo/comum.py": [],
+    "codigo/scripts/evolucao_escopo/fisica_local.py": [
+      "codigo/scripts/evolucao_escopo/comum.py"
+    ],
+    "codigo/scripts/vulnerabilizados/comum_tv.py": [],
+    "codigo/scripts/petropolis_aprendizado/pa_05_treino.py": [
+      "codigo/scripts/petropolis_aprendizado/pa_comum.py"
+    ],
+    "codigo/scripts/metodo/mt01_independencia.py": [
+      "codigo/scripts/metodo/mt01_independencia.py",
+      "codigo/scripts/metodo/mt01_populacao.py",
+      "codigo/scripts/servico/proveniencia.py"
+    ],
+    "codigo/scripts/servico/proveniencia.py": [],
+    "codigo/scripts/sar/continuidade_v3.py": [
+      "codigo/scripts/manutencao/executar_serializado.py",
+      "codigo/scripts/neural/proveniencia_de_peso.py",
+      "codigo/scripts/sar/calibracao_decisao.py",
+      "codigo/scripts/sar/campanha_independencia_autonomia.py",
+      "codigo/scripts/sar/continuidade_v2.py",
+      "codigo/scripts/sar/dados_pares_geograficos.py",
+      "codigo/scripts/sar/diagnostico_competencia.py",
+      "codigo/scripts/sar/fontes_sar.py",
+      "codigo/scripts/sar/modelo_unet.py",
+      "codigo/scripts/sar/nucleo_sar.py"
+    ],
+    "codigo/scripts/sar/continuidade_v2.py": [
+      "codigo/scripts/manutencao/executar_serializado.py",
+      "codigo/scripts/neural/proveniencia_de_peso.py",
+      "codigo/scripts/sar/baseline_otsu.py",
+      "codigo/scripts/sar/campanha_independencia_autonomia.py",
+      "codigo/scripts/sar/continuidade_retencao.py",
+      "codigo/scripts/sar/dados_pares_geograficos.py",
+      "codigo/scripts/sar/diagnostico_competencia.py",
+      "codigo/scripts/sar/experimento_pre_pos.py",
+      "codigo/scripts/sar/modelo_unet.py",
+      "codigo/scripts/sar/pretreino_mascarado.py"
+    ],
+    "codigo/scripts/sar/baseline_otsu.py": [
+      "codigo/scripts/sar/dados_sen1floods11.py",
+      "codigo/scripts/servico/proveniencia.py"
+    ],
+    "codigo/scripts/sar/dados_sen1floods11.py": [
+      "codigo/scripts/servico/proveniencia.py"
+    ],
+    "codigo/scripts/sar/experimento_pre_pos.py": [
+      "codigo/scripts/neural/proveniencia_de_peso.py",
+      "codigo/scripts/neural/regua.py",
+      "codigo/scripts/sar/baseline_otsu.py",
+      "codigo/scripts/sar/dados_pre_pos.py",
+      "codigo/scripts/sar/modelo_unet.py"
+    ],
+    "codigo/scripts/sar/dados_pre_pos.py": [
+      "codigo/scripts/sar/adquirir_pares_s1gfloods.py"
+    ],
+    "codigo/scripts/sar/adquirir_pares_s1gfloods.py": [
+      "codigo/scripts/sar/adquirir_pares_s1gfloods.py"
+    ],
+    "codigo/scripts/neural/regua.py": [],
+    "codigo/scripts/sar/continuidade_retencao.py": [
+      "codigo/scripts/manutencao/executar_serializado.py",
+      "codigo/scripts/neural/proveniencia_de_peso.py",
+      "codigo/scripts/sar/aquisicao_apos_diagnostico.py",
+      "codigo/scripts/sar/baseline_otsu.py",
+      "codigo/scripts/sar/campanha_independencia_autonomia.py",
+      "codigo/scripts/sar/dados_pares_geograficos.py",
+      "codigo/scripts/sar/diagnostico_competencia.py",
+      "codigo/scripts/sar/experimento_pre_pos.py",
+      "codigo/scripts/sar/modelo_unet.py"
+    ],
+    "codigo/scripts/sar/aquisicao_apos_diagnostico.py": [
+      "codigo/scripts/sar/campanha_independencia_autonomia.py",
+      "codigo/scripts/sar/dados_pares_geograficos.py",
+      "codigo/scripts/sar/diagnostico_competencia.py"
+    ],
+    "codigo/scripts/sar/dados_pares_geograficos.py": [],
+    "codigo/scripts/manutencao/executar_serializado.py": [
+      "codigo/scripts/manutencao/executar_serializado.py"
+    ],
+    "codigo/scripts/neural/proveniencia_de_peso.py": [
+      "codigo/scripts/servico/proveniencia.py"
+    ],
+    "codigo/scripts/sar/modelo_unet.py": [],
+    "codigo/scripts/sar/campanha_independencia_autonomia.py": [
+      "codigo/scripts/neural/proveniencia_de_peso.py",
+      "codigo/scripts/sar/adquirir_pares_geograficos.py",
+      "codigo/scripts/sar/auditar_pares_geograficos.py",
+      "codigo/scripts/sar/baseline_otsu.py",
+      "codigo/scripts/sar/dados_pares_geograficos.py",
+      "codigo/scripts/sar/experimento_pre_pos.py",
+      "codigo/scripts/sar/modelo_unet.py"
+    ],
+    "codigo/scripts/sar/adquirir_pares_geograficos.py": [],
+    "codigo/scripts/sar/auditar_pares_geograficos.py": [
+      "codigo/scripts/sar/adquirir_pares_geograficos.py",
+      "codigo/scripts/sar/dados_pares_geograficos.py",
+      "codigo/scripts/sar/experimento_pre_pos.py"
+    ],
+    "codigo/scripts/sar/fontes_sar.py": [
+      "codigo/scripts/sar/campanha_independencia_autonomia.py",
+      "codigo/scripts/sar/dados_pares_geograficos.py"
+    ],
+    "codigo/scripts/sar/calibracao_decisao.py": [],
+    "codigo/scripts/sar/nucleo_sar.py": [
+      "codigo/scripts/sar/campanha_independencia_autonomia.py",
+      "codigo/scripts/sar/continuidade_v2.py",
+      "codigo/scripts/sar/fontes_sar.py"
+    ],
+    "codigo/scripts/sar/diagnostico_competencia.py": [
+      "codigo/scripts/neural/proveniencia_de_peso.py",
+      "codigo/scripts/sar/baseline_otsu.py",
+      "codigo/scripts/sar/campanha_independencia_autonomia.py",
+      "codigo/scripts/sar/dados_pares_geograficos.py",
+      "codigo/scripts/sar/experimento_pre_pos.py",
+      "codigo/scripts/sar/modelo_unet.py"
+    ],
+    "codigo/scripts/metodo/mt09_identificacao_causal.py": [
+      "codigo/scripts/manutencao/executar_serializado.py",
+      "codigo/scripts/metodo/mt06_cobertura_observabilidade.py",
+      "codigo/scripts/metodo/mt08_teto_compartilhado.py",
+      "codigo/scripts/metodo/mt09_identificacao_causal.py"
+    ],
+    "codigo/scripts/metodo/mt08_teto_compartilhado.py": [
+      "codigo/scripts/manutencao/executar_serializado.py",
+      "codigo/scripts/metodo/mt06_cobertura_observabilidade.py",
+      "codigo/scripts/metodo/mt08_teto_compartilhado.py",
+      "codigo/scripts/metodo/verificar_fechamento_independente.py"
+    ],
+    "codigo/scripts/metodo/verificar_fechamento_independente.py": [],
+    "codigo/scripts/metodo/mt06_cobertura_observabilidade.py": [
+      "codigo/scripts/metodo/mt05_transferencia_sem_amostra.py",
+      "codigo/scripts/servico/proveniencia.py"
+    ],
+    "codigo/scripts/metodo/mt05_transferencia_sem_amostra.py": [
+      "codigo/scripts/metodo/mt01_experimento.py",
+      "codigo/scripts/metodo/mt01_relatorio.py",
+      "codigo/scripts/metodo/mt02_experimento.py",
+      "codigo/scripts/metodo/mt03_experimento.py",
+      "codigo/scripts/metodo/mt05_transferencia_sem_amostra.py",
+      "codigo/scripts/servico/proveniencia.py"
+    ],
+    "codigo/scripts/metodo/mt02_experimento.py": [
+      "codigo/scripts/metodo/mt01_experimento.py",
+      "codigo/scripts/metodo/mt01_populacao.py",
+      "codigo/scripts/metodo/mt02_atributos.py",
+      "codigo/scripts/metodo/mt02_cobertura_v2.py",
+      "codigo/scripts/metodo/mt02_experimento.py",
+      "codigo/scripts/servico/proveniencia.py"
+    ],
+    "codigo/scripts/metodo/mt02_cobertura_v2.py": [
+      "codigo/scripts/geo/cob01_cobertura_e_solo.py",
+      "codigo/scripts/metodo/mt02_cobertura_v2.py",
+      "codigo/scripts/servico/proveniencia.py"
+    ],
+    "codigo/scripts/geo/cob01_cobertura_e_solo.py": [
+      "codigo/scripts/geo/cob01_cobertura_e_solo.py",
+      "codigo/scripts/servico/proveniencia.py",
+      "codigo/scripts/suscetibilidade/ds06_dataset_de_treino.py"
+    ],
+    "codigo/scripts/suscetibilidade/ds06_dataset_de_treino.py": [
+      "codigo/scripts/geo/cob01_cobertura_e_solo.py",
+      "codigo/scripts/metodo/contrato_do_fenomeno.py",
+      "codigo/scripts/metodo/cortes_por_evento.py",
+      "codigo/scripts/metodo/rastreio_de_impacto.py",
+      "codigo/scripts/servico/proveniencia.py",
+      "codigo/scripts/suscetibilidade/ds03_esquema_alvo.py",
+      "codigo/scripts/suscetibilidade/ds06_dataset_de_treino.py",
+      "codigo/scripts/verificacao/cobertura_por_contexto.py"
+    ],
+    "codigo/scripts/metodo/contrato_do_fenomeno.py": [
+      "codigo/scripts/metodo/contrato_do_fenomeno.py",
+      "codigo/scripts/metodo/rastreio_de_impacto.py",
+      "codigo/scripts/servico/proveniencia.py",
+      "codigo/scripts/suscetibilidade/ds03_esquema_alvo.py"
+    ],
+    "codigo/scripts/verificacao/cobertura_por_contexto.py": [
+      "codigo/scripts/servico/proveniencia.py",
+      "codigo/scripts/servico/svc01_construir_modelos_servidos.py",
+      "codigo/scripts/suscetibilidade/br04_o_brasil_como_professor.py",
+      "codigo/scripts/verificacao/cobertura_por_contexto.py"
+    ],
+    "codigo/scripts/suscetibilidade/br04_o_brasil_como_professor.py": [
+      "codigo/scripts/servico/proveniencia.py"
+    ],
+    "codigo/scripts/servico/svc01_construir_modelos_servidos.py": [
+      "codigo/scripts/servico/regioes.py",
+      "codigo/scripts/servico/svc01_construir_modelos_servidos.py",
+      "codigo/scripts/servico/svc02_contrato_inferencia.py",
+      "codigo/scripts/suscetibilidade/aud_desenho02_natureza_dos_negativos.py",
+      "codigo/scripts/suscetibilidade/br04_o_brasil_como_professor.py",
+      "codigo/scripts/suscetibilidade/ds03_esquema_alvo.py",
+      "codigo/scripts/suscetibilidade/ds05_admissao_consolidacao.py",
+      "codigo/scripts/suscetibilidade/susc_firth_shim.py"
+    ],
+    "codigo/scripts/suscetibilidade/aud_desenho02_natureza_dos_negativos.py": [
+      "codigo/scripts/chuva/contrato_chuva.py",
+      "codigo/scripts/suscetibilidade/aud_desenho02_natureza_dos_negativos.py"
+    ],
+    "codigo/scripts/suscetibilidade/susc_firth_shim.py": [],
+    "codigo/scripts/servico/regioes.py": [
+      "codigo/scripts/servico/cache_regiao.py",
+      "codigo/scripts/suscetibilidade/br04_o_brasil_como_professor.py"
+    ],
+    "codigo/scripts/servico/cache_regiao.py": [],
+    "codigo/scripts/servico/svc02_contrato_inferencia.py": [
+      "codigo/scripts/chuva/contrato_chuva.py",
+      "codigo/scripts/metodo/afirmacao_dos_servidos.py",
+      "codigo/scripts/servico/cadeia_no_contrato.py",
+      "codigo/scripts/servico/politica_de_portao_temporal.py",
+      "codigo/scripts/servico/proveniencia.py",
+      "codigo/scripts/servico/regioes.py",
+      "codigo/scripts/servico/suporte_cientifico.py",
+      "codigo/scripts/servico/svc01_construir_modelos_servidos.py",
+      "codigo/scripts/servico/svc02_contrato_inferencia.py",
+      "codigo/scripts/suscetibilidade/ds03_esquema_alvo.py",
+      "codigo/scripts/temporalidade/dimensao_temporal.py"
+    ],
+    "codigo/scripts/servico/politica_de_portao_temporal.py": [
+      "codigo/scripts/servico/politica_de_portao_temporal.py",
+      "codigo/scripts/servico/proveniencia.py",
+      "codigo/scripts/servico/suporte_cientifico.py",
+      "codigo/scripts/servico/svc02_contrato_inferencia.py"
+    ],
+    "codigo/scripts/temporalidade/dimensao_temporal.py": [
+      "codigo/scripts/challengers/matriz_validacao.py",
+      "codigo/scripts/servico/proveniencia.py",
+      "codigo/scripts/servico/suporte_cientifico.py",
+      "codigo/scripts/servico/svc02_contrato_inferencia.py",
+      "codigo/scripts/temporalidade/auditoria_temporal.py",
+      "codigo/scripts/temporalidade/cortes_por_regiao_do_pool.py",
+      "codigo/scripts/temporalidade/dimensao_temporal.py",
+      "codigo/scripts/temporalidade/ontologia_temporal.py"
+    ],
+    "codigo/scripts/temporalidade/cortes_por_regiao_do_pool.py": [
+      "codigo/scripts/servico/proveniencia.py",
+      "codigo/scripts/servico/regioes.py",
+      "codigo/scripts/servico/svc01_construir_modelos_servidos.py",
+      "codigo/scripts/suscetibilidade/br04_o_brasil_como_professor.py",
+      "codigo/scripts/suscetibilidade/susc_firth_shim.py",
+      "codigo/scripts/temporalidade/cortes_por_regiao_do_pool.py"
+    ],
+    "codigo/scripts/temporalidade/auditoria_temporal.py": [
+      "codigo/scripts/temporalidade/ontologia_temporal.py"
+    ],
+    "codigo/scripts/challengers/matriz_validacao.py": [
+      "codigo/scripts/challengers/protocolo_experimental.py",
+      "codigo/scripts/servico/proveniencia.py",
+      "codigo/scripts/servico/svc01_construir_modelos_servidos.py"
+    ],
+    "codigo/scripts/challengers/protocolo_experimental.py": [
+      "codigo/scripts/challengers/protocolo_experimental.py",
+      "codigo/scripts/servico/proveniencia.py"
+    ],
+    "codigo/scripts/temporalidade/ontologia_temporal.py": [],
+    "codigo/scripts/servico/cadeia_no_contrato.py": [
+      "codigo/scripts/neural/cadeia_seletiva.py"
+    ],
+    "codigo/scripts/neural/cadeia_seletiva.py": [
+      "codigo/scripts/recuperacao/indice_denso.py",
+      "codigo/scripts/servico/claims.py",
+      "codigo/scripts/servico/proveniencia.py",
+      "codigo/scripts/verificacao/casos_de_suporte.py",
+      "codigo/scripts/verificacao/medir_suporte.py"
+    ],
+    "codigo/scripts/servico/claims.py": [],
+    "codigo/scripts/verificacao/casos_de_suporte.py": [],
+    "codigo/scripts/verificacao/medir_suporte.py": [
+      "codigo/scripts/servico/claims.py",
+      "codigo/scripts/servico/proveniencia.py",
+      "codigo/scripts/verificacao/casos_de_suporte.py"
+    ],
+    "codigo/scripts/servico/suporte_cientifico.py": [
+      "codigo/scripts/challengers/autopsia_curitiba.py",
+      "codigo/scripts/temporalidade/dimensao_temporal.py",
+      "codigo/scripts/temporalidade/ontologia_temporal.py"
+    ],
+    "codigo/scripts/challengers/autopsia_curitiba.py": [
+      "codigo/scripts/challengers/harness_comparacao.py",
+      "codigo/scripts/challengers/matriz_validacao.py",
+      "codigo/scripts/challengers/protocolo_experimental.py",
+      "codigo/scripts/servico/proveniencia.py"
+    ],
+    "codigo/scripts/challengers/harness_comparacao.py": [
+      "codigo/scripts/challengers/harness_comparacao.py",
+      "codigo/scripts/challengers/protocolo_experimental.py",
+      "codigo/scripts/servico/proveniencia.py",
+      "codigo/scripts/servico/svc01_construir_modelos_servidos.py"
+    ],
+    "codigo/scripts/metodo/afirmacao_dos_servidos.py": [
+      "codigo/scripts/metodo/contrato_do_fenomeno.py",
+      "codigo/scripts/metodo/rastreio_de_impacto.py",
+      "codigo/scripts/servico/proveniencia.py"
+    ],
+    "codigo/scripts/metodo/rastreio_de_impacto.py": [
+      "codigo/scripts/geo/agua_permanente_jrc.py",
+      "codigo/scripts/metodo/contrato_do_fenomeno.py",
+      "codigo/scripts/metodo/generalizacao_por_reservas.py",
+      "codigo/scripts/metodo/rastreio_de_impacto.py",
+      "codigo/scripts/metodo/verdade_observacional.py",
+      "codigo/scripts/servico/proveniencia.py",
+      "codigo/scripts/suscetibilidade/ds03_esquema_alvo.py"
+    ],
+    "codigo/scripts/metodo/verdade_observacional.py": [
+      "codigo/scripts/geo/rfd01_replica_gfd.py",
+      "codigo/scripts/metodo/rastreio_de_impacto.py",
+      "codigo/scripts/metodo/verdade_observacional.py",
+      "codigo/scripts/servico/proveniencia.py",
+      "codigo/scripts/suscetibilidade/ds06_dataset_de_treino.py"
+    ],
+    "codigo/scripts/geo/rfd01_replica_gfd.py": [
+      "codigo/scripts/geo/gfd01_eventos_do_brasil.py",
+      "codigo/scripts/servico/proveniencia.py"
+    ],
+    "codigo/scripts/geo/gfd01_eventos_do_brasil.py": [
+      "codigo/scripts/geo/gfd01_eventos_do_brasil.py",
+      "codigo/scripts/servico/proveniencia.py"
+    ],
+    "codigo/scripts/metodo/generalizacao_por_reservas.py": [
+      "codigo/scripts/metodo/admissao_cientifica.py",
+      "codigo/scripts/metodo/rastreio_de_impacto.py",
+      "codigo/scripts/metodo/reservas_examinadas.py",
+      "codigo/scripts/metodo/verdade_observacional.py",
+      "codigo/scripts/servico/proveniencia.py",
+      "codigo/scripts/suscetibilidade/ds06_dataset_de_treino.py"
+    ],
+    "codigo/scripts/metodo/reservas_examinadas.py": [
+      "codigo/scripts/metodo/verdade_observacional.py",
+      "codigo/scripts/servico/proveniencia.py",
+      "codigo/scripts/suscetibilidade/ds06_dataset_de_treino.py"
+    ],
+    "codigo/scripts/geo/agua_permanente_jrc.py": [
+      "codigo/scripts/geo/agua_permanente_jrc.py",
+      "codigo/scripts/sar/dados_sen1floods11.py",
+      "codigo/scripts/servico/proveniencia.py"
+    ],
+    "codigo/scripts/metodo/cortes_por_evento.py": [
+      "codigo/scripts/servico/proveniencia.py"
+    ],
+    "codigo/scripts/metodo/mt02_atributos.py": [
+      "codigo/scripts/geo/bacias_hydrobasins.py",
+      "codigo/scripts/metodo/mt01_bacias_globais.py",
+      "codigo/scripts/metodo/mt01_populacao.py",
+      "codigo/scripts/metodo/mt02_atributos.py",
+      "codigo/scripts/servico/proveniencia.py"
+    ],
+    "codigo/scripts/geo/bacias_hydrobasins.py": [
+      "codigo/scripts/geo/bacias_hydrobasins.py"
+    ],
+    "codigo/scripts/metodo/mt03_experimento.py": [
+      "codigo/scripts/metodo/mt01_experimento.py",
+      "codigo/scripts/metodo/mt01_relatorio.py",
+      "codigo/scripts/metodo/mt02_experimento.py",
+      "codigo/scripts/metodo/mt03_conexao_hydrosheds.py",
+      "codigo/scripts/metodo/mt03_ds06_v8.py",
+      "codigo/scripts/metodo/mt03_experimento.py",
+      "codigo/scripts/servico/proveniencia.py"
+    ],
+    "codigo/scripts/metodo/mt03_conexao_hydrosheds.py": [
+      "codigo/scripts/metodo/mt01_populacao.py",
+      "codigo/scripts/metodo/mt03_conexao_hydrosheds.py",
+      "codigo/scripts/servico/proveniencia.py"
+    ],
+    "codigo/scripts/metodo/mt03_ds06_v8.py": [
+      "codigo/scripts/geo/acervo_espacial.py",
+      "codigo/scripts/metodo/contexto_de_desenvolvimento.py",
+      "codigo/scripts/metodo/fechamento_do_framework.py",
+      "codigo/scripts/metodo/mt01_populacao.py",
+      "codigo/scripts/metodo/mt02_cobertura_v2.py",
+      "codigo/scripts/metodo/mt03_ds06_v8.py",
+      "codigo/scripts/servico/proveniencia.py",
+      "codigo/scripts/suscetibilidade/ds06_dataset_de_treino.py"
+    ],
+    "codigo/scripts/metodo/contexto_de_desenvolvimento.py": [
+      "codigo/scripts/geo/acervo_espacial.py",
+      "codigo/scripts/manutencao/executar_serializado.py",
+      "codigo/scripts/metodo/contexto_de_desenvolvimento.py",
+      "codigo/scripts/metodo/ms7_territorio_curado.py",
+      "codigo/scripts/servico/proveniencia.py",
+      "codigo/scripts/suscetibilidade/posicao_no_ponto.py"
+    ],
+    "codigo/scripts/metodo/ms7_territorio_curado.py": [
+      "codigo/scripts/metodo/fechamento_do_framework.py",
+      "codigo/scripts/metodo/generalizacao_por_reservas.py",
+      "codigo/scripts/servico/proveniencia.py",
+      "codigo/scripts/suscetibilidade/ds06_dataset_de_treino.py",
+      "codigo/scripts/suscetibilidade/posicao_no_ponto.py"
+    ],
+    "codigo/scripts/suscetibilidade/posicao_no_ponto.py": [
+      "codigo/scripts/servico/proveniencia.py",
+      "codigo/scripts/suscetibilidade/ds06_dataset_de_treino.py"
+    ],
+    "codigo/scripts/geo/acervo_espacial.py": [
+      "codigo/scripts/geo/acervo_espacial.py",
+      "codigo/scripts/geo/bacias_hydrobasins.py",
+      "codigo/scripts/geo/dominio_aquatico.py",
+      "codigo/scripts/metodo/ci_v1_vizinhanca_multiescala.py",
+      "codigo/scripts/suscetibilidade/posicao_no_ponto.py"
+    ],
+    "codigo/scripts/geo/dominio_aquatico.py": [
+      "codigo/scripts/geo/acervo_espacial.py",
+      "codigo/scripts/geo/dominio_aquatico.py"
+    ],
+    "codigo/scripts/metodo/ci_v1_vizinhanca_multiescala.py": [],
+    "codigo/scripts/metodo/fechamento_do_framework.py": [
+      "codigo/scripts/geo/geoid01_catalogo_publico.py",
+      "codigo/scripts/metodo/auditoria_pre_treino.py",
+      "codigo/scripts/metodo/auditoria_tc01.py",
+      "codigo/scripts/metodo/fechamento_do_framework.py",
+      "codigo/scripts/metodo/generalizacao_por_reservas.py",
+      "codigo/scripts/metodo/ms3_decomposicao_do_quadro.py",
+      "codigo/scripts/metodo/ms4_bracos_de_desenvolvimento.py",
+      "codigo/scripts/metodo/ms5_recusa_decomposta.py",
+      "codigo/scripts/metodo/ms6_quadro_de_treino_para_consulta.py",
+      "codigo/scripts/metodo/ms7_territorio_curado.py",
+      "codigo/scripts/metodo/relatorio_de_fechamento.py",
+      "codigo/scripts/metodo/resposta_lugar_novo.py",
+      "codigo/scripts/metodo/verdade_observacional.py",
+      "codigo/scripts/servico/proveniencia.py",
+      "codigo/scripts/servico/svc02_contrato_inferencia.py",
+      "codigo/scripts/social/camada_social.py",
+      "codigo/scripts/social/social01_censo_municipal.py",
+      "codigo/scripts/suscetibilidade/posicao_no_ponto.py"
+    ],
+    "codigo/scripts/metodo/ms6_quadro_de_treino_para_consulta.py": [
+      "codigo/scripts/metodo/generalizacao_por_reservas.py",
+      "codigo/scripts/metodo/ms1_posicao_topografica.py",
+      "codigo/scripts/servico/proveniencia.py",
+      "codigo/scripts/suscetibilidade/posicao_no_ponto.py"
+    ],
+    "codigo/scripts/metodo/ms1_posicao_topografica.py": [
+      "codigo/scripts/metodo/generalizacao_por_reservas.py",
+      "codigo/scripts/metodo/verdade_observacional.py",
+      "codigo/scripts/servico/proveniencia.py",
+      "codigo/scripts/suscetibilidade/posicao_topografica.py"
+    ],
+    "codigo/scripts/suscetibilidade/posicao_topografica.py": [
+      "codigo/scripts/servico/proveniencia.py",
+      "codigo/scripts/suscetibilidade/ds06_dataset_de_treino.py",
+      "codigo/scripts/suscetibilidade/posicao_topografica.py"
+    ],
+    "codigo/scripts/metodo/auditoria_pre_treino.py": [
+      "codigo/scripts/externo/fn02_auditar_serie_floodnet.py",
+      "codigo/scripts/geo/gfd02_amostrar_terreno.py",
+      "codigo/scripts/geo/gfdq02_derivar_quarentena.py",
+      "codigo/scripts/geo/rfd02_eventos_brasileiros_novos.py",
+      "codigo/scripts/geo/serra03_rotulo_por_sensor_duplo.py",
+      "codigo/scripts/metodo/admissao_cientifica.py",
+      "codigo/scripts/metodo/auditoria_pre_treino.py",
+      "codigo/scripts/metodo/ci_f1_floodnet_negativo_observado.py",
+      "codigo/scripts/metodo/ci_n1_encoder_por_ponto.py",
+      "codigo/scripts/metodo/ctx04_terreno_versus_contexto.py",
+      "codigo/scripts/metodo/generalizacao_por_reservas.py",
+      "codigo/scripts/metodo/rastreio_de_impacto.py",
+      "codigo/scripts/metodo/reservas_examinadas.py",
+      "codigo/scripts/metodo/verdade_observacional.py",
+      "codigo/scripts/sar/dados_pre_pos.py",
+      "codigo/scripts/servico/proveniencia.py",
+      "codigo/scripts/suscetibilidade/ds05_admissao_consolidacao.py",
+      "codigo/scripts/suscetibilidade/ds06_dataset_de_treino.py"
+    ],
+    "codigo/scripts/geo/serra03_rotulo_por_sensor_duplo.py": [
+      "codigo/scripts/servico/proveniencia.py"
+    ],
+    "codigo/scripts/geo/gfd02_amostrar_terreno.py": [
+      "codigo/scripts/geo/agua_permanente_jrc.py",
+      "codigo/scripts/geo/gfd02_amostrar_terreno.py",
+      "codigo/scripts/servico/proveniencia.py",
+      "codigo/scripts/terreno/cadeia_em_lote.py"
+    ],
+    "codigo/scripts/terreno/cadeia_em_lote.py": [
+      "codigo/scripts/servico/proveniencia.py",
+      "codigo/scripts/terreno/baixar_fabdem.py",
+      "codigo/scripts/terreno/cadeia_em_lote.py",
+      "codigo/scripts/terreno/derivar_aoi_nova.py"
+    ],
+    "codigo/scripts/terreno/baixar_fabdem.py": [
+      "codigo/scripts/servico/proveniencia.py",
+      "codigo/scripts/terreno/baixar_fabdem.py"
+    ],
+    "codigo/scripts/terreno/derivar_aoi_nova.py": [
+      "codigo/scripts/manutencao/pegada_de_disco.py",
+      "codigo/scripts/servico/geoprocessamento_sob_demanda.py",
+      "codigo/scripts/servico/proveniencia.py",
+      "codigo/scripts/terreno/dados_terreno.py"
+    ],
+    "codigo/scripts/terreno/dados_terreno.py": [
+      "codigo/scripts/sar/dados_sen1floods11.py",
+      "codigo/scripts/servico/proveniencia.py"
+    ],
+    "codigo/scripts/servico/geoprocessamento_sob_demanda.py": [
+      "codigo/scripts/chuva/contrato_chuva.py",
+      "codigo/scripts/chuva/providers.py"
+    ],
+    "codigo/scripts/manutencao/pegada_de_disco.py": [
+      "codigo/scripts/manutencao/pegada_de_disco.py",
+      "codigo/scripts/servico/proveniencia.py"
+    ],
+    "codigo/scripts/metodo/ci_f1_floodnet_negativo_observado.py": [],
+    "codigo/scripts/metodo/ci_n1_encoder_por_ponto.py": [
+      "codigo/scripts/metodo/admissao_cientifica.py",
+      "codigo/scripts/suscetibilidade/ds06_dataset_de_treino.py",
+      "codigo/scripts/terreno/avaliar_embedding.py",
+      "codigo/scripts/terreno/dados_terreno.py"
+    ],
+    "codigo/scripts/terreno/avaliar_embedding.py": [
+      "codigo/scripts/servico/proveniencia.py",
+      "codigo/scripts/terreno/baseline_descritivo.py",
+      "codigo/scripts/terreno/dados_terreno.py",
+      "codigo/scripts/terreno/modelo_encoder.py",
+      "codigo/scripts/terreno/treino_encoder.py"
+    ],
+    "codigo/scripts/terreno/treino_encoder.py": [
+      "codigo/scripts/neural/proveniencia_de_peso.py",
+      "codigo/scripts/servico/proveniencia.py",
+      "codigo/scripts/terreno/dados_terreno.py",
+      "codigo/scripts/terreno/modelo_encoder.py"
+    ],
+    "codigo/scripts/terreno/modelo_encoder.py": [],
+    "codigo/scripts/terreno/baseline_descritivo.py": [
+      "codigo/scripts/sar/dados_sen1floods11.py",
+      "codigo/scripts/servico/proveniencia.py",
+      "codigo/scripts/terreno/dados_terreno.py"
+    ],
+    "codigo/scripts/metodo/ctx04_terreno_versus_contexto.py": [
+      "codigo/scripts/metodo/admissao_cientifica.py",
+      "codigo/scripts/metodo/ctx04_terreno_versus_contexto.py",
+      "codigo/scripts/metodo/rastreio_de_impacto.py",
+      "codigo/scripts/servico/proveniencia.py",
+      "codigo/scripts/suscetibilidade/ds06_dataset_de_treino.py"
+    ],
+    "codigo/scripts/geo/rfd02_eventos_brasileiros_novos.py": [
+      "codigo/scripts/geo/gfd01_eventos_do_brasil.py",
+      "codigo/scripts/geo/gfd02_amostrar_terreno.py",
+      "codigo/scripts/geo/gfdq02_derivar_quarentena.py",
+      "codigo/scripts/geo/rfd01_replica_gfd.py",
+      "codigo/scripts/servico/proveniencia.py"
+    ],
+    "codigo/scripts/externo/fn02_auditar_serie_floodnet.py": [
+      "codigo/scripts/servico/proveniencia.py"
+    ],
+    "codigo/scripts/geo/gfdq02_derivar_quarentena.py": [
+      "codigo/scripts/geo/gfd01_eventos_do_brasil.py",
+      "codigo/scripts/geo/gfd02_amostrar_terreno.py",
+      "codigo/scripts/metodo/contrato_do_fenomeno.py",
+      "codigo/scripts/servico/proveniencia.py",
+      "codigo/scripts/suscetibilidade/ds04_reduzir_por_fonte.py",
+      "codigo/scripts/suscetibilidade/ds06_dataset_de_treino.py",
+      "codigo/scripts/terreno/cadeia_em_lote.py"
+    ],
+    "codigo/scripts/suscetibilidade/ds04_reduzir_por_fonte.py": [
+      "codigo/scripts/metodo/cortes_por_evento.py",
+      "codigo/scripts/suscetibilidade/ds03_esquema_alvo.py",
+      "codigo/scripts/suscetibilidade/ds04_reduzir_por_fonte.py"
+    ],
+    "codigo/scripts/metodo/resposta_lugar_novo.py": [
+      "codigo/scripts/metodo/generalizacao_por_reservas.py",
+      "codigo/scripts/metodo/resposta_lugar_reservado.py",
+      "codigo/scripts/servico/proveniencia.py",
+      "codigo/scripts/servico/svc02_contrato_inferencia.py"
+    ],
+    "codigo/scripts/metodo/resposta_lugar_reservado.py": [],
+    "codigo/scripts/metodo/ms4_bracos_de_desenvolvimento.py": [
+      "codigo/scripts/metodo/ci_n1_encoder_por_ponto.py",
+      "codigo/scripts/metodo/generalizacao_por_reservas.py",
+      "codigo/scripts/metodo/ms1_posicao_topografica.py",
+      "codigo/scripts/servico/proveniencia.py",
+      "codigo/scripts/suscetibilidade/ds06_dataset_de_treino.py",
+      "codigo/scripts/suscetibilidade/posicao_no_ponto.py"
+    ],
+    "codigo/scripts/social/camada_social.py": [
+      "codigo/scripts/social/camada_social.py"
+    ],
+    "codigo/scripts/metodo/ms5_recusa_decomposta.py": [
+      "codigo/scripts/metodo/contrato_do_fenomeno.py",
+      "codigo/scripts/metodo/ms4_bracos_de_desenvolvimento.py",
+      "codigo/scripts/servico/proveniencia.py",
+      "codigo/scripts/suscetibilidade/ds06_dataset_de_treino.py"
+    ],
+    "codigo/scripts/metodo/relatorio_de_fechamento.py": [
+      "codigo/scripts/metodo/auditoria_pre_treino.py",
+      "codigo/scripts/metodo/fechamento_do_framework.py",
+      "codigo/scripts/metodo/rastreio_de_impacto.py",
+      "codigo/scripts/metodo/relatorio_de_fechamento.py",
+      "codigo/scripts/servico/proveniencia.py",
+      "codigo/scripts/suscetibilidade/ds06_dataset_de_treino.py"
+    ],
+    "codigo/scripts/geo/geoid01_catalogo_publico.py": [
+      "codigo/scripts/servico/proveniencia.py",
+      "codigo/scripts/suscetibilidade/ds06_dataset_de_treino.py"
+    ],
+    "codigo/scripts/metodo/ms3_decomposicao_do_quadro.py": [
+      "codigo/scripts/metodo/generalizacao_por_reservas.py",
+      "codigo/scripts/metodo/ms1_posicao_topografica.py",
+      "codigo/scripts/metodo/ms2_quadro_do_negativo.py",
+      "codigo/scripts/metodo/verdade_observacional.py",
+      "codigo/scripts/servico/proveniencia.py",
+      "codigo/scripts/suscetibilidade/posicao_topografica.py"
+    ],
+    "codigo/scripts/metodo/ms2_quadro_do_negativo.py": [
+      "codigo/scripts/metodo/generalizacao_por_reservas.py",
+      "codigo/scripts/metodo/ms1_posicao_topografica.py",
+      "codigo/scripts/metodo/verdade_observacional.py",
+      "codigo/scripts/servico/proveniencia.py",
+      "codigo/scripts/suscetibilidade/posicao_topografica.py"
+    ],
+    "codigo/scripts/metodo/auditoria_tc01.py": [
+      "codigo/scripts/geo/tc01_territorio_consultavel.py",
+      "codigo/scripts/servico/proveniencia.py",
+      "codigo/scripts/suscetibilidade/ds06_dataset_de_treino.py"
+    ],
+    "codigo/scripts/geo/tc01_territorio_consultavel.py": [
+      "codigo/scripts/geo/tc01_territorio_consultavel.py",
+      "codigo/scripts/servico/proveniencia.py",
+      "codigo/scripts/suscetibilidade/ds06_dataset_de_treino.py",
+      "codigo/scripts/suscetibilidade/posicao_no_ponto.py"
+    ],
+    "codigo/tests/test_ia_integrada_v2.py": [
+      "codigo/scripts/ia/consulta_territorial_v2.py",
+      "codigo/scripts/ia/ia_integrada_v2.py",
+      "codigo/scripts/ia/modelo_integrado_v2.py",
+      "codigo/scripts/ia/servico_ia_integrada_v2.py"
+    ],
+    "codigo/scripts/ia/servico_ia_integrada_v2.py": [
+      "codigo/scripts/ia/consulta_territorial_v2.py",
+      "codigo/scripts/ia/ia_integrada_v2.py"
+    ],
+    "codigo/scripts/servico/rag_corpus.py": [
+      "codigo/scripts/servico/claims.py",
+      "codigo/scripts/servico/proveniencia.py",
+      "codigo/scripts/servico/rag_corpus.py"
+    ],
+    "codigo/scripts/recife_aprendizado/ra_06_figuras.py": [
+      "codigo/scripts/recife_aprendizado/ra_comum.py"
+    ],
+    "codigo/scripts/ia/consulta_territorial_v2.py": [
+      "codigo/scripts/ia/ia_integrada_v2.py",
+      "codigo/scripts/ia/modelo_integrado_v2.py",
+      "codigo/scripts/metodo/mt01_populacao.py",
+      "codigo/scripts/metodo/mt02_atributos.py"
+    ],
+    "codigo/scripts/ia/modelo_integrado_v2.py": [
+      "codigo/scripts/sar/modelo_unet.py"
+    ],
+    "codigo/scripts/recife_aprendizado/ra_08_manifesto.py": [
+      "codigo/scripts/recife_aprendizado/ra_comum.py"
+    ],
+    "codigo/scripts/metodo/mt11_verificacao_independente.py": [
+      "codigo/scripts/metodo/verificar_fechamento_independente.py"
+    ],
+    "codigo/scripts/sar/avaliar_rede.py": [
+      "codigo/scripts/sar/baseline_otsu.py",
+      "codigo/scripts/sar/dados_sen1floods11.py",
+      "codigo/scripts/sar/modelo_unet.py",
+      "codigo/scripts/sar/treino.py",
+      "codigo/scripts/servico/proveniencia.py"
+    ],
+    "codigo/scripts/metodo/admissao_cientifica.py": [
+      "codigo/scripts/metodo/admissao_cientifica.py",
+      "codigo/scripts/metodo/contrato_do_fenomeno.py",
+      "codigo/scripts/metodo/rastreio_de_impacto.py",
+      "codigo/scripts/servico/proveniencia.py",
+      "codigo/scripts/suscetibilidade/ds03_esquema_alvo.py"
+    ],
+    "codigo/scripts/sar/treino.py": [
+      "codigo/scripts/neural/proveniencia_de_peso.py",
+      "codigo/scripts/sar/dados_sen1floods11.py",
+      "codigo/scripts/sar/modelo_unet.py",
+      "codigo/scripts/sar/pretreino_mascarado.py",
+      "codigo/scripts/servico/proveniencia.py"
+    ],
+    "codigo/scripts/neural/experimento_pote_crescente.py": [
+      "codigo/scripts/neural/catraca.py",
+      "codigo/scripts/neural/experimento_acumulacao.py",
+      "codigo/scripts/neural/proveniencia_de_peso.py",
+      "codigo/scripts/neural/regua.py",
+      "codigo/scripts/sar/pretreino_mascarado.py",
+      "codigo/scripts/servico/proveniencia.py"
+    ],
+    "codigo/scripts/neural/catraca.py": [
+      "codigo/scripts/neural/proveniencia_de_peso.py",
+      "codigo/scripts/neural/regua.py",
+      "codigo/scripts/servico/proveniencia.py"
+    ],
+    "codigo/scripts/neural/experimento_acumulacao.py": [
+      "codigo/scripts/neural/catraca.py",
+      "codigo/scripts/neural/proveniencia_de_peso.py",
+      "codigo/scripts/sar/pretreino_mascarado.py",
+      "codigo/scripts/servico/proveniencia.py"
+    ],
+    "codigo/scripts/vulnerabilizados/v8_02_ponte_fisica.py": [
+      "codigo/scripts/metodo/mt02_atributos.py",
+      "codigo/scripts/metodo/mt11_confirmatorio_transdutivo.py",
+      "codigo/scripts/vulnerabilizados/v8_comum.py"
+    ],
+    "codigo/scripts/metodo/mt11_confirmatorio_transdutivo.py": [
+      "codigo/scripts/geo/cob01_cobertura_e_solo.py",
+      "codigo/scripts/geo/gfd01_eventos_do_brasil.py",
+      "codigo/scripts/geo/gfd02_amostrar_terreno.py",
+      "codigo/scripts/geo/gfdq02_derivar_quarentena.py",
+      "codigo/scripts/metodo/mt02_atributos.py",
+      "codigo/scripts/metodo/mt05_transferencia_sem_amostra.py",
+      "codigo/scripts/metodo/mt10_sensibilidade_pre_evento.py",
+      "codigo/scripts/metodo/mt11_candidatos_transdutivo.py",
+      "codigo/scripts/metodo/mt11_confirmatorio_transdutivo.py",
+      "codigo/scripts/metodo/mt11_poder.py",
+      "codigo/scripts/servico/proveniencia.py",
+      "codigo/scripts/terreno/cadeia_em_lote.py"
+    ],
+    "codigo/scripts/metodo/mt10_sensibilidade_pre_evento.py": [
+      "codigo/scripts/metodo/mt10_teto_transdutivo.py"
+    ],
+    "codigo/scripts/metodo/mt10_teto_transdutivo.py": [
+      "codigo/scripts/manutencao/executar_serializado.py",
+      "codigo/scripts/metodo/mt06_cobertura_observabilidade.py",
+      "codigo/scripts/metodo/mt08_teto_compartilhado.py",
+      "codigo/scripts/metodo/mt10_teto_transdutivo.py",
+      "codigo/scripts/sar/pilha_s1_mesmo_lugar.py"
+    ],
+    "codigo/scripts/sar/pilha_s1_mesmo_lugar.py": [
+      "codigo/scripts/manutencao/executar_serializado.py",
+      "codigo/scripts/sar/pilha_s1_mesmo_lugar.py",
+      "codigo/scripts/servico/proveniencia.py"
+    ],
+    "codigo/scripts/metodo/mt11_candidatos_transdutivo.py": [
+      "codigo/scripts/metodo/mt03_experimento.py",
+      "codigo/scripts/metodo/mt11_candidatos_transdutivo.py",
+      "codigo/scripts/servico/proveniencia.py",
+      "codigo/scripts/suscetibilidade/ds06_dataset_de_treino.py"
+    ],
+    "codigo/scripts/metodo/mt11_poder.py": [
+      "codigo/scripts/metodo/mt11_poder.py"
+    ],
+    "codigo/scripts/recife_aprendizado/ra_05_territorio.py": [
+      "codigo/scripts/recife_aprendizado/ra_comum.py"
+    ],
+    "codigo/scripts/recife_aprendizado/ra_04c_emenda2.py": [
+      "codigo/scripts/recife_aprendizado/ra_04_treino.py",
+      "codigo/scripts/recife_aprendizado/ra_comum.py"
+    ],
+    "codigo/scripts/suscetibilidade/ds05_admissao_consolidacao.py": [
+      "codigo/scripts/metodo/rastreio_de_impacto.py",
+      "codigo/scripts/suscetibilidade/ds03_esquema_alvo.py",
+      "codigo/scripts/suscetibilidade/ds05_admissao_consolidacao.py"
+    ],
+    "codigo/scripts/social/social08_exposicao_grade.py": [
+      "codigo/scripts/social/social02_medidas_territoriais.py",
+      "codigo/scripts/social/social04_aquisicao_complementar.py",
+      "codigo/scripts/social/social05_contrato_medidas.py"
+    ],
+    "codigo/scripts/social/social04_aquisicao_complementar.py": [
+      "codigo/scripts/social/social04_aquisicao_complementar.py"
+    ],
+    "codigo/tests/test_mt11_confirmatorio_transdutivo.py": [
+      "codigo/scripts/metodo/mt11_confirmatorio_transdutivo.py"
+    ],
+    "codigo/scripts/petropolis_aprendizado/pa_comum.py": [],
+    "codigo/scripts/vulnerabilizados/v10_v_social.py": [
+      "codigo/scripts/vulnerabilizados/v10_comum.py",
+      "codigo/scripts/vulnerabilizados/v8_04_campanha.py",
+      "codigo/scripts/vulnerabilizados/v8_07_amostra_probabilistica.py"
+    ],
+    "codigo/scripts/vulnerabilizados/v8_04_campanha.py": [
+      "codigo/scripts/metodo/mt01_experimento.py",
+      "codigo/scripts/metodo/mt05_transferencia_sem_amostra.py",
+      "codigo/scripts/vulnerabilizados/comum_tv.py",
+      "codigo/scripts/vulnerabilizados/v5_aprendizagem.py",
+      "codigo/scripts/vulnerabilizados/v8_02_ponte_fisica.py",
+      "codigo/scripts/vulnerabilizados/v8_comum.py"
+    ],
+    "codigo/scripts/vulnerabilizados/v8_07_amostra_probabilistica.py": [
+      "codigo/scripts/vulnerabilizados/v8_comum.py"
+    ],
+    "codigo/scripts/metodo/mt01_bacias_globais.py": [
+      "codigo/scripts/geo/bacias_hydrobasins.py",
+      "codigo/scripts/metodo/mt01_bacias_globais.py"
+    ],
+    "codigo/scripts/vulnerabilizados/v6_08_ufrgs_triangulacao.py": [
+      "codigo/scripts/vulnerabilizados/v6_comum.py"
+    ],
+    "codigo/scripts/vulnerabilizados/v6_comum.py": [
+      "codigo/scripts/vulnerabilizados/comum_tv.py",
+      "codigo/scripts/vulnerabilizados/v5_comum.py"
+    ],
+    "codigo/scripts/social/social06_consolidacao.py": [
+      "codigo/scripts/geo/obs05_referencia_brasileira.py",
+      "codigo/scripts/social/social02_medidas_territoriais.py",
+      "codigo/scripts/social/social04_aquisicao_complementar.py",
+      "codigo/scripts/social/social05_contrato_medidas.py"
+    ],
+    "codigo/scripts/geo/obs05_referencia_brasileira.py": [
+      "codigo/scripts/geo/obs04_instrumento_brasileiro.py"
+    ],
+    "codigo/scripts/geo/obs04_instrumento_brasileiro.py": [
+      "codigo/scripts/geo/acervo_espacial.py",
+      "codigo/scripts/geo/obs01_aquisicao_dirigida.py",
+      "codigo/scripts/geo/obs04_instrumento_brasileiro.py",
+      "codigo/scripts/geo/obs05_referencia_brasileira.py",
+      "codigo/scripts/sar/sar_obs01_pares_datados.py"
+    ],
+    "codigo/scripts/sar/sar_obs01_pares_datados.py": [
+      "codigo/scripts/geo/obs01_aquisicao_dirigida.py",
+      "codigo/scripts/metodo/verdade_observacional.py",
+      "codigo/scripts/suscetibilidade/ds06_dataset_de_treino.py"
+    ],
+    "codigo/scripts/geo/obs01_aquisicao_dirigida.py": [
+      "codigo/scripts/servico/proveniencia.py"
+    ],
+    "codigo/scripts/recuperacao/indice_denso.py": [
+      "codigo/scripts/recuperacao/avaliacao_de_recuperacao.py",
+      "codigo/scripts/servico/claims.py",
+      "codigo/scripts/servico/proveniencia.py"
+    ],
+    "codigo/scripts/recife_aprendizado/ra_04b_emenda1.py": [
+      "codigo/scripts/recife_aprendizado/ra_04_treino.py",
+      "codigo/scripts/recife_aprendizado/ra_comum.py"
+    ],
+    "codigo/scripts/recife_aprendizado/ra_02_atributos.py": [
+      "codigo/scripts/recife_aprendizado/ra_comum.py",
+      "codigo/scripts/vulnerabilizados/v8_04_campanha.py"
+    ],
+    "codigo/scripts/fundamentacao_artigo/f01_ic_ganho_atualizacao.py": [
+      "codigo/scripts/vulnerabilizados/comum_tv.py",
+      "codigo/scripts/vulnerabilizados/v10_comum.py",
+      "codigo/scripts/vulnerabilizados/v8_04_campanha.py"
+    ],
+    "codigo/scripts/social/social05_contrato_medidas.py": [
+      "codigo/scripts/social/social02_medidas_territoriais.py"
+    ],
+    "codigo/tests/test_v10_ciclo_contextual.py": [
+      "codigo/scripts/vulnerabilizados/v10_comum.py",
+      "codigo/scripts/vulnerabilizados/v10_iii_memoria.py",
+      "codigo/scripts/vulnerabilizados/v10_iv_competencia.py"
+    ],
+    "codigo/scripts/sar/pretreino_mascarado.py": [
+      "codigo/scripts/neural/proveniencia_de_peso.py",
+      "codigo/scripts/sar/baseline_otsu.py",
+      "codigo/scripts/sar/dados_sen1floods11.py",
+      "codigo/scripts/sar/modelo_unet.py",
+      "codigo/scripts/servico/proveniencia.py"
+    ],
+    "codigo/scripts/social/social07_servico_medidas.py": [
+      "codigo/scripts/social/social02_medidas_territoriais.py",
+      "codigo/scripts/social/social05_contrato_medidas.py",
+      "codigo/scripts/social/social_projecao.py"
+    ],
+    "codigo/scripts/social/social_projecao.py": [
+      "codigo/scripts/planejamento/pt_social_equivalencia.py"
+    ],
+    "codigo/scripts/planejamento/pt_social_equivalencia.py": [
+      "codigo/scripts/planejamento/pt_comum.py",
+      "codigo/scripts/planejamento/pt_social_ref_geopandas.py",
+      "codigo/scripts/social/social07_servico_medidas.py",
+      "codigo/scripts/social/social_projecao.py"
+    ],
+    "codigo/scripts/planejamento/pt_social_ref_geopandas.py": [
+      "codigo/scripts/social/social07_servico_medidas.py"
+    ],
+    "codigo/scripts/planejamento/pt_comum.py": [
+      "codigo/scripts/evolucao_local/eal_comum.py",
+      "codigo/scripts/fechamento/fa_comum.py",
+      "codigo/scripts/manutencao/executar_serializado.py"
+    ],
+    "codigo/scripts/evolucao_local/eal_comum.py": [],
+    "codigo/scripts/fechamento/fa_comum.py": [
+      "codigo/scripts/evolucao_local/eal_comum.py"
+    ],
+    "codigo/scripts/petropolis_aprendizado/pa_02_terreno.py": [
+      "codigo/scripts/petropolis_aprendizado/pa_comum.py",
+      "codigo/scripts/servico/geoprocessamento_sob_demanda.py"
+    ],
+    "codigo/tests/test_sar_frente_a7.py": [
+      "codigo/scripts/sar/avaliar_rede.py",
+      "codigo/scripts/sar/calibrar_recusa.py"
+    ],
+    "codigo/tests/test_mt01_mecanismos.py": [
+      "codigo/scripts/metodo/mt01_experimento.py",
+      "codigo/scripts/metodo/mt01_independencia.py",
+      "codigo/scripts/metodo/mt01_populacao.py",
+      "codigo/scripts/metodo/mt01_relatorio.py"
+    ],
+    "codigo/tests/test_continuidade_v3.py": [
+      "codigo/scripts/sar/analise_continuidade_v3.py",
+      "codigo/scripts/sar/continuidade_retencao.py",
+      "codigo/scripts/sar/continuidade_v3.py",
+      "codigo/scripts/sar/fontes_sar.py",
+      "codigo/scripts/sar/nucleo_sar.py",
+      "codigo/tests/test_continuidade_retencao.py"
+    ],
+    "codigo/tests/test_continuidade_retencao.py": [
+      "codigo/scripts/sar/continuidade_retencao.py",
+      "codigo/scripts/sar/dados_pares_geograficos.py",
+      "codigo/scripts/sar/relatorio_continuidade.py"
+    ],
+    "codigo/scripts/sar/relatorio_continuidade.py": [
+      "codigo/scripts/sar/continuidade_retencao.py",
+      "codigo/scripts/sar/dados_pares_geograficos.py"
+    ],
+    "codigo/tests/test_verificacao_frente_d.py": [
+      "codigo/scripts/servico/claims.py",
+      "codigo/scripts/verificacao/casos_de_suporte.py",
+      "codigo/scripts/verificacao/medir_suporte.py"
+    ],
+    "codigo/scripts/petropolis_aprendizado/pa_01_aquisicao.py": [
+      "codigo/scripts/petropolis_aprendizado/pa_comum.py"
+    ],
+    "codigo/scripts/metodo/mt01_relatorio.py": [
+      "codigo/scripts/metodo/mt01_experimento.py",
+      "codigo/scripts/metodo/mt01_populacao.py",
+      "codigo/scripts/metodo/mt01_relatorio.py",
+      "codigo/scripts/servico/proveniencia.py"
+    ],
+    "codigo/scripts/vulnerabilizados/v9_b_tabular.py": [
+      "codigo/scripts/metodo/mt01_experimento.py",
+      "codigo/scripts/vulnerabilizados/v8_04_campanha.py",
+      "codigo/scripts/vulnerabilizados/v9_comum.py"
+    ],
+    "codigo/scripts/vulnerabilizados/v9_comum.py": [
+      "codigo/scripts/vulnerabilizados/comum_tv.py",
+      "codigo/scripts/vulnerabilizados/v8_comum.py"
+    ],
+    "codigo/scripts/recife_aprendizado/ra_03_protocolo.py": [
+      "codigo/scripts/recife_aprendizado/ra_comum.py"
+    ],
+    "codigo/scripts/fundamentacao_artigo/f03_ic_transferencia_coortes.py": [
+      "codigo/scripts/vulnerabilizados/comum_tv.py"
+    ],
+    "codigo/scripts/metodo/mt11_emenda.py": [
+      "codigo/scripts/ia/rodada3_fabdem_gee.py",
+      "codigo/scripts/metodo/mt01_independencia.py",
+      "codigo/scripts/metodo/mt01_populacao.py",
+      "codigo/scripts/metodo/mt06_cobertura_observabilidade.py",
+      "codigo/scripts/metodo/mt10_sensibilidade_pre_evento.py",
+      "codigo/scripts/metodo/mt11_confirmatorio_transdutivo.py",
+      "codigo/scripts/metodo/mt11_emenda.py",
+      "codigo/scripts/metodo/mt11_emenda_s1.py",
+      "codigo/scripts/metodo/mt11_fabdem_transporte.py",
+      "codigo/scripts/metodo/mt11_independencia.py",
+      "codigo/scripts/metodo/mt11_terreno_executar.py",
+      "codigo/scripts/metodo/registro_aberturas.py",
+      "codigo/scripts/servico/proveniencia.py"
+    ],
+    "codigo/scripts/metodo/mt11_terreno_executar.py": [
+      "codigo/scripts/ia/rodada3_fabdem_gee.py",
+      "codigo/scripts/manutencao/executar_serializado.py",
+      "codigo/scripts/metodo/mt11_emenda.py",
+      "codigo/scripts/metodo/mt11_terreno_executar.py",
+      "codigo/scripts/servico/proveniencia.py",
+      "codigo/scripts/terreno/baixar_fabdem.py",
+      "codigo/scripts/terreno/cadeia_em_lote.py"
+    ],
+    "codigo/scripts/ia/rodada3_fabdem_gee.py": [
+      "codigo/scripts/ia/rodada3_fabdem_gee.py",
+      "codigo/scripts/servico/proveniencia.py"
+    ],
+    "codigo/scripts/metodo/mt11_emenda_s1.py": [
+      "codigo/scripts/geo/gfd02_amostrar_terreno.py",
+      "codigo/scripts/geo/gfdq02_derivar_quarentena.py",
+      "codigo/scripts/metodo/mt02_atributos.py",
+      "codigo/scripts/metodo/mt11_confirmatorio_transdutivo.py",
+      "codigo/scripts/metodo/mt11_emenda.py",
+      "codigo/scripts/metodo/mt11_emenda_s1.py",
+      "codigo/scripts/servico/proveniencia.py"
+    ],
+    "codigo/scripts/metodo/mt11_fabdem_transporte.py": [
+      "codigo/scripts/ia/rodada3_fabdem_gee.py",
+      "codigo/scripts/metodo/mt11_fabdem_transporte.py",
+      "codigo/scripts/servico/proveniencia.py"
+    ],
+    "codigo/scripts/metodo/registro_aberturas.py": [],
+    "codigo/scripts/ia/avaliar_integrada_v2.py": [
+      "codigo/scripts/ia/consulta_territorial_v2.py",
+      "codigo/scripts/ia/ia_integrada.py",
+      "codigo/scripts/ia/ia_integrada_v2.py",
+      "codigo/scripts/ia/modelo_integrado_v2.py",
+      "codigo/scripts/ia/mt11_fechamento.py",
+      "codigo/scripts/ia/servico_ia_integrada_v2.py"
+    ],
+    "codigo/scripts/ia/ia_integrada.py": [
+      "codigo/scripts/ia/memoria_integrada.py",
+      "codigo/scripts/ia/modelo_integrado.py",
+      "codigo/scripts/manutencao/executar_serializado.py",
+      "codigo/scripts/neural/proveniencia_de_peso.py",
+      "codigo/scripts/sar/calibracao_decisao.py",
+      "codigo/scripts/sar/campanha_independencia_autonomia.py",
+      "codigo/scripts/sar/dados_pares_geograficos.py",
+      "codigo/scripts/sar/fontes_sar.py",
+      "codigo/scripts/sar/ponte_sar_terreno.py",
+      "codigo/scripts/servico/proveniencia.py",
+      "codigo/scripts/servico/svc02_contrato_inferencia.py"
+    ],
+    "codigo/scripts/ia/memoria_integrada.py": [
+      "codigo/scripts/servico/proveniencia.py"
+    ],
+    "codigo/scripts/sar/ponte_sar_terreno.py": [],
+    "codigo/scripts/ia/modelo_integrado.py": [
+      "codigo/scripts/sar/modelo_unet.py"
+    ],
+    "codigo/scripts/petropolis_aprendizado/pa_00_estado_inicial.py": [
+      "codigo/scripts/manutencao/executar_serializado.py",
+      "codigo/scripts/petropolis_aprendizado/pa_comum.py"
+    ],
+    "codigo/scripts/petropolis_aprendizado/pa_05b_emenda1.py": [
+      "codigo/scripts/petropolis_aprendizado/pa_03_referencias.py",
+      "codigo/scripts/petropolis_aprendizado/pa_05_treino.py",
+      "codigo/scripts/petropolis_aprendizado/pa_comum.py"
+    ],
+    "codigo/scripts/petropolis_aprendizado/pa_06b_casos.py": [
+      "codigo/scripts/petropolis_aprendizado/pa_comum.py"
+    ],
+    "codigo/scripts/vulnerabilizados/v10_iv_competencia.py": [
+      "codigo/scripts/metodo/mt01_experimento.py",
+      "codigo/scripts/vulnerabilizados/v10_comum.py",
+      "codigo/scripts/vulnerabilizados/v8_04_campanha.py",
+      "codigo/scripts/vulnerabilizados/v9_b_tabular.py"
+    ],
+    "codigo/scripts/metodo/mt01_populacao.py": [
+      "codigo/scripts/geo/bacias_hydrobasins.py",
+      "codigo/scripts/metodo/mt01_bacias_globais.py",
+      "codigo/scripts/metodo/mt01_populacao.py",
+      "codigo/scripts/servico/proveniencia.py"
+    ],
+    "codigo/scripts/social/social01_censo_municipal.py": [
+      "codigo/scripts/servico/proveniencia.py"
+    ],
+    "codigo/scripts/servico/resposta_integrada.py": [
+      "codigo/scripts/ia/consulta_territorial_v2.py",
+      "codigo/scripts/ia/ia_integrada.py",
+      "codigo/scripts/ia/ia_integrada_v2.py",
+      "codigo/scripts/servico/consulta_cognitiva.py",
+      "codigo/scripts/servico/evidencias_escopo.py",
+      "codigo/scripts/servico/rag_busca.py",
+      "codigo/scripts/servico/resolvedor_acervo.py",
+      "codigo/scripts/servico/svc02_contrato_inferencia.py",
+      "codigo/scripts/servico/svc05_transporte_http.py",
+      "codigo/scripts/social/social07_servico_medidas.py"
+    ],
+    "codigo/scripts/servico/rag_busca.py": [
+      "codigo/scripts/servico/claims.py",
+      "codigo/scripts/servico/proveniencia.py",
+      "codigo/scripts/servico/rag_busca.py",
+      "codigo/scripts/servico/rag_corpus.py"
+    ],
+    "codigo/scripts/servico/resolvedor_acervo.py": [
+      "codigo/scripts/ia/ia_integrada.py",
+      "codigo/scripts/ia/ia_integrada_v2.py",
+      "codigo/scripts/social/social07_servico_medidas.py",
+      "codigo/scripts/social/social_projecao.py"
+    ],
+    "codigo/scripts/servico/evidencias_escopo.py": [],
+    "codigo/scripts/servico/svc05_transporte_http.py": [
+      "codigo/scripts/ia/servico_ia_integrada.py",
+      "codigo/scripts/servico/consulta_cognitiva.py",
+      "codigo/scripts/servico/geoprocessamento_sob_demanda.py",
+      "codigo/scripts/servico/log_auditoria.py",
+      "codigo/scripts/servico/log_de_servico.py",
+      "codigo/scripts/servico/proveniencia.py",
+      "codigo/scripts/servico/resolver_camadas.py",
+      "codigo/scripts/servico/resposta_integrada.py",
+      "codigo/scripts/servico/svc01_construir_modelos_servidos.py",
+      "codigo/scripts/servico/svc02_contrato_inferencia.py",
+      "codigo/scripts/servico/svc05_transporte_http.py",
+      "codigo/scripts/servico/svc06_explicacao_llm.py",
+      "codigo/scripts/social/camada_social.py",
+      "codigo/scripts/social/social07_servico_medidas.py"
+    ],
+    "codigo/scripts/servico/resolver_camadas.py": [
+      "codigo/scripts/chuva/contrato_chuva.py",
+      "codigo/scripts/servico/regioes.py"
+    ],
+    "codigo/scripts/servico/svc06_explicacao_llm.py": [
+      "codigo/scripts/servico/claims.py",
+      "codigo/scripts/servico/evidencia_visual.py"
+    ],
+    "codigo/scripts/servico/evidencia_visual.py": [
+      "codigo/scripts/servico/evidencia_visual.py"
+    ],
+    "codigo/scripts/ia/servico_ia_integrada.py": [
+      "codigo/scripts/ia/ia_integrada.py",
+      "codigo/scripts/ia/servico_ia_integrada.py"
+    ],
+    "codigo/scripts/servico/log_de_servico.py": [],
+    "codigo/scripts/servico/log_auditoria.py": [
+      "codigo/scripts/servico/log_auditoria.py"
+    ],
+    "codigo/scripts/servico/consulta_cognitiva.py": [
+      "codigo/scripts/servico/claims.py",
+      "codigo/scripts/servico/precedencia_documental.py",
+      "codigo/scripts/servico/proveniencia.py",
+      "codigo/scripts/servico/rag_busca.py",
+      "codigo/scripts/servico/rag_corpus.py",
+      "codigo/scripts/servico/svc02_contrato_inferencia.py",
+      "codigo/scripts/servico/svc06_explicacao_llm.py"
+    ],
+    "codigo/scripts/servico/precedencia_documental.py": [
+      "codigo/scripts/servico/precedencia_documental.py",
+      "codigo/scripts/servico/proveniencia.py"
+    ],
+    "codigo/scripts/petropolis_aprendizado/pa_03_referencias.py": [
+      "codigo/scripts/petropolis_aprendizado/pa_02_terreno.py",
+      "codigo/scripts/petropolis_aprendizado/pa_comum.py"
+    ],
+    "codigo/scripts/fundamentacao_artigo/f05_territorio_novo.py": [
+      "codigo/scripts/geo/cob01_cobertura_e_solo.py",
+      "codigo/scripts/metodo/mt02_atributos.py",
+      "codigo/scripts/metodo/mt05_transferencia_sem_amostra.py",
+      "codigo/scripts/metodo/mt11_confirmatorio_transdutivo.py",
+      "codigo/scripts/vulnerabilizados/comum_tv.py",
+      "codigo/scripts/vulnerabilizados/tv01_universo_escassez.py",
+      "codigo/scripts/vulnerabilizados/tv06_referencia_rmpa.py",
+      "codigo/scripts/vulnerabilizados/tv09_manaus.py",
+      "codigo/scripts/vulnerabilizados/v8_02b_cobertura_solo.py"
+    ],
+    "codigo/tests/test_social_projecao.py": [
+      "codigo/scripts/planejamento/pt.py",
+      "codigo/scripts/social/social_projecao.py"
+    ],
+    "codigo/scripts/planejamento/pt.py": [
+      "codigo/scripts/planejamento/pt.py",
+      "codigo/scripts/planejamento/pt_comum.py"
+    ],
+    "codigo/tests/test_recuperacao_frente_c.py": [
+      "codigo/scripts/recuperacao/avaliacao_de_recuperacao.py",
+      "codigo/scripts/recuperacao/comparar_recuperadores.py",
+      "codigo/scripts/recuperacao/indice_denso.py",
+      "codigo/scripts/servico/claims.py"
+    ],
+    "codigo/scripts/petropolis_aprendizado/pa_04b_emenda1.py": [
+      "codigo/scripts/petropolis_aprendizado/pa_comum.py"
+    ],
+    "codigo/scripts/ia/mt11_fechamento.py": [
+      "codigo/scripts/ia/mt11_fechamento.py",
+      "codigo/scripts/metodo/mt11_confirmatorio_transdutivo.py",
+      "codigo/scripts/servico/proveniencia.py"
+    ],
+    "codigo/scripts/vulnerabilizados/v10_iii_memoria.py": [
+      "codigo/scripts/metodo/mt01_experimento.py",
+      "codigo/scripts/vulnerabilizados/v10_comum.py",
+      "codigo/scripts/vulnerabilizados/v8_04_campanha.py",
+      "codigo/scripts/vulnerabilizados/v9_g_continua.py"
+    ],
+    "codigo/scripts/vulnerabilizados/v9_g_continua.py": [
+      "codigo/scripts/metodo/mt01_experimento.py",
+      "codigo/scripts/vulnerabilizados/v8_04_campanha.py",
+      "codigo/scripts/vulnerabilizados/v9_comum.py",
+      "codigo/scripts/vulnerabilizados/v9_p0_continuidade.py"
+    ],
+    "codigo/scripts/vulnerabilizados/v9_p0_continuidade.py": [
+      "codigo/scripts/vulnerabilizados/v5_aprendizagem.py",
+      "codigo/scripts/vulnerabilizados/v8_04_campanha.py",
+      "codigo/scripts/vulnerabilizados/v9_comum.py"
+    ],
+    "codigo/tests/test_mt11_fechamento.py": [
+      "codigo/scripts/ia/mt11_fechamento.py",
+      "codigo/scripts/servico/proveniencia.py"
+    ],
+    "codigo/tests/test_fontes_sar.py": [
+      "codigo/scripts/sar/fontes_sar.py"
+    ],
+    "codigo/scripts/recuperacao/avaliacao_de_recuperacao.py": [
+      "codigo/scripts/servico/claims.py",
+      "codigo/scripts/servico/proveniencia.py",
+      "codigo/scripts/servico/rag_busca.py",
+      "codigo/scripts/servico/rag_corpus.py"
+    ],
+    "codigo/tests/test_sar_frente_a5.py": [
+      "codigo/scripts/sar/avaliar_rede.py",
+      "codigo/scripts/sar/baseline_otsu.py",
+      "codigo/scripts/sar/dados_sen1floods11.py",
+      "codigo/scripts/sar/treino.py"
+    ],
+    "codigo/tests/test_social01_censo_municipal.py": [
+      "codigo/scripts/social/social01_censo_municipal.py"
+    ],
+    "codigo/scripts/metodo/mt11_independencia.py": [
+      "codigo/scripts/ia/rodada3_confirmacao.py",
+      "codigo/scripts/metodo/mt01_independencia.py",
+      "codigo/scripts/metodo/mt01_populacao.py",
+      "codigo/scripts/metodo/mt03_triagem_cems.py",
+      "codigo/scripts/metodo/mt11_independencia.py",
+      "codigo/scripts/servico/proveniencia.py",
+      "codigo/scripts/suscetibilidade/ds06_dataset_de_treino.py"
+    ],
+    "codigo/scripts/metodo/mt03_triagem_cems.py": [
+      "codigo/scripts/metodo/mt01_independencia.py",
+      "codigo/scripts/metodo/mt01_populacao.py",
+      "codigo/scripts/metodo/mt01_relatorio.py",
+      "codigo/scripts/metodo/mt03_triagem_cems.py",
+      "codigo/scripts/servico/proveniencia.py"
+    ],
+    "codigo/scripts/ia/rodada3_confirmacao.py": [
+      "codigo/scripts/geo/cems01_pacote_areal.py",
+      "codigo/scripts/geo/cems03_amostrar_pontos.py",
+      "codigo/scripts/geo/cob01_cobertura_e_solo.py",
+      "codigo/scripts/ia/rodada2_confirmacao.py",
+      "codigo/scripts/ia/rodada3_confirmacao.py",
+      "codigo/scripts/ia/rodada3_fabdem_gee.py",
+      "codigo/scripts/ia/rodada3_ledger.py",
+      "codigo/scripts/metodo/mt01_experimento.py",
+      "codigo/scripts/metodo/mt01_independencia.py",
+      "codigo/scripts/metodo/mt01_populacao.py",
+      "codigo/scripts/metodo/mt01_relatorio.py",
+      "codigo/scripts/metodo/mt03_atributos_novos.py",
+      "codigo/scripts/metodo/mt03_cems_desenvolvimento.py",
+      "codigo/scripts/metodo/mt03_experimento.py",
+      "codigo/scripts/metodo/mt03_triagem_cems.py",
+      "codigo/scripts/metodo/mt04_enxurrada.py",
+      "codigo/scripts/metodo/mt05_transferencia_sem_amostra.py",
+      "codigo/scripts/servico/proveniencia.py",
+      "codigo/scripts/terreno/baixar_fabdem.py",
+      "codigo/scripts/terreno/derivar_aoi_nova.py"
+    ],
+    "codigo/scripts/metodo/mt03_atributos_novos.py": [
+      "codigo/scripts/geo/bacias_hydrobasins.py",
+      "codigo/scripts/geo/cems03_amostrar_pontos.py",
+      "codigo/scripts/geo/cob01_cobertura_e_solo.py",
+      "codigo/scripts/metodo/mt01_bacias_globais.py",
+      "codigo/scripts/metodo/mt01_populacao.py",
+      "codigo/scripts/metodo/mt02_atributos.py",
+      "codigo/scripts/metodo/mt03_conexao_hydrosheds.py",
+      "codigo/scripts/metodo/mt03_experimento.py"
+    ],
+    "codigo/scripts/ia/rodada2_confirmacao.py": [
+      "codigo/scripts/ia/conjunta_base.py",
+      "codigo/scripts/ia/fechamento_campanha.py",
+      "codigo/scripts/ia/rodada2_confirmacao.py",
+      "codigo/scripts/ia/rodada2_referencia_optica.py",
+      "codigo/scripts/metodo/mt03_atributos_novos.py",
+      "codigo/scripts/metodo/mt05_transferencia_sem_amostra.py",
+      "codigo/scripts/servico/proveniencia.py",
+      "codigo/scripts/terreno/derivar_aoi_nova.py"
+    ],
+    "codigo/scripts/ia/fechamento_campanha.py": [
+      "codigo/scripts/ia/conjunta_base.py",
+      "codigo/scripts/ia/conjunta_campanha.py",
+      "codigo/scripts/ia/conjunta_modelo.py",
+      "codigo/scripts/ia/fechamento_campanha.py",
+      "codigo/scripts/ia/fechamento_diagnostico.py",
+      "codigo/scripts/ia/fechamento_modelo.py",
+      "codigo/scripts/ia/fechamento_temporal_base.py",
+      "codigo/scripts/manutencao/executar_serializado.py",
+      "codigo/scripts/manutencao/workers_seguros.py",
+      "codigo/scripts/metodo/mt05_transferencia_sem_amostra.py",
+      "codigo/scripts/neural/proveniencia_de_peso.py",
+      "codigo/scripts/sar/pilha_s1_mesmo_lugar.py",
+      "codigo/scripts/servico/proveniencia.py"
+    ],
+    "codigo/scripts/ia/conjunta_modelo.py": [
+      "codigo/scripts/sar/modelo_unet.py"
+    ],
+    "codigo/scripts/ia/conjunta_campanha.py": [
+      "codigo/scripts/ia/conjunta_base.py",
+      "codigo/scripts/ia/conjunta_campanha.py",
+      "codigo/scripts/ia/conjunta_modelo.py",
+      "codigo/scripts/manutencao/executar_serializado.py",
+      "codigo/scripts/metodo/mt01_experimento.py",
+      "codigo/scripts/metodo/mt05_transferencia_sem_amostra.py",
+      "codigo/scripts/neural/proveniencia_de_peso.py",
+      "codigo/scripts/sar/modelo_unet.py",
+      "codigo/scripts/servico/proveniencia.py"
+    ],
+    "codigo/scripts/ia/fechamento_temporal_base.py": [
+      "codigo/scripts/ia/conjunta_base.py",
+      "codigo/scripts/ia/conjunta_campanha.py",
+      "codigo/scripts/ia/fechamento_diagnostico.py",
+      "codigo/scripts/ia/fechamento_temporal_base.py",
+      "codigo/scripts/sar/pilha_s1_mesmo_lugar.py",
+      "codigo/scripts/servico/proveniencia.py"
+    ],
+    "codigo/scripts/manutencao/workers_seguros.py": [],
+    "codigo/scripts/ia/fechamento_diagnostico.py": [
+      "codigo/scripts/ia/conjunta_campanha.py",
+      "codigo/scripts/ia/fechamento_diagnostico.py",
+      "codigo/scripts/servico/proveniencia.py"
+    ],
+    "codigo/scripts/ia/fechamento_modelo.py": [
+      "codigo/scripts/ia/conjunta_modelo.py"
+    ],
+    "codigo/scripts/ia/rodada2_referencia_optica.py": [
+      "codigo/scripts/ia/conjunta_base.py",
+      "codigo/scripts/ia/rodada2_referencia_optica.py",
+      "codigo/scripts/sar/pilha_s1_mesmo_lugar.py",
+      "codigo/scripts/servico/proveniencia.py"
+    ],
+    "codigo/scripts/ia/conjunta_base.py": [
+      "codigo/scripts/ia/conjunta_base.py",
+      "codigo/scripts/metodo/mt03_experimento.py",
+      "codigo/scripts/sar/fontes_sar.py",
+      "codigo/scripts/servico/proveniencia.py"
+    ],
+    "codigo/scripts/metodo/mt04_enxurrada.py": [
+      "codigo/scripts/metodo/mt04_aquisicao.py",
+      "codigo/scripts/metodo/mt04_confirmacao.py"
+    ],
+    "codigo/scripts/metodo/mt04_aquisicao.py": [
+      "codigo/scripts/metodo/mt03_triagem_cems.py",
+      "codigo/scripts/metodo/mt04_confirmacao.py"
+    ],
+    "codigo/scripts/metodo/mt04_confirmacao.py": [
+      "codigo/scripts/metodo/mt01_experimento.py",
+      "codigo/scripts/metodo/mt01_relatorio.py",
+      "codigo/scripts/metodo/mt03_atributos_novos.py",
+      "codigo/scripts/metodo/mt03_cems_desenvolvimento.py",
+      "codigo/scripts/metodo/mt03_triagem_cems.py",
+      "codigo/scripts/metodo/reservas_examinadas.py",
+      "codigo/scripts/servico/proveniencia.py"
+    ],
+    "codigo/scripts/metodo/mt03_cems_desenvolvimento.py": [
+      "codigo/scripts/geo/agua_permanente_jrc.py",
+      "codigo/scripts/geo/cems01_pacote_areal.py",
+      "codigo/scripts/geo/cems03_amostrar_pontos.py",
+      "codigo/scripts/metodo/mt01_populacao.py",
+      "codigo/scripts/metodo/mt03_cems_desenvolvimento.py",
+      "codigo/scripts/metodo/mt03_triagem_cems.py",
+      "codigo/scripts/servico/proveniencia.py",
+      "codigo/scripts/terreno/baixar_fabdem.py",
+      "codigo/scripts/terreno/derivar_aoi_nova.py"
+    ],
+    "codigo/scripts/ia/rodada3_ledger.py": [
+      "codigo/scripts/ia/conjunta_base.py",
+      "codigo/scripts/ia/rodada3_ledger.py",
+      "codigo/scripts/metodo/mt03_triagem_cems.py",
+      "codigo/scripts/servico/proveniencia.py"
+    ],
+    "codigo/scripts/geo/cems01_pacote_areal.py": [
+      "codigo/scripts/geo/cems01_pacote_areal.py"
+    ],
+    "codigo/scripts/geo/cems03_amostrar_pontos.py": [
+      "codigo/scripts/geo/cems01_pacote_areal.py",
+      "codigo/scripts/geo/cems03_amostrar_pontos.py",
+      "codigo/scripts/servico/proveniencia.py"
+    ],
+    "codigo/tests/test_social_medidas_consolidadas.py": [
+      "codigo/scripts/servico/svc05_transporte_http.py",
+      "codigo/scripts/social/camada_social.py",
+      "codigo/scripts/social/social05_contrato_medidas.py",
+      "codigo/scripts/social/social06_consolidacao.py",
+      "codigo/scripts/social/social07_servico_medidas.py",
+      "codigo/scripts/social/social09_avaliacao_cobertura.py"
+    ],
+    "codigo/scripts/recife_aprendizado/ra_00_estado_inicial.py": [
+      "codigo/scripts/manutencao/executar_serializado.py",
+      "codigo/scripts/recife_aprendizado/ra_comum.py"
+    ],
+    "codigo/scripts/ia/ia_integrada_v2.py": [
+      "codigo/scripts/ia/ia_integrada.py",
+      "codigo/scripts/ia/modelo_integrado_v2.py",
+      "codigo/scripts/ia/mt11_fechamento.py"
+    ],
+    "codigo/scripts/metodo/mt01_ocorrencia_jrc.py": [
+      "codigo/scripts/geo/agua_permanente_jrc.py",
+      "codigo/scripts/metodo/mt01_ocorrencia_jrc.py",
+      "codigo/scripts/metodo/mt01_populacao.py",
+      "codigo/scripts/servico/proveniencia.py"
+    ],
+    "codigo/scripts/metodo/mt01_experimento.py": [
+      "codigo/scripts/metodo/mt01_bacias_globais.py",
+      "codigo/scripts/metodo/mt01_experimento.py",
+      "codigo/scripts/metodo/mt01_independencia.py",
+      "codigo/scripts/metodo/mt01_ocorrencia_jrc.py",
+      "codigo/scripts/metodo/mt01_populacao.py",
+      "codigo/scripts/servico/proveniencia.py"
+    ],
+    "codigo/scripts/vulnerabilizados/v6_07_rmr.py": [
+      "codigo/scripts/vulnerabilizados/comum_tv.py",
+      "codigo/scripts/vulnerabilizados/tv01_universo_escassez.py",
+      "codigo/scripts/vulnerabilizados/tv06_referencia_rmpa.py",
+      "codigo/scripts/vulnerabilizados/v2_03_covariaveis.py",
+      "codigo/scripts/vulnerabilizados/v2_aprendizagem.py",
+      "codigo/scripts/vulnerabilizados/v5_aprendizagem.py",
+      "codigo/scripts/vulnerabilizados/v6_03_recife_requalificacao.py",
+      "codigo/scripts/vulnerabilizados/v6_06_metodo.py",
+      "codigo/scripts/vulnerabilizados/v6_comum.py"
+    ],
+    "codigo/scripts/vulnerabilizados/v2_03_covariaveis.py": [
+      "codigo/scripts/vulnerabilizados/comum_tv.py",
+      "codigo/scripts/vulnerabilizados/v2_00_partida.py"
+    ],
+    "codigo/scripts/vulnerabilizados/v6_06_metodo.py": [
+      "codigo/scripts/vulnerabilizados/comum_tv.py",
+      "codigo/scripts/vulnerabilizados/v2_aprendizagem.py",
+      "codigo/scripts/vulnerabilizados/v5_aprendizagem.py",
+      "codigo/scripts/vulnerabilizados/v6_comum.py"
+    ],
+    "codigo/scripts/vulnerabilizados/v6_03_recife_requalificacao.py": [
+      "codigo/scripts/vulnerabilizados/v6_comum.py"
+    ],
+    "codigo/scripts/social/social09_avaliacao_cobertura.py": [
+      "codigo/scripts/social/social02_medidas_territoriais.py"
+    ],
+    "codigo/scripts/vulnerabilizados/v8_02b_cobertura_solo.py": [
+      "codigo/scripts/geo/cob01_cobertura_e_solo.py",
+      "codigo/scripts/metodo/mt11_confirmatorio_transdutivo.py",
+      "codigo/scripts/vulnerabilizados/v8_02_ponte_fisica.py",
+      "codigo/scripts/vulnerabilizados/v8_comum.py"
+    ],
+    "codigo/scripts/fundamentacao_artigo/f07_estratos_coortes.py": [
+      "codigo/scripts/fundamentacao_artigo/f07_estratos_coortes.py",
+      "codigo/scripts/vulnerabilizados/comum_tv.py"
+    ],
+    "codigo/scripts/recife_aprendizado/ra_comum.py": [],
+    "codigo/scripts/social/social02_medidas_territoriais.py": [
+      "codigo/scripts/social/social02_medidas_territoriais.py"
+    ],
+    "codigo/scripts/recife_aprendizado/ra_01_referencias.py": [
+      "codigo/scripts/recife_aprendizado/ra_comum.py"
+    ],
+    "codigo/scripts/metodo/mt01_pos_hoc.py": [
+      "codigo/scripts/metodo/mt01_experimento.py",
+      "codigo/scripts/metodo/mt01_populacao.py",
+      "codigo/scripts/metodo/mt01_pos_hoc.py",
+      "codigo/scripts/metodo/mt01_relatorio.py",
+      "codigo/scripts/servico/proveniencia.py"
+    ],
+    "codigo/tests/test_recife_aprendizado_v1.py": [
+      "codigo/scripts/recife_aprendizado/ra_01_referencias.py",
+      "codigo/scripts/recife_aprendizado/ra_04_treino.py"
+    ],
+    "codigo/scripts/fundamentacao_artigo/f02_chuva_gatilho_recife.py": [
+      "codigo/scripts/chuva/case_crossover.py"
+    ],
+    "codigo/scripts/chuva/case_crossover.py": [
+      "codigo/scripts/chuva/case_crossover.py",
+      "codigo/scripts/chuva/casos_das_centrais.py",
+      "codigo/scripts/chuva/contrato_chuva.py",
+      "codigo/scripts/chuva/serie_por_celula.py",
+      "codigo/scripts/servico/suporte_cientifico.py"
+    ],
+    "codigo/scripts/chuva/serie_por_celula.py": [
+      "codigo/scripts/chuva/casos_das_centrais.py",
+      "codigo/scripts/chuva/contrato_chuva.py",
+      "codigo/scripts/chuva/providers.py",
+      "codigo/scripts/chuva/serie_por_celula.py"
+    ],
+    "codigo/scripts/chuva/casos_das_centrais.py": [
+      "codigo/scripts/chuva/casos_das_centrais.py",
+      "codigo/scripts/chuva/contrato_chuva.py",
+      "codigo/scripts/externo/aq_chamados02_verificar_requisitos.py"
+    ],
+    "codigo/scripts/externo/aq_chamados02_verificar_requisitos.py": [
+      "codigo/scripts/chuva/procedencia_das_datas.py",
+      "codigo/scripts/externo/aq_chamados02_verificar_requisitos.py",
+      "codigo/scripts/suscetibilidade/aud_desenho01_eixos_de_contraste.py"
+    ],
+    "codigo/scripts/suscetibilidade/aud_desenho01_eixos_de_contraste.py": [
+      "codigo/scripts/chuva/contrato_chuva.py",
+      "codigo/scripts/chuva/procedencia_das_datas.py",
+      "codigo/scripts/suscetibilidade/aud_desenho01_eixos_de_contraste.py"
+    ],
+    "codigo/tests/test_mt11_emenda.py": [
+      "codigo/scripts/metodo/mt11_emenda.py",
+      "codigo/scripts/metodo/mt11_emenda_s1.py",
+      "codigo/scripts/metodo/mt11_independencia.py",
+      "codigo/scripts/metodo/mt11_terreno_executar.py",
+      "codigo/scripts/metodo/registro_aberturas.py",
+      "codigo/scripts/metodo/reservas_examinadas.py"
+    ],
+    "codigo/scripts/vulnerabilizados/v8_07b_amostra_pps.py": [
+      "codigo/scripts/vulnerabilizados/v8_07_amostra_probabilistica.py",
+      "codigo/scripts/vulnerabilizados/v8_comum.py"
+    ],
+    "codigo/scripts/vulnerabilizados/v10_comum.py": [
+      "codigo/scripts/vulnerabilizados/comum_tv.py",
+      "codigo/scripts/vulnerabilizados/v8_comum.py"
+    ],
+    "codigo/tests/test_admissao_cientifica.py": [
+      "codigo/scripts/metodo/admissao_cientifica.py"
+    ],
+    "codigo/scripts/petropolis_aprendizado/pa_04_protocolo.py": [
+      "codigo/scripts/petropolis_aprendizado/pa_comum.py"
+    ],
+    "codigo/scripts/vulnerabilizados/v8_01_q_externo.py": [
+      "codigo/scripts/metodo/mt05_transferencia_sem_amostra.py",
+      "codigo/scripts/vulnerabilizados/v8_comum.py"
+    ],
+    "codigo/scripts/petropolis_aprendizado/pa_06_territorio.py": [
+      "codigo/scripts/petropolis_aprendizado/pa_03_referencias.py",
+      "codigo/scripts/petropolis_aprendizado/pa_comum.py"
+    ],
+    "codigo/scripts/petropolis_aprendizado/pa_07_figuras.py": [
+      "codigo/scripts/petropolis_aprendizado/pa_03_referencias.py",
+      "codigo/scripts/petropolis_aprendizado/pa_comum.py"
+    ],
+    "codigo/scripts/petropolis_aprendizado/pa_09_manifesto.py": [
+      "codigo/scripts/petropolis_aprendizado/pa_comum.py"
+    ],
+    "codigo/scripts/fundamentacao_artigo/f08_ruas_e_comunidades.py": [
+      "codigo/scripts/fundamentacao_artigo/f08_ruas_e_comunidades.py"
+    ],
+    "codigo/scripts/recife_aprendizado/ra_07_verificacao.py": [
+      "codigo/scripts/recife_aprendizado/ra_comum.py"
+    ],
+    "codigo/scripts/vulnerabilizados/v9_p0_regularizacao.py": [
+      "codigo/scripts/vulnerabilizados/comum_tv.py",
+      "codigo/scripts/vulnerabilizados/v8_01_q_externo.py",
+      "codigo/scripts/vulnerabilizados/v8_04_campanha.py",
+      "codigo/scripts/vulnerabilizados/v9_comum.py"
+    ],
+    "codigo/tests/test_petropolis_aprendizado_v1.py": [
+      "codigo/scripts/petropolis_aprendizado/pa_05_treino.py",
+      "codigo/scripts/petropolis_aprendizado/pa_05b_emenda1.py",
+      "codigo/scripts/petropolis_aprendizado/pa_comum.py"
+    ],
+    "codigo/scripts/recuperacao/comparar_recuperadores.py": [
+      "codigo/scripts/recuperacao/avaliacao_de_recuperacao.py",
+      "codigo/scripts/recuperacao/indice_denso.py",
+      "codigo/scripts/servico/proveniencia.py"
+    ],
+    "codigo/scripts/fundamentacao_artigo/f06_ic_auc_ruas_recife.py": [],
+    "codigo/scripts/vulnerabilizados/v10_ii_ciclo.py": [
+      "codigo/scripts/metodo/mt01_experimento.py",
+      "codigo/scripts/vulnerabilizados/v10_comum.py",
+      "codigo/scripts/vulnerabilizados/v8_04_campanha.py",
+      "codigo/scripts/vulnerabilizados/v9_f_aquisicao.py",
+      "codigo/scripts/vulnerabilizados/v9_p0_continuidade.py"
+    ],
+    "codigo/scripts/vulnerabilizados/v9_f_aquisicao.py": [
+      "codigo/scripts/metodo/mt02_atributos.py",
+      "codigo/scripts/metodo/mt11_confirmatorio_transdutivo.py",
+      "codigo/scripts/vulnerabilizados/v8_02_ponte_fisica.py",
+      "codigo/scripts/vulnerabilizados/v8_02b_cobertura_solo.py",
+      "codigo/scripts/vulnerabilizados/v8_04_campanha.py",
+      "codigo/scripts/vulnerabilizados/v9_comum.py",
+      "codigo/scripts/vulnerabilizados/v9_p0_continuidade.py"
+    ],
+    "codigo/scripts/recife_aprendizado/ra_04_treino.py": [
+      "codigo/scripts/recife_aprendizado/ra_comum.py",
+      "codigo/scripts/vulnerabilizados/v8_04_campanha.py"
+    ],
+    "codigo/tests/test_sar_frente_a4.py": [
+      "codigo/scripts/sar/dados_sen1floods11.py",
+      "codigo/scripts/sar/modelo_unet.py",
+      "codigo/scripts/sar/treino.py"
+    ],
+    "codigo/scripts/fundamentacao_artigo/f04_encosta_e_retencao.py": [
+      "codigo/scripts/metodo/mt01_experimento.py",
+      "codigo/scripts/vulnerabilizados/comum_tv.py",
+      "codigo/scripts/vulnerabilizados/v10_comum.py",
+      "codigo/scripts/vulnerabilizados/v8_04_campanha.py"
+    ],
+    "codigo/tests/test_fechamento_integrada_v2.py": [
+      "codigo/scripts/ia/ia_integrada_v2.py",
+      "codigo/scripts/ia/retomar_avaliacao_v2.py",
+      "codigo/scripts/ia/revisao_humana_v2.py"
+    ],
+    "codigo/scripts/ia/retomar_avaliacao_v2.py": [
+      "codigo/scripts/ia/avaliar_integrada_v2.py",
+      "codigo/scripts/ia/ia_integrada.py",
+      "codigo/scripts/ia/ia_integrada_v2.py"
+    ],
+    "codigo/scripts/ia/revisao_humana_v2.py": [
+      "codigo/scripts/ia/ia_integrada_v2.py"
+    ],
+    "codigo/scripts/sar/calibrar_recusa.py": [
+      "codigo/scripts/neural/predicao_seletiva.py",
+      "codigo/scripts/sar/avaliar_rede.py",
+      "codigo/scripts/sar/baseline_otsu.py",
+      "codigo/scripts/servico/proveniencia.py"
+    ],
+    "codigo/scripts/neural/predicao_seletiva.py": [],
+    "codigo/tests/test_social02_medidas_territoriais.py": [
+      "codigo/scripts/social/social02_medidas_territoriais.py"
+    ],
+    "codigo/scripts/suscetibilidade/ds03_esquema_alvo.py": [
+      "codigo/scripts/suscetibilidade/ds03_esquema_alvo.py"
+    ],
+    "codigo/scripts/vulnerabilizados/v9_d_conjunta.py": [
+      "codigo/scripts/sar/dados_sen1floods11.py",
+      "codigo/scripts/sar/substrato_multimodal.py",
+      "codigo/scripts/vulnerabilizados/v9_c_patches.py",
+      "codigo/scripts/vulnerabilizados/v9_comum.py"
+    ],
+    "codigo/scripts/vulnerabilizados/v9_c_patches.py": [
+      "codigo/scripts/terreno/modelo_encoder.py",
+      "codigo/scripts/vulnerabilizados/v8_04_campanha.py",
+      "codigo/scripts/vulnerabilizados/v9_b_tabular.py",
+      "codigo/scripts/vulnerabilizados/v9_comum.py"
+    ],
+    "codigo/scripts/sar/substrato_multimodal.py": [
+      "codigo/scripts/sar/dados_sen1floods11.py",
+      "codigo/scripts/sar/substrato_multimodal.py",
+      "codigo/scripts/servico/proveniencia.py"
+    ],
+    "codigo/scripts/recuperacao/__init__.py": [],
+    "codigo/scripts/sar/analise_continuidade_v3.py": [
+      "codigo/scripts/sar/calibracao_decisao.py",
+      "codigo/scripts/sar/campanha_independencia_autonomia.py",
+      "codigo/scripts/sar/continuidade_v3.py",
+      "codigo/scripts/sar/dados_pares_geograficos.py",
+      "codigo/scripts/sar/diagnostico_competencia.py"
+    ],
+    "codigo/scripts/vulnerabilizados/v9_s_lacuna.py": [
+      "codigo/scripts/vulnerabilizados/v9_comum.py"
+    ],
+    "codigo/scripts/verificacao/__init__.py": [],
+    "codigo/scripts/terreno/__init__.py": [],
+    "codigo/scripts/chuva/contrato_chuva.py": [],
+    "codigo/scripts/chuva/procedencia_das_datas.py": [
+      "codigo/scripts/chuva/contrato_chuva.py"
+    ],
+    "codigo/scripts/social/__init__.py": [],
+    "codigo/scripts/chuva/providers.py": [
+      "codigo/scripts/chuva/contrato_chuva.py"
+    ],
+    "codigo/scripts/sar/__init__.py": [],
+    "codigo/scripts/neural/__init__.py": [],
+    "codigo/scripts/chuva/__init__.py": []
+  },
+  "criterio": "Entradas do artigo, testes escolhidos e dependências locais estáticas; sem importação de módulos durante a seleção. Resolução de módulos qualificados também a partir de scripts/ e testes de importação do núcleo integrado."
+}

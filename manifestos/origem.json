@@ -1,0 +1,27 @@
+{
+  "data": "2026-11-08",
+  "fuso": "Asia/Chita",
+  "recorte": "artigo v16 e suas dependencias necessarias",
+  "artigo_sha256": "f4bc18ca8cce9744e4f438af5e0bf2fe5863bd6bc79cfcd12f167f9001302c7e",
+  "tex_original_sha256": "9954cde489a03e3b82785cad0db717d2499f44c5f8ea50009da3df1950331452",
+  "tex_preparado_sha256": "896b74e687a183c2423823aed91c160e4afd9a92fed10460d764700aa073d06c",
+  "transformacao_tex": "somente caminhos das tres figuras",
+  "historico_incluido_no_pacote": false,
+  "entradas_de_codigo": 110,
+  "arquivos_de_codigo_e_testes": 326,
+  "sem_novo_treino_ou_recalculo_de_resultados": true,
+  "commit_local_de_referencia": "20ef3c5ce148f2cff96cde1fc77ee43de1525365",
+  "inclui_trabalho_local_nao_commitado": true,
+  "identidade_do_recorte": "Hashes dos arquivos selecionados; o commit sozinho não identifica todo o trabalho local incluído.",
+  "github_publico_consultado": {
+    "repositorio": "gabriela-sofia/flood_Audit-Service",
+    "commit": "18bcb981ee9d219a83889a84d7d1040d570f4c08",
+    "consulta": "2026-11-08"
+  },
+  "referencia_publicacao": {
+    "repositorio": "gabriela-sofia/flood_Audit-Service",
+    "branch": "main",
+    "commit_publico_anterior": "18bcb981ee9d219a83889a84d7d1040d570f4c08",
+    "pacote_revisado_sha256": "b49c6c3806a406378e49dbb2359f6b617da35daa8da5c677b2f65fa703207419"
+  }
+}

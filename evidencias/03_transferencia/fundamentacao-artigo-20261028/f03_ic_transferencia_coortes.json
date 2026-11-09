@@ -1,0 +1,163 @@
+{
+ "regra": "sustentado se limite inferior do IC95% > 0",
+ "grupo": "comunidade FCU",
+ "bootstrap": 2000,
+ "referencia": "Sentinel-2 MNDWI > 0 contra observado sem agua na mesma cena",
+ "por_coorte": {
+  "rmpa": {
+   "pontos": 2354,
+   "positivos": 241,
+   "comunidades": 97,
+   "comunidades_com_positivo": 17,
+   "auc": {
+    "Q_sel_ext": 0.8803514304846701,
+    "A0_hand": 0.840621090934798,
+    "menos_declive": 0.9099488839097231
+   },
+   "ic95_auc_Q": [
+    0.8277101918411308,
+    0.9232253038524902
+   ],
+   "Q_menos_A0_hand": {
+    "delta": 0.03973033954987215,
+    "ic95": [
+     -0.0017249984040777209,
+     0.0908628279283555
+    ],
+    "leitura": "inconclusivo"
+   },
+   "Q_menos_menos_declive": {
+    "delta": -0.029597453425052933,
+    "ic95": [
+     -0.08470497352236755,
+     0.025443877181064424
+    ],
+    "leitura": "inconclusivo"
+   }
+  },
+  "manaus": {
+   "pontos": 21293,
+   "positivos": 48,
+   "comunidades": 151,
+   "comunidades_com_positivo": 10,
+   "auc": {
+    "Q_sel_ext": 0.9195546010826077,
+    "A0_hand": 0.8733971718835805,
+    "menos_declive": 0.8083568682827332
+   },
+   "ic95_auc_Q": [
+    0.7912445413611373,
+    0.9668180957635162
+   ],
+   "Q_menos_A0_hand": {
+    "delta": 0.04615742919902721,
+    "ic95": [
+     0.019735757598031773,
+     0.06948947194055359
+    ],
+    "leitura": "sustentado"
+   },
+   "Q_menos_menos_declive": {
+    "delta": 0.11119773279987444,
+    "ic95": [
+     0.02448263787208371,
+     0.2367243483780575
+    ],
+    "leitura": "sustentado"
+   }
+  },
+  "curitiba": {
+   "pontos": 7422,
+   "positivos": 11,
+   "comunidades": 284,
+   "comunidades_com_positivo": 4,
+   "auc": {
+    "Q_sel_ext": 0.8928374283926841,
+    "A0_hand": 0.8259466885833098,
+    "menos_declive": 0.6975503244562751
+   },
+   "ic95_auc_Q": [
+    0.8580374997563245,
+    0.9266581154724716
+   ],
+   "Q_menos_A0_hand": {
+    "delta": 0.06689073980937432,
+    "ic95": [
+     -0.03465710459867152,
+     0.15667526866858317
+    ],
+    "leitura": "inconclusivo"
+   },
+   "Q_menos_menos_declive": {
+    "delta": 0.19528710393640902,
+    "ic95": [
+     -0.003848858471597915,
+     0.38056944449470426
+    ],
+    "leitura": "inconclusivo"
+   }
+  },
+  "recife": {
+   "pontos": 5156,
+   "positivos": 31,
+   "comunidades": 263,
+   "comunidades_com_positivo": 19,
+   "auc": {
+    "Q_sel_ext": 0.866366640440598,
+    "A0_hand": 0.8023949645948072,
+    "menos_declive": 0.7153422501966955
+   },
+   "ic95_auc_Q": [
+    0.7768267369891235,
+    0.9351529333183014
+   ],
+   "Q_menos_A0_hand": {
+    "delta": 0.06397167584579078,
+    "ic95": [
+     0.012313054046907928,
+     0.12476548073319146
+    ],
+    "leitura": "sustentado"
+   },
+   "Q_menos_menos_declive": {
+    "delta": 0.15102439024390246,
+    "ic95": [
+     0.04662635525716965,
+     0.26296698919029216
+    ],
+    "leitura": "sustentado"
+   }
+  },
+  "rmr": {
+   "pontos": 14454,
+   "positivos": 366,
+   "comunidades": 306,
+   "comunidades_com_positivo": 35,
+   "auc": {
+    "Q_sel_ext": 0.8089890865535293,
+    "A0_hand": 0.6929236562993579,
+    "menos_declive": 0.7156828235013017
+   },
+   "ic95_auc_Q": [
+    0.7211798206252408,
+    0.8660794502064906
+   ],
+   "Q_menos_A0_hand": {
+    "delta": 0.11606543025417138,
+    "ic95": [
+     0.06880204969370386,
+     0.14498357186818023
+    ],
+    "leitura": "sustentado"
+   },
+   "Q_menos_menos_declive": {
+    "delta": 0.09330626305222756,
+    "ic95": [
+     0.05661887906567017,
+     0.21254875399750567
+    ],
+    "leitura": "sustentado"
+   }
+  }
+ }
+}

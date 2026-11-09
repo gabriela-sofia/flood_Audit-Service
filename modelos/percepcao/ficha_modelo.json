@@ -1,0 +1,118 @@
+{
+  "tipo": "model_card_rede_sar",
+  "etapa": "A9",
+  "quando_utc": "2026-09-02T02:39:23.006876Z",
+  "modelo": "unet_pequena_sen1floods11:v1",
+  "tarefa": "segmentacao binaria de agua em Sentinel-1 (VV, VH)",
+  "estimador": "U-Net de 3 niveis, base 16, 482610 parametros",
+  "dispositivo_de_treino": "cpu",
+  "ajustado_em": {
+    "fonte": "Sen1Floods11 v1.1, chips com rotulo manual",
+    "licenca": "CC BY 4.0",
+    "chips_treino": 252,
+    "chips_validacao": 89,
+    "epocas": 30,
+    "recorte_de_treino": 256,
+    "normalizacao": "media e desvio por banda, calculados SO no split de treino",
+    "rotulo": "tres estados; `-1` (sem dado) fica fora da perda por `ignore_index`, e nunca vira nao-agua"
+  },
+  "distribuicao_geografica": {
+    "por_split": {
+      "treino": {
+        "Ghana": 31,
+        "India": 40,
+        "Mekong": 18,
+        "Nigeria": 10,
+        "Pakistan": 16,
+        "Paraguay": 39,
+        "Somalia": 15,
+        "Spain": 18,
+        "Sri-Lanka": 24,
+        "USA": 41
+      },
+      "validacao": {
+        "Ghana": 11,
+        "India": 14,
+        "Mekong": 6,
+        "Nigeria": 4,
+        "Pakistan": 6,
+        "Paraguay": 14,
+        "Somalia": 5,
+        "Spain": 6,
+        "Sri-Lanka": 9,
+        "USA": 14
+      },
+      "teste": {
+        "Ghana": 11,
+        "India": 14,
+        "Mekong": 6,
+        "Nigeria": 4,
+        "Pakistan": 6,
+        "Paraguay": 14,
+        "Somalia": 6,
+        "Spain": 6,
+        "Sri-Lanka": 9,
+        "USA": 14
+      },
+      "bolivia": {
+        "Bolivia": 15
+      }
+    },
+    "paises_no_treino": [
+      "Ghana",
+      "India",
+      "Mekong",
+      "Nigeria",
+      "Pakistan",
+      "Paraguay",
+      "Somalia",
+      "Spain",
+      "Sri-Lanka",
+      "USA"
+    ],
+    "brasil_no_treino": false,
+    "split_oficial_mede": "generalizacao para novas cenas dentro dos mesmos paises: treino, validacao e teste repartem a mesma lista de paises",
+    "split_oficial_nao_mede": "transferencia para regiao nova; para isso existe o holdout da Bolivia, que nao aparece em nenhum outro split"
+  },
+  "proveniencia_do_peso": {
+    "hash_estado": "sha256:bca94df7ab57d51e90f41411d52478bd7ca093bc3386ac17d5b01fdc904923ba",
+    "hash_manifesto": "sha256:c8688e28c51d7d929121b6e137685afb04bde929f8c5ec0f518b319675a0f0fa",
+    "seed": 20260901,
+    "commit": "918502a",
+    "torch": "2.11.0+cpu",
+    "reproducao": "mesma seed reproduz o mesmo peso; verificado em tests/test_sar_frente_a4.py"
+  },
+  "desempenho": {
+    "split": "teste",
+    "chips_avaliados": 90,
+    "iou_micro": 0.528518,
+    "iou_micro_sem_agua_permanente": 0.448927,
+    "iou_macro": 0.306442,
+    "iou_macro_sem_agua_permanente": 0.240665,
+    "por_que_duas_versoes": "no baseline, 47% dos verdadeiros-positivos eram agua permanente; acertar rio e acertar a pergunta errada"
+  },
+  "baseline": {
+    "metodo": "limiar de Otsu, distribuido com o proprio dataset",
+    "iou_micro": 0.545846,
+    "iou_micro_sem_agua_permanente": 0.394663,
+    "diferenca_micro": -0.017328,
+    "diferenca_micro_sem_agua_permanente": 0.054264,
+    "leitura": "diferenca positiva = a rede supera o limiar neste conjunto; negativa e resultado publicavel"
+  },
+  "transferencia_fora_de_regiao": {
+    "holdout": "Bolivia, 15 chips, ausente de todos os outros splits",
+    "iou_micro": 0.480822,
+    "iou_micro_sem_agua_permanente": 0.462234,
+    "leitura": "a queda em relacao ao split de teste e a medida de transferencia desta rede"
+  },
+  "recusa": "AUSENTE",
+  "limites_de_uso": [
+    "nao e variavel do modelo fisico: nao entra em `variaveis_usadas` nem desloca escore de suscetibilidade",
+    "nao substitui o footprint servido sem decisao humana",
+    "nao promove negativo do Sen1Floods11 para o dataset SUSC; a proveniencia do dado proibe, e a proibicao vale depois do treino",
+    "nenhum chip do Brasil no ajuste; o pais mais proximo em regime e continente e o Paraguai",
+    "agua permanente e agua de inundacao aparecem iguais no SAR; a separacao depende de mascara externa (JRC), nao do modelo"
+  ],
+  "nao_e": "detector de enchente calibrado para uso operacional: e uma rede de segmentacao de agua medida contra um limiar, em regime de review-only",
+  "hash_card": "sha256:28f6d17f1d016e43450d719206f21f630e4844695d664844cf93ed55e04c53f4"
+}

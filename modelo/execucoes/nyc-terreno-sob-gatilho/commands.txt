@@ -1,5 +1,0 @@
-python scripts/chuva/adquirir_mrms_nyc.py --online
-python scripts/chuva/gatilho_terreno_nyc.py
-python scripts/chuva/terreno_sob_gatilho_1km.py
-python scripts/chuva/mrms_vs_era5_nyc.py
-python -m pytest tests/test_terreno_sob_gatilho.py -q

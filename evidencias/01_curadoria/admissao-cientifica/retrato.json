@@ -1,0 +1,434 @@
+{
+  "tipo": "admissao_cientifica",
+  "versao": "v1",
+  "quando_utc": "2026-10-03T03:00:16.965511Z",
+  "entrada": "local_runs\\ds-05-tabela-unica\\tabela_unica_v2.parquet",
+  "linhas": 1641356,
+  "por_uso": {
+    "exploracao": 1641356,
+    "treino": 763155,
+    "avaliacao_espacial": 759301,
+    "avaliacao_temporal": 513525,
+    "avaliacao_externa": 513530,
+    "afirmacao": 513530
+  },
+  "temporal_por_pergunta": {
+    "ordem_entre_eventos": {
+      "linhas": 513525,
+      "o_que_e": "reservar eventos posteriores; a data so precisa ordenar eventos"
+    },
+    "forcamento_no_instante": {
+      "linhas": 0,
+      "o_que_e": "ligar chuva/nivel ao instante da ocorrencia; exige data da propria ocorrencia, e cena, ativacao ou inicio de janela nao sao"
+    },
+    "previsao": {
+      "linhas": 51478,
+      "o_que_e": "estimar antes do evento: alem da data, todo preditor tem de existir antes dele -- o DEM nao existia para evento anterior a sua publicacao"
+    }
+  },
+  "por_fonte": {
+    "cems": {
+      "linhas": 63211,
+      "exploracao": 63211,
+      "treino": 51483,
+      "avaliacao_espacial": 51483,
+      "avaliacao_temporal": 51478,
+      "avaliacao_externa": 51483,
+      "afirmacao": 51483,
+      "bloqueios": {
+        "treino": {
+          "papel_nao_ensina:agua_permanente": 10132,
+          "papel_nao_ensina:outro_fenomeno": 1592,
+          "rejeitada_no_ds05": 4
+        },
+        "avaliacao_espacial": {
+          "papel_nao_ensina:agua_permanente": 10132,
+          "papel_nao_ensina:outro_fenomeno": 1592,
+          "rejeitada_no_ds05": 4
+        },
+        "avaliacao_temporal": {
+          "papel_nao_ensina:agua_permanente": 10132,
+          "papel_nao_ensina:outro_fenomeno": 1592,
+          "data_nao_serve_a_pergunta:ordem_entre_eventos": 5,
+          "rejeitada_no_ds05": 4
+        },
+        "avaliacao_externa": {
+          "papel_nao_ensina:agua_permanente": 10132,
+          "papel_nao_ensina:outro_fenomeno": 1592,
+          "rejeitada_no_ds05": 4
+        },
+        "afirmacao": {
+          "papel_nao_ensina:agua_permanente": 10132,
+          "papel_nao_ensina:outro_fenomeno": 1592,
+          "rejeitada_no_ds05": 4
+        }
+      }
+    },
+    "chicago": {
+      "linhas": 496972,
+      "exploracao": 496972,
+      "treino": 134542,
+      "avaliacao_espacial": 134542,
+      "avaliacao_temporal": 0,
+      "avaliacao_externa": 0,
+      "afirmacao": 0,
+      "bloqueios": {
+        "treino": {
+          "papel_nao_ensina:desconhecido": 362430
+        },
+        "avaliacao_espacial": {
+          "papel_nao_ensina:desconhecido": 362430
+        },
+        "avaliacao_temporal": {
+          "papel_nao_ensina:desconhecido": 362430,
+          "data_nao_serve_a_pergunta:ordem_entre_eventos": 134542
+        },
+        "avaliacao_externa": {
+          "papel_nao_ensina:desconhecido": 362430,
+          "instrumento_nao_produz_negativo_observado": 134542
+        },
+        "afirmacao": {
+          "papel_nao_ensina:desconhecido": 362430,
+          "instrumento_nao_produz_negativo_observado": 134542
+        }
+      }
+    },
+    "curitiba": {
+      "linhas": 1680,
+      "exploracao": 1680,
+      "treino": 1352,
+      "avaliacao_espacial": 1238,
+      "avaliacao_temporal": 0,
+      "avaliacao_externa": 0,
+      "afirmacao": 0,
+      "bloqueios": {
+        "treino": {
+          "papel_nao_ensina:desconhecido": 328
+        },
+        "avaliacao_espacial": {
+          "papel_nao_ensina:desconhecido": 328,
+          "negativo_nao_observado:exclusao_qualificada": 114
+        },
+        "avaliacao_temporal": {
+          "data_nao_serve_a_pergunta:ordem_entre_eventos": 1238,
+          "papel_nao_ensina:desconhecido": 328,
+          "negativo_nao_observado:exclusao_qualificada": 114
+        },
+        "avaliacao_externa": {
+          "instrumento_nao_produz_negativo_observado": 1238,
+          "papel_nao_ensina:desconhecido": 328,
+          "negativo_nao_observado:exclusao_qualificada": 114
+        },
+        "afirmacao": {
+          "instrumento_nao_produz_negativo_observado": 1238,
+          "papel_nao_ensina:desconhecido": 328,
+          "negativo_nao_observado:exclusao_qualificada": 114
+        }
+      }
+    },
+    "gfd": {
+      "linhas": 521726,
+      "exploracao": 521726,
+      "treino": 407582,
+      "avaliacao_espacial": 407582,
+      "avaliacao_temporal": 407582,
+      "avaliacao_externa": 407582,
+      "afirmacao": 407582,
+      "bloqueios": {
+        "treino": {
+          "papel_nao_ensina:agua_permanente": 112965,
+          "rejeitada_no_ds05": 1179
+        },
+        "avaliacao_espacial": {
+          "papel_nao_ensina:agua_permanente": 112965,
+          "rejeitada_no_ds05": 1179
+        },
+        "avaliacao_temporal": {
+          "papel_nao_ensina:agua_permanente": 112965,
+          "rejeitada_no_ds05": 1179
+        },
+        "avaliacao_externa": {
+          "papel_nao_ensina:agua_permanente": 112965,
+          "rejeitada_no_ds05": 1179
+        },
+        "afirmacao": {
+          "papel_nao_ensina:agua_permanente": 112965,
+          "rejeitada_no_ds05": 1179
+        }
+      }
+    },
+    "nyc": {
+      "linhas": 471727,
+      "exploracao": 471727,
+      "treino": 104653,
+      "avaliacao_espacial": 104653,
+      "avaliacao_temporal": 0,
+      "avaliacao_externa": 0,
+      "afirmacao": 0,
+      "bloqueios": {
+        "treino": {
+          "papel_nao_ensina:desconhecido": 367074
+        },
+        "avaliacao_espacial": {
+          "papel_nao_ensina:desconhecido": 367074
+        },
+        "avaliacao_temporal": {
+          "papel_nao_ensina:desconhecido": 367074,
+          "data_nao_serve_a_pergunta:ordem_entre_eventos": 104653
+        },
+        "avaliacao_externa": {
+          "papel_nao_ensina:desconhecido": 367074,
+          "instrumento_nao_produz_negativo_observado": 104653
+        },
+        "afirmacao": {
+          "papel_nao_ensina:desconhecido": 367074,
+          "instrumento_nao_produz_negativo_observado": 104653
+        }
+      }
+    },
+    "recife": {
+      "linhas": 278,
+      "exploracao": 278,
+      "treino": 156,
+      "avaliacao_espacial": 154,
+      "avaliacao_temporal": 0,
+      "avaliacao_externa": 0,
+      "afirmacao": 0,
+      "bloqueios": {
+        "treino": {
+          "papel_nao_ensina:desconhecido": 122
+        },
+        "avaliacao_espacial": {
+          "papel_nao_ensina:desconhecido": 122,
+          "negativo_nao_observado:exclusao_qualificada": 2
+        },
+        "avaliacao_temporal": {
+          "data_nao_serve_a_pergunta:ordem_entre_eventos": 154,
+          "papel_nao_ensina:desconhecido": 122,
+          "negativo_nao_observado:exclusao_qualificada": 2
+        },
+        "avaliacao_externa": {
+          "instrumento_nao_produz_negativo_observado": 154,
+          "papel_nao_ensina:desconhecido": 122,
+          "negativo_nao_observado:exclusao_qualificada": 2
+        },
+        "afirmacao": {
+          "instrumento_nao_produz_negativo_observado": 154,
+          "papel_nao_ensina:desconhecido": 122,
+          "negativo_nao_observado:exclusao_qualificada": 2
+        }
+      }
+    },
+    "sao_paulo": {
+      "linhas": 7146,
+      "exploracao": 7146,
+      "treino": 1446,
+      "avaliacao_espacial": 1446,
+      "avaliacao_temporal": 0,
+      "avaliacao_externa": 0,
+      "afirmacao": 0,
+      "bloqueios": {
+        "treino": {
+          "papel_nao_ensina:desconhecido": 5700
+        },
+        "avaliacao_espacial": {
+          "papel_nao_ensina:desconhecido": 5700
+        },
+        "avaliacao_temporal": {
+          "papel_nao_ensina:desconhecido": 5700,
+          "data_nao_serve_a_pergunta:ordem_entre_eventos": 1446
+        },
+        "avaliacao_externa": {
+          "papel_nao_ensina:desconhecido": 5700,
+          "instrumento_nao_produz_negativo_observado": 1446
+        },
+        "afirmacao": {
+          "papel_nao_ensina:desconhecido": 5700,
+          "instrumento_nao_produz_negativo_observado": 1446
+        }
+      }
+    },
+    "sen1floods11": {
+      "linhas": 45340,
+      "exploracao": 45340,
+      "treino": 30431,
+      "avaliacao_espacial": 30431,
+      "avaliacao_temporal": 30431,
+      "avaliacao_externa": 30431,
+      "afirmacao": 30431,
+      "bloqueios": {
+        "treino": {
+          "papel_nao_ensina:desconhecido": 12318,
+          "papel_nao_ensina:agua_permanente": 2436,
+          "rejeitada_no_ds05": 155
+        },
+        "avaliacao_espacial": {
+          "papel_nao_ensina:desconhecido": 12318,
+          "papel_nao_ensina:agua_permanente": 2436,
+          "rejeitada_no_ds05": 155
+        },
+        "avaliacao_temporal": {
+          "papel_nao_ensina:desconhecido": 12318,
+          "papel_nao_ensina:agua_permanente": 2436,
+          "rejeitada_no_ds05": 155
+        },
+        "avaliacao_externa": {
+          "papel_nao_ensina:desconhecido": 12318,
+          "papel_nao_ensina:agua_permanente": 2436,
+          "rejeitada_no_ds05": 155
+        },
+        "afirmacao": {
+          "papel_nao_ensina:desconhecido": 12318,
+          "papel_nao_ensina:agua_permanente": 2436,
+          "rejeitada_no_ds05": 155
+        }
+      }
+    },
+    "ufo": {
+      "linhas": 25800,
+      "exploracao": 25800,
+      "treino": 24034,
+      "avaliacao_espacial": 24034,
+      "avaliacao_temporal": 24034,
+      "avaliacao_externa": 24034,
+      "afirmacao": 24034,
+      "bloqueios": {
+        "treino": {
+          "rejeitada_no_ds05": 1756,
+          "papel_nao_ensina:desconhecido": 10
+        },
+        "avaliacao_espacial": {
+          "rejeitada_no_ds05": 1756,
+          "papel_nao_ensina:desconhecido": 10
+        },
+        "avaliacao_temporal": {
+          "rejeitada_no_ds05": 1756,
+          "papel_nao_ensina:desconhecido": 10
+        },
+        "avaliacao_externa": {
+          "rejeitada_no_ds05": 1756,
+          "papel_nao_ensina:desconhecido": 10
+        },
+        "afirmacao": {
+          "rejeitada_no_ds05": 1756,
+          "papel_nao_ensina:desconhecido": 10
+        }
+      }
+    },
+    "uk": {
+      "linhas": 7476,
+      "exploracao": 7476,
+      "treino": 7476,
+      "avaliacao_espacial": 3738,
+      "avaliacao_temporal": 0,
+      "avaliacao_externa": 0,
+      "afirmacao": 0,
+      "bloqueios": {
+        "treino": {},
+        "avaliacao_espacial": {
+          "negativo_nao_observado:exclusao_qualificada": 3738
+        },
+        "avaliacao_temporal": {
+          "data_nao_serve_a_pergunta:ordem_entre_eventos": 3738,
+          "negativo_nao_observado:exclusao_qualificada": 3738
+        },
+        "avaliacao_externa": {
+          "instrumento_nao_produz_negativo_observado": 3738,
+          "negativo_nao_observado:exclusao_qualificada": 3738
+        },
+        "afirmacao": {
+          "instrumento_nao_produz_negativo_observado": 3738,
+          "negativo_nao_observado:exclusao_qualificada": 3738
+        }
+      }
+    }
+  },
+  "capacidade": {
+    "gfd": {
+      "delineacao": "observada: limiar MODIS 250 m, extensao maxima na janela",
+      "escala_m": 250,
+      "dependencias": [
+        "JRC para agua permanente"
+      ],
+      "circular_com": []
+    },
+    "cems": {
+      "delineacao": "observada: analista sobre SAR/optico, por AOI",
+      "escala_m": 30,
+      "dependencias": [
+        "metodo por AOI nao declarado no pacote"
+      ],
+      "circular_com": []
+    },
+    "sen1floods11": {
+      "delineacao": "observada: rotulo manual sobre S1/S2",
+      "escala_m": 10,
+      "dependencias": [],
+      "circular_com": []
+    },
+    "uk": {
+      "delineacao": "registro oficial de outline; fora dele nao vistoriado",
+      "escala_m": null,
+      "dependencias": [],
+      "circular_com": []
+    },
+    "ufo": {
+      "delineacao": "observada em imagem urbana; processo nao separavel",
+      "escala_m": null,
+      "dependencias": [],
+      "circular_com": []
+    },
+    "curitiba": {
+      "delineacao": "registro de chamado; nao delineia",
+      "escala_m": null,
+      "dependencias": [
+        "propensao a registrar"
+      ],
+      "circular_com": []
+    },
+    "recife": {
+      "delineacao": "registro de ponto de alagamento; nao delineia",
+      "escala_m": null,
+      "dependencias": [
+        "propensao a registrar"
+      ],
+      "circular_com": []
+    },
+    "sao_paulo": {
+      "delineacao": "chamado 156; nao delineia",
+      "escala_m": null,
+      "dependencias": [
+        "propensao a registrar"
+      ],
+      "circular_com": []
+    },
+    "nyc": {
+      "delineacao": "chamado 311; nao delineia",
+      "escala_m": null,
+      "dependencias": [
+        "propensao a registrar"
+      ],
+      "circular_com": []
+    },
+    "chicago": {
+      "delineacao": "chamado 311; nao delineia",
+      "escala_m": null,
+      "dependencias": [
+        "propensao a registrar"
+      ],
+      "circular_com": []
+    }
+  },
+  "recusadas": {
+    "opera_dswx_hls_serra": "03/10/2026: em serra brasileira, controle seco de ago/2024 deu 278 km2 de agua nova contra 103 km2 no evento de mai/2024; mascara de sombra nao muda",
+    "ufrgs_rs2024_observada": "IoU 0,23-0,30 com a agua do S2 de 06/05/2024; trecho so-UFRGS tem HAND p90 15 m: extensao sobre o MDE, nao delineacao observada",
+    "gfm_copernicus": "nao auditada: algoritmos do GFM usam mascara de HAND -- circular para testar HAND; exclusoes do radar precisam virar classe desconhecida",
+    "geoglows_vazao": "simulacao forcada por ERA5; no Taquari atrasou o pico de 2024 em 5 dias e nao viu set/2023: nao e observacao",
+    "mapbiomas_rs2024_area_atingida": "nota tecnica MapBiomas (jun/2024): deteccao de mudanca S1/S2/Planet, depois exclui pixel em encosta por limiar de HAND e separa deslizamento por declive de 7% -- circular para testar HAND e declive; inclui solo saturado e mancha modelada de POA (Possanti 2024); sem metrica de acuracia. So exploracao",
+    "zenodo_17177153": "titulo promete mapeamento de areas inundadas RS 2024, mas o pacote publicado contem ganho/perda de vegetacao por hexagono de 2 km: nao ha delineacao de cheia",
+    "zenodo_11151528": "limiar de NDWI de um sensor (S2) que inclui area umida e agua permanente, publicado so como imagem (PNG/PDF), sem vetor: nao e independente do que o projeto computa e nao e utilizavel como camada"
+  },
+  "hipotese_temporal": "terreno derivado de DEM atual (FABDEM/MERIT) aplicado a evento antigo: supoe-se que corte, aterro e canalizacao nao mudaram o relevo no ponto",
+  "nao_e": "nao e filtro de conveniencia: e a regra unica de uso. Consumidor que ajusta ou mede chama `exigir` e falha com linha nao autorizada",
+  "hash_resumo": "sha256:cc9dba38f40260a0d8b1e21d7641e0b1d8e3dc07ce88879efef501402983402b"
+}

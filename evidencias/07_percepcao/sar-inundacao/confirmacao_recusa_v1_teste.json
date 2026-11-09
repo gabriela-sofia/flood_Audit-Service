@@ -1,0 +1,51 @@
+{
+  "tipo": "confirmacao_de_recusa_no_teste",
+  "quando_utc": "2026-10-02T18:57:32.029339Z",
+  "pre_registro": "docs/PRE_REGISTRO_TRANSFERENCIA_PRETREINO_2026_10_03.md",
+  "checkpoint": "v1",
+  "split": "teste",
+  "limiar_fixado_na_validacao": 0.25,
+  "origem_do_limiar": "C:\\Users\\gabriela\\Documents\\REV-P\\local_runs\\sar-inundacao\\calibracao_recusa_v1_por_curva.json",
+  "hash_da_origem": "sha256:3ff3e0b5a0dc8b68ea152c75389562b23884998e9de4b00710ddce904d3df6d9",
+  "modo_confianca": "margem_na_predicao",
+  "sem_recusa": {
+    "iou_micro_sem_agua_permanente": 0.448927,
+    "iou_micro": 0.528518
+  },
+  "com_recusa": {
+    "iou_micro_sem_agua_permanente": 0.591549,
+    "iou_micro": 0.709358,
+    "chips_recusados": 40,
+    "cobertura": 0.555556
+  },
+  "ganho_no_teste": 0.142622,
+  "ganho_na_validacao": 0.14806,
+  "cobertura_na_validacao": 0.573034,
+  "curva_de_risco_no_teste": {
+    "medivel": true,
+    "n": 79,
+    "o_que_e_erro": "1 - IoU do chip, sem agua permanente",
+    "o_que_e_confianca": "margem_na_predicao",
+    "seletor": "A_rede_sar_teste",
+    "risco_sem_abstencao": 0.73801,
+    "aurc": 0.560392,
+    "aurc_do_acaso": {
+      "media": 0.728374,
+      "p05": 0.684104,
+      "p95": 0.766806,
+      "repeticoes": 200
+    },
+    "ganho_sobre_acaso": 0.167982,
+    "ordena_melhor_que_o_acaso": true,
+    "risco_por_cobertura": {
+      "0.5": 0.579113,
+      "0.7": 0.64755,
+      "0.9": 0.713243,
+      "1.0": 0.73801
+    },
+    "leitura": "AURC menor e melhor; se `ordena_melhor_que_o_acaso` for falso, a confianca nao carrega informacao e qualquer ganho de cobertura parcial e ilusao"
+  },
+  "ordena_no_teste": true,
+  "nao_e": "recalibracao: o limiar nao foi revarrido no teste, e o artefato que o elo de observacao le continua o mesmo",
+  "hash_resultado": "sha256:241df515752ab308dc74af956f5e1155d1507ac753cd52f04d6c42ff727ffa4c"
+}

@@ -1,0 +1,99 @@
+{
+ "regra": "sustentado se limite inferior do IC95% > 0",
+ "B": 400,
+ "bootstrap": 2000,
+ "grupo": "CD_FCU",
+ "populacao": "pontos de teste FCU positivo/negativo",
+ "por_coorte": {
+  "rmpa": {
+   "pontos": 2354,
+   "positivos": 241,
+   "comunidades": 97,
+   "auc_congelado": 0.8743698856908331,
+   "margem_v9_gate": {
+    "auc_media_sementes": 0.9264167876001751,
+    "ganho": 0.052046901909342025,
+    "ic95": [
+     0.020326044311961153,
+     0.10141720591873653
+    ],
+    "sementes_favoraveis": 6,
+    "sementes_ativas": 6,
+    "leitura": "sustentado",
+    "conferencia_com_curvas": 0.0
+   },
+   "uniforme_gate": {
+    "auc_media_sementes": 0.9032957408494736,
+    "ganho": 0.028925855158640545,
+    "ic95": [
+     0.008961429873708907,
+     0.06187569571628591
+    ],
+    "sementes_favoraveis": 6,
+    "sementes_ativas": 6,
+    "leitura": "sustentado",
+    "conferencia_com_curvas": 0.0
+   }
+  },
+  "manaus": {
+   "pontos": 21293,
+   "positivos": 48,
+   "comunidades": 151,
+   "auc_congelado": 0.9152624146858084,
+   "margem_v9_gate": {
+    "auc_media_sementes": 0.9152624146858085,
+    "ganho": 1.1102230246251565e-16,
+    "ic95": [
+     -1.1102230246251565e-16,
+     1.1102230246251565e-16
+    ],
+    "sementes_favoraveis": 0,
+    "sementes_ativas": 0,
+    "leitura": "sem atualizacao (filtro de suporte)",
+    "conferencia_com_curvas": 0.0
+   },
+   "uniforme_gate": {
+    "auc_media_sementes": 0.9152624146858085,
+    "ganho": 1.1102230246251565e-16,
+    "ic95": [
+     -1.1102230246251565e-16,
+     1.1102230246251565e-16
+    ],
+    "sementes_favoraveis": 0,
+    "sementes_ativas": 0,
+    "leitura": "sem atualizacao (filtro de suporte)",
+    "conferencia_com_curvas": 0.0
+   }
+  },
+  "curitiba": {
+   "pontos": 7422,
+   "positivos": 11,
+   "comunidades": 284,
+   "auc_congelado": 0.8773567547012426,
+   "margem_v9_gate": {
+    "auc_media_sementes": 0.8773567547012426,
+    "ganho": 0.0,
+    "ic95": [
+     -1.1102230246251565e-16,
+     1.1102230246251565e-16
+    ],
+    "sementes_favoraveis": 0,
+    "sementes_ativas": 0,
+    "leitura": "sem atualizacao (filtro de suporte)",
+    "conferencia_com_curvas": 0.0
+   },
+   "uniforme_gate": {
+    "auc_media_sementes": 0.8773567547012426,
+    "ganho": 0.0,
+    "ic95": [
+     -1.1102230246251565e-16,
+     1.1102230246251565e-16
+    ],
+    "sementes_favoraveis": 0,
+    "sementes_ativas": 0,
+    "leitura": "sem atualizacao (filtro de suporte)",
+    "conferencia_com_curvas": 0.0
+   }
+  }
+ }
+}

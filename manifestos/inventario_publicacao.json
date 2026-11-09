@@ -1,0 +1,2419 @@
+{
+  "tipo": "inventario_do_recorte_atual",
+  "quando_utc": "2026-11-07T21:38:40.400143+00:00",
+  "regra": "Todos os arquivos da publicação exceto este inventário; exclui ambiente, caches e dados de trabalho.",
+  "arquivos": [
+    {
+      "caminho": ".gitattributes",
+      "bytes": 84,
+      "sha256": "ccf2d4fffdc862f80e0c82adfa3f8ab7142b4c7f717eb4d3ab05e1befa60afef"
+    },
+    {
+      "caminho": ".gitignore",
+      "bytes": 136,
+      "sha256": "889114e0c30682574c387dfcc0762682f742b8ea55a55acc8fd0d1b4fe9ee14d"
+    },
+    {
+      "caminho": "README.md",
+      "bytes": 5018,
+      "sha256": "080c33206a2cb14d8db918325e96b8d3d4d0fe4bf7c1fa3a70b4409339068870"
+    },
+    {
+      "caminho": "artigo/README.md",
+      "bytes": 427,
+      "sha256": "5a9e3b96637d1298cb4541e5e8e13a6629b9b1d421b8f03f50a6c47b9a4d4d7c"
+    },
+    {
+      "caminho": "artigo/REV-P_artigo_atual.pdf",
+      "bytes": 7589221,
+      "sha256": "f4bc18ca8cce9744e4f438af5e0bf2fe5863bd6bc79cfcd12f167f9001302c7e"
+    },
+    {
+      "caminho": "artigo/fonte/artigo.tex",
+      "bytes": 46836,
+      "sha256": "896b74e687a183c2423823aed91c160e4afd9a92fed10460d764700aa073d06c"
+    },
+    {
+      "caminho": "artigo/fonte/figuras/README.md",
+      "bytes": 271,
+      "sha256": "d126ef6d49b3df30ac507fb3ab0f99a43fe8d74921538cc3e1fed965a24126c2"
+    },
+    {
+      "caminho": "artigo/fonte/figuras/fig_imagem_bandas.png",
+      "bytes": 4207765,
+      "sha256": "ecd534f5a26eb2276375cd24c0049b73e89cf8f232b184ad5fb813ea8cd62b49"
+    },
+    {
+      "caminho": "artigo/fonte/figuras/fig_treino_mascarado.png",
+      "bytes": 2201884,
+      "sha256": "8cf4f6ee64c98fa4c794c5f0749b760c5b1f37f9b4ab3ddbc44ae9e58b85f3af"
+    },
+    {
+      "caminho": "artigo/fonte/figuras/metodooododo.jpeg",
+      "bytes": 1470888,
+      "sha256": "4d7eef921f96f3bc9ca15e70a7cc42644eac600bce29a71382e65cc4d1768651"
+    },
+    {
+      "caminho": "artigo/fonte/referencias.bib",
+      "bytes": 20939,
+      "sha256": "874aaddaa5966c0ca69e54e4bab22f6fb7cf972471a04a9af8cd499aaae9c791"
+    },
+    {
+      "caminho": "codigo/README.md",
+      "bytes": 985,
+      "sha256": "bfa30d663b80aaad007589d4926c7426020afe4cbd5ac6dfa319286149e9ff87"
+    },
+    {
+      "caminho": "codigo/pytest.ini",
+      "bytes": 74,
+      "sha256": "a4f2c6dcd0cf009c44bfe3e6a5f2ca44d79fd1988e1cb734594faa3c8ba3edf9"
+    },
+    {
+      "caminho": "codigo/scripts/challengers/README.md",
+      "bytes": 695,
+      "sha256": "eb7f506eaa78513df8964ca336dc41107ccbea03236db155ef2b99a9f3339d31"
+    },
+    {
+      "caminho": "codigo/scripts/challengers/autopsia_curitiba.py",
+      "bytes": 32329,
+      "sha256": "ba9fbd32e84798532274cccbd744296b04bbd77af40e622e9ddc68272b66a026"
+    },
+    {
+      "caminho": "codigo/scripts/challengers/harness_comparacao.py",
+      "bytes": 25420,
+      "sha256": "3588046221d2653f1a15922e1b419f929f02614a7a16b2981f2b974de61eab3f"
+    },
+    {
+      "caminho": "codigo/scripts/challengers/matriz_validacao.py",
+      "bytes": 24309,
+      "sha256": "b08bb9e2d4667e1e69d77c45fb851b4fa783014bb76a979c886d6d138b368ffa"
+    },
+    {
+      "caminho": "codigo/scripts/challengers/protocolo_experimental.py",
+      "bytes": 30513,
+      "sha256": "5ff2b97bd0aa9a1299d0885f8de1c79940a3a2e4210a46042729bcf93e7593de"
+    },
+    {
+      "caminho": "codigo/scripts/chuva/README.md",
+      "bytes": 866,
+      "sha256": "e524242d81568b2b7d93776814b2d8fd5ed608e9b1c92d791bdf97f3561e8d62"
+    },
+    {
+      "caminho": "codigo/scripts/chuva/__init__.py",
+      "bytes": 73,
+      "sha256": "41954e146ed1d06b36b845b236823a8d2d57be64f8bf13614233d63bf5849d41"
+    },
+    {
+      "caminho": "codigo/scripts/chuva/case_crossover.py",
+      "bytes": 47350,
+      "sha256": "68ee509d4472643ef850c9ee6902c3d5dbddea8987185af950cacff7726a5bd7"
+    },
+    {
+      "caminho": "codigo/scripts/chuva/casos_das_centrais.py",
+      "bytes": 22182,
+      "sha256": "9e4512ebe337f17274e04c0cbee462d5e3e3ed818aefe30311acb62280bfab7d"
+    },
+    {
+      "caminho": "codigo/scripts/chuva/contrato_chuva.py",
+      "bytes": 19952,
+      "sha256": "4480dd55797bb0340f043e0c705477ed25808b6ab7ab8b2503b023abd5a62796"
+    },
+    {
+      "caminho": "codigo/scripts/chuva/procedencia_das_datas.py",
+      "bytes": 18245,
+      "sha256": "ecdfa3864f2499284af8f47e46425d362d74fcdef29a92f5646c70b9aa5458bf"
+    },
+    {
+      "caminho": "codigo/scripts/chuva/providers.py",
+      "bytes": 8580,
+      "sha256": "832f498f06b359be6fe198048ad982464a32e0e7b4f00f9d7bc11261c8e3f2ed"
+    },
+    {
+      "caminho": "codigo/scripts/chuva/serie_por_celula.py",
+      "bytes": 14578,
+      "sha256": "a0c0fa85c58109bba696511d5900daae511e03f46d3b660c9dd3812dca21cf50"
+    },
+    {
+      "caminho": "codigo/scripts/evolucao_escopo/README.md",
+      "bytes": 561,
+      "sha256": "8c903107d8c3af1471bec2ef04875c821be5e8f7c36a42e510204022d661d11a"
+    },
+    {
+      "caminho": "codigo/scripts/evolucao_escopo/comum.py",
+      "bytes": 2845,
+      "sha256": "399c8644869eeebdaf77d7f0f7f00a3e4ac4e0e7c4c307df5a3528cbf82b82d9"
+    },
+    {
+      "caminho": "codigo/scripts/evolucao_escopo/contexto_local.py",
+      "bytes": 7983,
+      "sha256": "1bc81b4a07454244e6e05939558a6b637b37bd3d451c2c7ec595111055a2f938"
+    },
+    {
+      "caminho": "codigo/scripts/evolucao_escopo/fisica_local.py",
+      "bytes": 5722,
+      "sha256": "a4b3f4533880f9e729ecd5d4c5e4493274cb3a516539b22c0ef750b76bbb3f33"
+    },
+    {
+      "caminho": "codigo/scripts/evolucao_local/README.md",
+      "bytes": 433,
+      "sha256": "e1f6055a2048e11b04d691c07343d84bdfb4aa203b373ea4ec1d7aad7fec380d"
+    },
+    {
+      "caminho": "codigo/scripts/evolucao_local/eal_comum.py",
+      "bytes": 4310,
+      "sha256": "da4b73fc71f5382e55224c7e66a0e4ac2e19d560915a7e8ec20d3c42c4f4bef8"
+    },
+    {
+      "caminho": "codigo/scripts/externo/README.md",
+      "bytes": 575,
+      "sha256": "dbb615b3ef35c467be22e83345950462bf8dba66fed37e3a73b0f8de47a0c8b4"
+    },
+    {
+      "caminho": "codigo/scripts/externo/aq_chamados02_verificar_requisitos.py",
+      "bytes": 21064,
+      "sha256": "b2de5963c465dc5a269f3611c19dfdd62eb587a6a7d88d8ec97818230bb67cba"
+    },
+    {
+      "caminho": "codigo/scripts/externo/fn02_auditar_serie_floodnet.py",
+      "bytes": 6588,
+      "sha256": "53c9eb12545cc98419e909f5d1104627808e5df21d3636c12ea73313dc95203c"
+    },
+    {
+      "caminho": "codigo/scripts/fechamento/README.md",
+      "bytes": 427,
+      "sha256": "d21b3699186b63b488550b05dd817c5e20c4cede3755e96375ecdcdfd332666b"
+    },
+    {
+      "caminho": "codigo/scripts/fechamento/fa_comum.py",
+      "bytes": 6542,
+      "sha256": "56e57ef5111631076d40bc73b3f0afc17ca123dc7ef3ddf03ce19c9fffb20c3b"
+    },
+    {
+      "caminho": "codigo/scripts/fundamentacao_artigo/README.md",
+      "bytes": 1071,
+      "sha256": "5cd33e8c6c847310ce15534fa195f42563ecfdb5613e1a88f727a37e17a0857c"
+    },
+    {
+      "caminho": "codigo/scripts/fundamentacao_artigo/f01_ic_ganho_atualizacao.py",
+      "bytes": 4062,
+      "sha256": "e0ba61ca95384ad23d2139325cb05151228aabe12298ba2cb1968c3473754331"
+    },
+    {
+      "caminho": "codigo/scripts/fundamentacao_artigo/f02_chuva_gatilho_recife.py",
+      "bytes": 6009,
+      "sha256": "824a09183e1b738e82087a3a4dcff53f0474d933afd9bf7922ae08fe819f4b3d"
+    },
+    {
+      "caminho": "codigo/scripts/fundamentacao_artigo/f03_ic_transferencia_coortes.py",
+      "bytes": 2761,
+      "sha256": "7d98e413ebd8e58461f59ce0dba80de3e945bfb5285c12d986ae2993da124ee1"
+    },
+    {
+      "caminho": "codigo/scripts/fundamentacao_artigo/f04_encosta_e_retencao.py",
+      "bytes": 6045,
+      "sha256": "f1b79778cbf728b37a031d23599427479c3674f3518c5737da24b32c4cb2df20"
+    },
+    {
+      "caminho": "codigo/scripts/fundamentacao_artigo/f05_territorio_novo.py",
+      "bytes": 32777,
+      "sha256": "735dea542d56bca9a4a0ef71ec3275a37759416d69c94bfd616817c84aba7b49"
+    },
+    {
+      "caminho": "codigo/scripts/fundamentacao_artigo/f06_ic_auc_ruas_recife.py",
+      "bytes": 2274,
+      "sha256": "490dc791a2952287835afb1de1d57018130c5725820ed49d1e35948834ff85f4"
+    },
+    {
+      "caminho": "codigo/scripts/fundamentacao_artigo/f07_estratos_coortes.py",
+      "bytes": 3631,
+      "sha256": "0a145c19d84a5fa9e701451dea678f531d6c4a6176164631034b5c473c345590"
+    },
+    {
+      "caminho": "codigo/scripts/fundamentacao_artigo/f08_ruas_e_comunidades.py",
+      "bytes": 5864,
+      "sha256": "a0a105b5b97b48532fb419640ef6fb0614fc7e30a19afc09fc82d933863a00c1"
+    },
+    {
+      "caminho": "codigo/scripts/geo/README.md",
+      "bytes": 1986,
+      "sha256": "c5c5a94db16fd862c44a7a9bff680aba709b66608dd3a00ff7b3999b849b0f9e"
+    },
+    {
+      "caminho": "codigo/scripts/geo/acervo_espacial.py",
+      "bytes": 73484,
+      "sha256": "ff4ae0ece517416ad13dcd35ebb914c50ac382950cf9d9a20931be74d18de2d8"
+    },
+    {
+      "caminho": "codigo/scripts/geo/agua_permanente_jrc.py",
+      "bytes": 12103,
+      "sha256": "23af4d2af4e03384ece35eb39bc59f4f3e7815ceac235a976e4b7625f95757e7"
+    },
+    {
+      "caminho": "codigo/scripts/geo/bacias_hydrobasins.py",
+      "bytes": 17925,
+      "sha256": "1f47bf55ebd3cd7709bb036439d8964075a18585fb044b033b869eabade17c52"
+    },
+    {
+      "caminho": "codigo/scripts/geo/cems01_pacote_areal.py",
+      "bytes": 16882,
+      "sha256": "9ed10b36c286dc6840ee3e901dab0dca42ea2a6dc3ba128d6cf5b87137d58c5f"
+    },
+    {
+      "caminho": "codigo/scripts/geo/cems03_amostrar_pontos.py",
+      "bytes": 26558,
+      "sha256": "0df77c4c363d4f0bd19381abe8149fe42768a065d067acd8333b67feeea11336"
+    },
+    {
+      "caminho": "codigo/scripts/geo/cob01_cobertura_e_solo.py",
+      "bytes": 14968,
+      "sha256": "c4b53b327cbf2c4d87d65d228d289324e2b303d91c7297e05d4fe63e4e9ae9bd"
+    },
+    {
+      "caminho": "codigo/scripts/geo/dominio_aquatico.py",
+      "bytes": 19989,
+      "sha256": "a40d10514b95f85fb641b5c3bdb6d1ae6d2732e77f999f4b8aa304b88c810bd7"
+    },
+    {
+      "caminho": "codigo/scripts/geo/geoid01_catalogo_publico.py",
+      "bytes": 7683,
+      "sha256": "1e91580cff3095ce10b84e69597315abf058ba4324bcc060f1682d396f2f6870"
+    },
+    {
+      "caminho": "codigo/scripts/geo/gfd01_eventos_do_brasil.py",
+      "bytes": 23465,
+      "sha256": "244dc2b77948cf4f90b87b99c13747df8d6ff058bd9503da17c688414db9bed6"
+    },
+    {
+      "caminho": "codigo/scripts/geo/gfd02_amostrar_terreno.py",
+      "bytes": 26780,
+      "sha256": "3507312f12fa627f87fe45ed7a24419f0ff29e538611fc75300c29113ee8824d"
+    },
+    {
+      "caminho": "codigo/scripts/geo/gfdq02_derivar_quarentena.py",
+      "bytes": 10223,
+      "sha256": "8d69f5e977f7be014d25e3806f393cad746cdd876a2530d1d86529a2abc1d100"
+    },
+    {
+      "caminho": "codigo/scripts/geo/obs01_aquisicao_dirigida.py",
+      "bytes": 17431,
+      "sha256": "50b1d0f86ed9cbbd992d64a6309e727ab1ceae1cb48c495b4b8985d121c0dfd8"
+    },
+    {
+      "caminho": "codigo/scripts/geo/obs04_instrumento_brasileiro.py",
+      "bytes": 56603,
+      "sha256": "3cf2d4acf4db8d1891f3e2d1a57c8ce612c11841eb65c9ac805f7e9d2204ff6e"
+    },
+    {
+      "caminho": "codigo/scripts/geo/obs05_referencia_brasileira.py",
+      "bytes": 19328,
+      "sha256": "a34b4dfcf5c1d7bf00582220386831c45b285a55f9f01ed4cdfbebadfd5eb74c"
+    },
+    {
+      "caminho": "codigo/scripts/geo/rfd01_replica_gfd.py",
+      "bytes": 26966,
+      "sha256": "4ba40b7a2aa43a3bdc1dc1b92941259c264c226769fc5f0f46a2b694455241e5"
+    },
+    {
+      "caminho": "codigo/scripts/geo/rfd02_eventos_brasileiros_novos.py",
+      "bytes": 19142,
+      "sha256": "a2cc37377f532c8043f3e57c4de0d94afd3767e7a116cc33ddb45a91f4a7319d"
+    },
+    {
+      "caminho": "codigo/scripts/geo/serra03_rotulo_por_sensor_duplo.py",
+      "bytes": 13461,
+      "sha256": "7c97df218f0b529cf225f65f58af834cf2d092c03e250cd89bddc83e4643d448"
+    },
+    {
+      "caminho": "codigo/scripts/geo/tc01_territorio_consultavel.py",
+      "bytes": 12269,
+      "sha256": "e40ce9b12b4bede9ab626768a6d93f3ee935228b1ee7f9d5514310626f4c0663"
+    },
+    {
+      "caminho": "codigo/scripts/ia/README.md",
+      "bytes": 2277,
+      "sha256": "4146ba5cc5aabb6a3736a6e4632f7b48396202fe3bdd8b0c0fcc23190f267b8d"
+    },
+    {
+      "caminho": "codigo/scripts/ia/avaliar_integrada_v2.py",
+      "bytes": 10166,
+      "sha256": "7757cdbffb987ae3da02aa23f65318520e43ecf6d47ba9820c833531659eb52d"
+    },
+    {
+      "caminho": "codigo/scripts/ia/conjunta_base.py",
+      "bytes": 17532,
+      "sha256": "12f396f20c8053f60680605dfc00e57fc1b15970d3098222c4e3f24441e0b580"
+    },
+    {
+      "caminho": "codigo/scripts/ia/conjunta_campanha.py",
+      "bytes": 41117,
+      "sha256": "25ea2a5ea090ab6052822dc8efc29b75649b2a4bbd8d95c4eaf7c95ba6475c61"
+    },
+    {
+      "caminho": "codigo/scripts/ia/conjunta_modelo.py",
+      "bytes": 7150,
+      "sha256": "7b4381ba04b67c66c6b31775e7fbe9e9bb310136db17447f5e8260f24dbe1355"
+    },
+    {
+      "caminho": "codigo/scripts/ia/consulta_territorial_v2.py",
+      "bytes": 5041,
+      "sha256": "a25f032b948116c24e89ad02ba98c944c66202b14d2e7ca9761f91009a7283b9"
+    },
+    {
+      "caminho": "codigo/scripts/ia/fechamento_campanha.py",
+      "bytes": 31218,
+      "sha256": "3583e8df494aa0dff87709d3a6505358326b876737e84dc612cb34af337fa5d0"
+    },
+    {
+      "caminho": "codigo/scripts/ia/fechamento_diagnostico.py",
+      "bytes": 19909,
+      "sha256": "d97cb06221994e226275c94c454f9471ed3d4e91a42c42a8c1df2edead27022f"
+    },
+    {
+      "caminho": "codigo/scripts/ia/fechamento_modelo.py",
+      "bytes": 4541,
+      "sha256": "5efc1dfc49a8f980db02a599ef904cce4e0611483f270af2640d46a17cbe903e"
+    },
+    {
+      "caminho": "codigo/scripts/ia/fechamento_temporal_base.py",
+      "bytes": 10080,
+      "sha256": "5950757eac5378bd661ec1a4c105291aa2ff009b4322802e1ee9d75b261fe9b7"
+    },
+    {
+      "caminho": "codigo/scripts/ia/ia_integrada.py",
+      "bytes": 26786,
+      "sha256": "417d65b951fa97bd8cc6f478343f5eb9ba0c2b2b4ef8fc64c102fd5c188ba1dd"
+    },
+    {
+      "caminho": "codigo/scripts/ia/ia_integrada_v2.py",
+      "bytes": 12662,
+      "sha256": "696c7f34c66d872314b64baa71e716468f46419d39ddc5b840f031297b86f08e"
+    },
+    {
+      "caminho": "codigo/scripts/ia/memoria_integrada.py",
+      "bytes": 3046,
+      "sha256": "ec5ca64e7760fc614489b32d42270332f3f578f3d7643b5833a4df974c69354a"
+    },
+    {
+      "caminho": "codigo/scripts/ia/modelo_integrado.py",
+      "bytes": 2485,
+      "sha256": "956b620f5899fabead63b462522daf41b1878f7fd01ea21172bed43a0dad73ad"
+    },
+    {
+      "caminho": "codigo/scripts/ia/modelo_integrado_v2.py",
+      "bytes": 5272,
+      "sha256": "ccbf4a1b8d345e312e175807f07b905cdb5148c5733e8ff27ccfbcead30f501d"
+    },
+    {
+      "caminho": "codigo/scripts/ia/mt11_fechamento.py",
+      "bytes": 32217,
+      "sha256": "723d77df46a48e38a5410f7cd38ca9485d8815783bf45aa968f09416ac1f0f85"
+    },
+    {
+      "caminho": "codigo/scripts/ia/retomar_avaliacao_v2.py",
+      "bytes": 2526,
+      "sha256": "d7c079726bcf62322a71a5b8dd5446157c0d335354fcd33bf0ec41d166b5a0f5"
+    },
+    {
+      "caminho": "codigo/scripts/ia/revisao_humana_v2.py",
+      "bytes": 8092,
+      "sha256": "52de8500db6ee3f3bc15658f99e7ec25a6d5acd5d6db116d67642db3c6b429ab"
+    },
+    {
+      "caminho": "codigo/scripts/ia/rodada2_confirmacao.py",
+      "bytes": 10831,
+      "sha256": "fd3ea2be0e8b169299ddb2a230e70e4c4302df3146e1e11052d55cfe931163ed"
+    },
+    {
+      "caminho": "codigo/scripts/ia/rodada2_referencia_optica.py",
+      "bytes": 26390,
+      "sha256": "76286ccc57a61553c3b5b5b680691958c6cbddf4775eab6f95279d733a2a16ec"
+    },
+    {
+      "caminho": "codigo/scripts/ia/rodada3_confirmacao.py",
+      "bytes": 47808,
+      "sha256": "240be1525670f616c75d382836d420028e74cea098ca61db105f5b48ff058f59"
+    },
+    {
+      "caminho": "codigo/scripts/ia/rodada3_fabdem_gee.py",
+      "bytes": 5491,
+      "sha256": "892feb77efa37773d52a1cac59b3beb0bf876912fc8c2d0e1c05437833880bfd"
+    },
+    {
+      "caminho": "codigo/scripts/ia/rodada3_ledger.py",
+      "bytes": 22639,
+      "sha256": "2d0060cf1c4242eaa08a6744ebfd660ac92f7669050ce12a2161bda9e7f958f1"
+    },
+    {
+      "caminho": "codigo/scripts/ia/servico_ia_integrada.py",
+      "bytes": 2519,
+      "sha256": "f3cbc885c1e659eb6162c53ed1438a698a3c7ead9e75b308f1faf4549819e047"
+    },
+    {
+      "caminho": "codigo/scripts/ia/servico_ia_integrada_v2.py",
+      "bytes": 1818,
+      "sha256": "a1bf79db95b98d192f5663682fa67e1f8940c83c7b45dfdcc34900a138645f88"
+    },
+    {
+      "caminho": "codigo/scripts/manutencao/README.md",
+      "bytes": 614,
+      "sha256": "b536e4293a168d837e3565df1f44e67bcf696d2766c1adacc97bf3c52197a536"
+    },
+    {
+      "caminho": "codigo/scripts/manutencao/executar_serializado.py",
+      "bytes": 12326,
+      "sha256": "e9703a395c4c6ba31a19ccc1757eae089c9f2eed8bfb81b713739ed7c4dcc004"
+    },
+    {
+      "caminho": "codigo/scripts/manutencao/pegada_de_disco.py",
+      "bytes": 12508,
+      "sha256": "6bb60a38a99ff4f71888ddcee6052399aec690e1bdea4c1fe31d32dd20fd2515"
+    },
+    {
+      "caminho": "codigo/scripts/manutencao/workers_seguros.py",
+      "bytes": 3596,
+      "sha256": "43ee37d87aa76ffb7e91d724d7103e7c4102351dd35b7dbb573e19f631b2211e"
+    },
+    {
+      "caminho": "codigo/scripts/metodo/README.md",
+      "bytes": 5617,
+      "sha256": "7aff8ef9d411406036a30965a5fd5aaa59566e069dc3a274b6b1b9112bf2df07"
+    },
+    {
+      "caminho": "codigo/scripts/metodo/admissao_cientifica.py",
+      "bytes": 21249,
+      "sha256": "3965561fd2f6652096a24b00e797d3cab1428e75f60e7f94c134d1fe60d3a15d"
+    },
+    {
+      "caminho": "codigo/scripts/metodo/afirmacao_dos_servidos.py",
+      "bytes": 5596,
+      "sha256": "ea54482232ce4a132227c9d3fbf5458266ec8329b7152890cef25fa35df3b015"
+    },
+    {
+      "caminho": "codigo/scripts/metodo/auditoria_pre_treino.py",
+      "bytes": 114758,
+      "sha256": "7795e00b5ae95cae68438e6d00b535cbffe72d25f366cb2733ee3c8ee2db8ce6"
+    },
+    {
+      "caminho": "codigo/scripts/metodo/auditoria_tc01.py",
+      "bytes": 11671,
+      "sha256": "e54a40a42a08c485ad28ad111aa5ceaf4b9d613c0f492bea960f51b49c1964d5"
+    },
+    {
+      "caminho": "codigo/scripts/metodo/ci_f1_floodnet_negativo_observado.py",
+      "bytes": 6638,
+      "sha256": "252fbd5857d910fef2d519582036ebea20dd039e44c533435b463ab96b0cf605"
+    },
+    {
+      "caminho": "codigo/scripts/metodo/ci_n1_encoder_por_ponto.py",
+      "bytes": 11443,
+      "sha256": "17e5204b89c21e83796a52467189b3035c649a177552984c5612f749ad8b627a"
+    },
+    {
+      "caminho": "codigo/scripts/metodo/ci_v1_vizinhanca_multiescala.py",
+      "bytes": 7652,
+      "sha256": "3e3b74bb9871c5a8bf8e2a0c918848da823669011dfbd9b0e0b9d4630ce07efa"
+    },
+    {
+      "caminho": "codigo/scripts/metodo/contexto_de_desenvolvimento.py",
+      "bytes": 23028,
+      "sha256": "526b4085d851ad02cfa7d618b63f120ca444f6c36be6e828c983009ed710fa01"
+    },
+    {
+      "caminho": "codigo/scripts/metodo/contrato_do_fenomeno.py",
+      "bytes": 23790,
+      "sha256": "7b368e5d6790e698b20ccc9f68d1bb2ca951ae182dd5ab6770f7a6469b342aa2"
+    },
+    {
+      "caminho": "codigo/scripts/metodo/cortes_por_evento.py",
+      "bytes": 9128,
+      "sha256": "bce0563ec9f868f1dad3c73ff7c2227cfde7191c72958f3cee8e0b9d103b5b4c"
+    },
+    {
+      "caminho": "codigo/scripts/metodo/ctx04_terreno_versus_contexto.py",
+      "bytes": 11080,
+      "sha256": "88a1305b90512108eda41930ad6388406f601e9a668b278f039e91d2e37bfd14"
+    },
+    {
+      "caminho": "codigo/scripts/metodo/fechamento_do_framework.py",
+      "bytes": 30771,
+      "sha256": "40da84ca7f671aeac41b3cf1b00549c1706d06a8554390064b5d346875e6bd17"
+    },
+    {
+      "caminho": "codigo/scripts/metodo/generalizacao_por_reservas.py",
+      "bytes": 32940,
+      "sha256": "1a015b99e1a811e9c1a27cd779291cc17bc42bf0666a289ac8262efcf7b6effc"
+    },
+    {
+      "caminho": "codigo/scripts/metodo/ms1_posicao_topografica.py",
+      "bytes": 10332,
+      "sha256": "768f12cb4c1acaabd22a04978b9844ef4e170b03802ed4d2efa90957e6ec29cc"
+    },
+    {
+      "caminho": "codigo/scripts/metodo/ms2_quadro_do_negativo.py",
+      "bytes": 8179,
+      "sha256": "21d46214dfe22ac179a18c6a91a560e7f9dc19dd1ee767108c858567452eaf86"
+    },
+    {
+      "caminho": "codigo/scripts/metodo/ms3_decomposicao_do_quadro.py",
+      "bytes": 11417,
+      "sha256": "5136a3a021c191b94abf73f9fd188aa831c1ccd48b47d14ff4b046d730baa1d9"
+    },
+    {
+      "caminho": "codigo/scripts/metodo/ms4_bracos_de_desenvolvimento.py",
+      "bytes": 11810,
+      "sha256": "4bb22b8ff57bcf4518dc8d87f1710b13f46b718bce4881a6a4ea0a4990f8dd5c"
+    },
+    {
+      "caminho": "codigo/scripts/metodo/ms5_recusa_decomposta.py",
+      "bytes": 10099,
+      "sha256": "731ccafa2d947c1f86445cf7468faeff2456132af594bcc88e7894c065a1ce46"
+    },
+    {
+      "caminho": "codigo/scripts/metodo/ms6_quadro_de_treino_para_consulta.py",
+      "bytes": 9509,
+      "sha256": "8972424ba81c249ec52bd02aed327aef3a238de371b35875e4d747fb6bf02fc9"
+    },
+    {
+      "caminho": "codigo/scripts/metodo/ms7_territorio_curado.py",
+      "bytes": 14727,
+      "sha256": "2c8796a6f5e5eba7a6faf4a7cefe2cb607d9bbbfd97a1c5e9665cc1d29169a58"
+    },
+    {
+      "caminho": "codigo/scripts/metodo/mt01_bacias_globais.py",
+      "bytes": 2396,
+      "sha256": "70b853fefada117494d97aea2b248ece067d4162ade4d8a1c0fc95b66b4d942d"
+    },
+    {
+      "caminho": "codigo/scripts/metodo/mt01_experimento.py",
+      "bytes": 32269,
+      "sha256": "83af44b38c6b47b0243ccef092238d556ac028b3658152d199f2cd0e200a4165"
+    },
+    {
+      "caminho": "codigo/scripts/metodo/mt01_independencia.py",
+      "bytes": 11612,
+      "sha256": "98fdc627ad42d0d645c1dc1d18f15d6de34e4c825cf518a9182f864e67f75431"
+    },
+    {
+      "caminho": "codigo/scripts/metodo/mt01_ocorrencia_jrc.py",
+      "bytes": 3389,
+      "sha256": "82dcae6cd0e58aa10212d5d17969102e9b2fdd0bc79e0575bc083e88a59a7d1b"
+    },
+    {
+      "caminho": "codigo/scripts/metodo/mt01_populacao.py",
+      "bytes": 16039,
+      "sha256": "68d56cafe68b2fdcc6643d1de10a8d34e9157a4804e4fda0881779bae6a2ae99"
+    },
+    {
+      "caminho": "codigo/scripts/metodo/mt01_pos_hoc.py",
+      "bytes": 9244,
+      "sha256": "e5c476602d84a00ad92f2a5fc0cac2f59bb8f6eefefb765932a1a27d7a1a8fc5"
+    },
+    {
+      "caminho": "codigo/scripts/metodo/mt01_relatorio.py",
+      "bytes": 13974,
+      "sha256": "e6de360b6e5dfc425ad1e5b0e570a484018f2f12779bd417f426f3dcea32f1ec"
+    },
+    {
+      "caminho": "codigo/scripts/metodo/mt02_atributos.py",
+      "bytes": 6282,
+      "sha256": "685f938316cbcb8a3e24209b73a4e27164b33a3fb07c8a16157addbc3117e46e"
+    },
+    {
+      "caminho": "codigo/scripts/metodo/mt02_cobertura_v2.py",
+      "bytes": 8273,
+      "sha256": "76e655de6495e8229aa24bdb908d15988eaad020e63c632fe65c524ea38980b1"
+    },
+    {
+      "caminho": "codigo/scripts/metodo/mt02_experimento.py",
+      "bytes": 14227,
+      "sha256": "d504647ea8253e6784700926783e03fcc50cf1eef7e2dc0d82624f15ad46007e"
+    },
+    {
+      "caminho": "codigo/scripts/metodo/mt03_atributos_novos.py",
+      "bytes": 5526,
+      "sha256": "c41c88b0642270cd123e5881d57d71357c563c8bd8da62efd665019fa2568fd3"
+    },
+    {
+      "caminho": "codigo/scripts/metodo/mt03_cems_desenvolvimento.py",
+      "bytes": 16942,
+      "sha256": "051a31a22b6459c97bce64eef2746020f763ac327f93738905244168f116a94c"
+    },
+    {
+      "caminho": "codigo/scripts/metodo/mt03_conexao_hydrosheds.py",
+      "bytes": 15305,
+      "sha256": "d747bc56548e8aa7b532443f185387155c29699ed336070d4eb278cc09e1188d"
+    },
+    {
+      "caminho": "codigo/scripts/metodo/mt03_ds06_v8.py",
+      "bytes": 12484,
+      "sha256": "3d84633fcd57f7b8f22d213cc656106ccf7178211c0a4e7beade8a5542179b07"
+    },
+    {
+      "caminho": "codigo/scripts/metodo/mt03_experimento.py",
+      "bytes": 19612,
+      "sha256": "7ecbbdcbf9a3f51b530b73015d8a08cd9e87121ec0c5e83c522598ce068fa618"
+    },
+    {
+      "caminho": "codigo/scripts/metodo/mt03_triagem_cems.py",
+      "bytes": 20452,
+      "sha256": "e8ce2581bc35d43b11f94b833ee854d885157521b7903e31daf22da3de9a8181"
+    },
+    {
+      "caminho": "codigo/scripts/metodo/mt04_aquisicao.py",
+      "bytes": 15715,
+      "sha256": "42ab70f3d67e90c9b1ec4df804283ab468d5c6945d7bdf4abe8ea0a31483f49e"
+    },
+    {
+      "caminho": "codigo/scripts/metodo/mt04_confirmacao.py",
+      "bytes": 9849,
+      "sha256": "e00afd5e4d48496fdc4029f41d2ee1365c09fcf3f485dd934313003cf1816221"
+    },
+    {
+      "caminho": "codigo/scripts/metodo/mt04_enxurrada.py",
+      "bytes": 9891,
+      "sha256": "ba8c700a76d2e46935241d07cf658de000b78222661a0f1487f8262342709642"
+    },
+    {
+      "caminho": "codigo/scripts/metodo/mt05_transferencia_sem_amostra.py",
+      "bytes": 12104,
+      "sha256": "85007efd125fa0cab06de98156e301e0fde70407291f90a60e32d6695c7ea696"
+    },
+    {
+      "caminho": "codigo/scripts/metodo/mt06_cobertura_observabilidade.py",
+      "bytes": 17225,
+      "sha256": "5cf3dff12f8aed566ddf243f65918026487700b95ed8d855f98ed40e2c113c05"
+    },
+    {
+      "caminho": "codigo/scripts/metodo/mt08_teto_compartilhado.py",
+      "bytes": 18432,
+      "sha256": "3fa776beb0de6ad94158ef41147656ec6f371b7f1bd4161a66ef352d981072fb"
+    },
+    {
+      "caminho": "codigo/scripts/metodo/mt09_identificacao_causal.py",
+      "bytes": 24306,
+      "sha256": "36622c3ba1d71070d27fc6cb356eb5f52c964df22a6f52cbed81a6a48fd8d3da"
+    },
+    {
+      "caminho": "codigo/scripts/metodo/mt10_sensibilidade_pre_evento.py",
+      "bytes": 3570,
+      "sha256": "2872e23c3242e9215e40d884381981dbebf10a3436554eda3195338665b945af"
+    },
+    {
+      "caminho": "codigo/scripts/metodo/mt10_teto_transdutivo.py",
+      "bytes": 11398,
+      "sha256": "ddcb53200754bce764f44bf8fc1af1a33c92fe8603950b61e5be4f6e4f187c20"
+    },
+    {
+      "caminho": "codigo/scripts/metodo/mt11_candidatos_transdutivo.py",
+      "bytes": 7749,
+      "sha256": "674587a1c6bbef6ee7ae289d128c3a0da5b51133c5f731b4452b9ee0277ec0e0"
+    },
+    {
+      "caminho": "codigo/scripts/metodo/mt11_confirmatorio_transdutivo.py",
+      "bytes": 33702,
+      "sha256": "101300f6c4bf83fd36b9438fb4cafbb6e1fac1dd4dbd625979b3335baaecc640"
+    },
+    {
+      "caminho": "codigo/scripts/metodo/mt11_emenda.py",
+      "bytes": 28031,
+      "sha256": "4752e8affdf24be9475e89e976299b727b91aa459263b57b36acf3da143a0305"
+    },
+    {
+      "caminho": "codigo/scripts/metodo/mt11_emenda_s1.py",
+      "bytes": 12173,
+      "sha256": "e222190b6168efa0df657ecda26f5763192f20c7321679eae88286693f66986c"
+    },
+    {
+      "caminho": "codigo/scripts/metodo/mt11_fabdem_transporte.py",
+      "bytes": 8874,
+      "sha256": "6fb5b580ad9f7cdf64b6235c4d93c296323b26b3d06c2f5d5db30a61f54fc196"
+    },
+    {
+      "caminho": "codigo/scripts/metodo/mt11_independencia.py",
+      "bytes": 10549,
+      "sha256": "4ecce8bde20c115f0f5c9b0445a5fb9e1b33179fe8a1d4a09bfd0d71b66e056c"
+    },
+    {
+      "caminho": "codigo/scripts/metodo/mt11_poder.py",
+      "bytes": 2436,
+      "sha256": "9d906942c01edf51556f2966d95ad26a4a722e9e292cd626455423973a23cbf8"
+    },
+    {
+      "caminho": "codigo/scripts/metodo/mt11_terreno_executar.py",
+      "bytes": 7347,
+      "sha256": "5615a256c146b0d2a1dfbd89df91325cfa97f241682e46c1939f5cbe82ee3acd"
+    },
+    {
+      "caminho": "codigo/scripts/metodo/mt11_verificacao_independente.py",
+      "bytes": 4000,
+      "sha256": "be7751b618fb4cb4577c7496b94c39ce51e345cafc4a6fac3ae32de13a72cafc"
+    },
+    {
+      "caminho": "codigo/scripts/metodo/rastreio_de_impacto.py",
+      "bytes": 30761,
+      "sha256": "72f5bb3c2b28a224db987a569f0749685f6d5af7d133546d8d835c5215f32fe5"
+    },
+    {
+      "caminho": "codigo/scripts/metodo/registro_aberturas.py",
+      "bytes": 5419,
+      "sha256": "7cf671b91e2adf81d351ab8916b124e6a8d0bb10086892a2123a011b4de61efc"
+    },
+    {
+      "caminho": "codigo/scripts/metodo/relatorio_de_fechamento.py",
+      "bytes": 52313,
+      "sha256": "0fa66700efa073104163379c42893b5d26039abf8529e5aa680eab2a08d4610e"
+    },
+    {
+      "caminho": "codigo/scripts/metodo/reservas_examinadas.py",
+      "bytes": 11476,
+      "sha256": "ff83b029493209e78c9a0a249c957e77ee0143612e3b6d25836695e8f18feb1a"
+    },
+    {
+      "caminho": "codigo/scripts/metodo/resposta_lugar_novo.py",
+      "bytes": 11148,
+      "sha256": "4ffee603d52c1748ec1e7b61492631351b4f296814dc0a5df0abf71558e11766"
+    },
+    {
+      "caminho": "codigo/scripts/metodo/resposta_lugar_reservado.py",
+      "bytes": 6755,
+      "sha256": "1c799ae09b44fdd0c7398f50deb3704c6531192a4d9c2ae7d08eb892d7b99cf4"
+    },
+    {
+      "caminho": "codigo/scripts/metodo/verdade_observacional.py",
+      "bytes": 29488,
+      "sha256": "ab7c99197e91f36b4372c18f643e06a70f92e334f8330e0a646a51672b6ffdff"
+    },
+    {
+      "caminho": "codigo/scripts/metodo/verificar_fechamento_independente.py",
+      "bytes": 12134,
+      "sha256": "197641b49fd256694a4f664aada952756b3e6c03f8b69265ae83616eab4787fb"
+    },
+    {
+      "caminho": "codigo/scripts/neural/README.md",
+      "bytes": 951,
+      "sha256": "f46e88d6b7a6d9a9e7d15f56767a51eb5b963c6b7304f03c112217419f1badee"
+    },
+    {
+      "caminho": "codigo/scripts/neural/__init__.py",
+      "bytes": 61,
+      "sha256": "917631d7b7643134297c3890da9cc6e30d85810c0672f9b800cf8be3f9bc4075"
+    },
+    {
+      "caminho": "codigo/scripts/neural/cadeia_seletiva.py",
+      "bytes": 14660,
+      "sha256": "51a04e836bb4b21985e37bb2c0deb4aacd27d94c32e9e72899e01b857815574d"
+    },
+    {
+      "caminho": "codigo/scripts/neural/catraca.py",
+      "bytes": 12318,
+      "sha256": "cec58ce9eead1a836f0574c90f71b7353982816c13cf56c952eb07ad12fbdcbd"
+    },
+    {
+      "caminho": "codigo/scripts/neural/experimento_acumulacao.py",
+      "bytes": 14434,
+      "sha256": "d0312e43a4ac049838a81c7be1430097694889e6e94505b70eb93fc9fadf5bfc"
+    },
+    {
+      "caminho": "codigo/scripts/neural/experimento_pote_crescente.py",
+      "bytes": 12526,
+      "sha256": "06c09314dee34648e3c8e427113c1191e75150e8e6381f0d835087c4c70c2122"
+    },
+    {
+      "caminho": "codigo/scripts/neural/predicao_seletiva.py",
+      "bytes": 6847,
+      "sha256": "6eb9d814cc277f227c423f89bbff07fd1a36743eb24bc2fdf9a216d7c86170e5"
+    },
+    {
+      "caminho": "codigo/scripts/neural/proveniencia_de_peso.py",
+      "bytes": 4398,
+      "sha256": "1b6af51404555e34b0b0d114b407dcb4c0eb9f4a36ea271b1d507f51bee3a298"
+    },
+    {
+      "caminho": "codigo/scripts/neural/regua.py",
+      "bytes": 14173,
+      "sha256": "b295355c5567d7e8f232d0cdbe09b4336e2d9fccc071f92ae2303ac29cbb5440"
+    },
+    {
+      "caminho": "codigo/scripts/petropolis_aprendizado/README.md",
+      "bytes": 1330,
+      "sha256": "41572b2e3ab0ac043ef474890da1985500ca353fb5fe8dbc8e62a58891383781"
+    },
+    {
+      "caminho": "codigo/scripts/petropolis_aprendizado/pa_00_estado_inicial.py",
+      "bytes": 1555,
+      "sha256": "99423100261af94a4866ef2bfdc22f1b3dc11ddd15ecf50c873c923bf1729069"
+    },
+    {
+      "caminho": "codigo/scripts/petropolis_aprendizado/pa_01_aquisicao.py",
+      "bytes": 11338,
+      "sha256": "147443e80328a3be0c98043421625f3d119f8956cbac07b55b1e585347ec2a2b"
+    },
+    {
+      "caminho": "codigo/scripts/petropolis_aprendizado/pa_02_terreno.py",
+      "bytes": 6993,
+      "sha256": "de581c36aae4c9e870ec840fb8769dbb4f8d0d0e699ce265b90210bb87fcf1f9"
+    },
+    {
+      "caminho": "codigo/scripts/petropolis_aprendizado/pa_03_referencias.py",
+      "bytes": 21892,
+      "sha256": "6a9719d25a9d89c5899bb4399f562b01c1dd2e54da72fab7c6607435ab358d73"
+    },
+    {
+      "caminho": "codigo/scripts/petropolis_aprendizado/pa_04_protocolo.py",
+      "bytes": 8962,
+      "sha256": "da943f7b53abaf3bb1239eafceedd3cc23c76ea3e0baa2a122aaa0597dbf0dec"
+    },
+    {
+      "caminho": "codigo/scripts/petropolis_aprendizado/pa_04b_emenda1.py",
+      "bytes": 5183,
+      "sha256": "206a20c146d6f49d73e146aa8a4e751da569b584528cfd4665317dc480f09674"
+    },
+    {
+      "caminho": "codigo/scripts/petropolis_aprendizado/pa_05_treino.py",
+      "bytes": 25391,
+      "sha256": "19835c3485e8e10a644e4c0f1729bb0ed42ae21ced894ef7e8bbce6ed1ed537d"
+    },
+    {
+      "caminho": "codigo/scripts/petropolis_aprendizado/pa_05b_emenda1.py",
+      "bytes": 19598,
+      "sha256": "ffed93e3249d201b7338afa09cf23d54ef079804af875489379f8dd9f6555619"
+    },
+    {
+      "caminho": "codigo/scripts/petropolis_aprendizado/pa_06_territorio.py",
+      "bytes": 22432,
+      "sha256": "2610c1b951f72bfdf893075c4a4fb3c2e2893193dc3fc198abffb2af65fd4f0b"
+    },
+    {
+      "caminho": "codigo/scripts/petropolis_aprendizado/pa_06b_casos.py",
+      "bytes": 5709,
+      "sha256": "1cf2f94fce4a8a873aff5cc93aa6b5d838ad62a1d9298c1c1ef65706cef95a39"
+    },
+    {
+      "caminho": "codigo/scripts/petropolis_aprendizado/pa_07_figuras.py",
+      "bytes": 24317,
+      "sha256": "f175b1d6cac83e5c920fc9513ef6c406f03d579144208ced7ac19880780b4e14"
+    },
+    {
+      "caminho": "codigo/scripts/petropolis_aprendizado/pa_08_verificacao.py",
+      "bytes": 7831,
+      "sha256": "b8a34698bbe8a1d4db5d182e40f804e9142664911488983ef2126e1a829fec81"
+    },
+    {
+      "caminho": "codigo/scripts/petropolis_aprendizado/pa_09_manifesto.py",
+      "bytes": 2450,
+      "sha256": "179ee05e0f1ef7441dfaf12d89b9b9cfc1d9cc1c9eef821ca8e73041d65f530e"
+    },
+    {
+      "caminho": "codigo/scripts/petropolis_aprendizado/pa_comum.py",
+      "bytes": 4591,
+      "sha256": "4959e86d6984e450db533edda950f67808b7c401dd932d2c59825eaa44b41b2a"
+    },
+    {
+      "caminho": "codigo/scripts/planejamento/README.md",
+      "bytes": 661,
+      "sha256": "3e890eec85d911fb19d2eda9c6fd440394092171893888cc4a5608d8e3b2e75d"
+    },
+    {
+      "caminho": "codigo/scripts/planejamento/pt.py",
+      "bytes": 2778,
+      "sha256": "b2ec9d384d39b1124c0baf77eecf396d92450b424cec535fd88a978d9e45bb5b"
+    },
+    {
+      "caminho": "codigo/scripts/planejamento/pt_comum.py",
+      "bytes": 4329,
+      "sha256": "38e0d4334f1b6bcd2c7c4af80d8430039520b47a8350d70270028a4a217a1fe2"
+    },
+    {
+      "caminho": "codigo/scripts/planejamento/pt_social_equivalencia.py",
+      "bytes": 8373,
+      "sha256": "56b7554ff1042b7e98001db3a9fd739d5092ef3e622bca43f073a8a3896a1221"
+    },
+    {
+      "caminho": "codigo/scripts/planejamento/pt_social_ref_geopandas.py",
+      "bytes": 2744,
+      "sha256": "ecee291833937ba02b19bd1a07fd785383f0f57e4fe4bba318e3a564e5fb4c06"
+    },
+    {
+      "caminho": "codigo/scripts/recife_aprendizado/README.md",
+      "bytes": 1197,
+      "sha256": "7a0ec532983a8e013d108b58812ace9b6d975dc308cb91cb104617db5f26f934"
+    },
+    {
+      "caminho": "codigo/scripts/recife_aprendizado/ra_00_estado_inicial.py",
+      "bytes": 1442,
+      "sha256": "e6dd20a812945d1bf40d9c9964573dd50034e6bd76ab014b1317223442be9ef8"
+    },
+    {
+      "caminho": "codigo/scripts/recife_aprendizado/ra_01_referencias.py",
+      "bytes": 15660,
+      "sha256": "44bee944a8373ac100a06b57811ae6f3401fbc808caebac93204a043843921b9"
+    },
+    {
+      "caminho": "codigo/scripts/recife_aprendizado/ra_02_atributos.py",
+      "bytes": 14046,
+      "sha256": "453b9dc3b688eb1e838121f3449c6d9b4cf58962abcbb80d0eb578b6ec57eb6d"
+    },
+    {
+      "caminho": "codigo/scripts/recife_aprendizado/ra_03_protocolo.py",
+      "bytes": 8207,
+      "sha256": "8f3be5803c565d9bffaace1713cd41264e58b425258de859a8521ebde67ffc2e"
+    },
+    {
+      "caminho": "codigo/scripts/recife_aprendizado/ra_04_treino.py",
+      "bytes": 17629,
+      "sha256": "b407d505700a1369577c6e7368aefa03ab9827e1fbeac404db9400baa8c60ee6"
+    },
+    {
+      "caminho": "codigo/scripts/recife_aprendizado/ra_04b_emenda1.py",
+      "bytes": 6860,
+      "sha256": "9f5f91b416ab5675fb458de27b06c2e279f875f363c21342f29a609faaee43ad"
+    },
+    {
+      "caminho": "codigo/scripts/recife_aprendizado/ra_04c_emenda2.py",
+      "bytes": 4445,
+      "sha256": "7a01887d16212576db6158814f0adcc52d2cb35d1aad752fe6ccbeb99ec7d47f"
+    },
+    {
+      "caminho": "codigo/scripts/recife_aprendizado/ra_05_territorio.py",
+      "bytes": 12831,
+      "sha256": "43027b496c569dfa614a061bf6a019fdcdc6fddb35a14f1522b4afa03adf2d3f"
+    },
+    {
+      "caminho": "codigo/scripts/recife_aprendizado/ra_06_figuras.py",
+      "bytes": 23125,
+      "sha256": "8628322db0bf57d1be0501442fb13c2f9cb97a273d1d0253e276a4bf1d3ed7bf"
+    },
+    {
+      "caminho": "codigo/scripts/recife_aprendizado/ra_07_verificacao.py",
+      "bytes": 5472,
+      "sha256": "3dfba3cc3cd26f0908f8b48fc4f5323f50fc7556c414c42b1429c0c32d31d935"
+    },
+    {
+      "caminho": "codigo/scripts/recife_aprendizado/ra_08_manifesto.py",
+      "bytes": 2142,
+      "sha256": "d524300dd1ee200ad55f29aacb223e4c0335ff74d6aec21991ccbd9f4b03ea68"
+    },
+    {
+      "caminho": "codigo/scripts/recife_aprendizado/ra_comum.py",
+      "bytes": 4698,
+      "sha256": "06058c6b22379099040ecd744204b2d968991b6707e6340732a4b8e4558884b5"
+    },
+    {
+      "caminho": "codigo/scripts/recuperacao/README.md",
+      "bytes": 663,
+      "sha256": "c135ce241ccd8ad39cc0232ecef49f9187447462ef2e4070062ee8cb2e5e41b1"
+    },
+    {
+      "caminho": "codigo/scripts/recuperacao/__init__.py",
+      "bytes": 45,
+      "sha256": "c5746adb9deacd63eab186b178c034355913a4e88e3dd0585eb24454d2caca84"
+    },
+    {
+      "caminho": "codigo/scripts/recuperacao/avaliacao_de_recuperacao.py",
+      "bytes": 11679,
+      "sha256": "f812abcb196733f28543ddbc67c4e987de2d44202f22892511b1714e75c386b0"
+    },
+    {
+      "caminho": "codigo/scripts/recuperacao/comparar_recuperadores.py",
+      "bytes": 6994,
+      "sha256": "7c906d23f8a6bae210185b6b6810cdfa54b8b588eff9acd826d661c6a2683ef2"
+    },
+    {
+      "caminho": "codigo/scripts/recuperacao/indice_denso.py",
+      "bytes": 9275,
+      "sha256": "10ee2054c1fbe19138f16d605f3fe8fd8f09d4296a1663d034afef8bdcb294ff"
+    },
+    {
+      "caminho": "codigo/scripts/sar/README.md",
+      "bytes": 2665,
+      "sha256": "5e36c3f49e5633786cc18bf22564c78a409cb893d2661e059f3412e76f3f288b"
+    },
+    {
+      "caminho": "codigo/scripts/sar/__init__.py",
+      "bytes": 58,
+      "sha256": "995d6cf4c5abeb939ccf7600de17659de3425966967b22635c7d604d5392da1c"
+    },
+    {
+      "caminho": "codigo/scripts/sar/adquirir_pares_geograficos.py",
+      "bytes": 6527,
+      "sha256": "95f4b0b0402097b6f49f7a33ed683c64df34fc914e7ee6da9653a359581ac009"
+    },
+    {
+      "caminho": "codigo/scripts/sar/adquirir_pares_s1gfloods.py",
+      "bytes": 3868,
+      "sha256": "f241499817f5b0c536d3fc3b7e3daf5388189264c7c5ad54026144f601991fbc"
+    },
+    {
+      "caminho": "codigo/scripts/sar/analise_continuidade_v3.py",
+      "bytes": 13238,
+      "sha256": "e3d737477173c9fca47292d30d616a5438665744c0c02c403c2a2828482af1cf"
+    },
+    {
+      "caminho": "codigo/scripts/sar/aquisicao_apos_diagnostico.py",
+      "bytes": 10106,
+      "sha256": "2bcd24a4f43de69f5e46023f9b28968292ba37e905cdbf157d0487fb00b74231"
+    },
+    {
+      "caminho": "codigo/scripts/sar/auditar_pares_geograficos.py",
+      "bytes": 2931,
+      "sha256": "8e9868595aaaa955aa7f04592e7ce2d993afcd6c00de45e1222ec811d488695a"
+    },
+    {
+      "caminho": "codigo/scripts/sar/avaliar_rede.py",
+      "bytes": 13311,
+      "sha256": "b56c1391a71259a77985e48c2587c43354f243ba5e460f6b44e0cfa77f6c8b21"
+    },
+    {
+      "caminho": "codigo/scripts/sar/baseline_otsu.py",
+      "bytes": 9438,
+      "sha256": "f5120b2e2fe372fbf991cdc1c54397372b1ec44747b40d42e855eeeda52b9174"
+    },
+    {
+      "caminho": "codigo/scripts/sar/calibracao_decisao.py",
+      "bytes": 5370,
+      "sha256": "008cf23327018e1bef3a34bcda7eedaad36b63dbc348e0128a4fffd0f003541a"
+    },
+    {
+      "caminho": "codigo/scripts/sar/calibrar_recusa.py",
+      "bytes": 15384,
+      "sha256": "22f41089ecd7d872ebce7a6a6d7764c67444bb03d032e8a447f2a0fe9fdc1686"
+    },
+    {
+      "caminho": "codigo/scripts/sar/campanha_independencia_autonomia.py",
+      "bytes": 20004,
+      "sha256": "17f44507dd474d229f62ab6c5c5a0ad5dca652b8d3e416eae7ee252f5963cfbe"
+    },
+    {
+      "caminho": "codigo/scripts/sar/continuidade_retencao.py",
+      "bytes": 39307,
+      "sha256": "4bda1140801141e2543c0da9893c83a3c18717e11819bf97f2971a1f96885f00"
+    },
+    {
+      "caminho": "codigo/scripts/sar/continuidade_v2.py",
+      "bytes": 46045,
+      "sha256": "81eea3946e811697db58bf82b21f4abc77a710db8a426c97c1a88b96a2c1bb26"
+    },
+    {
+      "caminho": "codigo/scripts/sar/continuidade_v3.py",
+      "bytes": 20895,
+      "sha256": "17d60229e8c5026cea9efcb333c41e1bb3364152df527e9c07c873d7a4ff1cd1"
+    },
+    {
+      "caminho": "codigo/scripts/sar/dados_pares_geograficos.py",
+      "bytes": 13627,
+      "sha256": "54e0a3b4aee2e8e6b58458413ff84d687bf57c2d51135ff7489dace4314563fc"
+    },
+    {
+      "caminho": "codigo/scripts/sar/dados_pre_pos.py",
+      "bytes": 9034,
+      "sha256": "9e30bc0a1a74293f895be8cf719d08c939301b32350ff09f7ddf4fc45ce69c18"
+    },
+    {
+      "caminho": "codigo/scripts/sar/dados_sen1floods11.py",
+      "bytes": 10798,
+      "sha256": "ad1ca4b08965fce332606e5bfdc6093c2e09eb831b0a6c17b8ecb1b8ab62d268"
+    },
+    {
+      "caminho": "codigo/scripts/sar/diagnostico_competencia.py",
+      "bytes": 16813,
+      "sha256": "8cdf01e8ff4478f21459e88b4fe1db63317e53005055cc6855f8f4a8ca6c61e5"
+    },
+    {
+      "caminho": "codigo/scripts/sar/experimento_pre_pos.py",
+      "bytes": 17909,
+      "sha256": "5ed5ed6c9c1fb20432a9f0c1c37195293c7372a75f97bb9f183dbb8f111d94dd"
+    },
+    {
+      "caminho": "codigo/scripts/sar/fontes_sar.py",
+      "bytes": 6832,
+      "sha256": "7601871825dcdd05090cbe5231cdcd3c07b879bc227ff3e7494743d67f7d3c4a"
+    },
+    {
+      "caminho": "codigo/scripts/sar/modelo_unet.py",
+      "bytes": 3461,
+      "sha256": "f5104fb59f387344107b5bffed6aac84b67099d702c9af4e1d507f1f0c55b07b"
+    },
+    {
+      "caminho": "codigo/scripts/sar/nucleo_sar.py",
+      "bytes": 10452,
+      "sha256": "6817bc53e308be82ad4aa946038c238bc7143139dd3ad7d3a197925ed0e91b77"
+    },
+    {
+      "caminho": "codigo/scripts/sar/pilha_s1_mesmo_lugar.py",
+      "bytes": 57781,
+      "sha256": "02a9267f476d4b777369f645d46d0fe99c7e4f1d043b6cd52ce8ed778f2498df"
+    },
+    {
+      "caminho": "codigo/scripts/sar/ponte_sar_terreno.py",
+      "bytes": 4986,
+      "sha256": "66acc963b74267dfa6bf9aa0912f9f73583c8b3677904cfedd2c57383e992d78"
+    },
+    {
+      "caminho": "codigo/scripts/sar/pretreino_mascarado.py",
+      "bytes": 34422,
+      "sha256": "57007920070ba2c1299517c91202dd3eb600657eda32eba45bb798e5641540c0"
+    },
+    {
+      "caminho": "codigo/scripts/sar/relatorio_continuidade.py",
+      "bytes": 8579,
+      "sha256": "02204a029d7ba95edc5e5726fec2e22d127318776e1e5ee9c426905643bc3a36"
+    },
+    {
+      "caminho": "codigo/scripts/sar/sar_obs01_pares_datados.py",
+      "bytes": 18298,
+      "sha256": "fdc43e3fbcbcd12086d749a4725cf76558ead5e109f8d44df51e7778c19a33f6"
+    },
+    {
+      "caminho": "codigo/scripts/sar/substrato_multimodal.py",
+      "bytes": 18121,
+      "sha256": "946fcec8cff5964d460ab61ab12683cf34ee06cb3e6608b555922a693b6d8bc6"
+    },
+    {
+      "caminho": "codigo/scripts/sar/treino.py",
+      "bytes": 19691,
+      "sha256": "f74c1feb48453b76e6a80786069ea403a95b5eba0aca0fc68b6c4da752eb984a"
+    },
+    {
+      "caminho": "codigo/scripts/servico/README.md",
+      "bytes": 2427,
+      "sha256": "b69ec3f76a86ae9e6285b355dfa26bfc868a9b67fced735f71ebd42b6d6812a0"
+    },
+    {
+      "caminho": "codigo/scripts/servico/cache_regiao.py",
+      "bytes": 3210,
+      "sha256": "2f92fbcca48575dad1d1bdbc39fa793db52159ab81d03e4f846335a21c09c253"
+    },
+    {
+      "caminho": "codigo/scripts/servico/cadeia_no_contrato.py",
+      "bytes": 6023,
+      "sha256": "24f087bac2d2291f8e5419841f67b0db78d14bedb716f01ecc832acf0cf9e679"
+    },
+    {
+      "caminho": "codigo/scripts/servico/claims.py",
+      "bytes": 78188,
+      "sha256": "6dd9df159f8742660a4ef8e99545d18a6866bb74ff3154d58e03f5fe471c7463"
+    },
+    {
+      "caminho": "codigo/scripts/servico/consulta_cognitiva.py",
+      "bytes": 16485,
+      "sha256": "8ee278542fc6f76be2d3a3fe34232ea7e1543299788bb250817be613cfbe66c7"
+    },
+    {
+      "caminho": "codigo/scripts/servico/evidencia_visual.py",
+      "bytes": 9531,
+      "sha256": "9231dd473c71c647fe0fdf6b07ca8d6f6ec6e575678acb01444d6fcc181f8570"
+    },
+    {
+      "caminho": "codigo/scripts/servico/evidencias_escopo.py",
+      "bytes": 4231,
+      "sha256": "7c3bb92d1e4df10c0045da0a982a597f072dfeef77d176a0652f30336e87fe9e"
+    },
+    {
+      "caminho": "codigo/scripts/servico/geoprocessamento_sob_demanda.py",
+      "bytes": 20804,
+      "sha256": "139fd332a280d9727db63befcd64b765f2ea81239e434dc18a22bfad8bfaa8d3"
+    },
+    {
+      "caminho": "codigo/scripts/servico/log_auditoria.py",
+      "bytes": 7299,
+      "sha256": "5d475f663abc61025a05ebaddf75151cf7aa3c50a3002a83dff988eab5ce4667"
+    },
+    {
+      "caminho": "codigo/scripts/servico/log_de_servico.py",
+      "bytes": 2769,
+      "sha256": "0fee1b845f77c141847d189ad95f9ced96cd3c6d1be655dcbf187dcbe7af0b58"
+    },
+    {
+      "caminho": "codigo/scripts/servico/politica_de_portao_temporal.py",
+      "bytes": 13435,
+      "sha256": "2d43f830fc75a9bd3bcf8fb696701d2ba2cd178bd272812eb1c7394b37587b41"
+    },
+    {
+      "caminho": "codigo/scripts/servico/precedencia_documental.py",
+      "bytes": 30241,
+      "sha256": "87946b3e1b665d8b5f4198c78ec90394ac9d16d067105cdb114c996867e76232"
+    },
+    {
+      "caminho": "codigo/scripts/servico/proveniencia.py",
+      "bytes": 14214,
+      "sha256": "a9c424ddaab6bbbee4534872617581c0b560ceab4c0424d7f9f48f1bdfabfc05"
+    },
+    {
+      "caminho": "codigo/scripts/servico/rag_busca.py",
+      "bytes": 6133,
+      "sha256": "7f4b070bdd597f8920232dc891a652da9c18d5fa48d0dc42187fe74be7abc2bd"
+    },
+    {
+      "caminho": "codigo/scripts/servico/rag_corpus.py",
+      "bytes": 35909,
+      "sha256": "f1ce40587c528e9a4f2fdc7d3e76dc67222c842702805ecd22b01d8ac7592ca5"
+    },
+    {
+      "caminho": "codigo/scripts/servico/regioes.py",
+      "bytes": 27687,
+      "sha256": "de76ffee5f6730abad36801a9f1a91f9f17c428426d27e0fd5403cef62eb96b7"
+    },
+    {
+      "caminho": "codigo/scripts/servico/resolvedor_acervo.py",
+      "bytes": 35463,
+      "sha256": "2f9520bc126c4c110297675b0e759046e1a46629ff8bbfa7a3e1ee7f958184a6"
+    },
+    {
+      "caminho": "codigo/scripts/servico/resolver_camadas.py",
+      "bytes": 20083,
+      "sha256": "07a4dab3d055aae6e52b9f0ef8deb85f9c5b13fa43b111a0cdd940f8f3858d53"
+    },
+    {
+      "caminho": "codigo/scripts/servico/resposta_integrada.py",
+      "bytes": 44109,
+      "sha256": "c52615e1397963e5b74e6863ec79ba7eb5fe1aad8582339e167d01daf90dcc88"
+    },
+    {
+      "caminho": "codigo/scripts/servico/suporte_cientifico.py",
+      "bytes": 26847,
+      "sha256": "a0160c22d384a481def6ff6b06e58f40179e0da9cda5cc2d6b8c03655b492a25"
+    },
+    {
+      "caminho": "codigo/scripts/servico/svc01_construir_modelos_servidos.py",
+      "bytes": 66320,
+      "sha256": "dcfd8c92d75a1582d0ec222aeac5457ae7c38babfcc86806467adf3287ce6cc1"
+    },
+    {
+      "caminho": "codigo/scripts/servico/svc02_contrato_inferencia.py",
+      "bytes": 86242,
+      "sha256": "c0f846906bc452f3638d362d3627f7866113563a74ecfa97b2b9f4234d067518"
+    },
+    {
+      "caminho": "codigo/scripts/servico/svc05_transporte_http.py",
+      "bytes": 33989,
+      "sha256": "418d06f28674e2bb9e694f81f4e1de963643574466e64088d76c967be59a1a1e"
+    },
+    {
+      "caminho": "codigo/scripts/servico/svc06_explicacao_llm.py",
+      "bytes": 43887,
+      "sha256": "56cc076d4c26600b0195d670fff33d6ee09a18814d77ea0d14f37f4007477211"
+    },
+    {
+      "caminho": "codigo/scripts/social/README.md",
+      "bytes": 1301,
+      "sha256": "2f3b1b00fa34e793b9bf43f5bdd354a896e9ac53fcdb8409a4de03e30c63bb59"
+    },
+    {
+      "caminho": "codigo/scripts/social/__init__.py",
+      "bytes": 42,
+      "sha256": "9f615e98fe3a139ba9fc9fcb24114735a39f0fec83c9cb93f6143363c7d6e35f"
+    },
+    {
+      "caminho": "codigo/scripts/social/camada_social.py",
+      "bytes": 32072,
+      "sha256": "2b6e7121e5552048c62655c0e1d1cb563f552b80101a2471aa3156095b279d98"
+    },
+    {
+      "caminho": "codigo/scripts/social/social01_censo_municipal.py",
+      "bytes": 8867,
+      "sha256": "50f3f46d18f4954d259ccbfad26a5c352de90a840239bf5b390150dbb23295c4"
+    },
+    {
+      "caminho": "codigo/scripts/social/social02_medidas_territoriais.py",
+      "bytes": 12668,
+      "sha256": "ed51e11822613b0207ed8d0183d639e99946403646f28344923b75157257c87f"
+    },
+    {
+      "caminho": "codigo/scripts/social/social04_aquisicao_complementar.py",
+      "bytes": 3330,
+      "sha256": "f0f11259a391f4abde221cb6cd0f0896c97c930a13ebfcde336489c7daf95e9b"
+    },
+    {
+      "caminho": "codigo/scripts/social/social05_contrato_medidas.py",
+      "bytes": 6142,
+      "sha256": "2ad24b8c0f0aa33b3c29c170c6fc6b873d3b4e7fb65e0c0822037c225e161fba"
+    },
+    {
+      "caminho": "codigo/scripts/social/social06_consolidacao.py",
+      "bytes": 15282,
+      "sha256": "dd56f384a8737fa40010c1fb95373af2a6645fc78a69dff3d23797c447de8b57"
+    },
+    {
+      "caminho": "codigo/scripts/social/social07_servico_medidas.py",
+      "bytes": 6862,
+      "sha256": "2bc3a9d088381b28508b0671c388edeb898831824e6bd872ee74d228ec877776"
+    },
+    {
+      "caminho": "codigo/scripts/social/social08_exposicao_grade.py",
+      "bytes": 3786,
+      "sha256": "90eaa0b84d45ca84272004c1ec8c910bbcbb65e2e8bd5b3b742b218067b48c5c"
+    },
+    {
+      "caminho": "codigo/scripts/social/social09_avaliacao_cobertura.py",
+      "bytes": 3188,
+      "sha256": "ba6d9453f7d8272c5b63c1cb92f772664034ad1bae30eb97d27e2ccda4a808cd"
+    },
+    {
+      "caminho": "codigo/scripts/social/social_projecao.py",
+      "bytes": 1685,
+      "sha256": "bd3eb58b65c2ce9965150c0b693f219896909bd2bda8f800106d909ec09a7419"
+    },
+    {
+      "caminho": "codigo/scripts/suscetibilidade/README.md",
+      "bytes": 1272,
+      "sha256": "f6e0d5494dc0e3a1eb9e9bdb093296bd8f2bdfcbe3be51103f4acd6a8b0bbeaf"
+    },
+    {
+      "caminho": "codigo/scripts/suscetibilidade/aud_desenho01_eixos_de_contraste.py",
+      "bytes": 10821,
+      "sha256": "19f80c27cf9b9a869256cb9785c79a53bfed3c1f003e75367da5329d8c56ec97"
+    },
+    {
+      "caminho": "codigo/scripts/suscetibilidade/aud_desenho02_natureza_dos_negativos.py",
+      "bytes": 9880,
+      "sha256": "bfd63afafb729648514a14c88bae31bd7136c7cf2c5ce077cec41bf3c472988f"
+    },
+    {
+      "caminho": "codigo/scripts/suscetibilidade/br04_o_brasil_como_professor.py",
+      "bytes": 17687,
+      "sha256": "599c78212feea9eb5e1fbf1f541ad9a71089d15d19a0685f203e73e7741638e7"
+    },
+    {
+      "caminho": "codigo/scripts/suscetibilidade/ds03_esquema_alvo.py",
+      "bytes": 22466,
+      "sha256": "c83fbf6e2d45eacc21686905cb8720c02697a8a029ac5949a5ee1cb38174b861"
+    },
+    {
+      "caminho": "codigo/scripts/suscetibilidade/ds04_reduzir_por_fonte.py",
+      "bytes": 45091,
+      "sha256": "65b9cf82c9ff43bdaeec4b1ae685723ba2d83455d688a9a1ea2ddd895cff6ca6"
+    },
+    {
+      "caminho": "codigo/scripts/suscetibilidade/ds05_admissao_consolidacao.py",
+      "bytes": 16683,
+      "sha256": "78641ab19bd8ec03978be49209db909025102b757bc0a367788198365aeac9d8"
+    },
+    {
+      "caminho": "codigo/scripts/suscetibilidade/ds06_dataset_de_treino.py",
+      "bytes": 23753,
+      "sha256": "bd0f05f11e1b0157b82b41d1687b68d52836cca1d8915c445d75a4e4de227ef1"
+    },
+    {
+      "caminho": "codigo/scripts/suscetibilidade/posicao_no_ponto.py",
+      "bytes": 10806,
+      "sha256": "a8f620b8cd10e22da05a4037d8cf33f3ea24556b3ddc3b4005d7baf9a95ec56f"
+    },
+    {
+      "caminho": "codigo/scripts/suscetibilidade/posicao_topografica.py",
+      "bytes": 8626,
+      "sha256": "916591686df7c3a03e2f17bb2df78d7c76d4534b30580ff3a20bb69d08060d7d"
+    },
+    {
+      "caminho": "codigo/scripts/suscetibilidade/susc_firth_shim.py",
+      "bytes": 1929,
+      "sha256": "beb133f00ab1469d29fc1c2409ee0011c0edb1aef98aeeef1c3fc8257731abb9"
+    },
+    {
+      "caminho": "codigo/scripts/temporalidade/README.md",
+      "bytes": 715,
+      "sha256": "1405a26cb2474cbcb331cb1e54ae5c5d9de8c7ebbfb7007284c15cafb1cc85b0"
+    },
+    {
+      "caminho": "codigo/scripts/temporalidade/auditoria_temporal.py",
+      "bytes": 69758,
+      "sha256": "2ba03bf44980de4474b151490815d8ab39fe7e7da46e4c6044a9dd130d160028"
+    },
+    {
+      "caminho": "codigo/scripts/temporalidade/cortes_por_regiao_do_pool.py",
+      "bytes": 9539,
+      "sha256": "304b50b600f54016cb41b07f40d4b6b9bd518d1317b3d366666aedadf7682aec"
+    },
+    {
+      "caminho": "codigo/scripts/temporalidade/dimensao_temporal.py",
+      "bytes": 80774,
+      "sha256": "107c02e4ef0d7574793e1418f6a80bb0e1ca653179989570926e30a158960f6d"
+    },
+    {
+      "caminho": "codigo/scripts/temporalidade/ontologia_temporal.py",
+      "bytes": 10458,
+      "sha256": "680ee2bd793b3ad484ff64836b365bf2d794b27474d492f9d8260d2459249911"
+    },
+    {
+      "caminho": "codigo/scripts/terreno/README.md",
+      "bytes": 1019,
+      "sha256": "b88a6f4a4cbd86fa834297a679c094ac32d811517aa81e60dc6928844bcb6b6e"
+    },
+    {
+      "caminho": "codigo/scripts/terreno/__init__.py",
+      "bytes": 61,
+      "sha256": "e7de47358336341e05ecb0593ee1813a9b4e738ae51cd386d1b089b4da6c8f00"
+    },
+    {
+      "caminho": "codigo/scripts/terreno/avaliar_embedding.py",
+      "bytes": 10250,
+      "sha256": "69b13ca07a0582f73173104807f771c048b7e8ae5470c8bff52a10abd1e686e6"
+    },
+    {
+      "caminho": "codigo/scripts/terreno/baixar_fabdem.py",
+      "bytes": 26611,
+      "sha256": "51a4b9fd1b63997c6081db19baa7734ed3266f9816ff374d85b9dc2f7a5a1587"
+    },
+    {
+      "caminho": "codigo/scripts/terreno/baseline_descritivo.py",
+      "bytes": 10522,
+      "sha256": "baa06ead18d3b0b039787c4d4fe6f996dff68d128b3c8767884a1491df813af5"
+    },
+    {
+      "caminho": "codigo/scripts/terreno/cadeia_em_lote.py",
+      "bytes": 19629,
+      "sha256": "6fc49ba0610ffcd32d40ff46ea7e6c623c7730bd8edfb63b1c812c5d211f5c94"
+    },
+    {
+      "caminho": "codigo/scripts/terreno/dados_terreno.py",
+      "bytes": 18125,
+      "sha256": "a1658d394fd64dff6ec601c89ab61f458c3cb10b61ca126b7b2a9bece363af53"
+    },
+    {
+      "caminho": "codigo/scripts/terreno/derivar_aoi_nova.py",
+      "bytes": 19425,
+      "sha256": "724fb4358710c52e8cbd10af36b7c9e111ba351fdf61d88fac6feef0af95df86"
+    },
+    {
+      "caminho": "codigo/scripts/terreno/modelo_encoder.py",
+      "bytes": 6088,
+      "sha256": "01c87f2dc3a3cddd960f8aa16ec4ff39e1aaa89f72539526e35ff0390c935fc0"
+    },
+    {
+      "caminho": "codigo/scripts/terreno/treino_encoder.py",
+      "bytes": 27147,
+      "sha256": "b8fb73396af52ad72d26fcfc975f266b50cf2a6d3ed06de51f18460c02b6fd57"
+    },
+    {
+      "caminho": "codigo/scripts/verificacao/README.md",
+      "bytes": 667,
+      "sha256": "3a22ed5e7218693f5a45955dcc594f293b7020a66a6e5ee028c7bea73cdb3605"
+    },
+    {
+      "caminho": "codigo/scripts/verificacao/__init__.py",
+      "bytes": 49,
+      "sha256": "e3bd6f1a8d4ec42f3431e6cb9486c0b8f55d4eb17375fc3be6034e61696583c7"
+    },
+    {
+      "caminho": "codigo/scripts/verificacao/casos_de_suporte.py",
+      "bytes": 9608,
+      "sha256": "9fa79bdf6b6aaf94091853cf1d21e213987ecdc3207db7da9ffa5b54f7d4bbe5"
+    },
+    {
+      "caminho": "codigo/scripts/verificacao/cobertura_por_contexto.py",
+      "bytes": 20341,
+      "sha256": "db8574590da8d66251922a0b92ba4e2722fc05b32664768e76e3901afab8b7ec"
+    },
+    {
+      "caminho": "codigo/scripts/verificacao/medir_suporte.py",
+      "bytes": 9824,
+      "sha256": "90ef7b9d36929a99e178c36c7578183cf05069bdd319f61d5d6a8eb06c706621"
+    },
+    {
+      "caminho": "codigo/scripts/vulnerabilizados/README.md",
+      "bytes": 3143,
+      "sha256": "94ec9e931828ffd699d76f7af752e2424343a88a7816f112d7470f45f2d463cb"
+    },
+    {
+      "caminho": "codigo/scripts/vulnerabilizados/comum_tv.py",
+      "bytes": 9515,
+      "sha256": "5cf143cb290fde3158b396d7229046259e5b7f652ba580a87a48fffe104123f8"
+    },
+    {
+      "caminho": "codigo/scripts/vulnerabilizados/tv01_universo_escassez.py",
+      "bytes": 13769,
+      "sha256": "17f309a5c73805de08861f128ba3cc0c12325e51f4d769f3147b28aabe81fe76"
+    },
+    {
+      "caminho": "codigo/scripts/vulnerabilizados/tv06_referencia_rmpa.py",
+      "bytes": 8679,
+      "sha256": "f9d2e144ea684a1962e732e3022c619326b31be2de46d8e6c711c4b7ce18b1c6"
+    },
+    {
+      "caminho": "codigo/scripts/vulnerabilizados/tv07_avaliacao_rmpa.py",
+      "bytes": 17271,
+      "sha256": "dcd7b7f93e3be384a09e47b9f8a1076036dd20963713a8b82aefbb6d564bee89"
+    },
+    {
+      "caminho": "codigo/scripts/vulnerabilizados/tv09_manaus.py",
+      "bytes": 19276,
+      "sha256": "4b9eea0385a438463095ff8c687c5d7e1172c08264637c26f1a5227fefad4736"
+    },
+    {
+      "caminho": "codigo/scripts/vulnerabilizados/tv_geo.py",
+      "bytes": 2053,
+      "sha256": "f187be449d719358749039970a296e01af2f25813827040a87dcf2e04a8b3831"
+    },
+    {
+      "caminho": "codigo/scripts/vulnerabilizados/tv_transferencia.py",
+      "bytes": 9740,
+      "sha256": "6efe63e64a87c14d6a8d6e62dc82cee54303b61678a782f78885b780714665a2"
+    },
+    {
+      "caminho": "codigo/scripts/vulnerabilizados/v10_comum.py",
+      "bytes": 2842,
+      "sha256": "e27e3408471c04d4b0602c1c99b56d723239c7b0d870ecdd720d137122ff47d2"
+    },
+    {
+      "caminho": "codigo/scripts/vulnerabilizados/v10_ii_ciclo.py",
+      "bytes": 9008,
+      "sha256": "f998569c414f99c7bbfecaf3bbaa934cc8a0ba1c490631674be6368deb62aecf"
+    },
+    {
+      "caminho": "codigo/scripts/vulnerabilizados/v10_iii_memoria.py",
+      "bytes": 12474,
+      "sha256": "64e02f04b0546efa8072c6014ef00b6a4820332723c9ebbc80feaa8f33d025c9"
+    },
+    {
+      "caminho": "codigo/scripts/vulnerabilizados/v10_iv_competencia.py",
+      "bytes": 11341,
+      "sha256": "5d2cb32d01f2752574cacddd34363d809dac9f14f112bfd99d8171bf06bf9748"
+    },
+    {
+      "caminho": "codigo/scripts/vulnerabilizados/v10_v_social.py",
+      "bytes": 13316,
+      "sha256": "8f40a86a18ef9825844b8d58e9debc24762070fd435d88ce5fe8dd4f82bd39df"
+    },
+    {
+      "caminho": "codigo/scripts/vulnerabilizados/v2_00_partida.py",
+      "bytes": 7589,
+      "sha256": "3e722865a22d49db997bd88465221187d940f5ccfe01c081733d35f09dd39699"
+    },
+    {
+      "caminho": "codigo/scripts/vulnerabilizados/v2_03_covariaveis.py",
+      "bytes": 4546,
+      "sha256": "5530a1636a941cbf027a4b5790e0a3535cb0b8423dd941401ced90f2047c75f8"
+    },
+    {
+      "caminho": "codigo/scripts/vulnerabilizados/v2_aprendizagem.py",
+      "bytes": 10514,
+      "sha256": "8ef5cb2bd483dc3992732e32913d17be79a5ea3fc655967a0f89989d4a2911cc"
+    },
+    {
+      "caminho": "codigo/scripts/vulnerabilizados/v5_aprendizagem.py",
+      "bytes": 4381,
+      "sha256": "67c510b29ff9221020da7fd1f91bb3c85498e058f1d171483a1fb7ae358b4e6d"
+    },
+    {
+      "caminho": "codigo/scripts/vulnerabilizados/v5_comum.py",
+      "bytes": 2262,
+      "sha256": "f7dbbd7b6fadcb0eab6e110e6ddc0d36b61c8005a0c084f6de587fcdc6692648"
+    },
+    {
+      "caminho": "codigo/scripts/vulnerabilizados/v6_03_recife_requalificacao.py",
+      "bytes": 8566,
+      "sha256": "76c6324622623bfeca9f76e6078639d446145815d351661b8b0c5348dd6a4bad"
+    },
+    {
+      "caminho": "codigo/scripts/vulnerabilizados/v6_06_metodo.py",
+      "bytes": 11580,
+      "sha256": "96b7fe9441235ba2b81b4b610a46317ddd4edd228d2d868b4956add2c225ce0d"
+    },
+    {
+      "caminho": "codigo/scripts/vulnerabilizados/v6_07_rmr.py",
+      "bytes": 21956,
+      "sha256": "4b4f79ddc50db3f3b2b141cc80ef918d8ab3d1a5d8b5bbb38b2a3958b4568ff0"
+    },
+    {
+      "caminho": "codigo/scripts/vulnerabilizados/v6_08_ufrgs_triangulacao.py",
+      "bytes": 6225,
+      "sha256": "0b6cc8d22d1a54c604ef972e324e5d70a48081bacddcc47ad953ce07cd30827c"
+    },
+    {
+      "caminho": "codigo/scripts/vulnerabilizados/v6_comum.py",
+      "bytes": 1048,
+      "sha256": "2ca217091a2c7fc698079c7a6b390e8767da97845ca652513fa8855fd55e9fe4"
+    },
+    {
+      "caminho": "codigo/scripts/vulnerabilizados/v8_01_q_externo.py",
+      "bytes": 5722,
+      "sha256": "98f600e875d08a020121b5dff95e6d431ee383a7a38a15c57ad903b2c6f77f4c"
+    },
+    {
+      "caminho": "codigo/scripts/vulnerabilizados/v8_02_ponte_fisica.py",
+      "bytes": 4618,
+      "sha256": "8d62f74a64820e62359453c046f9141c65eedf545f6bd5337ae48eae2e7e099a"
+    },
+    {
+      "caminho": "codigo/scripts/vulnerabilizados/v8_02b_cobertura_solo.py",
+      "bytes": 6633,
+      "sha256": "5ac665e5e36d26608f93aa32bfed08ad6233d36b4f5cc3f1464ee84b31537138"
+    },
+    {
+      "caminho": "codigo/scripts/vulnerabilizados/v8_04_campanha.py",
+      "bytes": 15263,
+      "sha256": "e5a9c1b6d0f7fddd07944362aa7421cc99476179a17be6ab484dd3bf37e8f012"
+    },
+    {
+      "caminho": "codigo/scripts/vulnerabilizados/v8_04b_analise.py",
+      "bytes": 6680,
+      "sha256": "052c75c3df3c502f49d714db63b6dbc26c51893c5d4d0bdc78e9e0ea25c5b6e4"
+    },
+    {
+      "caminho": "codigo/scripts/vulnerabilizados/v8_07_amostra_probabilistica.py",
+      "bytes": 6907,
+      "sha256": "145f320a22b3327d4eee0d05de2dcfdc9440ce8c9faa070055a3bc3e95088bd8"
+    },
+    {
+      "caminho": "codigo/scripts/vulnerabilizados/v8_07b_amostra_pps.py",
+      "bytes": 5860,
+      "sha256": "389723dde1f08c6da9a4363a2e25c5066922c5a4207e1eabc9912f5bac42864f"
+    },
+    {
+      "caminho": "codigo/scripts/vulnerabilizados/v8_comum.py",
+      "bytes": 2376,
+      "sha256": "83e73543b985a1df4370d8b49151e1f61cc0731b4c283aae8265d461b4434abf"
+    },
+    {
+      "caminho": "codigo/scripts/vulnerabilizados/v9_b_tabular.py",
+      "bytes": 13399,
+      "sha256": "5c174caf922f8c328c483fe81f6b25a91f986150fd2f5dff597910fa0dd696d7"
+    },
+    {
+      "caminho": "codigo/scripts/vulnerabilizados/v9_c_patches.py",
+      "bytes": 16464,
+      "sha256": "1561fc2125199aade54fe039cd08db82808ffe91d617750e0a38ebab18c1426f"
+    },
+    {
+      "caminho": "codigo/scripts/vulnerabilizados/v9_comum.py",
+      "bytes": 2326,
+      "sha256": "8a7a1249503ce57df3f5e2d4f7ed091e4626e714a260e9db919c66d774a1cad5"
+    },
+    {
+      "caminho": "codigo/scripts/vulnerabilizados/v9_d_conjunta.py",
+      "bytes": 16203,
+      "sha256": "e39cb060dd3d9ca176e38a2553b6a726b4a8eb453267cc742369a7c7bfd11c01"
+    },
+    {
+      "caminho": "codigo/scripts/vulnerabilizados/v9_f_aquisicao.py",
+      "bytes": 10857,
+      "sha256": "9b7a6d69af6a61cd7c2255541b0173b476865b9674adb0b8ee40dbd8a7354dbf"
+    },
+    {
+      "caminho": "codigo/scripts/vulnerabilizados/v9_g_continua.py",
+      "bytes": 10027,
+      "sha256": "4ff62f204e634fc1b8c3d74b299645b031c29f5d9ea0fe234f9a6d2c772eac2f"
+    },
+    {
+      "caminho": "codigo/scripts/vulnerabilizados/v9_p0_continuidade.py",
+      "bytes": 7373,
+      "sha256": "a32b5f78c908727301ad222a4ce589e590541743170f0ede32a05b3fc6706947"
+    },
+    {
+      "caminho": "codigo/scripts/vulnerabilizados/v9_p0_regularizacao.py",
+      "bytes": 5887,
+      "sha256": "cf9f12d686868f7bac536127ff088408ef4a12f7b133299101a1abf8177724e6"
+    },
+    {
+      "caminho": "codigo/scripts/vulnerabilizados/v9_s_lacuna.py",
+      "bytes": 4221,
+      "sha256": "c6a7c007f5565885356b1e660dae0538266538a847e3756014da514a8738b3cf"
+    },
+    {
+      "caminho": "codigo/tests/README.md",
+      "bytes": 1743,
+      "sha256": "0f6165f06a9ce21322768dacc3d32122861c776fad713c4b79f8d3ff01ec3465"
+    },
+    {
+      "caminho": "codigo/tests/test_admissao_cientifica.py",
+      "bytes": 4600,
+      "sha256": "5b2557cb6fbf9994d69ebd6be5a7d84001e5a64ce505003c6b1949cd17a2e0fc"
+    },
+    {
+      "caminho": "codigo/tests/test_continuidade_retencao.py",
+      "bytes": 10426,
+      "sha256": "129b9649bc0a70c8b3d9f618e9ac698767a4bed922dc509e5204e3dadc1a1906"
+    },
+    {
+      "caminho": "codigo/tests/test_continuidade_v3.py",
+      "bytes": 6501,
+      "sha256": "6ff0f2f6d1b8acc8d296c0fd8dc001f7e0602236ed3c03d0f50f906ea31bc7e3"
+    },
+    {
+      "caminho": "codigo/tests/test_fechamento_integrada_v2.py",
+      "bytes": 2726,
+      "sha256": "056839559b70e9320371a1d5e93e683f4124745a98b96c93ce14307f066aead4"
+    },
+    {
+      "caminho": "codigo/tests/test_fontes_sar.py",
+      "bytes": 3727,
+      "sha256": "902ac4492f62c0e795e432f4fec857c28f1b713d7e419377cc3e201dfae32202"
+    },
+    {
+      "caminho": "codigo/tests/test_ia_integrada_v2.py",
+      "bytes": 5888,
+      "sha256": "7cb7263e9eb2b7a6054eb0e56a1773b9dab0819081bc4f67c5f6f0d171f9a63c"
+    },
+    {
+      "caminho": "codigo/tests/test_mt01_mecanismos.py",
+      "bytes": 6443,
+      "sha256": "df029fb022f38420f2a9667381961030d6f67ad90cf0a216222fb04221dd3df0"
+    },
+    {
+      "caminho": "codigo/tests/test_mt11_confirmatorio_transdutivo.py",
+      "bytes": 3230,
+      "sha256": "27c438967c4ef966d4ba9f35ad90148126812fffb86f1121f27ee149a6475955"
+    },
+    {
+      "caminho": "codigo/tests/test_mt11_emenda.py",
+      "bytes": 10476,
+      "sha256": "e8d741627f7cf724d6a5f09a1c77f27121e6652254766188cf2b723c816ef164"
+    },
+    {
+      "caminho": "codigo/tests/test_mt11_fechamento.py",
+      "bytes": 3572,
+      "sha256": "5b4939415cb95c9a0d39afc04222885378e680eb7174ebc82e42623cb733b965"
+    },
+    {
+      "caminho": "codigo/tests/test_petropolis_aprendizado_v1.py",
+      "bytes": 5441,
+      "sha256": "b4d4e3b724a02ab3253e9aea73d330b03c9a7d06dc3855346c6fc3853fa04fe7"
+    },
+    {
+      "caminho": "codigo/tests/test_recife_aprendizado_v1.py",
+      "bytes": 3827,
+      "sha256": "91853bb376df87cbbeb233f966ae0a1fdfa8416dff1f6e47d94fb50278691768"
+    },
+    {
+      "caminho": "codigo/tests/test_recuperacao_frente_c.py",
+      "bytes": 5983,
+      "sha256": "8eab08857d68261e830c10d7b4d3569b01a535978d2cd856f9e4fe687b9d8bf3"
+    },
+    {
+      "caminho": "codigo/tests/test_sar_frente_a4.py",
+      "bytes": 6837,
+      "sha256": "ae4096e6cfeaebca0fe042295a223fa2f5d70cc7611cfc17100df820d3b93ee5"
+    },
+    {
+      "caminho": "codigo/tests/test_sar_frente_a5.py",
+      "bytes": 6902,
+      "sha256": "0c0213b5fcca9ea280e0f04fc304d1009df24b72491e6b26af3386bfeacf81bd"
+    },
+    {
+      "caminho": "codigo/tests/test_sar_frente_a7.py",
+      "bytes": 4606,
+      "sha256": "8c098964e81620df534dbb5a66869b06cc87742e73be3ad4898d5047f5737cec"
+    },
+    {
+      "caminho": "codigo/tests/test_social01_censo_municipal.py",
+      "bytes": 2767,
+      "sha256": "4250ed59c74eaf22444d1f23b072f9fbd80a878c0396d3f921a818deaec89908"
+    },
+    {
+      "caminho": "codigo/tests/test_social02_medidas_territoriais.py",
+      "bytes": 3912,
+      "sha256": "5d0975b9f7a5801bddd1ddf193fc314f8d9f9c96abc7a86aadca33de274f98d7"
+    },
+    {
+      "caminho": "codigo/tests/test_social_medidas_consolidadas.py",
+      "bytes": 9103,
+      "sha256": "22acd7c27639c2397287ad3fac1194874db3c19d70afdebdc3ba6bd14fcd7e6d"
+    },
+    {
+      "caminho": "codigo/tests/test_social_projecao.py",
+      "bytes": 2514,
+      "sha256": "788089d25956a79e7eeb593adebf50d5833093506c0d6d3c0461ac179bd1da7c"
+    },
+    {
+      "caminho": "codigo/tests/test_v10_ciclo_contextual.py",
+      "bytes": 3697,
+      "sha256": "3602f157a34552889774834f97f7f4728af60c09bf199a7fa18d91060f281ab4"
+    },
+    {
+      "caminho": "codigo/tests/test_verificacao_frente_d.py",
+      "bytes": 5125,
+      "sha256": "6ca8cc7d726c2819c5b8690d47a4a7ccab81470f004f216d680f2f06c35761dc"
+    },
+    {
+      "caminho": "docs/CODIGO.md",
+      "bytes": 4156,
+      "sha256": "349dd59e225616637a5252816a2febc0377256c93a387ad2d9faf017d907ceea"
+    },
+    {
+      "caminho": "docs/CONTRIBUICOES.md",
+      "bytes": 1944,
+      "sha256": "bff09b0dafbcfd95aab99740cc9a82869fcd155cc91df4085561b42ed1f6195d"
+    },
+    {
+      "caminho": "docs/DADOS_E_FONTES.md",
+      "bytes": 1865,
+      "sha256": "d838250ec3518f03700b8c127abae438ce3e6d774120556c532f7e2bb5624657"
+    },
+    {
+      "caminho": "docs/MATRIZ_ARTIGO.md",
+      "bytes": 10677,
+      "sha256": "7e6c19e5685a1b5fec397aea080c8547c3dc162a8d39194809a6e0c8c1fcabe0"
+    },
+    {
+      "caminho": "docs/METODO.md",
+      "bytes": 4829,
+      "sha256": "331e86d8afd90a40a23496df2f8de8bf5adbc5b5d31821b85905d4566fd13525"
+    },
+    {
+      "caminho": "docs/REPRODUCAO.md",
+      "bytes": 3302,
+      "sha256": "54c736420613154e808da43db223d691eccbb8879d709e4cc6c6430ccf72a98b"
+    },
+    {
+      "caminho": "docs/REVISAO_DA_ORGANIZACAO.md",
+      "bytes": 3528,
+      "sha256": "9b458343151eeb59399eb36ee01346270f2eb4ca3cf4ab8f897a5a9725f0637e"
+    },
+    {
+      "caminho": "evidencias/01_curadoria/README.md",
+      "bytes": 555,
+      "sha256": "156c8ea06213e940e0307b75d3ebce871b812142ad126d82ce8e42d7e6632a79"
+    },
+    {
+      "caminho": "evidencias/01_curadoria/admissao-cientifica/retrato.json",
+      "bytes": 14910,
+      "sha256": "c12db912fb73bcff00e238db349ac157bc00f1a3fe46e14a595677dcc2e556a2"
+    },
+    {
+      "caminho": "evidencias/02_aprendizado/README.md",
+      "bytes": 1246,
+      "sha256": "65d5450ac4f06f15de28263df81c049f578ef73282ffd8bedf845544995ef5b0"
+    },
+    {
+      "caminho": "evidencias/02_aprendizado/gfd-quarentena/executado.json",
+      "bytes": 3453,
+      "sha256": "c0dcce8dd8e0aeba5fea34da94838fed4981e019dfaf6e3fb73c31b712b5dcfa"
+    },
+    {
+      "caminho": "evidencias/02_aprendizado/mecanismos-transferiveis/v1/resultado.json",
+      "bytes": 39333,
+      "sha256": "4c087fcc1f18922f79361b9cb2f6cf446eed7610d201dfe07358f0dc0c6fafe9"
+    },
+    {
+      "caminho": "evidencias/02_aprendizado/mecanismos-transferiveis/v4/confirmacao/resultado.json",
+      "bytes": 39957,
+      "sha256": "e07d8cc2092fc94b6be6aa3a1d4732de5697606d02ec79d7cae76ce3492ca08e"
+    },
+    {
+      "caminho": "evidencias/02_aprendizado/mt11-fechamento/v2/reparo_grafo_3b.json",
+      "bytes": 4012,
+      "sha256": "7765f05007343c18eebdcbfd6f153ddfbc8265832045f1a36864637d52f17f68"
+    },
+    {
+      "caminho": "evidencias/02_aprendizado/relatorios/FECHAMENTO_BENEFICIO_FISICO_E_CAUSALIDADE_2026_10_17.md",
+      "bytes": 26306,
+      "sha256": "1e21014a452bc2fc98199f5d2283212dffca5b6b4b90752d43140bfaee16a745"
+    },
+    {
+      "caminho": "evidencias/02_aprendizado/relatorios/MECANISMOS_TRANSFERIVEIS_EXECUCAO_MT01_2026_10_10.md",
+      "bytes": 30643,
+      "sha256": "5f4f705ad9febfa0646ee234e3c4cd904953b5349db778b5c36baae06e955a07"
+    },
+    {
+      "caminho": "evidencias/02_aprendizado/rfd-quarentena-brasil/executado.json",
+      "bytes": 3462,
+      "sha256": "5171e5e10f588da67fb356161e405bd2609da554ca513dad3e912321d97b402a"
+    },
+    {
+      "caminho": "evidencias/02_aprendizado/transferencia-vulnerabilizados/v9_evolucao_abrangente/p0_regularizacao/pesos.json",
+      "bytes": 10943,
+      "sha256": "dc6483259837026a04cd55026bd8e391ad6feda8192f4b9d6ba0be2f169f8e20"
+    },
+    {
+      "caminho": "evidencias/03_transferencia/README.md",
+      "bytes": 1787,
+      "sha256": "4714cfdc1a444a0c73593749e4cb57859855020fe30202b1dc0580401df2bfa9"
+    },
+    {
+      "caminho": "evidencias/03_transferencia/fundamentacao-artigo-20261028/f03_ic_transferencia_coortes.json",
+      "bytes": 3637,
+      "sha256": "be09b2ffd6e0e84fbb4c31301dced5bca2af1b5e32b69b8b3f0facb4a5e6132f"
+    },
+    {
+      "caminho": "evidencias/03_transferencia/fundamentacao-artigo-20261028/territorio_novo/descritivo_pos_avaliacao.json",
+      "bytes": 1489,
+      "sha256": "e8eeedbaa24f364fe205f65d5a35a912541dc6c33d65f64c019b1fede209c64d"
+    },
+    {
+      "caminho": "evidencias/03_transferencia/fundamentacao-artigo-20261028/territorio_novo/protocolo.json",
+      "bytes": 3877,
+      "sha256": "381b925848684d7dcb4dbee566923869601d4073bc05b9bdbf06f97987d2847b"
+    },
+    {
+      "caminho": "evidencias/03_transferencia/fundamentacao-artigo-20261028/territorio_novo/v2/descritivo_pos_avaliacao.json",
+      "bytes": 1494,
+      "sha256": "59f26f0ebee82cdcce84e60d9f370268460f53660928f2b9ee2e80d1d3fbef26"
+    },
+    {
+      "caminho": "evidencias/03_transferencia/fundamentacao-artigo-20261028/territorio_novo/v2/protocolo.json",
+      "bytes": 4633,
+      "sha256": "8762ec41a1f6f51bff56755757e7112bfcf26cd347841b0eb1dea5721bacb1a6"
+    },
+    {
+      "caminho": "evidencias/03_transferencia/fundamentacao-artigo-20261106/f07_estratos_coortes.json",
+      "bytes": 13997,
+      "sha256": "3b8267c6946c52754f3a1487fe1cbd49a1daf04238f64eba799bdc8a129faef3"
+    },
+    {
+      "caminho": "evidencias/03_transferencia/relatorios/EVOLUCAO_ABRANGENTE_V9_RESULTADOS_2026_10_23.md",
+      "bytes": 16840,
+      "sha256": "e329a1ac61cc42304e7560bfe128387ba806e93f153f08dbfafbc0433e031e2e"
+    },
+    {
+      "caminho": "evidencias/03_transferencia/relatorios/REVISAO_V9_DIRECAO_DA_TESE_2026_10_24.md",
+      "bytes": 13049,
+      "sha256": "86ce2c1ca76315dfa76b600cbbb1e76cf8b229e0b2eb0038734487a1898d78ca"
+    },
+    {
+      "caminho": "evidencias/03_transferencia/relatorios/VALIDACAO_INTEGRADA_V8_RESULTADOS_2026_10_22.md",
+      "bytes": 21293,
+      "sha256": "3e6efae2b5b3e6d1d1626b7cb32eeff7b36ca69178459e95898b6052151eb22c"
+    },
+    {
+      "caminho": "evidencias/03_transferencia/transferencia-vulnerabilizados/v6_evidencia_robusta/rmr_avaliacao/avaliacao.json",
+      "bytes": 8820,
+      "sha256": "337be6c2a4b7e86fc6fc59995c8d6dd5d667b3f517c905776c77170966cde24a"
+    },
+    {
+      "caminho": "evidencias/03_transferencia/transferencia-vulnerabilizados/v8_validacao_integrada/analise/contrastes_sem_rotulo.csv",
+      "bytes": 15344,
+      "sha256": "9bff06e7cc6d241da3154a530ae577b788b03552b31fbb2ba9b79ed2c69b7b67"
+    },
+    {
+      "caminho": "evidencias/04_recife/README.md",
+      "bytes": 1531,
+      "sha256": "2023816d7a170bb41c9af5581582a09eb5065de1b5537439574f2fe231a3ffe3"
+    },
+    {
+      "caminho": "evidencias/04_recife/fundamentacao-artigo-20261028/f02_chuva_gatilho_recife.json",
+      "bytes": 2237,
+      "sha256": "208bb15da280563ce2f31381ad917b77aa52247c6c272a246c2ffc1010a74327"
+    },
+    {
+      "caminho": "evidencias/04_recife/fundamentacao-artigo-20261028/f06_ic_auc_ruas_recife.json",
+      "bytes": 518,
+      "sha256": "c4845ca3053f0835d939f249becbe3e920f5962831bb0051f81d557c3d21ed10"
+    },
+    {
+      "caminho": "evidencias/04_recife/fundamentacao-artigo-20261106/f08_ruas_e_comunidades.json",
+      "bytes": 2595,
+      "sha256": "2381fc78f4911c6d531ae4f1a2eb683c41b5f2076444e0fc5402261d8bd81871"
+    },
+    {
+      "caminho": "evidencias/04_recife/proveniencia/exemplos_ruas_e_figuras.json",
+      "bytes": 16656,
+      "sha256": "5f841013a123b82c8cd62433f298c6c7303f3718b787855216d0dafb8787eb6b"
+    },
+    {
+      "caminho": "evidencias/04_recife/recife-aprendizado/v1/protocolo/protocolo_v1.json",
+      "bytes": 8948,
+      "sha256": "fc1465df26cb1018397b515e0245399cd2ce59dc2f6ec425beb8c024bdca2852"
+    },
+    {
+      "caminho": "evidencias/04_recife/recife-aprendizado/v1/resultados/emenda1/resultado_E1.json",
+      "bytes": 3011,
+      "sha256": "eeec8b0ca6e6828ab83aca8b9ca8e5969580f7d221e2e8155547b2666529a8c7"
+    },
+    {
+      "caminho": "evidencias/04_recife/recife-aprendizado/v1/territorio/cobertura_295.json",
+      "bytes": 330,
+      "sha256": "902de96a801407bb54a1c244ece2b5ad56b93ff0858a731cba7295c6bfb779fa"
+    },
+    {
+      "caminho": "evidencias/04_recife/relatorios/RECIFE_APRENDIZADO_ALAGAMENTO_RESULTADOS_2026_10_24.md",
+      "bytes": 7953,
+      "sha256": "02bbef45350004aa7520a68acae88524c35d697452d036cb2e85bef460f35ae9"
+    },
+    {
+      "caminho": "evidencias/05_petropolis/README.md",
+      "bytes": 978,
+      "sha256": "326c48fd1ec55ecd8e582923edfd13fc630082785782f363498240c937b02b8f"
+    },
+    {
+      "caminho": "evidencias/05_petropolis/fundamentacao-artigo-20261028/f04_encosta_e_retencao.json",
+      "bytes": 1335,
+      "sha256": "bf411651e314e5ff7bd3ae049822fd83ad0c146a8526f81d2405667a5eb319d9"
+    },
+    {
+      "caminho": "evidencias/05_petropolis/petropolis-aprendizado/v1/protocolo/protocolo_v1.json",
+      "bytes": 9966,
+      "sha256": "d218cfa47b42107007f2b979674e9ce6fc2204b40b3ee8bf318d20e484e91f69"
+    },
+    {
+      "caminho": "evidencias/05_petropolis/petropolis-aprendizado/v1/resultados/contrastes_T1.csv",
+      "bytes": 8285,
+      "sha256": "4dfd85614d21a6e90831598f031de91c8c166c897d01e48cb47b3496599c8132"
+    },
+    {
+      "caminho": "evidencias/05_petropolis/relatorios/AUDITORIA_ENTREGA_PETROPOLIS_2026_10_24.md",
+      "bytes": 12018,
+      "sha256": "f8e6f31790c349b9a0865018267d61d00438bd23312a8747d7a55d0fa0629db4"
+    },
+    {
+      "caminho": "evidencias/05_petropolis/relatorios/PETROPOLIS_APRENDIZADO_ENCOSTAS_RESULTADOS_2026_10_24.md",
+      "bytes": 14594,
+      "sha256": "bd90048f0b25a1fc04b61243e876153ec651be8de33d3875e15e5fe390907e57"
+    },
+    {
+      "caminho": "evidencias/06_atualizacao/README.md",
+      "bytes": 1053,
+      "sha256": "38a5a3a7d6cde64cb166ea3273e0cd41b96b793598d1bec3ae082edcc6625ba1"
+    },
+    {
+      "caminho": "evidencias/06_atualizacao/fundamentacao-artigo-20261028/f01_ic_ganho_atualizacao.json",
+      "bytes": 2546,
+      "sha256": "d26283995446df88bcc3703994a9365924f7d8d3aaae9db2e4ad6cf7cda0a048"
+    },
+    {
+      "caminho": "evidencias/06_atualizacao/relatorios/CICLO_CONTEXTUAL_V10_RESULTADOS_2026_10_24.md",
+      "bytes": 15091,
+      "sha256": "2e3c00a669bb1e2690205f8f1222beeaf255a8aa36387b8b1014ee2ec77fc667"
+    },
+    {
+      "caminho": "evidencias/06_atualizacao/transferencia-vulnerabilizados/v10_ciclo_contextual/iii_memoria/pareados_final.csv",
+      "bytes": 4841,
+      "sha256": "7560b92b4d6816a8a94f2a850be648e0fed2b0b01c7364f0e0893ee500d8e82b"
+    },
+    {
+      "caminho": "evidencias/06_atualizacao/transferencia-vulnerabilizados/v10_ciclo_contextual/verificacao_independente.json",
+      "bytes": 2199,
+      "sha256": "f1892e2bced6bb2dccf89ab018b14a7558c77e88f78f891e6f28980a3947435c"
+    },
+    {
+      "caminho": "evidencias/06_atualizacao/transferencia-vulnerabilizados/v8_validacao_integrada/analise/contrastes_poucos_rotulos.csv",
+      "bytes": 33555,
+      "sha256": "4738447c87c93af4ee0e5512771d4baac3fa3661705a4b9fd6f24c920aff62df"
+    },
+    {
+      "caminho": "evidencias/07_percepcao/README.md",
+      "bytes": 1326,
+      "sha256": "ec8387a146379096923f004a96af87a73e9989f04be72e7916f58c983a26d948"
+    },
+    {
+      "caminho": "evidencias/07_percepcao/aprendizado-continuo/sar_v3_1/analise.json",
+      "bytes": 994995,
+      "sha256": "7d1377a78b6c6a172113ae7b8145f6684defe5763b6ddc5e76426e7792b214bf"
+    },
+    {
+      "caminho": "evidencias/07_percepcao/aprendizado-continuo/sar_v3_1/protocolo.json",
+      "bytes": 21561,
+      "sha256": "7895eea9e66d9a339e21793299465065ad1f3f16ed1bd697d65c24a8d693aa34"
+    },
+    {
+      "caminho": "evidencias/07_percepcao/neural-catraca/experimento_pote_crescente_redecidido.json",
+      "bytes": 11472,
+      "sha256": "3e4b4e66bbc7920fc20729c829d9323cd4bea2be1f973758bcef51005685c5b4"
+    },
+    {
+      "caminho": "evidencias/07_percepcao/relatorios/FECHAMENTO_CIENTIFICO_OPERACIONAL.md",
+      "bytes": 49646,
+      "sha256": "a650da409d7363460ae61667d30cba0afe26bc82da428156db0476c05c34a047"
+    },
+    {
+      "caminho": "evidencias/07_percepcao/relatorios/PLANO_FRENTES_NEURAIS.md",
+      "bytes": 34998,
+      "sha256": "f1b6177ffdea00546f8870cbfe73f7ef7b55ec2010906b8b10f25477e9e363c3"
+    },
+    {
+      "caminho": "evidencias/07_percepcao/sar-inundacao/avaliacao_unet_v1_teste.json",
+      "bytes": 3456,
+      "sha256": "6592bd6489571af78b0cc90505746e9d1a32859427dacdabc193794ac2eb3a11"
+    },
+    {
+      "caminho": "evidencias/07_percepcao/sar-inundacao/baseline_otsu_teste.json",
+      "bytes": 1424,
+      "sha256": "402f4c238ac17d70bccd337bbf88cd75d425a4a5078f3c0275d98c19794ea5c9"
+    },
+    {
+      "caminho": "evidencias/07_percepcao/sar-inundacao/confirmacao_recusa_v1_teste.json",
+      "bytes": 1911,
+      "sha256": "bc9f2dc11c8f3af5ea438ae0b6f9a8b9f6939661da50aaf975b4ad061ff71e68"
+    },
+    {
+      "caminho": "evidencias/07_percepcao/sar-inundacao/experimento_transferencia_pretreino.json",
+      "bytes": 12715,
+      "sha256": "6aff6ad7b353eaf27b24cec9bc6946d89a473a4199369280306ca119b6f8d51c"
+    },
+    {
+      "caminho": "evidencias/08_resposta/README.md",
+      "bytes": 1095,
+      "sha256": "7d86f6b7e49860f14ec0b356bd052ced2f6d2a6571f4a58b7cd464fb5696581f"
+    },
+    {
+      "caminho": "evidencias/08_resposta/recuperacao/comparacao_recuperadores_k5.json",
+      "bytes": 9807,
+      "sha256": "fd0a482efa6692112303f37dc2e97558d79908af687ab27ab35f951341661497"
+    },
+    {
+      "caminho": "evidencias/08_resposta/relatorios/FECHAMENTO_IA_INTEGRADA_V2_2026_10_18.md",
+      "bytes": 16500,
+      "sha256": "5a70e9472f81835059f8b4d8660a027ef88e5d54e0397a9bc1db0ed8f56a2e57"
+    },
+    {
+      "caminho": "evidencias/08_resposta/relatorios/NUMEROS_E_CONTRIBUICOES_PARA_ESCRITA_2026_10_25.md",
+      "bytes": 30442,
+      "sha256": "e405695348a80626513170a3444076a2d12dda919ed0bae4a8ebf2caf5130da3"
+    },
+    {
+      "caminho": "evidencias/08_resposta/sintese-neural/cadeia_seletiva_com_juiz.json",
+      "bytes": 16712,
+      "sha256": "26f947308e224943060f52f6548c4bb47c66a889c5cd5b5505107120b445afdc"
+    },
+    {
+      "caminho": "evidencias/08_resposta/sintese-neural/predicao_seletiva_das_frentes.json",
+      "bytes": 5074,
+      "sha256": "c10f5116160ece5883fe131816a55c8f7665d4e0c41294382e7aa830274ece16"
+    },
+    {
+      "caminho": "evidencias/08_resposta/transferencia-vulnerabilizados/v10_ciclo_contextual/iv_competencia/cobertura.csv",
+      "bytes": 27400,
+      "sha256": "8b474128589be67df014b1b964da5d7713e15b58f32cd97c84d3402ea286a8f2"
+    },
+    {
+      "caminho": "evidencias/09_social/README.md",
+      "bytes": 880,
+      "sha256": "43c00a501e18081c98683cdbef6ef17ea818d9df9520326ff2e1185fef2c1bca"
+    },
+    {
+      "caminho": "evidencias/09_social/relatorios/CONSOLIDACAO_SOCIAL_TRES_MEDIDAS_2026_10_12.md",
+      "bytes": 11608,
+      "sha256": "979d054b80f8f3bb050928d9cc76d240349555259699f7b7bc24bbf9016dae75"
+    },
+    {
+      "caminho": "evidencias/09_social/relatorios/VALIDACAO_CONTRIBUICOES_RECIFE_PETROPOLIS_2026_10_25.md",
+      "bytes": 7486,
+      "sha256": "e306d3b155ed2d67071ac43d168c436d13f1cf8553e0bc8ee80416f2cdd56005"
+    },
+    {
+      "caminho": "evidencias/09_social/social-exposicao-grade/2026-10-12-v1/exposicao_grade.json",
+      "bytes": 145504,
+      "sha256": "af5af84948048f04c39a885240c4c8e2e820d0b7bf2b98a6b7122fc2b6de6db0"
+    },
+    {
+      "caminho": "evidencias/09_social/validacao-contribuicoes-regioes-20261025/verificacao.json",
+      "bytes": 477,
+      "sha256": "f363541d9a96905fde1b93e345afb5a98595ae4e95665a838f8cdb96dcbf0cb0"
+    },
+    {
+      "caminho": "evidencias/README.md",
+      "bytes": 707,
+      "sha256": "d89eccd353ae0702f227106198e23c13c3b1d41eca02ab1291ea3f634c7f7439"
+    },
+    {
+      "caminho": "manifestos/README.md",
+      "bytes": 1676,
+      "sha256": "448b1745f73f9604e41116be6c0783928d32df7b2acb39bdddef79ac053c71c9"
+    },
+    {
+      "caminho": "manifestos/afirmacoes_artigo.csv",
+      "bytes": 603391,
+      "sha256": "bb767c7036cf97626ae431cbccdfc952da5f0f5fb5267ea181d14ad694fa1679"
+    },
+    {
+      "caminho": "manifestos/afirmacoes_artigo.json",
+      "bytes": 786791,
+      "sha256": "838f8fc5a8cfbafbb66e2b82e811325f376fb1ff5c903a3fd2082f2060d98068"
+    },
+    {
+      "caminho": "manifestos/ambiente_preparacao.json",
+      "bytes": 496,
+      "sha256": "469955ecaaff5aa2ab13c3e7be4e8bb36bc4d054222a4773510e4467b0771dd6"
+    },
+    {
+      "caminho": "manifestos/arquivos_origem.json",
+      "bytes": 120859,
+      "sha256": "a131900ead8ef92d9f9ef3069eff768670605214b7d5a0843ac3fa8a6638e1ef"
+    },
+    {
+      "caminho": "manifestos/conferencia_editorial_origem.json",
+      "bytes": 1844,
+      "sha256": "e54cb730dbc5817708ae77bbf88c7f3fe92905c96759584be2370a77f419f5e4"
+    },
+    {
+      "caminho": "manifestos/conferencia_integridade.json",
+      "bytes": 345,
+      "sha256": "bf4768812a72fe2a92c2b585880f259ed1b3e8c3f2df107300076792095d1ace"
+    },
+    {
+      "caminho": "manifestos/conferencia_resultados.json",
+      "bytes": 15247,
+      "sha256": "e870d9004bd18e9f7b6a7fa22a563796728750063fc87bac52e80f06febda8f4"
+    },
+    {
+      "caminho": "manifestos/dependencias_codigo.json",
+      "bytes": 84748,
+      "sha256": "9e73f793084a6b9086b54513343795333a2df2b95c1f490d47e302d643701f8a"
+    },
+    {
+      "caminho": "manifestos/entradas_nao_localizadas.json",
+      "bytes": 21,
+      "sha256": "26a413973648b4b80c0e273b5a9ab8798043886f29806ef892638688a79318f6"
+    },
+    {
+      "caminho": "manifestos/indice_documental_atual.json",
+      "bytes": 1562,
+      "sha256": "c11cb19106fc57fbd77324bae82b55ee64ced02c8a07b5bb5c34c6575a6d628f"
+    },
+    {
+      "caminho": "manifestos/metadados_bibliograficos.json",
+      "bytes": 100018,
+      "sha256": "8aa926b27ec38a84c3cab14909d1614c37cfd83408af139b5c9727ecf98df162"
+    },
+    {
+      "caminho": "manifestos/origem.json",
+      "bytes": 1326,
+      "sha256": "8d9ab5dd61233460eb1b6d1c35869de7c2837ee158861a09df875ff4116aaa0b"
+    },
+    {
+      "caminho": "manifestos/testes_curadoria.xml",
+      "bytes": 761,
+      "sha256": "c679709c16e00267db2ab5ea01d239921a3b6b3a501622941096a7f15741e297"
+    },
+    {
+      "caminho": "manifestos/testes_fontes_atuais.xml",
+      "bytes": 3097,
+      "sha256": "9711988a839a5f93c5d6b733de3dbc31dfb76e5bfa8a6b9e5ea7de1b02e4cbd6"
+    },
+    {
+      "caminho": "manifestos/testes_fontes_continuidade.xml",
+      "bytes": 3408,
+      "sha256": "84fe2801c8733f90dae44136fddbba07d4c6f1ed51965e474eec601303ae190d"
+    },
+    {
+      "caminho": "manifestos/testes_nucleo.xml",
+      "bytes": 4279,
+      "sha256": "716b7ff551400619ddcf2d4bbe32c3326fc4915ca679de2eafdd6a682ee8adbc"
+    },
+    {
+      "caminho": "manifestos/testes_portaveis.xml",
+      "bytes": 1387,
+      "sha256": "e911f4ce97cab142f2cb0fcbdfdbfd4864c5a8fa31c8ec05d8383de2dfa7a159"
+    },
+    {
+      "caminho": "manifestos/verificacao_preparacao.json",
+      "bytes": 20126,
+      "sha256": "1ebae07bba083fb61a2f901173aa2145d9d0bf14cfd28e0f1804664fa40d120f"
+    },
+    {
+      "caminho": "modelos/README.md",
+      "bytes": 813,
+      "sha256": "1e791948da8ac5cb4ddd4b358be7bf909097d786795c8c31ab37546246e79ee4"
+    },
+    {
+      "caminho": "modelos/encosta/README.md",
+      "bytes": 435,
+      "sha256": "4865b4ac5b20daddb7abc062faf3de6006329ec989a5f240f3c59116f4a17751"
+    },
+    {
+      "caminho": "modelos/encosta/padronizacao.json",
+      "bytes": 761,
+      "sha256": "6646cbe77b20afedf0be156bf1ce9f376504b350e2a0aa7624964e21056caf40"
+    },
+    {
+      "caminho": "modelos/encosta/pesos_idai.json",
+      "bytes": 1206,
+      "sha256": "e46009889f2dbcf5a7e28876ac176c690445ed31bdd75518938c38e9ab83e42b"
+    },
+    {
+      "caminho": "modelos/fisico/README.md",
+      "bytes": 695,
+      "sha256": "e6bee4d7ba5efe7cee1ecf07e83d49a16708504b7e948f92d5ec488c3858bd55"
+    },
+    {
+      "caminho": "modelos/fisico/estado_ajustado.pkl",
+      "bytes": 10632,
+      "sha256": "85ddee8a6eddfd7c1d7fc0ddf114b90afa7485075b2ebec2f73bdcefbf5cb06b"
+    },
+    {
+      "caminho": "modelos/fisico/pesos_com_reserva.json",
+      "bytes": 2280,
+      "sha256": "93b15bcb8233b450b438fe69ea9742c56261cb689ce868b40757abc047ebd1a7"
+    },
+    {
+      "caminho": "modelos/fisico/pesos_completa.json",
+      "bytes": 2278,
+      "sha256": "df050d829fc628146d3e464d4dc47d73c21e5f308bf2b3939bbc94913c1031a5"
+    },
+    {
+      "caminho": "modelos/integracao/README.md",
+      "bytes": 472,
+      "sha256": "777b68620bc9db3495af325249be89eec13b79c7d7c49450df1363506fd8f65d"
+    },
+    {
+      "caminho": "modelos/integracao/estado_reproduzido.pt",
+      "bytes": 155192,
+      "sha256": "356a3430403c13290518a515e1abc63312c5e4e29d65a9e85b9a908e54e21966"
+    },
+    {
+      "caminho": "modelos/percepcao/README.md",
+      "bytes": 440,
+      "sha256": "4fa28a722740cc137e77c25d8d4c0510e6bad2603cc1b403deed7444c674363e"
+    },
+    {
+      "caminho": "modelos/percepcao/ficha_modelo.json",
+      "bytes": 4385,
+      "sha256": "13530c135a3b5aac29e0467a7802a08ab81198ed7caf7259cad40ec1acf7b655"
+    },
+    {
+      "caminho": "modelos/percepcao/manifesto_original.json",
+      "bytes": 5930,
+      "sha256": "bed6e1591f7ecd523a02b5870f2ba90341722b5099d0534f97a4cdcd92a0e9dc"
+    },
+    {
+      "caminho": "modelos/percepcao/unet_sar.pt",
+      "bytes": 1964239,
+      "sha256": "3df9ab56676cbbe4db52f45bc11dcf5e55bc807c79d270f5fa09d201f0faf0c5"
+    },
+    {
+      "caminho": "pytest.ini",
+      "bytes": 80,
+      "sha256": "0271bfaaddeba1f01bd39170892f1143c7a1820bd0dbfbf5918809a33dd2dbda"
+    },
+    {
+      "caminho": "reproducao/acervo.py",
+      "bytes": 750,
+      "sha256": "6cc40dfc703043f4f2012f3693d398fa4e26edb06146999b2e5d375ff3be3a2d"
+    },
+    {
+      "caminho": "reproducao/conferir_resultados.py",
+      "bytes": 5815,
+      "sha256": "91c4ee5609b9e3fba9ba6c1b55f941d1bbc47addd49c034e072ca1a014a5402a"
+    },
+    {
+      "caminho": "reproducao/materializar_evidencias.py",
+      "bytes": 1254,
+      "sha256": "7f1e5b7468f8e07ff61739b3a97fc5ade341d254f8e75f6817ba3957bf717310"
+    },
+    {
+      "caminho": "reproducao/verificar_pacote.py",
+      "bytes": 3923,
+      "sha256": "dec16d0cee03cdaaf561b1184cefdadd684d9cc02ee846331df8ffdabd6452a7"
+    },
+    {
+      "caminho": "requirements-auditoria.txt",
+      "bytes": 155,
+      "sha256": "904e4a2481c847566a94af8ec3058717a8071ae19deee2f82940d98bda9bf8aa"
+    },
+    {
+      "caminho": "requirements-experimentos.txt",
+      "bytes": 346,
+      "sha256": "7063dee0ccede576a86d3a1264204199a810ff0110761760ab558b95a2e4db2e"
+    },
+    {
+      "caminho": "setup_env.ps1",
+      "bytes": 921,
+      "sha256": "ed41d96eef4271dfad542427f6b9099aef8f3cab16f4c2996d788ec9b58f4cc5"
+    },
+    {
+      "caminho": "testes/README.md",
+      "bytes": 507,
+      "sha256": "889ad1188f5648d7d310d2a6fc732c541cc315e607631f5a1dce1c3be6d79b69"
+    },
+    {
+      "caminho": "testes/test_configuracao_servico.py",
+      "bytes": 968,
+      "sha256": "99af3a4dff878f9dfc2a61ceab938bf3cfdf362681848eed9c58cf44336b49df"
+    },
+    {
+      "caminho": "testes/test_publicacao.py",
+      "bytes": 2166,
+      "sha256": "0db925d219ca2dd8d255a6107a06c5ac7defab42c65a0d27132fa1cfdcb4b6e2"
+    }
+  ],
+  "quantidade_sem_inventario": 482,
+  "bytes_sem_inventario": 26097731
+}

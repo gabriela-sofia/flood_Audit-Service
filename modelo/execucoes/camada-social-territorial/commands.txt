@@ -1,2 +1,0 @@
-python scripts/social/camada_social.py
-python -m pytest tests/test_camada_social.py -q

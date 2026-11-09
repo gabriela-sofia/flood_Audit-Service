@@ -1,0 +1,132 @@
+{
+  "tipo": "sintese_predicao_seletiva",
+  "quando_utc": "2026-09-22T10:17:08.974380Z",
+  "enquadramento": "El-Yaniv e Wiener 2010: o classificador pode se abster, trocando cobertura por risco menor na regiao onde responde",
+  "regua": "AURC (area sob a curva risco-cobertura), menor e melhor, sempre contra o acaso da PROPRIA frente",
+  "por_que_nao_comparar_aurc_entre_frentes": "o erro de A e continuo e o de C e binario; a comparacao valida e de cada frente com o seu proprio acaso, e nao entre elas",
+  "frentes": {
+    "A": {
+      "seletor": "A_rede_sar",
+      "n": 79,
+      "risco_sem_abstencao": 0.73801,
+      "aurc": 0.560392,
+      "aurc_do_acaso": {
+        "media": 0.728374,
+        "p05": 0.684104,
+        "p95": 0.766806,
+        "repeticoes": 200
+      },
+      "ganho_sobre_acaso": 0.167982,
+      "ordena_melhor_que_o_acaso": true,
+      "risco_por_cobertura": {
+        "0.5": 0.579113,
+        "0.7": 0.64755,
+        "0.9": 0.713243,
+        "1.0": 0.73801
+      },
+      "leitura": "AURC menor e melhor; se `ordena_melhor_que_o_acaso` for falso, a confianca nao carrega informacao e qualquer ganho de cobertura parcial e ilusao",
+      "o_que_e_erro": "1 - IoU do chip, sem agua permanente",
+      "o_que_e_confianca": "margem media onde a rede prediz agua",
+      "unidade": "chip"
+    },
+    "B": {
+      "seletor": "B_embedding_terreno",
+      "n": 10,
+      "risco_sem_abstencao": 0.506341,
+      "aurc": 0.450708,
+      "aurc_do_acaso": {
+        "media": 0.456636,
+        "p05": 0.398054,
+        "p95": 0.513425,
+        "repeticoes": 200
+      },
+      "ganho_sobre_acaso": 0.005928,
+      "ordena_melhor_que_o_acaso": false,
+      "risco_por_cobertura": {
+        "0.5": 0.506688,
+        "0.7": 0.52341,
+        "0.9": 0.528902,
+        "1.0": 0.506341
+      },
+      "leitura": "AURC menor e melhor; se `ordena_melhor_que_o_acaso` for falso, a confianca nao carrega informacao e qualquer ganho de cobertura parcial e ilusao",
+      "o_que_e_erro": "1 - Spearman do pais",
+      "o_que_e_confianca": "numero de chips do pais",
+      "unidade": "pais",
+      "aviso": "com 10 paises a curva tem 10 pontos; o intervalo do acaso e largo e a leitura correta e qualitativa"
+    },
+    "C": {
+      "seletor": "C_recuperacao_densa",
+      "n": 4872,
+      "risco_sem_abstencao": 0.312192,
+      "aurc": 0.33059,
+      "aurc_do_acaso": {
+        "media": 0.311557,
+        "p05": 0.29995,
+        "p95": 0.324285,
+        "repeticoes": 200
+      },
+      "ganho_sobre_acaso": -0.019033,
+      "ordena_melhor_que_o_acaso": false,
+      "risco_por_cobertura": {
+        "0.5": 0.309524,
+        "0.7": 0.296687,
+        "0.9": 0.300798,
+        "1.0": 0.312192
+      },
+      "leitura": "AURC menor e melhor; se `ordena_melhor_que_o_acaso` for falso, a confianca nao carrega informacao e qualquer ganho de cobertura parcial e ilusao",
+      "o_que_e_erro": "1 se o chunk correto nao esta em k=5",
+      "o_que_e_confianca": "similaridade do primeiro resultado",
+      "unidade": "consulta"
+    },
+    "D": {
+      "lexico": {
+        "seletor": "D_lexico",
+        "n": 18,
+        "risco_sem_abstencao": 0.555556,
+        "aurc": 0.402949,
+        "aurc_do_acaso": {
+          "media": 0.525529,
+          "p05": 0.349202,
+          "p95": 0.688149,
+          "repeticoes": 200
+        },
+        "ganho_sobre_acaso": 0.12258,
+        "ordena_melhor_que_o_acaso": false,
+        "risco_por_cobertura": {
+          "0.5": 0.555556,
+          "0.7": 0.615385,
+          "0.9": 0.588235,
+          "1.0": 0.555556
+        },
+        "leitura": "AURC menor e melhor; se `ordena_melhor_que_o_acaso` for falso, a confianca nao carrega informacao e qualquer ganho de cobertura parcial e ilusao",
+        "o_que_e_erro": "decisao lexica diverge do gabarito"
+      },
+      "conjuncao": {
+        "seletor": "D_conjuncao",
+        "n": 18,
+        "risco_sem_abstencao": 0.277778,
+        "aurc": 0.108494,
+        "aurc_do_acaso": {
+          "media": 0.260712,
+          "p05": 0.126587,
+          "p95": 0.425053,
+          "repeticoes": 200
+        },
+        "ganho_sobre_acaso": 0.152218,
+        "ordena_melhor_que_o_acaso": true,
+        "risco_por_cobertura": {
+          "0.5": 0.0,
+          "0.7": 0.230769,
+          "0.9": 0.294118,
+          "1.0": 0.277778
+        },
+        "leitura": "AURC menor e melhor; se `ordena_melhor_que_o_acaso` for falso, a confianca nao carrega informacao e qualquer ganho de cobertura parcial e ilusao",
+        "o_que_e_erro": "decisao da conjuncao diverge do gabarito"
+      },
+      "o_que_e_confianca": "fracao de sobreposicao lexica",
+      "unidade": "par (claim, trecho)"
+    }
+  },
+  "nao_e": "ranking de qualidade das frentes nem autorizacao para encadea-las: AURC diz que a confianca ORDENA, e ordenar nao e acertar; o desempenho de cada frente continua no artefato dela",
+  "hash_resumo": "sha256:07df5875b8062d14caa6226c30a539c0863e04be8cd900bc6543e16ecc0d428b"
+}

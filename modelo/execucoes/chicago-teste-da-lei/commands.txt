@@ -1,6 +1,0 @@
-python scripts/externo/aq_chicago01_chamados.py --completo
-python scripts/externo/aq_chicago02_mdt.py
-python scripts/externo/aq_chicago03_terreno_nos_pontos.py
-python scripts/chuva/adquirir_mrms_chicago.py --online
-python scripts/chuva/terreno_sob_gatilho_chicago.py
-python -m pytest tests/test_terreno_sob_gatilho.py -q

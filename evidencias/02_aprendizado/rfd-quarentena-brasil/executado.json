@@ -1,0 +1,114 @@
+{
+ "tipo": "teste_confirmatorio_brasil",
+ "quando_utc": "2026-10-05T01:50:44.067807Z",
+ "pre_registro_avaliacao": "sha256:00f55d515fc2ab29529545d36bf76a1f6ee667a1d95ad06780f51e8210b44d25",
+ "pre_registro_selecao": "sha256:90db7f1172b11afd07a240ba086ea09bb95bb49a434be89a2cd8e5e11fa87695",
+ "validacao_da_replica": "sha256:ea582cac8b466505515e0860b081503b781f79399f5774dde86de59f5ab24a99",
+ "dataset_de_treino": "v7",
+ "linhas_treino": 354063,
+ "eventos_treino": 69,
+ "linhas_teste": 60283,
+ "eventos_teste": [
+  "RFDBR:1100813",
+  "RFDBR:1101081",
+  "RFDBR:1101128",
+  "RFDBR:1101285",
+  "RFDBR:1101325",
+  "RFDBR:1101433",
+  "RFDBR:1101995",
+  "RFDBR:1102076",
+  "RFDBR:1102437",
+  "RFDBR:1102592",
+  "RFDBR:1102944",
+  "RFDBR:1103101",
+  "RFDBR:1103254",
+  "RFDBR:1103335",
+  "RFDBR:1103439",
+  "RFDBR:1103515"
+ ],
+ "fracao_do_teste_em_tile_do_treino": 1.0,
+ "integridade": {
+  "eventos": 16,
+  "eventos_com_duas_classes_e_20_linhas": 16,
+  "nan": {
+   "hand_m": 0,
+   "twi_dinf": 0,
+   "slope_deg": 0,
+   "elevation_local_m": 0
+  },
+  "linhas": 60283,
+  "ok": true
+ },
+ "ressalvas_antes_da_leitura": [
+  "rotulo da replica do GFD (rfd01, MODIS C6.1, JRC GSW 1.4), validada nos 19 eventos brasileiros do GFD; nao e o produto GFD",
+  "lugar conhecido permitido: o teste mede evento novo (2019-2025) em territorio ja visto no treino; junto com o sul-americano (evento e territorio novos) separa, em parte, evento de territorio",
+  "eventos do GDACS (GLOFAS/JRC) e nao do DFO; janela fromdate-todate do GDACS",
+  "Terra em deriva de orbita desde 2022: menos imagens por dia nos eventos recentes",
+  "minimo de 8 eventos pareados; abaixo disso o veredito e not_testable, desfecho valido",
+  "depois da leitura os eventos viram examinados (registrar_exame)"
+ ],
+ "medidas": {
+  "M0_regra_hand": {
+   "auc_agrupada_fora_da_dobra": 0.7471,
+   "average_precision": 0.2836,
+   "auc_media_dentro_do_evento": 0.7639,
+   "auc_mediana_dentro_do_evento": 0.7707,
+   "eventos_com_auc": 16,
+   "brier": null
+  },
+  "M1_logistica_terreno": {
+   "auc_agrupada_fora_da_dobra": 0.7684,
+   "average_precision": 0.3722,
+   "auc_media_dentro_do_evento": 0.7834,
+   "auc_mediana_dentro_do_evento": 0.8325,
+   "eventos_com_auc": 16,
+   "brier": 0.1322
+  },
+  "M3_gbm_terreno": {
+   "auc_agrupada_fora_da_dobra": 0.8068,
+   "average_precision": 0.4398,
+   "auc_media_dentro_do_evento": 0.825,
+   "auc_mediana_dentro_do_evento": 0.8683,
+   "eventos_com_auc": 16,
+   "brier": 0.1267
+  }
+ },
+ "comparacoes": {
+  "M1_logistica_terreno|M0_regra_hand": {
+   "eventos_pareados": 16,
+   "dentro_do_evento_mediana": 0.0393,
+   "dentro_do_evento_media": 0.0195,
+   "eventos_a_favor": 11,
+   "ic95_media_dentro": [
+    -0.0051,
+    0.0434
+   ],
+   "agrupada": 0.0213,
+   "ic95_agrupada_por_evento": [
+    -0.0203,
+    0.0631
+   ],
+   "p_wilcoxon": 0.14386,
+   "veredito": "indecidivel"
+  },
+  "M3_gbm_terreno|M1_logistica_terreno": {
+   "eventos_pareados": 16,
+   "dentro_do_evento_mediana": 0.0399,
+   "dentro_do_evento_media": 0.0415,
+   "eventos_a_favor": 15,
+   "ic95_media_dentro": [
+    0.0266,
+    0.0551
+   ],
+   "agrupada": 0.0384,
+   "ic95_agrupada_por_evento": [
+    0.0192,
+    0.0585
+   ],
+   "p_wilcoxon": 9e-05,
+   "veredito": "ganho"
+  }
+ },
+ "regime": "confirmatorio_prospectivo",
+ "nao_e": "nao testa cobertura/solo; rotulo da replica, nao do GFD; uma execucao so"
+}

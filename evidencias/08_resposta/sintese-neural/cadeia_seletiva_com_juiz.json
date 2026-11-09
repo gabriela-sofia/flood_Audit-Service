@@ -1,0 +1,568 @@
+{
+  "tipo": "demonstracao_cadeia_seletiva",
+  "quando_utc": "2026-09-02T14:44:55.085732Z",
+  "usar_juiz": true,
+  "casos": 18,
+  "publicados": 6,
+  "cobertura": 0.3333,
+  "acuracia_da_decisao": 0.6667,
+  "abstencoes_por_elo": {
+    "verificacao": 12
+  },
+  "elos": [
+    "observacao",
+    "representacao",
+    "recuperacao",
+    "verificacao"
+  ],
+  "por_que_dois_elos": "observacao e representacao pertencem ao eixo fisico; uma frase sobre metodologia nao passa por eles, e uma cadeia com elos inaplicaveis produz abstencao por dado irrelevante",
+  "saidas": [
+    {
+      "id": "dinf_direto",
+      "familia": "sustenta_direto",
+      "esperado_sustenta": true,
+      "estado": "publicado",
+      "parou_em": null,
+      "confianca_minima_da_cadeia": 0.948866,
+      "trilha": [
+        {
+          "elo": "recuperacao",
+          "portao": "indice_denso",
+          "passou": true,
+          "confianca": 0.948866,
+          "detalhe": {
+            "recuperados": 5,
+            "primeiro": "referencias/001#0001"
+          }
+        },
+        {
+          "elo": "verificacao",
+          "portao": "conjuncao_lexico_e_juiz",
+          "passou": true,
+          "confianca": 1.0,
+          "detalhe": {
+            "juiz": "concorda"
+          }
+        }
+      ],
+      "nao_e": "abstencao nao e resposta negativa: a cadeia diz que nao sustenta seguir, e nomeia o elo onde parou"
+    },
+    {
+      "id": "hand_direto",
+      "familia": "sustenta_direto",
+      "esperado_sustenta": true,
+      "estado": "publicado",
+      "parou_em": null,
+      "confianca_minima_da_cadeia": 0.820352,
+      "trilha": [
+        {
+          "elo": "recuperacao",
+          "portao": "indice_denso",
+          "passou": true,
+          "confianca": 0.820352,
+          "detalhe": {
+            "recuperados": 5,
+            "primeiro": "referencias/002#0001"
+          }
+        },
+        {
+          "elo": "verificacao",
+          "portao": "conjuncao_lexico_e_juiz",
+          "passou": true,
+          "confianca": 1.0,
+          "detalhe": {
+            "juiz": "concorda"
+          }
+        }
+      ],
+      "nao_e": "abstencao nao e resposta negativa: a cadeia diz que nao sustenta seguir, e nomeia o elo onde parou"
+    },
+    {
+      "id": "twi_direto",
+      "familia": "sustenta_direto",
+      "esperado_sustenta": true,
+      "estado": "publicado",
+      "parou_em": null,
+      "confianca_minima_da_cadeia": 0.87356,
+      "trilha": [
+        {
+          "elo": "recuperacao",
+          "portao": "indice_denso",
+          "passou": true,
+          "confianca": 0.87356,
+          "detalhe": {
+            "recuperados": 5,
+            "primeiro": "referencias/003#0001"
+          }
+        },
+        {
+          "elo": "verificacao",
+          "portao": "conjuncao_lexico_e_juiz",
+          "passou": true,
+          "confianca": 1.0,
+          "detalhe": {
+            "juiz": "concorda"
+          }
+        }
+      ],
+      "nao_e": "abstencao nao e resposta negativa: a cadeia diz que nao sustenta seguir, e nomeia o elo onde parou"
+    },
+    {
+      "id": "sovi_direto",
+      "familia": "sustenta_direto",
+      "esperado_sustenta": true,
+      "estado": "publicado",
+      "parou_em": null,
+      "confianca_minima_da_cadeia": 0.744649,
+      "trilha": [
+        {
+          "elo": "recuperacao",
+          "portao": "indice_denso",
+          "passou": true,
+          "confianca": 0.744649,
+          "detalhe": {
+            "recuperados": 5,
+            "primeiro": "referencias/023#0001"
+          }
+        },
+        {
+          "elo": "verificacao",
+          "portao": "conjuncao_lexico_e_juiz",
+          "passou": true,
+          "confianca": 1.0,
+          "detalhe": {
+            "juiz": "concorda"
+          }
+        }
+      ],
+      "nao_e": "abstencao nao e resposta negativa: a cadeia diz que nao sustenta seguir, e nomeia o elo onde parou"
+    },
+    {
+      "id": "dinf_parafrase",
+      "familia": "sustenta_parafrase",
+      "esperado_sustenta": true,
+      "estado": "abstido",
+      "parou_em": "verificacao",
+      "confianca_minima_da_cadeia": 0.111,
+      "trilha": [
+        {
+          "elo": "recuperacao",
+          "portao": "indice_denso",
+          "passou": true,
+          "confianca": 0.44609,
+          "detalhe": {
+            "recuperados": 5,
+            "primeiro": "referencias/002#0001"
+          }
+        },
+        {
+          "elo": "verificacao",
+          "portao": "conjuncao_lexico_e_juiz",
+          "passou": false,
+          "confianca": 0.111,
+          "detalhe": {
+            "por_que": "sobreposicao lexica insuficiente"
+          }
+        }
+      ],
+      "nao_e": "abstencao nao e resposta negativa: a cadeia diz que nao sustenta seguir, e nomeia o elo onde parou"
+    },
+    {
+      "id": "hand_parafrase",
+      "familia": "sustenta_parafrase",
+      "esperado_sustenta": true,
+      "estado": "abstido",
+      "parou_em": "verificacao",
+      "confianca_minima_da_cadeia": 0.0,
+      "trilha": [
+        {
+          "elo": "recuperacao",
+          "portao": "indice_denso",
+          "passou": true,
+          "confianca": 0.250154,
+          "detalhe": {
+            "recuperados": 5,
+            "primeiro": "referencias/002#0001"
+          }
+        },
+        {
+          "elo": "verificacao",
+          "portao": "conjuncao_lexico_e_juiz",
+          "passou": false,
+          "confianca": 0.0,
+          "detalhe": {
+            "por_que": "sobreposicao lexica insuficiente"
+          }
+        }
+      ],
+      "nao_e": "abstencao nao e resposta negativa: a cadeia diz que nao sustenta seguir, e nomeia o elo onde parou"
+    },
+    {
+      "id": "firth_parafrase",
+      "familia": "sustenta_parafrase",
+      "esperado_sustenta": true,
+      "estado": "abstido",
+      "parou_em": "verificacao",
+      "confianca_minima_da_cadeia": 0.375,
+      "trilha": [
+        {
+          "elo": "recuperacao",
+          "portao": "indice_denso",
+          "passou": true,
+          "confianca": 0.481314,
+          "detalhe": {
+            "recuperados": 5,
+            "primeiro": "referencias/004#0001"
+          }
+        },
+        {
+          "elo": "verificacao",
+          "portao": "conjuncao_lexico_e_juiz",
+          "passou": false,
+          "confianca": 0.375,
+          "detalhe": {
+            "juiz": "discorda",
+            "bruto": "NAO_SUSTENTA"
+          }
+        }
+      ],
+      "nao_e": "abstencao nao e resposta negativa: a cadeia diz que nao sustenta seguir, e nomeia o elo onde parou"
+    },
+    {
+      "id": "epv_parafrase",
+      "familia": "sustenta_parafrase",
+      "esperado_sustenta": true,
+      "estado": "abstido",
+      "parou_em": "verificacao",
+      "confianca_minima_da_cadeia": 0.0,
+      "trilha": [
+        {
+          "elo": "recuperacao",
+          "portao": "indice_denso",
+          "passou": true,
+          "confianca": 0.246161,
+          "detalhe": {
+            "recuperados": 5,
+            "primeiro": "referencias/008#0001"
+          }
+        },
+        {
+          "elo": "verificacao",
+          "portao": "conjuncao_lexico_e_juiz",
+          "passou": false,
+          "confianca": 0.0,
+          "detalhe": {
+            "por_que": "sobreposicao lexica insuficiente"
+          }
+        }
+      ],
+      "nao_e": "abstencao nao e resposta negativa: a cadeia diz que nao sustenta seguir, e nomeia o elo onde parou"
+    },
+    {
+      "id": "dinf_invertido",
+      "familia": "nao_sustenta_lexico",
+      "esperado_sustenta": false,
+      "estado": "abstido",
+      "parou_em": "verificacao",
+      "confianca_minima_da_cadeia": 0.667,
+      "trilha": [
+        {
+          "elo": "recuperacao",
+          "portao": "indice_denso",
+          "passou": true,
+          "confianca": 0.930223,
+          "detalhe": {
+            "recuperados": 5,
+            "primeiro": "referencias/001#0001"
+          }
+        },
+        {
+          "elo": "verificacao",
+          "portao": "conjuncao_lexico_e_juiz",
+          "passou": false,
+          "confianca": 0.667,
+          "detalhe": {
+            "juiz": "discorda",
+            "bruto": "NAO_SUSTENTA"
+          }
+        }
+      ],
+      "nao_e": "abstencao nao e resposta negativa: a cadeia diz que nao sustenta seguir, e nomeia o elo onde parou"
+    },
+    {
+      "id": "hand_como_previsao",
+      "familia": "nao_sustenta_lexico",
+      "esperado_sustenta": false,
+      "estado": "abstido",
+      "parou_em": "verificacao",
+      "confianca_minima_da_cadeia": 0.811506,
+      "trilha": [
+        {
+          "elo": "recuperacao",
+          "portao": "indice_denso",
+          "passou": true,
+          "confianca": 0.811506,
+          "detalhe": {
+            "recuperados": 5,
+            "primeiro": "referencias/002#0001"
+          }
+        },
+        {
+          "elo": "verificacao",
+          "portao": "conjuncao_lexico_e_juiz",
+          "passou": false,
+          "confianca": 0.889,
+          "detalhe": {
+            "juiz": "discorda",
+            "bruto": "NAO_SUSTENTA"
+          }
+        }
+      ],
+      "nao_e": "abstencao nao e resposta negativa: a cadeia diz que nao sustenta seguir, e nomeia o elo onde parou"
+    },
+    {
+      "id": "twi_causal",
+      "familia": "nao_sustenta_lexico",
+      "esperado_sustenta": false,
+      "estado": "publicado",
+      "parou_em": null,
+      "confianca_minima_da_cadeia": 0.724869,
+      "trilha": [
+        {
+          "elo": "recuperacao",
+          "portao": "indice_denso",
+          "passou": true,
+          "confianca": 0.724869,
+          "detalhe": {
+            "recuperados": 5,
+            "primeiro": "referencias/003#0001"
+          }
+        },
+        {
+          "elo": "verificacao",
+          "portao": "conjuncao_lexico_e_juiz",
+          "passou": true,
+          "confianca": 0.778,
+          "detalhe": {
+            "juiz": "concorda"
+          }
+        }
+      ],
+      "nao_e": "abstencao nao e resposta negativa: a cadeia diz que nao sustenta seguir, e nomeia o elo onde parou"
+    },
+    {
+      "id": "sovi_universal",
+      "familia": "nao_sustenta_lexico",
+      "esperado_sustenta": false,
+      "estado": "abstido",
+      "parou_em": "verificacao",
+      "confianca_minima_da_cadeia": 0.831006,
+      "trilha": [
+        {
+          "elo": "recuperacao",
+          "portao": "indice_denso",
+          "passou": true,
+          "confianca": 0.831006,
+          "detalhe": {
+            "recuperados": 5,
+            "primeiro": "referencias/023#0001"
+          }
+        },
+        {
+          "elo": "verificacao",
+          "portao": "conjuncao_lexico_e_juiz",
+          "passou": false,
+          "confianca": 0.917,
+          "detalhe": {
+            "juiz": "discorda",
+            "bruto": "NAO_SUSTENTA"
+          }
+        }
+      ],
+      "nao_e": "abstencao nao e resposta negativa: a cadeia diz que nao sustenta seguir, e nomeia o elo onde parou"
+    },
+    {
+      "id": "rufat_completo",
+      "familia": "nao_sustenta_lexico",
+      "esperado_sustenta": false,
+      "estado": "abstido",
+      "parou_em": "verificacao",
+      "confianca_minima_da_cadeia": 0.8,
+      "trilha": [
+        {
+          "elo": "recuperacao",
+          "portao": "indice_denso",
+          "passou": true,
+          "confianca": 0.804425,
+          "detalhe": {
+            "recuperados": 5,
+            "primeiro": "referencias/024#0001"
+          }
+        },
+        {
+          "elo": "verificacao",
+          "portao": "conjuncao_lexico_e_juiz",
+          "passou": false,
+          "confianca": 0.8,
+          "detalhe": {
+            "juiz": "discorda",
+            "bruto": "NAO_SUSTENTA"
+          }
+        }
+      ],
+      "nao_e": "abstencao nao e resposta negativa: a cadeia diz que nao sustenta seguir, e nomeia o elo onde parou"
+    },
+    {
+      "id": "firth_elimina",
+      "familia": "nao_sustenta_lexico",
+      "esperado_sustenta": false,
+      "estado": "abstido",
+      "parou_em": "verificacao",
+      "confianca_minima_da_cadeia": 0.854838,
+      "trilha": [
+        {
+          "elo": "recuperacao",
+          "portao": "indice_denso",
+          "passou": true,
+          "confianca": 0.854838,
+          "detalhe": {
+            "recuperados": 5,
+            "primeiro": "referencias/004#0001"
+          }
+        },
+        {
+          "elo": "verificacao",
+          "portao": "conjuncao_lexico_e_juiz",
+          "passou": false,
+          "confianca": 0.875,
+          "detalhe": {
+            "juiz": "discorda",
+            "bruto": "NAO_SUSTENTA"
+          }
+        }
+      ],
+      "nao_e": "abstencao nao e resposta negativa: a cadeia diz que nao sustenta seguir, e nomeia o elo onde parou"
+    },
+    {
+      "id": "epv_invertido",
+      "familia": "nao_sustenta_lexico",
+      "esperado_sustenta": false,
+      "estado": "abstido",
+      "parou_em": "verificacao",
+      "confianca_minima_da_cadeia": 0.182,
+      "trilha": [
+        {
+          "elo": "recuperacao",
+          "portao": "indice_denso",
+          "passou": true,
+          "confianca": 0.368902,
+          "detalhe": {
+            "recuperados": 5,
+            "primeiro": "referencias/007#0001"
+          }
+        },
+        {
+          "elo": "verificacao",
+          "portao": "conjuncao_lexico_e_juiz",
+          "passou": false,
+          "confianca": 0.182,
+          "detalhe": {
+            "por_que": "sobreposicao lexica insuficiente"
+          }
+        }
+      ],
+      "nao_e": "abstencao nao e resposta negativa: a cadeia diz que nao sustenta seguir, e nomeia o elo onde parou"
+    },
+    {
+      "id": "tarboton_curitiba",
+      "familia": "nao_sustenta_obvio",
+      "esperado_sustenta": false,
+      "estado": "abstido",
+      "parou_em": "verificacao",
+      "confianca_minima_da_cadeia": 0.0,
+      "trilha": [
+        {
+          "elo": "recuperacao",
+          "portao": "indice_denso",
+          "passou": true,
+          "confianca": 0.159498,
+          "detalhe": {
+            "recuperados": 5,
+            "primeiro": "referencias/023#0001"
+          }
+        },
+        {
+          "elo": "verificacao",
+          "portao": "conjuncao_lexico_e_juiz",
+          "passou": false,
+          "confianca": 0.0,
+          "detalhe": {
+            "por_que": "sobreposicao lexica insuficiente"
+          }
+        }
+      ],
+      "nao_e": "abstencao nao e resposta negativa: a cadeia diz que nao sustenta seguir, e nomeia o elo onde parou"
+    },
+    {
+      "id": "hand_renda",
+      "familia": "nao_sustenta_obvio",
+      "esperado_sustenta": false,
+      "estado": "abstido",
+      "parou_em": "verificacao",
+      "confianca_minima_da_cadeia": 0.0,
+      "trilha": [
+        {
+          "elo": "recuperacao",
+          "portao": "indice_denso",
+          "passou": true,
+          "confianca": 0.156014,
+          "detalhe": {
+            "recuperados": 5,
+            "primeiro": "referencias/023#0001"
+          }
+        },
+        {
+          "elo": "verificacao",
+          "portao": "conjuncao_lexico_e_juiz",
+          "passou": false,
+          "confianca": 0.0,
+          "detalhe": {
+            "por_que": "sobreposicao lexica insuficiente"
+          }
+        }
+      ],
+      "nao_e": "abstencao nao e resposta negativa: a cadeia diz que nao sustenta seguir, e nomeia o elo onde parou"
+    },
+    {
+      "id": "sovi_dinf",
+      "familia": "nao_sustenta_obvio",
+      "esperado_sustenta": false,
+      "estado": "publicado",
+      "parou_em": null,
+      "confianca_minima_da_cadeia": 0.833,
+      "trilha": [
+        {
+          "elo": "recuperacao",
+          "portao": "indice_denso",
+          "passou": true,
+          "confianca": 0.921611,
+          "detalhe": {
+            "recuperados": 5,
+            "primeiro": "referencias/001#0001"
+          }
+        },
+        {
+          "elo": "verificacao",
+          "portao": "conjuncao_lexico_e_juiz",
+          "passou": true,
+          "confianca": 0.833,
+          "detalhe": {
+            "juiz": "concorda"
+          }
+        }
+      ],
+      "nao_e": "abstencao nao e resposta negativa: a cadeia diz que nao sustenta seguir, e nomeia o elo onde parou"
+    }
+  ],
+  "hash_resumo": "sha256:d7458e20f665023594e5bae3f33259554eeab573ae22efdd3fc947882bd03519"
+}

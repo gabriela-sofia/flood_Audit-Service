@@ -1,0 +1,142 @@
+{
+  "tipo": "avaliacao_unet_sen1floods11",
+  "etapa": "A5",
+  "quando_utc": "2026-09-02T02:25:47.907330Z",
+  "checkpoint": "v1",
+  "hash_estado": "sha256:bca94df7ab57d51e90f41411d52478bd7ca093bc3386ac17d5b01fdc904923ba",
+  "seed": 20260901,
+  "epocas_treinadas": 30,
+  "parametros": 482610,
+  "split": "teste",
+  "chips_avaliados": 90,
+  "chips_recusados": 0,
+  "limiar_confianca": null,
+  "recusados": [],
+  "micro": {
+    "tp": 1422514,
+    "fp": 176507,
+    "fn": 1092494,
+    "tn": 17752444,
+    "iou": 0.528518,
+    "f1": 0.691543,
+    "precisao": 0.889616,
+    "recall": 0.56561
+  },
+  "micro_sem_agua_permanente": {
+    "tp": 794073,
+    "fp": 153148,
+    "fn": 821603,
+    "tn": 17732070,
+    "iou": 0.448927,
+    "f1": 0.619668,
+    "precisao": 0.838319,
+    "recall": 0.49148
+  },
+  "macro": {
+    "iou": 0.306442,
+    "f1": 0.389875,
+    "precisao": 0.727721,
+    "recall": 0.369722
+  },
+  "macro_sem_agua_permanente": {
+    "iou": 0.240665,
+    "f1": 0.327902,
+    "precisao": 0.690214,
+    "recall": 0.295826
+  },
+  "nao_e": "resultado neste conjunto, com este split; nao e afirmacao sobre Recife, Curitiba ou Petropolis, e nao desloca escore de suscetibilidade",
+  "comparacao_com_baseline": {
+    "disponivel": true,
+    "baseline": "otsu_do_dataset",
+    "hash_resumo_baseline": "sha256:d5f2cf3df5df44faffd79af4881e4f38040f9cdb7dde61b8e064b69a39b106eb",
+    "micro": {
+      "iou": {
+        "rede": 0.528518,
+        "otsu": 0.545846,
+        "diferenca": -0.017328
+      },
+      "f1": {
+        "rede": 0.691543,
+        "otsu": 0.70621,
+        "diferenca": -0.014667
+      },
+      "precisao": {
+        "rede": 0.889616,
+        "otsu": 0.68115,
+        "diferenca": 0.208466
+      },
+      "recall": {
+        "rede": 0.56561,
+        "otsu": 0.733184,
+        "diferenca": -0.167574
+      }
+    },
+    "micro_sem_agua_permanente": {
+      "iou": {
+        "rede": 0.448927,
+        "otsu": 0.394663,
+        "diferenca": 0.054264
+      },
+      "f1": {
+        "rede": 0.619668,
+        "otsu": 0.565962,
+        "diferenca": 0.053706
+      },
+      "precisao": {
+        "rede": 0.838319,
+        "otsu": 0.538969,
+        "diferenca": 0.29935
+      },
+      "recall": {
+        "rede": 0.49148,
+        "otsu": 0.595801,
+        "diferenca": -0.104321
+      }
+    },
+    "macro": {
+      "iou": {
+        "rede": 0.306442,
+        "otsu": 0.3274,
+        "diferenca": -0.020958
+      },
+      "f1": {
+        "rede": 0.389875,
+        "otsu": 0.415473,
+        "diferenca": -0.025598
+      },
+      "precisao": {
+        "rede": 0.727721,
+        "otsu": 0.537186,
+        "diferenca": 0.190535
+      },
+      "recall": {
+        "rede": 0.369722,
+        "otsu": 0.492959,
+        "diferenca": -0.123237
+      }
+    },
+    "macro_sem_agua_permanente": {
+      "iou": {
+        "rede": 0.240665,
+        "otsu": 0.25315,
+        "diferenca": -0.012485
+      },
+      "f1": {
+        "rede": 0.327902,
+        "otsu": 0.34564,
+        "diferenca": -0.017738
+      },
+      "precisao": {
+        "rede": 0.690214,
+        "otsu": 0.481349,
+        "diferenca": 0.208865
+      },
+      "recall": {
+        "rede": 0.295826,
+        "otsu": 0.420824,
+        "diferenca": -0.124998
+      }
+    }
+  },
+  "hash_resumo": "sha256:de002650aeccac25585a06d68c124cb18087f0213d3cbb593ff15955f5d3c01b"
+}

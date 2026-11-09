@@ -1,0 +1,373 @@
+{
+  "escopo": "Reelaboracao editorial e visual; nenhum treino, protocolo ou reserva alterados.",
+  "metodo_geral": {
+    "tipo": "esquema conceitual do procedimento; sem numeros de desempenho"
+  },
+  "camadas_episodio": {
+    "janela": [
+      650,
+      0,
+      450
+    ],
+    "resolucao_m": 30,
+    "crs": "EPSG:32722",
+    "radar_data": "2024-05-08",
+    "delineacao_data": "2024-05-06",
+    "papel": "fontes do mesmo episodio; mapa descritivo",
+    "area_sem_mancha": "area de interesse sem mancha mapeada; nao rotulada como ausencia observada",
+    "contraste_visual_radar_db": [
+      -26,
+      -8
+    ],
+    "teto_visual_HAND_m": 60
+  },
+  "resposta": {
+    "escores": {
+      "RB_79790_833": 1.4871656981182975,
+      "RB_56871_833": 0.05747463405845744
+    },
+    "contribuicoes": {
+      "RB_79790_833": {
+        "f_hand": 0.7514789117470192,
+        "f_sca": 0.12861589076159557,
+        "f_declive": 0.2720146150631653,
+        "f_construido": -0.5245216554076902,
+        "f_areia": 0.03303001618196296,
+        "f_dist_dren": -0.02562786861612317,
+        "f_dist_canal": 0.8526680285704221
+      },
+      "RB_56871_833": {
+        "f_hand": 0.20406816750928514,
+        "f_sca": -0.012801273602040999,
+        "f_declive": 0.12293267672123002,
+        "f_construido": -0.40585298870184255,
+        "f_areia": 0.03303001618196296,
+        "f_dist_dren": 0.023088789914951054,
+        "f_dist_canal": 0.0929093248758883
+      }
+    },
+    "padronizados": {
+      "RB_79790_833": {
+        "f_areia": -0.16391799309214378,
+        "f_construido": 3.0815794620980035,
+        "f_declive": -0.9942794854217488,
+        "f_dist_canal": -1.9711911765455563,
+        "f_dist_dren": -0.46934517481283217,
+        "f_hand": -0.8311082056772708,
+        "f_sca": 1.520236390597828,
+        "z_relevo": -1.3056015711996571
+      },
+      "RB_56871_833": {
+        "f_areia": -0.16391799309214378,
+        "f_construido": 2.3843977111728503,
+        "f_declive": -0.44934879151077795,
+        "f_dist_canal": -0.21478703936068808,
+        "f_dist_dren": 0.42284484524131905,
+        "f_hand": -0.22569193344388408,
+        "f_sca": -0.15131071176807542,
+        "z_relevo": -1.3056015711996571
+      }
+    },
+    "posicoes": {
+      "Rua Muriti": [
+        72.0,
+        74
+      ],
+      "Av. Recife": [
+        12.0,
+        74
+      ]
+    },
+    "auc_Q": 0.6686913897290876,
+    "auc_HAND": 0.5951376125907373,
+    "unidades_mapa": 79,
+    "crs_mapa": "EPSG:31985",
+    "areia_muriti_ausente": true
+  },
+  "transferencia": [
+    {
+      "rotulo": "RMPA · 241 positivos",
+      "auc": 0.8803514304846701,
+      "ic_auc": [
+        0.8277101918411308,
+        0.9232253038524902
+      ],
+      "regra": 0.840621090934798,
+      "delta": 0.03973033954987215,
+      "ic_delta": [
+        -0.0017249984040777209,
+        0.0908628279283555
+      ]
+    },
+    {
+      "rotulo": "Manaus · 48 positivos",
+      "auc": 0.9195546010826077,
+      "ic_auc": [
+        0.7912445413611373,
+        0.9668180957635162
+      ],
+      "regra": 0.8733971718835805,
+      "delta": 0.04615742919902721,
+      "ic_delta": [
+        0.019735757598031773,
+        0.06948947194055359
+      ]
+    },
+    {
+      "rotulo": "RMC · 11 positivos",
+      "auc": 0.8928374283926841,
+      "ic_auc": [
+        0.8580374997563245,
+        0.9266581154724716
+      ],
+      "regra": 0.8259466885833098,
+      "delta": 0.06689073980937432,
+      "ic_delta": [
+        -0.03465710459867152,
+        0.15667526866858317
+      ]
+    },
+    {
+      "rotulo": "Recife · 31 positivos",
+      "auc": 0.866366640440598,
+      "ic_auc": [
+        0.7768267369891235,
+        0.9351529333183014
+      ],
+      "regra": 0.8023949645948072,
+      "delta": 0.06397167584579078,
+      "ic_delta": [
+        0.012313054046907928,
+        0.12476548073319146
+      ]
+    },
+    {
+      "rotulo": "RMR sem Recife · 366 positivos",
+      "auc": 0.8089890865535293,
+      "ic_auc": [
+        0.7211798206252408,
+        0.8660794502064906
+      ],
+      "regra": 0.6929236562993579,
+      "delta": 0.11606543025417138,
+      "ic_delta": [
+        0.06880204969370386,
+        0.14498357186818023
+      ]
+    },
+    {
+      "rotulo": "Recife · 48 ruas relatadas",
+      "auc": 0.6686913897290876,
+      "ic_auc": [
+        0.5640695391822156,
+        0.7746777449301119
+      ],
+      "regra": 0.5951376125907373,
+      "delta": 0.0735537771383504,
+      "ic_delta": [
+        0.0115341949669137,
+        0.1590831980623274
+      ]
+    },
+    {
+      "rotulo": "Petrópolis · 81 cicatrizes",
+      "auc": 0.6604808657624983,
+      "ic_auc": [
+        0.5931180121800923,
+        0.7262713184619174
+      ],
+      "regra": 0.6539014178587811,
+      "delta": 0.006579447903717228,
+      "ic_delta": [
+        -0.018208389793930004,
+        0.03178203407787216
+      ]
+    }
+  ],
+  "ciclo": {
+    "ganho_recalculado": 0.05204690190934225,
+    "retencao_recalculada": -0.028461811067019394,
+    "seleção": "percentil 80 dos postos disponíveis; não incerteza calibrada",
+    "intervalos": {
+      "RMPA, $G_B$, dúvida": [
+        0.052046901909342025,
+        [
+          0.020326044311961153,
+          0.10141720591873653
+        ]
+      ],
+      "RMPA, $G_B$, acaso": [
+        0.028925855158640545,
+        [
+          0.008961429873708907,
+          0.06187569571628591
+        ]
+      ],
+      "RMPA, $T_B$, origem": [
+        -0.02846181106701946,
+        [
+          -0.056337847222222286,
+          -0.006106486992945396
+        ]
+      ],
+      "Recife, ruas": [
+        0.0099826662059168,
+        [
+          -0.0350098243222017,
+          0.0507578605424183
+        ]
+      ],
+      "Petrópolis, $B$=100": [
+        -0.1583680524853795,
+        [
+          -0.2467839445175421,
+          -0.0648768345287007
+        ]
+      ],
+      "Manaus e RMC": [
+        null,
+        null
+      ]
+    },
+    "auc_400": {
+      "congelado": {
+        "auc_teste_fcu": 0.874369885690833,
+        "auc_retencao": 0.7332351619911082
+      },
+      "diversidade_gate": {
+        "auc_teste_fcu": 0.9069856038395,
+        "auc_retencao": 0.704621328408228
+      },
+      "margem_explora_gate": {
+        "auc_teste_fcu": 0.9018648307029068,
+        "auc_retencao": 0.7222251858970825
+      },
+      "margem_p90_gate": {
+        "auc_teste_fcu": 0.9114982728927622,
+        "auc_retencao": 0.7102573791611553
+      },
+      "margem_v9_gate": {
+        "auc_teste_fcu": 0.9264167876001752,
+        "auc_retencao": 0.7047733509240888
+      },
+      "margem_v9_sem_gate": {
+        "auc_teste_fcu": 0.9053831939406912,
+        "auc_retencao": 0.7157966781948119
+      },
+      "uniforme_gate": {
+        "auc_teste_fcu": 0.9032957408494736,
+        "auc_retencao": 0.7228298509302126
+      }
+    }
+  },
+  "triangulacao": {
+    "linhas": [
+      "com relato",
+      "sem relato"
+    ],
+    "colunas": [
+      "sem positivo S2",
+      "com positivo S2"
+    ],
+    "tabela": [
+      [
+        16,
+        19
+      ],
+      [
+        23,
+        36
+      ]
+    ],
+    "bairros": 94,
+    "com_relato": 35,
+    "com_positivo_s2": 55,
+    "janela_relatos": [
+      "2022-05-28",
+      "2022-06-07"
+    ],
+    "relatos_janela": 147,
+    "relatos_bairros_casados": 145,
+    "cena_S2": "S2B_25MBM_20220601_0_L2A",
+    "escopo": "comparacao por bairro no episodio; distinta da avaliacao por ruas 2014-2024"
+  },
+  "conferencias_fontes_anteriores": {
+    "docs/artigo_final_6_paginas_v5_20261029/images/proveniencia_figuras_v5.json": true,
+    "local_runs/recife-aprendizado/v1/atributos/nucleo_q_congelado.json": true,
+    "local_runs/recife-aprendizado/v1/atributos/atributos_objetos.parquet": true,
+    "local_runs/recife-aprendizado/v1/resultados/pred_ruas.parquet": true,
+    "local_runs/recife-aprendizado/v1/resultados/contrastes.csv": true,
+    "local_runs/transferencia-vulnerabilizados/v10_ciclo_contextual/ii_ciclo/curvas.csv": true,
+    "local_runs/fundamentacao-artigo-20261028/f01_ic_ganho_atualizacao.json": true,
+    "local_runs/fundamentacao-artigo-20261028/f03_ic_transferencia_coortes.json": true,
+    "local_runs/fundamentacao-artigo-20261028/f04_encosta_e_retencao.json": true,
+    "local_runs/fundamentacao-artigo-20261028/f06_ic_auc_ruas_recife.json": true,
+    "local_runs/fundamentacao-artigo-20261028/territorio_novo/resultado.json": true,
+    "local_runs/fundamentacao-artigo-20261028/territorio_novo/v2/resultado.json": true,
+    "local_runs/petropolis-aprendizado/v1/resultados/contrastes_T1.csv": true,
+    "local_runs/cems-emsr720/pontos_emsr720.csv": true,
+    "local_runs/ter-01-cadeia-harmonizada/EMSR720/s1_grd.tif": true,
+    "local_runs/ter-01-cadeia-harmonizada/EMSR720/hand_dinf.tif": true,
+    "local_runs/ter-01-cadeia-harmonizada/EMSR720/slope_deg_wbt.tif": true,
+    "local_runs/ter-01-cadeia-harmonizada/EMSR720/agua_permanente_jrc.tif": true,
+    "local_runs/br-01-cems-negativo/extraido/EMSR720_AOI01_GRA_PRODUCT_v1/EMSR720_AOI01_GRA_PRODUCT_observedEventA_v1.json": true,
+    "local_runs/br-01-cems-negativo/extraido/EMSR720_AOI02_GRA_PRODUCT_v1/EMSR720_AOI02_GRA_PRODUCT_observedEventA_v1.json": true,
+    "local_runs/br-01-cems-negativo/extraido/EMSR720_AOI03_GRA_PRODUCT_v1/EMSR720_AOI03_GRA_PRODUCT_observedEventA_v1.json": true,
+    "local_runs/br-01-cems-negativo/extraido/EMSR720_AOI04_GRA_PRODUCT_v1/EMSR720_AOI04_GRA_PRODUCT_observedEventA_v1.json": true,
+    "local_runs/br-01-cems-negativo/extraido/EMSR720_AOI05_GRA_PRODUCT_v2/EMSR720_AOI05_GRA_PRODUCT_observedEventA_v1.json": true,
+    "local_runs/br-01-cems-negativo/extraido/EMSR720_AOI01_GRA_PRODUCT_v1/EMSR720_AOI01_GRA_PRODUCT_areaOfInterestA_v1.json": true,
+    "local_runs/br-01-cems-negativo/extraido/EMSR720_AOI02_GRA_PRODUCT_v1/EMSR720_AOI02_GRA_PRODUCT_areaOfInterestA_v1.json": true,
+    "local_runs/br-01-cems-negativo/extraido/EMSR720_AOI03_GRA_PRODUCT_v1/EMSR720_AOI03_GRA_PRODUCT_areaOfInterestA_v1.json": true,
+    "local_runs/br-01-cems-negativo/extraido/EMSR720_AOI04_GRA_PRODUCT_v1/EMSR720_AOI04_GRA_PRODUCT_areaOfInterestA_v1.json": true,
+    "local_runs/br-01-cems-negativo/extraido/EMSR720_AOI05_GRA_PRODUCT_v2/EMSR720_AOI05_GRA_PRODUCT_areaOfInterestA_v1.json": true,
+    "local_runs/recife-aprendizado/v1/referencias/objetos_rua_bairro.gpkg": true
+  },
+  "fontes_sha256": {
+    "docs/artigo_final_6_paginas_v6_20261030/images/proveniencia_figuras_v6.json": "cda12e92297fedcb99573740cad305987bd26f42e81a7ee3d0154086107ce9e5",
+    "docs/artigo_final_6_paginas_v5_20261029/images/proveniencia_figuras_v5.json": "67917d28cb42e27a876fb864892828af47862070b43510cb3fe9f61f7f109075",
+    "local_runs/recife-aprendizado/v1/atributos/nucleo_q_congelado.json": "a2a08cbf3fd59dff929e616565a27d25787d74dc2ee4b3a1958d13e5c6cdd3be",
+    "local_runs/recife-aprendizado/v1/atributos/atributos_objetos.parquet": "b76d6b549107ea5604312c9bc4c0d1cb80b590f2ab86a0c97294d904a5a6bcea",
+    "local_runs/recife-aprendizado/v1/resultados/pred_ruas.parquet": "96f897f6671130290636f6b11d2cc828658754c1f151e6fbce165fd89021c965",
+    "local_runs/recife-aprendizado/v1/resultados/contrastes.csv": "329cf3fa14eb6a5f17bb4f5fb313547417f6612aa46fb6328cde1691e1dac997",
+    "local_runs/transferencia-vulnerabilizados/v10_ciclo_contextual/ii_ciclo/curvas.csv": "e2b5b0a084da288aaeea1b893c79b8ea6c001f08cefa7297d33a94dc17b09456",
+    "local_runs/fundamentacao-artigo-20261028/f01_ic_ganho_atualizacao.json": "d26283995446df88bcc3703994a9365924f7d8d3aaae9db2e4ad6cf7cda0a048",
+    "local_runs/fundamentacao-artigo-20261028/f03_ic_transferencia_coortes.json": "be09b2ffd6e0e84fbb4c31301dced5bca2af1b5e32b69b8b3f0facb4a5e6132f",
+    "local_runs/fundamentacao-artigo-20261028/f04_encosta_e_retencao.json": "bf411651e314e5ff7bd3ae049822fd83ad0c146a8526f81d2405667a5eb319d9",
+    "local_runs/fundamentacao-artigo-20261028/f06_ic_auc_ruas_recife.json": "c4845ca3053f0835d939f249becbe3e920f5962831bb0051f81d557c3d21ed10",
+    "local_runs/fundamentacao-artigo-20261028/territorio_novo/resultado.json": "03b099c4022b52b6082af011fda527069dd3e8ddc019faa8e2c51b322a6af29f",
+    "local_runs/fundamentacao-artigo-20261028/territorio_novo/v2/resultado.json": "a151103cee69f582b62bd053073b9e10bdae078b86cbbd7d76b8dca2e853b070",
+    "local_runs/petropolis-aprendizado/v1/resultados/contrastes_T1.csv": "4dfd85614d21a6e90831598f031de91c8c166c897d01e48cb47b3496599c8132",
+    "local_runs/cems-emsr720/pontos_emsr720.csv": "ca394cfb8ead540fdf6d355b9c2cee7d75d09c83be837a684e2761ecea2951f5",
+    "local_runs/ter-01-cadeia-harmonizada/EMSR720/s1_grd.tif": "39c2ce0f23417e70fb18d8efb48bf88139391e658abf2452dff58854eaa00860",
+    "local_runs/ter-01-cadeia-harmonizada/EMSR720/hand_dinf.tif": "fdb8010764de8e6c78d5c4dff6ff89549a9283f3f92db41d045fa02af1816713",
+    "local_runs/ter-01-cadeia-harmonizada/EMSR720/slope_deg_wbt.tif": "9e449f7d7aa1216cd0d82628a652ff811ba5a8980394800d2289ed1e776f8140",
+    "local_runs/ter-01-cadeia-harmonizada/EMSR720/agua_permanente_jrc.tif": "2d7a18cc7ccbdcd5c3ece43815b641a18de885927fa9daeb16c09347815c088a",
+    "local_runs/br-01-cems-negativo/extraido/EMSR720_AOI01_GRA_PRODUCT_v1/EMSR720_AOI01_GRA_PRODUCT_observedEventA_v1.json": "077d097c4357e4cc77fb0bd13594dcfccdd5dd4529fff3171405bf1173c270b4",
+    "local_runs/br-01-cems-negativo/extraido/EMSR720_AOI02_GRA_PRODUCT_v1/EMSR720_AOI02_GRA_PRODUCT_observedEventA_v1.json": "1cf3ca3b2a7f8b3f6ca925eb43a19a94d8d9134b18c918bfaaa8e8db97c7ed88",
+    "local_runs/br-01-cems-negativo/extraido/EMSR720_AOI03_GRA_PRODUCT_v1/EMSR720_AOI03_GRA_PRODUCT_observedEventA_v1.json": "c85e7d9d6e54f9fc93b4472fcef26dc7b880841a39ff29e3b7e0b2d9e7946bdb",
+    "local_runs/br-01-cems-negativo/extraido/EMSR720_AOI04_GRA_PRODUCT_v1/EMSR720_AOI04_GRA_PRODUCT_observedEventA_v1.json": "66704af924ae8e7c56261ecb5ef5fd734f279e93ea47a1048eae0cab6a0ae841",
+    "local_runs/br-01-cems-negativo/extraido/EMSR720_AOI05_GRA_PRODUCT_v2/EMSR720_AOI05_GRA_PRODUCT_observedEventA_v1.json": "601c59d2f92601df98e9873d14a7cb219a7e6893f39ef817d3f5e7628eef33f2",
+    "local_runs/br-01-cems-negativo/extraido/EMSR720_AOI01_GRA_PRODUCT_v1/EMSR720_AOI01_GRA_PRODUCT_areaOfInterestA_v1.json": "a03f5a2a722419bba65c7fde887f2677d629fba3d504a457a9876407618721dc",
+    "local_runs/br-01-cems-negativo/extraido/EMSR720_AOI02_GRA_PRODUCT_v1/EMSR720_AOI02_GRA_PRODUCT_areaOfInterestA_v1.json": "cf80cd5df5809d0094381476d4cc2f7ed199eeeeb7a9fb9111196f67206eaf45",
+    "local_runs/br-01-cems-negativo/extraido/EMSR720_AOI03_GRA_PRODUCT_v1/EMSR720_AOI03_GRA_PRODUCT_areaOfInterestA_v1.json": "36022c785dcfae5f0d591bb2e9cadf6132102fcd41b8ba0bde6f0cf632265eda",
+    "local_runs/br-01-cems-negativo/extraido/EMSR720_AOI04_GRA_PRODUCT_v1/EMSR720_AOI04_GRA_PRODUCT_areaOfInterestA_v1.json": "333155064faa46a4681d0aebc8be17adcfa2a076fddae3db58c637e1f552c938",
+    "local_runs/br-01-cems-negativo/extraido/EMSR720_AOI05_GRA_PRODUCT_v2/EMSR720_AOI05_GRA_PRODUCT_areaOfInterestA_v1.json": "7cb3c4aa7295710aad876961eacdbd843cfee936fc08d0fafce74f17fcf01f09",
+    "local_runs/recife-aprendizado/v1/referencias/objetos_rua_bairro.gpkg": "10964172402af59ac1b24c3f8cb8946c39fa29b858ca27baf4c7c2ab39b861e2",
+    "local_runs/transferencia-vulnerabilizados/v10_ciclo_contextual/v_social/recife_por_bairro.csv": "6454d1fc14f819d3f0053968064baba29a65f946d6b8900c99c6ba87288ca16a",
+    "local_runs/transferencia-vulnerabilizados/v6_evidencia_robusta/recife_avaliacao/referencia.json": "8dcc1d5641c7a91f718201ba6e252a01abf9ba33fd421e6e9b9bb4499f6c4f91",
+    "local_runs/transferencia-vulnerabilizados/v10_ciclo_contextual/v_social/resultado.json": "439493932f88e398f0878858700d76984615222bae2dd48716b0edfa419c65b9",
+    "local_runs/social-exposicao-grade/2026-10-12-v1/exposicao_grade.json": "af5af84948048f04c39a885240c4c8e2e820d0b7bf2b98a6b7122fc2b6de6db0",
+    "local_runs/social-exposicao-grade/2026-10-12-v1/manifesto.json": "23ffaed1f6c6a73678428a65ea3c25bb42b9d1cfe6c7e590705dc243e645dfcf"
+  },
+  "exposicao_documentada": {
+    "limites_populacao": {
+      "minimo": 1131,
+      "maximo": 16068,
+      "unidades_sem_total": 0
+    },
+    "interpretacao": "exercicio exploratorio; uniao espacial CEMS maio/2024 EMSR720 (RS)",
+    "agua_permanente": "mantida; sem remocao adicional validada",
+    "populacao": "Censo 2022; grade com geocodificacao admitida",
+    "natureza": "limites de localizacao; nao intervalo de confianca nem contagem de atingidos"
+  }
+}

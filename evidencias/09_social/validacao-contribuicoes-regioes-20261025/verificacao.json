@@ -1,0 +1,20 @@
+{
+  "escopo": "integridade e metricas primarias; sem treino ou mutacao das entregas",
+  "recife": {
+    "arquivos_conferidos": 130,
+    "erros": [],
+    "auc_recalculada": {
+      "A1_Q": 0.6686913897290876,
+      "A0_regra": 0.5951376125907373
+    }
+  },
+  "petropolis": {
+    "arquivos_conferidos": 453,
+    "erros": [],
+    "auc_recalculada": {
+      "A1_log": 0.6604808657624983,
+      "A0_regra": 0.6539014178587812
+    }
+  },
+  "ok_integridade": true
+}

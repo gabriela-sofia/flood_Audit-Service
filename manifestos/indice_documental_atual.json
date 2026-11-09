@@ -1,0 +1,48 @@
+{
+  "origem": "codigo/local_runs/rag-corpus/manifest.json, gerado nesta preparação",
+  "fontes_locais": [
+    {
+      "caminho": "README.md",
+      "sha256": "sha256:080c33206a2cb14d8db918325e96b8d3d4d0fe4bf7c1fa3a70b4409339068870",
+      "chunks": 7
+    },
+    {
+      "caminho": "artigo/fonte/artigo.tex",
+      "sha256": "sha256:896b74e687a183c2423823aed91c160e4afd9a92fed10460d764700aa073d06c",
+      "chunks": 34
+    },
+    {
+      "caminho": "docs/METODO.md",
+      "sha256": "sha256:331e86d8afd90a40a23496df2f8de8bf5adbc5b5d31821b85905d4566fd13525",
+      "chunks": 7
+    },
+    {
+      "caminho": "docs/CONTRIBUICOES.md",
+      "sha256": "sha256:bff09b0dafbcfd95aab99740cc9a82869fcd155cc91df4085561b42ed1f6195d",
+      "chunks": 7
+    },
+    {
+      "caminho": "docs/DADOS_E_FONTES.md",
+      "sha256": "sha256:d838250ec3518f03700b8c127abae438ce3e6d774120556c532f7e2bb5624657",
+      "chunks": 2
+    },
+    {
+      "caminho": "docs/REPRODUCAO.md",
+      "sha256": "sha256:54c736420613154e808da43db223d691eccbb8879d709e4cc6c6430ccf72a98b",
+      "chunks": 6
+    },
+    {
+      "caminho": "docs/CODIGO.md",
+      "sha256": "sha256:349dd59e225616637a5252816a2febc0377256c93a387ad2d9faf017d907ceea",
+      "chunks": 3
+    }
+  ],
+  "chunks": 99,
+  "por_classe": {
+    "projeto": 57,
+    "cientifica": 23,
+    "operacional": 19
+  },
+  "hash_corpus": "sha256:1646842e12932738afcc1ae285bc8a244d6143f3edb3299f41da8da4ec479481",
+  "nota": "Consulta dos documentos atuais; não é repetição dos ensaios da Tabela VIII. Recriar o índice após mover a pasta."
+}

@@ -1,0 +1,52 @@
+{
+  "tipo": "baseline_otsu_sen1floods11",
+  "etapa": "A2",
+  "quando_utc": "2026-09-02T00:12:56.618945Z",
+  "split": "teste",
+  "chips": 90,
+  "splits_disjuntos": true,
+  "mascara": {
+    "pixels_totais": 23592960,
+    "fora_por_rotulo_sem_dado": 3075593,
+    "fora_por_abstencao_do_otsu": 0,
+    "fracao_fora_por_rotulo": 0.130361,
+    "fracao_fora_por_abstencao": 0.0,
+    "pixels_agua_permanente_jrc": 1077405,
+    "por_que": "rotulo -1 nao e nao-agua; abstencao do baseline nao credita nem pune"
+  },
+  "micro": {
+    "tp": 1881424,
+    "fp": 880705,
+    "fn": 684677,
+    "tn": 17070561,
+    "iou": 0.545846,
+    "f1": 0.70621,
+    "precisao": 0.68115,
+    "recall": 0.733184
+  },
+  "micro_sem_agua_permanente": {
+    "tp": 993023,
+    "fp": 849425,
+    "fn": 673680,
+    "tn": 17058108,
+    "iou": 0.394663,
+    "f1": 0.565962,
+    "precisao": 0.538969,
+    "recall": 0.595801
+  },
+  "macro": {
+    "iou": 0.3274,
+    "f1": 0.415473,
+    "precisao": 0.537186,
+    "recall": 0.492959
+  },
+  "macro_sem_agua_permanente": {
+    "iou": 0.25315,
+    "f1": 0.34564,
+    "precisao": 0.481349,
+    "recall": 0.420824
+  },
+  "chips_com_iou_indefinido": 4,
+  "nao_e": "este numero e o piso do metodo de limiar neste conjunto; ele nao autoriza nenhuma afirmacao sobre suscetibilidade",
+  "hash_resumo": "sha256:d5f2cf3df5df44faffd79af4881e4f38040f9cdb7dde61b8e064b69a39b106eb"
+}

@@ -1,0 +1,45 @@
+{
+  "tipo": "transferencia_vulnerabilizados:v2/descritivo_pos_avaliacao",
+  "nao_e": "estudo de transferencia para territorios vulnerabilizados; nao e promocao de modelo, previsao de evento, profundidade, risco, dano, vitimas ou identificacao causal",
+  "gerado_por": "scripts/vulnerabilizados",
+  "status": "descritivo_pos_avaliacao; o protocolo classificou o teste primario como nao_testavel (< 20 positivos em FCU); nao e confirmacao",
+  "fcu_referencia_primaria": {
+    "pontos": 1843,
+    "positivos": 19,
+    "negativos": 1824,
+    "comunidades": 17,
+    "comunidades_com_positivo": 3,
+    "prevalencia": 0.010309278350515464,
+    "auc": {
+      "Q_sel_ext": 0.8815212373037857,
+      "A0_hand": 0.866675323176362,
+      "menos_declive": 0.27876846722068327
+    },
+    "ic95_auc_Q": [
+      0.7643175572056753,
+      0.9298534865307615
+    ],
+    "ic95_auc_hand": [
+      0.7352899018185565,
+      0.9141360507207
+    ],
+    "Q_menos_A0_hand": {
+      "delta": 0.014845914127423754,
+      "ic95": [
+        -0.028064421657591297,
+        0.06118141495348485
+      ],
+      "leitura": "inconclusivo"
+    },
+    "Q_menos_menos_declive": {
+      "delta": 0.6027527700831025,
+      "ic95": [
+        0.4805927850730636,
+        0.7034291513241304
+      ],
+      "leitura": "sustentado"
+    }
+  },
+  "resultado_sha256": "sha256:a151103cee69f582b62bd053073b9e10bdae078b86cbbd7d76b8dca2e853b070",
+  "quando_utc": "2026-10-27T20:14:52.362366+00:00"
+}

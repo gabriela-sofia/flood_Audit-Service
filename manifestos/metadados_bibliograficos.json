@@ -1,0 +1,3770 @@
+{
+ "arxiv:1010.0772": {
+  "fonte": "arxiv",
+  "arxiv": "1010.0772",
+  "autores": [
+   "Fantine Mordelet",
+   "Jean-Philippe Vert"
+  ],
+  "titulo": "A bagging SVM to learn from positive and unlabeled examples",
+  "ano": 2010
+ },
+ "arxiv:1503.01603": {
+  "fonte": "arxiv",
+  "arxiv": "1503.01603",
+  "autores": [
+   "Judea Pearl",
+   "Elias Bareinboim"
+  ],
+  "titulo": "External Validity: From Do-Calculus to Transportability Across Populations",
+  "ano": 2015
+ },
+ "arxiv:1606.09282": {
+  "fonte": "arxiv",
+  "arxiv": "1606.09282",
+  "autores": [
+   "Zhizhong Li",
+   "Derek Hoiem"
+  ],
+  "titulo": "Learning without Forgetting",
+  "ano": 2016
+ },
+ "arxiv:1612.01474": {
+  "fonte": "arxiv",
+  "arxiv": "1612.01474",
+  "autores": [
+   "Balaji Lakshminarayanan",
+   "Alexander Pritzel",
+   "Charles Blundell"
+  ],
+  "titulo": "Simple and Scalable Predictive Uncertainty Estimation using Deep Ensembles",
+  "ano": 2016
+ },
+ "arxiv:1705.08500": {
+  "fonte": "arxiv",
+  "arxiv": "1705.08500",
+  "autores": [
+   "Yonatan Geifman",
+   "Ran El-Yaniv"
+  ],
+  "titulo": "Selective Classification for Deep Neural Networks",
+  "ano": 2017
+ },
+ "arxiv:1706.04599": {
+  "fonte": "arxiv",
+  "arxiv": "1706.04599",
+  "autores": [
+   "Chuan Guo",
+   "Geoff Pleiss",
+   "Yu Sun",
+   "Kilian Q. Weinberger"
+  ],
+  "titulo": "On Calibration of Modern Neural Networks",
+  "ano": 2017
+ },
+ "arxiv:1706.08840": {
+  "fonte": "arxiv",
+  "arxiv": "1706.08840",
+  "autores": [
+   "David Lopez-Paz",
+   "Marc'Aurelio Ranzato"
+  ],
+  "titulo": "Gradient Episodic Memory for Continual Learning",
+  "ano": 2017
+ },
+ "arxiv:1708.00489": {
+  "fonte": "arxiv",
+  "arxiv": "1708.00489",
+  "autores": [
+   "Ozan Sener",
+   "Silvio Savarese"
+  ],
+  "titulo": "Active Learning for Convolutional Neural Networks: A Core-Set Approach",
+  "ano": 2017
+ },
+ "arxiv:1801.10112": {
+  "fonte": "arxiv",
+  "arxiv": "1801.10112",
+  "autores": [
+   "Arslan Chaudhry",
+   "Puneet K. Dokania",
+   "Thalaiyasingam Ajanthan",
+   "Philip H. S. Torr"
+  ],
+  "titulo": "Riemannian Walk for Incremental Learning: Understanding Forgetting and Intransigence",
+  "ano": 2018
+ },
+ "arxiv:1803.09010": {
+  "fonte": "arxiv",
+  "arxiv": "1803.09010",
+  "autores": [
+   "Timnit Gebru",
+   "Jamie Morgenstern",
+   "Briana Vecchione",
+   "Jennifer Wortman Vaughan",
+   "Hanna Wallach",
+   "Hal Daumé",
+   "Kate Crawford"
+  ],
+  "titulo": "Datasheets for Datasets",
+  "ano": 2018
+ },
+ "arxiv:1810.03993": {
+  "fonte": "arxiv",
+  "arxiv": "1810.03993",
+  "autores": [
+   "Margaret Mitchell",
+   "Simone Wu",
+   "Andrew Zaldivar",
+   "Parker Barnes",
+   "Lucy Vasserman",
+   "Ben Hutchinson",
+   "Elena Spitzer",
+   "Inioluwa Deborah Raji",
+   "Timnit Gebru"
+  ],
+  "titulo": "Model Cards for Model Reporting",
+  "ano": 2018
+ },
+ "arxiv:1811.11682": {
+  "fonte": "arxiv",
+  "arxiv": "1811.11682",
+  "autores": [
+   "David Rolnick",
+   "Arun Ahuja",
+   "Jonathan Schwarz",
+   "Timothy P. Lillicrap",
+   "Greg Wayne"
+  ],
+  "titulo": "Experience Replay for Continual Learning",
+  "ano": 2018
+ },
+ "arxiv:1902.10486": {
+  "fonte": "arxiv",
+  "arxiv": "1902.10486",
+  "autores": [
+   "Arslan Chaudhry",
+   "Marcus Rohrbach",
+   "Mohamed Elhoseiny",
+   "Thalaiyasingam Ajanthan",
+   "Puneet K. Dokania",
+   "Philip H. S. Torr",
+   "Marc'Aurelio Ranzato"
+  ],
+  "titulo": "On Tiny Episodic Memories in Continual Learning",
+  "ano": 2019
+ },
+ "arxiv:1904.06019": {
+  "fonte": "arxiv",
+  "arxiv": "1904.06019",
+  "autores": [
+   "Ryan J. Tibshirani",
+   "Rina Foygel Barber",
+   "Emmanuel J. Candes",
+   "Aaditya Ramdas"
+  ],
+  "titulo": "Conformal Prediction Under Covariate Shift",
+  "ano": 2019
+ },
+ "arxiv:1906.02530": {
+  "fonte": "arxiv",
+  "arxiv": "1906.02530",
+  "autores": [
+   "Yaniv Ovadia",
+   "Emily Fertig",
+   "Jie Ren",
+   "Zachary Nado",
+   "D Sculley",
+   "Sebastian Nowozin",
+   "Joshua V. Dillon",
+   "Balaji Lakshminarayanan",
+   "Jasper Snoek"
+  ],
+  "titulo": "Can You Trust Your Model's Uncertainty? Evaluating Predictive Uncertainty Under Dataset Shift",
+  "ano": 2019
+ },
+ "arxiv:1906.03671": {
+  "fonte": "arxiv",
+  "arxiv": "1906.03671",
+  "autores": [
+   "Jordan T. Ash",
+   "Chicheng Zhang",
+   "Akshay Krishnamurthy",
+   "John Langford",
+   "Alekh Agarwal"
+  ],
+  "titulo": "Deep Batch Active Learning by Diverse, Uncertain Gradient Lower Bounds",
+  "ano": 2019
+ },
+ "arxiv:1910.08475": {
+  "fonte": "arxiv",
+  "arxiv": "1910.08475",
+  "autores": [
+   "Jordan T. Ash",
+   "Ryan P. Adams"
+  ],
+  "titulo": "On Warm-Starting Neural Network Training",
+  "ano": 2019
+ },
+ "arxiv:1911.08731": {
+  "fonte": "arxiv",
+  "arxiv": "1911.08731",
+  "autores": [
+   "Shiori Sagawa",
+   "Pang Wei Koh",
+   "Tatsunori B. Hashimoto",
+   "Percy Liang"
+  ],
+  "titulo": "Distributionally Robust Neural Networks for Group Shifts: On the Importance of Regularization for Worst-Case Generalization",
+  "ano": 2019
+ },
+ "arxiv:2002.08909": {
+  "fonte": "arxiv",
+  "arxiv": "2002.08909",
+  "autores": [
+   "Kelvin Guu",
+   "Kenton Lee",
+   "Zora Tung",
+   "Panupong Pasupat",
+   "Ming-Wei Chang"
+  ],
+  "titulo": "REALM: Retrieval-Augmented Language Model Pre-Training",
+  "ano": 2020
+ },
+ "arxiv:2004.07211": {
+  "fonte": "arxiv",
+  "arxiv": "2004.07211",
+  "autores": [
+   "Pietro Buzzega",
+   "Matteo Boschini",
+   "Angelo Porrello",
+   "Davide Abati",
+   "Simone Calderara"
+  ],
+  "titulo": "Dark Experience for General Continual Learning: a Strong, Simple Baseline",
+  "ano": 2020
+ },
+ "arxiv:2005.11401": {
+  "fonte": "arxiv",
+  "arxiv": "2005.11401",
+  "autores": [
+   "Patrick Lewis",
+   "Ethan Perez",
+   "Aleksandra Piktus",
+   "Fabio Petroni",
+   "Vladimir Karpukhin",
+   "Naman Goyal",
+   "Heinrich Küttler",
+   "Mike Lewis",
+   "Wen-tau Yih",
+   "Tim Rocktäschel",
+   "Sebastian Riedel",
+   "Douwe Kiela"
+  ],
+  "titulo": "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks",
+  "ano": 2020
+ },
+ "arxiv:2006.01862": {
+  "fonte": "arxiv",
+  "arxiv": "2006.01862",
+  "autores": [
+   "Hussein Mozannar",
+   "David Sontag"
+  ],
+  "titulo": "Consistent Estimators for Learning to Defer to an Expert",
+  "ano": 2020
+ },
+ "arxiv:2007.01434": {
+  "fonte": "arxiv",
+  "arxiv": "2007.01434",
+  "autores": [
+   "Ishaan Gulrajani",
+   "David Lopez-Paz"
+  ],
+  "titulo": "In Search of Lost Domain Generalization",
+  "ano": 2020
+ },
+ "arxiv:2012.07421": {
+  "fonte": "arxiv",
+  "arxiv": "2012.07421",
+  "autores": [
+   "Pang Wei Koh",
+   "Shiori Sagawa",
+   "Henrik Marklund",
+   "Sang Michael Xie",
+   "Marvin Zhang",
+   "Akshay Balsubramani",
+   "Weihua Hu",
+   "Michihiro Yasunaga",
+   "Richard Lanas Phillips",
+   "Irena Gao",
+   "Tony Lee",
+   "Etienne David",
+   "Ian Stavness",
+   "Wei Guo",
+   "Berton A. Earnshaw",
+   "Imran S. Haque",
+   "Sara Beery",
+   "Jure Leskovec",
+   "Anshul Kundaje",
+   "Emma Pierson",
+   "Sergey Levine",
+   "Chelsea Finn",
+   "Percy Liang"
+  ],
+  "titulo": "WILDS: A Benchmark of in-the-Wild Distribution Shifts",
+  "ano": 2020
+ },
+ "arxiv:2104.07778": {
+  "fonte": "arxiv",
+  "arxiv": "2104.07778",
+  "autores": [
+   "Devis Tuia",
+   "Claudio Persello",
+   "Lorenzo Bruzzone"
+  ],
+  "titulo": "Recent Advances in Domain Adaptation for the Classification of Remote Sensing Data",
+  "ano": 2021
+ },
+ "arxiv:2111.06377": {
+  "fonte": "arxiv",
+  "arxiv": "2111.06377",
+  "autores": [
+   "Kaiming He",
+   "Xinlei Chen",
+   "Saining Xie",
+   "Yanghao Li",
+   "Piotr Dollár",
+   "Ross Girshick"
+  ],
+  "titulo": "Masked Autoencoders Are Scalable Vision Learners",
+  "ano": 2021
+ },
+ "arxiv:2112.04426": {
+  "fonte": "arxiv",
+  "arxiv": "2112.04426",
+  "autores": [
+   "Sebastian Borgeaud",
+   "Arthur Mensch",
+   "Jordan Hoffmann",
+   "Trevor Cai",
+   "Eliza Rutherford",
+   "Katie Millican",
+   "George van den Driessche",
+   "Jean-Baptiste Lespiau",
+   "Bogdan Damoc",
+   "Aidan Clark",
+   "Diego de Las Casas",
+   "Aurelia Guy",
+   "Jacob Menick",
+   "Roman Ring",
+   "Tom Hennigan",
+   "Saffron Huang",
+   "Loren Maggiore",
+   "Chris Jones",
+   "Albin Cassirer",
+   "Andy Brock",
+   "Michela Paganini",
+   "Geoffrey Irving",
+   "Oriol Vinyals",
+   "Simon Osindero",
+   "Karen Simonyan",
+   "Jack W. Rae",
+   "Erich Elsen",
+   "Laurent Sifre"
+  ],
+  "titulo": "Improving language models by retrieving from trillions of tokens",
+  "ano": 2021
+ },
+ "arxiv:2203.14827": {
+  "fonte": "arxiv",
+  "arxiv": "2203.14827",
+  "autores": [
+   "Dapeng Feng",
+   "Jiangtao Liu",
+   "Kathryn Lawson",
+   "Chaopeng Shen"
+  ],
+  "titulo": "Differentiable, learnable, regionalized process-based models with physical outputs can approach state-of-the-art hydrologic prediction accuracy",
+  "ano": 2022
+ },
+ "arxiv:2203.15556": {
+  "fonte": "arxiv",
+  "arxiv": "2203.15556",
+  "autores": [
+   "Jordan Hoffmann",
+   "Sebastian Borgeaud",
+   "Arthur Mensch",
+   "Elena Buchatskaya",
+   "Trevor Cai",
+   "Eliza Rutherford",
+   "Diego de Las Casas",
+   "Lisa Anne Hendricks",
+   "Johannes Welbl",
+   "Aidan Clark",
+   "Tom Hennigan",
+   "Eric Noland",
+   "Katie Millican",
+   "George van den Driessche",
+   "Bogdan Damoc",
+   "Aurelia Guy",
+   "Simon Osindero",
+   "Karen Simonyan",
+   "Erich Elsen",
+   "Jack W. Rae",
+   "Oriol Vinyals",
+   "Laurent Sifre"
+  ],
+  "titulo": "Training Compute-Optimal Large Language Models",
+  "ano": 2022
+ },
+ "arxiv:2204.09387": {
+  "fonte": "arxiv",
+  "arxiv": "2204.09387",
+  "autores": [
+   "Ritu Yadav",
+   "Andrea Nascetti",
+   "Yifang Ban"
+  ],
+  "titulo": "Attentive Dual Stream Siamese U-net for Flood Detection on Multi-temporal Sentinel-1 Data",
+  "ano": 2022
+ },
+ "arxiv:2207.08051": {
+  "fonte": "arxiv",
+  "arxiv": "2207.08051",
+  "autores": [
+   "Yezhen Cong",
+   "Samar Khanna",
+   "Chenlin Meng",
+   "Patrick Liu",
+   "Erik Rozi",
+   "Yutong He",
+   "Marshall Burke",
+   "David B. Lobell",
+   "Stefano Ermon"
+  ],
+  "titulo": "SatMAE: Pre-training Transformers for Temporal and Multi-Spectral Satellite Imagery",
+  "ano": 2022
+ },
+ "arxiv:2208.02814": {
+  "fonte": "arxiv",
+  "arxiv": "2208.02814",
+  "autores": [
+   "Anastasios N. Angelopoulos",
+   "Stephen Bates",
+   "Adam Fisch",
+   "Lihua Lei",
+   "Tal Schuster"
+  ],
+  "titulo": "Conformal Risk Control",
+  "ano": 2022
+ },
+ "arxiv:2212.14532": {
+  "fonte": "arxiv",
+  "arxiv": "2212.14532",
+  "autores": [
+   "Colorado J. Reed",
+   "Ritwik Gupta",
+   "Shufan Li",
+   "Sarah Brockman",
+   "Christopher Funk",
+   "Brian Clipp",
+   "Kurt Keutzer",
+   "Salvatore Candido",
+   "Matt Uyttendaele",
+   "Trevor Darrell"
+  ],
+  "titulo": "Scale-MAE: A Scale-Aware Masked Autoencoder for Multiscale Geospatial Representation Learning",
+  "ano": 2022
+ },
+ "arxiv:2304.07193": {
+  "fonte": "arxiv",
+  "arxiv": "2304.07193",
+  "autores": [
+   "Maxime Oquab",
+   "Timothée Darcet",
+   "Théo Moutakanni",
+   "Huy Vo",
+   "Marc Szafraniec",
+   "Vasil Khalidov",
+   "Pierre Fernandez",
+   "Daniel Haziza",
+   "Francisco Massa",
+   "Alaaeldin El-Nouby",
+   "Mahmoud Assran",
+   "Nicolas Ballas",
+   "Wojciech Galuba",
+   "Russell Howes",
+   "Po-Yao Huang",
+   "Shang-Wen Li",
+   "Ishan Misra",
+   "Michael Rabbat",
+   "Vasu Sharma",
+   "Gabriel Synnaeve",
+   "Hu Xu",
+   "Hervé Jegou",
+   "Julien Mairal",
+   "Patrick Labatut",
+   "Armand Joulin",
+   "Piotr Bojanowski"
+  ],
+  "titulo": "DINOv2: Learning Robust Visual Features without Supervision",
+  "ano": 2023
+ },
+ "arxiv:2309.16588": {
+  "fonte": "arxiv",
+  "arxiv": "2309.16588",
+  "autores": [
+   "Timothée Darcet",
+   "Maxime Oquab",
+   "Julien Mairal",
+   "Piotr Bojanowski"
+  ],
+  "titulo": "Vision Transformers Need Registers",
+  "ano": 2023
+ },
+ "arxiv:2311.12056": {
+  "fonte": "arxiv",
+  "arxiv": "2311.12056",
+  "autores": [
+   "Nikolaos Ioannis Bountos",
+   "Maria Sdraka",
+   "Angelos Zavras",
+   "Ilektra Karasante",
+   "Andreas Karavias",
+   "Themistocles Herekakis",
+   "Angeliki Thanasou",
+   "Dimitrios Michail",
+   "Ioannis Papoutsis"
+  ],
+  "titulo": "Kuro Siwo: 33 billion $m^2$ under the water. A global multi-temporal satellite dataset for rapid flood mapping",
+  "ano": 2023
+ },
+ "arxiv:2312.11754": {
+  "fonte": "arxiv",
+  "arxiv": "2312.11754",
+  "autores": [
+   "Gabriel Agostini",
+   "Emma Pierson",
+   "Nikhil Garg"
+  ],
+  "titulo": "A Bayesian Spatial Model to Correct Under-Reporting in Urban Crowdsourcing",
+  "ano": 2023
+ },
+ "arxiv:2404.19043": {
+  "fonte": "arxiv",
+  "arxiv": "2404.19043",
+  "autores": [
+   "Hyunho Lee",
+   "Wenwen Li"
+  ],
+  "titulo": "Improving Interpretability of Deep Active Learning for Flood Inundation Mapping Through Class Ambiguity Indices Using Multi-spectral Satellite Imagery",
+  "ano": 2024
+ },
+ "arxiv:2406.04111": {
+  "fonte": "arxiv",
+  "arxiv": "2406.04111",
+  "autores": [
+   "Jie Zhao",
+   "Zhitong Xiong",
+   "Xiao Xiang Zhu"
+  ],
+  "titulo": "UrbanSARFloods: Sentinel-1 SLC-Based Benchmark Dataset for Urban and Open-Area Flood Mapping",
+  "ano": 2024
+ },
+ "arxiv:2412.14123": {
+  "fonte": "arxiv",
+  "arxiv": "2412.14123",
+  "autores": [
+   "Guillaume Astruc",
+   "Nicolas Gonthier",
+   "Clement Mallet",
+   "Loic Landrieu"
+  ],
+  "titulo": "AnySat: One Earth Observation Model for Many Resolutions, Scales, and Modalities",
+  "ano": 2024
+ },
+ "arxiv:2503.01181": {
+  "fonte": "arxiv",
+  "arxiv": "2503.01181",
+  "autores": [
+   "Ali Caglayan",
+   "Nevrez Imamoglu",
+   "Toru Kouyama"
+  ],
+  "titulo": "SAR-W-MixMAE: SAR Foundation Model Training Using Backscatter Power Weighting",
+  "ano": 2025
+ },
+ "arxiv:2504.11171": {
+  "fonte": "arxiv",
+  "arxiv": "2504.11171",
+  "autores": [
+   "Johannes Jakubik",
+   "Felix Yang",
+   "Benedikt Blumenstiel",
+   "Erik Scheurer",
+   "Rocco Sedona",
+   "Stefano Maurogiovanni",
+   "Jente Bosmans",
+   "Nikolaos Dionelis",
+   "Valerio Marsocci",
+   "Niklas Kopp",
+   "Rahul Ramachandran",
+   "Paolo Fraccaro",
+   "Thomas Brunschwiler",
+   "Gabriele Cavallaro",
+   "Juan Bernabe-Moreno",
+   "Nicolas Longépé"
+  ],
+  "titulo": "TerraMind: Large-Scale Generative Multimodality for Earth Observation",
+  "ano": 2025
+ },
+ "arxiv:2508.10104": {
+  "fonte": "arxiv",
+  "arxiv": "2508.10104",
+  "autores": [
+   "Oriane Siméoni",
+   "Huy V. Vo",
+   "Maximilian Seitzer",
+   "Federico Baldassarre",
+   "Maxime Oquab",
+   "Cijo Jose",
+   "Vasil Khalidov",
+   "Marc Szafraniec",
+   "Seungeun Yi",
+   "Michaël Ramamonjisoa",
+   "Francisco Massa",
+   "Daniel Haziza",
+   "Luca Wehrstedt",
+   "Jianyuan Wang",
+   "Timothée Darcet",
+   "Théo Moutakanni",
+   "Leonel Sentana",
+   "Claire Roberts",
+   "Andrea Vedaldi",
+   "Jamie Tolan",
+   "John Brandt",
+   "Camille Couprie",
+   "Julien Mairal",
+   "Hervé Jégou",
+   "Patrick Labatut",
+   "Piotr Bojanowski"
+  ],
+  "titulo": "DINOv3",
+  "ano": 2025
+ },
+ "arxiv:2604.23066": {
+  "fonte": "arxiv",
+  "arxiv": "2604.23066",
+  "autores": [
+   "Rohit Mukherjee",
+   "Hannah K. Friedrich",
+   "Beth Tellman",
+   "Ariful Islam",
+   "Zhijie Zhang",
+   "Jonathan Giezendanner",
+   "Upmanu Lall",
+   "Venkataraman Lakshmi"
+  ],
+  "titulo": "Urban Flood Observations: A hand-labeled training and validation dataset of post-flood inundation",
+  "ano": 2026
+ },
+ "arxiv:2608.02315": {
+  "fonte": "arxiv",
+  "arxiv": "2608.02315",
+  "autores": [
+   "Gaetano Chiriaco",
+   "Luca Barco",
+   "Andrea Bragagnolo",
+   "Claudio Rossi",
+   "Edoardo Arnaudo"
+  ],
+  "titulo": "GEOID-Flood: A Large-Scale Multi-Modal Benchmark Dataset for Flood Segmentation",
+  "ano": 2026
+ },
+ "doi:10.1002/2013rg000445": {
+  "fonte": "crossref",
+  "doi": "10.1002/2013rg000445",
+  "tipo": "journal-article",
+  "autores": [
+   "Joel C. Gill",
+   "Bruce D. Malamud"
+  ],
+  "titulo": "Reviewing and visualizing the interactions of natural hazards",
+  "veiculo": "Reviews of Geophysics",
+  "ano": 2014,
+  "volume": "52",
+  "numero": "4",
+  "paginas": "680-722",
+  "artigo": null,
+  "editora": "American Geophysical Union (AGU)"
+ },
+ "doi:10.1002/2015wr017378": {
+  "fonte": "crossref",
+  "doi": "10.1002/2015wr017378",
+  "tipo": "journal-article",
+  "autores": [
+   "L. Alfonso",
+   "M. M. Mukolwe",
+   "G. Di Baldassarre"
+  ],
+  "titulo": "Probabilistic Flood Maps to support decision‐making: Mapping the Value of Information",
+  "veiculo": "Water Resources Research",
+  "ano": 2016,
+  "volume": "52",
+  "numero": "2",
+  "paginas": "1026-1043",
+  "artigo": null,
+  "editora": "American Geophysical Union (AGU)"
+ },
+ "doi:10.1002/hyp.10648": {
+  "fonte": "crossref",
+  "doi": "10.1002/hyp.10648",
+  "tipo": "journal-article",
+  "autores": [
+   "John B. Lindsay"
+  ],
+  "titulo": "Efficient hybrid breaching-filling sink removal methods for flow path enforcement in digital elevation models",
+  "veiculo": "Hydrological Processes",
+  "ano": 2016,
+  "volume": "30",
+  "numero": "6",
+  "paginas": "846-857",
+  "artigo": null,
+  "editora": "Wiley"
+ },
+ "doi:10.1002/hyp.9740": {
+  "fonte": "crossref",
+  "doi": "10.1002/hyp.9740",
+  "tipo": "journal-article",
+  "autores": [
+   "Bernhard Lehner",
+   "Günther Grill"
+  ],
+  "titulo": "Global river hydrography and network routing: baseline data and new approaches to study the world's large river systems",
+  "veiculo": "Hydrological Processes",
+  "ano": 2013,
+  "volume": "27",
+  "numero": "15",
+  "paginas": "2171-2186",
+  "artigo": null,
+  "editora": "Wiley"
+ },
+ "doi:10.1002/qj.3803": {
+  "fonte": "crossref",
+  "doi": "10.1002/qj.3803",
+  "tipo": "journal-article",
+  "autores": [
+   "Hans Hersbach",
+   "Bill Bell",
+   "Paul Berrisford",
+   "Shoji Hirahara",
+   "András Horányi",
+   "Joaquín Muñoz‐Sabater",
+   "Julien Nicolas",
+   "Carole Peubey",
+   "Raluca Radu",
+   "Dinand Schepers",
+   "Adrian Simmons",
+   "Cornel Soci",
+   "Saleh Abdalla",
+   "Xavier Abellan",
+   "Gianpaolo Balsamo",
+   "Peter Bechtold",
+   "Gionata Biavati",
+   "Jean Bidlot",
+   "Massimo Bonavita",
+   "Giovanna De Chiara",
+   "Per Dahlgren",
+   "Dick Dee",
+   "Michail Diamantakis",
+   "Rossana Dragani",
+   "Johannes Flemming",
+   "Richard Forbes",
+   "Manuel Fuentes",
+   "Alan Geer",
+   "Leo Haimberger",
+   "Sean Healy",
+   "Robin J. Hogan",
+   "Elías Hólm",
+   "Marta Janisková",
+   "Sarah Keeley",
+   "Patrick Laloyaux",
+   "Philippe Lopez",
+   "Cristina Lupu",
+   "Gabor Radnoti",
+   "Patricia de Rosnay",
+   "Iryna Rozum",
+   "Freja Vamborg",
+   "Sebastien Villaume",
+   "Jean‐Noël Thépaut"
+  ],
+  "titulo": "The ERA5 global reanalysis",
+  "veiculo": "Quarterly Journal of the Royal Meteorological Society",
+  "ano": 2020,
+  "volume": "146",
+  "numero": "730",
+  "paginas": "1999-2049",
+  "artigo": null,
+  "editora": "Wiley"
+ },
+ "doi:10.1002/sim.1047": {
+  "fonte": "crossref",
+  "doi": "10.1002/sim.1047",
+  "tipo": "journal-article",
+  "autores": [
+   "Georg Heinze",
+   "Michael Schemper"
+  ],
+  "titulo": "A solution to the problem of separation in logistic regression",
+  "veiculo": "Statistics in Medicine",
+  "ano": 2002,
+  "volume": "21",
+  "numero": "16",
+  "paginas": "2409-2419",
+  "artigo": null,
+  "editora": "Wiley"
+ },
+ "doi:10.1002/wcc.147": {
+  "fonte": "crossref",
+  "doi": "10.1002/wcc.147",
+  "tipo": "journal-article",
+  "autores": [
+   "Xuebin Zhang",
+   "Lisa Alexander",
+   "Gabriele C. Hegerl",
+   "Philip Jones",
+   "Albert Klein Tank",
+   "Thomas C. Peterson",
+   "Blair Trewin",
+   "Francis W. Zwiers"
+  ],
+  "titulo": "Indices for monitoring changes in extremes based on daily temperature and precipitation data",
+  "veiculo": "WIREs Climate Change",
+  "ano": 2011,
+  "volume": "2",
+  "numero": "6",
+  "paginas": "851-870",
+  "artigo": null,
+  "editora": "Wiley"
+ },
+ "doi:10.1007/978-3-030-01252-6_33": {
+  "fonte": "crossref",
+  "doi": "10.1007/978-3-030-01252-6_33",
+  "tipo": "book-chapter",
+  "autores": [
+   "Arslan Chaudhry",
+   "Puneet K. Dokania",
+   "Thalaiyasingam Ajanthan",
+   "Philip H. S. Torr"
+  ],
+  "titulo": "Riemannian Walk for Incremental Learning: Understanding Forgetting and Intransigence",
+  "veiculo": "Lecture Notes in Computer Science",
+  "ano": 2018,
+  "volume": null,
+  "numero": null,
+  "paginas": "556-572",
+  "artigo": null,
+  "editora": "Springer International Publishing"
+ },
+ "doi:10.1007/978-3-319-24574-4_28": {
+  "fonte": "crossref",
+  "doi": "10.1007/978-3-319-24574-4_28",
+  "tipo": "book-chapter",
+  "autores": [
+   "Olaf Ronneberger",
+   "Philipp Fischer",
+   "Thomas Brox"
+  ],
+  "titulo": "U-Net: Convolutional Networks for Biomedical Image Segmentation",
+  "veiculo": "Proc. MICCAI (LNCS)",
+  "ano": 2015,
+  "volume": null,
+  "numero": null,
+  "paginas": "234-241",
+  "artigo": null,
+  "editora": "Springer International Publishing"
+ },
+ "doi:10.1007/978-3-319-49409-8_35": {
+  "fonte": "crossref",
+  "doi": "10.1007/978-3-319-49409-8_35",
+  "tipo": "book-chapter",
+  "autores": [
+   "Baochen Sun",
+   "Kate Saenko"
+  ],
+  "titulo": "Deep CORAL: Correlation Alignment for Deep Domain Adaptation",
+  "veiculo": "Lecture Notes in Computer Science",
+  "ano": 2016,
+  "volume": null,
+  "numero": null,
+  "paginas": "443-450",
+  "artigo": null,
+  "editora": "Springer International Publishing"
+ },
+ "doi:10.1007/s00703-026-01127-w": {
+  "fonte": "crossref",
+  "doi": "10.1007/s00703-026-01127-w",
+  "tipo": "journal-article",
+  "autores": [
+   "Juarez A. da S. Júnior",
+   "Estephania S. Jovino",
+   "Alfredo R. Neto",
+   "Leidjane M. M. de Oliveira"
+  ],
+  "titulo": "Evaluation of BR-DWGD, CHIRPS and GPM-IMERG precipitation products: case study in the Ipojuca River Basin",
+  "veiculo": "Meteorology and Atmospheric Physics",
+  "ano": 2026,
+  "volume": "138",
+  "numero": "2",
+  "paginas": null,
+  "artigo": "25",
+  "editora": "Springer Science and Business Media LLC"
+ },
+ "doi:10.1016/j.cageo.2016.07.003": {
+  "fonte": "crossref",
+  "doi": "10.1016/j.cageo.2016.07.003",
+  "tipo": "journal-article",
+  "autores": [
+   "J.B. Lindsay"
+  ],
+  "titulo": "Whitebox GAT: A case study in geomorphometric analysis",
+  "veiculo": "Computers &amp; Geosciences",
+  "ano": 2016,
+  "volume": "95",
+  "numero": null,
+  "paginas": "75-84",
+  "artigo": null,
+  "editora": "Elsevier BV"
+ },
+ "doi:10.1016/j.catena.2018.12.011": {
+  "fonte": "crossref",
+  "doi": "10.1016/j.catena.2018.12.011",
+  "tipo": "journal-article",
+  "autores": [
+   "Mahyat Shafapour Tehrany",
+   "Simon Jones",
+   "Farzin Shabani"
+  ],
+  "titulo": "Identifying the essential flood conditioning factors for flood prone area mapping using machine learning techniques",
+  "veiculo": "CATENA",
+  "ano": 2019,
+  "volume": "175",
+  "numero": null,
+  "paginas": "174-192",
+  "artigo": null,
+  "editora": "Elsevier BV"
+ },
+ "doi:10.1016/j.ecolmodel.2021.109692": {
+  "fonte": "crossref",
+  "doi": "10.1016/j.ecolmodel.2021.109692",
+  "tipo": "journal-article",
+  "autores": [
+   "Alexandre M.J.-C. Wadoux",
+   "Gerard B.M. Heuvelink",
+   "Sytze de Bruin",
+   "Dick J. Brus"
+  ],
+  "titulo": "Spatial cross-validation is not the right way to evaluate map accuracy",
+  "veiculo": "Ecological Modelling",
+  "ano": 2021,
+  "volume": "457",
+  "numero": null,
+  "paginas": "109692",
+  "artigo": "109692",
+  "editora": "Elsevier BV"
+ },
+ "doi:10.1016/j.ejrh.2017.06.006": {
+  "fonte": "crossref",
+  "doi": "10.1016/j.ejrh.2017.06.006",
+  "tipo": "journal-article",
+  "autores": [
+   "James D. Miller",
+   "Michael Hutchins"
+  ],
+  "titulo": "The impacts of urbanisation and climate change on urban flooding and urban water quality: A review of the evidence concerning the United Kingdom",
+  "veiculo": "Journal of Hydrology: Regional Studies",
+  "ano": 2017,
+  "volume": "12",
+  "numero": null,
+  "paginas": "345-362",
+  "artigo": null,
+  "editora": "Elsevier BV"
+ },
+ "doi:10.1016/j.geomorph.2012.12.015": {
+  "fonte": "crossref",
+  "doi": "10.1016/j.geomorph.2012.12.015",
+  "tipo": "journal-article",
+  "autores": [
+   "Jeroen De Reu",
+   "Jean Bourgeois",
+   "Machteld Bats",
+   "Ann Zwertvaegher",
+   "Vanessa Gelorini",
+   "Philippe De Smedt",
+   "Wei Chu",
+   "Marc Antrop",
+   "Philippe De Maeyer",
+   "Peter Finke",
+   "Marc Van Meirvenne",
+   "Jacques Verniers",
+   "Philippe Crombé"
+  ],
+  "titulo": "Application of the topographic position index to heterogeneous landscapes",
+  "veiculo": "Geomorphology",
+  "ano": 2013,
+  "volume": "186",
+  "numero": null,
+  "paginas": "39-49",
+  "artigo": null,
+  "editora": "Elsevier BV"
+ },
+ "doi:10.1016/j.gloenvcha.2006.02.006": {
+  "fonte": "crossref",
+  "doi": "10.1016/j.gloenvcha.2006.02.006",
+  "tipo": "journal-article",
+  "autores": [
+   "W. Neil Adger"
+  ],
+  "titulo": "Vulnerability",
+  "veiculo": "Global Environmental Change",
+  "ano": 2006,
+  "volume": "16",
+  "numero": "3",
+  "paginas": "268-281",
+  "artigo": null,
+  "editora": "Elsevier BV"
+ },
+ "doi:10.1016/j.ijdrr.2015.09.013": {
+  "fonte": "crossref",
+  "doi": "10.1016/j.ijdrr.2015.09.013",
+  "tipo": "journal-article",
+  "autores": [
+   "Samuel Rufat",
+   "Eric Tate",
+   "Christopher G. Burton",
+   "Abu Sayeed Maroof"
+  ],
+  "titulo": "Social vulnerability to floods: Review of case studies and implications for measurement",
+  "veiculo": "International Journal of Disaster Risk Reduction",
+  "ano": 2015,
+  "volume": "14",
+  "numero": null,
+  "paginas": "470-486",
+  "artigo": null,
+  "editora": "Elsevier BV"
+ },
+ "doi:10.1016/j.ijdrr.2025.105442": {
+  "fonte": "crossref",
+  "doi": "10.1016/j.ijdrr.2025.105442",
+  "tipo": "journal-article",
+  "autores": [
+   "Mirza Waleed",
+   "Muhammad Sajjad"
+  ],
+  "titulo": "High-resolution flood susceptibility mapping and exposure assessment in Pakistan: An integrated artificial intelligence, machine learning and geospatial framework",
+  "veiculo": "International Journal of Disaster Risk Reduction",
+  "ano": 2025,
+  "volume": "121",
+  "numero": null,
+  "paginas": "105442",
+  "artigo": "105442",
+  "editora": "Elsevier BV"
+ },
+ "doi:10.1016/j.jag.2026.105321": {
+  "fonte": "crossref",
+  "doi": "10.1016/j.jag.2026.105321",
+  "tipo": "journal-article",
+  "autores": [
+   "Claudie Ratté-Fortin",
+   "Karem Chokmani",
+   "Richard Turcotte"
+  ],
+  "titulo": "A transferable deep learning framework for flood mapping: Spatial generalization across hydro-climatic regimes using satellite imagery",
+  "veiculo": "International Journal of Applied Earth Observation and Geoinformation",
+  "ano": 2026,
+  "volume": "149",
+  "numero": null,
+  "paginas": "105321",
+  "artigo": "105321",
+  "editora": "Elsevier BV"
+ },
+ "doi:10.1016/j.jhydrol.2011.03.026": {
+  "fonte": "crossref",
+  "doi": "10.1016/j.jhydrol.2011.03.026",
+  "tipo": "journal-article",
+  "autores": [
+   "Sophia Leimer",
+   "Thorsten Pohlert",
+   "Stephan Pfahl",
+   "Wolfgang Wilcke"
+  ],
+  "titulo": "Towards a new generation of high-resolution meteorological input data for small-scale hydrologic modeling",
+  "veiculo": "Journal of Hydrology",
+  "ano": 2011,
+  "volume": "402",
+  "numero": "3-4",
+  "paginas": "317-332",
+  "artigo": null,
+  "editora": "Elsevier BV"
+ },
+ "doi:10.1016/j.jhydrol.2011.03.051": {
+  "fonte": "crossref",
+  "doi": "10.1016/j.jhydrol.2011.03.051",
+  "tipo": "journal-article",
+  "autores": [
+   "A.D. Nobre",
+   "L.A. Cuartas",
+   "M. Hodnett",
+   "C.D. Rennó",
+   "G. Rodrigues",
+   "A. Silveira",
+   "M. Waterloo",
+   "S. Saleska"
+  ],
+  "titulo": "Height Above the Nearest Drainage – a hydrologically relevant new terrain model",
+  "veiculo": "Journal of Hydrology",
+  "ano": 2011,
+  "volume": "404",
+  "numero": "1-2",
+  "paginas": "13-29",
+  "artigo": null,
+  "editora": "Elsevier BV"
+ },
+ "doi:10.1016/j.jhydrol.2015.05.035": {
+  "fonte": "crossref",
+  "doi": "10.1016/j.jhydrol.2015.05.035",
+  "tipo": "journal-article",
+  "autores": [
+   "Susana Ochoa-Rodriguez",
+   "Li-Pen Wang",
+   "Auguste Gires",
+   "Rui Daniel Pina",
+   "Ricardo Reinoso-Rondinel",
+   "Guendalina Bruni",
+   "Abdellah Ichiba",
+   "Santiago Gaitan",
+   "Elena Cristiano",
+   "Johan van Assel",
+   "Stefan Kroll",
+   "Damian Murlà-Tuyls",
+   "Bruno Tisserand",
+   "Daniel Schertzer",
+   "Ioulia Tchiguirinskaia",
+   "Christian Onof",
+   "Patrick Willems",
+   "Marie-Claire ten Veldhuis"
+  ],
+  "titulo": "Impact of spatial and temporal resolution of rainfall inputs on urban hydrodynamic modelling outputs: A multi-catchment investigation",
+  "veiculo": "Journal of Hydrology",
+  "ano": 2015,
+  "volume": "531",
+  "numero": null,
+  "paginas": "389-407",
+  "artigo": null,
+  "editora": "Elsevier BV"
+ },
+ "doi:10.1016/j.jhydrol.2019.124263": {
+  "fonte": "crossref",
+  "doi": "10.1016/j.jhydrol.2019.124263",
+  "tipo": "journal-article",
+  "autores": [
+   "J.M. Gil-Márquez",
+   "J. Sültenfuß",
+   "B. Andreo",
+   "M. Mudarra"
+  ],
+  "titulo": "Groundwater dating tools (3H, 3He, 4He, CFC-12, SF6) coupled with hydrochemistry to evaluate the hydrogeological functioning of complex evaporite-karst settings",
+  "veiculo": "Journal of Hydrology",
+  "ano": 2020,
+  "volume": "580",
+  "numero": null,
+  "paginas": "124263",
+  "artigo": "124263",
+  "editora": "Elsevier BV"
+ },
+ "doi:10.1016/j.jhydrol.2021.126777": {
+  "fonte": "crossref",
+  "doi": "10.1016/j.jhydrol.2021.126777",
+  "tipo": "journal-article",
+  "autores": [
+   "Gang Zhao",
+   "Bo Pang",
+   "Zongxue Xu",
+   "Lizhuang Cui",
+   "Jingjing Wang",
+   "Depeng Zuo",
+   "Dingzhi Peng"
+  ],
+  "titulo": "Improving urban flood susceptibility mapping using transfer learning",
+  "veiculo": "Journal of Hydrology",
+  "ano": 2021,
+  "volume": "602",
+  "numero": null,
+  "paginas": "126777",
+  "artigo": "126777",
+  "editora": "Elsevier BV"
+ },
+ "doi:10.1016/j.jhydrol.2021.126898": {
+  "fonte": "crossref",
+  "doi": "10.1016/j.jhydrol.2021.126898",
+  "tipo": "journal-article",
+  "autores": [
+   "Roland Löwe",
+   "Julian Böhm",
+   "David Getreuer Jensen",
+   "Jorge Leandro",
+   "Søren Højmark Rasmussen"
+  ],
+  "titulo": "U-FLOOD – Topographic deep learning for predicting urban pluvial flood water depth",
+  "veiculo": "Journal of Hydrology",
+  "ano": 2021,
+  "volume": "603",
+  "numero": null,
+  "paginas": "126898",
+  "artigo": "126898",
+  "editora": "Elsevier BV"
+ },
+ "doi:10.1016/j.patrec.2005.10.010": {
+  "fonte": "crossref",
+  "doi": "10.1016/j.patrec.2005.10.010",
+  "tipo": "journal-article",
+  "autores": [
+   "Tom Fawcett"
+  ],
+  "titulo": "An introduction to ROC analysis",
+  "veiculo": "Pattern Recognition Letters",
+  "ano": 2006,
+  "volume": "27",
+  "numero": "8",
+  "paginas": "861-874",
+  "artigo": null,
+  "editora": "Elsevier BV"
+ },
+ "doi:10.1016/j.rse.2008.03.018": {
+  "fonte": "crossref",
+  "doi": "10.1016/j.rse.2008.03.018",
+  "tipo": "journal-article",
+  "autores": [
+   "Camilo Daleles Rennó",
+   "Antonio Donato Nobre",
+   "Luz Adriana Cuartas",
+   "João Vianei Soares",
+   "Martin G. Hodnett",
+   "Javier Tomasella",
+   "Maarten J. Waterloo"
+  ],
+  "titulo": "HAND, a new terrain descriptor using SRTM-DEM: Mapping terra-firme rainforest environments in Amazonia",
+  "veiculo": "Remote Sensing of Environment",
+  "ano": 2008,
+  "volume": "112",
+  "numero": "9",
+  "paginas": "3469-3481",
+  "artigo": null,
+  "editora": "Elsevier BV"
+ },
+ "doi:10.1016/j.rse.2011.05.028": {
+  "fonte": "crossref",
+  "doi": "10.1016/j.rse.2011.05.028",
+  "tipo": "journal-article",
+  "autores": [
+   "Ramon Torres",
+   "Paul Snoeij",
+   "Dirk Geudtner",
+   "David Bibby",
+   "Malcolm Davidson",
+   "Evert Attema",
+   "Pierre Potin",
+   "BjÖrn Rommen",
+   "Nicolas Floury",
+   "Mike Brown",
+   "Ignacio Navas Traver",
+   "Patrick Deghaye",
+   "Berthyl Duesmann",
+   "Betlem Rosich",
+   "Nuno Miranda",
+   "Claudio Bruno",
+   "Michelangelo L'Abbate",
+   "Renato Croci",
+   "Andrea Pietropaolo",
+   "Markus Huchler",
+   "Friedhelm Rostan"
+  ],
+  "titulo": "GMES Sentinel-1 mission",
+  "veiculo": "Remote Sensing of Environment",
+  "ano": 2012,
+  "volume": "120",
+  "numero": null,
+  "paginas": "9-24",
+  "artigo": null,
+  "editora": "Elsevier BV"
+ },
+ "doi:10.1016/j.rse.2011.11.026": {
+  "fonte": "crossref",
+  "doi": "10.1016/j.rse.2011.11.026",
+  "tipo": "journal-article",
+  "autores": [
+   "M. Drusch",
+   "U. Del Bello",
+   "S. Carlier",
+   "O. Colin",
+   "V. Fernandez",
+   "F. Gascon",
+   "B. Hoersch",
+   "C. Isola",
+   "P. Laberinti",
+   "P. Martimort",
+   "A. Meygret",
+   "F. Spoto",
+   "O. Sy",
+   "F. Marchese",
+   "P. Bargellini"
+  ],
+  "titulo": "Sentinel-2: ESA's Optical High-Resolution Mission for GMES Operational Services",
+  "veiculo": "Remote Sensing of Environment",
+  "ano": 2012,
+  "volume": "120",
+  "numero": null,
+  "paginas": "25-36",
+  "artigo": null,
+  "editora": "Elsevier BV"
+ },
+ "doi:10.1016/j.rse.2013.08.029": {
+  "fonte": "crossref",
+  "doi": "10.1016/j.rse.2013.08.029",
+  "tipo": "journal-article",
+  "autores": [
+   "Gudina L. Feyisa",
+   "Henrik Meilby",
+   "Rasmus Fensholt",
+   "Simon R. Proud"
+  ],
+  "titulo": "Automated Water Extraction Index: A new technique for surface water mapping using Landsat imagery",
+  "veiculo": "Remote Sensing of Environment",
+  "ano": 2014,
+  "volume": "140",
+  "numero": null,
+  "paginas": "23-35",
+  "artigo": null,
+  "editora": "Elsevier BV"
+ },
+ "doi:10.1016/j.rse.2014.02.015": {
+  "fonte": "crossref",
+  "doi": "10.1016/j.rse.2014.02.015",
+  "tipo": "journal-article",
+  "autores": [
+   "Pontus Olofsson",
+   "Giles M. Foody",
+   "Martin Herold",
+   "Stephen V. Stehman",
+   "Curtis E. Woodcock",
+   "Michael A. Wulder"
+  ],
+  "titulo": "Good practices for estimating area and assessing accuracy of land change",
+  "veiculo": "Remote Sensing of Environment",
+  "ano": 2014,
+  "volume": "148",
+  "numero": null,
+  "paginas": "42-57",
+  "artigo": null,
+  "editora": "Elsevier BV"
+ },
+ "doi:10.1016/j.rse.2017.06.031": {
+  "fonte": "crossref",
+  "doi": "10.1016/j.rse.2017.06.031",
+  "tipo": "journal-article",
+  "autores": [
+   "Noel Gorelick",
+   "Matt Hancher",
+   "Mike Dixon",
+   "Simon Ilyushchenko",
+   "David Thau",
+   "Rebecca Moore"
+  ],
+  "titulo": "Google Earth Engine: Planetary-scale geospatial analysis for everyone",
+  "veiculo": "Remote Sensing of Environment",
+  "ano": 2017,
+  "volume": "202",
+  "numero": null,
+  "paginas": "18-27",
+  "artigo": null,
+  "editora": "Elsevier BV"
+ },
+ "doi:10.1016/j.rse.2021.112691": {
+  "fonte": "crossref",
+  "doi": "10.1016/j.rse.2021.112691",
+  "tipo": "journal-article",
+  "autores": [
+   "Juha Suomalainen",
+   "Raquel A. Oliveira",
+   "Teemu Hakala",
+   "Niko Koivumäki",
+   "Lauri Markelin",
+   "Roope Näsi",
+   "Eija Honkavaara"
+  ],
+  "titulo": "Direct reflectance transformation methodology for drone-based hyperspectral imaging",
+  "veiculo": "Remote Sensing of Environment",
+  "ano": 2021,
+  "volume": "266",
+  "numero": null,
+  "paginas": "112691",
+  "artigo": "112691",
+  "editora": "Elsevier BV"
+ },
+ "doi:10.1016/j.rse.2025.115108": {
+  "fonte": "crossref",
+  "doi": "10.1016/j.rse.2025.115108",
+  "tipo": "journal-article",
+  "autores": [
+   "Wolfgang Wagner",
+   "Bernhard Bauer-Marschallinger",
+   "Florian Roth",
+   "Tobias Raiger-Stachl",
+   "Christoph Reimer",
+   "Niall McCormick",
+   "Patrick Matgen",
+   "Marco Chini",
+   "Yu Li",
+   "Sandro Martinis",
+   "Marc Wieland",
+   "Franziska Kraft",
+   "Davide Festa",
+   "Muhammed Hassaan",
+   "Mark Edwin Tupas",
+   "Jie Zhao",
+   "Michaela Seewald",
+   "Michael Riffler",
+   "Luca Molini",
+   "Richard Kidd",
+   "Christian Briese",
+   "Peter Salamon"
+  ],
+  "titulo": "The fully-automatic Sentinel-1 Global Flood Monitoring service: Scientific challenges and future directions",
+  "veiculo": "Remote Sensing of Environment",
+  "ano": 2026,
+  "volume": "333",
+  "numero": null,
+  "paginas": "115108",
+  "artigo": "115108",
+  "editora": "Elsevier BV"
+ },
+ "doi:10.1016/s0022-1694(99)00011-6": {
+  "fonte": "crossref",
+  "doi": "10.1016/s0022-1694(99)00011-6",
+  "tipo": "journal-article",
+  "autores": [
+   "K.L Verdin",
+   "J.P Verdin"
+  ],
+  "titulo": "A topological system for delineation and codification of the Earth’s river basins",
+  "veiculo": "Journal of Hydrology",
+  "ano": 1999,
+  "volume": "218",
+  "numero": "1-2",
+  "paginas": "1-12",
+  "artigo": null,
+  "editora": "Elsevier BV"
+ },
+ "doi:10.1016/s0895-4356(96)00236-3": {
+  "fonte": "crossref",
+  "doi": "10.1016/s0895-4356(96)00236-3",
+  "tipo": "journal-article",
+  "autores": [
+   "Peter Peduzzi",
+   "John Concato",
+   "Elizabeth Kemper",
+   "Theodore R. Holford",
+   "Alvan R. Feinstein"
+  ],
+  "titulo": "A simulation study of the number of events per variable in logistic regression analysis",
+  "veiculo": "Journal of Clinical Epidemiology",
+  "ano": 1996,
+  "volume": "49",
+  "numero": "12",
+  "paginas": "1373-1379",
+  "artigo": null,
+  "editora": "Elsevier BV"
+ },
+ "doi:10.1017/cbo9780511790942": {
+  "fonte": "crossref",
+  "doi": "10.1017/cbo9780511790942",
+  "tipo": "monograph",
+  "autores": [
+   "Andrew Gelman",
+   "Jennifer Hill"
+  ],
+  "titulo": "Data Analysis Using Regression and Multilevel/Hierarchical Models",
+  "veiculo": "",
+  "ano": 2006,
+  "volume": null,
+  "numero": null,
+  "paginas": null,
+  "artigo": null,
+  "editora": "Cambridge University Press"
+ },
+ "doi:10.1029/2002wr001952": {
+  "fonte": "crossref",
+  "doi": "10.1029/2002wr001952",
+  "tipo": "journal-article",
+  "autores": [
+   "R. Merz",
+   "G. Blöschl"
+  ],
+  "titulo": "A process typology of regional floods",
+  "veiculo": "Water Resources Research",
+  "ano": 2003,
+  "volume": "39",
+  "numero": "12",
+  "paginas": null,
+  "artigo": "2002WR001952",
+  "editora": "American Geophysical Union (AGU)"
+ },
+ "doi:10.1029/2008eo100001": {
+  "fonte": "crossref",
+  "doi": "10.1029/2008eo100001",
+  "tipo": "journal-article",
+  "autores": [
+   "Bernhard Lehner",
+   "Kristine Verdin",
+   "Andy Jarvis"
+  ],
+  "titulo": "New Global Hydrography Derived From Spaceborne Elevation Data",
+  "veiculo": "Eos, Transactions American Geophysical Union",
+  "ano": 2008,
+  "volume": "89",
+  "numero": "10",
+  "paginas": "93-94",
+  "artigo": null,
+  "editora": "American Geophysical Union (AGU)"
+ },
+ "doi:10.1029/2019wr026065": {
+  "fonte": "crossref",
+  "doi": "10.1029/2019wr026065",
+  "tipo": "journal-article",
+  "autores": [
+   "Frederik Kratzert",
+   "Daniel Klotz",
+   "Mathew Herrnegger",
+   "Alden K. Sampson",
+   "Sepp Hochreiter",
+   "Grey S. Nearing"
+  ],
+  "titulo": "Toward Improved Predictions in Ungauged Basins: Exploiting the Power of Machine Learning",
+  "veiculo": "Water Resources Research",
+  "ano": 2019,
+  "volume": "55",
+  "numero": "12",
+  "paginas": "11344-11354",
+  "artigo": null,
+  "editora": "American Geophysical Union (AGU)"
+ },
+ "doi:10.1029/2021wr030437": {
+  "fonte": "crossref",
+  "doi": "10.1029/2021wr030437",
+  "tipo": "journal-article",
+  "autores": [
+   "Sandra Pool",
+   "Marc Vis",
+   "Jan Seibert"
+  ],
+  "titulo": "Regionalization for Ungauged Catchments — Lessons Learned From a Comparative Large‐Sample Study",
+  "veiculo": "Water Resources Research",
+  "ano": 2021,
+  "volume": "57",
+  "numero": "10",
+  "paginas": null,
+  "artigo": "e2021WR030437",
+  "editora": "American Geophysical Union (AGU)"
+ },
+ "doi:10.1029/2022wr032404": {
+  "fonte": "crossref",
+  "doi": "10.1029/2022wr032404",
+  "tipo": "journal-article",
+  "autores": [
+   "Dapeng Feng",
+   "Jiangtao Liu",
+   "Kathryn Lawson",
+   "Chaopeng Shen"
+  ],
+  "titulo": "Differentiable, Learnable, Regionalized Process‐Based Models With Multiphysical Outputs can Approach State‐Of‐The‐Art Hydrologic Prediction Accuracy",
+  "veiculo": "Water Resources Research",
+  "ano": 2022,
+  "volume": "58",
+  "numero": "10",
+  "paginas": null,
+  "artigo": "e2022WR032404",
+  "editora": "American Geophysical Union (AGU)"
+ },
+ "doi:10.1029/2023wr035071": {
+  "fonte": "crossref",
+  "doi": "10.1029/2023wr035071",
+  "tipo": "journal-article",
+  "autores": [
+   "Chen Hu",
+   "Jun Xia",
+   "Dunxian She",
+   "Zhaoxia Jing",
+   "Si Hong",
+   "Zhihong Song",
+   "Gangsheng Wang"
+  ],
+  "titulo": "Parameter Regionalization With Donor Catchment Clustering Improves Urban Flood Modeling in Ungauged Urban Catchments",
+  "veiculo": "Water Resources Research",
+  "ano": 2024,
+  "volume": "60",
+  "numero": "7",
+  "paginas": null,
+  "artigo": "e2023WR035071",
+  "editora": "American Geophysical Union (AGU)"
+ },
+ "doi:10.1029/2025jh001145": {
+  "fonte": "crossref",
+  "doi": "10.1029/2025jh001145",
+  "tipo": "journal-article",
+  "autores": [
+   "Wantai Chen",
+   "Chong Wang",
+   "Zimeng Zhao",
+   "Xiaofeng Li"
+  ],
+  "titulo": "Improving Cross‐Event Generalization for SAR‐Based Coastal Inundation Mapping via Test‐Time Domain Adaptation",
+  "veiculo": "Journal of Geophysical Research: Machine Learning and Computation",
+  "ano": 2026,
+  "volume": "3",
+  "numero": "4",
+  "paginas": null,
+  "artigo": "e2025JH001145",
+  "editora": "American Geophysical Union (AGU)"
+ },
+ "doi:10.1029/93wr03553": {
+  "fonte": "crossref",
+  "doi": "10.1029/93wr03553",
+  "tipo": "journal-article",
+  "autores": [
+   "Weihua Zhang",
+   "David R. Montgomery"
+  ],
+  "titulo": "Digital elevation model grid size, landscape representation, and hydrologic simulations",
+  "veiculo": "Water Resources Research",
+  "ano": 1994,
+  "volume": "30",
+  "numero": "4",
+  "paginas": "1019-1028",
+  "artigo": null,
+  "editora": "American Geophysical Union (AGU)"
+ },
+ "doi:10.1029/94wr01971": {
+  "fonte": "crossref",
+  "doi": "10.1029/94wr01971",
+  "tipo": "journal-article",
+  "autores": [
+   "David M. Wolock",
+   "Curtis V. Price"
+  ],
+  "titulo": "Effects of digital elevation model map scale and data resolution on a topography‐based watershed model",
+  "veiculo": "Water Resources Research",
+  "ano": 1994,
+  "volume": "30",
+  "numero": "11",
+  "paginas": "3041-3052",
+  "artigo": null,
+  "editora": "American Geophysical Union (AGU)"
+ },
+ "doi:10.1029/96wr00681": {
+  "erro": "HTTP Error 404: Not Found"
+ },
+ "doi:10.1029/96wr03137": {
+  "fonte": "crossref",
+  "doi": "10.1029/96wr03137",
+  "tipo": "journal-article",
+  "autores": [
+   "David G. Tarboton"
+  ],
+  "titulo": "A new method for the determination of flow directions and upslope areas in grid digital elevation models",
+  "veiculo": "Water Resources Research",
+  "ano": 1997,
+  "volume": "33",
+  "numero": "2",
+  "paginas": "309-319",
+  "artigo": null,
+  "editora": "American Geophysical Union (AGU)"
+ },
+ "doi:10.1038/nature20584": {
+  "fonte": "crossref",
+  "doi": "10.1038/nature20584",
+  "tipo": "journal-article",
+  "autores": [
+   "Jean-François Pekel",
+   "Andrew Cottam",
+   "Noel Gorelick",
+   "Alan S. Belward"
+  ],
+  "titulo": "High-resolution mapping of global surface water and its long-term changes",
+  "veiculo": "Nature",
+  "ano": 2016,
+  "volume": "540",
+  "numero": "7633",
+  "paginas": "418-422",
+  "artigo": null,
+  "editora": "Springer Science and Business Media LLC"
+ },
+ "doi:10.1038/s41467-020-18321-y": {
+  "fonte": "crossref",
+  "doi": "10.1038/s41467-020-18321-y",
+  "tipo": "journal-article",
+  "autores": [
+   "Pierre Ploton",
+   "Frédéric Mortier",
+   "Maxime Réjou-Méchain",
+   "Nicolas Barbier",
+   "Nicolas Picard",
+   "Vivien Rossi",
+   "Carsten Dormann",
+   "Guillaume Cornu",
+   "Gaëlle Viennois",
+   "Nicolas Bayol",
+   "Alexei Lyapustin",
+   "Sylvie Gourlet-Fleury",
+   "Raphaël Pélissier"
+  ],
+  "titulo": "Spatial validation reveals poor predictive performance of large-scale ecological mapping models",
+  "veiculo": "Nature Communications",
+  "ano": 2020,
+  "volume": "11",
+  "numero": "1",
+  "paginas": null,
+  "artigo": "4540",
+  "editora": "Springer Science and Business Media LLC"
+ },
+ "doi:10.1038/s41467-021-26107-z": {
+  "fonte": "crossref",
+  "doi": "10.1038/s41467-021-26107-z",
+  "tipo": "journal-article",
+  "autores": [
+   "Wen-Ping Tsai",
+   "Dapeng Feng",
+   "Ming Pan",
+   "Hylke Beck",
+   "Kathryn Lawson",
+   "Yuan Yang",
+   "Jiangtao Liu",
+   "Chaopeng Shen"
+  ],
+  "titulo": "From calibration to parameter learning: Harnessing the scaling effects of big data in geoscientific modeling",
+  "veiculo": "Nature Communications",
+  "ano": 2021,
+  "volume": "12",
+  "numero": "1",
+  "paginas": null,
+  "artigo": "5988",
+  "editora": "Springer Science and Business Media LLC"
+ },
+ "doi:10.1038/s41467-022-30727-4": {
+  "fonte": "crossref",
+  "doi": "10.1038/s41467-022-30727-4",
+  "tipo": "journal-article",
+  "autores": [
+   "Jun Rentschler",
+   "Melda Salhab",
+   "Bramka Arga Jafino"
+  ],
+  "titulo": "Flood exposure and poverty in 188 countries",
+  "veiculo": "Nature Communications",
+  "ano": 2022,
+  "volume": "13",
+  "numero": "1",
+  "paginas": null,
+  "artigo": "3527",
+  "editora": "Springer Science and Business Media LLC"
+ },
+ "doi:10.1038/s41467-024-47394-2": {
+  "fonte": "crossref",
+  "doi": "10.1038/s41467-024-47394-2",
+  "tipo": "journal-article",
+  "autores": [
+   "Sean Fox",
+   "Felix Agyemang",
+   "Laurence Hawker",
+   "Jeffrey Neal"
+  ],
+  "titulo": "Integrating social vulnerability into high-resolution global flood risk mapping",
+  "veiculo": "Nature Communications",
+  "ano": 2024,
+  "volume": "15",
+  "numero": "1",
+  "paginas": null,
+  "artigo": "3155",
+  "editora": "Springer Science and Business Media LLC"
+ },
+ "doi:10.1038/s41586-019-0912-1": {
+  "fonte": "crossref",
+  "doi": "10.1038/s41586-019-0912-1",
+  "tipo": "journal-article",
+  "autores": [
+   "Markus Reichstein",
+   "Gustau Camps-Valls",
+   "Bjorn Stevens",
+   "Martin Jung",
+   "Joachim Denzler",
+   "Nuno Carvalhais",
+   "Prabhat"
+  ],
+  "titulo": "Deep learning and process understanding for data-driven Earth system science",
+  "veiculo": "Nature",
+  "ano": 2019,
+  "volume": "566",
+  "numero": "7743",
+  "paginas": "195-204",
+  "artigo": null,
+  "editora": "Springer Science and Business Media LLC"
+ },
+ "doi:10.1038/s41586-021-03695-w": {
+  "fonte": "crossref",
+  "doi": "10.1038/s41586-021-03695-w",
+  "tipo": "journal-article",
+  "autores": [
+   "B. Tellman",
+   "J. A. Sullivan",
+   "C. Kuhn",
+   "A. J. Kettner",
+   "C. S. Doyle",
+   "G. R. Brakenridge",
+   "T. A. Erickson",
+   "D. A. Slayback"
+  ],
+  "titulo": "Satellite imaging reveals increased proportion of population exposed to floods",
+  "veiculo": "Nature",
+  "ano": 2021,
+  "volume": "596",
+  "numero": "7870",
+  "paginas": "80-86",
+  "artigo": null,
+  "editora": "Springer Science and Business Media LLC"
+ },
+ "doi:10.1038/s41586-024-07145-1": {
+  "fonte": "crossref",
+  "doi": "10.1038/s41586-024-07145-1",
+  "tipo": "journal-article",
+  "autores": [
+   "Grey Nearing",
+   "Deborah Cohen",
+   "Vusumuzi Dube",
+   "Martin Gauch",
+   "Oren Gilon",
+   "Shaun Harrigan",
+   "Avinatan Hassidim",
+   "Daniel Klotz",
+   "Frederik Kratzert",
+   "Asher Metzger",
+   "Sella Nevo",
+   "Florian Pappenberger",
+   "Christel Prudhomme",
+   "Guy Shalev",
+   "Shlomo Shenzis",
+   "Tadele Yednkachw Tekalign",
+   "Dana Weitzner",
+   "Yossi Matias"
+  ],
+  "titulo": "Global prediction of extreme floods in ungauged watersheds",
+  "veiculo": "Nature",
+  "ano": 2024,
+  "volume": "627",
+  "numero": "8004",
+  "paginas": "559-563",
+  "artigo": null,
+  "editora": "Springer Science and Business Media LLC"
+ },
+ "doi:10.1038/s41586-024-08328-6": {
+  "fonte": "crossref",
+  "doi": "10.1038/s41586-024-08328-6",
+  "tipo": "journal-article",
+  "autores": [
+   "Noah Hollmann",
+   "Samuel Müller",
+   "Lennart Purucker",
+   "Arjun Krishnakumar",
+   "Max Körfer",
+   "Shi Bin Hoo",
+   "Robin Tibor Schirrmeister",
+   "Frank Hutter"
+  ],
+  "titulo": "Accurate predictions on small data with a tabular foundation model",
+  "veiculo": "Nature",
+  "ano": 2025,
+  "volume": "637",
+  "numero": "8045",
+  "paginas": "319-326",
+  "artigo": null,
+  "editora": "Springer Science and Business Media LLC"
+ },
+ "doi:10.1038/s41597-019-0300-6": {
+  "fonte": "crossref",
+  "doi": "10.1038/s41597-019-0300-6",
+  "tipo": "journal-article",
+  "autores": [
+   "Simon Linke",
+   "Bernhard Lehner",
+   "Camille Ouellet Dallaire",
+   "Joseph Ariwi",
+   "Günther Grill",
+   "Mira Anand",
+   "Penny Beames",
+   "Vicente Burchard-Levine",
+   "Sally Maxwell",
+   "Hana Moidu",
+   "Florence Tan",
+   "Michele Thieme"
+  ],
+  "titulo": "Global hydro-environmental sub-basin and river reach characteristics at high spatial resolution",
+  "veiculo": "Scientific Data",
+  "ano": 2019,
+  "volume": "6",
+  "numero": "1",
+  "paginas": null,
+  "artigo": "283",
+  "editora": "Springer Science and Business Media LLC"
+ },
+ "doi:10.1038/s41598-021-86650-z": {
+  "fonte": "crossref",
+  "doi": "10.1038/s41598-021-86650-z",
+  "tipo": "journal-article",
+  "autores": [
+   "Gonzalo Mateo-Garcia",
+   "Joshua Veitch-Michaelis",
+   "Lewis Smith",
+   "Silviu Vlad Oprea",
+   "Guy Schumann",
+   "Yarin Gal",
+   "Atılım Güneş Baydin",
+   "Dietmar Backes"
+  ],
+  "titulo": "Towards global flood mapping onboard low cost satellites with machine learning",
+  "veiculo": "Scientific Reports",
+  "ano": 2021,
+  "volume": "11",
+  "numero": "1",
+  "paginas": null,
+  "artigo": "7249",
+  "editora": "Springer Science and Business Media LLC"
+ },
+ "doi:10.1038/s41598-023-41032-5": {
+  "fonte": "crossref",
+  "doi": "10.1038/s41598-023-41032-5",
+  "tipo": "journal-article",
+  "autores": [
+   "William H. Walters",
+   "Esther Isabelle Wilder"
+  ],
+  "titulo": "Fabrication and errors in the bibliographic citations generated by ChatGPT",
+  "veiculo": "Scientific Reports",
+  "ano": 2023,
+  "volume": "13",
+  "numero": "1",
+  "paginas": null,
+  "artigo": "14045",
+  "editora": "Springer Science and Business Media LLC"
+ },
+ "doi:10.1038/s42256-020-00257-z": {
+  "fonte": "crossref",
+  "doi": "10.1038/s42256-020-00257-z",
+  "tipo": "journal-article",
+  "autores": [
+   "Robert Geirhos",
+   "Jörn-Henrik Jacobsen",
+   "Claudio Michaelis",
+   "Richard Zemel",
+   "Wieland Brendel",
+   "Matthias Bethge",
+   "Felix A. Wichmann"
+  ],
+  "titulo": "Shortcut learning in deep neural networks",
+  "veiculo": "Nature Machine Intelligence",
+  "ano": 2020,
+  "volume": "2",
+  "numero": "11",
+  "paginas": "665-673",
+  "artigo": null,
+  "editora": "Springer Science and Business Media LLC"
+ },
+ "doi:10.1038/s43247-025-03127-x": {
+  "fonte": "crossref",
+  "doi": "10.1038/s43247-025-03127-x",
+  "tipo": "journal-article",
+  "autores": [
+   "Xiao Xiang Zhu",
+   "Zhitong Xiong",
+   "Yi Wang",
+   "Adam J. Stewart",
+   "Konrad Heidler",
+   "Yuanyuan Wang",
+   "Zhenghang Yuan",
+   "Thomas Dujardin",
+   "Qingsong Xu",
+   "Yilei Shi"
+  ],
+  "titulo": "On the foundations of Earth foundation models",
+  "veiculo": "Communications Earth &amp; Environment",
+  "ano": 2026,
+  "volume": "7",
+  "numero": "1",
+  "paginas": null,
+  "artigo": "103",
+  "editora": "Springer Science and Business Media LLC"
+ },
+ "doi:10.1038/s44284-025-00273-3": {
+  "fonte": "crossref",
+  "doi": "10.1038/s44284-025-00273-3",
+  "tipo": "journal-article",
+  "autores": [
+   "Dan Li",
+   "Laixiang Sun",
+   "Kuishuang Feng",
+   "Ning Zhang",
+   "Yang Yu",
+   "Dandan Zhao",
+   "Yuyu Zhou"
+  ],
+  "titulo": "Disproportionate flood exposure for slum populations of the Global South",
+  "veiculo": "Nature Cities",
+  "ano": 2025,
+  "volume": "2",
+  "numero": "7",
+  "paginas": "626-638",
+  "artigo": null,
+  "editora": "Springer Science and Business Media LLC"
+ },
+ "doi:10.1038/sdata.2015.66": {
+  "fonte": "crossref",
+  "doi": "10.1038/sdata.2015.66",
+  "tipo": "journal-article",
+  "autores": [
+   "Chris Funk",
+   "Pete Peterson",
+   "Martin Landsfeld",
+   "Diego Pedreros",
+   "James Verdin",
+   "Shraddhanand Shukla",
+   "Gregory Husak",
+   "James Rowland",
+   "Laura Harrison",
+   "Andrew Hoell",
+   "Joel Michaelsen"
+  ],
+  "titulo": "The climate hazards infrared precipitation with stations—a new environmental record for monitoring extremes",
+  "veiculo": "Scientific Data",
+  "ano": 2015,
+  "volume": "2",
+  "numero": "1",
+  "paginas": null,
+  "artigo": "150066",
+  "editora": "Springer Science and Business Media LLC"
+ },
+ "doi:10.1038/sdata.2016.18": {
+  "fonte": "crossref",
+  "doi": "10.1038/sdata.2016.18",
+  "tipo": "journal-article",
+  "autores": [
+   "Mark D. Wilkinson",
+   "Michel Dumontier",
+   "IJsbrand Jan Aalbersberg",
+   "Gabrielle Appleton",
+   "Myles Axton",
+   "Arie Baak",
+   "Niklas Blomberg",
+   "Jan-Willem Boiten",
+   "Luiz Bonino da Silva Santos",
+   "Philip E. Bourne",
+   "Jildau Bouwman",
+   "Anthony J. Brookes",
+   "Tim Clark",
+   "Mercè Crosas",
+   "Ingrid Dillo",
+   "Olivier Dumon",
+   "Scott Edmunds",
+   "Chris T. Evelo",
+   "Richard Finkers",
+   "Alejandra Gonzalez-Beltran",
+   "Alasdair J.G. Gray",
+   "Paul Groth",
+   "Carole Goble",
+   "Jeffrey S. Grethe",
+   "Jaap Heringa",
+   "Peter A.C ’t Hoen",
+   "Rob Hooft",
+   "Tobias Kuhn",
+   "Ruben Kok",
+   "Joost Kok",
+   "Scott J. Lusher",
+   "Maryann E. Martone",
+   "Albert Mons",
+   "Abel L. Packer",
+   "Bengt Persson",
+   "Philippe Rocca-Serra",
+   "Marco Roos",
+   "Rene van Schaik",
+   "Susanna-Assunta Sansone",
+   "Erik Schultes",
+   "Thierry Sengstag",
+   "Ted Slater",
+   "George Strawn",
+   "Morris A. Swertz",
+   "Mark Thompson",
+   "Johan van der Lei",
+   "Erik van Mulligen",
+   "Jan Velterop",
+   "Andra Waagmeester",
+   "Peter Wittenburg",
+   "Katherine Wolstencroft",
+   "Jun Zhao",
+   "Barend Mons"
+  ],
+  "titulo": "The FAIR Guiding Principles for scientific data management and stewardship",
+  "veiculo": "Scientific Data",
+  "ano": 2016,
+  "volume": "3",
+  "numero": "1",
+  "paginas": null,
+  "artigo": "160018",
+  "editora": "Springer Science and Business Media LLC"
+ },
+ "doi:10.1073/pnas.1611835114": {
+  "fonte": "crossref",
+  "doi": "10.1073/pnas.1611835114",
+  "tipo": "journal-article",
+  "autores": [
+   "James Kirkpatrick",
+   "Razvan Pascanu",
+   "Neil Rabinowitz",
+   "Joel Veness",
+   "Guillaume Desjardins",
+   "Andrei A. Rusu",
+   "Kieran Milan",
+   "John Quan",
+   "Tiago Ramalho",
+   "Agnieszka Grabska-Barwinska",
+   "Demis Hassabis",
+   "Claudia Clopath",
+   "Dharshan Kumaran",
+   "Raia Hadsell"
+  ],
+  "titulo": "Overcoming catastrophic forgetting in neural networks",
+  "veiculo": "Proceedings of the National Academy of Sciences",
+  "ano": 2017,
+  "volume": "114",
+  "numero": "13",
+  "paginas": "3521-3526",
+  "artigo": null,
+  "editora": "National Academy of Sciences"
+ },
+ "doi:10.1080/01431160304987": {
+  "fonte": "crossref",
+  "doi": "10.1080/01431160304987",
+  "tipo": "journal-article",
+  "autores": [
+   "Y. Zha",
+   "J. Gao",
+   "S. Ni"
+  ],
+  "titulo": "Use of normalized difference built-up index in automatically mapping urban areas from TM imagery",
+  "veiculo": "International Journal of Remote Sensing",
+  "ano": 2003,
+  "volume": "24",
+  "numero": "3",
+  "paginas": "583-594",
+  "artigo": null,
+  "editora": "Informa UK Limited"
+ },
+ "doi:10.1080/01431160600589179": {
+  "fonte": "crossref",
+  "doi": "10.1080/01431160600589179",
+  "tipo": "journal-article",
+  "autores": [
+   "Hanqiu Xu"
+  ],
+  "titulo": "Modification of normalised difference water index (NDWI) to enhance open water features in remotely sensed imagery",
+  "veiculo": "International Journal of Remote Sensing",
+  "ano": 2006,
+  "volume": "27",
+  "numero": "14",
+  "paginas": "3025-3033",
+  "artigo": null,
+  "editora": "Informa UK Limited"
+ },
+ "doi:10.1080/01431169608948714": {
+  "fonte": "crossref",
+  "doi": "10.1080/01431169608948714",
+  "tipo": "journal-article",
+  "autores": [
+   "S. K. McFEETERS"
+  ],
+  "titulo": "The use of the Normalized Difference Water Index (NDWI) in the delineation of open water features",
+  "veiculo": "International Journal of Remote Sensing",
+  "ano": 1996,
+  "volume": "17",
+  "numero": "7",
+  "paginas": "1425-1432",
+  "artigo": null,
+  "editora": "Informa UK Limited"
+ },
+ "doi:10.1080/02626667909491834": {
+  "fonte": "crossref",
+  "doi": "10.1080/02626667909491834",
+  "tipo": "journal-article",
+  "autores": [
+   "K. J. BEVEN",
+   "M. J. KIRKBY"
+  ],
+  "titulo": "A physically based, variable contributing area model of basin hydrology / Un modèle à base physique de zone d'appel variable de l'hydrologie du bassin versant",
+  "veiculo": "Hydrological Sciences Bulletin",
+  "ano": 1979,
+  "volume": "24",
+  "numero": "1",
+  "paginas": "43-69",
+  "artigo": null,
+  "editora": "Informa UK Limited"
+ },
+ "doi:10.1080/02757259409532206": {
+  "fonte": "crossref",
+  "doi": "10.1080/02757259409532206",
+  "tipo": "journal-article",
+  "autores": [
+   "J. S. Lee",
+   "L. Jurkevich",
+   "P. Dewaele",
+   "P. Wambacq",
+   "A. Oosterlinck"
+  ],
+  "titulo": "Speckle filtering of synthetic aperture radar images: A review",
+  "veiculo": "Remote Sensing Reviews",
+  "ano": 1994,
+  "volume": "8",
+  "numero": "4",
+  "paginas": "313-340",
+  "artigo": null,
+  "editora": "Informa UK Limited"
+ },
+ "doi:10.1080/04353676.1980.11879996": {
+  "fonte": "crossref",
+  "doi": "10.1080/04353676.1980.11879996",
+  "tipo": "journal-article",
+  "autores": [
+   "Nel Caine"
+  ],
+  "titulo": "The Rainfall Intensity - Duration Control of Shallow Landslides and Debris Flows",
+  "veiculo": "Geografiska Annaler: Series A, Physical Geography",
+  "ano": 1980,
+  "volume": "62",
+  "numero": "1-2",
+  "paginas": "23-27",
+  "artigo": null,
+  "editora": "Informa UK Limited"
+ },
+ "doi:10.1080/15715124.2014.917318": {
+  "fonte": "crossref",
+  "doi": "10.1080/15715124.2014.917318",
+  "tipo": "journal-article",
+  "autores": [
+   "Keith Beven",
+   "Rob Lamb",
+   "Dave Leedal",
+   "Neil Hunter"
+  ],
+  "titulo": "Communicating uncertainty in flood inundation mapping: a case study",
+  "veiculo": "International Journal of River Basin Management",
+  "ano": 2015,
+  "volume": "13",
+  "numero": "3",
+  "paginas": "285-295",
+  "artigo": null,
+  "editora": "Informa UK Limited"
+ },
+ "doi:10.1080/15730620500386529": {
+  "fonte": "crossref",
+  "doi": "10.1080/15730620500386529",
+  "tipo": "journal-article",
+  "autores": [
+   "W. D. Shuster",
+   "J. Bonta",
+   "H. Thurston",
+   "E. Warnemuende",
+   "D. R. Smith"
+  ],
+  "titulo": "Impacts of impervious surface on watershed hydrology: A review",
+  "veiculo": "Urban Water Journal",
+  "ano": 2005,
+  "volume": "2",
+  "numero": "4",
+  "paginas": "263-275",
+  "artigo": null,
+  "editora": "Informa UK Limited"
+ },
+ "doi:10.1080/19475705.2025.2471019": {
+  "fonte": "crossref",
+  "doi": "10.1080/19475705.2025.2471019",
+  "tipo": "journal-article",
+  "autores": [
+   "Zuleide Ferreira",
+   "Bruna Almeida",
+   "Ana Cristina Costa",
+   "Manoel do Couto Fernandes",
+   "Pedro Cabral"
+  ],
+  "titulo": "Insights into landslide susceptibility: a comparative evaluation of multi-criteria analysis and machine learning techniques",
+  "veiculo": "Geomatics, Natural Hazards and Risk",
+  "ano": 2025,
+  "volume": "16",
+  "numero": "1",
+  "paginas": null,
+  "artigo": "2471019",
+  "editora": "Informa UK Limited"
+ },
+ "doi:10.1088/1748-9326/ac4d4f": {
+  "fonte": "crossref",
+  "doi": "10.1088/1748-9326/ac4d4f",
+  "tipo": "journal-article",
+  "autores": [
+   "Laurence Hawker",
+   "Peter Uhe",
+   "Luntadila Paulo",
+   "Jeison Sosa",
+   "James Savage",
+   "Christopher Sampson",
+   "Jeffrey Neal"
+  ],
+  "titulo": "A 30 m global map of elevation with forests and buildings removed",
+  "veiculo": "Environmental Research Letters",
+  "ano": 2022,
+  "volume": "17",
+  "numero": "2",
+  "paginas": "024016",
+  "artigo": null,
+  "editora": "IOP Publishing"
+ },
+ "doi:10.1088/3033-4942/ae0aed": {
+  "fonte": "crossref",
+  "doi": "10.1088/3033-4942/ae0aed",
+  "tipo": "journal-article",
+  "autores": [
+   "Jangho Lee",
+   "Sun Young Park",
+   "Abhinav Wadhwa",
+   "Aaron I Packman",
+   "Stephen W Nesbitt",
+   "Ashish Sharma",
+   "Max Berkelhammer",
+   "Marcelo H Garcia",
+   "Rao Kotamarthi",
+   "Deanna Hence",
+   "William M Miller"
+  ],
+  "titulo": "Comparing multi-source urban flood indicators: satellite, simulation, and citizen-reported data",
+  "veiculo": "Environmental Research: Water",
+  "ano": 2025,
+  "volume": "1",
+  "numero": "3",
+  "paginas": "035007",
+  "artigo": null,
+  "editora": "IOP Publishing"
+ },
+ "doi:10.1093/biomet/66.3.403": {
+  "fonte": "crossref",
+  "doi": "10.1093/biomet/66.3.403",
+  "tipo": "journal-article",
+  "autores": [
+   "R. L. PRENTICE",
+   "R. PYKE"
+  ],
+  "titulo": "Logistic disease incidence models and case-control studies",
+  "veiculo": "Biometrika",
+  "ano": 1979,
+  "volume": "66",
+  "numero": "3",
+  "paginas": "403-411",
+  "artigo": null,
+  "editora": "Oxford University Press (OUP)"
+ },
+ "doi:10.1093/biomet/80.1.27": {
+  "fonte": "crossref",
+  "doi": "10.1093/biomet/80.1.27",
+  "tipo": "journal-article",
+  "autores": [
+   "DAVID FIRTH"
+  ],
+  "titulo": "Bias reduction of maximum likelihood estimates",
+  "veiculo": "Biometrika",
+  "ano": 1993,
+  "volume": "80",
+  "numero": "1",
+  "paginas": "27-38",
+  "artigo": null,
+  "editora": "Oxford University Press (OUP)"
+ },
+ "doi:10.1093/oxfordjournals.aje.a115853": {
+  "fonte": "crossref",
+  "doi": "10.1093/oxfordjournals.aje.a115853",
+  "tipo": "journal-article",
+  "autores": [
+   "Malcolm Maclure"
+  ],
+  "titulo": "The Case-Crossover Design: A Method for Studying Transient Effects on the Risk of Acute Events",
+  "veiculo": "American Journal of Epidemiology",
+  "ano": 1991,
+  "volume": "133",
+  "numero": "2",
+  "paginas": "144-153",
+  "artigo": null,
+  "editora": "Oxford University Press (OUP)"
+ },
+ "doi:10.1097/01.ede.0000181315.18836.9d": {
+  "fonte": "crossref",
+  "doi": "10.1097/01.ede.0000181315.18836.9d",
+  "tipo": "journal-article",
+  "autores": [
+   "Holly Janes",
+   "Lianne Sheppard",
+   "Thomas Lumley"
+  ],
+  "titulo": "Case???Crossover Analyses of Air Pollution Exposure Data",
+  "veiculo": "Epidemiology",
+  "ano": 2005,
+  "volume": "16",
+  "numero": "6",
+  "paginas": "717-726",
+  "artigo": null,
+  "editora": "Ovid Technologies (Wolters Kluwer Health)"
+ },
+ "doi:10.1109/cvpr52688.2022.01553": {
+  "fonte": "crossref",
+  "doi": "10.1109/cvpr52688.2022.01553",
+  "tipo": "proceedings-article",
+  "autores": [
+   "Kaiming He",
+   "Xinlei Chen",
+   "Saining Xie",
+   "Yanghao Li",
+   "Piotr Dollar",
+   "Ross Girshick"
+  ],
+  "titulo": "Masked Autoencoders Are Scalable Vision Learners",
+  "veiculo": "2022 IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)",
+  "ano": 2022,
+  "volume": null,
+  "numero": null,
+  "paginas": "15979-15988",
+  "artigo": null,
+  "editora": "IEEE"
+ },
+ "doi:10.1109/cvprw50498.2020.00113": {
+  "fonte": "crossref",
+  "doi": "10.1109/cvprw50498.2020.00113",
+  "tipo": "proceedings-article",
+  "autores": [
+   "Derrick Bonafilia",
+   "Beth Tellman",
+   "Tyler Anderson",
+   "Erica Issenberg"
+  ],
+  "titulo": "Sen1Floods11: a georeferenced dataset to train and test deep learning flood algorithms for Sentinel-1",
+  "veiculo": "2020 IEEE/CVF Conference on Computer Vision and Pattern Recognition Workshops (CVPRW)",
+  "ano": 2020,
+  "volume": null,
+  "numero": null,
+  "paginas": "835-845",
+  "artigo": null,
+  "editora": "IEEE"
+ },
+ "doi:10.1109/iccv48922.2021.00928": {
+  "fonte": "crossref",
+  "doi": "10.1109/iccv48922.2021.00928",
+  "tipo": "proceedings-article",
+  "autores": [
+   "Oscar Manas",
+   "Alexandre Lacoste",
+   "Xavier Giro-i-Nieto",
+   "David Vazquez",
+   "Pau Rodriguez"
+  ],
+  "titulo": "Seasonal Contrast: Unsupervised Pre-Training from Uncurated Remote Sensing Data",
+  "veiculo": "2021 IEEE/CVF International Conference on Computer Vision (ICCV)",
+  "ano": 2021,
+  "volume": null,
+  "numero": null,
+  "paginas": "9394-9403",
+  "artigo": null,
+  "editora": "IEEE"
+ },
+ "doi:10.1109/iccv48922.2021.00951": {
+  "fonte": "crossref",
+  "doi": "10.1109/iccv48922.2021.00951",
+  "tipo": "proceedings-article",
+  "autores": [
+   "Mathilde Caron",
+   "Hugo Touvron",
+   "Ishan Misra",
+   "Herve Jegou",
+   "Julien Mairal",
+   "Piotr Bojanowski",
+   "Armand Joulin"
+  ],
+  "titulo": "Emerging Properties in Self-Supervised Vision Transformers",
+  "veiculo": "2021 IEEE/CVF International Conference on Computer Vision (ICCV)",
+  "ano": 2021,
+  "volume": null,
+  "numero": null,
+  "paginas": "9630-9640",
+  "artigo": null,
+  "editora": "IEEE"
+ },
+ "doi:10.1109/iccv51070.2023.00378": {
+  "fonte": "crossref",
+  "doi": "10.1109/iccv51070.2023.00378",
+  "tipo": "proceedings-article",
+  "autores": [
+   "Colorado J Reed",
+   "Ritwik Gupta",
+   "Shufan Li",
+   "Sarah Brockman",
+   "Christopher Funk",
+   "Brian Clipp",
+   "Kurt Keutzer",
+   "Salvatore Candido",
+   "Matt Uyttendaele",
+   "Trevor Darrell"
+  ],
+  "titulo": "Scale-MAE: A Scale-Aware Masked Autoencoder for Multiscale Geospatial Representation Learning",
+  "veiculo": "2023 IEEE/CVF International Conference on Computer Vision (ICCV)",
+  "ano": 2023,
+  "volume": null,
+  "numero": null,
+  "paginas": "4065-4076",
+  "artigo": null,
+  "editora": "IEEE"
+ },
+ "doi:10.1109/lgrs.2025.3610188": {
+  "fonte": "crossref",
+  "doi": "10.1109/lgrs.2025.3610188",
+  "tipo": "journal-article",
+  "autores": [
+   "Qifeng Ge",
+   "Teng Zhao",
+   "Yihang Lin",
+   "Zhenzhen Yan",
+   "Chen Xu",
+   "Xiaoping Du",
+   "Xiangtao Fan"
+  ],
+  "titulo": "FloodNet: A Multilevel Multimodal Fusion Network With Semantic Consistency Constraint Strategy for Flood Segmentation",
+  "veiculo": "IEEE Geoscience and Remote Sensing Letters",
+  "ano": 2025,
+  "volume": "22",
+  "numero": null,
+  "paginas": "1-5",
+  "artigo": null,
+  "editora": "Institute of Electrical and Electronics Engineers (IEEE)"
+ },
+ "doi:10.1109/mgrs.2016.2548504": {
+  "fonte": "crossref",
+  "doi": "10.1109/mgrs.2016.2548504",
+  "tipo": "journal-article",
+  "autores": [
+   "Devis Tuia",
+   "Claudio Persello",
+   "Lorenzo Bruzzone"
+  ],
+  "titulo": "Domain Adaptation for the Classification of Remote Sensing Data: An Overview of Recent Advances",
+  "veiculo": "IEEE Geoscience and Remote Sensing Magazine",
+  "ano": 2016,
+  "volume": "4",
+  "numero": "2",
+  "paginas": "41-57",
+  "artigo": null,
+  "editora": "Institute of Electrical and Electronics Engineers (IEEE)"
+ },
+ "doi:10.1109/mgrs.2022.3198244": {
+  "fonte": "crossref",
+  "doi": "10.1109/mgrs.2022.3198244",
+  "tipo": "journal-article",
+  "autores": [
+   "Yi Wang",
+   "Conrad M. Albrecht",
+   "Nassim Ait Ali Braham",
+   "Lichao Mou",
+   "Xiao Xiang Zhu"
+  ],
+  "titulo": "Self-Supervised Learning in Remote Sensing: A review",
+  "veiculo": "IEEE Geoscience and Remote Sensing Magazine",
+  "ano": 2022,
+  "volume": "10",
+  "numero": "4",
+  "paginas": "213-247",
+  "artigo": null,
+  "editora": "Institute of Electrical and Electronics Engineers (IEEE)"
+ },
+ "doi:10.1109/tgrs.2022.3215209": {
+  "fonte": "crossref",
+  "doi": "10.1109/tgrs.2022.3215209",
+  "tipo": "journal-article",
+  "autores": [
+   "Omid Ghorbanzadeh",
+   "Yonghao Xu",
+   "Pedram Ghamisi",
+   "Michael Kopp",
+   "David Kreil"
+  ],
+  "titulo": "Landslide4Sense: Reference Benchmark Data and Deep Learning Models for Landslide Detection",
+  "veiculo": "IEEE Transactions on Geoscience and Remote Sensing",
+  "ano": 2022,
+  "volume": "60",
+  "numero": null,
+  "paginas": "1-17",
+  "artigo": null,
+  "editora": "Institute of Electrical and Electronics Engineers (IEEE)"
+ },
+ "doi:10.1109/tpami.2017.2773081": {
+  "fonte": "crossref",
+  "doi": "10.1109/tpami.2017.2773081",
+  "tipo": "journal-article",
+  "autores": [
+   "Zhizhong Li",
+   "Derek Hoiem"
+  ],
+  "titulo": "Learning without Forgetting",
+  "veiculo": "IEEE Transactions on Pattern Analysis and Machine Intelligence",
+  "ano": 2018,
+  "volume": "40",
+  "numero": "12",
+  "paginas": "2935-2947",
+  "artigo": null,
+  "editora": "Institute of Electrical and Electronics Engineers (IEEE)"
+ },
+ "doi:10.1109/tsmc.1979.4310076": {
+  "fonte": "crossref",
+  "doi": "10.1109/tsmc.1979.4310076",
+  "tipo": "journal-article",
+  "autores": [
+   "Nobuyuki Otsu"
+  ],
+  "titulo": "A Threshold Selection Method from Gray-Level Histograms",
+  "veiculo": "IEEE Transactions on Systems, Man, and Cybernetics",
+  "ano": 1979,
+  "volume": "9",
+  "numero": "1",
+  "paginas": "62-66",
+  "artigo": null,
+  "editora": "Institute of Electrical and Electronics Engineers (IEEE)"
+ },
+ "doi:10.1111/1540-6237.8402002": {
+  "fonte": "crossref",
+  "doi": "10.1111/1540-6237.8402002",
+  "tipo": "journal-article",
+  "autores": [
+   "Susan L. Cutter",
+   "Bryan J. Boruff",
+   "W. Lynn Shirley"
+  ],
+  "titulo": "Social Vulnerability to Environmental Hazards\n                    <sup>*</sup>",
+  "veiculo": "Social Science Quarterly",
+  "ano": 2003,
+  "volume": "84",
+  "numero": "2",
+  "paginas": "242-261",
+  "artigo": null,
+  "editora": "Wiley"
+ },
+ "doi:10.1111/2041-210x.13650": {
+  "fonte": "crossref",
+  "doi": "10.1111/2041-210x.13650",
+  "tipo": "journal-article",
+  "autores": [
+   "Hanna Meyer",
+   "Edzer Pebesma"
+  ],
+  "titulo": "Predicting into unknown space? Estimating the area of applicability of spatial prediction models",
+  "veiculo": "Methods in Ecology and Evolution",
+  "ano": 2021,
+  "volume": "12",
+  "numero": "9",
+  "paginas": "1620-1633",
+  "artigo": null,
+  "editora": "Wiley"
+ },
+ "doi:10.1111/ecog.02881": {
+  "fonte": "crossref",
+  "doi": "10.1111/ecog.02881",
+  "tipo": "journal-article",
+  "autores": [
+   "David R. Roberts",
+   "Volker Bahn",
+   "Simone Ciuti",
+   "Mark S. Boyce",
+   "Jane Elith",
+   "Gurutzeta Guillera‐Arroita",
+   "Severin Hauenstein",
+   "José J. Lahoz‐Monfort",
+   "Boris Schröder",
+   "Wilfried Thuiller",
+   "David I. Warton",
+   "Brendan A. Wintle",
+   "Florian Hartig",
+   "Carsten F. Dormann"
+  ],
+  "titulo": "Cross‐validation strategies for data with temporal, spatial, hierarchical, or phylogenetic structure",
+  "veiculo": "Ecography",
+  "ano": 2017,
+  "volume": "40",
+  "numero": "8",
+  "paginas": "913-929",
+  "artigo": null,
+  "editora": "Wiley"
+ },
+ "doi:10.1111/jfr3.70179": {
+  "fonte": "crossref",
+  "doi": "10.1111/jfr3.70179",
+  "tipo": "journal-article",
+  "autores": [
+   "Nimra Yousaf",
+   "Avidesh Seenath",
+   "Linda Speight"
+  ],
+  "titulo": "Flood Risk Communications Through Maps: Challenges, Perception Theories and Approaches",
+  "veiculo": "Journal of Flood Risk Management",
+  "ano": 2026,
+  "volume": "19",
+  "numero": "1",
+  "paginas": null,
+  "artigo": "e70179",
+  "editora": "Wiley"
+ },
+ "doi:10.1111/rssb.12167": {
+  "fonte": "crossref",
+  "doi": "10.1111/rssb.12167",
+  "tipo": "journal-article",
+  "autores": [
+   "Jonas Peters",
+   "Peter Bühlmann",
+   "Nicolai Meinshausen"
+  ],
+  "titulo": "Causal Inference by using Invariant Prediction: Identification and Confidence Intervals",
+  "veiculo": "Journal of the Royal Statistical Society Series B: Statistical Methodology",
+  "ano": 2016,
+  "volume": "78",
+  "numero": "5",
+  "paginas": "947-1012",
+  "artigo": null,
+  "editora": "Oxford University Press (OUP)"
+ },
+ "doi:10.1111/rssb.12398": {
+  "fonte": "crossref",
+  "doi": "10.1111/rssb.12398",
+  "tipo": "journal-article",
+  "autores": [
+   "Dominik Rothenhäusler",
+   "Nicolai Meinshausen",
+   "Peter Bühlmann",
+   "Jonas Peters"
+  ],
+  "titulo": "Anchor Regression: Heterogeneous Data Meet Causality",
+  "veiculo": "Journal of the Royal Statistical Society Series B: Statistical Methodology",
+  "ano": 2021,
+  "volume": "83",
+  "numero": "2",
+  "paginas": "215-246",
+  "artigo": null,
+  "editora": "Oxford University Press (OUP)"
+ },
+ "doi:10.1117/1.jrs.17.016507": {
+  "fonte": "crossref",
+  "doi": "10.1117/1.jrs.17.016507",
+  "tipo": "journal-article",
+  "autores": [
+   "David C. Mason",
+   "Sarah L. Dance",
+   "Hannah L. Cloke"
+  ],
+  "titulo": "Toward improved urban flood detection using Sentinel-1: dependence of the ratio of post- to preflood double scattering cross sections on building orientation",
+  "veiculo": "Journal of Applied Remote Sensing",
+  "ano": 2023,
+  "volume": "17",
+  "numero": "01",
+  "paginas": "1-19",
+  "artigo": null,
+  "editora": "SPIE-Intl Soc Optical Eng"
+ },
+ "doi:10.1145/1401890.1401920": {
+  "fonte": "crossref",
+  "doi": "10.1145/1401890.1401920",
+  "tipo": "proceedings-article",
+  "autores": [
+   "Charles Elkan",
+   "Keith Noto"
+  ],
+  "titulo": "Learning classifiers from only positive and unlabeled data",
+  "veiculo": "Proceedings of the 14th ACM SIGKDD international conference on Knowledge discovery and data mining",
+  "ano": 2008,
+  "volume": null,
+  "numero": null,
+  "paginas": "213-220",
+  "artigo": null,
+  "editora": "ACM"
+ },
+ "doi:10.1145/2339530.2339556": {
+  "fonte": "crossref",
+  "doi": "10.1145/2339530.2339556",
+  "tipo": "proceedings-article",
+  "autores": [
+   "Yin Lou",
+   "Rich Caruana",
+   "Johannes Gehrke"
+  ],
+  "titulo": "Intelligible models for classification and regression",
+  "veiculo": "Proceedings of the 18th ACM SIGKDD international conference on Knowledge discovery and data mining",
+  "ano": 2012,
+  "volume": null,
+  "numero": null,
+  "paginas": "150-158",
+  "artigo": null,
+  "editora": "ACM"
+ },
+ "doi:10.1145/2382577.2382579": {
+  "fonte": "crossref",
+  "doi": "10.1145/2382577.2382579",
+  "tipo": "journal-article",
+  "autores": [
+   "Shachar Kaufman",
+   "Saharon Rosset",
+   "Claudia Perlich",
+   "Ori Stitelman"
+  ],
+  "titulo": "Leakage in data mining",
+  "veiculo": "ACM Transactions on Knowledge Discovery from Data",
+  "ano": 2012,
+  "volume": "6",
+  "numero": "4",
+  "paginas": "1-21",
+  "artigo": null,
+  "editora": "Association for Computing Machinery (ACM)"
+ },
+ "doi:10.1145/3287560.3287596": {
+  "fonte": "crossref",
+  "doi": "10.1145/3287560.3287596",
+  "tipo": "proceedings-article",
+  "autores": [
+   "Margaret Mitchell",
+   "Simone Wu",
+   "Andrew Zaldivar",
+   "Parker Barnes",
+   "Lucy Vasserman",
+   "Ben Hutchinson",
+   "Elena Spitzer",
+   "Inioluwa Deborah Raji",
+   "Timnit Gebru"
+  ],
+  "titulo": "Model Cards for Model Reporting",
+  "veiculo": "Proceedings of the Conference on Fairness, Accountability, and Transparency",
+  "ano": 2019,
+  "volume": null,
+  "numero": null,
+  "paginas": "220-229",
+  "artigo": null,
+  "editora": "ACM"
+ },
+ "doi:10.1145/3458723": {
+  "fonte": "crossref",
+  "doi": "10.1145/3458723",
+  "tipo": "journal-article",
+  "autores": [
+   "Timnit Gebru",
+   "Jamie Morgenstern",
+   "Briana Vecchione",
+   "Jennifer Wortman Vaughan",
+   "Hanna Wallach",
+   "Hal Daumé III",
+   "Kate Crawford"
+  ],
+  "titulo": "Datasheets for datasets",
+  "veiculo": "Communications of the ACM",
+  "ano": 2021,
+  "volume": "64",
+  "numero": "12",
+  "paginas": "86-92",
+  "artigo": null,
+  "editora": "Association for Computing Machinery (ACM)"
+ },
+ "doi:10.1145/3716629": {
+  "fonte": "crossref",
+  "doi": "10.1145/3716629",
+  "tipo": "journal-article",
+  "autores": [
+   "Junhao Zheng",
+   "Shengjie Qiu",
+   "Chengming Shi",
+   "Qianli Ma"
+  ],
+  "titulo": "Towards Lifelong Learning of Large Language Models: A Survey",
+  "veiculo": "ACM Computing Surveys",
+  "ano": 2025,
+  "volume": "57",
+  "numero": "8",
+  "paginas": "1-35",
+  "artigo": null,
+  "editora": "Association for Computing Machinery (ACM)"
+ },
+ "doi:10.1146/annurev-statistics-010814-020148": {
+  "fonte": "crossref",
+  "doi": "10.1146/annurev-statistics-010814-020148",
+  "tipo": "journal-article",
+  "autores": [
+   "David Spiegelhalter"
+  ],
+  "titulo": "Risk and Uncertainty Communication",
+  "veiculo": "Annual Review of Statistics and Its Application",
+  "ano": 2017,
+  "volume": "4",
+  "numero": "1",
+  "paginas": "31-60",
+  "artigo": null,
+  "editora": "Annual Reviews"
+ },
+ "doi:10.1177/0956247815620961": {
+  "fonte": "crossref",
+  "doi": "10.1177/0956247815620961",
+  "tipo": "journal-article",
+  "autores": [
+   "Rebecca Joan Rasch"
+  ],
+  "titulo": "Assessing urban vulnerability to flood hazard in Brazilian municipalities",
+  "veiculo": "Environment and Urbanization",
+  "ano": 2016,
+  "volume": "28",
+  "numero": "1",
+  "paginas": "145-168",
+  "artigo": null,
+  "editora": "SAGE Publications"
+ },
+ "doi:10.1177/1948550617697177": {
+  "fonte": "crossref",
+  "doi": "10.1177/1948550617697177",
+  "tipo": "journal-article",
+  "autores": [
+   "Daniël Lakens"
+  ],
+  "titulo": "Equivalence Tests",
+  "veiculo": "Social Psychological and Personality Science",
+  "ano": 2017,
+  "volume": "8",
+  "numero": "4",
+  "paginas": "355-362",
+  "artigo": null,
+  "editora": "SAGE Publications"
+ },
+ "doi:10.1186/1471-2288-14-122": {
+  "fonte": "crossref",
+  "doi": "10.1186/1471-2288-14-122",
+  "tipo": "journal-article",
+  "autores": [
+   "Ben G Armstrong",
+   "Antonio Gasparrini",
+   "Aurelio Tobias"
+  ],
+  "titulo": "Conditional Poisson models: a flexible alternative to conditional logistic case cross-over analysis",
+  "veiculo": "BMC Medical Research Methodology",
+  "ano": 2014,
+  "volume": "14",
+  "numero": "1",
+  "paginas": null,
+  "artigo": "122",
+  "editora": "Springer Science and Business Media LLC"
+ },
+ "doi:10.1371/journal.pbio.1001745": {
+  "fonte": "crossref",
+  "doi": "10.1371/journal.pbio.1001745",
+  "tipo": "journal-article",
+  "autores": [
+   "Greg Wilson",
+   "D. A. Aruliah",
+   "C. Titus Brown",
+   "Neil P. Chue Hong",
+   "Matt Davis",
+   "Richard T. Guy",
+   "Steven H. D. Haddock",
+   "Kathryn D. Huff",
+   "Ian M. Mitchell",
+   "Mark D. Plumbley",
+   "Ben Waugh",
+   "Ethan P. White",
+   "Paul Wilson"
+  ],
+  "titulo": "Best Practices for Scientific Computing",
+  "veiculo": "PLoS Biology",
+  "ano": 2014,
+  "volume": "12",
+  "numero": "1",
+  "paginas": "e1001745",
+  "artigo": null,
+  "editora": "Public Library of Science (PLoS)"
+ },
+ "doi:10.1371/journal.pone.0118432": {
+  "fonte": "crossref",
+  "doi": "10.1371/journal.pone.0118432",
+  "tipo": "journal-article",
+  "autores": [
+   "Takaya Saito",
+   "Marc Rehmsmeier"
+  ],
+  "titulo": "The Precision-Recall Plot Is More Informative than the ROC Plot When Evaluating Binary Classifiers on Imbalanced Datasets",
+  "veiculo": "PLOS ONE",
+  "ano": 2015,
+  "volume": "10",
+  "numero": "3",
+  "paginas": "e0118432",
+  "artigo": null,
+  "editora": "Public Library of Science (PLoS)"
+ },
+ "doi:10.1590/2318-0331.011716040": {
+  "fonte": "crossref",
+  "doi": "10.1590/2318-0331.011716040",
+  "tipo": "journal-article",
+  "autores": [
+   "Marcos Antonio Barbosa da Silva Junior",
+   "Universidade de Pernambuco,  Brazil",
+   "Simone Rosa da Silva",
+   "Jaime Joaquim da Silva Pereira Cabral",
+   "Universidade Federal de Pernambuco,  Brazil"
+  ],
+  "titulo": "Compensatory alternatives for flooding control in urban areas with tidal influence in Recife - PE",
+  "veiculo": "RBRH",
+  "ano": 2017,
+  "volume": "22",
+  "numero": "0",
+  "paginas": null,
+  "artigo": null,
+  "editora": "FapUNIFESP (SciELO)"
+ },
+ "doi:10.18653/v1/2024.findings-emnlp.550": {
+  "fonte": "crossref",
+  "doi": "10.18653/v1/2024.findings-emnlp.550",
+  "tipo": "proceedings-article",
+  "autores": [
+   "Cheng-Hsun Hsueh",
+   "Paul Kuo-Ming Huang",
+   "Tzu-Han Lin",
+   "Che Wei Liao",
+   "Hung-Chieh Fang",
+   "Chao-Wei Huang",
+   "Yun-Nung Chen"
+  ],
+  "titulo": "Editing the Mind of Giants: An In-Depth Exploration of Pitfalls of Knowledge Editing in Large Language Models",
+  "veiculo": "Findings of the Association for Computational Linguistics: EMNLP 2024",
+  "ano": 2024,
+  "volume": null,
+  "numero": null,
+  "paginas": "9417-9429",
+  "artigo": null,
+  "editora": "Association for Computational Linguistics"
+ },
+ "doi:10.1890/07-2153.1": {
+  "fonte": "crossref",
+  "doi": "10.1890/07-2153.1",
+  "tipo": "journal-article",
+  "autores": [
+   "Steven J. Phillips",
+   "Miroslav Dudík",
+   "Jane Elith",
+   "Catherine H. Graham",
+   "Anthony Lehmann",
+   "John Leathwick",
+   "Simon Ferrier"
+  ],
+  "titulo": "Sample selection bias and presence‐only distribution models: implications for background and pseudo‐absence data",
+  "veiculo": "Ecological Applications",
+  "ano": 2009,
+  "volume": "19",
+  "numero": "1",
+  "paginas": "181-197",
+  "artigo": null,
+  "editora": "Wiley"
+ },
+ "doi:10.2905/9f06f36f-4b11-47ec-abb0-4f8b7b1d72ea": {
+  "fonte": "datacite",
+  "doi": "10.2905/9F06F36F-4B11-47EC-ABB0-4F8B7B1D72EA",
+  "titulo": "GHS-BUILT-S R2023A - GHS built-up surface grid, derived from Sentinel2 composite and Landsat, multitemporal (1975-2030)",
+  "autores": [
+   "Pesaresi, Martino"
+  ],
+  "ano": 2023,
+  "veiculo": "European Commission, Joint Research Centre (JRC)"
+ },
+ "doi:10.2905/jrc-ghsl-10007": {
+  "fonte": "datacite",
+  "doi": "10.2905/JRC-GHSL-10007",
+  "titulo": "GHS built-up grid, derived from Landsat, multitemporal (1975-1990-2000-2014), R2018A",
+  "autores": [
+   "Corbane, Christina",
+   "Florczyk, Aneta",
+   "Pesaresi, Martino",
+   "Politis, Panagiotis",
+   "Syrris, Vasileios"
+  ],
+  "ano": 2018,
+  "veiculo": "European Commission, Joint Research Centre (JRC)"
+ },
+ "doi:10.3389/frwa.2025.1514047": {
+  "fonte": "crossref",
+  "doi": "10.3389/frwa.2025.1514047",
+  "tipo": "journal-article",
+  "autores": [
+   "Sonia Hajji",
+   "Samira Krimissa",
+   "Kamal Abdelrahman",
+   "Abdelghani Boudhar",
+   "Abdenbi Elaloui",
+   "Maryam Ismaili",
+   "Meryem El Bouzekraoui",
+   "Mohamed Chikh Essbiti",
+   "Ali Y. Kahal",
+   "Biraj Kanti Mondal",
+   "Mustapha Namous"
+  ],
+  "titulo": "Enhancing flood prediction through remote sensing, machine learning, and Google Earth Engine",
+  "veiculo": "Frontiers in Water",
+  "ano": 2025,
+  "volume": "7",
+  "numero": null,
+  "paginas": null,
+  "artigo": "1514047",
+  "editora": "Frontiers Media SA"
+ },
+ "doi:10.3390/land11111971": {
+  "fonte": "crossref",
+  "doi": "10.3390/land11111971",
+  "tipo": "journal-article",
+  "autores": [
+   "Wenkai Li",
+   "Yuanchi Liu",
+   "Ziyue Liu",
+   "Zhen Gao",
+   "Huabing Huang",
+   "Weijun Huang"
+  ],
+  "titulo": "A Positive-Unlabeled Learning Algorithm for Urban Flood Susceptibility Modeling",
+  "veiculo": "Land",
+  "ano": 2022,
+  "volume": "11",
+  "numero": "11",
+  "paginas": "1971",
+  "artigo": null,
+  "editora": "MDPI AG"
+ },
+ "doi:10.3390/rs12172735": {
+  "fonte": "crossref",
+  "doi": "10.3390/rs12172735",
+  "tipo": "journal-article",
+  "autores": [
+   "Carlos M. Souza",
+   "Julia Z. Shimbo",
+   "Marcos R. Rosa",
+   "Leandro L. Parente",
+   "Ane A. Alencar",
+   "Bernardo F. T. Rudorff",
+   "Heinrich Hasenack",
+   "Marcelo Matsumoto",
+   "Laerte G. Ferreira",
+   "Pedro W. M. Souza-Filho",
+   "Sergio W. de Oliveira",
+   "Washington F. Rocha",
+   "Antônio V. Fonseca",
+   "Camila B. Marques",
+   "Cesar G. Diniz",
+   "Diego Costa",
+   "Dyeden Monteiro",
+   "Eduardo R. Rosa",
+   "Eduardo Vélez-Martin",
+   "Eliseu J. Weber",
+   "Felipe E. B. Lenti",
+   "Fernando F. Paternost",
+   "Frans G. C. Pareyn",
+   "João V. Siqueira",
+   "José L. Viera",
+   "Luiz C. Ferreira Neto",
+   "Marciano M. Saraiva",
+   "Marcio H. Sales",
+   "Moises P. G. Salgado",
+   "Rodrigo Vasconcelos",
+   "Soltan Galano",
+   "Vinicius V. Mesquita",
+   "Tasso Azevedo"
+  ],
+  "titulo": "Reconstructing Three Decades of Land Use and Land Cover Changes in Brazilian Biomes with Landsat Archive and Earth Engine",
+  "veiculo": "Remote Sensing",
+  "ano": 2020,
+  "volume": "12",
+  "numero": "17",
+  "paginas": "2735",
+  "artigo": null,
+  "editora": "MDPI AG"
+ },
+ "doi:10.3390/rs15051200": {
+  "fonte": "crossref",
+  "doi": "10.3390/rs15051200",
+  "tipo": "journal-article",
+  "autores": [
+   "Mark Edwin Tupas",
+   "Florian Roth",
+   "Bernhard Bauer-Marschallinger",
+   "Wolfgang Wagner"
+  ],
+  "titulo": "An Intercomparison of Sentinel-1 Based Change Detection Algorithms for Flood Mapping",
+  "veiculo": "Remote Sensing",
+  "ano": 2023,
+  "volume": "15",
+  "numero": "5",
+  "paginas": "1200",
+  "artigo": null,
+  "editora": "MDPI AG"
+ },
+ "doi:10.3390/rs16040656": {
+  "fonte": "crossref",
+  "doi": "10.3390/rs16040656",
+  "tipo": "journal-article",
+  "autores": [
+   "Donato Amitrano",
+   "Gerardo Di Martino",
+   "Alessio Di Simone",
+   "Pasquale Imperatore"
+  ],
+  "titulo": "Flood Detection with SAR: A Review of Techniques and Datasets",
+  "veiculo": "Remote Sensing",
+  "ano": 2024,
+  "volume": "16",
+  "numero": "4",
+  "paginas": "656",
+  "artigo": null,
+  "editora": "MDPI AG"
+ },
+ "doi:10.3390/rs17030524": {
+  "fonte": "crossref",
+  "doi": "10.3390/rs17030524",
+  "tipo": "journal-article",
+  "autores": [
+   "Tania Islam",
+   "Ethiopia B. Zeleke",
+   "Mahmud Afroz",
+   "Assefa M. Melesse"
+  ],
+  "titulo": "A Systematic Review of Urban Flood Susceptibility Mapping: Remote Sensing, Machine Learning, and Other Modeling Approaches",
+  "veiculo": "Remote Sensing",
+  "ano": 2025,
+  "volume": "17",
+  "numero": "3",
+  "paginas": "524",
+  "artigo": null,
+  "editora": "MDPI AG"
+ },
+ "doi:10.5066/p9bvmd74": {
+  "fonte": "datacite",
+  "doi": "10.5066/p9bvmd74",
+  "titulo": "Map of slope-failure locations in Puerto Rico after Hurricane Maria",
+  "autores": [
+   "Hughes, Kenneth Stephen",
+   "Bayouth Garcia, Desiree",
+   "Martinez Milian, Gabriel",
+   "Schulz, William H",
+   "Baum, Rex L"
+  ],
+  "ano": 2019,
+  "editora": "U.S. Geological Survey",
+  "veiculo": "U.S. Geological Survey"
+ },
+ "doi:10.5194/essd-12-2075-2020": {
+  "fonte": "crossref",
+  "doi": "10.5194/essd-12-2075-2020",
+  "tipo": "journal-article",
+  "autores": [
+   "Vinícius B. P. Chagas",
+   "Pedro L. B. Chaffe",
+   "Nans Addor",
+   "Fernando M. Fan",
+   "Ayan S. Fleischmann",
+   "Rodrigo C. D. Paiva",
+   "Vinícius A. Siqueira"
+  ],
+  "titulo": "CAMELS-BR: hydrometeorological time series and landscape attributes for 897 catchments in Brazil",
+  "veiculo": "Earth System Science Data",
+  "ano": 2020,
+  "volume": "12",
+  "numero": "3",
+  "paginas": "2075-2096",
+  "artigo": null,
+  "editora": "Copernicus GmbH"
+ },
+ "doi:10.5194/essd-13-4349-2021": {
+  "fonte": "crossref",
+  "doi": "10.5194/essd-13-4349-2021",
+  "tipo": "journal-article",
+  "autores": [
+   "Joaquín Muñoz-Sabater",
+   "Emanuel Dutra",
+   "Anna Agustí-Panareda",
+   "Clément Albergel",
+   "Gabriele Arduini",
+   "Gianpaolo Balsamo",
+   "Souhail Boussetta",
+   "Margarita Choulga",
+   "Shaun Harrigan",
+   "Hans Hersbach",
+   "Brecht Martens",
+   "Diego G. Miralles",
+   "María Piles",
+   "Nemesio J. Rodríguez-Fernández",
+   "Ervin Zsoter",
+   "Carlo Buontempo",
+   "Jean-Noël Thépaut"
+  ],
+  "titulo": "ERA5-Land: a state-of-the-art global reanalysis dataset for land applications",
+  "veiculo": "Earth System Science Data",
+  "ano": 2021,
+  "volume": "13",
+  "numero": "9",
+  "paginas": "4349-4383",
+  "artigo": null,
+  "editora": "Copernicus GmbH"
+ },
+ "doi:10.5194/hess-20-2207-2016": {
+  "fonte": "crossref",
+  "doi": "10.5194/hess-20-2207-2016",
+  "tipo": "journal-article",
+  "autores": [
+   "Lieke Melsen",
+   "Adriaan Teuling",
+   "Paul Torfs",
+   "Massimiliano Zappa",
+   "Naoki Mizukami",
+   "Martyn Clark",
+   "Remko Uijlenhoet"
+  ],
+  "titulo": "Representation of spatial and temporal variability in large-domain hydrological models: case study for a mesoscale pre-Alpine basin",
+  "veiculo": "Hydrology and Earth System Sciences",
+  "ano": 2016,
+  "volume": "20",
+  "numero": "6",
+  "paginas": "2207-2226",
+  "artigo": null,
+  "editora": "Copernicus GmbH"
+ },
+ "doi:10.5194/hess-23-5089-2019": {
+  "fonte": "crossref",
+  "doi": "10.5194/hess-23-5089-2019",
+  "tipo": "journal-article",
+  "autores": [
+   "Frederik Kratzert",
+   "Daniel Klotz",
+   "Guy Shalev",
+   "Günter Klambauer",
+   "Sepp Hochreiter",
+   "Grey Nearing"
+  ],
+  "titulo": "Towards learning universal, regional, and local hydrological behaviors via machine learning applied to large-sample datasets",
+  "veiculo": "Hydrology and Earth System Sciences",
+  "ano": 2019,
+  "volume": "23",
+  "numero": "12",
+  "paginas": "5089-5110",
+  "artigo": null,
+  "editora": "Copernicus GmbH"
+ },
+ "doi:10.5194/hess-26-4345-2022": {
+  "fonte": "crossref",
+  "doi": "10.5194/hess-26-4345-2022",
+  "tipo": "journal-article",
+  "autores": [
+   "Roberto Bentivoglio",
+   "Elvin Isufi",
+   "Sebastian Nicolaas Jonkman",
+   "Riccardo Taormina"
+  ],
+  "titulo": "Deep learning methods for flood mapping: a review of existing applications and future research directions",
+  "veiculo": "Hydrology and Earth System Sciences",
+  "ano": 2022,
+  "volume": "26",
+  "numero": "16",
+  "paginas": "4345-4378",
+  "artigo": null,
+  "editora": "Copernicus GmbH"
+ },
+ "doi:10.5194/nhess-16-1049-2016": {
+  "fonte": "crossref",
+  "doi": "10.5194/nhess-16-1049-2016",
+  "tipo": "journal-article",
+  "autores": [
+   "Paolo Scussolini",
+   "Jeroen C. J. H. Aerts",
+   "Brenden Jongman",
+   "Laurens M. Bouwer",
+   "Hessel C. Winsemius",
+   "Hans de Moel",
+   "Philip J. Ward"
+  ],
+  "titulo": "FLOPROS: an evolving global database of flood protection standards",
+  "veiculo": "Natural Hazards and Earth System Sciences",
+  "ano": 2016,
+  "volume": "16",
+  "numero": "5",
+  "paginas": "1049-1061",
+  "artigo": null,
+  "editora": "Copernicus GmbH"
+ },
+ "doi:10.5194/nhess-19-2405-2019": {
+  "fonte": "crossref",
+  "doi": "10.5194/nhess-19-2405-2019",
+  "tipo": "journal-article",
+  "autores": [
+   "J. Michael Johnson",
+   "Dinuke Munasinghe",
+   "Damilola Eyelade",
+   "Sagy Cohen"
+  ],
+  "titulo": "An integrated evaluation of the National Water  Model (NWM)–Height Above Nearest Drainage  (HAND) flood mapping methodology",
+  "veiculo": "Natural Hazards and Earth System Sciences",
+  "ano": 2019,
+  "volume": "19",
+  "numero": "11",
+  "paginas": "2405-2420",
+  "artigo": null,
+  "editora": "Copernicus GmbH"
+ },
+ "doi:10.5194/nhess-23-1157-2023": {
+  "fonte": "crossref",
+  "doi": "10.5194/nhess-23-1157-2023",
+  "tipo": "journal-article",
+  "autores": [
+   "Enner Alcântara",
+   "José A. Marengo",
+   "José Mantovani",
+   "Luciana R. Londe",
+   "Rachel Lau Yu San",
+   "Edward Park",
+   "Yunung Nina Lin",
+   "Jingyu Wang",
+   "Tatiana Mendes",
+   "Ana Paula Cunha",
+   "Luana Pampuch",
+   "Marcelo Seluchi",
+   "Silvio Simões",
+   "Luz Adriana Cuartas",
+   "Demerval Goncalves",
+   "Klécia Massi",
+   "Regina Alvalá",
+   "Osvaldo Moraes",
+   "Carlos Souza Filho",
+   "Rodolfo Mendes",
+   "Carlos Nobre"
+  ],
+  "titulo": "Deadly disasters in southeastern South America: flash floods and landslides of February 2022 in Petrópolis, Rio de Janeiro",
+  "veiculo": "Natural Hazards and Earth System Sciences",
+  "ano": 2023,
+  "volume": "23",
+  "numero": "3",
+  "paginas": "1157-1175",
+  "artigo": null,
+  "editora": "Copernicus GmbH"
+ },
+ "doi:10.5194/nhess-26-2561-2026": {
+  "fonte": "crossref",
+  "doi": "10.5194/nhess-26-2561-2026",
+  "tipo": "journal-article",
+  "autores": [
+   "Antoine Dille",
+   "Olivier Dewitte",
+   "Jente Broeckx",
+   "Koen Verbist",
+   "Andile Sindiso Dube",
+   "Jean Poesen",
+   "Matthias Vanmaercke"
+  ],
+  "titulo": "Capturing the complete landslide–debris-rich flood continuum for accurate inventory, susceptibility and exposure mapping – lessons from Cyclone Idai",
+  "veiculo": "Natural Hazards and Earth System Sciences",
+  "ano": 2026,
+  "volume": "26",
+  "numero": "6",
+  "paginas": "2561-2577",
+  "artigo": null,
+  "editora": "Copernicus GmbH"
+ },
+ "doi:10.5194/soil-7-217-2021": {
+  "fonte": "crossref",
+  "doi": "10.5194/soil-7-217-2021",
+  "tipo": "journal-article",
+  "autores": [
+   "Laura Poggio",
+   "Luis M. de Sousa",
+   "Niels H. Batjes",
+   "Gerard B. M. Heuvelink",
+   "Bas Kempen",
+   "Eloi Ribeiro",
+   "David Rossiter"
+  ],
+  "titulo": "SoilGrids 2.0: producing soil information for the globe with quantified spatial uncertainty",
+  "veiculo": "SOIL",
+  "ano": 2021,
+  "volume": "7",
+  "numero": "1",
+  "paginas": "217-240",
+  "artigo": null,
+  "editora": "Copernicus GmbH"
+ },
+ "doi:10.52202/079017-1204": {
+  "fonte": "crossref",
+  "doi": "10.52202/079017-1204",
+  "tipo": "proceedings-article",
+  "autores": [
+   "Nikolaos Bountos",
+   "Maria Sdraka",
+   "Angelos Zavras",
+   "Ilektra Karasante",
+   "Andreas Karavias",
+   "Themistocles Herekakis",
+   "Angeliki Thanasou",
+   "Dimitrios Michail",
+   "Ioannis Papoutsis"
+  ],
+  "titulo": "Kuro Siwo: 33 billion $m^2$ under the water. A global multi-temporal satellite dataset for rapid flood mapping",
+  "veiculo": "Advances in Neural Information Processing Systems 37",
+  "ano": 2024,
+  "volume": null,
+  "numero": null,
+  "paginas": "38105-38121",
+  "artigo": null,
+  "editora": "Neural Information Processing Systems Foundation, Inc. (NeurIPS)"
+ },
+ "doi:10.5270/esa-c5d3d65": {
+  "fonte": "crossref",
+  "doi": "10.5270/esa-c5d3d65",
+  "tipo": "dataset",
+  "autores": [
+   "European Space Agency",
+   "Airbus"
+  ],
+  "titulo": "Copernicus DEM",
+  "veiculo": "Copernicus DEM",
+  "ano": 2022,
+  "volume": null,
+  "numero": null,
+  "paginas": null,
+  "artigo": null,
+  "editora": "European Space Agency"
+ },
+ "doi:10.5281/zenodo.14617475": {
+  "fonte": "datacite",
+  "doi": "10.5281/zenodo.14617475",
+  "titulo": "Banco de dados das cheias na Região Hidrográfica do Lago Guaíba em Maio de 2024",
+  "autores": [
+   "Possantti, Iporã",
+   "Aguirre, Ana",
+   "Alberti, Camila",
+   "Azeredo, Laura",
+   "Barcelos, Mariana",
+   "Becker, Fernando",
+   "Camana, Mateus",
+   "Cantor, Gabriel",
+   "Cardozo, Thauana",
+   "Carrard, Giúlia",
+   "Cazanova, Rafaela",
+   "Camargo, Pedro",
+   "Castilhos, Mariana",
+   "Collishonn, Walter",
+   "Cornely, Antonio",
+   "Costa, Santiago",
+   "Dornelles, Fernando",
+   "Eckhardt, Rafael",
+   "Fan, Fernando",
+   "Froner, Mariana",
+   "Giaccom, Bárbara",
+   "Giasson, Sophie",
+   "Goldenfum, Joel",
+   "Gonçalvez, Gabriel",
+   "González-Ávila, Itzayana",
+   "Guimarães, Edson",
+   "Krasnet, Miguel",
+   "Kipper, Priscila",
+   "Kobyama, Masato",
+   "Krob, Luana",
+   "Kuele, Paola",
+   "Laipelt, Leonardo",
+   "Lutz, Vicente",
+   "Magalhães, Fernando",
+   "Mallet, Jamile",
+   "Marques, Bruna",
+   "Marques Iablonovski, Guilherme",
+   "Marques, Guilherme",
+   "Meirelles, Fernando",
+   "Michel, Gean",
+   "Michel, Rossano",
+   "Mincarone, Mariana",
+   "Muller, José Augusto",
+   "Neves, Érico",
+   "Nicolini, Igor",
+   "Nonnemacher, Lara",
+   "Oliveira, Millena",
+   "Oliveira, Guilherme",
+   "Ott, Paulo",
+   "Paiva, Rodrigo",
+   "Quintela, Rodrigo",
+   "Rauber, Alice",
+   "Risso, Alfonso",
+   "Rodrigues, Rodrigo",
+   "Roitman, Alice",
+   "Rorato, Geisa",
+   "Royer, Sofia",
+   "Ruhoff, Anderson",
+   "Ruoso, Erika",
+   "Sampaio, Matheus",
+   "Saul, Bruno",
+   "Sousa, Leonardo",
+   "Souza, Aline",
+   "Schiaffino, Matheus",
+   "Sigallis, Ariane",
+   "Soares, Larissa",
+   "Ucha, Leonardo",
+   "Umbelino, Glauco",
+   "Utzig, Elisa",
+   "Maciel, João",
+   "Zambrano, Fernando",
+   "de Oliveira Andrades Filho, Clódis",
+   "Mexias, Lorenzo",
+   "Iescheck, Andrea",
+   "Cargnin, Beatriz",
+   "Sluter, Claudia",
+   "Cremon, Édipo",
+   "Schwarzer, Gabriel",
+   "Dorneles, João",
+   "Cacciatore, José",
+   "Schmitt, Henrique",
+   "Novakoski, Kleverson",
+   "Guasselli, Laurindo",
+   "Petry, Leandro",
+   "Peres, Luana",
+   "Reis, Mateus",
+   "Oliveira Righi da Silva, Maurício",
+   "Silva, Michelle",
+   "Ribeiro Junior, Milton",
+   "Herrmann, Pâmela",
+   "Schumacher, Raul",
+   "Quevedo, Renata",
+   "Oliveira, Sara",
+   "Cárdenas, Sergio",
+   "Soares, Victor",
+   "Juliano, Silva Balbon",
+   "Vieira Serrano, Nathalia",
+   "Ferreira Moura, Eduardo",
+   "Berruti, Rachel"
+  ],
+  "ano": 2025,
+  "veiculo": "Zenodo"
+ },
+ "doi:10.5281/zenodo.19698577": {
+  "fonte": "datacite",
+  "doi": "10.5281/zenodo.19698577",
+  "titulo": "Urban Flood Observations",
+  "autores": [
+   "Mukherjee, Rohit",
+   "Friedrich, Hannah",
+   "Tellman, Elizabeth",
+   "Zhang, Zhijie"
+  ],
+  "ano": 2026,
+  "editora": "Zenodo",
+  "veiculo": "Zenodo"
+ },
+ "doi:10.5281/zenodo.21430962": {
+  "fonte": "datacite",
+  "doi": "10.5281/zenodo.21430962",
+  "titulo": "OPERA DSWx-HLS Flood Extent Mosaics for the 2024 Rio Grande do Sul Floods",
+  "autores": [
+   "Munasinghe, Dinuke",
+   "Handwerger, Alexander",
+   "Frasson, Renato Prata de Moraes",
+   "Bonnema, Matthew",
+   "Jones, John",
+   "Chan, Steven",
+   "Cohen, Sagy",
+   "Bekaert, David"
+  ],
+  "ano": 2026,
+  "editora": "Zenodo",
+  "veiculo": "Zenodo"
+ },
+ "doi:10.5281/zenodo.7254221": {
+  "fonte": "datacite",
+  "doi": "10.5281/zenodo.7254221",
+  "titulo": "ESA WorldCover 10 m 2021 v200",
+  "autores": [
+   "Zanaga, Daniele",
+   "Van De Kerchove, Ruben",
+   "Daems, Dirk",
+   "De Keersmaecker, Wanda",
+   "Brockmann, Carsten",
+   "Kirches, Grit",
+   "Wevers, Jan",
+   "Cartus, Oliver",
+   "Santoro, Maurizio",
+   "Fritz, Steffen",
+   "Lesiv, Myroslava",
+   "Herold, Martin",
+   "Tsendbazar, Nandin-Erdene",
+   "Xu, Panpan",
+   "Ramoino, Fabrizio",
+   "Arino, Olivier"
+  ],
+  "ano": 2022,
+  "veiculo": "Zenodo"
+ },
+ "doi:10.5523/bris.s5hqmjcdj8yo2ibzi9b4ew3sn": {
+  "fonte": "datacite",
+  "doi": "10.5523/bris.s5hqmjcdj8yo2ibzi9b4ew3sn",
+  "titulo": "FABDEM V1-2",
+  "autores": [
+   "Neal, Jeffrey",
+   "Hawker, Laurence"
+  ],
+  "ano": 2023,
+  "editora": "University of Bristol",
+  "veiculo": "University of Bristol"
+ },
+ "doi:10.63253/nii4g2ac": {
+  "fonte": "crossref",
+  "doi": "10.63253/nii4g2ac",
+  "tipo": "dataset",
+  "autores": [
+   "Royal Museum For Central Africa"
+  ],
+  "titulo": "Landslide Susceptibility and Exposure Assesment — Chimanimani and Chipinge districts, Zimbabwe",
+  "veiculo": "Dataset",
+  "ano": null,
+  "volume": null,
+  "numero": null,
+  "paginas": null,
+  "artigo": null,
+  "editora": "UNESCO"
+ },
+ "doi:10.70261/er.v27i1.74841": {
+  "fonte": "crossref",
+  "doi": "10.70261/er.v27i1.74841",
+  "tipo": "journal-article",
+  "autores": [
+   "Lucas Domingos de Barros Lima",
+   "Carlos Eduardo Menezes da Silva",
+   "Caio Maurício Eurico de Oliveira",
+   "Jocimar Coutinho Rodrigues Junior",
+   "Devson Paulo Palma Gomes"
+  ],
+  "titulo": "MAPEAMENTO DE ÁREAS SUSCETÍVEIS A INUNDAÇÕES NA CIDADE DO RECIFE-PE/BRASIL",
+  "veiculo": "Espaço em Revista",
+  "ano": 2025,
+  "volume": "27",
+  "numero": "1",
+  "paginas": "21-44",
+  "artigo": null,
+  "editora": "Instituto de Geografia da Universidade Federal de Catalão"
+ }
+}

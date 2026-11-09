@@ -1,0 +1,635 @@
+{
+  "tipo": "conferencia_de_transcricao_estruturada",
+  "ok": true,
+  "conferidos": 86,
+  "divergencias": [],
+  "checagens": [
+    {
+      "id": "origem_HAND",
+      "valor_artefato": 0.039092645425137615,
+      "apresentacao": "0,039",
+      "tabela": "II",
+      "ok": true
+    },
+    {
+      "id": "origem_HAND_IC0",
+      "valor_artefato": 0.02566853849388176,
+      "apresentacao": "0,026",
+      "tabela": "II",
+      "ok": true
+    },
+    {
+      "id": "origem_HAND_IC1",
+      "valor_artefato": 0.05379648032188336,
+      "apresentacao": "0,054",
+      "tabela": "II",
+      "ok": true
+    },
+    {
+      "id": "origem_pesos_iguais",
+      "valor_artefato": 0.017935227727294365,
+      "apresentacao": "0,018",
+      "tabela": "II",
+      "ok": true
+    },
+    {
+      "id": "origem_pesos_iguais_IC0",
+      "valor_artefato": 0.010169898079979653,
+      "apresentacao": "0,010",
+      "tabela": "II",
+      "ok": true
+    },
+    {
+      "id": "origem_pesos_iguais_IC1",
+      "valor_artefato": 0.02601314304931617,
+      "apresentacao": "0,026",
+      "tabela": "II",
+      "ok": true
+    },
+    {
+      "id": "HQ1",
+      "valor_artefato": 0.05502710366619,
+      "apresentacao": "0,055",
+      "tabela": "II",
+      "ok": true
+    },
+    {
+      "id": "HQ1_IC0",
+      "valor_artefato": 0.023891063182993322,
+      "apresentacao": "0,024",
+      "tabela": "II",
+      "ok": true
+    },
+    {
+      "id": "HQ1_IC1",
+      "valor_artefato": 0.08631876074351576,
+      "apresentacao": "0,086",
+      "tabela": "II",
+      "ok": true
+    },
+    {
+      "id": "HQ2",
+      "valor_artefato": 0.029617507084935154,
+      "apresentacao": "0,030",
+      "tabela": "II",
+      "ok": true
+    },
+    {
+      "id": "HQ2_IC0",
+      "valor_artefato": 0.00611431413298375,
+      "apresentacao": "0,006",
+      "tabela": "II",
+      "ok": true
+    },
+    {
+      "id": "HQ2_IC1",
+      "valor_artefato": 0.052540919655923043,
+      "apresentacao": "0,053",
+      "tabela": "II",
+      "ok": true
+    },
+    {
+      "id": "rmpa_FCU_AUC",
+      "valor_artefato": 0.8803514304846701,
+      "apresentacao": "0,880",
+      "tabela": "III",
+      "ok": true
+    },
+    {
+      "id": "rmpa_FCU_HAND",
+      "valor_artefato": 0.03973033954987215,
+      "apresentacao": "0,040",
+      "tabela": "III",
+      "ok": true
+    },
+    {
+      "id": "rmpa_AUC_IC0",
+      "valor_artefato": 0.8277101918411308,
+      "apresentacao": "0,828",
+      "tabela": "III",
+      "ok": true
+    },
+    {
+      "id": "rmpa_AUC_IC1",
+      "valor_artefato": 0.9232253038524902,
+      "apresentacao": "0,923",
+      "tabela": "III",
+      "ok": true
+    },
+    {
+      "id": "manaus_FCU_AUC",
+      "valor_artefato": 0.9195546010826077,
+      "apresentacao": "0,920",
+      "tabela": "III",
+      "ok": true
+    },
+    {
+      "id": "manaus_FCU_HAND",
+      "valor_artefato": 0.04615742919902721,
+      "apresentacao": "0,046",
+      "tabela": "III",
+      "ok": true
+    },
+    {
+      "id": "manaus_AUC_IC0",
+      "valor_artefato": 0.7912445413611373,
+      "apresentacao": "0,791",
+      "tabela": "III",
+      "ok": true
+    },
+    {
+      "id": "manaus_AUC_IC1",
+      "valor_artefato": 0.9668180957635162,
+      "apresentacao": "0,967",
+      "tabela": "III",
+      "ok": true
+    },
+    {
+      "id": "recife_FCU_AUC",
+      "valor_artefato": 0.866366640440598,
+      "apresentacao": "0,866",
+      "tabela": "III",
+      "ok": true
+    },
+    {
+      "id": "recife_FCU_HAND",
+      "valor_artefato": 0.06397167584579078,
+      "apresentacao": "0,064",
+      "tabela": "III",
+      "ok": true
+    },
+    {
+      "id": "recife_AUC_IC0",
+      "valor_artefato": 0.7768267369891235,
+      "apresentacao": "0,777",
+      "tabela": "III",
+      "ok": true
+    },
+    {
+      "id": "recife_AUC_IC1",
+      "valor_artefato": 0.9351529333183014,
+      "apresentacao": "0,935",
+      "tabela": "III",
+      "ok": true
+    },
+    {
+      "id": "rmr_FCU_AUC",
+      "valor_artefato": 0.8089890865535293,
+      "apresentacao": "0,809",
+      "tabela": "III",
+      "ok": true
+    },
+    {
+      "id": "rmr_FCU_HAND",
+      "valor_artefato": 0.11606543025417138,
+      "apresentacao": "0,116",
+      "tabela": "III",
+      "ok": true
+    },
+    {
+      "id": "rmr_AUC_IC0",
+      "valor_artefato": 0.7211798206252408,
+      "apresentacao": "0,721",
+      "tabela": "III",
+      "ok": true
+    },
+    {
+      "id": "rmr_AUC_IC1",
+      "valor_artefato": 0.8660794502064906,
+      "apresentacao": "0,866",
+      "tabela": "III",
+      "ok": true
+    },
+    {
+      "id": "rmpa_coorte",
+      "valor_artefato": 0.9054695119825618,
+      "apresentacao": "0,905",
+      "tabela": "III",
+      "ok": true
+    },
+    {
+      "id": "rmpa_coorte_HAND",
+      "valor_artefato": 0.015703231646222893,
+      "apresentacao": "0,016",
+      "tabela": "III",
+      "ok": true
+    },
+    {
+      "id": "rmpa_baixa_renda",
+      "valor_artefato": 0.884103648256607,
+      "apresentacao": "0,884",
+      "tabela": "III",
+      "ok": true
+    },
+    {
+      "id": "rmpa_comparador",
+      "valor_artefato": 0.906770314079273,
+      "apresentacao": "0,907",
+      "tabela": "III",
+      "ok": true
+    },
+    {
+      "id": "manaus_coorte",
+      "valor_artefato": 0.7906992925469377,
+      "apresentacao": "0,791",
+      "tabela": "III",
+      "ok": true
+    },
+    {
+      "id": "manaus_coorte_HAND",
+      "valor_artefato": 0.03567090358860414,
+      "apresentacao": "0,036",
+      "tabela": "III",
+      "ok": true
+    },
+    {
+      "id": "manaus_baixa_renda",
+      "valor_artefato": 0.5280811729091782,
+      "apresentacao": "0,528",
+      "tabela": "III",
+      "ok": true
+    },
+    {
+      "id": "manaus_comparador",
+      "valor_artefato": 0.8042762686469936,
+      "apresentacao": "0,804",
+      "tabela": "III",
+      "ok": true
+    },
+    {
+      "id": "curitiba_coorte",
+      "valor_artefato": 0.8111424576101087,
+      "apresentacao": "0,811",
+      "tabela": "III",
+      "ok": true
+    },
+    {
+      "id": "curitiba_coorte_HAND",
+      "valor_artefato": 0.006214359197699193,
+      "apresentacao": "0,006",
+      "tabela": "III",
+      "ok": true
+    },
+    {
+      "id": "curitiba_baixa_renda",
+      "valor_artefato": 0.6338945005611673,
+      "apresentacao": "0,634",
+      "tabela": "III",
+      "ok": true
+    },
+    {
+      "id": "curitiba_comparador",
+      "valor_artefato": 0.8116222201708753,
+      "apresentacao": "0,812",
+      "tabela": "III",
+      "ok": true
+    },
+    {
+      "id": "recife_coorte",
+      "valor_artefato": 0.7814908020174585,
+      "apresentacao": "0,781",
+      "tabela": "III",
+      "ok": true
+    },
+    {
+      "id": "recife_coorte_HAND",
+      "valor_artefato": 0.04334470624054099,
+      "apresentacao": "0,043",
+      "tabela": "III",
+      "ok": true
+    },
+    {
+      "id": "recife_baixa_renda",
+      "valor_artefato": 0.8442299514591656,
+      "apresentacao": "0,844",
+      "tabela": "III",
+      "ok": true
+    },
+    {
+      "id": "recife_comparador",
+      "valor_artefato": 0.739428327472847,
+      "apresentacao": "0,739",
+      "tabela": "III",
+      "ok": true
+    },
+    {
+      "id": "rmr_coorte",
+      "valor_artefato": 0.7751329237524006,
+      "apresentacao": "0,775",
+      "tabela": "III",
+      "ok": true
+    },
+    {
+      "id": "rmr_coorte_HAND",
+      "valor_artefato": 0.08527377522454682,
+      "apresentacao": "0,085",
+      "tabela": "III",
+      "ok": true
+    },
+    {
+      "id": "rmr_baixa_renda",
+      "valor_artefato": 0.7704672654071979,
+      "apresentacao": "0,770",
+      "tabela": "III",
+      "ok": true
+    },
+    {
+      "id": "rmr_comparador",
+      "valor_artefato": 0.7480441955876016,
+      "apresentacao": "0,748",
+      "tabela": "III",
+      "ok": true
+    },
+    {
+      "id": "ruas_modelo",
+      "valor_artefato": 0.6686913897290876,
+      "apresentacao": "0,669",
+      "tabela": "IV",
+      "ok": true
+    },
+    {
+      "id": "ruas_HAND",
+      "valor_artefato": 0.5951376125907373,
+      "apresentacao": "0,595",
+      "tabela": "IV",
+      "ok": true
+    },
+    {
+      "id": "Petropolis_idai",
+      "valor_artefato": 0.6604808657624983,
+      "apresentacao": "0,660",
+      "tabela": "V",
+      "ok": true
+    },
+    {
+      "id": "Petropolis_agua",
+      "valor_artefato": 0.3748303882380924,
+      "apresentacao": "0,375",
+      "tabela": "V",
+      "ok": true
+    },
+    {
+      "id": "Petropolis_contraste",
+      "valor_artefato": 0.2856504775244059,
+      "apresentacao": "0,286",
+      "tabela": "V",
+      "ok": true
+    },
+    {
+      "id": "retencao_RMPA",
+      "valor_artefato": -0.02846181106701946,
+      "apresentacao": "0,028",
+      "tabela": "VI",
+      "ok": true
+    },
+    {
+      "id": "atualizacao_margem_v9_gate",
+      "valor_artefato": 0.052046901909342025,
+      "apresentacao": "0,052",
+      "tabela": "VI",
+      "ok": true
+    },
+    {
+      "id": "atualizacao_uniforme_gate",
+      "valor_artefato": 0.028925855158640545,
+      "apresentacao": "0,029",
+      "tabela": "VI",
+      "ok": true
+    },
+    {
+      "id": "Q_sel_ext_f_hand",
+      "valor_artefato": -0.9810338127448696,
+      "apresentacao": "0,981",
+      "tabela": "II",
+      "ok": true
+    },
+    {
+      "id": "Q_sel_ext_f_sca",
+      "valor_artefato": 0.042549990854683514,
+      "apresentacao": "0,043",
+      "tabela": "II",
+      "ok": true
+    },
+    {
+      "id": "Q_sel_ext_f_declive",
+      "valor_artefato": -0.3123258153737971,
+      "apresentacao": "0,312",
+      "tabela": "II",
+      "ok": true
+    },
+    {
+      "id": "Q_sel_ext_f_construido",
+      "valor_artefato": -0.21020186014279496,
+      "apresentacao": "0,210",
+      "tabela": "II",
+      "ok": true
+    },
+    {
+      "id": "Q_sel_ext_f_areia",
+      "valor_artefato": -0.05097661940760025,
+      "apresentacao": "0,051",
+      "tabela": "II",
+      "ok": true
+    },
+    {
+      "id": "Q_sel_ext_f_dist_dren",
+      "valor_artefato": 0.030397151858162667,
+      "apresentacao": "0,030",
+      "tabela": "II",
+      "ok": true
+    },
+    {
+      "id": "Q_sel_ext_f_dist_canal",
+      "valor_artefato": -0.42889670505679667,
+      "apresentacao": "0,429",
+      "tabela": "II",
+      "ok": true
+    },
+    {
+      "id": "Qsep_sel_fis_f_hand",
+      "valor_artefato": -0.9041890172828199,
+      "apresentacao": "0,904",
+      "tabela": "II",
+      "ok": true
+    },
+    {
+      "id": "Qsep_sel_fis_f_sca",
+      "valor_artefato": 0.08460256020513876,
+      "apresentacao": "0,085",
+      "tabela": "II",
+      "ok": true
+    },
+    {
+      "id": "Qsep_sel_fis_f_declive",
+      "valor_artefato": -0.27357963133251556,
+      "apresentacao": "0,274",
+      "tabela": "II",
+      "ok": true
+    },
+    {
+      "id": "Qsep_sel_fis_f_construido",
+      "valor_artefato": -0.17021195197432454,
+      "apresentacao": "0,170",
+      "tabela": "II",
+      "ok": true
+    },
+    {
+      "id": "Qsep_sel_fis_f_areia",
+      "valor_artefato": -0.2015032978313472,
+      "apresentacao": "0,202",
+      "tabela": "II",
+      "ok": true
+    },
+    {
+      "id": "Qsep_sel_fis_f_dist_dren",
+      "valor_artefato": 0.054603456030720206,
+      "apresentacao": "0,055",
+      "tabela": "II",
+      "ok": true
+    },
+    {
+      "id": "Qsep_sel_fis_f_dist_canal",
+      "valor_artefato": -0.4325648565780885,
+      "apresentacao": "0,433",
+      "tabela": "II",
+      "ok": true
+    },
+    {
+      "id": "SAR_U-Net",
+      "valor_artefato": 0.448927,
+      "apresentacao": "0,449",
+      "tabela": "VII",
+      "ok": true
+    },
+    {
+      "id": "SAR_Otsu",
+      "valor_artefato": 0.394663,
+      "apresentacao": "0,395",
+      "tabela": "VII",
+      "ok": true
+    },
+    {
+      "id": "chuva_dia",
+      "valor_artefato": 1.309701987646094,
+      "apresentacao": "1,31",
+      "tabela": "IV",
+      "ok": true
+    },
+    {
+      "id": "chuva_48h",
+      "valor_artefato": 1.4576058866225243,
+      "apresentacao": "1,46",
+      "tabela": "IV",
+      "ok": true
+    },
+    {
+      "id": "chuva_futuro_30d",
+      "valor_artefato": 0.7795223627512531,
+      "apresentacao": "0,78",
+      "tabela": "IV",
+      "ok": true
+    },
+    {
+      "id": "admissao_observacoes",
+      "valor_artefato": 1641356,
+      "apresentacao": "1.641.356",
+      "bloco": "curadoria",
+      "ok": true
+    },
+    {
+      "id": "admissao_treino",
+      "valor_artefato": 763155,
+      "apresentacao": "763.155",
+      "bloco": "curadoria",
+      "ok": true
+    },
+    {
+      "id": "admissao_afirmacao",
+      "valor_artefato": 513530,
+      "apresentacao": "513.530",
+      "bloco": "curadoria",
+      "ok": true
+    },
+    {
+      "id": "exemplo_ruas_HAND (log)",
+      "valores_artefato": [
+        0.7514789117470192,
+        0.20406816750928514
+      ],
+      "apresentacao": "HAND (log) & +0,751 & +0,204",
+      "tabela": "IV",
+      "ok": true
+    },
+    {
+      "id": "exemplo_ruas_Distância ao canal",
+      "valores_artefato": [
+        0.8526680285704221,
+        0.0929093248758883
+      ],
+      "apresentacao": "Distância ao canal & +0,853 & +0,093",
+      "tabela": "IV",
+      "ok": true
+    },
+    {
+      "id": "exemplo_ruas_Declive",
+      "valores_artefato": [
+        0.2720146150631653,
+        0.12293267672123002
+      ],
+      "apresentacao": "Declive & +0,272 & +0,123",
+      "tabela": "IV",
+      "ok": true
+    },
+    {
+      "id": "exemplo_ruas_Fração construída",
+      "valores_artefato": [
+        -0.5245216554076902,
+        -0.40585298870184255
+      ],
+      "apresentacao": "Fração construída & $-$0,525 & $-$0,406",
+      "tabela": "IV",
+      "ok": true
+    },
+    {
+      "id": "exemplo_ruas_Areia",
+      "valores_artefato": [
+        0.03303001618196296,
+        0.03303001618196296
+      ],
+      "apresentacao": "Areia & +0,033 & +0,033",
+      "tabela": "IV",
+      "ok": true
+    },
+    {
+      "id": "exemplo_ruas_Contribuição (log)",
+      "valores_artefato": [
+        0.12861589076159557,
+        -0.012801273602040999
+      ],
+      "apresentacao": "Contribuição (log) & +0,129 & $-$0,013",
+      "tabela": "IV",
+      "ok": true
+    },
+    {
+      "id": "exemplo_ruas_Distância à drenagem",
+      "valores_artefato": [
+        -0.02562786861612317,
+        0.023088789914951054
+      ],
+      "apresentacao": "Distância à drenagem & $-$0,026 & +0,023",
+      "tabela": "IV",
+      "ok": true
+    },
+    {
+      "id": "exemplo_ruas_Escore final",
+      "valores_artefato": [
+        1.4871656981182975,
+        0.05747463405845744
+      ],
+      "apresentacao": "Escore final & 1,487 & 0,057",
+      "tabela": "IV",
+      "ok": true
+    }
+  ],
+  "nota": "Resultados já executados; esta conferência não repete a validação científica."
+}

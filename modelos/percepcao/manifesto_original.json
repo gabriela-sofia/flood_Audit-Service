@@ -1,0 +1,254 @@
+{
+  "tipo": "unet_pequena_sen1floods11",
+  "etapa": "A4",
+  "quando_utc": "2026-09-02T02:24:43.685090Z",
+  "commit": "918502a",
+  "torch": "2.11.0+cpu",
+  "dispositivo": "cpu",
+  "seed": 20260901,
+  "hiperparametros": {
+    "epocas": 30,
+    "base": 16,
+    "lado": 256,
+    "lote": 4,
+    "taxa": 0.001,
+    "threads": 8
+  },
+  "split": {
+    "treino": 252,
+    "validacao": 89,
+    "limite_treino": null,
+    "limite_validacao": null
+  },
+  "parametros": 482610,
+  "normalizacao": {
+    "media": [
+      -10.392862,
+      -17.241102
+    ],
+    "desvio": [
+      4.038801,
+      4.753971
+    ],
+    "pixels_finitos": [
+      64735152,
+      64735152
+    ]
+  },
+  "segundos_estatisticas": 13.47,
+  "historico": [
+    {
+      "epoca": 1,
+      "perda_treino": 0.528756,
+      "passos": 63,
+      "perda_validacao": 0.345098,
+      "segundos_acumulados": 90.35
+    },
+    {
+      "epoca": 2,
+      "perda_treino": 0.33522,
+      "passos": 63,
+      "perda_validacao": 0.315529,
+      "segundos_acumulados": 186.01
+    },
+    {
+      "epoca": 3,
+      "perda_treino": 0.257949,
+      "passos": 63,
+      "perda_validacao": 0.196778,
+      "segundos_acumulados": 360.17
+    },
+    {
+      "epoca": 4,
+      "perda_treino": 0.229861,
+      "passos": 63,
+      "perda_validacao": 0.169663,
+      "segundos_acumulados": 522.89
+    },
+    {
+      "epoca": 5,
+      "perda_treino": 0.213047,
+      "passos": 63,
+      "perda_validacao": 0.171302,
+      "segundos_acumulados": 643.56
+    },
+    {
+      "epoca": 6,
+      "perda_treino": 0.20385,
+      "passos": 63,
+      "perda_validacao": 0.167923,
+      "segundos_acumulados": 777.5
+    },
+    {
+      "epoca": 7,
+      "perda_treino": 0.18686,
+      "passos": 63,
+      "perda_validacao": 0.158668,
+      "segundos_acumulados": 903.64
+    },
+    {
+      "epoca": 8,
+      "perda_treino": 0.213762,
+      "passos": 63,
+      "perda_validacao": 0.176319,
+      "segundos_acumulados": 1021.43
+    },
+    {
+      "epoca": 9,
+      "perda_treino": 0.207333,
+      "passos": 63,
+      "perda_validacao": 0.247274,
+      "segundos_acumulados": 1139.9
+    },
+    {
+      "epoca": 10,
+      "perda_treino": 0.182016,
+      "passos": 63,
+      "perda_validacao": 0.158112,
+      "segundos_acumulados": 1258.25
+    },
+    {
+      "epoca": 11,
+      "perda_treino": 0.1955,
+      "passos": 63,
+      "perda_validacao": 0.189216,
+      "segundos_acumulados": 1382.51
+    },
+    {
+      "epoca": 12,
+      "perda_treino": 0.197673,
+      "passos": 63,
+      "perda_validacao": 0.174551,
+      "segundos_acumulados": 1501.13
+    },
+    {
+      "epoca": 13,
+      "perda_treino": 0.195074,
+      "passos": 63,
+      "perda_validacao": 0.18533,
+      "segundos_acumulados": 1619.61
+    },
+    {
+      "epoca": 14,
+      "perda_treino": 0.172825,
+      "passos": 63,
+      "perda_validacao": 0.182611,
+      "segundos_acumulados": 1738.19
+    },
+    {
+      "epoca": 15,
+      "perda_treino": 0.173252,
+      "passos": 63,
+      "perda_validacao": 0.160511,
+      "segundos_acumulados": 1846.74
+    },
+    {
+      "epoca": 16,
+      "perda_treino": 0.182255,
+      "passos": 63,
+      "perda_validacao": 0.219502,
+      "segundos_acumulados": 1922.89
+    },
+    {
+      "epoca": 17,
+      "perda_treino": 0.178204,
+      "passos": 63,
+      "perda_validacao": 0.172235,
+      "segundos_acumulados": 2001.19
+    },
+    {
+      "epoca": 18,
+      "perda_treino": 0.165794,
+      "passos": 63,
+      "perda_validacao": 0.158907,
+      "segundos_acumulados": 2073.71
+    },
+    {
+      "epoca": 19,
+      "perda_treino": 0.188181,
+      "passos": 63,
+      "perda_validacao": 0.155983,
+      "segundos_acumulados": 2146.35
+    },
+    {
+      "epoca": 20,
+      "perda_treino": 0.176943,
+      "passos": 63,
+      "perda_validacao": 0.17099,
+      "segundos_acumulados": 2244.84
+    },
+    {
+      "epoca": 21,
+      "perda_treino": 0.155198,
+      "passos": 63,
+      "perda_validacao": 0.14115,
+      "segundos_acumulados": 2369.56
+    },
+    {
+      "epoca": 22,
+      "perda_treino": 0.152725,
+      "passos": 63,
+      "perda_validacao": 0.163307,
+      "segundos_acumulados": 2489.92
+    },
+    {
+      "epoca": 23,
+      "perda_treino": 0.148683,
+      "passos": 63,
+      "perda_validacao": 0.16143,
+      "segundos_acumulados": 2611.82
+    },
+    {
+      "epoca": 24,
+      "perda_treino": 0.1639,
+      "passos": 63,
+      "perda_validacao": 0.152253,
+      "segundos_acumulados": 2731.77
+    },
+    {
+      "epoca": 25,
+      "perda_treino": 0.157918,
+      "passos": 63,
+      "perda_validacao": 0.161027,
+      "segundos_acumulados": 2854.02
+    },
+    {
+      "epoca": 26,
+      "perda_treino": 0.154326,
+      "passos": 63,
+      "perda_validacao": 0.156635,
+      "segundos_acumulados": 2978.06
+    },
+    {
+      "epoca": 27,
+      "perda_treino": 0.173198,
+      "passos": 63,
+      "perda_validacao": 0.147343,
+      "segundos_acumulados": 3101.67
+    },
+    {
+      "epoca": 28,
+      "perda_treino": 0.167988,
+      "passos": 63,
+      "perda_validacao": 0.171401,
+      "segundos_acumulados": 3225.35
+    },
+    {
+      "epoca": 29,
+      "perda_treino": 0.162954,
+      "passos": 63,
+      "perda_validacao": 0.143561,
+      "segundos_acumulados": 3346.47
+    },
+    {
+      "epoca": 30,
+      "perda_treino": 0.167836,
+      "passos": 63,
+      "perda_validacao": 0.151971,
+      "segundos_acumulados": 3467.55
+    }
+  ],
+  "hash_estado": "sha256:bca94df7ab57d51e90f41411d52478bd7ca093bc3386ac17d5b01fdc904923ba",
+  "nao_e": "checkpoint de fumaca nao e modelo treinado; ele prova que a esteira roda e reproduz, nao que a rede aprendeu",
+  "hash_manifesto": "sha256:c8688e28c51d7d929121b6e137685afb04bde929f8c5ec0f518b319675a0f0fa"
+}

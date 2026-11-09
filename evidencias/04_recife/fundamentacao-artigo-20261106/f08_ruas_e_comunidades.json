@@ -1,0 +1,119 @@
+{
+ "tipo": "fundamentacao_artigo:f08/ruas_e_comunidades",
+ "nao_e": "novo treino nem confirmacao; contagens e reanalise pos-hoc de artefatos existentes",
+ "gerado_por": "scripts/fundamentacao_artigo/f08_ruas_e_comunidades.py",
+ "comunidades": {
+  "fcu_total": 1666,
+  "com_positivo": 123,
+  "duas_classes": 119,
+  "cinco_cinco": 38,
+  "por_coorte": {
+   "curitiba": {
+    "com_positivo": 4,
+    "duas_classes": 4,
+    "cinco_cinco": 0,
+    "fcu": 410
+   },
+   "manaus": {
+    "com_positivo": 12,
+    "duas_classes": 12,
+    "cinco_cinco": 5,
+    "fcu": 236
+   },
+   "recife": {
+    "com_positivo": 19,
+    "duas_classes": 19,
+    "cinco_cinco": 0,
+    "fcu": 294
+   },
+   "rmpa": {
+    "com_positivo": 53,
+    "duas_classes": 52,
+    "cinco_cinco": 27,
+    "fcu": 293
+   },
+   "rmr": {
+    "com_positivo": 35,
+    "duas_classes": 32,
+    "cinco_cinco": 6,
+    "fcu": 433
+   }
+  }
+ },
+ "fontes": {
+  "relato_com_s2": 19,
+  "relato_sem_s2": 16,
+  "sem_relato_com_s2": 36,
+  "sem_relato_sem_s2": 23,
+  "bairros": 94,
+  "uniao_com_registro": 71,
+  "so_s2": 55,
+  "razao_de_chances": 0.7586805555555556,
+  "p_fisher": 0.6653323974119438
+ },
+ "chip": {
+  "colunas": [
+   "classe_obs",
+   "aoi_id",
+   "x_m",
+   "y_m",
+   "lon",
+   "lat",
+   "elevation_m",
+   "hand_m",
+   "slope_deg",
+   "twi_dinf",
+   "worldcover",
+   "ativacao",
+   "grupo_cv",
+   "crs_metrico",
+   "resolucao_m",
+   "fonte",
+   "licenca",
+   "sobre_canal_modelado",
+   "agua_permanente_jrc",
+   "classe_do_poligono",
+   "ponto_id"
+  ],
+  "classes": {
+   "NAO_INUNDADO_OBSERVADO": 9210,
+   "INUNDACAO": 1586,
+   "AGUA_PERMANENTE": 426
+  },
+  "hand_m": {
+   "AGUA_PERMANENTE": 8.6e-05,
+   "INUNDACAO": 2.230366,
+   "NAO_INUNDADO_OBSERVADO": 61.244812
+  }
+ },
+ "ruas": {
+  "ruas": 2225,
+  "relatadas": 48,
+  "bairros": 19,
+  "auc_Q": 0.6686913897290876,
+  "auc_hand": 0.5951376125907373,
+  "auc_comprimento": 0.7432820901557317,
+  "rho_medio_no_bairro_Q_comprimento": 0.03182796143310163,
+  "rho_medio_no_bairro_hand_comprimento": -0.0878148358090904,
+  "pareado_fator_1.5": {
+   "auc_Q": 0.6845741773289719,
+   "auc_hand": 0.6270556828692836,
+   "delta": 0.05751849445968826,
+   "positivos_usados": 37,
+   "ic95_delta": [
+    -0.02369220363239917,
+    0.1765426806988329
+   ]
+  },
+  "pareado_fator_2.0": {
+   "auc_Q": 0.60432011342289,
+   "auc_hand": 0.5934464826322922,
+   "delta": 0.010873630790597888,
+   "positivos_usados": 44,
+   "ic95_delta": [
+    -0.052690765922007554,
+    0.08633823849741479
+   ]
+  }
+ }
+}

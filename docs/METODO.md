@@ -1,162 +1,53 @@
-# Metodo
+# Método do REV-P
 
-Este documento descreve a cadeia publica do projeto. Ele nao substitui os scripts:
-cada numero citado precisa estar em artefato versionado em `modelo/execucoes/`.
+O percurso conecta o problema territorial à observação, ao aprendizado e à resposta. Sua formulação completa está no [artigo atual](../artigo/REV-P_artigo_atual.pdf).
 
-## 1. Premissa
+## 1. Qualificar a observação
 
-O projeto mede suscetibilidade fisico-hidrologica. A variavel de interesse nao e dano,
-vulnerabilidade social, exposicao populacional, risco individual ou previsao operacional.
-A resposta esperada e uma estimativa auditavel de predisposicao fisica do terreno sob
-condicoes representadas pelas covariaveis disponiveis.
+Cada registro recebe um papel e uma finalidade admitida: presença do fenômeno, ausência observada, desconhecido ou água permanente. A qualificação conserva instrumento, lugar, data e condições de observação. Nuvem, sombra e falta de leitura permanecem desconhecidas.
 
-O contrato so responde quando a combinacao entre regiao, modelo, variaveis e distancia
-de dominio e compativel com o que foi treinado ou explicitamente aceito como
-transferencia. Fora disso, a saida correta e recusa ou alerta de extrapolacao.
+As referências externas vêm de CEMS, Sen1Floods11, UFO e GFD, com resoluções e limites próprios. No Brasil, a referência óptica identifica água no episódio e compara com a imagem anterior. Água permanente é excluída. Relatos de Recife e cicatrizes de Petrópolis formam outras tarefas, com desenhos próprios.
 
-## 2. Cadeia publica
+Código: [curadoria e admissão](../codigo/scripts/metodo/README.md), [dados de aprendizado](../codigo/scripts/suscetibilidade/README.md), [Recife](../codigo/scripts/recife_aprendizado/README.md) e [Petrópolis](../codigo/scripts/petropolis_aprendizado/README.md).
 
-1. Curadoria de fontes observacionais e negativas.
-2. Harmonizacao espacial e derivacao de variaveis fisicas de terreno.
-3. Consolidacao da tabela unica e dos pools de ajuste.
-4. Treino dos candidatos regionais e fisiograficos.
-5. Selecao dos modelos servidos.
-6. Execucao do contrato de inferencia.
-7. Geracao de grades de aplicacao.
-8. Auditorias complementares de chuva, temporalidade, recuperacao de fonte e camada social.
-9. Teste de transferencia entre cidades, que mede se um efeito medido num lugar reaparece em outro.
+Registro executado: [admissão das observações e usos permitidos](../evidencias/01_curadoria/README.md).
 
-## 3. Variaveis principais
+## 2. Descrever o território
 
-| Variavel | Papel | Estado da evidencia |
-|---|---|---|
-| `elevation_rel_m` | Elevacao relativa ao P1 da propria regiao. Foi adotada no lugar da absoluta porque a absoluta punha 0,0% dos pontos de Curitiba no dominio de treino, contra 94,5% da relativa. | O sinal dela **inverte** entre Nova York e Chicago (`docs/EVIDENCIA.md`, secao 7). Ela resolve o problema de DOMINIO; ela nao esta demonstrada como invariante entre cidades. |
-| `slope_deg` | Declividade local. | Replicou nas duas cidades testadas, com o sinal fisico esperado. |
-| `hand_m` | Altura acima da drenagem mais proxima. | Nulo em Nova York; em Chicago nao ha contraste suficiente para testar (p95 de 7,985 m contra limiar de 10 m). Sustenta sozinho o modelo `fluvial_serra`, num estrato ingreme de 24 grupos. |
-| `twi_dinf` | Indice topografico de umidade com escoamento D-infinity. | Mecanismo dominante em Nova York; o sinal **inverte** em Chicago. |
-| `rain_decay_index` | Chuva antecedente agregada por decaimento temporal, quando disponivel no recorte. | Entra so no modelo de Recife. A chuva como forcamento de evento tem suporte em NYC e Sao Paulo. |
+O núcleo usa células de aproximadamente 30 × 30 m. MDT, declive e direção de escoamento dão origem à drenagem, HAND, área de contribuição e distâncias. Fração construída e areia completam os atributos. As unidades de terreno mantêm a família do MDT; famílias distintas não são costuradas no mesmo ponto.
 
-A leitura correta desta tabela: variavel util para ORDENAR dentro de uma regiao nao e a
-mesma coisa que variavel com efeito estavel ENTRE regioes. As duas ultimas colunas do
-pacote separam essas duas perguntas de proposito.
+Nas ruas, a agregação conserva a unidade rua-bairro. A chuva atua como gatilho temporal na análise dos relatos e permanece fora do escore físico descrito no artigo.
 
-## 4. Treino curado
+Código: [terreno](../codigo/scripts/terreno/README.md), [geoprocessamento](../codigo/scripts/geo/README.md) e [atributos dos casos territoriais](CODIGO.md).
 
-Os scripts publicos de treino ficam em `scripts/treino/`. O diretorio inclui a
-consolidacao de dados, verificacoes de chuva, desenho experimental e selecao de
-modelos. O nome do diretorio e deliberado: ele contem somente o material que entra na
-cadeia curada deste pacote publico.
+## 3. Aprender e transferir a relação física
 
-O manifesto da tabela unica v2 registra:
+O núcleo ajusta regressão logística regularizada, com pesos por evento e classe e interceptos específicos de cena. O escore transferido reúne contribuições dos atributos e interações; pesos e padronização são preservados na transferência, e interceptos de cena não seguem para o destino.
 
-| Campo | Valor |
-|---|---:|
-| Observacoes de entrada | 595.865 |
-| Observacoes admitidas | 568.265 |
-| Pool fluvial | 65.070 |
-| Grupos admitidos | 6.873 |
-| Grupos no pool fluvial | 2.002 |
+O núcleo completo usa 43 unidades externas. O núcleo com reserva ajusta em 29, separa quatro para estimar respostas problemáticas, quatro para calibrar a recusa e seis para retenção. Os números de versões anteriores que aparecem em um ensaio específico conservam esse contexto; não são fundidos ao ajuste externo.
 
-As tabelas completas ficam fora do pacote publico por tamanho. O manifesto registra os
-nomes, tamanhos e checksums esperados para reproducao.
+Código: [aprendizado físico](../codigo/scripts/metodo/README.md) e [transferência](../codigo/scripts/vulnerabilizados/README.md). Parâmetros: [modelos físicos](../modelos/fisico/README.md).
 
-## 5. Modelos servidos
+## 4. Avaliar por tarefa e por território
 
-A etapa `svc-01-modelos` produz o indice de candidatos. O contrato atual usa apenas
-modelos marcados como serviveis.
+AUC verifica se positivos recebem escores maiores que seus comparadores. Os intervalos reamostram grupos territoriais inteiros. Populações com pouco suporte são descritivas; repetições de sementes não são novas replicações territoriais.
 
-| Modelo | Regiao servida | Variaveis | n / grupos | Estado |
-|---|---|---|---:|---|
-| `recife_pluvial` | Recife | `elevation_rel_m`, `slope_deg`, `hand_m`, `twi_dinf`, `rain_decay_index` | 269 / 227 | Servivel, desempenho fora dos criterios fortes |
-| `pluvial_urbano_nyc` | NYC | `elevation_rel_m`, `slope_deg`, `hand_m`, `twi_dinf` | 471.727 / 751 | Servivel, desempenho fora dos criterios fortes |
-| `pluvial_urbano_sao_paulo` | Nao servida | `elevation_rel_m`, `slope_deg`, `hand_m`, `twi_dinf` | 7.146 / 1.438 | Nao servivel |
-| `fluvial_planicie` | Curitiba | `elevation_rel_m`, `slope_deg`, `hand_m`, `twi_dinf` | 56.654 / 509 | Servivel, coerente com criterios |
-| `fluvial_serra` | Petropolis | `hand_m` | 5.162 / 24 | Servivel, coerente com criterios |
+Água observada é comparada com ausência observada na mesma cena. Ruas com relato são comparadas com o fundo do mesmo bairro. Cicatrizes são comparadas com células de fundo, sem declarar esse fundo como ausência física comprovada.
 
-## 6. Contrato de inferencia
+Código: [fundamentação das tabelas e intervalos](../codigo/scripts/fundamentacao_artigo/README.md). Evidências: [matriz do artigo](MATRIZ_ARTIGO.md).
 
-O contrato fica em `scripts/servico/svc02_contrato_inferencia.py`. Ele centraliza a
-decisao cientifica e devolve resposta estruturada. As demais camadas devem apresentar a
-resposta, nao reinterpretar portoes.
+## 5. Aprender com referências locais
 
-Os portoes publicos sao:
+A atualização soma uma correção regularizada ao escore externo. Consultas por margem ou sorteio obedecem ao orçamento. O filtro de suporte exige cinco positivos, cinco negativos e três grupos com positivo. Ganho no destino e retenção na origem são medidos separadamente.
 
-| Portao | Funcao |
-|---|---|
-| `G1_REGIAO_SUPORTADA` | A regiao precisa estar declarada no contrato. |
-| `G2_MODELO_SERVIVEL` | O modelo regional precisa estar marcado como servivel. |
-| `G3_MATURIDADE_MINIMA` | A maturidade regional precisa estar explicita. |
-| `G4_VARIAVEIS_OBRIGATORIAS` | Todas as variaveis exigidas pelo modelo precisam estar presentes. |
-| `G5_DOMINIO_COVARIAVEL` | O caso precisa estar dentro do dominio ou sair marcado como extrapolacao. |
+A memória conserva exemplos para os ensaios de continuidade. O artigo registra tanto ganhos quanto perdas de retenção; não afirma preservação integral do conhecimento.
 
-## 7. Grades de aplicacao
+Código: `v10_ii_ciclo.py`, `v10_iii_memoria.py` e `v10_iv_competencia.py`, em [atualização e transferência](../codigo/scripts/vulnerabilizados/README.md).
 
-A grade publica e gerada por `scripts/servico/svc03_grade_suscetibilidade.py` e fica em
-`modelo/execucoes/svc-03-grade/`.
+## 6. Perceber água e compor uma resposta
 
-| Regiao | Resolucao | Artefatos |
-|---|---:|---|
-| Recife | 120 m | CSV, GeoTIFF, PNG, resumo JSON |
-| Curitiba | 120 m | CSV, GeoTIFF, PNG, resumo JSON |
-| Petropolis | 120 m | CSV, GeoTIFF, PNG, resumo JSON |
+As redes SAR aprendem percepção de água; pré-treino, segmentação e continuidade têm medidas próprias. A memória documental recupera fontes, um verificador examina afirmações e o encaminhamento distingue respostas que precisam de mais evidência.
 
-A chuva entra na grade como CENARIO, nao como camada: ela nao varia na escala da celula
-de 120 m — Recife inteiro cabe em cerca de 4 celulas do produto de precipitacao — entao
-ela desloca o escore sem mudar o ordenamento. Celula fora do dominio sai como NaN e
-nunca como zero.
+O contexto social acompanha o território sem modificar o escore físico. A resposta conserva a conta, as fontes, a versão e as condições de uso.
 
-## 8. Frente de chuva
-
-A frente de chuva tem dois papeis distintos, e o pacote nao os mistura.
-
-1. **Variavel do modelo**: `rain_decay_index`, so no `recife_pluvial`.
-2. **Pergunta cientifica separada**: a chuva transitoria aumenta o risco de ocorrencia
-   notificada no mesmo lugar?
-
-A segunda pergunta usa desenho autopareado no tempo (case-crossover), implementado em
-`scripts/chuva/autopareamento_temporal.py`. O estrato e o LUGAR, entao terreno, rede de
-drenagem e propensao daquele endereco a acionar a central saem da estimativa por
-construcao. O desenho nao usa classe negativa nenhuma: o caso e o proprio controle em
-outras datas, e por isso ele nao herda o descasamento de janela entre positivos e fundo
-que foi medido nas bases das centrais.
-
-Cadeia reprodutivel:
-
-```text
-aq_chamados01_centrais_de_atendimento.py   chamados brutos das centrais
-aq_chamados02_verificar_requisitos.py      leitor unico de categoria e data
-casos_das_centrais.py                      casos por celula x dia
-serie_por_celula.py                        serie de chuva por celula
-autopareamento_temporal.py                 estimativa e matriz de forcamento
-```
-
-## 9. Teste de transferencia entre cidades
-
-Um efeito medido num lugar so nao distingue lei fisica de particularidade daquele lugar.
-O pacote implementa esse teste em duas etapas:
-
-```text
-gatilho_terreno_nyc.py          efeito do terreno com chuva a 0,1 grau
-terreno_sob_gatilho_1km.py      efeito do terreno com chuva a 1 km (MRMS), estrato = dia
-terreno_sob_gatilho_chicago.py  o MESMO estimador, importado, aplicado a segunda cidade
-```
-
-O estimador e importado, nunca reescrito. Se as duas cidades passassem por
-implementacoes diferentes, uma diferenca de resultado poderia vir do codigo em vez do
-territorio, e nao haveria como saber qual.
-
-O resultado esta em `docs/EVIDENCIA.md`, secao 7: chuva e declividade replicam; `twi_dinf`,
-`twi_dinf` x chuva e `elevation_rel_m` invertem. O pacote registra a reprovacao e nao
-altera modelo servido por causa dela — auditoria complementar nao promove nem rebaixa
-modelo dentro do contrato.
-
-## 10. Auditorias complementares
-
-Chuva, temporalidade, recuperacao de fonte, cadeia seletiva, transferencia entre cidades
-e camada social sao auditadas como evidencias auxiliares. Elas nao mudam pesos, portoes,
-maturidade ou promocao de modelo dentro do contrato de inferencia.
-
-Quando uma frente e inconclusiva, o estado deve continuar escrito como inconclusivo.
-Quando o protocolo nao testa uma hipotese naquele recorte, o estado deve continuar
-escrito como nao testavel. Quando o teste existe e reprova, como em Chicago, o estado
-deve continuar escrito como reprovado — e nao desaparecer do texto publico.
+Código: [SAR](../codigo/scripts/sar/README.md), [recuperação documental](../codigo/scripts/recuperacao/README.md), [resposta](../codigo/scripts/servico/README.md) e [medidas sociais](../codigo/scripts/social/README.md).

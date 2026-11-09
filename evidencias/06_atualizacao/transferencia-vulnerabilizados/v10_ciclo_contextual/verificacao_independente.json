@@ -1,0 +1,34 @@
+{
+  "tipo": "transferencia_vulnerabilizados:verificacao_independente",
+  "nao_e": "estudo de transferencia para territorios vulnerabilizados; nao e promocao de modelo, previsao de evento, profundidade, risco, dano, vitimas ou identificacao causal",
+  "gerado_por": "scripts/vulnerabilizados",
+  "quando_utc": "2026-10-23T18:40:31.458003+00:00",
+  "fontes_protegidas_iguais": {
+    "local_runs\\transferencia-vulnerabilizados\\v3\\aprendizagem\\rmpa.parquet": true,
+    "local_runs\\transferencia-vulnerabilizados\\v3\\aprendizagem\\manaus.parquet": true,
+    "local_runs\\transferencia-vulnerabilizados\\v3\\aprendizagem\\curitiba.parquet": true,
+    "local_runs\\transferencia-vulnerabilizados\\v3\\aprendizagem\\doadores.parquet": true,
+    "local_runs\\transferencia-vulnerabilizados\\v4_preparo_centrado\\ids_orcamentos.csv": true,
+    "local_runs\\transferencia-vulnerabilizados\\v5_execucao_comunidades\\s1_s2\\coeficientes.jsonl": true,
+    "local_runs\\mecanismos-transferiveis\\v1\\populacao.parquet": true,
+    "local_runs\\mecanismos-transferiveis\\v5\\sem_amostra_v1\\candidatas\\modelos.pkl": true,
+    "local_runs\\mecanismos-transferiveis\\v5\\sem_amostra_v1\\candidatas\\pesos_e_padronizacao.json": true,
+    "local_runs\\transferencia-vulnerabilizados\\v7_aproveitamento_acervo\\v7_02_contextos_tempo\\geografia_pontos.parquet": true,
+    "local_runs\\auditoria-utilidade-20261021\\v1\\pontos_tese.parquet": true,
+    "local_runs\\auditoria-utilidade-20261021\\v1\\pontos_contextuais_fora_ds06_v8.parquet": true,
+    "local_runs\\transferencia-vulnerabilizados\\v6_evidencia_robusta\\revisao_cega\\chave_selada.parquet": true,
+    "local_runs\\transferencia-vulnerabilizados\\v6_evidencia_robusta\\rmr_avaliacao\\referencia_a02.parquet": true,
+    "local_runs\\transferencia-vulnerabilizados\\v6_evidencia_robusta\\recife_avaliacao\\referencia.parquet": true
+  },
+  "nucleo_limpo_pkl_igual_v9": true,
+  "ii_consultas_repetidas": 0,
+  "ii_consultas_em_teste": 0,
+  "ii_auc_recalculada_max_abs": 0.0,
+  "ii_replay_ids_identicos": {
+    "rmpa": true,
+    "manaus": true,
+    "curitiba": true
+  },
+  "iv_revisoes_concluidas_zero": true,
+  "ok": true
+}

@@ -1,0 +1,87 @@
+{
+ "pergunta": "a chuva do dia aumenta os relatos de alagamento no mesmo lugar (Recife)?",
+ "desenho": "autopareado no tempo, estratos ano-mes x dia da semana, Poisson condicional",
+ "regra": "sustentado se IC95% da exposicao exclui 1 e o do controle futuro inclui 1",
+ "relatos_sem_duplicata": 1372,
+ "dias_com_relato": 119,
+ "periodo_relatos": [
+  "2014-01-09",
+  "2024-06-25"
+ ],
+ "series": {
+  "era5_2014_2024": {
+   "chuva_dia": {
+    "razao_de_taxas_por_10mm": 1.309701987646094,
+    "ic95": [
+     1.0674250442611912,
+     4.634308968935654
+    ],
+    "ic_exclui_1": true,
+    "estratos_informativos": 100,
+    "casos_em_estrato_informativo": 1372,
+    "dias": 436
+   },
+   "chuva_48h": {
+    "razao_de_taxas_por_10mm": 1.4576058866225243,
+    "ic95": [
+     1.202011089390576,
+     2.730678013886109
+    ],
+    "ic_exclui_1": true,
+    "estratos_informativos": 100,
+    "casos_em_estrato_informativo": 1372,
+    "dias": 436
+   },
+   "chuva_futuro_30d": {
+    "razao_de_taxas_por_10mm": 0.7795223627512531,
+    "ic95": [
+     0.5080819283127107,
+     1.060176739777933
+    ],
+    "ic_exclui_1": false,
+    "estratos_informativos": 100,
+    "casos_em_estrato_informativo": 1372,
+    "dias": 436
+   },
+   "leitura": "sustentado",
+   "relatos_no_periodo": 1372
+  },
+  "inmet_a301_2020_2023": {
+   "chuva_dia": {
+    "razao_de_taxas_por_10mm": 2.0456830265427883,
+    "ic95": [
+     0.3909905789975302,
+     1.9203923108693208e+32
+    ],
+    "ic_exclui_1": false,
+    "estratos_informativos": 5,
+    "casos_em_estrato_informativo": 7,
+    "dias": 22
+   },
+   "chuva_48h": {
+    "razao_de_taxas_por_10mm": 1.9713109724622044,
+    "ic95": [
+     1.1459815754216314,
+     1043562.0005168554
+    ],
+    "ic_exclui_1": true,
+    "estratos_informativos": 5,
+    "casos_em_estrato_informativo": 7,
+    "dias": 22
+   },
+   "chuva_futuro_30d": {
+    "razao_de_taxas_por_10mm": 0.671932930381202,
+    "ic95": [
+     2.5130181078673682e-242,
+     0.9944953953732828
+    ],
+    "ic_exclui_1": true,
+    "estratos_informativos": 5,
+    "casos_em_estrato_informativo": 7,
+    "dias": 22
+   },
+   "leitura": "nao sustentado",
+   "relatos_no_periodo": 557
+  }
+ }
+}

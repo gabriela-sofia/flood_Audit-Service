@@ -1,0 +1,925 @@
+"""
+DS-04 -- Reduz cada fonte, uma por vez, ao esquema-alvo congelado no ds03.
+
+O QUE ESTE SCRIPT E, E O QUE ELE DELIBERADAMENTE NAO E:
+
+e uma traducao. Cada fonte tem um redutor proprio, isolado dos demais, que
+sabe apenas duas coisas: as colunas daquela fonte e o contrato do ds03. Nenhum
+redutor le o resultado de outro. Isso e o que permite conferir um por vez e o
+que impede que uma convencao de Recife vaze para Curitiba sem ninguem ver.
+
+NAO e um filtro. Nada e descartado aqui, nem mesmo linha invalida: a decisao
+de admitir e do `ds05`, que registra o motivo de cada rejeicao. Separar
+traducao de admissao e o que torna o relatorio de contagem conferivel -- se as
+duas coisas acontecessem juntas, "sumiu um ponto" nao teria resposta.
+
+DECISOES DE TRADUCAO QUE PRECISAM ESTAR DECLARADAS, porque nenhuma e obvia:
+
+  RECIFE entra em cadeia NATIVA de 10 m, nao harmonizada a 30 m. Nao e
+  desleixo: Recife e pluvial urbano, o coeficiente de HAND la e -0,0001 com
+  p = 0,978, e a decisao fechada em ext_resolucao_e_mecanismo_decisao_v1.md e
+  que a resolucao segue o MECANISMO. Harmonizar Recife a 30 m custaria a
+  declividade (7,20 graus caem para 2,65) para refinar uma variavel que o
+  proprio modelo diz nao usar. A variante a 30 m e gravada em arquivo separado
+  para quem quiser testar o pool -- fora da tabela unica, por decisao.
+
+  CURITIBA entra em cadeia wbt30, porque e fluvial e o pool fluvial exige a
+  mesma derivacao em todas as regioes.
+
+  O NEGATIVO DE CURITIBA entra como `ausencia` e sobe para
+  `exclusao_qualificada` onde o `neg01` provar que o silencio informa. O campo
+  de origem diz `siac156_curitiba_non_hydrological_category_v1`: existe um
+  chamado no 156 e o assunto nao era hidrologico. Isso nunca e "a area foi
+  analisada e nao havia inundacao" -- entao `observado` esta fora dos dois
+  jeitos. Mas tambem nao e silencio: o `neg01` checa contra a base bruta do 156
+  se o canal estava ativo naquele dia e se a cidade registrou alagamento em
+  algum lugar. Passando nos quatro criterios, o ponto vira exclusao
+  qualificada, o mesmo nivel do piloto ingles; 114 de 442 passam.
+
+  CLASSE DE RELEVO tem tres procedencias diferentes e a coluna
+  `classe_relevo_base` diz qual: medida na janela do raster (CEMS, criterio
+  original do cems03), calculada nos pontos amostrados (UK), ou declarada pelo
+  perfil da regiao (Recife, Curitiba). O criterio -- relevo local >= 400 m E
+  fracao acima de 15 graus >= 0,25 -- foi calibrado na janela. Aplicado aos
+  pontos e outro estimador, e por isso fica marcado.
+
+  SEN1FLOODS11 E UFO nao tem declividade nem TWI, e isso e do ds01: sao
+  derivadas direcionais que exigem grade local reprojetada, nao calculada para
+  661 chips em 6 continentes. Ficam nulas declaradas. Sem slope nao ha como
+  calcular fracao acima de 15 graus, entao o relevo fica NAO_CLASSIFICADO.
+
+  PETROPOLIS nao aparece. Tem derivacao de terreno (ter01) e nao tem nenhum
+  ponto rotulado -- N = 0, ver susc_20h. Entra no relatorio como fonte de
+  contagem zero, para que a ausencia seja visivel em vez de silenciosa.
+
+Uso:
+    python scripts/suscetibilidade/ds04_reduzir_por_fonte.py
+    python scripts/suscetibilidade/ds04_reduzir_por_fonte.py --fonte recife
+"""
+
+from __future__ import annotations
+
+import json
+import sys
+from pathlib import Path
+
+import numpy as np
+import pandas as pd
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from ds03_esquema_alvo import (  # noqa: E402
+    CLASSE, COLUNAS, VARIAVEIS_TERRENO, VERSAO,
+)
+
+REPO = Path(__file__).resolve().parents[2]
+RUNS = REPO / "local_runs"
+OUT = RUNS / "ds-04-reducao"
+
+DS01 = RUNS / "ds-01-multirregiao" / "dataset_multirregiao_v1.csv"
+HARM_TODAS = RUNS / "ter-02-comparacao" / "dataset_harmonizado_todas.csv"
+HARM_SERRA = RUNS / "ter-02-comparacao" / "dataset_serra_harmonizado.csv"
+HARM_UK = RUNS / "ter-02-comparacao" / "dataset_harmonizado_uk.csv"
+HARM_N1 = RUNS / "ter-02-comparacao" / "dataset_harmonizado_nivel1.csv"
+# Ativacoes amostradas pelo `cems03`, cuja sobreposicao e DECLARADA por
+# `ter02_sobreposicao_de_ativacao`: os valores vem do proprio raster da cadeia.
+HARM_CEMS_NOVAS = RUNS / "ter-02-comparacao" / "dataset_harmonizado_cems_novas.csv"
+# Quinta granularidade de derivacao: tile de 1 grau do `cadeia_em_lote`, com
+# margem de bacia. Arquivo separado pela mesma razao das outras quatro -- juntar
+# no `todas.csv` apagaria de qual passo cada linha veio.
+HARM_GFD = RUNS / "ter-02-comparacao" / "dataset_harmonizado_gfd.csv"
+CHUVA_GLOBAL = RUNS / "chuva-04-era5-global" / "chuva_era5_por_ponto.csv"
+NEG_RECLASS_DIR = RUNS / "neg-01-exclusao-qualificada"
+HARM_BR = RUNS / "ter-03-brasil-harmonizado"
+RECIFE_COM_CHUVA = (RUNS / "chuva-02-fonte-unica-recife" /
+                    "recife_harmonizado_com_chuva.csv")
+RELEVO_AOI = RUNS / "cems-02-analogos-v2" / "verificacao_relevo_por_aoi.csv"
+DATAS_CENA_EMS = RUNS / "cems-datas-de-imagem" / "datas.json"
+
+FLUVIAL = "FLUVIAL_ENXURRADA"
+PLUVIAL = "PLUVIAL_URBANO"
+MISTO = "MISTO_NAO_SEPARAVEL"
+
+# criterio do cems03, repetido aqui porque e o criterio, nao um detalhe
+RELEVO_LOCAL_MIN_M = 400.0
+FRAC_GT15_MIN = 0.25
+
+MAPA_FONTE_CHUVA = {
+    "chirps_v2.0_gauge_satellite_blend": "chirps_v2_gauge_satellite_blend",
+    "open_meteo_era5_land_archive_api": "open_meteo_era5_land",
+}
+
+
+def sobrepor_chuva_era5(d: pd.DataFrame) -> pd.DataFrame:
+    """Chuva ERA5-Land para as fontes que nao tinham nenhuma.
+
+    O `chuva04` resolve a janela de evento por (celula de 0,1 grau, data) e
+    devolve por ponto. Aqui e so juncao: quem ja tem chuva na fonte unica --
+    Recife e Curitiba -- nao passa por aqui, entao nao ha risco de duas
+    procedencias disputarem a mesma linha.
+    """
+    if not CHUVA_GLOBAL.exists():
+        print("   AVISO: chuva global ausente; rode chuva04")
+        return d
+    c = pd.read_csv(CHUVA_GLOBAL, low_memory=False)
+    c = c[["ponto_id", "rain_max_24h", "rain_decay_index", "fonte_chuva",
+           "dt", "precisao_data"]].drop_duplicates("ponto_id")
+    d = d.merge(c, on="ponto_id", how="left", suffixes=("", "_era5"))
+    tem = d["rain_max_24h_era5"].notna()
+    for col in ("rain_max_24h", "rain_decay_index", "fonte_chuva"):
+        d.loc[tem, col] = d.loc[tem, f"{col}_era5"]
+    # a data de evento tambem vem daqui para as fontes que a tinham perdido
+    sem_data = d["data_evento"].isna() & d["dt"].notna()
+    d.loc[sem_data, "data_evento"] = d.loc[sem_data, "dt"]
+    # `precisao_data` NAO entra mais nesta limpeza. Ela estava aqui junto das
+    # colunas de merge e foi descartada por proximidade, nao por decisao: o
+    # efeito era `data_evento` chegar ao modelo sem a procedencia que diz se
+    # aquela data e da ocorrencia ou o carimbo de um lote inteiro. Em 93% da
+    # base ela e carimbo de lote, e isso mudava a leitura de toda a chuva.
+    d = d.drop(columns=[x for x in d.columns
+                        if x.endswith("_era5") or x == "dt"])
+    print(f"   chuva: {int(tem.sum()):,} pontos em ERA5-Land, "
+          f"{int((~tem).sum()):,} sem")
+    return d
+
+
+def sobrepor_nivel_negativo(d: pd.DataFrame) -> pd.DataFrame:
+    """Aplica a reclassificacao do `neg01`, que so SOBE de ausencia.
+
+    O registro traz o resultado dos quatro criterios N1-N4 avaliados contra a
+    base bruta do 156. Ponto aprovado vira `exclusao_qualificada`; reprovado
+    continua `ausencia`. A guarda de sentido unico e proposital: este caminho
+    nunca rebaixa nem promove a `observado` -- observado exige que alguem tenha
+    olhado, e chamado de outro assunto nao e vistoria.
+    """
+    arquivos = sorted(NEG_RECLASS_DIR.glob("*_reclassificacao_negativo.csv"))
+    if not arquivos:
+        return d
+    r = pd.concat([pd.read_csv(a, low_memory=False) for a in arquivos],
+                  ignore_index=True)
+    r = r.loc[r["aprovado"].astype(bool), ["ponto_id", "nivel_negativo_novo"]]
+    if r.empty:
+        return d
+    mapa = dict(zip(r["ponto_id"].astype(str), r["nivel_negativo_novo"]))
+    alvo = (d["ponto_id"].astype(str).isin(mapa)
+            & (d["nivel_negativo"] == "ausencia"))
+    d.loc[alvo, "nivel_negativo"] = d.loc[alvo, "ponto_id"].astype(str).map(mapa)
+    print(f"   negativo: {int(alvo.sum()):,} de ausencia -> "
+          f"exclusao_qualificada (neg01, criterios N1-N4)")
+    return d
+
+
+def aplicar_elevacao_relativa(d: pd.DataFrame) -> pd.DataFrame:
+    """elevation_rel_m = elevation_m menos o nivel de referencia da propria fonte.
+
+    Achado de 2026-08-19 (`app01-transferencia-curitiba-sem-rotulo-local`):
+    elevation_m absoluta nao e comparavel entre regioes de altitude de base
+    diferente -- Curitiba (~900 m) tinha 0% dos pontos dentro do intervalo
+    5-95% de um treino externo perto do nivel do mar (diferenca padronizada
+    de media = 2,76). HAND ja e relativo por definicao (altura acima da
+    drenagem mais proxima); elevation_m sozinha nao era, e por isso quebrava
+    entre fontes.
+
+    baseline = P1 de elevation_m DENTRO da mesma fonte -- nunca entre fontes,
+    porque cada redutor so ve a propria fonte, por design (ver docstring do
+    modulo). Fica gravado em `elevation_baseline_m` para que elevation_rel_m
+    seja sempre reconstruivel, nunca um numero solto sem procedencia.
+
+    Roda dentro de `moldar()`, que todo redutor -- presente ou futuro --
+    chama antes de devolver. E essa a garantia permanente pedida: nenhuma
+    regiao nova pode deixar de receber a correcao por esquecimento.
+    """
+    if "elevation_m" not in d.columns:
+        d["elevation_baseline_m"] = np.nan
+        d["elevation_rel_m"] = np.nan
+        return d
+    e = pd.to_numeric(d["elevation_m"], errors="coerce")
+    if e.notna().sum() == 0:
+        d["elevation_baseline_m"] = np.nan
+        d["elevation_rel_m"] = np.nan
+        return d
+    baseline = float(e.quantile(0.01))
+    d["elevation_baseline_m"] = baseline
+    d["elevation_rel_m"] = np.where(e.notna(), e - baseline, np.nan)
+    return d
+
+
+def moldar(d: pd.DataFrame) -> pd.DataFrame:
+    """Garante as colunas do contrato, na ordem, sem inventar valor."""
+    d = aplicar_elevacao_relativa(d)
+    for c in COLUNAS:
+        if c not in d.columns:
+            d[c] = np.nan
+    d["classe_nome"] = d["classe"].map(CLASSE)
+    # Nulo declarado, e nao inferencia: uma fonte que nao diz como obteve a
+    # data fica marcada como nao tendo dito. Preencher com `registro_local`
+    # por ter data seria inventar a procedencia que falta.
+    d["precisao_data"] = d["precisao_data"].fillna("nao_declarada")
+    return d[list(COLUNAS)].copy()
+
+
+def nivel_negativo(classe: pd.Series, quando_zero: str) -> pd.Series:
+    return pd.Series(
+        np.where(classe == 0, quando_zero, "nao_aplicavel"), index=classe.index)
+
+
+def relevo_dos_pontos(elev: pd.Series, slope: pd.Series) -> tuple[str, dict]:
+    """Mesmo criterio do cems03, aplicado a amostra. Estimador diferente."""
+    e = pd.to_numeric(elev, errors="coerce").dropna()
+    s = pd.to_numeric(slope, errors="coerce").dropna()
+    if len(e) < 30 or len(s) < 30:
+        return "NAO_CLASSIFICADO", {"motivo": "amostra insuficiente ou sem slope"}
+    # p2-p98 em vez de min-max: um outlier de amostragem nao decide o estrato
+    relevo = float(e.quantile(0.98) - e.quantile(0.02))
+    frac = float((s > 15).mean())
+    cls = ("INGREME" if relevo >= RELEVO_LOCAL_MIN_M and frac >= FRAC_GT15_MIN
+           else "PLANO_OU_ONDULADO")
+    return cls, {"relevo_local_p2p98_m": round(relevo, 1),
+                 "frac_gt15": round(frac, 4), "n_elev": len(e), "n_slope": len(s)}
+
+
+def sobrepor_terreno_harmonizado(d: pd.DataFrame) -> pd.DataFrame:
+    """Substitui as quatro de terreno pela cadeia wbt30 onde ela existir.
+
+    A coluna `cadeia_terreno` passa a wbt30 SO nas linhas em que as quatro
+    chegaram juntas. Linha com tres de wbt30 e uma de global seria a mistura
+    que a cadeia harmonizada existe para impedir.
+    """
+    # Tres origens de sobreposicao, porque sao tres granularidades de derivacao
+    # diferentes: o CEMS casa por AOI (ter02), o piloto ingles por raster unico
+    # (ter05) e o Nivel 1 por chip (ter06). Todas produzem as mesmas colunas
+    # `_wbt` chaveadas por ponto_id, entao concatenar aqui evita um redutor
+    # especial para cada uma.
+    base = HARM_TODAS if HARM_TODAS.exists() else HARM_SERRA
+    caminhos = [p for p in (base, HARM_UK, HARM_N1, HARM_CEMS_NOVAS, HARM_GFD)
+                if p.exists()]
+    d["cadeia_terreno"] = "global"
+    if not caminhos:
+        print(f"   AVISO: nenhuma sobreposicao harmonizada em {base.parent}")
+        return d
+    h = pd.concat([pd.read_csv(p, low_memory=False) for p in caminhos],
+                  ignore_index=True)
+    cols = {f: f"{f}_wbt" for f in VARIAVEIS_TERRENO if f"{f}_wbt" in h.columns}
+    if not cols or "ponto_id" not in h.columns:
+        print("   AVISO: sobreposicao sem colunas _wbt utilizaveis")
+        return d
+    origem = " + ".join(p.name for p in caminhos)
+    d = d.merge(h[["ponto_id", *cols.values()]].drop_duplicates("ponto_id"),
+                on="ponto_id", how="left")
+    completo = d[list(cols.values())].notna().all(axis=1)
+    for f, c in cols.items():
+        d.loc[completo, f] = d.loc[completo, c]
+    d.loc[completo, "cadeia_terreno"] = "wbt30"
+    d = d.drop(columns=list(cols.values()))
+    print(f"   terreno: {int(completo.sum()):,} wbt30 / "
+          f"{int((~completo).sum()):,} global  (de {origem})")
+    return d
+
+
+# --------------------------------------------------------------------------
+# redutores -- um por fonte, sem dependencia entre eles
+# --------------------------------------------------------------------------
+
+def _ds01(regiao_filtro) -> pd.DataFrame:
+    d = pd.read_csv(DS01, low_memory=False)
+    return d[regiao_filtro(d["regiao"])].copy()
+
+
+def reduzir_uk() -> tuple[pd.DataFrame, dict]:
+    d = _ds01(lambda r: r == "UK_noroeste")
+    if d.empty:
+        return pd.DataFrame(columns=COLUNAS), {"nota": "ds01 sem UK_noroeste"}
+    d = d.rename(columns={"rain_decay_index_api": "rain_decay_index"})
+    d["fonte"] = "uk"
+    d["aoi"] = "UK_noroeste_piloto"
+    d["procedencia"] = d["fonte_label"]
+    d["resolucao_nativa_m"] = 30.0
+    # O adaptador UK preserva a procedencia canonica; nunca inferir produto
+    # pelo simples fato de existir um valor.
+    if "fonte_chuva" not in d.columns:
+        d["fonte_chuva"] = "ausente"
+    d["nivel_negativo"] = nivel_negativo(d["classe"], "exclusao_qualificada")
+    d["unidade_agrupamento"] = "evento"
+    d["mecanismo"] = FLUVIAL
+    d = sobrepor_terreno_harmonizado(d)
+    d = sobrepor_chuva_era5(d)
+    cls, diag = relevo_dos_pontos(d["elevation_m"], d["slope_deg"])
+    d["classe_relevo"] = cls
+    d["classe_relevo_base"] = ("pontos_amostrados" if cls != "NAO_CLASSIFICADO"
+                               else "ausente")
+    return moldar(d), {"relevo": {"classe": cls, **diag}}
+
+
+def inicio_da_janela_gfd(d: pd.DataFrame) -> pd.DataFrame:
+    """Data de inicio da janela do evento GFD onde a linha nao tinha data.
+
+    Medido em 03/10/2026: as 521.726 linhas do GFD declaravam
+    `janela_do_evento` e 376.722 nao tinham `data_evento` -- os eventos da
+    lista ampliada, cuja data so existe no id do evento e no catalogo. O ds06
+    recuperava a janela por juncao, mas a tabela unica carregava procedencia
+    sem valor, e todo uso temporal sobre ela ficava bloqueado. A reconciliacao
+    e a mesma do `cortes_por_evento`, que o ds06 usa: uma regra, um lugar.
+    """
+    pontos = REPO / "local_runs" / "gfd-brasil" / "pontos_gfd_com_terreno.csv"
+    if not pontos.exists():
+        return d
+    sys.path.insert(0, str(REPO / "scripts" / "metodo"))
+    import cortes_por_evento as cortes
+    eventos = cortes.reconciliar(json.loads((cortes.GFD / "catalogo.json").read_text(encoding="utf-8")),
+                                 pd.read_csv(cortes.LISTA_AMPLIADA).to_dict("records"))
+    g = pd.read_csv(pontos, usecols=["ponto_id", "evento_gfd"]).drop_duplicates("ponto_id")
+    inicio = g.evento_gfd.map(lambda x: eventos.get(f"GFD:{int(x)}", {}).get("inicio")
+                              if pd.notna(x) else None)
+    mapa = dict(zip(g.ponto_id, inicio))
+    falta = d["data_evento"].isna()
+    achada = d.loc[falta, "ponto_id"].map(mapa)
+    achada = achada[achada.notna()]
+    d.loc[achada.index, "data_evento"] = achada
+    print(f"   inicio da janela GFD: {len(achada):,} linhas datadas pelo catalogo; "
+          f"{int(falta.sum()) - len(achada):,} seguem sem data")
+    return d
+
+
+def data_da_cena_do_produto(d: pd.DataFrame) -> pd.DataFrame:
+    """Data da cena que o analista do EMS desenhou, por AOI, onde faltava data.
+
+    Ate 03/10/2026 a data do CEMS so entrava pela juncao com a chuva ERA5
+    (`chuva04`), e ativacao que a chuva ainda nao cobria chegava SEM data:
+    15.571 linhas de 20 ativacoes. A data certa nao se herda nem se adivinha:
+    o `datas_de_imagem_do_ems` le do proprio produto a cena de cada AOI.
+
+    So preenche o que falta, e com procedencia propria (`cena_do_produto_ems`):
+    a data de ativacao que ja estava na linha continua declarada como tal.
+    AOI sem cena no produto fica sem data e `nao_declarada` -- o uso temporal
+    dela e bloqueado na admissao, e nao preenchido.
+    """
+    if not DATAS_CENA_EMS.exists():
+        print("   AVISO: datas de cena do EMS ausentes; rode datas_de_imagem_do_ems")
+        return d
+    r = json.loads(DATAS_CENA_EMS.read_text(encoding="utf-8"))
+    cena = {f"{ativ}_{aoi}": v.get("escolhida")
+            for ativ, aois in r.get("ativacoes", {}).items() for aoi, v in aois.items()}
+    falta = d["data_evento"].isna()
+    achada = d.loc[falta, "aoi"].map(cena)
+    achada = achada[achada.notna()]
+    d.loc[achada.index, "data_evento"] = achada
+    d.loc[achada.index, "precisao_data"] = "cena_do_produto_ems"
+    print(f"   data da cena do EMS: {len(achada):,} linhas preenchidas; "
+          f"{int(falta.sum()) - len(achada):,} seguem sem data")
+    return d
+
+
+def reduzir_cems() -> tuple[pd.DataFrame, dict]:
+    d = _ds01(lambda r: r.astype(str).str.startswith("analogo_EMSR"))
+    if d.empty:
+        return pd.DataFrame(columns=COLUNAS), {"nota": "ds01 sem ativacoes CEMS"}
+    d = d.rename(columns={"rain_decay_index_api": "rain_decay_index"})
+    d["fonte"] = "cems"
+    # no CEMS o grupo de validacao E a AOI: e onde o analista desenhou.
+    d["aoi"] = d["grupo_cv"].astype(str)
+    d["procedencia"] = "copernicus_ems_observado"
+    d["resolucao_nativa_m"] = pd.to_numeric(d["resolucao_m"], errors="coerce")
+    d["fonte_chuva"] = "ausente"
+    d["nivel_negativo"] = nivel_negativo(d["classe"], "observado")
+    d["unidade_agrupamento"] = "aoi"
+    d["mecanismo"] = FLUVIAL
+    d = sobrepor_terreno_harmonizado(d)
+    d = sobrepor_chuva_era5(d)
+    d = data_da_cena_do_produto(d)
+
+    d["classe_relevo"] = "NAO_CLASSIFICADO"
+    d["classe_relevo_base"] = "ausente"
+    diag: dict = {}
+    if RELEVO_AOI.exists():
+        rel = pd.read_csv(RELEVO_AOI)
+        mapa = dict(zip(rel["aoi"].astype(str), rel["classe_relevo"].astype(str)))
+        achou = d["aoi"].map(mapa)
+        d.loc[achou.notna(), "classe_relevo"] = achou[achou.notna()]
+        d.loc[achou.notna(), "classe_relevo_base"] = "janela_raster_cems03"
+        diag = {"aois_com_relevo": int(achou.notna().sum()),
+                "aois_sem_relevo": sorted(d.loc[achou.isna(), "aoi"].unique().tolist())[:10],
+                "por_classe": d["classe_relevo"].value_counts().to_dict()}
+    # O catalogo de relevo foi escrito uma vez, sobre as AOIs que existiam
+    # entao, e nenhum modulo o reescreve. Toda AOI amostrada depois dele caia
+    # em `NAO_CLASSIFICADO` -- que nao e uma medida, e a ausencia de uma -- e
+    # ficava FORA de qualquer estrato de relevo sem erro nenhum. Em 22/09 isso
+    # eram 15.766 pontos: as 21 AOIs das oito ativacoes novas e as 5 do
+    # EMSR720, que ja estava aderido.
+    #
+    # O criterio e o mesmo (relevo local p2-p98 >= 400 m e mais de 25% da area
+    # acima de 15 graus); o ESTIMADOR e outro -- amostra em vez de janela do
+    # raster --, e por isso `classe_relevo_base` diz qual, em vez de o valor
+    # fingir a mesma procedencia.
+    faltantes = sorted(d.loc[d["classe_relevo"] == "NAO_CLASSIFICADO",
+                             "aoi"].unique().tolist())
+    recuperadas: dict = {}
+    for aoi in faltantes:
+        linhas = d["aoi"] == aoi
+        cls, det = relevo_dos_pontos(d.loc[linhas, "elevation_m"],
+                                     d.loc[linhas, "slope_deg"])
+        if cls == "NAO_CLASSIFICADO":
+            recuperadas[aoi] = det
+            continue
+        d.loc[linhas, "classe_relevo"] = cls
+        d.loc[linhas, "classe_relevo_base"] = "pontos_amostrados"
+        recuperadas[aoi] = {"classe": cls, **det}
+    if faltantes:
+        diag["aois_classificadas_pela_amostra"] = recuperadas
+        diag["por_classe_final"] = d["classe_relevo"].value_counts().to_dict()
+        diag["por_base"] = d["classe_relevo_base"].value_counts().to_dict()
+    return moldar(d), {"relevo": diag}
+
+
+def reduzir_gfd() -> tuple[pd.DataFrame, dict]:
+    """Global Flood Database brasileiro, com terreno do `cadeia_em_lote`.
+
+    SEM ESTE REDUTOR O ZERO SERIA SILENCIOSO. O `ds04` itera `REDUTORES`, e
+    fonte sem redutor nao e lida -- os pontos ficariam no `ds01` e nunca
+    apareceriam no relatorio, que e o mesmo modo de falha que travou o RS um
+    nivel acima (`sobrepor_terreno_harmonizado` sem a tabela dele).
+
+    NEGATIVO POR OBSERVACAO, e o que autoriza e a banda `clear_views`: ela
+    conta observacoes limpas do MODIS, entao `flooded == 0 AND
+    clear_views > 0` e "foi olhado e nao tinha agua" -- o papel que o
+    `imageFootprint` tem no CEMS.
+
+    A UNIDADE DE AGRUPAMENTO E O TILE, e nao o evento nem a AOI. No CEMS o
+    grupo e a AOI porque e onde o analista desenhou; aqui nao houve analista
+    desenhando recorte, e o evento atravessa mil quilometros. O tile de 1 grau
+    e a unidade em que o terreno foi derivado, e e a unica fronteira com
+    significado fisico na fonte.
+
+    A RESOLUCAO NATIVA E 250 m, e ela vem do proprio ponto. Nao e a da cadeia
+    de terreno: a feature e de 30 m e a etiqueta e de 250 m, e o `ds03` tem
+    coluna para isso justamente para que a diferenca nao se perca.
+    """
+    d = _ds01(lambda r: r.astype(str).str.startswith("gfd_"))
+    if d.empty:
+        return pd.DataFrame(columns=COLUNAS), {
+            "nota": ("ds01 sem pontos gfd_*; rode cadeia_em_lote --baixar e "
+                     "depois gfd02_amostrar_terreno --gravar")}
+    d = d.rename(columns={"rain_decay_index_api": "rain_decay_index"})
+    d["fonte"] = "gfd"
+    d["aoi"] = d["grupo_cv"].astype(str)
+    d["procedencia"] = "global_flood_database_observado"
+    d["resolucao_nativa_m"] = pd.to_numeric(d["resolucao_m"], errors="coerce")
+    # A janela do GFD e 2000-2018 e a aquisicao de chuva do projeto nao cobre
+    # esse periodo nestes lugares. Ausente declarado, e nao zero.
+    d["fonte_chuva"] = "ausente"
+    # A extensao do GFD e o MAXIMO acumulado entre o inicio e o fim do evento:
+    # nenhum pixel tem instante proprio, e a data e a de inicio da janela.
+    # Declarar `registro_local` aqui fingiria precisao de dia.
+    d["precisao_data"] = "janela_do_evento"
+    d["nivel_negativo"] = nivel_negativo(d["classe"], "observado")
+    d["unidade_agrupamento"] = "tile"
+    # Cheia areal de rio detectada por sensor optico: o mecanismo e o mesmo do
+    # CEMS. MODIS nao ve alagamento urbano raso sob dossel ou edificacao, entao
+    # esta fonte NAO fala do pluvial -- e e por isso que ela nao o resolve.
+    d["mecanismo"] = FLUVIAL
+    d = sobrepor_terreno_harmonizado(d)
+    d = sobrepor_chuva_era5(d)
+    d = inicio_da_janela_gfd(d)
+
+    d["classe_relevo"] = "NAO_CLASSIFICADO"
+    d["classe_relevo_base"] = "ausente"
+    diag: dict = {}
+    if not d.empty:
+        # Mesmo criterio do cems03, aplicado por TILE: um tile de 1 grau pode
+        # ser planicie e outro serra, e classificar a fonte inteira de uma vez
+        # apagaria a diferenca que decide qual modelo servido se aplica.
+        por_tile = {}
+        for tile, sub in d.groupby("aoi"):
+            classe, medidas = relevo_dos_pontos(sub["elevation_m"],
+                                                sub["slope_deg"])
+            d.loc[d["aoi"] == tile, "classe_relevo"] = classe
+            # `pontos_amostrados` e o termo do dominio em `ds03`; escrito aqui
+            # como `amostra_dos_pontos`, o GFD inteiro -- 116.480 linhas --
+            # aparecia como violacao de contrato em toda execucao do `ds05`, e
+            # qualquer consumidor que filtrasse pelo enum o descartava
+            d.loc[d["aoi"] == tile, "classe_relevo_base"] = "pontos_amostrados"
+            por_tile[str(tile)] = {"classe": classe, **medidas}
+        diag = {"tiles": len(por_tile), "por_tile": por_tile,
+                "por_classe": d["classe_relevo"].value_counts().to_dict()}
+        d, diag["por_ponto"] = relevo_na_janela_do_ponto(d)
+    return moldar(d), {"relevo": diag}
+
+
+def relevo_na_janela_do_ponto(d: pd.DataFrame) -> tuple[pd.DataFrame, dict]:
+    """Reclassifica o relevo do GFD ponto a ponto, onde a janela foi medida.
+
+    O criterio e o MESMO (`RELEVO_LOCAL_MIN_M` e `FRAC_GT15_MIN`); muda o
+    estimador, e por isso a base muda para `janela_raster_por_ponto`. A
+    classificacao por tile continua calculada acima e fica no diagnostico:
+    quem quiser comparar os dois estimadores tem os dois lado a lado.
+
+    Ponto sem janela medida -- `gfd02` anterior a 30/09/2026, ou janela com
+    menos de metade de dado valido -- fica com a classe do tile, e a base
+    continua `pontos_amostrados`: nao se inventa relevo onde nao se mediu.
+    """
+    caminho = RUNS / "gfd-brasil" / "pontos_gfd_com_terreno.csv"
+    colunas = ["ponto_id", "relevo_local_janela_m", "frac_gt15_janela"]
+    if not caminho.exists():
+        return d, {"nota": "pontos_gfd_com_terreno ausente"}
+    cab = pd.read_csv(caminho, nrows=0).columns
+    if not set(colunas) <= set(cab):
+        return d, {"nota": "gfd02 sem janela de relevo; rode gfd02 --gravar"}
+    j = pd.read_csv(caminho, usecols=colunas).drop_duplicates("ponto_id")
+    antes = d["classe_relevo"].value_counts().to_dict()
+    d = d.merge(j, on="ponto_id", how="left")
+    medida = d.relevo_local_janela_m.notna() & d.frac_gt15_janela.notna()
+    ingreme = ((d.relevo_local_janela_m >= RELEVO_LOCAL_MIN_M)
+               & (d.frac_gt15_janela >= FRAC_GT15_MIN))
+    d.loc[medida, "classe_relevo"] = np.where(
+        ingreme[medida], "INGREME", "PLANO_OU_ONDULADO")
+    d.loc[medida, "classe_relevo_base"] = "janela_raster_por_ponto"
+    d = d.drop(columns=["relevo_local_janela_m", "frac_gt15_janela"])
+    return d, {"estimador": "janela_raster_por_ponto",
+               "pontos_medidos": int(medida.sum()),
+               "pontos_sem_janela": int((~medida).sum()),
+               "por_classe_antes": antes,
+               "por_classe_depois": d["classe_relevo"].value_counts().to_dict()}
+
+
+def _reduzir_nivel1(regiao: str, fonte: str, mecanismo: str,
+                    ) -> tuple[pd.DataFrame, dict]:
+    d = _ds01(lambda r: r == regiao)
+    if d.empty:
+        return pd.DataFrame(columns=COLUNAS), {"nota": f"ds01 sem {regiao}"}
+    d = d.rename(columns={"rain_decay_index_api": "rain_decay_index"})
+    d["fonte"] = fonte
+    d["procedencia"] = d["fonte_label"]
+    d["resolucao_nativa_m"] = pd.to_numeric(d["resolucao_m"], errors="coerce")
+    d["fonte_chuva"] = "ausente"
+    d["nivel_negativo"] = nivel_negativo(d["classe"], "observado")
+    d["unidade_agrupamento"] = "chip"
+    d["mecanismo"] = mecanismo
+    d = sobrepor_terreno_harmonizado(d)
+    d = sobrepor_chuva_era5(d)
+
+    # A AOI destas fontes e o CHIP -- o recorte que foi efetivamente rotulado.
+    # O `grupo_cv` continua sendo o evento (pais no Sen1Floods11), porque a
+    # unidade de validacao cruzada e outra coisa: 446 chips dariam um bloqueio
+    # espacial muito mais frouxo que 11 paises. O esquema separa as duas
+    # justamente para nao ter que escolher uma so.
+    d["aoi"] = d["grupo_cv"].astype(str)
+    diag: dict = {}
+    if HARM_N1.exists():
+        h = pd.read_csv(HARM_N1, low_memory=False)
+        if {"ponto_id", "chip"} <= set(h.columns):
+            mapa = dict(zip(h["ponto_id"].astype(str), h["chip"].astype(str)))
+            achou = d["ponto_id"].astype(str).map(mapa)
+            d.loc[achou.notna(), "aoi"] = achou[achou.notna()]
+            diag["aoi_por_chip"] = int(achou.notna().sum())
+
+    # O relevo era NAO_CLASSIFICADO porque nao havia declividade. Com a cadeia
+    # de 30 m derivada por chip (ter06) a declividade existe, e o criterio do
+    # cems03 volta a ser aplicavel -- agora sobre os pontos amostrados, que e
+    # um estimador diferente do da janela de raster e por isso fica marcado.
+    d["classe_relevo"] = "NAO_CLASSIFICADO"
+    d["classe_relevo_base"] = "ausente"
+    por_chip = {}
+    for chip, s in d.groupby("aoi"):
+        cls, det = relevo_dos_pontos(s["elevation_m"], s["slope_deg"])
+        por_chip[str(chip)] = cls
+        if cls != "NAO_CLASSIFICADO":
+            d.loc[d["aoi"] == chip, "classe_relevo"] = cls
+            d.loc[d["aoi"] == chip, "classe_relevo_base"] = "pontos_amostrados"
+    diag["relevo"] = {"chips": len(por_chip),
+                      "por_classe": pd.Series(por_chip).value_counts().to_dict()}
+    return moldar(d), diag
+
+
+def reduzir_sen1floods11():
+    return _reduzir_nivel1("nivel1_sen1floods11_handlabeled",
+                           "sen1floods11", FLUVIAL)
+
+
+UFO_VISIBILIDADE = RUNS / "ufo-02-negativos-visiveis" / "visibilidade_por_ponto.csv"
+
+
+def reduzir_ufo():
+    """UFO com o zero cujo chao nao era visivel rebaixado a SEM_DADO.
+
+    O produtor define nao-inundado como "todo o resto, inclusive nuvem"
+    (arXiv 2604.23066). Medido em 03/10/2026 no proprio chip: 10 dos 12.900
+    zeros do projeto caem em nuvem (7) ou sem dado (3). Poucos, mas nenhum
+    deles foi visto -- e zero nao visto e desconhecido, nao seco.
+    """
+    d, diag = _reduzir_nivel1("nivel1_ufo_urban_flood_observations", "ufo", MISTO)
+    if UFO_VISIBILIDADE.exists() and not d.empty:
+        vis = pd.read_csv(UFO_VISIBILIDADE)
+        invisivel = set(vis.loc[~vis.chao_visivel.astype(bool), "ponto_id"])
+        m = d.ponto_id.isin(invisivel) & (d.classe == 0)
+        d.loc[m, "classe"] = -1
+        d.loc[m, "classe_nome"] = CLASSE[-1]
+        d.loc[m, "nivel_negativo"] = "nao_aplicavel"
+        diag = {**(diag or {}), "zeros_sem_chao_visivel_rebaixados": int(m.sum())}
+        print(f"   ufo: {int(m.sum())} zeros sem chao visivel viraram SEM_DADO")
+    return d, diag
+
+
+def _reduzir_brasil(nome: str, cfg: dict, sufixo_terreno: str,
+                    cadeia: str) -> tuple[pd.DataFrame, dict]:
+    p = (RECIFE_COM_CHUVA if nome == "recife" and RECIFE_COM_CHUVA.exists()
+         else HARM_BR / f"{nome}_harmonizado.csv")
+    if not p.exists():
+        return pd.DataFrame(columns=COLUNAS), {"nota": f"{p.name} ausente; rode ter03"}
+    b = pd.read_csv(p, low_memory=False)
+
+    d = pd.DataFrame(index=b.index)
+    # O identificador da fonte NAO e unico em Curitiba: 150 `point_id` aparecem
+    # duas vezes, mesma coordenada, mesma unidade de observacao, mesmo rotulo --
+    # a pseudo-replicacao ja conhecida do SIAC 156. O contrato exige ponto_id
+    # unico, entao a repeticao ganha ordinal em vez de ser deduplicada aqui:
+    # descartar linha e decisao de admissao, e admissao e do ds05.
+    bruto = b["point_id"].astype(str)
+    n_repetidos = int(bruto.duplicated().sum())
+    ordinal = bruto.groupby(bruto).cumcount()
+    d["ponto_id"] = (f"{nome}__" + bruto
+                     + np.where(ordinal > 0, "#" + ordinal.astype(str), ""))
+    d["fonte"] = nome
+    d["aoi"] = cfg["aoi"]
+    d["classe"] = pd.to_numeric(b["label"], errors="coerce").astype("Int64")
+    d["grupo_cv"] = b[cfg["grupo"]].astype(str)
+    d["unidade_agrupamento"] = cfg["unidade"]
+    d["resolucao_nativa_m"] = cfg["resolucao_nativa_m"]
+    d["cadeia_terreno"] = cadeia
+    d["mecanismo"] = cfg["mecanismo"]
+    d["classe_relevo"] = cfg["classe_relevo"]
+    d["classe_relevo_base"] = "declarada"
+    d["lat"] = b["lat"]
+    d["lon"] = b["lon"]
+    d["data_evento"] = b.get("event_date")
+
+    # procedencia carrega o rotulo de origem EXATO, para nada se perder na
+    # traducao: e por ele que se reencontra a linha no pipeline da fonte.
+    origem = b.get("negative_source_type")
+    papel = b.get("dataset_role_source")
+    d["procedencia"] = np.where(
+        d["classe"] == 0,
+        origem.fillna("negativo_sem_tipo_declarado") if origem is not None
+        else "negativo_sem_tipo_declarado",
+        papel.fillna(cfg["procedencia_positivo"]) if papel is not None
+        else cfg["procedencia_positivo"])
+    d["nivel_negativo"] = nivel_negativo(d["classe"], cfg["nivel_negativo"])
+
+    for alvo, col in zip(VARIAVEIS_TERRENO, cfg["colunas_terreno"]):
+        d[alvo] = pd.to_numeric(b[col], errors="coerce") if col in b.columns else np.nan
+    d["rain_max_24h"] = pd.to_numeric(b.get("rain_max_24h_chirps"), errors="coerce")
+    d["rain_decay_index"] = pd.to_numeric(
+        b.get("rain_decay_index_api_chirps"), errors="coerce")
+    src = b.get("rain_data_source")
+    d["fonte_chuva"] = (src.map(MAPA_FONTE_CHUVA).fillna("ausente")
+                        if src is not None else "ausente")
+
+    d = sobrepor_nivel_negativo(d)
+
+    diag = {"n": int(len(d)), "grupos": int(d["grupo_cv"].nunique()),
+            "point_id_repetido_na_origem": n_repetidos,
+            "fonte_chuva": d["fonte_chuva"].value_counts().to_dict(),
+            "nivel_negativo": d["nivel_negativo"].value_counts().to_dict()}
+    if len(d["fonte_chuva"].unique()) > 1:
+        diag["ALERTA"] = ("mais de uma fonte de chuva na mesma fonte de dados; "
+                          "ver aud_chuva01")
+    return moldar(d), diag
+
+
+# RECIFE A 30 M -- reversao declarada da decisao de 12/08/2026.
+#
+# Aquela decisao dizia "a resolucao segue o mecanismo": Recife ficaria a 10 m
+# porque e pluvial e la o terreno nao e o mecanismo. O argumento continua
+# valido no que ele afirmava, e ainda assim a escolha muda, por uma razao que
+# nao e sobre Recife: uma base de conhecimento replicavel nao pode ter duas
+# resolucoes convivendo, porque a coluna `hand_m` passa a significar coisas
+# diferentes conforme a linha -- que e exatamente o erro que esta cadeia toda
+# existe para eliminar.
+#
+# O CUSTO ESTA MEDIDO e nao e pequeno onde incide (ter03):
+#     elevation_m  pearson 0,970   razao 1,156
+#     hand_m       pearson 0,928   razao 1,824
+#     slope_deg    pearson 0,518   razao 2,72   <- mediana 7,20 -> 2,65 graus
+#     twi_dinf     pearson 0,293   razao 0,703
+#
+# A troca so e aceitavel porque as duas variaveis que se perdem sao as duas que
+# o modelo pluvial de Recife declaradamente nao usa: HAND tem coeficiente
+# -0,0001 com p = 0,978 no v12, e o preditor la e a chuva. Perde-se detalhe de
+# microtopografia numa regiao onde a microtopografia nunca entrou no ajuste.
+#
+# A versao de 10 m NAO e descartada: sai em `recife__variante_nativa_10m.csv`,
+# no mesmo esquema, para quem precisar do detalhe fino ou quiser medir o que a
+# harmonizacao custou. O que muda e qual das duas e a canonica.
+CFG_RECIFE = {
+    "aoi": "recife_rmr",
+    "grupo": "point_id",
+    "unidade": "ponto",
+    # a observacao continua sendo de 10 m; o que passa a 30 m e a DERIVACAO de
+    # terreno. Sao coisas diferentes e a coluna registra a primeira.
+    "resolucao_nativa_m": 10.0,
+    "mecanismo": PLUVIAL,
+    # planicie costeira; o proprio v12 registra terreno de 5 a 8 m sobre a
+    # drenagem. Declarada, nao medida por janela de raster.
+    "classe_relevo": "PLANO_OU_ONDULADO",
+    "procedencia_positivo": "sedec_recife_ocorrencia_v12",
+    # negativo do Protocolo C: nao ha registro da SEDEC naquele ponto. Isso e
+    # ausencia, e a hierarquia do ds01 e explicita em que ausencia nao entra
+    # como negativo observado.
+    "nivel_negativo": "ausencia",
+    "colunas_terreno": ["elevation_m_wbt30", "slope_deg_wbt30",
+                        "hand_m_dinf_wbt30", "twi_dinf_wbt30"],
+}
+
+# a cadeia de 10 m preservada como variante auditavel, nao descartada
+CFG_RECIFE_NATIVA_10M = {
+    **CFG_RECIFE,
+    "colunas_terreno": ["elevation_m", "slope_deg", "hand_m_dinf", "twi_dinf"],
+}
+
+CFG_CURITIBA = {
+    "aoi": "curitiba_amc",
+    "grupo": "observation_unit_key",
+    "unidade": "unidade_observacao",
+    "resolucao_nativa_m": 10.0,
+    # Era FLUVIAL ate 03/10/2026. "Ocorrencia hidrologica" do 156 nao separa
+    # rio de galeria, e o HAND saiu nulo: o instrumento so sustenta MISTO.
+    # Ver `contrato_do_fenomeno.INSTRUMENTOS["curitiba"]`.
+    "mecanismo": MISTO,
+    # planalto: relevo local ~100 m contra 1.152 m de Petropolis (cems03)
+    "classe_relevo": "PLANO_OU_ONDULADO",
+    "procedencia_positivo": "siac156_curitiba_ocorrencia_hidrologica",
+    "nivel_negativo": "ausencia",
+    "colunas_terreno": ["elevation_m_wbt30", "slope_deg_wbt30",
+                        "hand_m_dinf_wbt30", "twi_dinf_wbt30"],
+}
+
+
+def reduzir_recife():
+    return _reduzir_brasil("recife", CFG_RECIFE, "_wbt30", "wbt30")
+
+
+def reduzir_recife_variante_nativa_10m():
+    return _reduzir_brasil("recife", CFG_RECIFE_NATIVA_10M, "", "nativa_10m")
+
+
+def reduzir_curitiba():
+    return _reduzir_brasil("curitiba", CFG_CURITIBA, "_wbt30", "wbt30")
+
+
+def _reduzir_chamados(regiao: str, fonte: str) -> tuple[pd.DataFrame, dict]:
+    """Central de atendimento ao cidadao, ja promovida por `aq_chamados03`.
+
+    Diferente das outras fontes, esta NAO passa por `sobrepor_terreno_
+    harmonizado`: o terreno ja veio derivado pela cadeia canonica sobre o MDT
+    da propria cidade, e sobrepor buscaria numa tabela onde a cidade nao
+    existe, zerando tudo em silencio.
+
+    O mecanismo e PLUVIAL_URBANO e nao fluvial. "Street flooding", "sewer
+    backup", alagamento e boca de lobo sao agua da chuva excedendo a drenagem,
+    e nao canal subindo -- o mesmo mecanismo de Recife. Somar ao conjunto
+    fluvial assumiria um processo gerador unico, que e o erro que o `svc01` ja
+    evita ao dar modelo proprio a Recife.
+
+    O negativo e `ausencia`: chamado de outro assunto da oportunidade de
+    observacao, mas ninguem foi ver se havia agua.
+    """
+    d = _ds01(lambda r: r == regiao)
+    if d.empty:
+        return pd.DataFrame(columns=COLUNAS), {"nota": f"ds01 sem {regiao}"}
+    d = d.rename(columns={"rain_decay_index_api": "rain_decay_index"})
+    d["fonte"] = fonte
+    d["procedencia"] = d["fonte_label"]
+    d["resolucao_nativa_m"] = pd.to_numeric(d["resolucao_m"], errors="coerce")
+    d["fonte_chuva"] = "ausente"
+    d["nivel_negativo"] = nivel_negativo(d["classe"], "ausencia")
+    # O grupo_cv destas fontes e `<regiao>_<data>`: a unidade e o dia.
+    d["unidade_agrupamento"] = "dia"
+    d["mecanismo"] = PLUVIAL
+    d["aoi"] = regiao
+    # o terreno destas fontes veio do `aq_chamados04`, que chama o mesmo
+    # `_derivar_terreno` do servico: e a cadeia canonica, e nao um produto
+    # global reamostrado
+    d["cadeia_terreno"] = "wbt30"
+    cls, det = relevo_dos_pontos(d["elevation_m"], d["slope_deg"])
+    d["classe_relevo"] = cls
+    d["classe_relevo_base"] = "pontos_amostrados"
+    d = sobrepor_chuva_era5(d)
+    return moldar(d), {"n": int(len(d)), "relevo": cls, "detalhe_relevo": det,
+                       "grupos": int(d["grupo_cv"].nunique())}
+
+
+def reduzir_nyc():
+    return _reduzir_chamados("nyc", "nyc")
+
+
+def reduzir_sao_paulo():
+    return _reduzir_chamados("sao_paulo", "sao_paulo")
+
+
+def reduzir_chicago():
+    # Promovida pelo `aq_chicago04`, que reusa o portao da janela do
+    # `aq_chamados03`: AUC de um preditor que so conhece o dia = 0,5878 contra
+    # o limiar 0,70, com as duas classes nos 2.438 dias. E o mesmo desenho de
+    # central de atendimento -- positivo por tipo declarado, fundo de outro
+    # assunto, grupo = dia --, entao reduz pelo mesmo caminho.
+    return _reduzir_chamados("chicago", "chicago")
+
+
+REDUTORES = {
+    "uk": reduzir_uk,
+    "cems": reduzir_cems,
+    "gfd": reduzir_gfd,
+    "sen1floods11": reduzir_sen1floods11,
+    "ufo": reduzir_ufo,
+    "recife": reduzir_recife,
+    "curitiba": reduzir_curitiba,
+    "nyc": reduzir_nyc,
+    "sao_paulo": reduzir_sao_paulo,
+    "chicago": reduzir_chicago,
+}
+
+# nao entram na tabela unica; existem para auditoria e para medir o que a
+# harmonizacao custou em cada regiao
+VARIANTES = {"recife__variante_nativa_10m": reduzir_recife_variante_nativa_10m}
+
+# fonte conhecida, sem nenhum ponto. Fica no relatorio para que a ausencia
+# seja um numero e nao um esquecimento.
+SEM_PONTOS = {
+    "petropolis": ("tem derivacao de terreno no ter01 e nenhum ponto rotulado "
+                   "(N=0, susc_20h); serra tropical umida, mecanismo fluvial/"
+                   "enxurrada declarado"),
+    # Medido em 12/09/2026 por `cems01_pacote_areal --ativacao EMSR702`:
+    #   produtos: areaOfInterestA 12, imageFootprintA 785, observedEventA 0
+    #   aoi 2031,1050 km2 | area_observada 2031,1044 km2
+    #   positivo_inundacao 0,0000 km2 | negativo_observado 2031,1044 km2
+    # O pacote esta baixado e as datas de imagem estao resolvidas: a ausencia
+    # nao e de aquisicao. O CEMS mapeou area afetada de ciclone e nao delineou
+    # lamina, entao nao ha classe positiva -- e fonte sem positivo desloca a
+    # prevalencia sem trazer contraste.
+    "cems_emsr702": ("Tropical Cyclone LOLA (Vanuatu/Solomon, 2023-10-24): "
+                     "pacote baixado, datas resolvidas e observedEventA=0, "
+                     "logo positivo_inundacao=0 km2 contra 2031,10 km2 de "
+                     "negativo observado; entra como ausencia declarada e nao "
+                     "como lacuna de aquisicao"),
+}
+
+
+def main() -> int:
+    args = sys.argv[1:]
+    alvo = args[args.index("--fonte") + 1] if "--fonte" in args else None
+    OUT.mkdir(parents=True, exist_ok=True)
+    print(f"===DS04_REDUZIR_POR_FONTE=== esquema={VERSAO}")
+
+    if not DS01.exists():
+        print(f"ABORTADO: {DS01} ausente. Rode ds01.")
+        return 1
+
+    relatorio: dict = {
+        # `esquema` nao e nome de tipo para o coletor; sem `tipo` este
+        # relatorio fica invisivel para a aquisicao autonoma.
+        "tipo": "relatorio_de_reducao_por_fonte",
+        "esquema": VERSAO, "fontes": {}, "sem_pontos": SEM_PONTOS,
+        "nao_e": ("nao e admissao: quem decide o que entra na tabela "
+                  "unica e o ds05; aqui so se traduz cada fonte para o "
+                  "esquema"),
+    }
+    for nome, fn in {**REDUTORES, **VARIANTES}.items():
+        if alvo and nome != alvo:
+            continue
+        print(f"\n[{nome}]")
+        d, diag = fn()
+        if d.empty:
+            print(f"   VAZIO -- {diag.get('nota', 'sem motivo declarado')}")
+            relatorio["fontes"][nome] = {"n": 0, **diag}
+            continue
+        d.to_csv(OUT / f"{nome}.csv", index=False)
+        info = {
+            "n": int(len(d)),
+            "grupos": int(d["grupo_cv"].nunique()),
+            "classes": {CLASSE.get(k, k): int(v) for k, v in
+                        d["classe"].value_counts().items()},
+            "nivel_negativo": d["nivel_negativo"].value_counts().to_dict(),
+            "cadeia_terreno": d["cadeia_terreno"].value_counts().to_dict(),
+            "fonte_chuva": d["fonte_chuva"].value_counts().to_dict(),
+            "classe_relevo": d["classe_relevo"].value_counts().to_dict(),
+            "terreno_completo": int(d[list(VARIAVEIS_TERRENO)].notna().all(axis=1).sum()),
+            "com_chuva": int(d["rain_max_24h"].notna().sum()),
+            **diag,
+        }
+        relatorio["fontes"][nome] = info
+        print(f"   n={info['n']:,} grupos={info['grupos']:,} "
+              f"terreno_completo={info['terreno_completo']:,} "
+              f"com_chuva={info['com_chuva']:,}")
+        print(f"   classes={info['classes']} negativo={info['nivel_negativo']}")
+        print(f"   cadeia={info['cadeia_terreno']} relevo={info['classe_relevo']}")
+
+    for nome, motivo in SEM_PONTOS.items():
+        print(f"\n[{nome}] N=0 -- {motivo}")
+
+    (OUT / "relatorio_reducao.json").write_text(
+        json.dumps(relatorio, indent=2, ensure_ascii=False, default=str),
+        encoding="utf-8")
+    print(f"\nGRAVADO={OUT}")
+    print("===END===")
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

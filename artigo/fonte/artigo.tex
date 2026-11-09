@@ -1,0 +1,442 @@
+\documentclass[conference]{IEEEtran}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[brazilian]{babel}
+\usepackage{graphicx,booktabs,array,tabularx}
+\usepackage{amsmath,amssymb,cite,url,etoolbox}
+\usepackage[hidelinks]{hyperref}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\setlength{\emergencystretch}{1em}
+\renewcommand{\IEEEkeywordsname}{Palavras-chave}
+\AtBeginEnvironment{thebibliography}{\renewcommand{\footnotesize}{\fontsize{6.7}{7.6}\selectfont}}
+\makeatletter
+\def\section{\@startsection{section}{1}{\z@}{1.7ex plus .4ex minus .2ex}{0.5ex plus .2ex}{\normalfont\normalsize\centering\scshape}}
+\def\subsection{\@startsection{subsection}{2}{\z@}{1.5ex plus .4ex minus .2ex}{0.4ex plus .2ex}{\normalfont\normalsize\itshape}}
+\makeatother
+\AtBeginEnvironment{table}{\renewcommand{\arraystretch}{0.92}}
+\AtBeginEnvironment{table*}{\renewcommand{\arraystretch}{0.92}}
+\setlength{\abovecaptionskip}{1pt}
+\setlength{\belowcaptionskip}{1pt}
+\title{\fontsize{16}{19}\selectfont REV-P: transferência de conhecimento físico por IA geoespacial para análise de suscetibilidade em territórios brasileiros com pouca referência local}
+\author{\IEEEauthorblockN{Gabriela Sofia, Bárbara Borges, Nicole Guarnieri e Rafaella Guerra}
+\IEEEauthorblockA{Bacharelado em Ciência da Computação -- Pontifícia Universidade Católica do Paraná (PUCPR)\\
+\{gabriela.milani, barbara.borges, nicole.guarnieri, rafaella.guerra\}@pucpr.edu.br}}
+\setlength{\textfloatsep}{5pt plus 2pt minus 1pt}
+\setlength{\dbltextfloatsep}{5pt plus 2pt minus 1pt}
+\setlength{\floatsep}{5pt plus 2pt minus 2pt}
+\setlength{\dblfloatsep}{5pt plus 2pt minus 2pt}
+
+% Blocos não flutuantes: apresentação e tabela permanecem na mesma coluna.
+\makeatletter
+\newenvironment{resulttable}[2]{%
+  \par\smallskip\begingroup\centering\def\@captype{table}%
+  \caption{#1}\label{#2}\scriptsize
+  \setlength{\tabcolsep}{2pt}\renewcommand{\arraystretch}{0.94}%
+}{\par\endgroup}
+\makeatother
+\newenvironment{resultblock}{%
+  \par\addvspace{4pt}\noindent\begin{minipage}{\columnwidth}%
+  \setlength{\parindent}{1em}%
+}{\end{minipage}\par\addvspace{4pt}}
+
+\hypersetup{pdftitle={REV-P - v16 - resultados organizados},pdfauthor={Gabriela Sofia, Barbara Borges, Nicole Guarnieri e Rafaella Guerra}}
+\begin{document}
+\raggedbottom
+\maketitle
+\begin{abstract}
+Uma IA só aprende com o que foi observado, e as comunidades que mais precisam de análise costumam ficar de fora: quando o Reconhecimento de Evidências Verificáveis para Predição (REV-P) reuniu seu primeiro acervo, só uma das 12.348 Favelas e Comunidades Urbanas (FCU) brasileiras tinha água observada. Este trabalho apresenta a ferramenta e o método que nasceram dessa falta: relações físicas aprendidas em cheias documentadas seguem, sem rótulo local, para seis territórios brasileiros, com respostas que mostram a conta e as fontes. Sob protocolo congelado, em 30 componentes independentes, a relação superou a regra HAND em 0,055 de AUC [0,024; 0,086]; ajustada só fora do Brasil, ordenou a água nas FCU com AUC de 0,81 a 0,92 e, na coorte inteira, superou o HAND em quatro de cinco destinos e alcançou 0,669, contra 0,595, nas ruas de Recife com relato. Um modelo próprio de encosta chegou a 0,660 em Petrópolis, e exemplos locais acrescentaram 0,052 no entorno de Porto Alegre. As FCU com água observada passaram de 1 para 123, e a lacuna agora tem denominador.
+\end{abstract}
+\begin{IEEEkeywords}
+Suscetibilidade a inundações; transferência de conhecimento; IA geoespacial; evidências verificáveis; territórios vulnerabilizados.
+\end{IEEEkeywords}
+
+%======================================================================
+% INTRODUÇÃO
+%======================================================================
+\section{Introdução}
+Uma enchente é, ao mesmo tempo, um fenômeno físico e um acontecimento na vida de alguém: a água segue o relevo, mas o que ela leva embora depende de quem mora no caminho \cite{cutter,adger}. No Brasil, essa pergunta leva às 12.348 Favelas e Comunidades Urbanas (FCU), onde vivem cerca de 16,4 milhões de pessoas e cuja identificação pelo próprio IBGE tem, entre seus critérios, a localização em áreas de risco ambiental \cite{ibge}. Quando este projeto reuniu seu primeiro acervo, apenas uma dessas comunidades tinha água observada, e nenhuma reunia lugares com e sem água para aprender ou conferir algo ali.
+
+Essa falta pesa duas vezes: socialmente, porque uma inteligência artificial só aprende com o que foi registrado, e quem nunca entrou no registro tende a não entrar na resposta; cientificamente, porque levar um modelo a lugares que ele nunca viu continua entre os maiores desafios do aprendizado aplicado a cheias \cite{bentivoglio}, e modelos guiados só por dados podem se apoiar em correlações espúrias e super-representar as regiões mais ricas em dados \cite{zhu}. Esperar que cada comunidade acumule os próprios registros seria aceitar que ela só possa ser analisada depois de inundar muitas vezes.
+
+O Reconhecimento de Evidências Verificáveis para Predição (REV-P) parte de outra possibilidade: como a água responde ao terreno segundo as mesmas leis em qualquer lugar, aquilo que se aprende onde o fenômeno foi bem observado pode carregar conhecimento para onde ele nunca foi. A ideia tem história, pois a hidrologia já a aplicou a bacias sem monitoramento \cite{kratzertw,nearing}, a suscetibilidade urbana a bacias com poucos dados \cite{zhao} e o mapeamento por satélite a regimes hidroclimáticos distintos \cite{ratte}, enquanto a exposição desigual das favelas do Sul Global já foi medida \cite{lislum}. O que precisava ser conferido no Brasil é se esse conhecimento alcança as próprias comunidades. Por isso, o projeto aprendeu com 59 cheias de fora do Brasil e foi verificar o que permanecia de pé em seis territórios: Recife e sua região metropolitana, Manaus, o entorno de Porto Alegre, Curitiba e as encostas de Petrópolis, onde o processo é outro. Os dados sociais acompanham essa leitura sem entrar na conta física, porque a renda de um bairro ajuda a entender quem enfrenta a água, mas não explica por onde ela corre.
+
+A pergunta que guia o trabalho é: \textbf{como uma IA geoespacial auditável pode aprender mecanismos transferíveis de suscetibilidade urbana a enchentes, a partir de evidências físicas, observacionais, sociais e científicas, e levá-los a territórios brasileiros com pouca referência local, preservando limites de validação?} A contribuição é a própria ferramenta e o método que a sustenta: um percurso verificável que qualifica as observações, aprende relações físicas fora do Brasil, leva esse conhecimento sem rótulo local a territórios que somam 1.708 FCU e cerca de 2,78 milhões de moradores, confere o que chegou a cada um, só aprende mais quando há exemplos suficientes e, quando a evidência não basta, diz isso em vez de preencher o vazio com um número.
+
+%======================================================================
+% MÉTODO DA FERRAMENTA
+%======================================================================
+\section{Método da ferramenta}
+O percurso começa pelo material: só depois de curado ele descreve um lugar, ensina um modelo e confere o que chegou ao destino (Fig.~\ref{fig:metodo}).
+
+\begin{figure}[!t]\centering
+\includegraphics[width=0.72\columnwidth]{figuras/metodooododo.jpeg}
+\caption{Método do REV-P. (a) Pesos aprendidos na origem são aplicados aos atributos do destino. (b) Referências reservadas conferem o desempenho; novos exemplos permitem atualização candidata, acompanhada no destino e na origem. (c) Dados sociais e memória científica contextualizam a resposta. (d) A resposta reúne escore, explicação, fontes e condições de uso.}
+\label{fig:metodo}\end{figure}
+
+\subsection{Curadoria do material}
+A curadoria organiza e confere o material antes de admitir uma afirmação. A primeira entrega aplicou esse critério a 59 recortes de Recife, Petrópolis e Curitiba; o escopo atual abrange as cheias de origem e seis destinos. Uma tabela de 1.641.356 observações registra papel (positivo, ausência observada, desconhecido ou água permanente) e uso: 763.155 linhas podem treinar e 513.530 sustentar afirmação. As referências externas são delineações CEMS \cite{cems}, rótulos manuais Sen1Floods11 a 10~m \cite{sen1}, urbanos UFO a 3~m \cite{ufo} e MODIS/GFD a 250~m \cite{tellman}. No Brasil, Sentinel-2 \cite{s2} fornece a referência de água, sem terreno nem predição; a malha IBGE identifica as comunidades. As cenas conservam a data real de aquisição: Sentinel-1 \cite{s1} mede retorno de micro-ondas por radar de abertura sintética (SAR), em VV e VH; Sentinel-2 registra luz refletida para composições e MNDWI \cite{xu} (Fig.~\ref{fig:imagens}). O terreno usa uma cadeia a 30~m, com a família do modelo de terreno (MDT) registrada: FABDEM \cite{fabdem} ou outro MDT, sem costurar famílias no mesmo ponto. O alvo é ordenar suscetibilidade em episódios observados, sem previsão datada nem profundidade.
+
+\begin{figure}[!t]\centering
+\includegraphics[width=\columnwidth]{figuras/fig_imagem_bandas.png}
+\caption{Fontes e produtos de imagem no recorte EMSR720-1-0, Muçum (RS), maio/2024. A colagem mostra o mesmo lugar em 13 camadas, e cada cartão traz a camada inteira; o recorte demonstra as camadas e não ajustou os pesos transferidos.}
+\label{fig:imagens}\end{figure}
+
+\subsection{Atributos}
+Origem e destino são descritos em células de cerca de 30~m $\times$ 30~m; a unidade \emph{rua-bairro} agrega por logradouro dentro do bairro. Do MDT saem declive e direção de escoamento D$\infty$ \cite{tarboton}, que define drenagem, HAND (altura acima da drenagem conectada) \cite{hand}, área de contribuição (terreno que escoa ao ponto) \cite{beven} e distâncias à drenagem e aos canais com contribuição $\geq$10~km$^2$. Fração construída GHSL \cite{ghsl} e areia SoilGrids \cite{soilgrids} completam os sete atributos; o declive mediano do recorte modula interações. A chuva, com célula de 0,1° cobrindo o recorte (Fig.~\ref{fig:imagens}n), atua como gatilho entre datas do mesmo lugar \cite{maclure}, fora do escore; nos relatos usa-se ERA5 diário \cite{era5}.
+
+\subsection{Referências e desenhos de teste}
+Cada referência exige um desenho de teste (Tabela~\ref{tab:desenho}). Na água, positivo é MNDWI $>$ 0 no evento e sem água antes; nuvem, sombra e falta de dado são desconhecidos; água permanente JRC \cite{jrc} é excluída. As imagens fornecem a referência; só a fração construída entra no escore. O terreno carrega o sinal: no recorte CEMS do RS, HAND mediano é 2,2~m na cheia e 61,2~m no seco.
+
+\noindent\begin{minipage}{\columnwidth}
+\begin{resulttable}{Três desenhos de teste, um para cada natureza de referência.}{tab:desenho}
+\setlength{\tabcolsep}{2pt}
+\begin{tabularx}{\columnwidth}{@{}l Y Y Y@{}}
+\toprule
+& Água nas coortes & Ruas de Recife & Encostas de Petrópolis\\\midrule
+Presença & água vista na cheia & rua com relato à Defesa Civil & cicatriz mapeada\\
+Comparação & ponto sem água na mesma cena & outras ruas do mesmo bairro & células de fundo\\
+Fonte & Sentinel-2; 697 positivos em FCU & SEDEC \cite{sedec}; 48 ruas em teste & INPE/Charter \cite{inpe}; 81 cicatrizes\\
+Modelo & versão externa completa & versão com reserva & modelo de encosta\\
+Pergunta & chega à mesma observação? & chega ao que os moradores registram? & o que muda com o processo?\\
+Cuidado & nuvem fica desconhecida & rua longa acumula relato; sem relato não é seco & fundo não comprova ausência\\\bottomrule
+\end{tabularx}
+\end{resulttable}\end{minipage}
+
+
+Os relatos de Recife alcançam momentos e escalas que a órbita pode perder \cite{lee}. Registram presença relatada, sem comprovar chão seco nas demais ruas \cite{li}; por isso a comparação usa o fundo do mesmo bairro, sujeito às condições locais de notificação \cite{phillips}.
+
+\subsection{Aprendizado e transferência}
+O núcleo físico aprende a relação transferida; as redes percebem água no radar. O núcleo usa 36.331 pontos de 59 cheias (CEMS 16.633, UFO 11.698, Sen1Floods11 8.000), em 43 unidades por evento e sub-bacia \cite{lehner}. A regressão logística regularizada dá peso igual aos eventos, dividido entre as classes; interceptos por cena absorvem suas particularidades \cite{prentice}. O escore é \mbox{$s_i=\sum_j\beta_jx_{ij}+\sum_{(j,k)\in\mathcal I}\gamma_{jk}x_{ij}x_{ik}$}: $x_{ij}$ é o atributo transformado e padronizado, $\beta_j$ seu peso e $\gamma_{jk}$ o peso da interação.
+
+As versões conservam estimador e atributos e mudam dados e regularização. A \emph{externa completa} usa 43 unidades; a \emph{com reserva}, 29 no ajuste, quatro para estimar respostas problemáticas, quatro para calibrar recusa e seis para retenção. O \emph{núcleo congelado} usa 91.446 linhas com eventos brasileiros. O núcleo transferido só usa atributos calculáveis por coordenada; o ensaio geral da origem acrescenta elevação local medida na amostra \cite{kaufman}. Transferir preserva pesos e padronização e descarta interceptos de cena \cite{gelman}. Processos são separados \cite{merz}: o modelo de encosta é outra logística, com sete atributos FABDEM a 30~m, ajustada no Idai, Zimbábue, 2019 \cite{dille}, com AUC 0,885 em 13 blocos retidos de 10~km.
+
+O radar observa a superfície durante a cheia, inclusive sob nuvens; a suscetibilidade permanece no núcleo físico (Fig.~\ref{fig:aprendizado}). O pré-treino reconstrói trechos ocultos \cite{mae}, com erro só onde há leitura válida: no SAR, blocos de $16\times16$ pixels VV/VH são ocultados com probabilidade de 75\%; no terreno, 32 de 64 blocos de cinco canais são ocultados. Um encoder resume o terreno em 128 dimensões para reconhecer lugares distantes do aprendido. A U-Net de três níveis \cite{unet}, com o encoder do pré-treino, segmenta água em 446 chips manuais de $512\times512$ pixels (90 em teste), excluindo água permanente e desconhecido da perda; Otsu \cite{otsu} compara nos mesmos chips. A variante SAR--terreno soma topografia; a fusão com máscara responde sem radar, e a confiança calibra a recusa na validação. Na sequência de eventos, LwF \cite{lwf} busca preservar respostas anteriores e replay guarda chips antigos; pares datados antes/depois \cite{geoid} ampliam desenvolvimento e avaliação.
+
+\begin{figure}[!t]\centering
+\includegraphics[width=\columnwidth]{figuras/fig_treino_mascarado.png}
+\caption{Entradas e alvos de aprendizado no mesmo recorte. As máscaras demonstram o procedimento: o pré-treino SAR usa Sen1Floods11, e os pesos transferidos são ajustados fora do Brasil.}
+\label{fig:aprendizado}\end{figure}
+
+\subsection{Avaliação, atualização e resposta territorial}
+A avaliação confere se positivos recebem escores maiores que comparadores. A AUC \cite{fawcett} resume a chance dessa ordenação em um par ao acaso: 0,5 equivale a sortear e 1 a ordenar sem erro. O ganho é a diferença de AUC contra regras de uma variável \cite{gulrajani}; HAND foi escolhido na origem (0,738, contra 0,703 do declive). Intervalos usam 2.000 reamostragens de grupos territoriais inteiros \cite{roberts}; menos de 20 positivos ou 10 grupos positivos torna o estrato descritivo. Hipótese, regra e população registradas antes da leitura definem protocolo congelado. AUC não é acurácia de mapa: a população não é amostra probabilística \cite{wadoux}.
+
+Nos efeitos do HAND, sinal negativo indica menos água em posições mais altas. Em diferenças modelo--regra, positivo favorece o modelo quando o intervalo exclui zero. Na retirada de atributos, negativo indica perda; na retenção, custo do novo aprendizado. Contribuições locais explicam a conta, sem representar efeito causal.
+
+A atualização candidata $s_i^{(B)}=s_i^{(0)}+r_B(\boldsymbol x_i)$ soma correção local regularizada ao escore externo. As $B$ consultas vêm por margem (proximidade do percentil 80 dos postos) ou sorteio; o ajuste exige cinco positivos, cinco negativos e três grupos positivos. Ganho no destino $G_B$ e retenção na origem $T_B$ são diferenças de AUC contra o externo \cite{lopezpaz}. A resposta reúne escore, contribuições, fontes, versão e suporte: maior suscetibilidade, menor com suporte ou evidência insuficiente (baixa margem). Dados sociais contextualizam população e enfrentamento, fora do escore; a memória científica recupera fontes e um verificador confere a frase.
+
+%======================================================================
+% RESULTADOS
+%======================================================================
+\begin{resultblock}
+\section{Resultados}
+\subsection{O conhecimento físico aprendido na origem}
+O aprendizado acrescentou informação à regra HAND e aos pesos iguais (Tabela~\ref{tab:origem}). Nas 43 unidades deixadas fora uma por vez, acumulação foi o bloco cuja retirada mais prejudicou; diversidade territorial ajudou até saturar. HAND e canal mantiveram direção entre instrumentos e vizinhos \cite{peters}, com intensidade própria de cada lugar; para HAND sustentam-se sinal e magnitude, para canal só o sinal.
+
+Os pesos explicitam essa relação, e os testes congelados e em reserva a verificam com modelos e direções próprios. Árvores com reforço superaram a logística em lugares vistos, mas não demonstraram vantagem em território novo; nenhuma família externa superou o núcleo com intervalo nas FCU. Os coeficientes descrevem o estimador, sem identificar efeitos causais isolados.
+
+\begin{resulttable}{Aprendizado físico, pesos e verificação na origem.}{tab:origem}
+\par\smallskip\noindent\textit{(a) O que foi aprendido fora de cada unidade retida}\par
+\begin{tabularx}{\linewidth}{@{}Y L{4.5cm}@{}}
+\toprule
+Medida & Resultado\\\midrule
+Geral $-$ HAND, 43 unidades retidas & +0,039 de AUC [0,026; 0,054]; 33 a favor\\
+Geral $-$ pesos iguais & +0,018 [0,010; 0,026]\\
+Sem o bloco de acumulação & $-$0,064 [$-$0,080; $-$0,048]; perda em 39\\
+Sem a fonte do destino & $-$0,0015 [$-$0,0035; 0,0001]\\
+AUC fluvial, costeira, urbana mista & 0,765, 0,813 e 0,807\\
+Am. do Sul sem rótulo sul-americano & 0,768\\
+De 3 para 42 territórios no treino & 0,749 $\to$ 0,777; satura com a diversidade\\
+Sinal de HAND por território & negativo em 25 de 27; varia cerca de 6 vezes\\
+HAND no evento, 331.492 pontos$^{a}$ & $-$1,13 [$-$1,31; $-$0,96]; 4 famílias de sensor\\
+HAND em pares a até 3~km$^{a}$ & $-$1,27 [$-$1,48; $-$1,05]\\
+HAND de 0,5~m a 10~m ou mais$^{a}$ & monotônico, $-$0,68 a $-$2,63\\
+HAND em área construída$^{a}$ & $-$0,55; sinal mantido nas 6 coberturas\\
+Corte de 75\% dos negativos, HAND & $-$0,03 [$-$0,09; 0,03] no peso\\
+Árvores $-$ logística & lugar visto: +0,040; 15/16; $p<$0,001; lugar novo: 8/16\\\bottomrule
+\end{tabularx}
+\par\smallskip\noindent\textit{(b) Pesos do núcleo transferido}\par
+\begin{tabularx}{\linewidth}{@{}Y r r Y r r@{}}
+\toprule
+Atributo & Completa & Reserva & Atributo & Completa & Reserva\\\midrule
+HAND (log) & $-$0,981 & $-$0,904 & Areia & $-$0,051 & $-$0,202\\
+Distância ao canal & $-$0,429 & $-$0,433 & Contribuição (log) & +0,043 & +0,085\\
+Declive & $-$0,312 & $-$0,274 & Distância à drenagem & +0,030 & +0,055\\
+Fração construída & $-$0,210 & $-$0,170 &  & & \\\bottomrule
+\end{tabularx}
+\par\smallskip\noindent\textit{(c) Protocolos congelados ou em reserva}\par
+\begin{tabularx}{\linewidth}{@{}L{1.5cm} Y@{}}
+\toprule
+Unidades & Resultado\\\midrule
+30 GFD$^{b}$  &  núcleo $-$ HAND: \textbf{+0,055} [0,024; 0,086]\\
+Mesmos 30$^{b}$  &  com $-$ sem conexão: \textbf{+0,030} [0,006; 0,053]\\
+10 CEMS  &  com $-$ sem conexão: \textbf{+0,017} [0,005; 0,030]\\
+16 cheias$^{c}$  &  logística $-$ HAND: \textbf{+0,041}; 13/16; $p$=0,011\\\bottomrule
+\end{tabularx}
+\par\smallskip\raggedright $\beta$: peso; completa: 43 unidades, reserva: 29. $^{a}$Log da razão de chances por desvio-padrão. $^{b}$GFD: IC98,33\%, ajuste brasileiro, teste externo; 32 componentes reduzidos a 30 por reparo. $^{c}$16 cheias sul-americanas fora do Brasil, treino quase todo brasileiro. Demais IC95\%; ensaios distintos.
+\end{resulttable}
+\end{resultblock}
+
+\begin{resultblock}
+\subsection{Transferência para a água nos destinos brasileiros}
+Sem ajuste local, a versão externa completa alcançou AUC de 0,809 a 0,920 nas FCU com suporte (Tabela~\ref{tab:transferencia}). Superou HAND nas FCU de Manaus, Recife e RMR e, na coorte inteira, também na RMPA, onde o declive ordena melhor. A RMC só supera o declive; suas FCU têm resultado descritivo. Em Manaus, Recife e RMR, a AUC nas FCU supera a do comparador urbano.
+
+Embaralhar rótulos derruba a ordenação; cobertura e solo acrescentam em Recife e RMR; outro sensor concorda com os positivos da RMPA \cite{ufrgs}. Árvores externas na RMR e os destinos Porto Velho e Itacoatiara têm protocolos próprios; os dois últimos alcançam 0,890 e 0,882, ainda descritivos pelo suporte.
+
+\begin{resulttable}{Transferência para água observada nos destinos brasileiros.}{tab:transferencia}
+\par\smallskip\noindent\textit{(a) Pontos nas Favelas e Comunidades Urbanas (FCU)}\par
+\begin{tabularx}{\linewidth}{@{}L{0.79cm}r L{2.1cm}Y r@{}}
+\toprule
+Destino & Pos. (com.) & AUC [IC95\%] & $-$HAND [IC95\%] & $-$declive\\\midrule
+RMPA & 241 (17) & 0,880 [0,828; 0,923] & +0,040 [$-$0,002; 0,091] & $-$0,030\\
+Manaus & 48 (10) & 0,920 [0,791; 0,967] & \textbf{+0,046} [0,020; 0,069] & \textbf{+0,111}\\
+RMC & 11 (4)$^\dagger$ & 0,893$^\dagger$ & +0,067$^\dagger$ & +0,195$^\dagger$\\
+Recife & 31 (19) & 0,866 [0,777; 0,935] & \textbf{+0,064} [0,012; 0,125] & \textbf{+0,151}\\
+RMR & 366 (35) & 0,809 [0,721; 0,866] & \textbf{+0,116} [0,069; 0,145] & \textbf{+0,093}\\\bottomrule
+\end{tabularx}
+\par\smallskip\noindent\textit{(b) Coorte inteira e estratos sociais: AUC}\par
+\begin{tabularx}{\linewidth}{@{}L{0.79cm}r r Y r r r@{}}
+\toprule
+Destino & Pos. & AUC & $-$HAND [IC95\%] & $-$declive & BR & Comp.\\\midrule
+RMPA & 6.117 & 0,905 & \textbf{+0,016} [0,005; 0,025] & $-$0,017 & 0,884 & 0,907\\
+Manaus & 215 & 0,791 & \textbf{+0,036} [0,000; 0,061] & \textbf{+0,105} & 0,528$^\dagger$ & 0,804\\
+RMC & 883 & 0,811 & +0,006 [$-$0,012; 0,018] & \textbf{+0,056} & 0,634$^\dagger$ & 0,812\\
+Recife & 448 & 0,781 & \textbf{+0,043} [0,019; 0,068] & \textbf{+0,087} & 0,844 & 0,739\\
+RMR & 2.882 & 0,775 & \textbf{+0,085} [0,055; 0,106] & \textbf{+0,069} & 0,770 & 0,748\\\bottomrule
+\end{tabularx}
+\par\smallskip\noindent\textit{(c) Controles e outros ensaios territoriais}\par
+\begin{tabularx}{\linewidth}{@{}L{2.05cm}Y@{}}
+\toprule
+Verificação & Resultado\\\midrule
+Rótulos permutados & a ordenação cai de 0,30 a 0,63: vem do aprendido\\
+Cobertura, solo (FCU) & Recife +0,108 [0,045; 0,174]; RMR +0,141 [0,068; 0,170]\\
+Outro sensor & 99\% dos positivos da RMPA na mancha Planet/SkySat \cite{ufrgs}\\
+14 municípios$^{c}$ & árvores $-$ HAND: \textbf{+0,021} [0,000; 0,034]; alcança o não rotulado\\
+Dois novos$^{d}$ & AUC em FCU: 0,890 e 0,882; lugar nunca examinado\\\bottomrule
+\end{tabularx}
+\par\smallskip\raggedright Sentinel-2: RMPA 05/2024; Manaus 06/2021; RMC 11/2023; Recife e RMR 05/2022. RMR exclui Recife, mesmo episódio. (a,b): versão completa externa, desenvolvimento. Pos.: positivos; com.: comunidades; BR: baixa renda; Comp.: comparador. $^\dagger$Suporte insuficiente; negrito: vantagem sustentada. $^{c}$Árvores externas na RMR, IC98,75\%. $^{d}$Porto Velho e Itacoatiara: 14 e 19 positivos; descritivo. Controles de (c) têm protocolos próprios.
+\end{resulttable}
+\end{resultblock}
+
+\begin{resultblock}
+\subsection{Recife: relatos e explicação da resposta nas ruas}
+Nas ruas, a versão com reserva alcançou 0,669 contra 0,595 do HAND (Tabela~\ref{tab:relatos}). Ruas relatadas são mais longas, mas o escore quase não acompanha a extensão; entre tamanhos parecidos, a vantagem sobre HAND fica inconclusiva. Em Estância, HAND e canal contribuem mais na Rua Muriti que na Avenida Recife: o terreno produz a nota, e os relatos a conferem.
+
+Relatos e satélite se complementam: 16 dos 71 bairros com registro só aparecem pelos relatos, sem validar uma fonte pela outra. A chuva acompanha a ocorrência como gatilho; a cobertura distingue comunidades cobertas, relatadas e efetivamente avaliadas.
+
+\begin{resulttable}{Recife: relatos, controles e explicação em duas ruas.}{tab:relatos}
+\par\smallskip\noindent\textit{(a) Teste no bairro, fontes e alcance territorial}\par
+\begin{tabularx}{\linewidth}{@{}Y L{4.6cm}@{}}
+\toprule
+Medida & Resultado\\\midrule
+Da fonte à unidade & 1.648 relatos, 2014--2024 $\to$ 420 até a rua $\to$ 96 unidades em 38 bairros $\to$ 48 em teste\\
+População de teste & 48 ruas com relato em 19 bairros; 2.225 ruas; 42\% das relatadas no quintil superior (HAND: 31\%)\\
+Núcleo, AUC no bairro & 0,669 [0,564; 0,775]\\
+HAND, AUC no bairro & 0,595 [0,491; 0,711]\\
+Vantagem no teste & núcleo $-$ HAND: \textbf{+0,074} [0,012; 0,159]\\
+Extensão da rua & mediana de 556~m contra 154~m; AUC 0,743\\
+Escore $\times$ extensão, no bairro & $\rho$=0,03\\
+Núcleo $-$ HAND, pareado$^{a}$ & +0,058 [$-$0,024; 0,177]; +0,011 [$-$0,053; 0,086]\\
+Com relato, com e sem satélite$^{b}$ & 19 e 16 bairros\\
+Sem relato, com e sem satélite$^{b}$ & 36 e 23; razão de chances 0,76; $p$=0,67\\
+Chuva por 10~mm, 1.372 relatos$^{c}$ & dia 1,31 [1,07; 4,63]; 48~h 1,46 [1,20; 2,73]; controle 0,78 [0,51; 1,06]\\
+Recife, 295 FCU & 228 cobertas; 74 com rua relatada; 33 avaliadas (50.198 moradores)\\\bottomrule
+\end{tabularx}
+\par\smallskip\noindent\textit{(b) Contribuições ao escore em Estância}\par
+\begin{tabularx}{\linewidth}{@{}Y r r@{}}
+\toprule
+Atributo & R. Muriti & Av. Recife\\\midrule
+HAND (log) & +0,751 & +0,204\\
+Distância ao canal & +0,853 & +0,093\\
+Declive & +0,272 & +0,123\\
+Fração construída & $-$0,525 & $-$0,406\\
+Areia & +0,033 & +0,033\\
+Contribuição (log) & +0,129 & $-$0,013\\
+Distância à drenagem & $-$0,026 & +0,023\\
+Escore final & 1,487 & 0,057\\
+Relatos / ruas com escore abaixo & 3 / 72 de 74 & 4 / 12 de 74\\\bottomrule
+\end{tabularx}
+\par\smallskip\raggedright Versão com reserva; relatos só conferem. $^{a}$Razões de extensão até 1,5 e 2. $^{b}$94 bairros; S2 de 01/06/2022, 147 relatos de 28/05 a 07/06. $^{c}$Razão de taxas; controle: chuva 30 dias depois. (b): contribuições $\beta_jx_{ij}$; escore inclui interações, $|\gamma|\leq$0,027, não é probabilidade. Moradores: universo censitário.
+\end{resulttable}
+\end{resultblock}
+
+\begin{resultblock}
+\subsection{Petrópolis: o limite entre água e encosta}
+Nas 81 cicatrizes de fevereiro de 2022 \cite{alcantara}, o modelo de encosta aprendido no Idai supera o de água, sem vantagem demonstrada sobre declive (Tabela~\ref{tab:encosta}). Conhecimento externo e local supera aprender só localmente; endereços de dano \cite{geocart} pioram o ajuste, pois não localizam necessariamente a ruptura. Registro interno e proximidade são vínculos diferentes. Baixo escore de água não significa segurança de encosta.
+
+\begin{resulttable}{Petrópolis: processo, transferência e referências locais.}{tab:encosta}
+\par\smallskip\noindent\textit{Cicatrizes, atualização e vínculo com as comunidades}\par
+\begin{tabularx}{\linewidth}{@{}Y L{4.7cm}@{}}
+\toprule
+Medida & Resultado [IC95\%]\\\midrule
+Encosta (Idai), 81 cicatrizes & AUC 0,660 [0,593; 0,726]; $-$declive: +0,007; 12.170 células de fundo; 40\% no quintil superior\\
+Modelo de água, mesmas cicatrizes & AUC 0,375 [0,307; 0,445]\\
+Encosta $-$ água & \textbf{+0,286} [0,170; 0,396]\\
+Petrópolis, $B$=10: externo e local $-$ só local & \textbf{+0,222} [0,126; 0,307]\\
+Petrópolis, $B$=100: externo e local $-$ só local & \textbf{+0,126} [0,070; 0,180]\\
+Petrópolis, $B$=100, endereços de dano $-$ externo & $-$0,158 [$-$0,247; $-$0,065]\\
+Petrópolis, 42 FCU & registro interno de 5 para 20; 31 a até 100~m; 43.019 moradores\\\bottomrule
+\end{tabularx}
+\par\smallskip\raggedright $B$: consultas. Cicatrizes: INPE/Charter; fundo não comprova ausência. Sem vantagem demonstrada sobre declive. Registro interno e proximidade de 100 m são vínculos distintos; moradores não são atingidos confirmados.
+\end{resulttable}
+\end{resultblock}
+
+\begin{resultblock}
+\subsection{Atualização: ganho local e custo de retenção}
+No ciclo da RMPA, 400 consultas por margem elevaram a AUC nas FCU de 0,874 a 0,926, acima do sorteio nas seis repetições (Tabela~\ref{tab:atualizacao}). Nos ensaios de poucos rótulos, 25 consultas já mostram benefício do conhecimento externo. O contraste nas FCU da RMR é outro ensaio, com árvores externas.
+
+A atualização custa retenção na origem, e a memória não demonstra preservação integral. Em Manaus e na RMC, 400 consultas revelam até um positivo: o filtro conserva o núcleo e evita em Manaus a perda de 0,078. Ganho local, memória e retenção medem aspectos distintos do aprendizado.
+
+\begin{resulttable}{Atualização local: ganho, retenção e suporte.}{tab:atualizacao}
+\par\smallskip\noindent\textit{Ensaios de consulta e atualização}\par
+\begin{tabularx}{\linewidth}{@{}Y r@{}}
+\toprule
+Ensaio & Mudança na AUC [IC95\%]\\\midrule
+RMPA, FCU, $B$=400: margem $-$ congelado & \textbf{+0,052} [0,020; 0,101]; 6/6\\
+RMPA, FCU, $B$=400: sorteio $-$ congelado & \textbf{+0,029} [0,009; 0,062]; 6/6\\
+RMPA, FCU, $B$=400: margem $-$ sorteio & +0,023; 6/6\\
+RMPA, coorte, $B$=400: atualizado $-$ externo & \textbf{+0,021} [0,015; 0,026]\\
+RMPA, coorte, $B$=25: prior $-$ neutro & \textbf{+0,011} [0,001; 0,025]\\
+RMPA, coorte, $B$=25: prior $-$ permutado & \textbf{+0,020} [0,008; 0,037]\\
+Retenção externa, RMPA, margem: $T_B$ & $-$0,028 [$-$0,056; $-$0,006]\\
+RMPA, FCU, 3 destinos, memória de 200 & +0,017 [0,006; 0,027]\\
+FCU da RMR$^{c}$ & prior $-$ só local: \textbf{+0,026} [0,014; 0,049]\\\bottomrule
+\end{tabularx}
+\par\smallskip\raggedright $B$: consultas; 6/6: repetições do mesmo episódio. Retenção negativa: perda na origem. Ciclo, coorte e memória são ensaios distintos; não somar ganhos. $^{c}$RMR: árvores externas, mesmo episódio de Recife, IC98,75\%.
+\end{resulttable}
+\end{resultblock}
+
+\begin{resultblock}
+\subsection{Percepção da água e aprendizado nas redes}
+A percepção tem avaliação própria (Tabela~\ref{tab:percepcao}): a U-Net supera Otsu por pixel sem água permanente; a recusa melhora a sobreposição com menor cobertura. Radar, terreno e LwF têm seus contrastes. A diversidade do pré-treino melhora reconstrução, e a transferência à segmentação segue indecidível. Essas tarefas se distinguem da transferência do núcleo físico.
+
+\begin{resulttable}{Percepção de água e aprendizado nas redes.}{tab:percepcao}
+\par\smallskip\noindent\textit{Cada medida conserva sua tarefa}\par
+\begin{tabularx}{\linewidth}{@{}Y L{4.5cm}@{}}
+\toprule
+Capacidade e medida & Resultado\\\midrule
+U-Net $\times$ Otsu, IoU$^{a}$, 90 chips & 0,449 $\times$ 0,395, sem água permanente\\
+Recusa pela confiança & IoU 0,592, cobertura 0,556; AURC 0,560 $\times$ 0,684\\
+Radar e só terreno, 431 chips, AUC & 0,930--0,942 e 0,85--0,87\\
+LwF $-$ continuação, IoU & \textbf{+0,049} [0,029; 0,068]; 8/8\\
+Conjunto diverso de pré-treino & reconstrução: 6/6 sementes; $p$=0,031\\
+Pré-treino $\to$ segmentação & indecidível; 7/16 sementes\\\bottomrule
+\end{tabularx}
+\par\smallskip\raggedright IoU: sobreposição, maior é melhor; AURC: risco--cobertura, menor é melhor. $^{a}$Por pixel; Otsu vence nas outras três leituras. Chips: recortes. 6/6 e 8/8: repetições, não réplicas territoriais.
+\end{resulttable}
+\end{resultblock}
+
+\begin{resultblock}
+\subsection{Fontes, encaminhamento e reprodução da resposta}
+A busca densa lida com variações de palavras melhor que a lexical; a híbrida melhora a recuperação, e o verificador acrescenta acerto às regras nos casos avaliados (Tabela~\ref{tab:resposta}). A margem reduz positivos ditos de menor suscetibilidade à mesma cobertura. A conta é reproduzível; a resposta integrada recusa usos fora de escopo e detecta adulteração. Testes e hashes verificam funcionamento e rastreabilidade.
+
+\begin{resulttable}{Resposta: fontes, encaminhamento e rastreabilidade.}{tab:resposta}
+\par\smallskip\noindent\textit{(a) Recuperação e verificação de fontes}\par
+\begin{tabularx}{\linewidth}{@{}Y L{4.6cm}@{}}
+\toprule
+Capacidade e medida & Resultado\\\midrule
+Busca densa $\times$ lexical, 984 casos & 0,948 $\times$ 0,119; AURC 0,011 $\times$ 0,025\\
+Híbrida $\times$ lexical, 11.238 consultas & recall@5: 44,35\% $\times$ 36,65\%\\
+Juiz e regra $\times$ só regra, 18 casos & acurácia 0,722 $\times$ 0,444; falsos positivos 1 $\times$ 7\\\bottomrule
+\end{tabularx}
+\par\smallskip\noindent\textit{(b) Encaminhamento e reprodução}\par
+\begin{tabularx}{\linewidth}{@{}Y L{4.6cm}@{}}
+\toprule
+Capacidade e medida & Resultado\\\midrule
+Tranquilizadoras erradas$^{b}$ & FCU RMPA 0 $\times$ 35; FCU RMR 25 $\times$ 130; retenção 1.038 $\times$ 1.741\\
+Recusa estratificada, FCU da RMPA & cobertura 0,40 $\to$ 0,70; erro 0,295 $\times$ 0,290\\
+Escore reproduzido, 147.798 pontos & erro máximo 3,56$\times$10$^{-15}$\\
+Entrega local de 20/10; serviço & 2.747 testes; 922 fontes por hash; 5 portões; grade de 120~m\\\bottomrule
+\end{tabularx}
+\par\smallskip\raggedright $\times$: comparação; AURC menor é melhor. $^{b}$Margem $\times$ acaso a 70\% de cobertura; positivos ditos de menor suscetibilidade. Testes e hashes: funcionamento e rastreabilidade.
+\end{resulttable}
+\end{resultblock}
+
+\begin{resultblock}
+\subsection{Alcance social e lacuna de observação}
+O acervo passou de uma a 123 FCU com positivo; 119 têm as duas classes e 38 permitem avaliação individual (Tabela~\ref{tab:territorio}). A baixa renda da RMR e da RMPA tem menos referência válida. População e exposição contextualizam o território sem equivaler a atingidos nem alterar o escore. A revisão cega tem 480 pontos sem respostas; 0,075 a 0,021 é melhora do desenho amostral.
+
+\begin{resulttable}{Comunidades: alcance social e lacuna de observação.}{tab:territorio}
+\par\smallskip\noindent\textit{Universos, observabilidade e revisão pendente}\par
+\begin{tabularx}{\linewidth}{@{}L{2.15cm}Y@{}}
+\toprule
+Medida & Resultado\\\midrule
+Destinos brasileiros & 1.708 FCU; 2.776.821 moradores\\
+FCU, de 1.666 & de 1 para 123 positivas; 119 com duas classes; 38 com 5 e 5\\
+Observabilidade$^{a}$ & RMR 0,61 / 0,44 / 0,62; RMPA 0,95 / 0,78 / 0,90; Recife 0,82 / 0,90 / 0,91\\
+Medidas sociais & 9.186 setores; 7 componentes; EMSR720: 1.131 a 16.068\\
+Revisão cega, RMPA & 480 pontos, sem respostas ainda; desenho: desvio de 0,075 a 0,021\\\bottomrule
+\end{tabularx}
+\par\smallskip\raggedright Moradores: universo censitário, não atingidos. $^{a}$Referência S2 válida em FCU / baixa renda / comparador. 5 e 5: piso de avaliação individual. Exposição: faixa espacial exploratória pela grade, não IC nem atingidos.
+\end{resulttable}
+\end{resultblock}
+
+\section{Discussão}
+O REV-P contribui com uma ferramenta e um método que tornam verificável o percurso entre observação, aprendizado e resposta territorial. A curadoria define o que cada registro pode ensinar; o núcleo explicita as relações aprendidas e sua participação no escore; e a transferência leva esse conhecimento a comunidades com pouca referência local. Os resultados articulam evidência física e observação para produzir uma resposta que pode ser explicada, conferida e relacionada ao território.
+
+A contribuição científica também está em acompanhar o conhecimento ao mudar de lugar, de processo e de etapa de aprendizado. A relação entre terreno, drenagem e água permanece reconhecível nos destinos avaliados; a comparação com Petrópolis mostra a necessidade de representar o processo de encosta; e a atualização mede, em conjunto, o ganho local e a retenção anterior. Percepção orbital, memória de exemplos, recuperação de fontes e encaminhamento completam esse percurso com avaliações próprias, permitindo localizar a contribuição de cada capacidade na resposta integrada.
+
+Para as comunidades, o trabalho transforma a falta de registro em uma questão territorial mensurável. Ao distinguir cobertura, presença observada e suporte para avaliação, identifica quem já entrou na evidência e onde ainda falta observar. Os dados sociais dão contexto a essa distribuição, e a resposta auditável reúne escore, explicação, fontes e condições de uso. Essa articulação aproxima o conhecimento aprendido em cheias documentadas das perguntas de lugares que dispõem de poucos registros.
+
+\begin{resultblock}
+\section{Conclusão}
+Os resultados mostram como uma IA geoespacial auditável pode aprender relações físicas em cheias documentadas e transferi-las, sem ajuste local, aos territórios brasileiros avaliados. O REV-P concretiza esse caminho em um método de qualificação da evidência, aprendizado explicável, avaliação territorial e atualização acompanhada.
+
+A ferramenta reúne percepção da água, conhecimento físico, memória científica e contexto social em respostas com conta e fontes verificáveis. Sua contribuição é oferecer um ponto de partida fundamentado para comunidades com poucos registros e explicitar a observação necessária para aprofundar cada análise. Código e artefatos: \url{https://github.com/gabriela-sofia/flood_Audit-Service}.
+
+\end{resultblock}
+
+\begin{thebibliography}{99}
+\bibitem{cutter} S. L. Cutter, B. J. Boruff e W. L. Shirley, “Social vulnerability to environmental hazards,” \emph{Soc. Sci. Q.}, vol. 84, pp. 242--261, 2003.
+\bibitem{adger} W. N. Adger, “Vulnerability,” \emph{Global Environ. Change}, vol. 16, pp. 268--281, 2006.
+\bibitem{ibge} IBGE, \emph{Censo Demográfico 2022: Favelas e Comunidades Urbanas, resultados do universo}, 2a ed. Rio de Janeiro, 2025.
+\bibitem{bentivoglio} R. Bentivoglio, E. Isufi, S. N. Jonkman e R. Taormina, “Deep learning methods for flood mapping: a review of existing applications and future research directions,” \emph{Hydrol. Earth Syst. Sci.}, vol. 26, pp. 4345--4378, 2022.
+\bibitem{zhu} X. X. Zhu et al., “On the foundations of Earth foundation models,” \emph{Commun. Earth Environ.}, vol. 7, art. 103, 2026.
+\bibitem{kratzertw} F. Kratzert et al., “Toward improved predictions in ungauged basins: exploiting the power of machine learning,” \emph{Water Resour. Res.}, vol. 55, pp. 11344--11354, 2019.
+\bibitem{nearing} G. Nearing et al., “Global prediction of extreme floods in ungauged watersheds,” \emph{Nature}, vol. 627, pp. 559--563, 2024.
+\bibitem{zhao} G. Zhao et al., “Improving urban flood susceptibility mapping using transfer learning,” \emph{J. Hydrol.}, vol. 602, art. 126777, 2021.
+\bibitem{ratte} C. Ratté-Fortin, K. Chokmani e R. Turcotte, “A transferable deep learning framework for flood mapping: spatial generalization across hydro-climatic regimes using satellite imagery,” \emph{Int. J. Appl. Earth Obs. Geoinf.}, vol. 149, art. 105321, 2026.
+\bibitem{lislum} D. Li et al., “Disproportionate flood exposure for slum populations of the Global South,” \emph{Nat. Cities}, vol. 2, pp. 626--638, 2025.
+\bibitem{cems} Copernicus Emergency Management Service, \emph{Rapid Mapping: activations}, Comissão Europeia. \url{https://mapping.emergency.copernicus.eu/}
+\bibitem{sen1} D. Bonafilia et al., “Sen1Floods11: a georeferenced dataset to train and test deep learning flood algorithms for Sentinel-1,” in \emph{Proc. CVPR Workshops}, 2020, pp. 835--845.
+\bibitem{ufo} R. Mukherjee et al., “Urban Flood Observations: a hand-labeled training and validation dataset of post-flood inundation,” arXiv:2604.23066, 2026.
+\bibitem{tellman} B. Tellman et al., “Satellite imaging reveals increased proportion of population exposed to floods,” \emph{Nature}, vol. 596, pp. 80--86, 2021.
+\bibitem{s2} M. Drusch et al., “Sentinel-2: ESA's optical high-resolution mission for GMES operational services,” \emph{Remote Sens. Environ.}, vol. 120, pp. 25--36, 2012.
+\bibitem{s1} R. Torres et al., “GMES Sentinel-1 mission,” \emph{Remote Sens. Environ.}, vol. 120, pp. 9--24, 2012.
+\bibitem{xu} H. Xu, “Modification of normalised difference water index (NDWI) to enhance open water features in remotely sensed imagery,” \emph{Int. J. Remote Sens.}, vol. 27, pp. 3025--3033, 2006.
+\bibitem{fabdem} L. Hawker et al., “A 30 m global map of elevation with forests and buildings removed,” \emph{Environ. Res. Lett.}, vol. 17, art. 024016, 2022.
+\bibitem{tarboton} D. G. Tarboton, “A new method for the determination of flow directions and upslope areas in grid digital elevation models,” \emph{Water Resour. Res.}, vol. 33, pp. 309--319, 1997.
+\bibitem{hand} C. D. Rennó et al., “HAND, a new terrain descriptor using SRTM-DEM,” \emph{Remote Sens. Environ.}, vol. 112, pp. 3469--3481, 2008.
+\bibitem{beven} K. J. Beven e M. J. Kirkby, “A physically based, variable contributing area model of basin hydrology,” \emph{Hydrol. Sci. Bull.}, vol. 24, pp. 43--69, 1979.
+\bibitem{ghsl} M. Pesaresi, “GHS-BUILT-S R2023A: GHS built-up surface grid,” Comissão Europeia, JRC, 2023.
+\bibitem{soilgrids} L. Poggio et al., “SoilGrids 2.0: producing soil information for the globe with quantified spatial uncertainty,” \emph{SOIL}, vol. 7, pp. 217--240, 2021.
+\bibitem{maclure} M. Maclure, “The case-crossover design: a method for studying transient effects on the risk of acute events,” \emph{Am. J. Epidemiol.}, vol. 133, pp. 144--153, 1991.
+\bibitem{era5} H. Hersbach et al., “The ERA5 global reanalysis,” \emph{Q. J. R. Meteorol. Soc.}, vol. 146, pp. 1999--2049, 2020.
+\bibitem{jrc} J.-F. Pekel, A. Cottam, N. Gorelick e A. S. Belward, “High-resolution mapping of global surface water and its long-term changes,” \emph{Nature}, vol. 540, pp. 418--422, 2016.
+\bibitem{sedec} SEDEC Recife, \emph{Registro de atendimentos da Defesa Civil}, dados abertos. \url{https://dados.recife.pe.gov.br/dataset/registro-de-atendimentos-da-defesa-civil}
+\bibitem{inpe} INPE e International Charter Space and Major Disasters, \emph{Call 0864, Brazil RJ: componentes vetoriais de Petrópolis}, 2022. \url{https://data.inpe.br/charter/data/Call_0864_Brazil_RJ/Shapes/}
+\bibitem{lee} J. Lee et al., “Comparing multi-source urban flood indicators: satellite, simulation, and citizen-reported data,” \emph{Environ. Res.: Water}, vol. 1, art. 035007, 2025.
+\bibitem{li} W. Li et al., “A positive-unlabeled learning algorithm for urban flood susceptibility modeling,” \emph{Land}, vol. 11, art. 1971, 2022.
+\bibitem{phillips} S. J. Phillips et al., “Sample selection bias and presence-only distribution models: implications for background and pseudo-absence data,” \emph{Ecol. Appl.}, vol. 19, pp. 181--197, 2009.
+\bibitem{lehner} B. Lehner e G. Grill, “Global river hydrography and network routing: baseline data and new approaches to study the world's large river systems,” \emph{Hydrol. Process.}, vol. 27, pp. 2171--2186, 2013.
+\bibitem{prentice} R. L. Prentice e R. Pyke, “Logistic disease incidence models and case-control studies,” \emph{Biometrika}, vol. 66, pp. 403--411, 1979.
+\bibitem{kaufman} S. Kaufman, S. Rosset, C. Perlich e O. Stitelman, “Leakage in data mining,” \emph{ACM Trans. Knowl. Discov. Data}, vol. 6, pp. 1--21, 2012.
+\bibitem{gelman} A. Gelman e J. Hill, \emph{Data Analysis Using Regression and Multilevel/Hierarchical Models}. Cambridge Univ. Press, 2007.
+\bibitem{merz} R. Merz e G. Blöschl, “A process typology of regional floods,” \emph{Water Resour. Res.}, vol. 39, no. 12, 2003.
+\bibitem{dille} A. Dille et al., “Capturing the complete landslide--debris-rich flood continuum for accurate inventory, susceptibility and exposure mapping -- lessons from Cyclone Idai,” \emph{Nat. Hazards Earth Syst. Sci.}, vol. 26, pp. 2561--2577, 2026.
+\bibitem{mae} K. He et al., “Masked autoencoders are scalable vision learners,” in \emph{Proc. CVPR}, 2022, pp. 16000--16009.
+\bibitem{unet} O. Ronneberger, P. Fischer e T. Brox, “U-Net: convolutional networks for biomedical image segmentation,” in \emph{Proc. MICCAI}, 2015, pp. 234--241.
+\bibitem{otsu} N. Otsu, “A threshold selection method from gray-level histograms,” \emph{IEEE Trans. Syst., Man, Cybern.}, vol. 9, pp. 62--66, 1979.
+\bibitem{lwf} Z. Li e D. Hoiem, “Learning without forgetting,” \emph{IEEE Trans. Pattern Anal. Mach. Intell.}, vol. 40, pp. 2935--2947, 2018.
+\bibitem{geoid} G. Chiriaco et al., “GEOID-Flood: a large-scale multi-modal benchmark dataset for flood segmentation,” arXiv:2608.02315, 2026.
+\bibitem{fawcett} T. Fawcett, “An introduction to ROC analysis,” \emph{Pattern Recognit. Lett.}, vol. 27, pp. 861--874, 2006.
+\bibitem{gulrajani} I. Gulrajani e D. Lopez-Paz, “In search of lost domain generalization,” in \emph{Proc. ICLR}, 2021.
+\bibitem{roberts} D. R. Roberts et al., “Cross-validation strategies for data with temporal, spatial, hierarchical, or phylogenetic structure,” \emph{Ecography}, vol. 40, pp. 913--929, 2017.
+\bibitem{wadoux} A. M. J.-C. Wadoux, G. B. M. Heuvelink, S. de Bruin e D. J. Brus, “Spatial cross-validation is not the right way to evaluate map accuracy,” \emph{Ecol. Model.}, vol. 457, art. 109692, 2021.
+\bibitem{lopezpaz} D. Lopez-Paz e M. Ranzato, “Gradient episodic memory for continual learning,” in \emph{Proc. NeurIPS}, 2017.
+\bibitem{peters} J. Peters, P. Bühlmann e N. Meinshausen, “Causal inference by using invariant prediction: identification and confidence intervals,” \emph{J. R. Stat. Soc. B}, vol. 78, pp. 947--1012, 2016.
+\bibitem{ufrgs} I. Possantti et al., “Banco de dados das cheias na Região Hidrográfica do Lago Guaíba em maio de 2024,” Zenodo, 2025, doi:10.5281/zenodo.14617475.
+\bibitem{alcantara} E. Alcântara et al., “Deadly disasters in southeastern South America: flash floods and landslides of February 2022 in Petrópolis, Rio de Janeiro,” \emph{Nat. Hazards Earth Syst. Sci.}, vol. 23, pp. 1157--1175, 2023.
+\bibitem{geocart} UFRJ/GEOCART, \emph{Inventário histórico de deslizamentos}, camada do SIG municipal de Petrópolis. \url{https://sig.petropolis.rj.gov.br/sigpmp/}
+\end{thebibliography}
+\end{document}

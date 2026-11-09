@@ -1,0 +1,292 @@
+{
+  "tipo": "transferencia_vulnerabilizados:rmr_avaliacao/avaliacao",
+  "nao_e": "estudo de transferencia para territorios vulnerabilizados; nao e promocao de modelo, previsao de evento, profundidade, risco, dano, vitimas ou identificacao causal",
+  "gerado_por": "scripts/vulnerabilizados",
+  "quando_utc": "2026-10-20T20:06:47.096268+00:00",
+  "protocolo_sha256": "f9665d1cee8c6e1a50c8257bbce6277427a01e5f1522845c3bdbc6afbd350fbe",
+  "adendos": [
+    "protocolo_adendo_01.json",
+    "protocolo_adendo_02.json"
+  ],
+  "resultado_regra_original": "nao_testavel (referencia.json: sem cena pre admissivel)",
+  "referencia": "referencia_a02.parquet",
+  "resultados": {
+    "todas": {
+      "positivos": 2882,
+      "n": 67099,
+      "agrupamentos": 1992,
+      "agrupamentos_com_positivo": 282,
+      "contrastes": {
+        "C1": {
+          "a": "GBM_ext",
+          "b": "A0",
+          "auc_a": 0.7106655887015288,
+          "auc_b": 0.6898591485278538,
+          "diferenca": 0.020806440173675056,
+          "intervalo": [
+            0.000263779468017736,
+            0.03394160517906702
+          ],
+          "nivel": 0.9875,
+          "estado": "ganho"
+        },
+        "C2": {
+          "a": "A1_ctx7",
+          "b": "A1_log",
+          "auc_a": 0.7898921684010398,
+          "auc_b": 0.789838719335314,
+          "diferenca": 5.3449065725796885e-05,
+          "intervalo": [
+            -0.014164995430523684,
+            0.01649940919940583
+          ],
+          "nivel": 0.9875,
+          "estado": "inconclusivo"
+        },
+        "C3": {
+          "a": "A3_rmpa_fcu100",
+          "b": "A1_log",
+          "auc_a": 0.7889321546672452,
+          "auc_b": 0.789838719335314,
+          "diferenca": -0.0009065646680688211,
+          "intervalo": [
+            -0.014675326568297389,
+            0.020859208168668743
+          ],
+          "nivel": 0.9875,
+          "estado": "inconclusivo"
+        },
+        "C4": {
+          "a": "A3_rmpa_uni400",
+          "b": "A2e_rmpa_uni400",
+          "auc_a": 0.7887933826944352,
+          "auc_b": 0.778721475762205,
+          "diferenca": 0.010071906932230257,
+          "intervalo": [
+            0.004677794081382207,
+            0.015292854983092291
+          ],
+          "nivel": 0.9875,
+          "estado": "ganho"
+        }
+      },
+      "auc": {
+        "A0": 0.6898591485278538,
+        "A1_ctx7": 0.7898921684010398,
+        "A1_log": 0.789838719335314,
+        "A2e_rmpa_uni400": 0.778721475762205,
+        "A3_rmpa_fcu100": 0.7889321546672452,
+        "A3_rmpa_uni400": 0.7887933826944352,
+        "GBM_ext": 0.7106655887015288
+      }
+    },
+    "fcu": {
+      "positivos": 366,
+      "n": 14454,
+      "agrupamentos": 306,
+      "agrupamentos_com_positivo": 35,
+      "contrastes": {
+        "C1": {
+          "a": "GBM_ext",
+          "b": "A0",
+          "auc_a": 0.7371391922125717,
+          "auc_b": 0.6929236562993579,
+          "diferenca": 0.04421553591321381,
+          "intervalo": [
+            -0.012388122504272589,
+            0.05885222329789944
+          ],
+          "nivel": 0.95,
+          "estado": "inconclusivo"
+        },
+        "C2": {
+          "a": "A1_ctx7",
+          "b": "A1_log",
+          "auc_a": 0.8437820972311435,
+          "auc_b": 0.8643925923857222,
+          "diferenca": -0.02061049515457869,
+          "intervalo": [
+            -0.035650754430930305,
+            0.017638544707705928
+          ],
+          "nivel": 0.95,
+          "estado": "inconclusivo"
+        },
+        "C3": {
+          "a": "A3_rmpa_fcu100",
+          "b": "A1_log",
+          "auc_a": 0.8353945380015702,
+          "auc_b": 0.8643925923857222,
+          "diferenca": -0.02899805438415204,
+          "intervalo": [
+            -0.04460983295705322,
+            0.015960945275531244
+          ],
+          "nivel": 0.95,
+          "estado": "inconclusivo"
+        },
+        "C4": {
+          "a": "A3_rmpa_uni400",
+          "b": "A2e_rmpa_uni400",
+          "auc_a": 0.8230327403394122,
+          "auc_b": 0.7968280177991268,
+          "diferenca": 0.026204722540285386,
+          "intervalo": [
+            0.014408493667161638,
+            0.049325112528430706
+          ],
+          "nivel": 0.95,
+          "estado": "ganho_relevante"
+        }
+      },
+      "auc": {
+        "A0": 0.6929236562993579,
+        "A1_ctx7": 0.8437820972311435,
+        "A1_log": 0.8643925923857222,
+        "A2e_rmpa_uni400": 0.7968280177991268,
+        "A3_rmpa_fcu100": 0.8353945380015702,
+        "A3_rmpa_uni400": 0.8230327403394122,
+        "GBM_ext": 0.7371391922125717
+      }
+    },
+    "baixa_renda": {
+      "positivos": 1219,
+      "n": 34431,
+      "agrupamentos": 887,
+      "agrupamentos_com_positivo": 141,
+      "contrastes": {
+        "C1": {
+          "a": "GBM_ext",
+          "b": "A0",
+          "auc_a": 0.7165485566806902,
+          "auc_b": 0.7104155598898448,
+          "diferenca": 0.006132996790845335,
+          "intervalo": [
+            -0.009506959884103772,
+            0.016593809026840912
+          ],
+          "nivel": 0.95,
+          "estado": "inconclusivo"
+        },
+        "C2": {
+          "a": "A1_ctx7",
+          "b": "A1_log",
+          "auc_a": 0.7637082532510215,
+          "auc_b": 0.7540105911687534,
+          "diferenca": 0.009697662082268188,
+          "intervalo": [
+            -0.009703598426177282,
+            0.03089194498516153
+          ],
+          "nivel": 0.95,
+          "estado": "inconclusivo"
+        },
+        "C3": {
+          "a": "A3_rmpa_fcu100",
+          "b": "A1_log",
+          "auc_a": 0.774489021086797,
+          "auc_b": 0.7540105911687534,
+          "diferenca": 0.020478429918043606,
+          "intervalo": [
+            0.002916248531527928,
+            0.03924122769397665
+          ],
+          "nivel": 0.95,
+          "estado": "ganho"
+        },
+        "C4": {
+          "a": "A3_rmpa_uni400",
+          "b": "A2e_rmpa_uni400",
+          "auc_a": 0.7757320115277032,
+          "auc_b": 0.7754912582374083,
+          "diferenca": 0.0002407532902949372,
+          "intervalo": [
+            -0.005882207363289952,
+            0.004864007296529368
+          ],
+          "nivel": 0.95,
+          "estado": "inconclusivo"
+        }
+      },
+      "auc": {
+        "A0": 0.7104155598898448,
+        "A1_ctx7": 0.7637082532510215,
+        "A1_log": 0.7540105911687534,
+        "A2e_rmpa_uni400": 0.7754912582374083,
+        "A3_rmpa_fcu100": 0.774489021086797,
+        "A3_rmpa_uni400": 0.7757320115277032,
+        "GBM_ext": 0.7165485566806902
+      }
+    },
+    "comparador_urbano": {
+      "positivos": 1221,
+      "n": 17463,
+      "agrupamentos": 787,
+      "agrupamentos_com_positivo": 97,
+      "contrastes": {
+        "C1": {
+          "a": "GBM_ext",
+          "b": "A0",
+          "auc_a": 0.6695602729034572,
+          "auc_b": 0.6134409672459173,
+          "diferenca": 0.056119305657539864,
+          "intervalo": [
+            0.008948433275062504,
+            0.07261590662046163
+          ],
+          "nivel": 0.95,
+          "estado": "ganho"
+        },
+        "C2": {
+          "a": "A1_ctx7",
+          "b": "A1_log",
+          "auc_a": 0.7819211141154252,
+          "auc_b": 0.7906290866209595,
+          "diferenca": -0.008707972505534345,
+          "intervalo": [
+            -0.031980021911905916,
+            0.011112739219243203
+          ],
+          "nivel": 0.95,
+          "estado": "inconclusivo"
+        },
+        "C3": {
+          "a": "A3_rmpa_fcu100",
+          "b": "A1_log",
+          "auc_a": 0.7593631429058101,
+          "auc_b": 0.7906290866209595,
+          "diferenca": -0.03126594371514946,
+          "intervalo": [
+            -0.04883046745960328,
+            0.0032862190974885823
+          ],
+          "nivel": 0.95,
+          "estado": "inconclusivo"
+        },
+        "C4": {
+          "a": "A3_rmpa_uni400",
+          "b": "A2e_rmpa_uni400",
+          "auc_a": 0.7637692180544046,
+          "auc_b": 0.7352401852771265,
+          "diferenca": 0.02852903277727803,
+          "intervalo": [
+            0.01720820348593802,
+            0.038432435939724424
+          ],
+          "nivel": 0.95,
+          "estado": "ganho_relevante"
+        }
+      },
+      "auc": {
+        "A0": 0.6134409672459173,
+        "A1_ctx7": 0.7819211141154252,
+        "A1_log": 0.7906290866209595,
+        "A2e_rmpa_uni400": 0.7352401852771265,
+        "A3_rmpa_fcu100": 0.7593631429058101,
+        "A3_rmpa_uni400": 0.7637692180544046,
+        "GBM_ext": 0.6695602729034572
+      }
+    },
+    "fcu_macro_elegiveis_5x5": 6
+  }
+}

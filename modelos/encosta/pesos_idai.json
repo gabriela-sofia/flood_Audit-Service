@@ -1,0 +1,63 @@
+{
+  "intercepto": -0.46966116063954566,
+  "coef": [
+    1.3157014944428151,
+    0.861160193707524,
+    -0.2806626591181095,
+    0.23849848647055222,
+    -0.10557257407671715,
+    -0.7764870117463712,
+    -0.29834376770591253
+  ],
+  "convergiu": true,
+  "iteracoes": 19,
+  "objetivo": 9531.351967694609,
+  "mensagem": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+  "lambda": 100.0,
+  "beta0": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "selecao_lambda_dev_idai": [
+    {
+      "lambda": 0.01,
+      "AUC_dev": 0.8873033958920189,
+      "convergiu": true
+    },
+    {
+      "lambda": 0.1,
+      "AUC_dev": 0.8873096006767353,
+      "convergiu": true
+    },
+    {
+      "lambda": 1.0,
+      "AUC_dev": 0.8873705143159396,
+      "convergiu": true
+    },
+    {
+      "lambda": 10.0,
+      "AUC_dev": 0.8879101304319137,
+      "convergiu": true
+    },
+    {
+      "lambda": 100.0,
+      "AUC_dev": 0.89053695606472,
+      "convergiu": true
+    }
+  ],
+  "atributos": [
+    "decl_m3",
+    "decl_max5",
+    "curv_plan_m3",
+    "curv_perf_m3",
+    "logsca_m3",
+    "relevo7",
+    "tpi11"
+  ],
+  "fit_id": "A1_log"
+}
