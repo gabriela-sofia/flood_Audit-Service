@@ -9,6 +9,7 @@ Os nomes de arquivos e os importadores de origem foram preservados para manter a
 | [__init__.py](__init__.py) | Dependência necessária |
 | [adquirir_pares_geograficos.py](adquirir_pares_geograficos.py) | Dependência necessária |
 | [adquirir_pares_s1gfloods.py](adquirir_pares_s1gfloods.py) | Dependência necessária |
+| [analise_campanhas_11_10.py](analise_campanhas_11_10.py) | Entrada selecionada |
 | [analise_continuidade_v3.py](analise_continuidade_v3.py) | Entrada selecionada |
 | [aquisicao_apos_diagnostico.py](aquisicao_apos_diagnostico.py) | Dependência necessária |
 | [auditar_pares_geograficos.py](auditar_pares_geograficos.py) | Dependência necessária |
@@ -31,6 +32,7 @@ Os nomes de arquivos e os importadores de origem foram preservados para manter a
 | [pilha_s1_mesmo_lugar.py](pilha_s1_mesmo_lugar.py) | Dependência necessária |
 | [ponte_sar_terreno.py](ponte_sar_terreno.py) | Dependência necessária |
 | [pretreino_mascarado.py](pretreino_mascarado.py) | Entrada selecionada |
+| [pretreino_v2.py](pretreino_v2.py) | Entrada selecionada |
 | [relatorio_continuidade.py](relatorio_continuidade.py) | Dependência necessária |
 | [sar_obs01_pares_datados.py](sar_obs01_pares_datados.py) | Dependência necessária |
 | [substrato_multimodal.py](substrato_multimodal.py) | Dependência necessária |

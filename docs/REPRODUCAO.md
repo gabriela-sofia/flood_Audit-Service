@@ -48,7 +48,7 @@ Para criar o índice de consulta atual, a partir de `codigo/`:
 python scripts/servico/rag_corpus.py
 ```
 
-O índice é gerado em `codigo/local_runs/rag-corpus/` e deve ser recriado depois de mover a pasta. Essa indexação prepara a consulta; não repete os ensaios de 984 casos ou 11.238 consultas registrados na Tabela VIII. Os resultados desses ensaios permanecem vinculados às suas evidências datadas.
+O índice é gerado em `codigo/local_runs/rag-corpus/` para consultar a documentação atual. A avaliação da busca da Tabela VII usou um corpus de 3.813 trechos e 11.238 consultas sintéticas, registrado em seu [artefato de execução](../evidencias/08_resposta/evolucao-escopo/v1/cognicao/resultado.json).
 
 ## Artigo editável
 
@@ -59,4 +59,10 @@ pdflatex artigo.tex
 pdflatex artigo.tex
 ```
 
-A alteração na fonte preparada restringe-se aos caminhos das três figuras. Os resultados numéricos e os itens bibliográficos são os do artigo v16 já entregue.
+A fonte v22 usa a pasta local `figuras/`. A bibliografia faz parte do arquivo `artigo.tex`. O PDF anexado e o pôster estão identificados por hash no [manifesto de origem](../manifestos/origem.json).
+
+## Resposta por coordenada
+
+A [consulta territorial](../codigo/scripts/ia/consulta_territorial_v2.py) recebe uma unidade admitida e coordenadas, lê os atributos dos rasters associados e registra a procedência. Ela requer as camadas de terreno e o pacote de modelo correspondente. Onde falta cobertura construída ou areia, o registro declara a imputação aplicada. O [serviço integrado](../codigo/scripts/servico/resposta_integrada.py) monta a resposta, o cartão e a conferência dos campos e do hash.
+
+O [registro de paridade](../evidencias/08_resposta/ia-integrada-v2/fechamento_v1/fisica.json) confere 65.549 pontos do MT11 e 82.249 da rodada 3. Os 2.747 testes e as 922 fontes conferidas pertencem à entrega local de 20 de outubro. A suíte portátil deste repositório verifica o recorte publicado.

@@ -9,7 +9,7 @@ Os nomes de arquivos e os importadores de origem foram preservados para manter a
 | [__init__.py](__init__.py) | Dependência necessária |
 | [case_crossover.py](case_crossover.py) | Dependência necessária |
 | [casos_das_centrais.py](casos_das_centrais.py) | Dependência necessária |
-| [serie_por_celula.py](serie_por_celula.py) | Dependência necessária |
 | [contrato_chuva.py](contrato_chuva.py) | Dependência necessária |
 | [procedencia_das_datas.py](procedencia_das_datas.py) | Dependência necessária |
 | [providers.py](providers.py) | Dependência necessária |
+| [serie_por_celula.py](serie_por_celula.py) | Dependência necessária |

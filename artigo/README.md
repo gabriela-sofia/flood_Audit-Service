@@ -1,5 +1,5 @@
 # Artigo atual
 
-[PDF consolidado](REV-P_artigo_atual.pdf), correspondente à v16, com sete páginas. A [fonte editável](fonte/artigo.tex), as [figuras](fonte/figuras/README.md) e as [referências](fonte/referencias.bib) acompanham o artigo.
+O [artigo v22](REV-P_artigo_atual.pdf), de seis páginas, é o documento de referência. O [pôster](REV-P_poster.pdf) sintetiza o método e os principais resultados. A [fonte editável](fonte/artigo.tex) reúne o texto e a bibliografia com as [três figuras](fonte/figuras/README.md).
 
-Compile `artigo.tex` duas vezes com pdfLaTeX a partir de `fonte/`. A preparação atual só ajustou os caminhos das figuras; o PDF é o já entregue, sem mudança dos resultados.
+Para compilar, execute `pdflatex artigo.tex` duas vezes a partir de `fonte/`. O [manifesto de origem](../manifestos/origem.json) identifica os PDFs anexados e a adaptação do caminho das figuras na fonte.

@@ -1,5 +1,9 @@
-# Curadoria e admissão científica
+# Admissão das observações
 
-[Retrato da admissão](admissao-cientifica/retrato.json): registro executado de 3 de outubro de 2026, com 1.641.356 linhas examinadas, 763.155 admitidas para treino e 513.530 para afirmação. Cada uso tem sua condição própria; esses números não são replicações territoriais.
+Inventário de 1.641.356 registros. A curadoria identifica 763.155 aptos ao treino e 513.530 à avaliação externa. As partições de cada ensaio determinam o uso efetivo.
 
-O registro inclui os bloqueios por fonte e distingue ordenação temporal, forçamento no instante e previsão. A apresentação atual está no [método](../../docs/METODO.md) e no [artigo](../../artigo/REV-P_artigo_atual.pdf).
+| Registro | Papel |
+|---|---|
+| [admissao-cientifica/retrato.json](admissao-cientifica/retrato.json) | Artefato de execução ou proveniência |
+
+[Matriz do artigo](../../docs/MATRIZ_ARTIGO.md)

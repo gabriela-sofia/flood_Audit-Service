@@ -30,7 +30,7 @@ def verificar(raiz=RAIZ):
     ids = [c['id'] for c in matriz['afirmacoes']]
     if len(ids) != len(set(ids)): erros.append('ID repetido na matriz')
     for c in matriz['afirmacoes']:
-        if c['tabela'] != 'I' and not c['evidencias']:
+        if not c['evidencias']:
             erros.append('Item sem evidência: '+c['id'])
         for p in c['codigo']+c['evidencias']:
             if not (raiz/p).is_file(): erros.append(f"Vínculo ausente em {c['id']}: {p}")
@@ -57,6 +57,23 @@ def verificar(raiz=RAIZ):
     pdf = raiz/'artigo/REV-P_artigo_atual.pdf'
     if hashlib.sha256(pdf.read_bytes()).hexdigest() != origem['artigo_sha256']:
         erros.append('PDF difere do artigo de referência')
+    poster = raiz/'artigo/REV-P_poster.pdf'
+    if hashlib.sha256(poster.read_bytes()).hexdigest() != origem['poster_sha256']:
+        erros.append('PDF difere do pôster de referência')
+    fonte = (raiz/'artigo/fonte/artigo.tex').read_text(encoding='utf-8')
+    tabelas = re.findall(r'\\label\{tab:([^}]+)\}', fonte)
+    if len(tabelas) != matriz['tabelas'] or len(tabelas) != len(set(tabelas)):
+        erros.append('Tabelas do artigo divergem da matriz')
+    for item in matriz['afirmacoes']:
+        if item['texto_tex'] and item['texto_tex'] not in fonte:
+            erros.append('Trecho ausente do artigo: '+item['id'])
+    for figura in re.findall(r'\\includegraphics(?:\[[^]]*\])?\{([^}]+)\}', fonte):
+        if not (raiz/'artigo/fonte/figuras'/figura).is_file():
+            erros.append('Figura ausente: '+figura)
+    citadas = {k for citacao in re.findall(r'\\cite\{([^}]+)\}',fonte) for k in citacao.split(',')}
+    bibliografia = {k for k in re.findall(r'\\bibitem\{([^}]+)\}',fonte)}
+    if citadas != bibliografia:
+        erros.append('Chamadas bibliográficas divergem das referências do artigo')
     return {'tipo':'integridade_da_preparacao','ok':not erros,'erros':erros,
             'copias_com_hash_conferido':len(copias),'arquivos_python_analisados':len(py),
             'links_da_documentacao_conferidos':links,'linhas_tabeladas':matriz['afirmacoes_tabeladas'],

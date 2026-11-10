@@ -1,5 +1,5 @@
 {
-  "python": "3.12",
+  "python": "3.12.10",
   "versoes_encontradas": {
     "numpy": "2.5.1",
     "pandas": "3.0.2",
@@ -8,12 +8,7 @@
     "pyarrow": "24.0.0",
     "pytest": "9.0.3",
     "torch": "2.11.0",
-    "rasterio": "1.5.0",
-    "shapely": "2.1.2",
-    "pyproj": "3.7.2",
-    "matplotlib": "3.10.8",
-    "Pillow": "12.2.0",
-    "requests": "2.33.1"
+    "rasterio": "1.5.0"
   },
-  "nota": "Inventário do ambiente de preparação; não declara instalação limpa em outra máquina."
+  "nota": "Ambiente local utilizado para a conferência v22."
 }

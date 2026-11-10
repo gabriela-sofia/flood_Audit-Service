@@ -1,0 +1,309 @@
+{
+  "tipo": "medida_de_suporte",
+  "etapa": "D1/D3",
+  "quando_utc": "2026-09-02T14:32:33.838568Z",
+  "casos": 18,
+  "juiz_usado": true,
+  "modelo_do_juiz": "qwen2.5:3b-instruct",
+  "juiz_indisponivel": 0,
+  "latencia_mediana_s": 1.943,
+  "lexico": {
+    "geral": {
+      "n": 18,
+      "acertos": 8,
+      "acuracia": 0.4444,
+      "falsos_positivos": 7,
+      "falsos_negativos": 3
+    },
+    "por_familia": {
+      "sustenta_direto": {
+        "n": 4,
+        "acertos": 4,
+        "acuracia": 1.0,
+        "falsos_positivos": 0,
+        "falsos_negativos": 0
+      },
+      "sustenta_parafrase": {
+        "n": 4,
+        "acertos": 1,
+        "acuracia": 0.25,
+        "falsos_positivos": 0,
+        "falsos_negativos": 3
+      },
+      "nao_sustenta_lexico": {
+        "n": 7,
+        "acertos": 0,
+        "acuracia": 0.0,
+        "falsos_positivos": 7,
+        "falsos_negativos": 0
+      },
+      "nao_sustenta_obvio": {
+        "n": 3,
+        "acertos": 3,
+        "acuracia": 1.0,
+        "falsos_positivos": 0,
+        "falsos_negativos": 0
+      }
+    }
+  },
+  "regra": "publica <=> a regra lexica aprova E o juiz nao discorda; o juiz so subtrai",
+  "custo_declarado": "conjuncao nao conserta falso negativo: a fonte certa que o lexico reprova continua reprovada",
+  "conjuncao": {
+    "geral": {
+      "n": 18,
+      "acertos": 13,
+      "acuracia": 0.7222,
+      "falsos_positivos": 1,
+      "falsos_negativos": 4
+    },
+    "por_familia": {
+      "sustenta_direto": {
+        "n": 4,
+        "acertos": 4,
+        "acuracia": 1.0,
+        "falsos_positivos": 0,
+        "falsos_negativos": 0
+      },
+      "sustenta_parafrase": {
+        "n": 4,
+        "acertos": 0,
+        "acuracia": 0.0,
+        "falsos_positivos": 0,
+        "falsos_negativos": 4
+      },
+      "nao_sustenta_lexico": {
+        "n": 7,
+        "acertos": 6,
+        "acuracia": 0.8571,
+        "falsos_positivos": 1,
+        "falsos_negativos": 0
+      },
+      "nao_sustenta_obvio": {
+        "n": 3,
+        "acertos": 3,
+        "acuracia": 1.0,
+        "falsos_positivos": 0,
+        "falsos_negativos": 0
+      }
+    }
+  },
+  "hash_resumo": "sha256:eb33d77bc5d68ff8b685fbcc67c9ca5e2eb9becbf0ab5adf1c658297aa078173",
+  "por_caso": [
+    {
+      "id": "dinf_direto",
+      "familia": "sustenta_direto",
+      "esperado": true,
+      "lexico": true,
+      "fracao_lexica": 1.0,
+      "juiz_discorda": false,
+      "juiz_bruto": "SUSTENTA",
+      "conjuncao": true,
+      "lexico_correto": true,
+      "conjuncao_correta": true
+    },
+    {
+      "id": "hand_direto",
+      "familia": "sustenta_direto",
+      "esperado": true,
+      "lexico": true,
+      "fracao_lexica": 1.0,
+      "juiz_discorda": false,
+      "juiz_bruto": "SUSTENTA",
+      "conjuncao": true,
+      "lexico_correto": true,
+      "conjuncao_correta": true
+    },
+    {
+      "id": "twi_direto",
+      "familia": "sustenta_direto",
+      "esperado": true,
+      "lexico": true,
+      "fracao_lexica": 1.0,
+      "juiz_discorda": false,
+      "juiz_bruto": "SUSTENTA",
+      "conjuncao": true,
+      "lexico_correto": true,
+      "conjuncao_correta": true
+    },
+    {
+      "id": "sovi_direto",
+      "familia": "sustenta_direto",
+      "esperado": true,
+      "lexico": true,
+      "fracao_lexica": 1.0,
+      "juiz_discorda": false,
+      "juiz_bruto": "SUSTENTA",
+      "conjuncao": true,
+      "lexico_correto": true,
+      "conjuncao_correta": true
+    },
+    {
+      "id": "dinf_parafrase",
+      "familia": "sustenta_parafrase",
+      "esperado": true,
+      "lexico": false,
+      "fracao_lexica": 0.111,
+      "juiz_discorda": false,
+      "juiz_bruto": "SUSTENTA",
+      "conjuncao": false,
+      "lexico_correto": false,
+      "conjuncao_correta": false
+    },
+    {
+      "id": "hand_parafrase",
+      "familia": "sustenta_parafrase",
+      "esperado": true,
+      "lexico": false,
+      "fracao_lexica": 0.0,
+      "juiz_discorda": false,
+      "juiz_bruto": "SUSTENTA",
+      "conjuncao": false,
+      "lexico_correto": false,
+      "conjuncao_correta": false
+    },
+    {
+      "id": "firth_parafrase",
+      "familia": "sustenta_parafrase",
+      "esperado": true,
+      "lexico": true,
+      "fracao_lexica": 0.375,
+      "juiz_discorda": true,
+      "juiz_bruto": "NAO_SUSTENTA",
+      "conjuncao": false,
+      "lexico_correto": true,
+      "conjuncao_correta": false
+    },
+    {
+      "id": "epv_parafrase",
+      "familia": "sustenta_parafrase",
+      "esperado": true,
+      "lexico": false,
+      "fracao_lexica": 0.25,
+      "juiz_discorda": false,
+      "juiz_bruto": "SUSTENTA",
+      "conjuncao": false,
+      "lexico_correto": false,
+      "conjuncao_correta": false
+    },
+    {
+      "id": "dinf_invertido",
+      "familia": "nao_sustenta_lexico",
+      "esperado": false,
+      "lexico": true,
+      "fracao_lexica": 0.667,
+      "juiz_discorda": true,
+      "juiz_bruto": "NAO_SUSTENTA",
+      "conjuncao": false,
+      "lexico_correto": false,
+      "conjuncao_correta": true
+    },
+    {
+      "id": "hand_como_previsao",
+      "familia": "nao_sustenta_lexico",
+      "esperado": false,
+      "lexico": true,
+      "fracao_lexica": 0.889,
+      "juiz_discorda": true,
+      "juiz_bruto": "NAO_SUSTENTA",
+      "conjuncao": false,
+      "lexico_correto": false,
+      "conjuncao_correta": true
+    },
+    {
+      "id": "twi_causal",
+      "familia": "nao_sustenta_lexico",
+      "esperado": false,
+      "lexico": true,
+      "fracao_lexica": 0.778,
+      "juiz_discorda": false,
+      "juiz_bruto": "SUSTENTA",
+      "conjuncao": true,
+      "lexico_correto": false,
+      "conjuncao_correta": false
+    },
+    {
+      "id": "sovi_universal",
+      "familia": "nao_sustenta_lexico",
+      "esperado": false,
+      "lexico": true,
+      "fracao_lexica": 0.917,
+      "juiz_discorda": true,
+      "juiz_bruto": "NAO_SUSTENTA",
+      "conjuncao": false,
+      "lexico_correto": false,
+      "conjuncao_correta": true
+    },
+    {
+      "id": "rufat_completo",
+      "familia": "nao_sustenta_lexico",
+      "esperado": false,
+      "lexico": true,
+      "fracao_lexica": 0.8,
+      "juiz_discorda": true,
+      "juiz_bruto": "NAO_SUSTENTA",
+      "conjuncao": false,
+      "lexico_correto": false,
+      "conjuncao_correta": true
+    },
+    {
+      "id": "firth_elimina",
+      "familia": "nao_sustenta_lexico",
+      "esperado": false,
+      "lexico": true,
+      "fracao_lexica": 0.875,
+      "juiz_discorda": true,
+      "juiz_bruto": "NAO_SUSTENTA",
+      "conjuncao": false,
+      "lexico_correto": false,
+      "conjuncao_correta": true
+    },
+    {
+      "id": "epv_invertido",
+      "familia": "nao_sustenta_lexico",
+      "esperado": false,
+      "lexico": true,
+      "fracao_lexica": 0.818,
+      "juiz_discorda": true,
+      "juiz_bruto": "NAO_SUSTENTA",
+      "conjuncao": false,
+      "lexico_correto": false,
+      "conjuncao_correta": true
+    },
+    {
+      "id": "tarboton_curitiba",
+      "familia": "nao_sustenta_obvio",
+      "esperado": false,
+      "lexico": false,
+      "fracao_lexica": 0.0,
+      "juiz_discorda": true,
+      "juiz_bruto": "NAO_SUSTENTA",
+      "conjuncao": false,
+      "lexico_correto": true,
+      "conjuncao_correta": true
+    },
+    {
+      "id": "hand_renda",
+      "familia": "nao_sustenta_obvio",
+      "esperado": false,
+      "lexico": false,
+      "fracao_lexica": 0.0,
+      "juiz_discorda": true,
+      "juiz_bruto": "NAO_SUSTENTA",
+      "conjuncao": false,
+      "lexico_correto": true,
+      "conjuncao_correta": true
+    },
+    {
+      "id": "sovi_dinf",
+      "familia": "nao_sustenta_obvio",
+      "esperado": false,
+      "lexico": false,
+      "fracao_lexica": 0.0,
+      "juiz_discorda": true,
+      "juiz_bruto": "NAO_SUSTENTA",
+      "conjuncao": false,
+      "lexico_correto": true,
+      "conjuncao_correta": true
+    }
+  ]
+}

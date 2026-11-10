@@ -2,10 +2,10 @@
   "tipo": "integridade_da_preparacao",
   "ok": true,
   "erros": [],
-  "copias_com_hash_conferido": 397,
-  "arquivos_python_analisados": 326,
-  "links_da_documentacao_conferidos": 534,
-  "linhas_tabeladas": 98,
-  "paragrafos_rastreados": 32,
+  "copias_com_hash_conferido": 411,
+  "arquivos_python_analisados": 331,
+  "links_da_documentacao_conferidos": 668,
+  "linhas_tabeladas": 57,
+  "paragrafos_rastreados": 54,
   "nota": "Identidade, presença, sintaxe e rastreabilidade; não é nova validação científica."
 }

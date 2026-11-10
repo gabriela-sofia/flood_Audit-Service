@@ -6,6 +6,7 @@ Os nomes de arquivos e os importadores de origem foram preservados para manter a
 
 | Arquivo | Papel no pacote |
 |---|---|
+| [cognicao.py](cognicao.py) | Entrada selecionada |
 | [comum.py](comum.py) | Dependência necessária |
 | [contexto_local.py](contexto_local.py) | Dependência necessária |
 | [fisica_local.py](fisica_local.py) | Dependência necessária |

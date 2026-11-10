@@ -1,10 +1,9 @@
 {
   "entradas": [
+    "codigo/scripts/evolucao_escopo/cognicao.py",
     "codigo/scripts/fundamentacao_artigo/f01_ic_ganho_atualizacao.py",
-    "codigo/scripts/fundamentacao_artigo/f02_chuva_gatilho_recife.py",
     "codigo/scripts/fundamentacao_artigo/f03_ic_transferencia_coortes.py",
     "codigo/scripts/fundamentacao_artigo/f04_encosta_e_retencao.py",
-    "codigo/scripts/fundamentacao_artigo/f05_territorio_novo.py",
     "codigo/scripts/fundamentacao_artigo/f06_ic_auc_ruas_recife.py",
     "codigo/scripts/fundamentacao_artigo/f07_estratos_coortes.py",
     "codigo/scripts/fundamentacao_artigo/f08_ruas_e_comunidades.py",
@@ -14,6 +13,7 @@
     "codigo/scripts/ia/modelo_integrado_v2.py",
     "codigo/scripts/ia/mt11_fechamento.py",
     "codigo/scripts/metodo/admissao_cientifica.py",
+    "codigo/scripts/metodo/gfdq03_teste_confirmatorio.py",
     "codigo/scripts/metodo/mt01_bacias_globais.py",
     "codigo/scripts/metodo/mt01_experimento.py",
     "codigo/scripts/metodo/mt01_independencia.py",
@@ -40,6 +40,7 @@
     "codigo/scripts/petropolis_aprendizado/pa_08_verificacao.py",
     "codigo/scripts/petropolis_aprendizado/pa_09_manifesto.py",
     "codigo/scripts/petropolis_aprendizado/pa_comum.py",
+    "codigo/scripts/planejamento/pt_continuidade.py",
     "codigo/scripts/recife_aprendizado/ra_00_estado_inicial.py",
     "codigo/scripts/recife_aprendizado/ra_01_referencias.py",
     "codigo/scripts/recife_aprendizado/ra_02_atributos.py",
@@ -56,11 +57,13 @@
     "codigo/scripts/recuperacao/avaliacao_de_recuperacao.py",
     "codigo/scripts/recuperacao/comparar_recuperadores.py",
     "codigo/scripts/recuperacao/indice_denso.py",
+    "codigo/scripts/sar/analise_campanhas_11_10.py",
     "codigo/scripts/sar/analise_continuidade_v3.py",
     "codigo/scripts/sar/avaliar_rede.py",
     "codigo/scripts/sar/calibrar_recusa.py",
     "codigo/scripts/sar/continuidade_v3.py",
     "codigo/scripts/sar/pretreino_mascarado.py",
+    "codigo/scripts/sar/pretreino_v2.py",
     "codigo/scripts/sar/treino.py",
     "codigo/scripts/servico/rag_corpus.py",
     "codigo/scripts/servico/resposta_integrada.py",
@@ -73,6 +76,7 @@
     "codigo/scripts/social/social09_avaliacao_cobertura.py",
     "codigo/scripts/suscetibilidade/ds03_esquema_alvo.py",
     "codigo/scripts/suscetibilidade/ds05_admissao_consolidacao.py",
+    "codigo/scripts/verificacao/medir_suporte.py",
     "codigo/scripts/vulnerabilizados/v10_comum.py",
     "codigo/scripts/vulnerabilizados/v10_ii_ciclo.py",
     "codigo/scripts/vulnerabilizados/v10_iii_memoria.py",
@@ -84,6 +88,7 @@
     "codigo/scripts/vulnerabilizados/v8_02_ponte_fisica.py",
     "codigo/scripts/vulnerabilizados/v8_02b_cobertura_solo.py",
     "codigo/scripts/vulnerabilizados/v8_04b_analise.py",
+    "codigo/scripts/vulnerabilizados/v8_06b_competencia_tranquilizadora.py",
     "codigo/scripts/vulnerabilizados/v8_07b_amostra_pps.py",
     "codigo/scripts/vulnerabilizados/v9_b_tabular.py",
     "codigo/scripts/vulnerabilizados/v9_d_conjunta.py",
@@ -1270,17 +1275,6 @@
       "codigo/scripts/petropolis_aprendizado/pa_02_terreno.py",
       "codigo/scripts/petropolis_aprendizado/pa_comum.py"
     ],
-    "codigo/scripts/fundamentacao_artigo/f05_territorio_novo.py": [
-      "codigo/scripts/geo/cob01_cobertura_e_solo.py",
-      "codigo/scripts/metodo/mt02_atributos.py",
-      "codigo/scripts/metodo/mt05_transferencia_sem_amostra.py",
-      "codigo/scripts/metodo/mt11_confirmatorio_transdutivo.py",
-      "codigo/scripts/vulnerabilizados/comum_tv.py",
-      "codigo/scripts/vulnerabilizados/tv01_universo_escassez.py",
-      "codigo/scripts/vulnerabilizados/tv06_referencia_rmpa.py",
-      "codigo/scripts/vulnerabilizados/tv09_manaus.py",
-      "codigo/scripts/vulnerabilizados/v8_02b_cobertura_solo.py"
-    ],
     "codigo/tests/test_social_projecao.py": [
       "codigo/scripts/planejamento/pt.py",
       "codigo/scripts/social/social_projecao.py"
@@ -1586,9 +1580,6 @@
       "codigo/scripts/recife_aprendizado/ra_01_referencias.py",
       "codigo/scripts/recife_aprendizado/ra_04_treino.py"
     ],
-    "codigo/scripts/fundamentacao_artigo/f02_chuva_gatilho_recife.py": [
-      "codigo/scripts/chuva/case_crossover.py"
-    ],
     "codigo/scripts/chuva/case_crossover.py": [
       "codigo/scripts/chuva/case_crossover.py",
       "codigo/scripts/chuva/casos_das_centrais.py",
@@ -1774,7 +1765,49 @@
     ],
     "codigo/scripts/sar/__init__.py": [],
     "codigo/scripts/neural/__init__.py": [],
-    "codigo/scripts/chuva/__init__.py": []
+    "codigo/scripts/chuva/__init__.py": [],
+    "codigo/scripts/sar/pretreino_v2.py": [
+      "codigo/scripts/manutencao/executar_serializado.py",
+      "codigo/scripts/sar/calibracao_decisao.py",
+      "codigo/scripts/sar/campanha_independencia_autonomia.py",
+      "codigo/scripts/sar/continuidade_v3.py",
+      "codigo/scripts/sar/dados_pares_geograficos.py",
+      "codigo/scripts/sar/diagnostico_competencia.py",
+      "codigo/scripts/sar/fontes_sar.py",
+      "codigo/scripts/sar/nucleo_sar.py",
+      "codigo/scripts/sar/pretreino_mascarado.py"
+    ],
+    "codigo/scripts/sar/analise_campanhas_11_10.py": [
+      "codigo/scripts/sar/analise_continuidade_v3.py",
+      "codigo/scripts/sar/calibracao_decisao.py",
+      "codigo/scripts/sar/campanha_independencia_autonomia.py",
+      "codigo/scripts/sar/diagnostico_competencia.py"
+    ],
+    "codigo/scripts/evolucao_escopo/cognicao.py": [
+      "codigo/scripts/evolucao_escopo/comum.py",
+      "codigo/scripts/recuperacao/avaliacao_de_recuperacao.py",
+      "codigo/scripts/recuperacao/comparar_recuperadores.py",
+      "codigo/scripts/recuperacao/indice_denso.py",
+      "codigo/scripts/servico/claims.py",
+      "codigo/scripts/verificacao/casos_de_suporte.py"
+    ],
+    "codigo/scripts/planejamento/pt_continuidade.py": [
+      "codigo/scripts/planejamento/pt_comum.py"
+    ],
+    "codigo/scripts/vulnerabilizados/v8_06b_competencia_tranquilizadora.py": [
+      "codigo/scripts/vulnerabilizados/v8_04_campanha.py",
+      "codigo/scripts/vulnerabilizados/v8_06_competencia.py",
+      "codigo/scripts/vulnerabilizados/v8_comum.py"
+    ],
+    "codigo/scripts/vulnerabilizados/v8_06_competencia.py": [
+      "codigo/scripts/vulnerabilizados/v8_04_campanha.py",
+      "codigo/scripts/vulnerabilizados/v8_comum.py"
+    ],
+    "codigo/scripts/metodo/gfdq03_teste_confirmatorio.py": [
+      "codigo/scripts/metodo/generalizacao_por_reservas.py",
+      "codigo/scripts/metodo/reservas_examinadas.py",
+      "codigo/scripts/servico/proveniencia.py"
+    ]
   },
   "criterio": "Entradas do artigo, testes escolhidos e dependências locais estáticas; sem importação de módulos durante a seleção. Resolução de módulos qualificados também a partir de scripts/ e testes de importação do núcleo integrado."
 }

@@ -1,0 +1,7 @@
+cobertura,estado_s2,mean,size
+aberto,negativo,0.19025565024082994,5398
+aberto,positivo,0.9990235434523164,9217
+arvore,negativo,0.26383956548986837,19148
+arvore,positivo,0.9987204094689699,3126
+construido,negativo,0.1949269640742203,10132
+construido,positivo,0.9891774891774892,924

@@ -1,0 +1,36 @@
+{
+ "curitiba": {
+  "fcu": 410,
+  "pessoas": 276659,
+  "episodio": "PR_2023_11",
+  "pontos": 350030
+ },
+ "manaus": {
+  "fcu": 236,
+  "pessoas": 1151828,
+  "episodio": "AM_2021_06",
+  "pontos": 120657
+ },
+ "recife": {
+  "fcu": 294,
+  "pessoas": 361421,
+  "episodio": "PE_2022_05",
+  "pontos": 55554
+ },
+ "rmpa": {
+  "fcu": 293,
+  "pessoas": 289160,
+  "episodio": "RS_2024_05",
+  "pontos": 447135
+ },
+ "rmr": {
+  "fcu": 433,
+  "pessoas": 654734,
+  "episodio": "PE_2022_05",
+  "pontos": 154203
+ },
+ "_total_coortes": {
+  "fcu": 1666,
+  "pessoas": 2733802
+ }
+}

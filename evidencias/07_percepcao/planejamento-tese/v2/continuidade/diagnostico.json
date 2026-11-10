@@ -1,0 +1,223 @@
+{
+ "tipo": "diagnostico_continuidade_v2_1_v3_1",
+ "unidades_comuns": [
+  "sen1:11:2019-05-22",
+  "sen1:2:2018-09-18",
+  "sen1:6:2017-06-28",
+  "sen1:9:2019-09-17",
+  "sen1:3:2016-08-12",
+  "sen1:10:2017-05-30",
+  "sen1:7:2018-10-31",
+  "sen1:4:2018-08-05"
+ ],
+ "fatores": [
+  {
+   "fator": "entrada e modalidade",
+   "v2_1": "S1 pos, recorte 64, base 4",
+   "v3_1": "S1 pos, recorte 64, base 4",
+   "mudou": false
+  },
+  {
+   "fator": "contextos (etapas)",
+   "v2_1": "5 Sen1Floods11",
+   "v3_1": "6 (+EMSR424, CEMS)",
+   "mudou": true
+  },
+  {
+   "fator": "anotacoes por contexto",
+   "v2_1": 12,
+   "v3_1": 5,
+   "mudou": true
+  },
+  {
+   "fator": "anotacoes sem pixel rotulado (v3.1)",
+   "v2_1": "nao registrado",
+   "v3_1": {
+    "7": 2,
+    "11": 3
+   },
+   "mudou": null
+  },
+  {
+   "fator": "ordens x sementes",
+   "v2_1": "5 ordens; sementes [7, 11, 23] (bloco A: 1 semente por ordem, 10 repeticoes por evento)",
+   "v3_1": "6 ordens x sementes [7, 11] (12 repeticoes)",
+   "mudou": true
+  },
+  {
+   "fator": "orcamento",
+   "v2_1": "384 passos/etapa, lote 16, lr 0.001",
+   "v3_1": "384 passos/etapa, lote 16, lr 0.001 (uma etapa a mais)",
+   "mudou": true
+  },
+  {
+   "fator": "otimizador por etapa",
+   "v2_1": "Adam novo (otimizador='novo'; braco replay_otimizador_herdado separado)",
+   "v3_1": "Adam novo (mesmo nucleo continuidade_v2)",
+   "mudou": false
+  },
+  {
+   "fator": "LwF",
+   "v2_1": "lwf (KL em todos os pixels)",
+   "v3_1": "lwf_legado (todos os pixels) e lwf_mascarado (so pixel valido); lambda 1.0, T 2.0",
+   "mudou": true
+  },
+  {
+   "fator": "checkpoint",
+   "v2_1": "validacao: eventos ['sen1:5:2018-09-21', 'sen1:8:2018-05-07']",
+   "v3_1": "validacao_checkpoint: chips Nigeria/Somalia (so CE)",
+   "mudou": true
+  },
+  {
+   "fator": "limiar/referencia",
+   "v2_1": "fixo 0.2",
+   "v3_1": "legado 0.2 e calibrado por modelo (EMSR698, Escocia)",
+   "mudou": true
+  },
+  {
+   "fator": "desfecho primario",
+   "v2_1": "IoU no limiar 0,2, 8 eventos",
+   "v3_1": "AP (1000 faixas), 9 unidades",
+   "mudou": true
+  },
+  {
+   "fator": "regra",
+   "v2_1": "ganho/perda: Wilcoxon com Holm dentro da familia < 0,05 E IC95 t por evento alem de +-0.025; equivalencia so por TOST (IC90 t inteiro dentro de +-relevancia); n < 6 ou resto: INDECIDIVEL. p > 0,05 nunca e equivalencia.",
+   "v3_1": "p_holm < 0,05 E IC95 t por evento alem de +-margem_ap; familia de 4 contrastes",
+   "mudou": true
+  },
+  {
+   "fator": "contraste primario",
+   "v2_1": "lwf - continuacao",
+   "v3_1": "lwf_mascarado - continuacao (lwf_legado - continuacao so secundario)",
+   "mudou": true
+  },
+  {
+   "fator": "retencao/adaptacao",
+   "v2_1": "5 reservas de retencao + 3 avaliacao",
+   "v3_1": "6 retencao (inclui EMSR424) + 3 transferencia",
+   "mudou": true
+  },
+  {
+   "fator": "normalizacao",
+   "v2_1": "etapa1",
+   "v3_1": "etapa1 (nucleo comum)",
+   "mudou": false
+  }
+ ],
+ "reagregacao_mesmo_suporte": {
+  "iou_0_2": {
+   "v2_1_lwf_menos_continuacao": {
+    "n": 8,
+    "media": 0.05869613749999999,
+    "a_favor": "8/8",
+    "ic95_t": [
+     0.03402593107510274,
+     0.08336634392489724
+    ],
+    "p_wilcoxon_exato": 0.0078125
+   },
+   "v3_1_lwf_legado_menos_continuacao": {
+    "n": 8,
+    "media": 0.04848438151508766,
+    "a_favor": "8/8",
+    "ic95_t": [
+     0.028823216542517145,
+     0.06814554648765818
+    ],
+    "p_wilcoxon_exato": 0.0078125
+   },
+   "v3_1_lwf_mascarado_menos_continuacao": {
+    "n": 8,
+    "media": 0.03908390999565721,
+    "a_favor": "8/8",
+    "ic95_t": [
+     0.0175762382707287,
+     0.06059158172058572
+    ],
+    "p_wilcoxon_exato": 0.0078125
+   },
+   "mesmo_sinal_por_evento": "8/8",
+   "spearman_entre_versoes": 0.5000000000000001,
+   "razao_das_medias_v3_v2": 0.8260233736008211
+  },
+  "ap": {
+   "v2_1_lwf_menos_continuacao": {
+    "n": 8,
+    "media": 0.049804801436403395,
+    "a_favor": "8/8",
+    "ic95_t": [
+     0.0262629150006128,
+     0.07334668787219399
+    ],
+    "p_wilcoxon_exato": 0.0078125
+   },
+   "v3_1_lwf_legado_menos_continuacao": {
+    "n": 8,
+    "media": 0.023006101213875613,
+    "a_favor": "6/8",
+    "ic95_t": [
+     0.0022466212765516157,
+     0.043765581151199606
+    ],
+    "p_wilcoxon_exato": 0.0390625
+   },
+   "v3_1_lwf_mascarado_menos_continuacao": {
+    "n": 8,
+    "media": 0.02085253925295067,
+    "a_favor": "6/8",
+    "ic95_t": [
+     0.0008913483622995794,
+     0.04081373014360176
+    ],
+    "p_wilcoxon_exato": 0.0390625
+   },
+   "mesmo_sinal_por_evento": "6/8",
+   "spearman_entre_versoes": 0.38095238095238104,
+   "razao_das_medias_v3_v2": 0.4619253676425655
+  },
+  "iou_calibrado_so_v3_1": {
+   "lwf_legado": {
+    "n": 8,
+    "media": 0.008921158070212536,
+    "a_favor": "6/8",
+    "ic95_t": [
+     -0.004956610472675734,
+     0.022798926613100803
+    ],
+    "p_wilcoxon_exato": 0.1953125
+   },
+   "lwf_mascarado": {
+    "n": 8,
+    "media": 0.0031191455671125464,
+    "a_favor": "4/8",
+    "ic95_t": [
+     -0.010402303647504422,
+     0.016640594781729516
+    ],
+    "p_wilcoxon_exato": 0.546875
+   },
+   "nota": "a v2.1 nao calibrou limiar; nao ha par na v2.1"
+  }
+ },
+ "niveis_absolutos": {
+  "ap_continuacao_v2_1_media8": 0.4469286891547335,
+  "ap_continuacao_v3_1_media8": 0.4570664815805764,
+  "ap_lwf_v2_1_media8": 0.4967334905911369,
+  "ap_lwf_legado_v3_1_media8": 0.48007258279445203
+ },
+ "leitura": {
+  "reproduzido": "LwF nao mascarado > continuacao no IoU do limiar fixo 0,2: v2.1 +0.0587 (8/8) e v3.1 +0.0485 (8/8) nas mesmas 8 unidades",
+  "nao_reproduzido_em_tamanho": "a vantagem em AP (sem limiar) caiu de +0.0498 para +0.0230; a continuacao subiu +0.0101 e o LwF -0.0167 em AP medio",
+  "efeito_do_limiar": "com limiar calibrado por modelo a vantagem do LwF legado cai para +0.0089: parte do ganho no limiar fixo 0,2 e ponto de operacao (o LwF desloca a probabilidade em relacao ao limiar), nao separacao",
+  "mudanca_de_tarefa_vs_metodo": "o metodo comparavel (LwF nao mascarado) nao piorou; mudaram a regua primaria (IoU 0,2 -> AP), o contraste primario (LwF mascarado, metodo novo), a populacao (5 anotacoes por contexto em vez de 12; EMSR424 como sexta etapa), o checkpoint e o limiar. 'O ganho nao se repetiu' descreve a decisao da v3.1, nao uma refutacao do resultado da v2.1",
+  "defensavel": "em desenvolvimento, com dados ja examinados e Adam novo por etapa (heranca de pesos, nao retomada de otimizador), LwF reduz a perda da continuacao ingenua no IoU do limiar legado de forma consistente nas duas versoes; o ganho em AP e positivo nas duas mas so supera a margem de 0,025 na v2.1; com limiar calibrado o ganho e pequeno. Nao ha resultado confirmatorio fora do desenvolvimento",
+  "experimento_adicional": "nao executado: a diferenca concreta (limiar fixo vs calibrado; AP vs IoU) ja esta isolada nas secundarias pareadas da propria v3.1; uma terceira versao seria repetir para recuperar o ganho antigo"
+ },
+ "fontes": {
+  "local_runs/aprendizado-continuo/sar_v2_1/protocolo.json": "sha256:d0352b85ede2b652efa5fccb4bf6cf95cefdae1de1b8d4a0b02e7e8b33201bad",
+  "local_runs/aprendizado-continuo/sar_v2_1/analise.json": "sha256:0a378d1e22cf5934489cfdf6b3c279ba908b88f5d8232e22bbc9b7107a9c0f65",
+  "local_runs/aprendizado-continuo/sar_v3_1/protocolo.json": "sha256:7895eea9e66d9a339e21793299465065ad1f3f16ed1bd697d65c24a8d693aa34",
+  "local_runs/aprendizado-continuo/sar_v3_1/analise.json": "sha256:7d1377a78b6c6a172113ae7b8145f6684defe5763b6ddc5e76426e7792b214bf"
+ }
+}

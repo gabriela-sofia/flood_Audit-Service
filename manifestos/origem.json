@@ -1,27 +1,28 @@
 {
-  "data": "2026-11-08",
+  "data": "2026-11-10",
   "fuso": "Asia/Chita",
-  "recorte": "artigo v16 e suas dependencias necessarias",
-  "artigo_sha256": "f4bc18ca8cce9744e4f438af5e0bf2fe5863bd6bc79cfcd12f167f9001302c7e",
-  "tex_original_sha256": "9954cde489a03e3b82785cad0db717d2499f44c5f8ea50009da3df1950331452",
-  "tex_preparado_sha256": "896b74e687a183c2423823aed91c160e4afd9a92fed10460d764700aa073d06c",
-  "transformacao_tex": "somente caminhos das tres figuras",
+  "recorte": "Artigo v22 e pôster complementar",
+  "artigo_sha256": "a73a8c6ee4b2c52787a9af65990e2e87f091a0cd0e3670bd227668aff3642673",
+  "tex_original_sha256": "beef61e6b6a6a73b8f4e4b2103ba3b8f19f0c8ed3f93f761267e9e4b92c172c3",
+  "tex_preparado_sha256": "2860bf9724c3bce3eb6e368e03b88e8660b1817f075a57958aceec8aafa0e7c2",
+  "transformacao_tex": "Caminho das figuras consolidado na pasta local do artigo.",
   "historico_incluido_no_pacote": false,
-  "entradas_de_codigo": 110,
-  "arquivos_de_codigo_e_testes": 326,
+  "entradas_de_codigo": 115,
+  "arquivos_de_codigo_e_testes": 331,
   "sem_novo_treino_ou_recalculo_de_resultados": true,
   "commit_local_de_referencia": "20ef3c5ce148f2cff96cde1fc77ee43de1525365",
   "inclui_trabalho_local_nao_commitado": true,
   "identidade_do_recorte": "Hashes dos arquivos selecionados; o commit sozinho não identifica todo o trabalho local incluído.",
   "github_publico_consultado": {
     "repositorio": "gabriela-sofia/flood_Audit-Service",
-    "commit": "18bcb981ee9d219a83889a84d7d1040d570f4c08",
-    "consulta": "2026-11-08"
+    "commit": "d9b0b2736ad6d593964dabb412e48b67f1b6ec93",
+    "consulta": "2026-11-10"
   },
   "referencia_publicacao": {
     "repositorio": "gabriela-sofia/flood_Audit-Service",
     "branch": "main",
-    "commit_publico_anterior": "18bcb981ee9d219a83889a84d7d1040d570f4c08",
-    "pacote_revisado_sha256": "b49c6c3806a406378e49dbb2359f6b617da35daa8da5c677b2f65fa703207419"
-  }
+    "commit_publico_anterior": "d9b0b2736ad6d593964dabb412e48b67f1b6ec93"
+  },
+  "versao": "v22",
+  "poster_sha256": "6cfb19d96f71198a1a0c1e45f1e8079aada011811fabc97f713a33c74d5bc7c0"
 }

@@ -1,0 +1,29 @@
+{
+  "tipo": "evolucao_escopo:qa_final/v3/resultado",
+  "nao_e": "desenvolvimento retrospectivo com acervo local; nao e confirmacao nova, promocao, previsao, profundidade ou identificacao causal",
+  "gerado_por": "scripts/evolucao_escopo/comum.py",
+  "quando_utc": "2026-10-20T10:09:43.153823+00:00",
+  "rc": 0,
+  "segundos": 54393.31199999999,
+  "casos": 2828,
+  "passaram": 2747,
+  "falharam": 0,
+  "falhas": [],
+  "pularam": 81,
+  "motivos_dispensas": {
+    "resposta ok de Recife ausente na demonstracao": 34,
+    "curitiba sem grade ou sem elevacao no modelo": 1,
+    "artefato e cartao de recusa (G6/ADR-001 recusa em recife); estes testes descrevem o cartao de escore": 14,
+    "sem modelo para a regiao: o resolvedor nem e chamado": 1,
+    "a requisicao base nao devolveu ok: suporte temporal nao demonstrado para 'recife' com o modelo 'recife_pluvial': estado 'inconclusive' (algum_corte_nao_se_separa_do_acaso); a maturidade 'mvp_local' afirma validade local, e emitir escore aqui seria afirmar validade que ninguem mediu; para sair deste estado: investigar o corte que encosta no acaso antes de afirmar instabilidade (custo: execucao)": 1,
+    "nenhum caso ok de Recife na demonstracao": 25,
+    "a frase deste caso cita uma variavel so": 1,
+    "modelo sem as variaveis citadas pela frase do teste original": 2,
+    "o caso desta fixtura nao tem duas variaveis nao verificadas": 2
+  },
+  "codigo_mudou_durante_suite": [],
+  "assinatura_codigo": "c22be309e9c885a80adaf3441b36e830fb7ec052169062575fc046aff6bf07f4",
+  "aprovado": true,
+  "jornada_exata_rc": 0,
+  "rede_externa": "bloqueada; loopback local permitido"
+}

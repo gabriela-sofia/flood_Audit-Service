@@ -1,0 +1,336 @@
+{
+  "tipo": "evolucao_escopo:cognicao/resultado",
+  "nao_e": "desenvolvimento retrospectivo com acervo local; nao e confirmacao nova, promocao, previsao, profundidade ou identificacao causal",
+  "gerado_por": "scripts/evolucao_escopo/comum.py",
+  "quando_utc": "2026-10-19T16:33:46.789386+00:00",
+  "corpus_manifesto_sha256": "sha256:0f0159636661c085fdfcb6e8b1057c4ab09597544a1a7f3d8f057c87cadec915",
+  "chunks": 3813,
+  "consultas": 11238,
+  "metrica": "recuperacao do proprio chunk por consulta sintetica literal/morfologica/lacunar; nao julgamento externo de relevancia",
+  "medidas": {
+    "lexical": {
+      "k": 5,
+      "agregado": {
+        "n": 11238,
+        "recall_em_k": 0.366524,
+        "mrr": 0.339675,
+        "consultas_sem_resultado": 100
+      },
+      "por_nivel": {
+        "literal": {
+          "n": 3746,
+          "recall_em_k": 0.593166,
+          "mrr": 0.553702,
+          "consultas_sem_resultado": 0
+        },
+        "morfologica": {
+          "n": 3746,
+          "recall_em_k": 0.028831,
+          "mrr": 0.01858,
+          "consultas_sem_resultado": 100
+        },
+        "lacunar": {
+          "n": 3746,
+          "recall_em_k": 0.477576,
+          "mrr": 0.446743,
+          "consultas_sem_resultado": 0
+        }
+      },
+      "por_classe": {
+        "projeto": {
+          "n": 11094,
+          "recall_em_k": 0.361367,
+          "mrr": 0.334259,
+          "consultas_sem_resultado": 80
+        },
+        "cientifica": {
+          "n": 69,
+          "recall_em_k": 0.753623,
+          "mrr": 0.753623,
+          "consultas_sem_resultado": 13
+        },
+        "operacional": {
+          "n": 75,
+          "recall_em_k": 0.773333,
+          "mrr": 0.76,
+          "consultas_sem_resultado": 7
+        }
+      },
+      "por_nivel_e_classe": {
+        "literal|projeto": {
+          "n": 3698,
+          "recall_em_k": 0.587885,
+          "mrr": 0.547909,
+          "consultas_sem_resultado": 0
+        },
+        "literal|cientifica": {
+          "n": 23,
+          "recall_em_k": 1.0,
+          "mrr": 1.0,
+          "consultas_sem_resultado": 0
+        },
+        "literal|operacional": {
+          "n": 25,
+          "recall_em_k": 1.0,
+          "mrr": 1.0,
+          "consultas_sem_resultado": 0
+        },
+        "morfologica|projeto": {
+          "n": 3698,
+          "recall_em_k": 0.025419,
+          "mrr": 0.015306,
+          "consultas_sem_resultado": 80
+        },
+        "morfologica|cientifica": {
+          "n": 23,
+          "recall_em_k": 0.26087,
+          "mrr": 0.26087,
+          "consultas_sem_resultado": 13
+        },
+        "morfologica|operacional": {
+          "n": 25,
+          "recall_em_k": 0.32,
+          "mrr": 0.28,
+          "consultas_sem_resultado": 7
+        },
+        "lacunar|projeto": {
+          "n": 3698,
+          "recall_em_k": 0.470795,
+          "mrr": 0.439562,
+          "consultas_sem_resultado": 0
+        },
+        "lacunar|cientifica": {
+          "n": 23,
+          "recall_em_k": 1.0,
+          "mrr": 1.0,
+          "consultas_sem_resultado": 0
+        },
+        "lacunar|operacional": {
+          "n": 25,
+          "recall_em_k": 1.0,
+          "mrr": 1.0,
+          "consultas_sem_resultado": 0
+        }
+      }
+    },
+    "lsa": {
+      "k": 5,
+      "agregado": {
+        "n": 11238,
+        "recall_em_k": 0.39055,
+        "mrr": 0.296715,
+        "consultas_sem_resultado": 0
+      },
+      "por_nivel": {
+        "literal": {
+          "n": 3746,
+          "recall_em_k": 0.429525,
+          "mrr": 0.329636,
+          "consultas_sem_resultado": 0
+        },
+        "morfologica": {
+          "n": 3746,
+          "recall_em_k": 0.40897,
+          "mrr": 0.310874,
+          "consultas_sem_resultado": 0
+        },
+        "lacunar": {
+          "n": 3746,
+          "recall_em_k": 0.333155,
+          "mrr": 0.249635,
+          "consultas_sem_resultado": 0
+        }
+      },
+      "por_classe": {
+        "projeto": {
+          "n": 11094,
+          "recall_em_k": 0.382729,
+          "mrr": 0.288172,
+          "consultas_sem_resultado": 0
+        },
+        "cientifica": {
+          "n": 69,
+          "recall_em_k": 0.985507,
+          "mrr": 0.927536,
+          "consultas_sem_resultado": 0
+        },
+        "operacional": {
+          "n": 75,
+          "recall_em_k": 1.0,
+          "mrr": 0.98,
+          "consultas_sem_resultado": 0
+        }
+      },
+      "por_nivel_e_classe": {
+        "literal|projeto": {
+          "n": 3698,
+          "recall_em_k": 0.42239,
+          "mrr": 0.321611,
+          "consultas_sem_resultado": 0
+        },
+        "literal|cientifica": {
+          "n": 23,
+          "recall_em_k": 0.956522,
+          "mrr": 0.913043,
+          "consultas_sem_resultado": 0
+        },
+        "literal|operacional": {
+          "n": 25,
+          "recall_em_k": 1.0,
+          "mrr": 0.98,
+          "consultas_sem_resultado": 0
+        },
+        "morfologica|projeto": {
+          "n": 3698,
+          "recall_em_k": 0.401298,
+          "mrr": 0.30274,
+          "consultas_sem_resultado": 0
+        },
+        "morfologica|cientifica": {
+          "n": 23,
+          "recall_em_k": 1.0,
+          "mrr": 0.913043,
+          "consultas_sem_resultado": 0
+        },
+        "morfologica|operacional": {
+          "n": 25,
+          "recall_em_k": 1.0,
+          "mrr": 0.96,
+          "consultas_sem_resultado": 0
+        },
+        "lacunar|projeto": {
+          "n": 3698,
+          "recall_em_k": 0.3245,
+          "mrr": 0.240166,
+          "consultas_sem_resultado": 0
+        },
+        "lacunar|cientifica": {
+          "n": 23,
+          "recall_em_k": 1.0,
+          "mrr": 0.956522,
+          "consultas_sem_resultado": 0
+        },
+        "lacunar|operacional": {
+          "n": 25,
+          "recall_em_k": 1.0,
+          "mrr": 1.0,
+          "consultas_sem_resultado": 0
+        }
+      }
+    },
+    "hibrido_rrf": {
+      "k": 5,
+      "agregado": {
+        "n": 11238,
+        "recall_em_k": 0.443495,
+        "mrr": 0.334263,
+        "consultas_sem_resultado": 0
+      },
+      "por_nivel": {
+        "literal": {
+          "n": 3746,
+          "recall_em_k": 0.560598,
+          "mrr": 0.469247,
+          "consultas_sem_resultado": 0
+        },
+        "morfologica": {
+          "n": 3746,
+          "recall_em_k": 0.317138,
+          "mrr": 0.150485,
+          "consultas_sem_resultado": 0
+        },
+        "lacunar": {
+          "n": 3746,
+          "recall_em_k": 0.45275,
+          "mrr": 0.383057,
+          "consultas_sem_resultado": 0
+        }
+      },
+      "por_classe": {
+        "projeto": {
+          "n": 11094,
+          "recall_em_k": 0.436362,
+          "mrr": 0.326756,
+          "consultas_sem_resultado": 0
+        },
+        "cientifica": {
+          "n": 69,
+          "recall_em_k": 1.0,
+          "mrr": 0.917874,
+          "consultas_sem_resultado": 0
+        },
+        "operacional": {
+          "n": 75,
+          "recall_em_k": 0.986667,
+          "mrr": 0.907778,
+          "consultas_sem_resultado": 0
+        }
+      },
+      "por_nivel_e_classe": {
+        "literal|projeto": {
+          "n": 3698,
+          "recall_em_k": 0.554895,
+          "mrr": 0.462493,
+          "consultas_sem_resultado": 0
+        },
+        "literal|cientifica": {
+          "n": 23,
+          "recall_em_k": 1.0,
+          "mrr": 0.978261,
+          "consultas_sem_resultado": 0
+        },
+        "literal|operacional": {
+          "n": 25,
+          "recall_em_k": 1.0,
+          "mrr": 1.0,
+          "consultas_sem_resultado": 0
+        },
+        "morfologica|projeto": {
+          "n": 3698,
+          "recall_em_k": 0.308545,
+          "mrr": 0.142726,
+          "consultas_sem_resultado": 0
+        },
+        "morfologica|cientifica": {
+          "n": 23,
+          "recall_em_k": 1.0,
+          "mrr": 0.775362,
+          "consultas_sem_resultado": 0
+        },
+        "morfologica|operacional": {
+          "n": 25,
+          "recall_em_k": 0.96,
+          "mrr": 0.723333,
+          "consultas_sem_resultado": 0
+        },
+        "lacunar|projeto": {
+          "n": 3698,
+          "recall_em_k": 0.445646,
+          "mrr": 0.37505,
+          "consultas_sem_resultado": 0
+        },
+        "lacunar|cientifica": {
+          "n": 23,
+          "recall_em_k": 1.0,
+          "mrr": 1.0,
+          "consultas_sem_resultado": 0
+        },
+        "lacunar|operacional": {
+          "n": 25,
+          "recall_em_k": 1.0,
+          "mrr": 1.0,
+          "consultas_sem_resultado": 0
+        }
+      }
+    }
+  },
+  "casos_adversariais_suporte": 18,
+  "suporte_lexico": {
+    "acertos": 8,
+    "falsos_positivos": 7,
+    "falsos_negativos": 3
+  },
+  "metodo": "FTS5 existente, LSA char ngram 3-5/d128/seed20260902, RRF c60; k5; sem selecao por resultado",
+  "servico_ativo_alterado": false,
+  "limite": "benchmark conhecido construido dos chunks; ganho nele nao demonstra compreensao ou prova da tese fisica"
+}

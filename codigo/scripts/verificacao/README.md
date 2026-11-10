@@ -9,4 +9,4 @@ Os nomes de arquivos e os importadores de origem foram preservados para manter a
 | [__init__.py](__init__.py) | Dependência necessária |
 | [casos_de_suporte.py](casos_de_suporte.py) | Dependência necessária |
 | [cobertura_por_contexto.py](cobertura_por_contexto.py) | Dependência necessária |
-| [medir_suporte.py](medir_suporte.py) | Dependência necessária |
+| [medir_suporte.py](medir_suporte.py) | Entrada selecionada |

@@ -8,5 +8,6 @@ Os nomes de arquivos e os importadores de origem foram preservados para manter a
 |---|---|
 | [pt.py](pt.py) | Dependência necessária |
 | [pt_comum.py](pt_comum.py) | Dependência necessária |
+| [pt_continuidade.py](pt_continuidade.py) | Entrada selecionada |
 | [pt_social_equivalencia.py](pt_social_equivalencia.py) | Dependência necessária |
 | [pt_social_ref_geopandas.py](pt_social_ref_geopandas.py) | Dependência necessária |

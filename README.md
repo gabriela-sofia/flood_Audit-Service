@@ -2,9 +2,9 @@
 
 **Reconhecimento de Evidências Verificáveis para Predição**
 
-O REV-P é uma ferramenta de pesquisa em IA geoespacial que aprende relações físicas em cheias documentadas e examina sua transferência para territórios brasileiros com pouca referência local. A resposta reúne escore, explicação, fontes e condições de uso. Dados sociais contextualizam o território e permanecem separados do escore físico.
+Uma comunidade com poucos registros de cheia precisa de uma base para priorizar onde observar. O REV-P aprende como terreno e drenagem se relacionam com a água em cheias documentadas e aplica esse conhecimento a territórios brasileiros. Por coordenada, a ferramenta apresenta a posição relativa, a contribuição das variáveis, a versão do modelo, as fontes e o suporte da resposta. Quando há radar adequado, a delimitação de água acompanha a resposta. O Censo contextualiza quem vive no local.
 
-Esta organização corresponde ao **artigo v16, de 8 de novembro de 2026**. O artigo define os resultados e as contribuições deste pacote. As versões completa e com reserva do núcleo físico, o modelo de encosta e a rede de percepção conservam suas tarefas e avaliações próprias.
+O **artigo v22, de 10 de novembro de 2026**, define o recorte científico do repositório. O pôster apresenta a pergunta, o percurso do método e os resultados selecionados para a banca.
 
 ## Comece por aqui
 
@@ -12,6 +12,7 @@ Esta organização corresponde ao **artigo v16, de 8 de novembro de 2026**. O ar
 |---|---|
 | A organização do repositório | [Guia de navegação](docs/REVISAO_DA_ORGANIZACAO.md) |
 | O artigo atual | [PDF](artigo/REV-P_artigo_atual.pdf) e [fonte editável](artigo/fonte/artigo.tex) |
+| O percurso em uma página | [Pôster](artigo/REV-P_poster.pdf) |
 | O percurso do método | [Método](docs/METODO.md) e [admissão dos dados](evidencias/01_curadoria/README.md) |
 | Cada resultado, seu código e sua evidência | [Matriz do artigo](docs/MATRIZ_ARTIGO.md) |
 | O papel de cada pasta e rotina | [Organização do código](docs/CODIGO.md) |
@@ -23,20 +24,28 @@ Esta organização corresponde ao **artigo v16, de 8 de novembro de 2026**. O ar
 
 | Tabela | Resultado ou desenho | Código principal | Evidência |
 |---|---|---|---|
-| I | Desenhos para água, relatos e encostas | [Fundamentação](codigo/scripts/fundamentacao_artigo/README.md) | [Método](docs/METODO.md) e [admissão dos dados](evidencias/01_curadoria/README.md) |
-| II | Aprendizado físico, pesos e verificações | [Método físico](codigo/scripts/metodo/README.md) | [Aprendizado](evidencias/02_aprendizado/README.md) |
-| III | Transferência para água nos destinos brasileiros | [Transferência](codigo/scripts/vulnerabilizados/README.md) | [Transferência](evidencias/03_transferencia/README.md) |
-| IV | Relatos e explicação das ruas de Recife | [Recife](codigo/scripts/recife_aprendizado/README.md) | [Recife](evidencias/04_recife/README.md) |
-| V | Modelo de encosta e referências de Petrópolis | [Petrópolis](codigo/scripts/petropolis_aprendizado/README.md) | [Petrópolis](evidencias/05_petropolis/README.md) |
-| VI | Ganho local, retenção e memória | [Atualização](codigo/scripts/vulnerabilizados/README.md) | [Atualização](evidencias/06_atualizacao/README.md) |
-| VII | Percepção da água e aprendizado nas redes | [SAR](codigo/scripts/sar/README.md) | [Percepção](evidencias/07_percepcao/README.md) |
-| VIII | Fontes, encaminhamento e reprodução | [Recuperação](codigo/scripts/recuperacao/README.md) e [resposta](codigo/scripts/servico/README.md) | [Resposta](evidencias/08_resposta/README.md) |
-| IX | Comunidades, alcance social e observabilidade | [Social](codigo/scripts/social/README.md) | [Alcance social](evidencias/09_social/README.md) |
+| I | Relações físicas, ganho externo e pesos com e sem reserva | [Método físico](codigo/scripts/metodo/README.md) | [Aprendizado](evidencias/02_aprendizado/README.md) |
+| II | Transferência para comunidades e recortes urbanos | [Transferência](codigo/scripts/vulnerabilizados/README.md) | [Coortes brasileiras](evidencias/03_transferencia/README.md) |
+| III | Ordenação e conta do escore nas ruas de Recife | [Recife](codigo/scripts/recife_aprendizado/README.md) | [Ruas e relatos](evidencias/04_recife/README.md) |
+| IV | Modelo do Idai avaliado nas encostas de Petrópolis | [Petrópolis](codigo/scripts/petropolis_aprendizado/README.md) | [Cicatrizes e fundo](evidencias/05_petropolis/README.md) |
+| V | Ganho com exemplos locais, retenção e memória | [Atualização](codigo/scripts/vulnerabilizados/README.md) | [Atualização na RMPA](evidencias/06_atualizacao/README.md) |
+| VI | Cobertura observacional e suporte nas comunidades | [Contagens por coorte](codigo/scripts/fundamentacao_artigo/f08_ruas_e_comunidades.py) | [Cobertura](evidencias/09_social/README.md) |
+| VII | Percepção, pré-treino, fontes, suporte e auditoria | [Radar](codigo/scripts/sar/README.md) e [resposta](codigo/scripts/servico/README.md) | [Percepção](evidencias/07_percepcao/README.md) e [resposta](evidencias/08_resposta/README.md) |
+
+## Qual núcleo responde a cada pergunta
+
+| Versão | Ajuste | Avaliação |
+|---|---|---|
+| Núcleo congelado | 91.446 observações, incluindo eventos brasileiros | Teste fora do país em 30 componentes. Ganho de +0,055 AUC sobre HAND no contraste registrado |
+| Externa completa | 36.331 pontos de 59 cheias no exterior, agrupados em 43 unidades | Transferência sem ajuste local. Nas FCU de Manaus, Recife e RMR, os intervalos de ganho sobre HAND ficaram acima de zero |
+| Externa com reserva | 29 unidades para ajuste e 14 reservadas | Ruas de Recife, atualização local, calibração da resposta e retenção. Seis unidades medem retenção |
+
+Em Petrópolis, a tarefa é ordenar cicatrizes com um modelo de encosta aprendido no Idai. Na RMPA, a atualização por margem elevou a AUC nas FCU de 0,874 a 0,926, com perda média de 0,028 nas unidades de retenção. O [método](docs/METODO.md) identifica as referências e a regra de cada ensaio.
 
 ## Estrutura
 
 ```text
-artigo/       PDF atual, fonte LaTeX, figuras e referências
+artigo/       artigo atual, pôster, fonte LaTeX e figuras
 docs/         método, resultados, contribuições e orientações atuais
 codigo/       rotinas selecionadas, dependências e testes originais
 evidencias/   artefatos e relatórios ligados às tabelas do artigo
@@ -66,6 +75,6 @@ As rotinas de pesquisa mantêm os caminhos de trabalho relativos à pasta `codig
 
 ## Como interpretar
 
-AUC mede ordenação, e diferenças de AUC comparam desempenhos; não são porcentagens de acerto de um mapa nem redução de risco. Relato não substitui ausência observada e ausência de relato não comprova chão seco. Água e encosta têm modelos próprios. Resultados favoráveis, contrários, inconclusivos e com suporte insuficiente estão preservados nas evidências do artigo.
+AUC mede a frequência com que um positivo fica acima de seu comparador. Água nova, relato administrativo e cicatriz são referências de tarefas distintas. Em comunidades da RMPA, o ganho sobre HAND ficou inconclusivo. As FCU da RMC têm 11 positivos e entram como descrição. Os ensaios nas coortes brasileiras são de desenvolvimento.
 
-O ganho local é acompanhado de seu custo de retenção. Cobertura populacional não é contagem de atingidos. A revisão humana preparada continua registrada sem respostas. Os [manifestos](manifestos/README.md) identificam exatamente quais arquivos estão incluídos.
+A observação passou de uma para 123 FCU com água. Entre as 123, 119 têm as duas classes e 38 têm pelo menos cinco pontos de cada classe. O suporte para ordenar pontos e os totais censitários têm denominadores próprios. Os [manifestos](manifestos/README.md) registram a origem dos arquivos.

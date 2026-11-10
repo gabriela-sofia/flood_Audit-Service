@@ -33,6 +33,8 @@ Os nomes de arquivos e os importadores de origem foram preservados para manter a
 | [v8_02b_cobertura_solo.py](v8_02b_cobertura_solo.py) | Entrada selecionada |
 | [v8_04_campanha.py](v8_04_campanha.py) | Dependência necessária |
 | [v8_04b_analise.py](v8_04b_analise.py) | Entrada selecionada |
+| [v8_06_competencia.py](v8_06_competencia.py) | Dependência necessária |
+| [v8_06b_competencia_tranquilizadora.py](v8_06b_competencia_tranquilizadora.py) | Entrada selecionada |
 | [v8_07_amostra_probabilistica.py](v8_07_amostra_probabilistica.py) | Dependência necessária |
 | [v8_07b_amostra_pps.py](v8_07b_amostra_pps.py) | Entrada selecionada |
 | [v8_comum.py](v8_comum.py) | Dependência necessária |

@@ -1,17 +1,19 @@
-# Percepção
+# Percepção, pré-treino e continuidade
 
-Fontes do bloco da Tabela VII do artigo atual. Os arquivos conservam a identidade dos artefatos ou relatórios de execução. Relatórios são registros de origem datados; a síntese vigente é a apresentada no artigo e na matriz.
+A Tabela VII separa IoU da U-Net, diferença de AP no ensaio com poucos rótulos e continuidade com LwF. A pasta `demonstracao_mucum/` guarda a reconstrução da Fig. 3 e a identificação do estado usado. A demonstração corresponde a uma passagem em um recorte.
 
-| Arquivo | Papel |
+| Registro | Papel |
 |---|---|
-| [analise.json](aprendizado-continuo/sar_v3_1/analise.json) | Artefato estruturado |
-| [protocolo.json](aprendizado-continuo/sar_v3_1/protocolo.json) | Artefato estruturado |
-| [experimento_pote_crescente_redecidido.json](neural-catraca/experimento_pote_crescente_redecidido.json) | Artefato estruturado |
-| [FECHAMENTO_CIENTIFICO_OPERACIONAL.md](relatorios/FECHAMENTO_CIENTIFICO_OPERACIONAL.md) | Relatório de execução |
-| [PLANO_FRENTES_NEURAIS.md](relatorios/PLANO_FRENTES_NEURAIS.md) | Relatório de execução |
-| [avaliacao_unet_v1_teste.json](sar-inundacao/avaliacao_unet_v1_teste.json) | Artefato estruturado |
-| [baseline_otsu_teste.json](sar-inundacao/baseline_otsu_teste.json) | Artefato estruturado |
-| [confirmacao_recusa_v1_teste.json](sar-inundacao/confirmacao_recusa_v1_teste.json) | Artefato estruturado |
-| [experimento_transferencia_pretreino.json](sar-inundacao/experimento_transferencia_pretreino.json) | Artefato estruturado |
+| [aprendizado-continuo/sar_v3_1/analise.json](aprendizado-continuo/sar_v3_1/analise.json) | Artefato de execução ou proveniência |
+| [aprendizado-continuo/sar_v3_1/protocolo.json](aprendizado-continuo/sar_v3_1/protocolo.json) | Artefato de execução ou proveniência |
+| [demonstracao_mucum/reconstrucao_mucum.json](demonstracao_mucum/reconstrucao_mucum.json) | Artefato de execução ou proveniência |
+| [demonstracao_mucum/reconstrucao_mucum.npz](demonstracao_mucum/reconstrucao_mucum.npz) | Artefato de execução ou proveniência |
+| [planejamento-tese/v2/continuidade/diagnostico.json](planejamento-tese/v2/continuidade/diagnostico.json) | Artefato de execução ou proveniência |
+| [pretreino-sar/v2/analise.json](pretreino-sar/v2/analise.json) | Artefato de execução ou proveniência |
+| [pretreino-sar/v2/protocolo.json](pretreino-sar/v2/protocolo.json) | Artefato de execução ou proveniência |
+| [relatorios/FECHAMENTO_CIENTIFICO_OPERACIONAL.md](relatorios/FECHAMENTO_CIENTIFICO_OPERACIONAL.md) | Relatório de execução |
+| [sar-inundacao/avaliacao_unet_v1_teste.json](sar-inundacao/avaliacao_unet_v1_teste.json) | Artefato de execução ou proveniência |
+| [sar-inundacao/baseline_otsu_teste.json](sar-inundacao/baseline_otsu_teste.json) | Artefato de execução ou proveniência |
+| [sar-inundacao/confirmacao_recusa_v1_teste.json](sar-inundacao/confirmacao_recusa_v1_teste.json) | Artefato de execução ou proveniência |
 
-[Relação entre afirmações, código e fontes](../../docs/MATRIZ_ARTIGO.md)
+[Matriz do artigo](../../docs/MATRIZ_ARTIGO.md)

@@ -1,0 +1,142 @@
+{
+  "tipo": "pretreino_mascarado_sar",
+  "etapa": "A8",
+  "quando_utc": "2026-09-13T05:27:07.984530Z",
+  "commit": "21cb357",
+  "torch": "2.11.0+cpu",
+  "seed": 20260903,
+  "splits_do_pretreino": [
+    "treino"
+  ],
+  "chips": 232,
+  "chips_retidos": 20,
+  "por_que_retidos": "a perda de treino nao separa aprender de decorar; a medida em chip que o gradiente nunca tocou separa",
+  "recortes_por_chip": 16,
+  "recortes_disponiveis": 3712,
+  "hiperparametros": {
+    "base": 16,
+    "lote": 8,
+    "taxa": 0.001,
+    "lado": 128,
+    "fracao_mascara": 0.75,
+    "lado_bloco": 16,
+    "threads": 8
+  },
+  "passos_alvo": 4000,
+  "epocas_alvo": null,
+  "passos_totais": 4000,
+  "normalizacao": {
+    "media": [
+      -10.386839,
+      -17.246652
+    ],
+    "desvio": [
+      4.054088,
+      4.760746
+    ],
+    "bandas": [
+      "VV",
+      "VH"
+    ]
+  },
+  "normalizacao_herdada": false,
+  "modo_da_medida_retida": "estatistica do lote; as medias moveis do BatchNorm sao reaprendidas no ajuste fino, entao deixar que elas decidam a promocao seria escolher pelo que vai ser jogado fora",
+  "taxa_herdada": null,
+  "taxa_aplicada": 0.001,
+  "deriva_da_normalizacao": null,
+  "segundos_estatisticas": 8.66,
+  "historico": [
+    {
+      "epoca": 1,
+      "epoca_acumulada": 1,
+      "perda_treino": 0.809735,
+      "perda_retida": 0.667818,
+      "perda_retida_media_movel": 0.74826,
+      "passos": 462,
+      "segundos_acumulados": 325.6
+    },
+    {
+      "epoca": 2,
+      "epoca_acumulada": 2,
+      "perda_treino": 0.745453,
+      "perda_retida": 0.657204,
+      "perda_retida_media_movel": 0.721599,
+      "passos": 463,
+      "segundos_acumulados": 621.8
+    },
+    {
+      "epoca": 3,
+      "epoca_acumulada": 3,
+      "perda_treino": 0.64487,
+      "perda_retida": 0.733346,
+      "perda_retida_media_movel": 0.692759,
+      "passos": 463,
+      "segundos_acumulados": 922.3
+    },
+    {
+      "epoca": 4,
+      "epoca_acumulada": 4,
+      "perda_treino": 0.728347,
+      "perda_retida": 0.659794,
+      "perda_retida_media_movel": 0.653436,
+      "passos": 464,
+      "segundos_acumulados": 1215.9
+    },
+    {
+      "epoca": 5,
+      "epoca_acumulada": 5,
+      "perda_treino": 0.668108,
+      "perda_retida": 0.627912,
+      "perda_retida_media_movel": 0.7935,
+      "passos": 463,
+      "segundos_acumulados": 1545.1
+    },
+    {
+      "epoca": 6,
+      "epoca_acumulada": 6,
+      "perda_treino": 0.655048,
+      "perda_retida": 0.694585,
+      "perda_retida_media_movel": 0.727692,
+      "passos": 464,
+      "segundos_acumulados": 1806.2
+    },
+    {
+      "epoca": 7,
+      "epoca_acumulada": 7,
+      "perda_treino": 0.608567,
+      "perda_retida": 0.583616,
+      "perda_retida_media_movel": 0.725938,
+      "passos": 463,
+      "segundos_acumulados": 2108.0
+    },
+    {
+      "epoca": 8,
+      "epoca_acumulada": 8,
+      "perda_treino": 0.614469,
+      "perda_retida": 0.633242,
+      "perda_retida_media_movel": 0.634822,
+      "passos": 462,
+      "segundos_acumulados": 2367.3
+    },
+    {
+      "epoca": 9,
+      "epoca_acumulada": 9,
+      "perda_treino": 0.610631,
+      "perda_retida": 0.600342,
+      "perda_retida_media_movel": 0.620379,
+      "passos": 296,
+      "segundos_acumulados": 2540.3
+    }
+  ],
+  "hash_estado": "sha256:155220124a8ed8b2d139562547ae1465fa6dd361bfcb0993825a99e7898ba08c",
+  "rodada": 1,
+  "peso_pai": null,
+  "linhagem": [],
+  "passos_acumulados": 4000,
+  "epocas_acumuladas": 9,
+  "perda_retida_final": 0.600342,
+  "usou_rotulo": false,
+  "por_que_75": "He et al. 2022 (arXiv:2111.06377): mascarar proporcao alta da entrada e o que torna a tarefa auto-supervisionada nao trivial",
+  "nao_e": "modelo de suscetibilidade nem mascara publicavel: e uma inicializacao de pesos, e ela so vale o que provar valer no ajuste fino contra a inicializacao aleatoria",
+  "hash_manifesto": "sha256:c7bc837e9e8ed46cd1e2f828c467dda26beb22a4468b8a622664c86252752ecc"
+}

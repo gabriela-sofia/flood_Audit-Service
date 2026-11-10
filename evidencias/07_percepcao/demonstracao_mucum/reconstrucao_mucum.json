@@ -1,0 +1,9 @@
+{
+ "estado": "pretreino_estado_rodada_geral_20260913.pt",
+ "sha256_estado": "6660f31e7794f247ba932f2f72c213834334bc47f8dbcee1f30578adc262f6d1",
+ "usou_rotulo": false,
+ "blocos_ocultos": 49,
+ "mse_oculto_rede_neste_recorte": 1.2818,
+ "mse_oculto_prever_media_neste_recorte": 1.8096,
+ "aviso": "uma passagem de demonstracao num recorte; nao e medida de desempenho"
+}

@@ -3,46 +3,46 @@
   "fontes_locais": [
     {
       "caminho": "README.md",
-      "sha256": "sha256:080c33206a2cb14d8db918325e96b8d3d4d0fe4bf7c1fa3a70b4409339068870",
-      "chunks": 7
+      "sha256": "sha256:de79ffd023b9d62af5c1bcb5475313a97ed5a6e11cf7824e16f67e4c6c9e1635",
+      "chunks": 8
     },
     {
       "caminho": "artigo/fonte/artigo.tex",
-      "sha256": "sha256:896b74e687a183c2423823aed91c160e4afd9a92fed10460d764700aa073d06c",
-      "chunks": 34
+      "sha256": "sha256:2860bf9724c3bce3eb6e368e03b88e8660b1817f075a57958aceec8aafa0e7c2",
+      "chunks": 33
     },
     {
       "caminho": "docs/METODO.md",
-      "sha256": "sha256:331e86d8afd90a40a23496df2f8de8bf5adbc5b5d31821b85905d4566fd13525",
+      "sha256": "sha256:e24e4e9a2b50d2c68a0fc5436e9104b59eaf6fcc6d8421ab6fa0f4942de54900",
       "chunks": 7
     },
     {
       "caminho": "docs/CONTRIBUICOES.md",
-      "sha256": "sha256:bff09b0dafbcfd95aab99740cc9a82869fcd155cc91df4085561b42ed1f6195d",
+      "sha256": "sha256:d6e540b65a8b26e5aa234b76255167919894a42309fe28d677c1dd4def03ab21",
       "chunks": 7
     },
     {
       "caminho": "docs/DADOS_E_FONTES.md",
-      "sha256": "sha256:d838250ec3518f03700b8c127abae438ce3e6d774120556c532f7e2bb5624657",
-      "chunks": 2
+      "sha256": "sha256:106ea6cc22371006d846cdfdf5e2a256807a64187453f5eefd271fd0a1dd18f7",
+      "chunks": 3
     },
     {
       "caminho": "docs/REPRODUCAO.md",
-      "sha256": "sha256:54c736420613154e808da43db223d691eccbb8879d709e4cc6c6430ccf72a98b",
-      "chunks": 6
+      "sha256": "sha256:63717a2e6dd913be239b302b10128f33902b56443b0e4e387d1c5a7a9e85c459",
+      "chunks": 7
     },
     {
       "caminho": "docs/CODIGO.md",
-      "sha256": "sha256:349dd59e225616637a5252816a2febc0377256c93a387ad2d9faf017d907ceea",
+      "sha256": "sha256:5292dfc8cc2f4ffc49c8d477d5e501af2d155488a42ee297148ac541b247b1af",
       "chunks": 3
     }
   ],
-  "chunks": 99,
+  "chunks": 101,
   "por_classe": {
-    "projeto": 57,
+    "projeto": 58,
     "cientifica": 23,
-    "operacional": 19
+    "operacional": 20
   },
-  "hash_corpus": "sha256:1646842e12932738afcc1ae285bc8a244d6143f3edb3299f41da8da4ec479481",
-  "nota": "Consulta dos documentos atuais; não é repetição dos ensaios da Tabela VIII. Recriar o índice após mover a pasta."
+  "hash_corpus": "sha256:60692f6dec9958257d9ffc66341de4b74bc812218e2b7527aceb3be1cbb52e12",
+  "nota": "Índice da documentação v22. A avaliação de 11.238 consultas da Tabela VII tem corpus e registro próprios."
 }

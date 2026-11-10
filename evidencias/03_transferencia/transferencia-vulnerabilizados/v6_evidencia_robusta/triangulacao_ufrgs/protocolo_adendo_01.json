@@ -1,0 +1,10 @@
+{
+  "tipo": "transferencia_vulnerabilizados:triangulacao_ufrgs/protocolo_adendo_01",
+  "nao_e": "estudo de transferencia para territorios vulnerabilizados; nao e promocao de modelo, previsao de evento, profundidade, risco, dano, vitimas ou identificacao causal",
+  "gerado_por": "scripts/vulnerabilizados",
+  "versao": "v6-ufrgs-adendo-01",
+  "motivo": "na v1.4 do Zenodo a camada usa data AAAAMMDD (rhguaiba_planet-skysat_inundacao_obs_20240506); a regra original (06052024) casou 0 camadas e a execucao 1 nao abriu feicao alguma (resultado.json preservado, suporte 0)",
+  "regra": "camadas cujo nome contem 'planet-skysat_inundacao' e 'obs' com data 06052024 ou 20240506",
+  "saida": "resultado_a01.json / fracoes_a01.csv",
+  "quando_utc": "2026-10-20T19:50:03.113235+00:00"
+}

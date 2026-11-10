@@ -1,548 +1,80 @@
 {
-  "estado": "preparacao_local_conferida",
-  "quando_utc": "2026-11-07T21:38:08.668017+00:00",
-  "github_alterado": false,
-  "pasta_original_de_pesquisa_alterada": false,
+  "estado": "recorte_v22_conferido",
+  "data": "2026-11-10",
+  "versao": "v22",
   "integridade": {
     "tipo": "integridade_da_preparacao",
     "ok": true,
     "erros": [],
-    "copias_com_hash_conferido": 397,
-    "arquivos_python_analisados": 326,
-    "links_da_documentacao_conferidos": 534,
-    "linhas_tabeladas": 98,
-    "paragrafos_rastreados": 32,
+    "copias_com_hash_conferido": 411,
+    "arquivos_python_analisados": 331,
+    "links_da_documentacao_conferidos": 668,
+    "linhas_tabeladas": 57,
+    "paragrafos_rastreados": 54,
     "nota": "Identidade, presença, sintaxe e rastreabilidade; não é nova validação científica."
   },
   "transcricao": {
     "tipo": "conferencia_de_transcricao_estruturada",
+    "versao": "v22",
     "ok": true,
-    "conferidos": 86,
+    "conferidos": 213,
     "divergencias": [],
-    "nota": "Resultados já executados; esta conferência não repete a validação científica."
+    "ressalvas": [
+      {
+        "id": "VII.03",
+        "estimativa_integral": 0.04848438151508766,
+        "apresentacao_artigo": 0.049,
+        "arredondamento_direto": 0.048,
+        "compativel_com_arredondamento_intermediario": true
+      }
+    ],
+    "nota": "Conferência de registros existentes. Resultados datados mantêm o protocolo e a população de origem."
   },
   "testes": {
-    "casos_distintos": 68,
-    "aprovados": 65,
+    "aprovados": 58,
     "dispensados": 3,
     "falhas": 0,
-    "erros": 0,
-    "regra": "Casos únicos por módulo e nome; o relatório mais recente prevalece. Não somar suítes sobrepostas.",
     "suites": [
       {
-        "arquivo": "manifestos/testes_nucleo.xml",
-        "tests": "32",
-        "failures": "0",
-        "errors": "0",
-        "skipped": "1",
-        "time": "20.200",
-        "timestamp": "2026-11-08T04:34:20.592007+09:00"
-      },
-      {
-        "arquivo": "manifestos/testes_fontes_continuidade.xml",
-        "tests": "22",
-        "failures": "0",
-        "errors": "0",
-        "skipped": "2",
-        "time": "210.757",
-        "timestamp": "2026-11-08T04:44:32.211215+09:00"
+        "arquivo": "manifestos/testes_portaveis.xml",
+        "total": 10,
+        "aprovados": 10,
+        "dispensados": 0,
+        "falhas": 0,
+        "erros": 0,
+        "sha256": "189b13d1341ca92dcf65b407e188368a6a91b41bdc2eb6e802392137ef219e71"
       },
       {
         "arquivo": "manifestos/testes_fontes_atuais.xml",
-        "tests": "19",
-        "failures": "0",
-        "errors": "0",
-        "skipped": "2",
-        "time": "5.071",
-        "timestamp": "2026-11-08T06:36:48.103231+09:00"
-      },
-      {
-        "arquivo": "manifestos/testes_portaveis.xml",
-        "tests": "10",
-        "failures": "0",
-        "errors": "0",
-        "skipped": "0",
-        "time": "13.145",
-        "timestamp": "2026-11-08T06:35:59.937181+09:00"
-      },
-      {
-        "arquivo": "manifestos/testes_curadoria.xml",
-        "tests": "4",
-        "failures": "0",
-        "errors": "0",
-        "skipped": "0",
-        "time": "10.001",
-        "timestamp": "2026-11-08T06:36:35.135753+09:00"
-      }
-    ],
-    "casos": [
-      {
-        "modulo": "tests.test_mt01_mecanismos",
-        "teste": "test_gradiente_confere_com_diferenca_finita",
-        "situacao": "aprovado",
-        "relatorio": "manifestos/testes_nucleo.xml"
-      },
-      {
-        "modulo": "tests.test_mt01_mecanismos",
-        "teste": "test_sem_penalidade_recupera_sinais_e_ordem_independe_do_intercepto",
-        "situacao": "aprovado",
-        "relatorio": "manifestos/testes_nucleo.xml"
-      },
-      {
-        "modulo": "tests.test_mt01_mecanismos",
-        "teste": "test_auc_por_postos_confere_com_sklearn",
-        "situacao": "aprovado",
-        "relatorio": "manifestos/testes_nucleo.xml"
-      },
-      {
-        "modulo": "tests.test_mt01_mecanismos",
-        "teste": "test_ap_confere_com_sklearn",
-        "situacao": "aprovado",
-        "relatorio": "manifestos/testes_nucleo.xml"
-      },
-      {
-        "modulo": "tests.test_mt01_mecanismos",
-        "teste": "test_grafo_une_por_evento_lugar_onda_e_nunca_usa_classe",
-        "situacao": "aprovado",
-        "relatorio": "manifestos/testes_nucleo.xml"
-      },
-      {
-        "modulo": "tests.test_mt01_mecanismos",
-        "teste": "test_reserva_protegida_e_recusada",
-        "situacao": "aprovado",
-        "relatorio": "manifestos/testes_nucleo.xml"
-      },
-      {
-        "modulo": "tests.test_mt01_mecanismos",
-        "teste": "test_unidade_de_terreno_mapeia_fontes",
-        "situacao": "aprovado",
-        "relatorio": "manifestos/testes_nucleo.xml"
-      },
-      {
-        "modulo": "tests.test_mt01_mecanismos",
-        "teste": "test_ln_sca_recupera_area_contribuinte",
-        "situacao": "aprovado",
-        "relatorio": "manifestos/testes_nucleo.xml"
-      },
-      {
-        "modulo": "tests.test_mt01_mecanismos",
-        "teste": "test_amostragem_teto_por_evento_e_classe_reprodutivel",
-        "situacao": "aprovado",
-        "relatorio": "manifestos/testes_nucleo.xml"
-      },
-      {
-        "modulo": "tests.test_mt01_mecanismos",
-        "teste": "test_adaptacao_local_nao_altera_nucleo",
-        "situacao": "aprovado",
-        "relatorio": "manifestos/testes_nucleo.xml"
-      },
-      {
-        "modulo": "tests.test_mt01_mecanismos",
-        "teste": "test_veredito_recusa_com_menos_de_8_unidades_e_decide_com_ic",
-        "situacao": "aprovado",
-        "relatorio": "manifestos/testes_nucleo.xml"
-      },
-      {
-        "modulo": "tests.test_mt01_mecanismos",
-        "teste": "test_media_por_unidade_pesa_eventos_igualmente",
-        "situacao": "aprovado",
-        "relatorio": "manifestos/testes_nucleo.xml"
-      },
-      {
-        "modulo": "tests.test_admissao_cientifica",
-        "teste": "test_positivo_observado_datado_serve_a_todos_os_usos",
-        "situacao": "aprovado",
-        "relatorio": "manifestos/testes_nucleo.xml"
-      },
-      {
-        "modulo": "tests.test_admissao_cientifica",
-        "teste": "test_ausencia_de_registro_nunca_vira_negativo",
-        "situacao": "aprovado",
-        "relatorio": "manifestos/testes_nucleo.xml"
-      },
-      {
-        "modulo": "tests.test_admissao_cientifica",
-        "teste": "test_sem_dado_e_agua_permanente_ficam_fora_do_binario",
-        "situacao": "aprovado",
-        "relatorio": "manifestos/testes_nucleo.xml"
-      },
-      {
-        "modulo": "tests.test_admissao_cientifica",
-        "teste": "test_gfd_em_serra_nao_treina_porque_o_pixel_nao_resolve_o_relevo",
-        "situacao": "aprovado",
-        "relatorio": "manifestos/testes_nucleo.xml"
-      },
-      {
-        "modulo": "tests.test_admissao_cientifica",
-        "teste": "test_negativo_por_exclusao_treina_mas_nao_avalia_nem_afirma",
-        "situacao": "aprovado",
-        "relatorio": "manifestos/testes_nucleo.xml"
-      },
-      {
-        "modulo": "tests.test_admissao_cientifica",
-        "teste": "test_data_nao_resolvida_bloqueia_so_o_uso_temporal",
-        "situacao": "aprovado",
-        "relatorio": "manifestos/testes_nucleo.xml"
-      },
-      {
-        "modulo": "tests.test_admissao_cientifica",
-        "teste": "test_terreno_nodata_nao_treina",
-        "situacao": "aprovado",
-        "relatorio": "manifestos/testes_nucleo.xml"
-      },
-      {
-        "modulo": "tests.test_admissao_cientifica",
-        "teste": "test_referencia_circular_nao_sustenta_afirmacao",
-        "situacao": "aprovado",
-        "relatorio": "manifestos/testes_nucleo.xml"
-      },
-      {
-        "modulo": "tests.test_admissao_cientifica",
-        "teste": "test_exigir_falha_com_linha_nao_autorizada_e_diz_o_motivo",
-        "situacao": "aprovado",
-        "relatorio": "manifestos/testes_nucleo.xml"
-      },
-      {
-        "modulo": "tests.test_admissao_cientifica",
-        "teste": "test_mecanismo_que_o_instrumento_nao_sustenta_nao_treina",
-        "situacao": "aprovado",
-        "relatorio": "manifestos/testes_nucleo.xml"
-      },
-      {
-        "modulo": "tests.test_admissao_cientifica",
-        "teste": "test_cena_do_cems_ordena_eventos_mas_nao_ancora_forcamento",
-        "situacao": "aprovado",
-        "relatorio": "manifestos/testes_nucleo.xml"
-      },
-      {
-        "modulo": "tests.test_admissao_cientifica",
-        "teste": "test_previsao_recusa_evento_anterior_ao_dem",
-        "situacao": "aprovado",
-        "relatorio": "manifestos/testes_nucleo.xml"
-      },
-      {
-        "modulo": "tests.test_v10_ciclo_contextual",
-        "teste": "test_reservatorio_limitado_e_logit_da_insercao",
-        "situacao": "aprovado",
-        "relatorio": "manifestos/testes_nucleo.xml"
-      },
-      {
-        "modulo": "tests.test_v10_ciclo_contextual",
-        "teste": "test_reservatorio_vazio",
-        "situacao": "aprovado",
-        "relatorio": "manifestos/testes_nucleo.xml"
-      },
-      {
-        "modulo": "tests.test_v10_ciclo_contextual",
-        "teste": "test_suporte_exige_cinco_cinco_tres",
-        "situacao": "aprovado",
-        "relatorio": "manifestos/testes_nucleo.xml"
-      },
-      {
-        "modulo": "tests.test_v10_ciclo_contextual",
-        "teste": "test_nucleo_limpo_e_o_qsep_da_v9",
-        "situacao": "aprovado",
-        "relatorio": "manifestos/testes_nucleo.xml"
-      },
-      {
-        "modulo": "tests.test_v10_ciclo_contextual",
-        "teste": "test_ciclo_registros_completos",
-        "situacao": "dispensado",
-        "relatorio": "manifestos/testes_nucleo.xml",
-        "motivo": "ciclo nao executado"
-      },
-      {
-        "modulo": "tests.test_v10_ciclo_contextual",
-        "teste": "test_competencia_zero_revisoes",
-        "situacao": "aprovado",
-        "relatorio": "manifestos/testes_nucleo.xml"
-      },
-      {
-        "modulo": "tests.test_v10_ciclo_contextual",
-        "teste": "test_crc_lambda_controla_perda_e_e_monotono_em_alfa",
-        "situacao": "aprovado",
-        "relatorio": "manifestos/testes_nucleo.xml"
-      },
-      {
-        "modulo": "tests.test_v10_ciclo_contextual",
-        "teste": "test_verificacao_independente",
-        "situacao": "aprovado",
-        "relatorio": "manifestos/testes_nucleo.xml"
-      },
-      {
-        "modulo": "tests.test_recuperacao_frente_c",
-        "teste": "test_a_consulta_morfologica_troca_numero_e_nada_mais",
-        "situacao": "aprovado",
-        "relatorio": "manifestos/testes_fontes_atuais.xml"
-      },
-      {
-        "modulo": "tests.test_recuperacao_frente_c",
-        "teste": "test_as_consultas_sao_deterministicas",
-        "situacao": "aprovado",
-        "relatorio": "manifestos/testes_fontes_atuais.xml"
-      },
-      {
-        "modulo": "tests.test_recuperacao_frente_c",
-        "teste": "test_consulta_rejeitada_conta_como_zero_e_nao_como_erro",
-        "situacao": "aprovado",
-        "relatorio": "manifestos/testes_fontes_atuais.xml"
-      },
-      {
-        "modulo": "tests.test_recuperacao_frente_c",
-        "teste": "test_o_denso_respeita_a_classe_de_autoridade",
-        "situacao": "aprovado",
-        "relatorio": "manifestos/testes_fontes_atuais.xml"
-      },
-      {
-        "modulo": "tests.test_recuperacao_frente_c",
-        "teste": "test_o_denso_nao_devolve_chunk_com_injecao",
-        "situacao": "dispensado",
-        "relatorio": "manifestos/testes_fontes_atuais.xml",
-        "motivo": "nenhum chunk com injecao no corpus atual"
-      },
-      {
-        "modulo": "tests.test_recuperacao_frente_c",
-        "teste": "test_com_injecao_ligado_o_chunk_aparece_para_a_auditoria",
-        "situacao": "dispensado",
-        "relatorio": "manifestos/testes_fontes_atuais.xml",
-        "motivo": "nenhum chunk com injecao no corpus atual"
-      },
-      {
-        "modulo": "tests.test_recuperacao_frente_c",
-        "teste": "test_a_fusao_usa_posicao_e_nao_score",
-        "situacao": "aprovado",
-        "relatorio": "manifestos/testes_fontes_atuais.xml"
-      },
-      {
-        "modulo": "tests.test_recuperacao_frente_c",
-        "teste": "test_a_fusao_nao_inventa_documento",
-        "situacao": "aprovado",
-        "relatorio": "manifestos/testes_fontes_atuais.xml"
-      },
-      {
-        "modulo": "tests.test_recuperacao_frente_c",
-        "teste": "test_a_comparacao_usa_a_regua_do_baseline",
-        "situacao": "aprovado",
-        "relatorio": "manifestos/testes_fontes_atuais.xml"
-      },
-      {
-        "modulo": "tests.test_verificacao_frente_d",
-        "teste": "test_os_trechos_sao_reais_e_os_claims_sao_declarados_a_mao",
-        "situacao": "aprovado",
-        "relatorio": "manifestos/testes_fontes_atuais.xml"
-      },
-      {
-        "modulo": "tests.test_verificacao_frente_d",
-        "teste": "test_as_duas_familias_do_meio_existem_em_numero_util",
-        "situacao": "aprovado",
-        "relatorio": "manifestos/testes_fontes_atuais.xml"
-      },
-      {
-        "modulo": "tests.test_verificacao_frente_d",
-        "teste": "test_o_lexico_erra_a_familia_que_a_docstring_admite_errar",
-        "situacao": "aprovado",
-        "relatorio": "manifestos/testes_fontes_atuais.xml"
-      },
-      {
-        "modulo": "tests.test_verificacao_frente_d",
-        "teste": "test_o_juiz_nunca_aprova_o_que_o_lexico_reprovou",
-        "situacao": "aprovado",
-        "relatorio": "manifestos/testes_fontes_atuais.xml"
-      },
-      {
-        "modulo": "tests.test_verificacao_frente_d",
-        "teste": "test_o_juiz_pode_derrubar_o_que_o_lexico_aprovou",
-        "situacao": "aprovado",
-        "relatorio": "manifestos/testes_fontes_atuais.xml"
-      },
-      {
-        "modulo": "tests.test_verificacao_frente_d",
-        "teste": "test_juiz_indisponivel_nao_e_discordancia",
-        "situacao": "aprovado",
-        "relatorio": "manifestos/testes_fontes_atuais.xml"
-      },
-      {
-        "modulo": "tests.test_verificacao_frente_d",
-        "teste": "test_o_pior_caso_do_juiz_e_inofensivo",
-        "situacao": "aprovado",
-        "relatorio": "manifestos/testes_fontes_atuais.xml"
-      },
-      {
-        "modulo": "tests.test_verificacao_frente_d",
-        "teste": "test_resposta_fora_do_vocabulario_nao_vira_voto",
-        "situacao": "aprovado",
-        "relatorio": "manifestos/testes_fontes_atuais.xml"
-      },
-      {
-        "modulo": "tests.test_verificacao_frente_d",
-        "teste": "test_o_juiz_nao_ve_o_payload_nem_o_que_foi_gerado",
-        "situacao": "aprovado",
-        "relatorio": "manifestos/testes_fontes_atuais.xml"
-      },
-      {
-        "modulo": "tests.test_verificacao_frente_d",
-        "teste": "test_o_custo_em_falso_negativo_esta_declarado",
-        "situacao": "aprovado",
-        "relatorio": "manifestos/testes_fontes_atuais.xml"
-      },
-      {
-        "modulo": "tests.test_continuidade_v3",
-        "teste": "test_v3_ponta_a_ponta",
-        "situacao": "aprovado",
-        "relatorio": "manifestos/testes_fontes_continuidade.xml"
-      },
-      {
-        "modulo": "tests.test_continuidade_v3",
-        "teste": "test_kl_mascarada_ignora_nodata",
-        "situacao": "aprovado",
-        "relatorio": "manifestos/testes_fontes_continuidade.xml"
-      },
-      {
-        "modulo": "tests.test_continuidade_v3",
-        "teste": "test_memoria_m1_admite_so_chip_rotulado",
-        "situacao": "aprovado",
-        "relatorio": "manifestos/testes_fontes_continuidade.xml"
-      },
-      {
-        "modulo": "testes.test_configuracao_servico",
-        "teste": "test_configuracao_nao_autoriza_egresso",
-        "situacao": "aprovado",
-        "relatorio": "manifestos/testes_portaveis.xml"
-      },
-      {
-        "modulo": "testes.test_configuracao_servico",
-        "teste": "test_permissao_sem_configuracao_mantem_servico_indisponivel",
-        "situacao": "aprovado",
-        "relatorio": "manifestos/testes_portaveis.xml"
-      },
-      {
-        "modulo": "testes.test_publicacao",
-        "teste": "test_arquivos_codigo_links_e_rastreabilidade",
-        "situacao": "aprovado",
-        "relatorio": "manifestos/testes_portaveis.xml"
-      },
-      {
-        "modulo": "testes.test_publicacao",
-        "teste": "test_transcricao_vem_dos_artefatos",
-        "situacao": "aprovado",
-        "relatorio": "manifestos/testes_portaveis.xml"
-      },
-      {
-        "modulo": "testes.test_publicacao",
-        "teste": "test_recorte_contem_apenas_um_artigo_atual",
-        "situacao": "aprovado",
-        "relatorio": "manifestos/testes_portaveis.xml"
-      },
-      {
-        "modulo": "testes.test_publicacao",
-        "teste": "test_exportacao_preserva_os_dois_estados_ajustados",
-        "situacao": "aprovado",
-        "relatorio": "manifestos/testes_portaveis.xml"
-      },
-      {
-        "modulo": "testes.test_publicacao",
-        "teste": "test_metrica_de_recife_por_bairro",
-        "situacao": "aprovado",
-        "relatorio": "manifestos/testes_portaveis.xml"
-      },
-      {
-        "modulo": "testes.test_publicacao",
-        "teste": "test_prior_de_recife_preserva_ou_atualiza_conforme_regularizacao",
-        "situacao": "aprovado",
-        "relatorio": "manifestos/testes_portaveis.xml"
-      },
-      {
-        "modulo": "testes.test_publicacao",
-        "teste": "test_metrica_por_cicatriz_confere_por_outro_caminho",
-        "situacao": "aprovado",
-        "relatorio": "manifestos/testes_portaveis.xml"
-      },
-      {
-        "modulo": "testes.test_publicacao",
-        "teste": "test_prior_de_encosta",
-        "situacao": "aprovado",
-        "relatorio": "manifestos/testes_portaveis.xml"
-      },
-      {
-        "modulo": "tests.test_fechamento_integrada_v2",
-        "teste": "test_contexto_mutavel_nao_e_dependencia_sar",
-        "situacao": "aprovado",
-        "relatorio": "manifestos/testes_curadoria.xml"
-      },
-      {
-        "modulo": "tests.test_fechamento_integrada_v2",
-        "teste": "test_peso_sar_alterado_continua_bloqueado",
-        "situacao": "aprovado",
-        "relatorio": "manifestos/testes_curadoria.xml"
-      },
-      {
-        "modulo": "tests.test_fechamento_integrada_v2",
-        "teste": "test_revisao_declarada_preserva_incerto_e_nao_promove",
-        "situacao": "aprovado",
-        "relatorio": "manifestos/testes_curadoria.xml"
-      },
-      {
-        "modulo": "tests.test_fechamento_integrada_v2",
-        "teste": "test_revisao_identidade_ia_e_hash_adulterado_recusados",
-        "situacao": "aprovado",
-        "relatorio": "manifestos/testes_curadoria.xml"
+        "total": 51,
+        "aprovados": 48,
+        "dispensados": 3,
+        "falhas": 0,
+        "erros": 0,
+        "sha256": "5c61f8d464c4db9ab3c56602544d44c6b07ec46b6c3df93853b341d06bc83733"
       }
     ]
   },
-  "indice_atual": {
-    "fontes_locais": 7,
-    "chunks": 100,
-    "relatorio": "manifestos/indice_documental_atual.json"
+  "rotinas_com_importacao_conferida": 7,
+  "compilacao": {
+    "motor": "pdfLaTeX",
+    "modo": "rascunho",
+    "passagens": 2,
+    "paginas": 6,
+    "referencias_resolvidas": true
   },
-  "verificacao_de_segredos": {
-    "padroes_examinados": [
-      "tokens GitHub",
-      "chaves privadas PEM",
-      "chaves de API com formato reconhecível"
+  "demonstracao_mucum": {
+    "estado_confere_com_hash": true,
+    "recorte_pixels": [
+      128,
+      128
     ],
-    "ocorrencias": []
+    "blocos_ocultos": 49
   },
-  "ambiente": "Python 3.12.10 e pacotes locais existentes; ambiente virtual com system-site-packages. Não é instalação limpa.",
-  "comandos": [
-    {
-      "pasta": ".",
-      "comando": "python reproducao/verificar_pacote.py"
-    },
-    {
-      "pasta": ".",
-      "comando": "python reproducao/conferir_resultados.py"
-    },
-    {
-      "pasta": ".",
-      "comando": "python -m pytest testes -q"
-    },
-    {
-      "pasta": "codigo",
-      "comando": "python -X utf8 -m pytest tests/test_fechamento_integrada_v2.py -q"
-    },
-    {
-      "pasta": "codigo",
-      "comando": "python -m pytest tests/test_mt01_mecanismos.py tests/test_admissao_cientifica.py tests/test_v10_ciclo_contextual.py -q"
-    },
-    {
-      "pasta": "codigo",
-      "comando": "python -m pytest tests/test_recuperacao_frente_c.py tests/test_verificacao_frente_d.py tests/test_continuidade_v3.py -q"
-    },
-    {
-      "pasta": "codigo",
-      "comando": "python scripts/servico/rag_corpus.py"
-    },
-    {
-      "pasta": "codigo",
-      "comando": "python -m pytest tests/test_recuperacao_frente_c.py tests/test_verificacao_frente_d.py -q"
-    }
-  ],
-  "limites": [
-    "QA e transcrição não equivalem a nova validação científica.",
-    "Os ensaios científicos e os 2.747 testes de 20/10 não foram repetidos nesta preparação.",
-    "Testes de continuidade usam dados artificiais e não sustentam novo ganho científico.",
-    "Dados brutos e entradas volumosas são externos; a publicação inclui protocolos e evidências selecionadas.",
-    "O teste SAR emitiu avisos de depreciação do NumPy; não foram falhas de teste.",
-    "A primeira execução do teste SAR foi impedida pela gravação de arquivo temporário; a execução local subsequente terminou sem falhas."
-  ]
+  "indice_documental": {
+    "fontes_locais": 7,
+    "trechos": 101,
+    "hash": "sha256:60692f6dec9958257d9ffc66341de4b74bc812218e2b7527aceb3be1cbb52e12"
+  },
+  "nota": "A atualização confere os registros existentes. A entrega de 20 de outubro e os ensaios do artigo têm registros separados."
 }

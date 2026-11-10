@@ -23,7 +23,8 @@ def test_transcricao_vem_dos_artefatos():
     assert r['ok'],r['divergencias']
 
 def test_recorte_contem_apenas_um_artigo_atual():
-    assert len(list((RAIZ/'artigo').rglob('*.pdf')))==1
+    pdfs = {p.relative_to(RAIZ/'artigo').as_posix() for p in (RAIZ/'artigo').rglob('*.pdf')}
+    assert pdfs == {'REV-P_artigo_atual.pdf', 'REV-P_poster.pdf'}
     assert not (RAIZ/'historico').exists()
 
 def test_exportacao_preserva_os_dois_estados_ajustados():

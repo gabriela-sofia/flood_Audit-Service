@@ -19,6 +19,7 @@ Os nomes de arquivos e os importadores de origem foram preservados para manter a
 | [ctx04_terreno_versus_contexto.py](ctx04_terreno_versus_contexto.py) | Dependência necessária |
 | [fechamento_do_framework.py](fechamento_do_framework.py) | Dependência necessária |
 | [generalizacao_por_reservas.py](generalizacao_por_reservas.py) | Dependência necessária |
+| [gfdq03_teste_confirmatorio.py](gfdq03_teste_confirmatorio.py) | Entrada selecionada |
 | [ms1_posicao_topografica.py](ms1_posicao_topografica.py) | Dependência necessária |
 | [ms2_quadro_do_negativo.py](ms2_quadro_do_negativo.py) | Dependência necessária |
 | [ms3_decomposicao_do_quadro.py](ms3_decomposicao_do_quadro.py) | Dependência necessária |

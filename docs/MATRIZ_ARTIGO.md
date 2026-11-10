@@ -1,166 +1,110 @@
-# Matriz do artigo atual
+# Matriz de evidências do artigo v22
 
-A matriz registra as 98 linhas das nove tabelas e os 32 parágrafos do método, resultados, discussão, conclusão e introdução. A [versão completa em JSON](../manifestos/afirmacoes_artigo.json) conserva o texto-fonte e seus vínculos; a [versão CSV](../manifestos/afirmacoes_artigo.csv) permite filtrar por tabela.
+As tabelas seguem a ordem do artigo de 10 de novembro. Cada linha identifica a comparação, o código e o registro que a sustenta. Os vínculos dos parágrafos, legendas e referências estão nos manifestos.
 
-Rastrear uma afirmação não equivale a executar um novo experimento. As evidências distinguem artefatos estruturados de relatórios de execução; os regimes e limites científicos permanecem os do artigo.
+[Matriz completa em JSON](../manifestos/afirmacoes_artigo.json) · [Matriz em CSV](../manifestos/afirmacoes_artigo.csv)
 
-## Tabela I — Desenhos de teste
+## Tabela I — Relações físicas e teste externo
 
-[Abrir o desenho metodológico](METODO.md) e [o registro de admissão](../evidencias/01_curadoria/README.md)
+| Item | Resultado | Registro e código | Leitura |
+|---|---|---|---|
+| I.01 | Muçum: mediana do HAND  ·  2,2 m com água  ·  61,2 m no comparador | [Evidência](../evidencias/04_recife/fundamentacao-artigo-20261106/f08_ruas_e_comunidades.json) · [Código](../codigo/scripts/fundamentacao_artigo/f08_ruas_e_comunidades.py) | Muçum ilustra o contraste entre observações do episódio. |
+| I.02 | Dentro da cheia, 331.492 pontos (a)  ·  -1,13  ·  [-1,31; -0,96] | [Evidência](../evidencias/02_aprendizado/mecanismos-transferiveis/v9/identificacao_causal_v1/resultado.json) · [Código](../codigo/scripts/metodo/mt09_identificacao_causal.py) | Associação por desvio-padrão de HAND dentro da cheia. |
+| I.03 | Pares a até 3 km (a)  ·  -1,27  ·  [-1,48; -1,05] | [Evidência](../evidencias/02_aprendizado/mecanismos-transferiveis/v9/identificacao_causal_v1/resultado.json) · [Código](../codigo/scripts/metodo/mt09_identificacao_causal.py) | Comparação espacial de pontos próximos. |
+| I.04 | HAND maior, menos água em 25 de 27 territórios. | [Evidência](../evidencias/02_aprendizado/relatorios/MECANISMOS_TRANSFERIVEIS_EXECUCAO_MT01_2026_10_10.md) · [Código](../codigo/scripts/metodo/mt01_experimento.py) | Sinal de HAND em ajustes territoriais individuais. |
+| I.05 | Modelo geral - HAND  ·  +0,039  ·  [0,026; 0,054], 33 a favor | [Evidência](../evidencias/02_aprendizado/mecanismos-transferiveis/v1/resultado.json) · [Código](../codigo/scripts/metodo/mt01_experimento.py) | Unidades deixadas fora uma por vez. |
+| I.06 | Retirar pistas de acumulação  ·  -0,064  ·  [-0,080; -0,048], 39 pioram | [Evidência](../evidencias/02_aprendizado/mecanismos-transferiveis/v1/resultado.json) · [Código](../codigo/scripts/metodo/mt01_experimento.py) | Ablação das pistas de acumulação. |
+| I.07 | Núcleo - HAND (b)  ·  +0,055  ·  [0,024; 0,086] | [Evidência](../evidencias/02_aprendizado/mt11-fechamento/v2/reparo_grafo_3b.json) · [Código](../codigo/scripts/metodo/mt11_emenda.py) | Núcleo congelado com Brasil no ajuste e teste externo. IC98,33%. |
+| I.08 | Com - sem atributos de conexão (b)  ·  +0,030  ·  [0,006; 0,053] | [Evidência](../evidencias/02_aprendizado/mt11-fechamento/v2/reparo_grafo_3b.json) · [Código](../codigo/scripts/metodo/mt11_emenda.py) | Incremento de conexão no teste externo. IC98,33%. |
+| I.09 | Regressão - HAND, 16 cheias (c)  ·  +0,041  ·  13/16, p=0,011 | [Evidência](../evidencias/02_aprendizado/gfd-quarentena/executado.json) · [Código](../codigo/scripts/metodo/gfdq03_teste_confirmatorio.py) | Comparação em 16 cheias sul-americanas fora do Brasil. |
+| I.10 | HAND (log)  ·  -0,981  ·  -0,904  ·  Areia  ·  -0,051  ·  -0,202 | [Evidência](../evidencias/02_aprendizado/transferencia-vulnerabilizados/v9_evolucao_abrangente/p0_regularizacao/pesos.json) · [Código](../codigo/scripts/vulnerabilizados/v9_p0_regularizacao.py) | Coeficientes padronizados das versões completa e com reserva. |
+| I.11 | Distância ao canal  ·  -0,429  ·  -0,433  ·  Contribuição (log)  ·  +0,043  ·  +0,085 | [Evidência](../evidencias/02_aprendizado/transferencia-vulnerabilizados/v9_evolucao_abrangente/p0_regularizacao/pesos.json) · [Código](../codigo/scripts/vulnerabilizados/v9_p0_regularizacao.py) | Coeficientes padronizados das versões completa e com reserva. |
+| I.12 | Declive  ·  -0,312  ·  -0,274  ·  Dist. à drenagem  ·  +0,030  ·  +0,055 | [Evidência](../evidencias/02_aprendizado/transferencia-vulnerabilizados/v9_evolucao_abrangente/p0_regularizacao/pesos.json) · [Código](../codigo/scripts/vulnerabilizados/v9_p0_regularizacao.py) | Coeficientes padronizados das versões completa e com reserva. |
+| I.13 | Fração construída  ·  -0,210  ·  -0,170  ·    ·   · | [Evidência](../evidencias/02_aprendizado/transferencia-vulnerabilizados/v9_evolucao_abrangente/p0_regularizacao/pesos.json) · [Código](../codigo/scripts/vulnerabilizados/v9_p0_regularizacao.py) | Coeficientes padronizados das versões completa e com reserva. |
 
-| Item | Resultado ou desenho apresentado |
-|---|---|
-| I.01 | Presença  ·  água vista na cheia  ·  rua com relato à Defesa Civil  ·  cicatriz mapeada |
-| I.02 | Comparação  ·  ponto sem água na mesma cena  ·  outras ruas do mesmo bairro  ·  células de fundo |
-| I.03 | Fonte  ·  Sentinel-2; 697 positivos em FCU  ·  SEDEC (ref. sedec); 48 ruas em teste  ·  INPE/Charter (ref. inpe); 81 cicatrizes |
-| I.04 | Modelo  ·  versão externa completa  ·  versão com reserva  ·  modelo de encosta |
-| I.05 | Pergunta  ·  chega à mesma observação?  ·  chega ao que os moradores registram?  ·  o que muda com o processo? |
-| I.06 | Cuidado  ·  nuvem fica desconhecida  ·  rua longa acumula relato; sem relato não é seco  ·  fundo não comprova ausência |
+## Tabela II — Transferência para comunidades e recortes urbanos
 
-## Tabela II — Aprendizado físico
+| Item | Resultado | Registro e código | Leitura |
+|---|---|---|---|
+| II.01 | RMPA  ·  241 (17)  ·  0,880 [0,828; 0,923]  ·  —  ·  — | [Evidência](../evidencias/03_transferencia/fundamentacao-artigo-20261028/f03_ic_transferencia_coortes.json) · [Código](../codigo/scripts/fundamentacao_artigo/f03_ic_transferencia_coortes.py) | FCU da RMPA. Ganho sobre HAND inconclusivo. |
+| II.02 | Manaus  ·  48 (10)  ·  0,920 [0,791; 0,967]  ·  +0,046 [0,020; 0,069]  ·  +0,111 | [Evidência](../evidencias/03_transferencia/fundamentacao-artigo-20261028/f03_ic_transferencia_coortes.json) · [Código](../codigo/scripts/fundamentacao_artigo/f03_ic_transferencia_coortes.py) | Transferência externa sem ajuste local. IC95% por grupos de FCU. |
+| II.03 | Recife  ·  31 (19)  ·  0,866 [0,777; 0,935]  ·  +0,064 [0,012; 0,125]  ·  +0,151 | [Evidência](../evidencias/03_transferencia/fundamentacao-artigo-20261028/f03_ic_transferencia_coortes.json) · [Código](../codigo/scripts/fundamentacao_artigo/f03_ic_transferencia_coortes.py) | Transferência externa sem ajuste local. IC95% por grupos de FCU. |
+| II.04 | RMR  ·  366 (35)  ·  0,809 [0,721; 0,866]  ·  +0,116 [0,069; 0,145]  ·  +0,093 | [Evidência](../evidencias/03_transferencia/fundamentacao-artigo-20261028/f03_ic_transferencia_coortes.json) · [Código](../codigo/scripts/fundamentacao_artigo/f03_ic_transferencia_coortes.py) | Transferência externa sem ajuste local. IC95% por grupos de FCU. |
+| II.05 | RMPA  ·  6.117  ·  0,905  ·  +0,016 [0,005; 0,025]  ·  —  ·  0,884  ·  0,907 | [Evidência](../evidencias/03_transferencia/fundamentacao-artigo-20261106/f07_estratos_coortes.json) · [Código](../codigo/scripts/fundamentacao_artigo/f07_estratos_coortes.py) | Coorte completa. HAND fica abaixo do REV-P e declive fica acima. |
+| II.06 | Manaus  ·  215  ·  0,791  ·  +0,036 [0,0004; 0,061]  ·  +0,105  ·  —  ·  0,804 | [Evidência](../evidencias/03_transferencia/fundamentacao-artigo-20261106/f07_estratos_coortes.json) · [Código](../codigo/scripts/fundamentacao_artigo/f07_estratos_coortes.py) | Coorte completa. Estrato de baixa renda com suporte insuficiente. |
+| II.07 | RMC  ·  883  ·  0,811  ·  —  ·  +0,056  ·  —  ·  0,812 | [Evidência](../evidencias/03_transferencia/fundamentacao-artigo-20261106/f07_estratos_coortes.json) · [Código](../codigo/scripts/fundamentacao_artigo/f07_estratos_coortes.py) | Coorte completa com vantagem sobre declive. FCU descritivas com 11 positivos. |
+| II.08 | Recife  ·  448  ·  0,781  ·  +0,043 [0,019; 0,068]  ·  +0,087  ·  0,844  ·  0,739 | [Evidência](../evidencias/03_transferencia/fundamentacao-artigo-20261106/f07_estratos_coortes.json) · [Código](../codigo/scripts/fundamentacao_artigo/f07_estratos_coortes.py) | Coorte completa e AUC nos estratos de Recife. |
+| II.09 | RMR  ·  2.882  ·  0,775  ·  +0,085 [0,055; 0,106]  ·  +0,069  ·  0,770  ·  0,748 | [Evidência](../evidencias/03_transferencia/fundamentacao-artigo-20261106/f07_estratos_coortes.json) · [Código](../codigo/scripts/fundamentacao_artigo/f07_estratos_coortes.py) | Coorte completa e AUC nos estratos da RMR, que exclui Recife. |
+| II.10 | Rótulos embaralhados  ·  Queda de AUC de 0,30 a 0,63 | [Evidência](../evidencias/03_transferencia/transferencia-vulnerabilizados/v8_validacao_integrada/analise/contrastes_sem_rotulo.csv) · [Código](../codigo/scripts/vulnerabilizados/v8_01_q_externo.py) | Controle com rótulos embaralhados. |
+| II.11 | Outro sensor  ·  99% dos positivos da RMPA na mancha Planet/SkySat | [Evidência](../evidencias/03_transferencia/transferencia-vulnerabilizados/v6_evidencia_robusta/triangulacao_ufrgs/fracoes_a01.csv) · [Código](../codigo/scripts/vulnerabilizados/v6_08_ufrgs_triangulacao.py) | Triangulação no recorte comum entre sensores, com frações por cobertura. |
 
-[Abrir evidências deste bloco](../evidencias/02_aprendizado/README.md)
+## Tabela III — Ruas com relatos em Recife
 
-| Item | Resultado ou desenho apresentado |
-|---|---|
-| II.01 | Geral - HAND, 43 unidades retidas  ·  +0,039 de AUC [0,026; 0,054]; 33 a favor |
-| II.02 | Geral - pesos iguais  ·  +0,018 [0,010; 0,026] |
-| II.03 | Sem o bloco de acumulação  ·  -0,064 [-0,080; -0,048]; perda em 39 |
-| II.04 | Sem a fonte do destino  ·  -0,0015 [-0,0035; 0,0001] |
-| II.05 | AUC fluvial, costeira, urbana mista  ·  0,765, 0,813 e 0,807 |
-| II.06 | Am. do Sul sem rótulo sul-americano  ·  0,768 |
-| II.07 | De 3 para 42 territórios no treino  ·  0,749 a 0,777; satura com a diversidade |
-| II.08 | Sinal de HAND por território  ·  negativo em 25 de 27; varia cerca de 6 vezes |
-| II.09 | HAND no evento, 331.492 pontos^{a}  ·  -1,13 [-1,31; -0,96]; 4 famílias de sensor |
-| II.10 | HAND em pares a até 3 km^{a}  ·  -1,27 [-1,48; -1,05] |
-| II.11 | HAND de 0,5 m a 10 m ou mais^{a}  ·  monotônico, -0,68 a -2,63 |
-| II.12 | HAND em área construída^{a}  ·  -0,55; sinal mantido nas 6 coberturas |
-| II.13 | Corte de 75% dos negativos, HAND  ·  -0,03 [-0,09; 0,03] no peso |
-| II.14 | Árvores - logística  ·  lugar visto: +0,040; 15/16; p<0,001; lugar novo: 8/16 |
-| II.15 | HAND (log)  ·  -0,981  ·  -0,904  ·  Areia  ·  -0,051  ·  -0,202 |
-| II.16 | Distância ao canal  ·  -0,429  ·  -0,433  ·  Contribuição (log)  ·  +0,043  ·  +0,085 |
-| II.17 | Declive  ·  -0,312  ·  -0,274  ·  Distância à drenagem  ·  +0,030  ·  +0,055 |
-| II.18 | Fração construída  ·  -0,210  ·  -0,170  ·   ·   ·  |
-| II.19 | 30 GFD^{b}  ·  núcleo - HAND: +0,055 [0,024; 0,086] |
-| II.20 | Mesmos 30^{b}  ·  com - sem conexão: +0,030 [0,006; 0,053] |
-| II.21 | 10 CEMS  ·  com - sem conexão: +0,017 [0,005; 0,030] |
-| II.22 | 16 cheias^{c}  ·  logística - HAND: +0,041; 13/16; p=0,011 |
+| Item | Resultado | Registro e código | Leitura |
+|---|---|---|---|
+| III.01 | 2014--2024: 1.648 relatos, 420 localizados até a rua, 96 ruas em 38 bairros. | [Evidência](../evidencias/04_recife/relatorios/RECIFE_APRENDIZADO_ALAGAMENTO_RESULTADOS_2026_10_24.md) · [Código](../codigo/scripts/recife_aprendizado/ra_01_referencias.py) | Geocodificação dos relatos e agrupamento rua–bairro. |
+| III.02 | Em 16 de 71 bairros com registro, a ocorrência apareceu apenas nos relatos. | [Evidência](../evidencias/04_recife/fundamentacao-artigo-20261106/f08_ruas_e_comunidades.json) · [Código](../codigo/scripts/fundamentacao_artigo/f08_ruas_e_comunidades.py) | União dos bairros com registro no cotejo de relatos e imagem. |
+| III.03 | AUC do REV-P  ·  0,669  ·  [0,564; 0,775] | [Evidência](../evidencias/04_recife/fundamentacao-artigo-20261028/f06_ic_auc_ruas_recife.json) · [Código](../codigo/scripts/fundamentacao_artigo/f06_ic_auc_ruas_recife.py) | AUC da versão com reserva dentro do bairro. |
+| III.04 | AUC do HAND  ·  0,595  ·  [0,491; 0,711] | [Evidência](../evidencias/04_recife/fundamentacao-artigo-20261028/f06_ic_auc_ruas_recife.json) · [Código](../codigo/scripts/fundamentacao_artigo/f06_ic_auc_ruas_recife.py) | AUC do HAND nos mesmos comparadores. |
+| III.05 | Ganho de AUC sobre o HAND  ·  +0,074  ·  [0,012; 0,159] | [Evidência](../evidencias/04_recife/relatorios/RECIFE_APRENDIZADO_ALAGAMENTO_RESULTADOS_2026_10_24.md) · [Código](../codigo/scripts/recife_aprendizado/ra_04_treino.py) | Diferença pareada. IC95% por bairro. |
+| III.06 | Ruas com relato no topo de 20%  ·  42%  ·  HAND: 31% | [Evidência](../evidencias/04_recife/relatorios/RECIFE_APRENDIZADO_ALAGAMENTO_RESULTADOS_2026_10_24.md) · [Código](../codigo/scripts/recife_aprendizado/ra_04_treino.py) | Fração de ruas relatadas no quintil mais alto. |
+| III.07 | Ganho em pares de comprimento semelhante^a  ·  +0,058  ·  [-0,024; 0,177] | [Evidência](../evidencias/04_recife/fundamentacao-artigo-20261106/f08_ruas_e_comunidades.json) · [Código](../codigo/scripts/fundamentacao_artigo/f08_ruas_e_comunidades.py) | Pareamento por comprimento até razão 1,5. Intervalo inclui zero. |
+| III.08 | HAND (log)  ·  +0,751  ·  +0,204  ·  Areia  ·  +0,033  ·  +0,033 | [Evidência](../evidencias/04_recife/proveniencia/exemplos_ruas_e_figuras.json) · [Código](../codigo/scripts/recife_aprendizado/ra_04_treino.py) | Conta com a versão com reserva nas duas ruas de Estância. |
+| III.09 | Dist. ao canal  ·  +0,853  ·  +0,093  ·  Área que drena (log)  ·  +0,129  ·  -0,013 | [Evidência](../evidencias/04_recife/proveniencia/exemplos_ruas_e_figuras.json) · [Código](../codigo/scripts/recife_aprendizado/ra_04_treino.py) | Conta com a versão com reserva nas duas ruas de Estância. |
+| III.10 | Declive  ·  +0,272  ·  +0,123  ·  Dist. à drenagem  ·  -0,026  ·  +0,023 | [Evidência](../evidencias/04_recife/proveniencia/exemplos_ruas_e_figuras.json) · [Código](../codigo/scripts/recife_aprendizado/ra_04_treino.py) | Conta com a versão com reserva nas duas ruas de Estância. |
+| III.11 | Fração construída  ·  -0,525  ·  -0,406  ·  Escore final  ·  1,487  ·  0,057 | [Evidência](../evidencias/04_recife/proveniencia/exemplos_ruas_e_figuras.json) · [Código](../codigo/scripts/recife_aprendizado/ra_04_treino.py) | Conta com a versão com reserva nas duas ruas de Estância. |
+| III.12 | Número de relatos  ·  3  ·  4 | [Evidência](../evidencias/04_recife/proveniencia/exemplos_ruas_e_figuras.json) · [Código](../codigo/scripts/recife_aprendizado/ra_04_treino.py) | Conta com a versão com reserva nas duas ruas de Estância. |
+| III.13 | Ruas com escore menor (de 74)  ·  72  ·  12 | [Evidência](../evidencias/04_recife/proveniencia/exemplos_ruas_e_figuras.json) · [Código](../codigo/scripts/recife_aprendizado/ra_04_treino.py) | Conta com a versão com reserva nas duas ruas de Estância. |
 
-## Tabela III — Transferência
+## Tabela IV — Encostas em Petrópolis
 
-[Abrir evidências deste bloco](../evidencias/03_transferencia/README.md)
+| Item | Resultado | Registro e código | Leitura |
+|---|---|---|---|
+| IV.01 | Modelo de água  ·  0,375  ·  [0,307; 0,445] | [Evidência](../evidencias/05_petropolis/fundamentacao-artigo-20261028/f04_encosta_e_retencao.json) · [Código](../codigo/scripts/fundamentacao_artigo/f04_encosta_e_retencao.py) | AUC por cicatriz. Fundo fora das cicatrizes observadas. |
+| IV.02 | Modelo de encosta treinado no Idai  ·  0,660  ·  [0,593; 0,726] | [Evidência](../evidencias/05_petropolis/fundamentacao-artigo-20261028/f04_encosta_e_retencao.json) · [Código](../codigo/scripts/fundamentacao_artigo/f04_encosta_e_retencao.py) | AUC por cicatriz. Fundo fora das cicatrizes observadas. |
+| IV.03 | Encosta - modelo de água  ·  +0,286  ·  [0,170; 0,396] | [Evidência](../evidencias/05_petropolis/fundamentacao-artigo-20261028/f04_encosta_e_retencao.json) · [Código](../codigo/scripts/fundamentacao_artigo/f04_encosta_e_retencao.py) | AUC por cicatriz. Fundo fora das cicatrizes observadas. |
+| IV.04 | Externo com exemplos locais - só local (a)  ·  +0,126  ·  [0,070; 0,180] | [Evidência](../evidencias/05_petropolis/petropolis-aprendizado/v1/resultados/contrastes_T1.csv) · [Código](../codigo/scripts/petropolis_aprendizado/pa_05_treino.py) | Mesmo orçamento de 100 consultas. Externo com exemplos locais contra só local. |
 
-| Item | Resultado ou desenho apresentado |
-|---|---|
-| III.01 | RMPA  ·  241 (17)  ·  0,880 [0,828; 0,923]  ·  +0,040 [-0,002; 0,091]  ·  -0,030 |
-| III.02 | Manaus  ·  48 (10)  ·  0,920 [0,791; 0,967]  ·  +0,046 [0,020; 0,069]  ·  +0,111 |
-| III.03 | RMC  ·  11 (4)^dagger  ·  0,893^dagger  ·  +0,067^dagger  ·  +0,195^dagger |
-| III.04 | Recife  ·  31 (19)  ·  0,866 [0,777; 0,935]  ·  +0,064 [0,012; 0,125]  ·  +0,151 |
-| III.05 | RMR  ·  366 (35)  ·  0,809 [0,721; 0,866]  ·  +0,116 [0,069; 0,145]  ·  +0,093 |
-| III.06 | RMPA  ·  6.117  ·  0,905  ·  +0,016 [0,005; 0,025]  ·  -0,017  ·  0,884  ·  0,907 |
-| III.07 | Manaus  ·  215  ·  0,791  ·  +0,036 [0,000; 0,061]  ·  +0,105  ·  0,528^dagger  ·  0,804 |
-| III.08 | RMC  ·  883  ·  0,811  ·  +0,006 [-0,012; 0,018]  ·  +0,056  ·  0,634^dagger  ·  0,812 |
-| III.09 | Recife  ·  448  ·  0,781  ·  +0,043 [0,019; 0,068]  ·  +0,087  ·  0,844  ·  0,739 |
-| III.10 | RMR  ·  2.882  ·  0,775  ·  +0,085 [0,055; 0,106]  ·  +0,069  ·  0,770  ·  0,748 |
-| III.11 | Rótulos permutados  ·  a ordenação cai de 0,30 a 0,63: vem do aprendido |
-| III.12 | Cobertura, solo (FCU)  ·  Recife +0,108 [0,045; 0,174]; RMR +0,141 [0,068; 0,170] |
-| III.13 | Outro sensor  ·  99% dos positivos da RMPA na mancha Planet/SkySat (ref. ufrgs) |
-| III.14 | 14 municípios^{c}  ·  árvores - HAND: +0,021 [0,000; 0,034]; alcança o não rotulado |
-| III.15 | Dois novos^{d}  ·  AUC em FCU: 0,890 e 0,882; lugar nunca examinado |
+## Tabela V — Atualização na RM de Porto Alegre
 
-## Tabela IV — Recife
+| Item | Resultado | Registro e código | Leitura |
+|---|---|---|---|
+| V.01 | Margem (AUC de 0,874 a 0,926)  ·  +0,052  ·  [0,020; 0,101]  ·  6/6 | [Evidência](../evidencias/06_atualizacao/fundamentacao-artigo-20261028/f01_ic_ganho_atualizacao.json) · [Código](../codigo/scripts/fundamentacao_artigo/f01_ic_ganho_atualizacao.py) | 400 consultas nas FCU da RMPA. Seis repetições do mesmo episódio. |
+| V.02 | Pontos escolhidos por sorteio  ·  +0,029  ·  [0,009; 0,062]  ·  6/6 | [Evidência](../evidencias/06_atualizacao/fundamentacao-artigo-20261028/f01_ic_ganho_atualizacao.json) · [Código](../codigo/scripts/fundamentacao_artigo/f01_ic_ganho_atualizacao.py) | 400 consultas nas FCU da RMPA. Seis repetições do mesmo episódio. |
+| V.03 | Atualização com 400 consultas  ·  +0,021  ·  [0,015; 0,026]  · | [Evidência](../evidencias/06_atualizacao/transferencia-vulnerabilizados/v8_validacao_integrada/analise/contrastes_poucos_rotulos.csv) · [Código](../codigo/scripts/vulnerabilizados/v8_01_q_externo.py) | Coorte inteira da RMPA. F4 com 400 consultas e prior externo. |
+| V.04 | Origem após ajuste por margem  ·  -0,028  ·  [-0,056; -0,006]  · | [Evidência](../evidencias/05_petropolis/fundamentacao-artigo-20261028/f04_encosta_e_retencao.json) · [Código](../codigo/scripts/fundamentacao_artigo/f04_encosta_e_retencao.py) | Perda de retenção após ajuste na RMPA, medida em seis unidades externas. |
+| V.05 | FCU, memória de 200 exemplos^a  ·  +0,017  ·  [0,006; 0,027]  · | [Evidência](../evidencias/06_atualizacao/transferencia-vulnerabilizados/v10_ciclo_contextual/iii_memoria/pareados_final.csv) · [Código](../codigo/scripts/vulnerabilizados/v10_iii_memoria.py) | DER com memória de 200 exemplos, no ciclo de três destinos. |
 
-[Abrir evidências deste bloco](../evidencias/04_recife/README.md)
+## Tabela VI — Cobertura observacional
 
-| Item | Resultado ou desenho apresentado |
-|---|---|
-| IV.01 | Da fonte à unidade  ·  1.648 relatos, 2014--2024 to 420 até a rua to 96 unidades em 38 bairros to 48 em teste |
-| IV.02 | População de teste  ·  48 ruas com relato em 19 bairros; 2.225 ruas; 42% das relatadas no quintil superior (HAND: 31%) |
-| IV.03 | Núcleo, AUC no bairro  ·  0,669 [0,564; 0,775] |
-| IV.04 | HAND, AUC no bairro  ·  0,595 [0,491; 0,711] |
-| IV.05 | Vantagem no teste  ·  núcleo - HAND: +0,074 [0,012; 0,159] |
-| IV.06 | Extensão da rua  ·  mediana de 556 m contra 154 m; AUC 0,743 |
-| IV.07 | Escore times extensão, no bairro  ·  rho=0,03 |
-| IV.08 | Núcleo - HAND, pareado^{a}  ·  +0,058 [-0,024; 0,177]; +0,011 [-0,053; 0,086] |
-| IV.09 | Com relato, com e sem satélite^{b}  ·  19 e 16 bairros |
-| IV.10 | Sem relato, com e sem satélite^{b}  ·  36 e 23; razão de chances 0,76; p=0,67 |
-| IV.11 | Chuva por 10 mm, 1.372 relatos^{c}  ·  dia 1,31 [1,07; 4,63]; 48 h 1,46 [1,20; 2,73]; controle 0,78 [0,51; 1,06] |
-| IV.12 | Recife, 295 FCU  ·  228 cobertas; 74 com rua relatada; 33 avaliadas (50.198 moradores) |
-| IV.13 | HAND (log)  ·  +0,751  ·  +0,204 |
-| IV.14 | Distância ao canal  ·  +0,853  ·  +0,093 |
-| IV.15 | Declive  ·  +0,272  ·  +0,123 |
-| IV.16 | Fração construída  ·  -0,525  ·  -0,406 |
-| IV.17 | Areia  ·  +0,033  ·  +0,033 |
-| IV.18 | Contribuição (log)  ·  +0,129  ·  -0,013 |
-| IV.19 | Distância à drenagem  ·  -0,026  ·  +0,023 |
-| IV.20 | Escore final  ·  1,487  ·  0,057 |
-| IV.21 | Relatos / ruas com escore abaixo  ·  3 / 72 de 74  ·  4 / 12 de 74 |
+| Item | Resultado | Registro e código | Leitura |
+|---|---|---|---|
+| VI.01 | Recorte total (a)  ·  1.708 FCU, 2.776.821 moradores | [Evidência](../evidencias/09_social/peso_das_regioes.json) · [Código](../codigo/scripts/fundamentacao_artigo/f08_ruas_e_comunidades.py) | Universo censitário de 1.666 FCU de água e 42 de Petrópolis. |
+| VI.02 | FCU com água  ·  De 1 no acervo inicial a 123 de 1.666 no recorte ampliado | [Evidência](../evidencias/04_recife/fundamentacao-artigo-20261106/f08_ruas_e_comunidades.json) · [Código](../codigo/scripts/fundamentacao_artigo/f08_ruas_e_comunidades.py) | Acervo inicial e contagem no universo ampliado de 1.666 FCU. |
+| VI.03 | Suporte nas 123 FCU  ·  119 com as duas classes. Em 38, há ≥5 pontos por classe. | [Evidência](../evidencias/04_recife/fundamentacao-artigo-20261106/f08_ruas_e_comunidades.json) · [Código](../codigo/scripts/fundamentacao_artigo/f08_ruas_e_comunidades.py) | Duas classes e suporte mínimo de cinco pontos de cada classe. |
 
-## Tabela V — Petrópolis
+## Tabela VII — Módulos de apoio
 
-[Abrir evidências deste bloco](../evidencias/05_petropolis/README.md)
+| Item | Resultado | Registro e código | Leitura |
+|---|---|---|---|
+| VII.01 | Mapa de água, 90 recortes (b)  ·  Sobreposição (IoU) da U-Net: 0,449 | [Evidência](../evidencias/07_percepcao/sar-inundacao/avaliacao_unet_v1_teste.json) · [Código](../codigo/scripts/sar/avaliar_rede.py) | IoU por pixel, sem água permanente, em 90 recortes reservados. |
+| VII.02 | Pré-treino, 8 eventos (d)  ·  Pré-treinado - aleatório: ΔAP +0,041 [0,014; 0,069], 7/8, com 1 recorte; +0,050 com 3 | [Evidência](../evidencias/07_percepcao/pretreino-sar/v2/analise.json) · [Código](../codigo/scripts/sar/pretreino_v2.py) | Ganho de AP observado. IC do contraste primário cruza a margem de 0,025. |
+| VII.03 | SAR contínuo, 8 unidades  ·  LwF: ΔIoU +0,049 [0,029; 0,068], limiar 0,2 | [Evidência](../evidencias/07_percepcao/planejamento-tese/v2/continuidade/diagnostico.json) · [Código](../codigo/scripts/planejamento/pt_continuidade.py) | Reagregação nas oito unidades comuns, com limiar 0,2. Estimativa integral no artefato. |
+| VII.04 | Busca, 11.238 consultas  ·  Nas 5 primeiras: 44,35% híbrida vs. 36,65% lexical | [Evidência](../evidencias/08_resposta/evolucao-escopo/v1/cognicao/resultado.json) · [Código](../codigo/scripts/evolucao_escopo/cognicao.py) | Recall@5 em consultas sintéticas com trecho-alvo conhecido. |
+| VII.05 | Juiz + regras vs. regras (18)  ·  Acerto: 0,722 vs. 0,444. Falsos positivos: 1 vs. 7 | [Evidência](../evidencias/08_resposta/verificacao-suporte/medida_de_suporte_com_juiz.json) · [Código](../codigo/scripts/verificacao/medir_suporte.py) | Comparação em 18 casos de sustentação. A combinação reduziu falsos positivos. |
+| VII.06 | Água com resposta baixa (c)  ·  Margem vs. sorteio: RMPA 0 vs. 35, RMR 25 vs. 130 | [Evidência](../evidencias/08_resposta/transferencia-vulnerabilizados/v8_validacao_integrada/competencia_tranquilizadora/cobertura_tranquilizadoras.csv) · [Código](../codigo/scripts/vulnerabilizados/v8_06b_competencia_tranquilizadora.py) | Positivos com resposta baixa nas FCU, à meta de cobertura de 70% na coorte. |
+| VII.07 | Reprodução do escore  ·  147.798 pontos, erro máximo 3,56×10^{-15} | [Evidência](../evidencias/08_resposta/ia-integrada-v2/fechamento_v1/fisica.json) · [Código](../codigo/scripts/ia/ia_integrada_v2.py) | Soma de pontos do MT11 e da rodada 3. Erro numérico máximo. |
+| VII.08 | Conferência do serviço  ·  2.747 testes (20/10), 922 fontes por hash, 5 portões | [Evidência](../evidencias/08_resposta/evolucao-escopo/v1/qa_final/v3/resultado.json) · [Código](../codigo/scripts/servico/resposta_integrada.py) | Conferência da entrega de 20/10. Contagens de testes, hashes e portões do serviço. |
 
-| Item | Resultado ou desenho apresentado |
-|---|---|
-| V.01 | Encosta (Idai), 81 cicatrizes  ·  AUC 0,660 [0,593; 0,726]; -declive: +0,007; 12.170 células de fundo; 40% no quintil superior |
-| V.02 | Modelo de água, mesmas cicatrizes  ·  AUC 0,375 [0,307; 0,445] |
-| V.03 | Encosta - água  ·  +0,286 [0,170; 0,396] |
-| V.04 | Petrópolis, B=10: externo e local - só local  ·  +0,222 [0,126; 0,307] |
-| V.05 | Petrópolis, B=100: externo e local - só local  ·  +0,126 [0,070; 0,180] |
-| V.06 | Petrópolis, B=100, endereços de dano - externo  ·  -0,158 [-0,247; -0,065] |
-| V.07 | Petrópolis, 42 FCU  ·  registro interno de 5 para 20; 31 a até 100 m; 43.019 moradores |
+## Leitura conjunta com o pôster
 
-## Tabela VI — Atualização
+O [pôster](../artigo/REV-P_poster.pdf) resume os mesmos ensaios. Na RMPA, a estimativa de +0,040 AUC sobre HAND nas FCU tem intervalo que inclui zero. A Tabela II do artigo indica essa ausência de vantagem sustentada com um traço. A [coorte FCU](../evidencias/03_transferencia/fundamentacao-artigo-20261028/f03_ic_transferencia_coortes.json) conserva o intervalo.
 
-[Abrir evidências deste bloco](../evidencias/06_atualizacao/README.md)
+O pré-treino com um recorte rotulado por contexto ganhou 0,041 AP em média. O intervalo de 0,014 a 0,069 cruza a margem de 0,025. A [demonstração de Muçum](../evidencias/07_percepcao/demonstracao_mucum/reconstrucao_mucum.json) ilustra a reconstrução com o estado salvo. O [ensaio de oito eventos](../evidencias/07_percepcao/pretreino-sar/v2/analise.json) mede a diferença de AP.
 
-| Item | Resultado ou desenho apresentado |
-|---|---|
-| VI.01 | RMPA, FCU, B=400: margem - congelado  ·  +0,052 [0,020; 0,101]; 6/6 |
-| VI.02 | RMPA, FCU, B=400: sorteio - congelado  ·  +0,029 [0,009; 0,062]; 6/6 |
-| VI.03 | RMPA, FCU, B=400: margem - sorteio  ·  +0,023; 6/6 |
-| VI.04 | RMPA, coorte, B=400: atualizado - externo  ·  +0,021 [0,015; 0,026] |
-| VI.05 | RMPA, coorte, B=25: prior - neutro  ·  +0,011 [0,001; 0,025] |
-| VI.06 | RMPA, coorte, B=25: prior - permutado  ·  +0,020 [0,008; 0,037] |
-| VI.07 | Retenção externa, RMPA, margem: T_B  ·  -0,028 [-0,056; -0,006] |
-| VI.08 | RMPA, FCU, 3 destinos, memória de 200  ·  +0,017 [0,006; 0,027] |
-| VI.09 | FCU da RMR^{c}  ·  prior - só local: +0,026 [0,014; 0,049] |
+O contraste LwF com limiar 0,2 aparece como +0,049 no artigo. O [artefato de reagregação](../evidencias/07_percepcao/planejamento-tese/v2/continuidade/diagnostico.json) conserva a estimativa integral, próxima de +0,04848, e os intervalos. Essa diferença de apresentação fica registrada na conferência.
 
-## Tabela VII — Percepção
+A triagem da Tabela VII usa a [comparação com meta de 70% na coorte da avaliação integrada](../evidencias/08_resposta/transferencia-vulnerabilizados/v8_validacao_integrada/competencia_tranquilizadora/cobertura_tranquilizadoras.csv). A contagem dentro das FCU depende da coorte e da execução selecionadas.
 
-[Abrir evidências deste bloco](../evidencias/07_percepcao/README.md)
+A perda de 0,078 no ensaio de Manaus sem filtro foi medida na retenção da origem. O [registro do ciclo](../evidencias/06_atualizacao/relatorios/CICLO_CONTEXTUAL_V10_RESULTADOS_2026_10_24.md) identifica a população da perda.
 
-| Item | Resultado ou desenho apresentado |
-|---|---|
-| VII.01 | U-Net times Otsu, IoU^{a}, 90 chips  ·  0,449 times 0,395, sem água permanente |
-| VII.02 | Recusa pela confiança  ·  IoU 0,592, cobertura 0,556; AURC 0,560 times 0,684 |
-| VII.03 | Radar e só terreno, 431 chips, AUC  ·  0,930--0,942 e 0,85--0,87 |
-| VII.04 | LwF - continuação, IoU  ·  +0,049 [0,029; 0,068]; 8/8 |
-| VII.05 | Conjunto diverso de pré-treino  ·  reconstrução: 6/6 sementes; p=0,031 |
-| VII.06 | Pré-treino to segmentação  ·  indecidível; 7/16 sementes |
-
-## Tabela VIII — Resposta
-
-[Abrir evidências deste bloco](../evidencias/08_resposta/README.md)
-
-| Item | Resultado ou desenho apresentado |
-|---|---|
-| VIII.01 | Busca densa times lexical, 984 casos  ·  0,948 times 0,119; AURC 0,011 times 0,025 |
-| VIII.02 | Híbrida times lexical, 11.238 consultas  ·  recall@5: 44,35% times 36,65% |
-| VIII.03 | Juiz e regra times só regra, 18 casos  ·  acurácia 0,722 times 0,444; falsos positivos 1 times 7 |
-| VIII.04 | Tranquilizadoras erradas^{b}  ·  FCU RMPA 0 times 35; FCU RMR 25 times 130; retenção 1.038 times 1.741 |
-| VIII.05 | Recusa estratificada, FCU da RMPA  ·  cobertura 0,40 to 0,70; erro 0,295 times 0,290 |
-| VIII.06 | Escore reproduzido, 147.798 pontos  ·  erro máximo 3,56times10^{-15} |
-| VIII.07 | Entrega local de 20/10; serviço  ·  2.747 testes; 922 fontes por hash; 5 portões; grade de 120 m |
-
-## Tabela IX — Alcance social
-
-[Abrir evidências deste bloco](../evidencias/09_social/README.md)
-
-| Item | Resultado ou desenho apresentado |
-|---|---|
-| IX.01 | Destinos brasileiros  ·  1.708 FCU; 2.776.821 moradores |
-| IX.02 | FCU, de 1.666  ·  de 1 para 123 positivas; 119 com duas classes; 38 com 5 e 5 |
-| IX.03 | Observabilidade^{a}  ·  RMR 0,61 / 0,44 / 0,62; RMPA 0,95 / 0,78 / 0,90; Recife 0,82 / 0,90 / 0,91 |
-| IX.04 | Medidas sociais  ·  9.186 setores; 7 componentes; EMSR720: 1.131 a 16.068 |
-| IX.05 | Revisão cega, RMPA  ·  480 pontos, sem respostas ainda; desenho: desvio de 0,075 a 0,021 |

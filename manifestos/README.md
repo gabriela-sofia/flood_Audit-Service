@@ -7,8 +7,7 @@
 | [Dependências do código](dependencias_codigo.json) | Entradas selecionadas e relações locais entre módulos |
 | [Afirmações do artigo](afirmacoes_artigo.json) | Linhas das tabelas e parágrafos com suas fontes |
 | [Planilha textual da matriz](afirmacoes_artigo.csv) | A mesma rastreabilidade em formato tabular |
-| [Metadados bibliográficos](metadados_bibliograficos.json) | Registros usados na conferência das referências |
-| [Conferência editorial anterior](conferencia_editorial_origem.json) | Conferência da v16 já executada |
+| [Metadados bibliográficos](metadados_bibliograficos.json) | 35 entradas bibliográficas da fonte v22 |
 | [Índice dos documentos atuais](indice_documental_atual.json) | Fontes e classes conferidas para a consulta preparada |
 | [Verificação desta preparação](verificacao_preparacao.json) | Comandos e verificações executados no pacote organizado |
 
